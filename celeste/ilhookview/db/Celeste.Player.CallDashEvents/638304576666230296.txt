@@ -1,0 +1,189 @@
+IL Diff: System.Void Celeste.Player::CallDashEvents()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Player::calledDashEvents
+  IL_0006: brtrue IL_0280
+  IL_000b: ldarg.0
++ IL_000c: ldc.i4 6476 @ Celeste.Mod.BounceHelper.BounceHelperModule::modCallDashEvents
++ IL_0011: ldc.i4 13516491 @ Celeste.Mod.BounceHelper.BounceHelperModule::modCallDashEvents
++ IL_0016: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.BounceHelper.BounceHelperModule::modCallDashEvents
+  |-> retrieves System.Void Celeste.Mod.BounceHelper.BounceHelperModule::modifyDashSpeed(Celeste.Player)
++ IL_001b: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.BounceHelper.BounceHelperModule::modCallDashEvents
++ IL_0020: ldarg.0 @ Celeste.Mod.BounceHelper.BounceHelperModule::modCallDashEvents
++ IL_0021: ldc.i4 6474 @ Celeste.Mod.XaphanHelper.Upgrades.LightningDash::modCallDashEvents
++ IL_0026: ldc.i4 44077608 @ Celeste.Mod.XaphanHelper.Upgrades.LightningDash::modCallDashEvents
++ IL_002b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.LightningDash::modCallDashEvents
+  |-> retrieves System.Void Celeste.Mod.BounceHelper.BounceHelperModule::modifyDashSpeed(Celeste.Player)
++ IL_0030: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.XaphanHelper.Upgrades.LightningDash::modCallDashEvents
++ IL_0035: ldarg.0 @ Celeste.Mod.XaphanHelper.Upgrades.LightningDash::modCallDashEvents
++ IL_0036: ldc.i4 6462 @ ExtendedVariants.Variants.InvertDashes::modCallDashEvents
++ IL_003b: ldc.i4 28819788 @ ExtendedVariants.Variants.InvertDashes::modCallDashEvents
++ IL_0040: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertDashes::modCallDashEvents
+  |-> retrieves System.Void Celeste.Mod.BounceHelper.BounceHelperModule::modifyDashSpeed(Celeste.Player)
++ IL_0045: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ ExtendedVariants.Variants.InvertDashes::modCallDashEvents
++ IL_004a: ldarg.0 @ ExtendedVariants.Variants.InvertDashes::modCallDashEvents
+  IL_004b: ldc.i4.1
+  IL_004c: stfld System.Boolean Celeste.Player::calledDashEvents
+  IL_0051: ldarg.0
++ IL_0052: ldc.i4 6478 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
++ IL_0057: ldc.i4 21093995 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
++ IL_005c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
+  |-> retrieves System.Boolean FrostHelper.Entities.Boosters.GenericCustomBooster/<>c::<modCallDashEvents>b__5_1(Celeste.Player)
++ IL_0061: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
++ IL_0066: brtrue IL_006c @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
++ IL_006b: ret @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
++ IL_006c: ldarg.0 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modCallDashEvents
+  IL_006d: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0072: brtrue IL_0267
+  IL_0077: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_007c: dup
+  IL_007d: ldfld System.Int32 Celeste.SaveData::TotalDashes
+  IL_0082: ldc.i4.1
+  IL_0083: add
+  IL_0084: stfld System.Int32 Celeste.SaveData::TotalDashes
+  IL_0089: ldarg.0
+  IL_008a: ldfld Celeste.Level Celeste.Player::level
+  IL_008f: ldfld Celeste.Session Celeste.Level::Session
+  IL_0094: dup
+  IL_0095: ldfld System.Int32 Celeste.Session::Dashes
+  IL_009a: ldc.i4.1
+  IL_009b: add
+  IL_009c: stfld System.Int32 Celeste.Session::Dashes
+  IL_00a1: ldc.i4.1
+  IL_00a2: ldc.i4.1
+  IL_00a3: call System.Void Celeste.Stats::Increment(Celeste.Stat,System.Int32)
+  IL_00a8: ldarg.0
+  IL_00a9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00ae: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b3: ldc.r4 0
+  IL_00b8: blt IL_00ef
+  IL_00bd: ldarg.0
+  IL_00be: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00c3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00c8: ldc.r4 0
+  IL_00cd: bne.un IL_00e9
+  IL_00d2: ldarg.0
+  IL_00d3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00d8: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00dd: ldc.r4 0
+  IL_00e2: cgt
+  IL_00e4: br IL_00f0
+  IL_00e9: ldc.i4.0
+  IL_00ea: br IL_00f0
+  IL_00ef: ldc.i4.1
+  IL_00f0: stloc.0
+  IL_00f1: ldarg.0
+  IL_00f2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00f7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00fc: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0101: brfalse IL_0110
+  IL_0106: ldarg.0
+  IL_0107: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_010c: ldc.i4.1
+  IL_010d: ceq
+  IL_010f: stloc.0
+  IL_0110: ldloc.0
+  IL_0111: brfalse IL_0177
+  IL_0116: ldarg.0
+  IL_0117: ldfld System.Boolean Celeste.Player::wasDashB
+  IL_011c: brfalse IL_014c
+  IL_0121: ldarg.0
+  IL_0122: ldstr "event:/char/madeline/dash_pink_right"
++ IL_0127: ldc.i4 6464 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_012c: ldc.i4 52701452 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_0131: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<Player_CallDashEvents>b__24_0(System.String)
++ IL_0136: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  IL_013b: ldnull
+  IL_013c: ldc.r4 0
+  IL_0141: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0146: pop
+  IL_0147: br IL_01d3
+  IL_014c: ldarg.0
+  IL_014d: ldstr "event:/char/madeline/dash_red_right"
++ IL_0152: ldc.i4 6466 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_0157: ldc.i4 40959192 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_015c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<Player_CallDashEvents>b__24_0(System.String)
++ IL_0161: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  IL_0166: ldnull
+  IL_0167: ldc.r4 0
+  IL_016c: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0171: pop
+  IL_0172: br IL_01d3
+  IL_0177: ldarg.0
+  IL_0178: ldfld System.Boolean Celeste.Player::wasDashB
+  IL_017d: brfalse IL_01ad
+  IL_0182: ldarg.0
+  IL_0183: ldstr "event:/char/madeline/dash_pink_left"
++ IL_0188: ldc.i4 6468 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_018d: ldc.i4 29360281 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_0192: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<Player_CallDashEvents>b__24_0(System.String)
++ IL_0197: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  IL_019c: ldnull
+  IL_019d: ldc.r4 0
+  IL_01a2: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_01a7: pop
+  IL_01a8: br IL_01d3
+  IL_01ad: ldarg.0
+  IL_01ae: ldstr "event:/char/madeline/dash_red_left"
++ IL_01b3: ldc.i4 6470 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_01b8: ldc.i4 29372599 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
++ IL_01bd: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<Player_CallDashEvents>b__24_0(System.String)
++ IL_01c2: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_CallDashEvents
+  IL_01c7: ldnull
+  IL_01c8: ldc.r4 0
+  IL_01cd: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_01d2: pop
+  IL_01d3: ldarg.0
+  IL_01d4: callvirt System.Boolean Celeste.Player::SwimCheck()
++ IL_01d9: ldc.i4 6472 @ Celeste.Mod.CommunalHelper.Entities.UnderwaterMusicController::Player_CallDashEvents
++ IL_01de: ldc.i4 30370329 @ Celeste.Mod.CommunalHelper.Entities.UnderwaterMusicController::Player_CallDashEvents
++ IL_01e3: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.UnderwaterMusicController::Player_CallDashEvents
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.UnderwaterMusicController/<>c::<Player_CallDashEvents>b__6_0(System.Boolean)
++ IL_01e8: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.UnderwaterMusicController::Player_CallDashEvents
+  IL_01ed: brfalse IL_0204
+  IL_01f2: ldarg.0
+  IL_01f3: ldstr "event:/char/madeline/water_dash_gen"
+  IL_01f8: ldnull
+  IL_01f9: ldc.r4 0
+  IL_01fe: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0203: pop
+  IL_0204: ldarg.0
+  IL_0205: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_020a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_020f: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.DashListener>()
+  IL_0214: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0219: stloc.1
+  IL_021a: br IL_0248
+  IL_021f: ldloca.s V_1
+  IL_0221: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0226: castclass Celeste.DashListener
+  IL_022b: stloc.2
+  IL_022c: ldloc.2
+  IL_022d: ldfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.DashListener::OnDash
+  IL_0232: brfalse IL_0248
+  IL_0237: ldloc.2
+  IL_0238: ldfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.DashListener::OnDash
+  IL_023d: ldarg.0
+  IL_023e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0243: callvirt System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::Invoke(T)
+  IL_0248: ldloca.s V_1
+  IL_024a: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_024f: brtrue IL_021f
+  IL_0254: leave IL_0280
+  IL_0259: ldloca.s V_1
+  IL_025b: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_0261: callvirt System.Void System.IDisposable::Dispose()
+  IL_0266: endfinally
+  IL_0267: ldarg.0
+  IL_0268: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_026d: ldarg.0
+  IL_026e: ldarg.0
+  IL_026f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0274: callvirt System.Void Celeste.Booster::PlayerBoosted(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0279: ldarg.0
+  IL_027a: ldnull
+  IL_027b: stfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0280: ret

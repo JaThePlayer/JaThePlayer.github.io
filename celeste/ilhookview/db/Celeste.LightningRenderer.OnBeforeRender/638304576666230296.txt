@@ -1,0 +1,45 @@
+IL Diff: System.Void Celeste.LightningRenderer::OnBeforeRender()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Celeste.Lightning> Celeste.LightningRenderer::list
+  IL_0006: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.Lightning>::get_Count()
+  IL_000b: ldc.i4.0
+  IL_000c: ble IL_00b7
+  IL_0011: call Microsoft.Xna.Framework.GraphicsDeviceManager Monocle.Engine::get_Graphics()
+  IL_0016: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.GraphicsDeviceManager::get_GraphicsDevice()
+  IL_001b: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Lightning
+  IL_0020: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_0025: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::SetRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  IL_002a: call Microsoft.Xna.Framework.GraphicsDeviceManager Monocle.Engine::get_Graphics()
+  IL_002f: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.GraphicsDeviceManager::get_GraphicsDevice()
+  IL_0034: ldstr "f7b262"
++ IL_0039: call System.String FrostHelper.LightningColorTrigger::GetFillColorString(System.String) @ FrostHelper.LightningColorTrigger::LightningRenderer_OnBeforeRender
+  IL_003e: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0043: ldc.r4 0.1
++ IL_0048: call System.Single FrostHelper.LightningColorTrigger::GetLightningFillColorMultiplier(System.Single) @ FrostHelper.LightningColorTrigger::LightningRenderer_OnBeforeRender
+  IL_004d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0052: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Single Celeste.LightningRenderer::Fade
+  IL_005d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0062: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
+  IL_0067: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_006c: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin()
+  IL_0071: ldarg.0
+  IL_0072: ldfld System.Collections.Generic.List`1<Celeste.LightningRenderer/Bolt> Celeste.LightningRenderer::bolts
+  IL_0077: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.LightningRenderer/Bolt>::GetEnumerator()
+  IL_007c: stloc.0
+  IL_007d: br IL_008e
+  IL_0082: ldloca.s V_0
+  IL_0084: call T System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>::get_Current()
+  IL_0089: callvirt System.Void Celeste.LightningRenderer/Bolt::Render()
+  IL_008e: ldloca.s V_0
+  IL_0090: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>::MoveNext()
+  IL_0095: brtrue IL_0082
+  IL_009a: leave IL_00ad
+  IL_009f: ldloca.s V_0
+  IL_00a1: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>
+  IL_00a7: callvirt System.Void System.IDisposable::Dispose()
+  IL_00ac: endfinally
+  IL_00ad: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00b2: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_00b7: ret

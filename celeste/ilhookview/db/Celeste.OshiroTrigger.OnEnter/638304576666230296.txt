@@ -1,0 +1,56 @@
+IL Diff: System.Void Celeste.OshiroTrigger::OnEnter(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnEnter(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Boolean Celeste.OshiroTrigger::State
+  IL_000d: brfalse IL_006f
+  IL_0012: ldarg.0
+  IL_0013: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0018: stloc.0
+  IL_0019: ldloca.s V_1
+  IL_001b: ldloc.0
+  IL_001c: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0021: stloc.2
+  IL_0022: ldloca.s V_2
+  IL_0024: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0029: ldc.i4.s 32
+  IL_002b: sub
+  IL_002c: conv.r4
+  IL_002d: ldloc.0
+  IL_002e: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0033: stloc.2
+  IL_0034: ldloca.s V_2
+  IL_0036: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_003b: ldloc.0
+  IL_003c: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0041: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_0046: ldc.i4.2
+  IL_0047: div
+  IL_0048: add
+  IL_0049: conv.r4
+  IL_004a: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_004f: ldarg.0
+  IL_0050: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0055: ldloc.1
+  IL_0056: ldc.i4.0
+  IL_0057: newobj System.Void Celeste.AngryOshiro::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean)
++ IL_005c: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_005d: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_005e: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0063: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0068: ldarg.0
+  IL_0069: call System.Void Monocle.Entity::RemoveSelf()
+  IL_006e: ret
+  IL_006f: ldarg.0
+  IL_0070: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0075: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_007a: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_007f: stloc.3
+  IL_0080: ldloc.3
+  IL_0081: brfalse IL_008c
+  IL_0086: ldloc.3
+  IL_0087: callvirt System.Void Celeste.AngryOshiro::Leave()
+  IL_008c: ldarg.0
+  IL_008d: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0092: ret

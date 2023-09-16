@@ -1,0 +1,123 @@
+IL Diff: System.Void Celeste.Booster::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0007: ldarg.0
+  IL_0008: ldc.i4 -8500
+  IL_000d: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0012: ldarg.0
+  IL_0013: ldc.r4 10
+  IL_0018: ldc.r4 0
+  IL_001d: ldc.r4 2
+  IL_0022: newobj System.Void Monocle.Circle::.ctor(System.Single,System.Single,System.Single)
+  IL_0027: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_002c: ldarg.0
+  IL_002d: ldarg.2
+  IL_002e: stfld System.Boolean Celeste.Booster::red
+  IL_0033: ldarg.0
+  IL_0034: ldarg.0
+  IL_0035: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_003a: ldarg.2
+  IL_003b: brtrue IL_005f
+  IL_0040: ldstr "booster"
++ IL_0045: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::reskinBooster
++ IL_0046: ldc.i4 6655 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::reskinBooster
++ IL_004b: ldc.i4 19026244 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::reskinBooster
++ IL_0050: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::reskinBooster
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster/<>c::<reskinBooster>b__7_0(System.String,Celeste.Booster)
++ IL_0055: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Booster>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::reskinBooster
+  IL_005a: br IL_0064
+  IL_005f: ldstr "boosterRed"
+  IL_0064: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0069: dup
+  IL_006a: stloc.0
+  IL_006b: stfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0070: ldloc.0
+  IL_0071: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0076: ldarg.0
+  IL_0077: ldarg.0
+  IL_0078: ldftn System.Void Celeste.Booster::OnPlayer(Celeste.Player)
+  IL_007e: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_0083: ldnull
+  IL_0084: ldnull
+  IL_0085: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_008a: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_008f: ldarg.0
+  IL_0090: ldarg.0
+  IL_0091: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0096: ldc.r4 1
+  IL_009b: ldc.i4.s 16
+  IL_009d: ldc.i4.s 32
+  IL_009f: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_00a4: dup
+  IL_00a5: stloc.1
+  IL_00a6: stfld Celeste.VertexLight Celeste.Booster::light
+  IL_00ab: ldloc.1
+  IL_00ac: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b1: ldarg.0
+  IL_00b2: ldarg.0
+  IL_00b3: ldc.r4 0.1
+  IL_00b8: ldc.r4 16
+  IL_00bd: newobj System.Void Celeste.BloomPoint::.ctor(System.Single,System.Single)
+  IL_00c2: dup
+  IL_00c3: stloc.2
+  IL_00c4: stfld Celeste.BloomPoint Celeste.Booster::bloom
+  IL_00c9: ldloc.2
+  IL_00ca: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00cf: ldarg.0
+  IL_00d0: ldarg.0
+  IL_00d1: ldc.r4 0.5
+  IL_00d6: ldc.r4 4
+  IL_00db: ldarg.0
+  IL_00dc: ldftn System.Void Celeste.Booster::<.ctor>b__24_0(System.Single)
+  IL_00e2: newobj System.Void System.Action`1<System.Single>::.ctor(System.Object,System.IntPtr)
+  IL_00e7: ldc.i4.0
+  IL_00e8: ldc.i4.0
+  IL_00e9: call Monocle.Wiggler Monocle.Wiggler::Create(System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.Boolean)
+  IL_00ee: dup
+  IL_00ef: stloc.3
+  IL_00f0: stfld Monocle.Wiggler Celeste.Booster::wiggler
+  IL_00f5: ldloc.3
+  IL_00f6: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00fb: ldarg.0
+  IL_00fc: ldarg.0
+  IL_00fd: ldc.i4.0
+  IL_00fe: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_0103: dup
+  IL_0104: stloc.s V_4
+  IL_0106: stfld Monocle.Coroutine Celeste.Booster::dashRoutine
+  IL_010b: ldloc.s V_4
+  IL_010d: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0112: ldarg.0
+  IL_0113: ldarg.0
+  IL_0114: newobj System.Void Celeste.DashListener::.ctor()
+  IL_0119: dup
+  IL_011a: stloc.s V_5
+  IL_011c: stfld Celeste.DashListener Celeste.Booster::dashListener
+  IL_0121: ldloc.s V_5
+  IL_0123: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0128: ldarg.0
+  IL_0129: newobj System.Void Celeste.MirrorReflection::.ctor()
+  IL_012e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0133: ldarg.0
+  IL_0134: ldarg.0
+  IL_0135: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_013a: dup
+  IL_013b: stloc.s V_6
+  IL_013d: stfld Celeste.SoundSource Celeste.Booster::loopingSfx
+  IL_0142: ldloc.s V_6
+  IL_0144: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0149: ldarg.0
+  IL_014a: ldfld Celeste.DashListener Celeste.Booster::dashListener
+  IL_014f: ldarg.0
+  IL_0150: ldftn System.Void Celeste.Booster::OnPlayerDashed(Microsoft.Xna.Framework.Vector2)
+  IL_0156: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_015b: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.DashListener::OnDash
+  IL_0160: ldarg.0
+  IL_0161: ldarg.2
+  IL_0162: brtrue IL_0171
+  IL_0167: ldsfld Monocle.ParticleType Celeste.Booster::P_Burst
+  IL_016c: br IL_0176
+  IL_0171: ldsfld Monocle.ParticleType Celeste.Booster::P_BurstRed
+  IL_0176: stfld Monocle.ParticleType Celeste.Booster::particleType
+  IL_017b: ret

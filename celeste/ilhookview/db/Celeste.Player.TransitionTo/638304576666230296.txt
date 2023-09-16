@@ -1,0 +1,61 @@
+IL Diff: System.Boolean Celeste.Player::TransitionTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0007: ldc.r4 60
+  IL_000c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0011: mul
+  IL_0012: ldnull
+  IL_0013: call System.Void Celeste.Actor::MoveTowardsX(System.Single,System.Single,Celeste.Collision)
+  IL_0018: ldarg.0
+  IL_0019: ldarg.1
+  IL_001a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_001f: ldc.r4 60
+  IL_0024: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0029: mul
+  IL_002a: ldnull
+  IL_002b: call System.Void Celeste.Actor::MoveTowardsY(System.Single,System.Single,Celeste.Collision)
+  IL_0030: ldarg.0
+  IL_0031: ldc.i4.0
+  IL_0032: callvirt System.Void Celeste.Player::UpdateHair(System.Boolean)
+  IL_0037: ldarg.0
++ IL_0038: ldc.i4 6585 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_TransitionTo
++ IL_003d: ldc.i4 20906297 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_TransitionTo
++ IL_0042: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_TransitionTo
+  |-> retrieves System.Void Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<Player_TransitionTo>b__19_1(Celeste.Player)
++ IL_0047: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_TransitionTo
++ IL_004c: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::Player_TransitionTo
+  IL_004d: callvirt System.Void Celeste.Player::UpdateCarry()
+  IL_0052: ldarg.0
+  IL_0053: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0058: ldarg.1
+  IL_0059: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_005e: brfalse IL_00ad
+  IL_0063: ldarg.0
+  IL_0064: call System.Void Celeste.Actor::ZeroRemainderX()
+  IL_0069: ldarg.0
+  IL_006a: call System.Void Celeste.Actor::ZeroRemainderY()
+  IL_006f: ldarg.0
+  IL_0070: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0075: ldarg.0
+  IL_0076: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_007b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0080: conv.r8
+  IL_0081: call System.Double System.Math::Round(System.Double)
+  IL_0086: conv.i4
+  IL_0087: conv.r4
+  IL_0088: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_008d: ldarg.0
+  IL_008e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0093: ldarg.0
+  IL_0094: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0099: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_009e: conv.r8
+  IL_009f: call System.Double System.Math::Round(System.Double)
+  IL_00a4: conv.i4
+  IL_00a5: conv.r4
+  IL_00a6: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ab: ldc.i4.1
+  IL_00ac: ret
+  IL_00ad: ldc.i4.0
+  IL_00ae: ret

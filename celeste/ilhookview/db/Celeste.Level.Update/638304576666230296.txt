@@ -1,0 +1,721 @@
+IL Diff: System.Void Celeste.Level::Update()
+  IL_0000: ldarg.0
++ IL_0001: ldc.i4 6779 @ Celeste.Mod.MaymayHelper.Hooks::PatchLevelUpdate
++ IL_0006: ldc.i4 29745544 @ Celeste.Mod.MaymayHelper.Hooks::PatchLevelUpdate
++ IL_000b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaymayHelper.Hooks::PatchLevelUpdate
+  |-> retrieves System.Void Celeste.Mod.MaymayHelper.Hooks/<>c::<PatchLevelUpdate>b__6_0(Celeste.Level)
++ IL_0010: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.MaymayHelper.Hooks::PatchLevelUpdate
++ IL_0015: ldarg.0 @ Celeste.Mod.MaymayHelper.Hooks::PatchLevelUpdate
+  IL_0016: call System.Boolean Celeste.Level::CheckForErrors()
+  IL_001b: brfalse IL_0027
+  IL_0020: ret
+  IL_0021: ldarg.0
+  IL_0022: call System.Void Celeste.Level::FixChaserStatesTimeStamp()
+  IL_0027: ldarg.0
+  IL_0028: ldfld System.Single Celeste.Level::unpauseTimer
+  IL_002d: ldc.r4 0
+  IL_0032: ble.un IL_0050
+  IL_0037: ldarg.0
+  IL_0038: ldarg.0
+  IL_0039: ldfld System.Single Celeste.Level::unpauseTimer
+  IL_003e: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_0043: sub
+  IL_0044: stfld System.Single Celeste.Level::unpauseTimer
+  IL_0049: ldarg.0
+  IL_004a: callvirt System.Void Celeste.Level::UpdateTime()
+  IL_004f: ret
+  IL_0050: ldarg.0
+  IL_0051: callvirt Celeste.Overlay Celeste.Level::get_Overlay()
+  IL_0056: brfalse IL_0072
+  IL_005b: ldarg.0
+  IL_005c: callvirt Celeste.Overlay Celeste.Level::get_Overlay()
+  IL_0061: callvirt System.Void Monocle.Entity::Update()
+  IL_0066: ldarg.0
+  IL_0067: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_006c: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_0071: ret
+  IL_0072: ldc.i4.s 10
+  IL_0074: stloc.0
+  IL_0075: ldarg.0
+  IL_0076: ldfld System.Boolean Celeste.Level::InCutscene
+  IL_007b: brtrue IL_00ca
+  IL_0080: ldarg.0
+  IL_0081: call Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0086: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_008b: brfalse IL_00ca
+  IL_0090: ldarg.0
+  IL_0091: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
+  IL_0096: brtrue IL_00ca
+  IL_009b: ldarg.0
+  IL_009c: ldfld System.Boolean Celeste.Level::Frozen
+  IL_00a1: brtrue IL_00ca
+  IL_00a6: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00ab: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_00b0: ldfld System.Int32 Celeste.Assists::GameSpeed
++ IL_00b5: ldc.i4 6783 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_00ba: ldc.i4 60578852 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_00bf: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  |-> retrieves System.Int32 ExtendedVariants.Variants.GameSpeed::modGameSpeed(System.Int32)
++ IL_00c4: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  IL_00c9: stloc.0
+  IL_00ca: ldloc.0
+  IL_00cb: conv.r4
+  IL_00cc: ldc.r4 10
+  IL_00d1: div
++ IL_00d2: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Level_Update
++ IL_00d3: call System.Single Celeste.Mod.SSMHelper.Entities.DashBoostField::ModifyTimeRate(System.Single,Celeste.Level) @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Level_Update
+  IL_00d8: stsfld System.Single Monocle.Engine::TimeRateB
+  IL_00dd: ldloc.0
+  IL_00de: ldc.i4.s 10
+  IL_00e0: beq IL_01a7
+  IL_00e5: ldsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_00ea: ldnull
+  IL_00eb: call System.Boolean FMOD.Studio.HandleBase::op_Equality(FMOD.Studio.HandleBase,FMOD.Studio.HandleBase)
+  IL_00f0: brtrue IL_0100
+  IL_00f5: ldsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
+  IL_00fa: ldloc.0
+  IL_00fb: beq IL_01cd
+  IL_0100: ldsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_0105: call System.Void Celeste.Audio::ReleaseSnapshot(FMOD.Studio.EventInstance)
+  IL_010a: ldnull
+  IL_010b: stsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_0110: ldloc.0
+  IL_0111: stsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
+  IL_0116: ldsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
+  IL_011b: ldc.i4.s 10
+  IL_011d: bge IL_015d
+  IL_0122: ldstr "snapshot:/assist_game_speed/assist_speed_"
+  IL_0127: ldsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
++ IL_012c: ldc.i4 6822 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_0131: ldc.i4 7939940 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_0136: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  |-> retrieves System.Int32 ExtendedVariants.Variants.GameSpeed::modSpeedSoundSnapshot(System.Int32)
++ IL_013b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  IL_0140: ldc.i4.s 10
+  IL_0142: mul
+  IL_0143: box System.Int32
+  IL_0148: call System.String System.String::Concat(System.Object,System.Object)
+  IL_014d: ldc.i4.1
+  IL_014e: call FMOD.Studio.EventInstance Celeste.Audio::CreateSnapshot(System.String,System.Boolean)
+  IL_0153: stsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_0158: br IL_01cd
+  IL_015d: ldsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
+- IL_013a: ldc.i4.s 16 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_0162: ldc.i4 2147483647 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  IL_0167: bgt IL_01cd
+  IL_016c: ldstr "snapshot:/variant_speed/variant_speed_"
+  IL_0171: ldsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
++ IL_0176: ldc.i4 6902 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_017b: ldc.i4 39155376 @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
++ IL_0180: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  |-> retrieves System.Int32 ExtendedVariants.Variants.GameSpeed::modSpeedSoundSnapshot(System.Int32)
++ IL_0185: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.GameSpeed::modLevelUpdate
+  IL_018a: ldc.i4.s 10
+  IL_018c: mul
+  IL_018d: box System.Int32
+  IL_0192: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0197: ldc.i4.1
+  IL_0198: call FMOD.Studio.EventInstance Celeste.Audio::CreateSnapshot(System.String,System.Boolean)
+  IL_019d: stsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_01a2: br IL_01cd
+  IL_01a7: ldsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_01ac: ldnull
+  IL_01ad: call System.Boolean FMOD.Studio.HandleBase::op_Inequality(FMOD.Studio.HandleBase,FMOD.Studio.HandleBase)
+  IL_01b2: brfalse IL_01cd
+  IL_01b7: ldsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_01bc: call System.Void Celeste.Audio::ReleaseSnapshot(FMOD.Studio.EventInstance)
+  IL_01c1: ldnull
+  IL_01c2: stsfld FMOD.Studio.EventInstance Celeste.Level::AssistSpeedSnapshot
+  IL_01c7: ldc.i4.m1
+  IL_01c8: stsfld System.Int32 Celeste.Level::AssistSpeedSnapshotValue
+  IL_01cd: ldarg.0
+  IL_01ce: ldfld System.Boolean Celeste.Level::wasPaused
+  IL_01d3: brfalse IL_01e9
+  IL_01d8: ldarg.0
+  IL_01d9: ldfld System.Boolean Monocle.Scene::Paused
+  IL_01de: brtrue IL_01e9
+  IL_01e3: ldarg.0
+  IL_01e4: callvirt System.Void Celeste.Level::EndPauseEffects()
+  IL_01e9: ldarg.0
+  IL_01ea: callvirt System.Boolean Celeste.Level::get_CanPause()
+  IL_01ef: brfalse IL_021b
+  IL_01f4: ldsfld Monocle.VirtualButton Celeste.Input::QuickRestart
+  IL_01f9: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_01fe: brfalse IL_021b
+  IL_0203: ldsfld Monocle.VirtualButton Celeste.Input::QuickRestart
+  IL_0208: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_020d: ldarg.0
+  IL_020e: ldc.i4.0
+  IL_020f: ldc.i4.0
+  IL_0210: ldc.i4.1
+  IL_0211: callvirt System.Void Celeste.Level::Pause(System.Int32,System.Boolean,System.Boolean)
+  IL_0216: br IL_0261
+  IL_021b: ldarg.0
+  IL_021c: callvirt System.Boolean Celeste.Level::get_CanPause()
+  IL_0221: brfalse IL_0261
+  IL_0226: ldsfld Monocle.VirtualButton Celeste.Input::Pause
+  IL_022b: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0230: brtrue IL_0244
+  IL_0235: ldsfld Monocle.VirtualButton Celeste.Input::ESC
+  IL_023a: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_023f: brfalse IL_0261
+  IL_0244: ldsfld Monocle.VirtualButton Celeste.Input::Pause
+  IL_0249: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_024e: ldsfld Monocle.VirtualButton Celeste.Input::ESC
+  IL_0253: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_0258: ldarg.0
+  IL_0259: ldc.i4.0
+  IL_025a: ldc.i4.0
+  IL_025b: ldc.i4.0
+  IL_025c: callvirt System.Void Celeste.Level::Pause(System.Int32,System.Boolean,System.Boolean)
+  IL_0261: ldarg.0
+  IL_0262: ldfld System.Boolean Celeste.Level::wasPaused
+  IL_0267: brfalse IL_027e
+  IL_026c: ldarg.0
+  IL_026d: ldfld System.Boolean Monocle.Scene::Paused
+  IL_0272: brtrue IL_027e
+  IL_0277: ldarg.0
+  IL_0278: ldc.i4.0
+  IL_0279: stfld System.Boolean Celeste.Level::wasPaused
+  IL_027e: ldarg.0
+  IL_027f: ldfld System.Boolean Monocle.Scene::Paused
+  IL_0284: brfalse IL_0299
+  IL_0289: ldarg.0
+  IL_028a: ldc.r4 0
+  IL_028f: stfld System.Single Celeste.Level::wasPausedTimer
+  IL_0294: br IL_02ab
+  IL_0299: ldarg.0
+  IL_029a: ldarg.0
+  IL_029b: ldfld System.Single Celeste.Level::wasPausedTimer
+  IL_02a0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02a5: add
+  IL_02a6: stfld System.Single Celeste.Level::wasPausedTimer
+  IL_02ab: ldarg.0
+  IL_02ac: callvirt System.Void Celeste.Level::UpdateTime()
+  IL_02b1: ldarg.0
+  IL_02b2: ldfld Monocle.Coroutine Celeste.Level::saving
+  IL_02b7: brfalse IL_02c7
+  IL_02bc: ldarg.0
+  IL_02bd: ldfld Monocle.Coroutine Celeste.Level::saving
+  IL_02c2: callvirt System.Void Monocle.Component::Update()
+  IL_02c7: ldarg.0
+  IL_02c8: ldfld System.Boolean Monocle.Scene::Paused
+  IL_02cd: brtrue IL_02f4
+  IL_02d2: ldarg.0
+  IL_02d3: ldarg.0
+  IL_02d4: ldfld System.Single Celeste.Level::glitchTimer
+  IL_02d9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02de: add
+  IL_02df: stfld System.Single Celeste.Level::glitchTimer
+  IL_02e4: ldarg.0
+  IL_02e5: ldsfld System.Random Monocle.Calc::Random
+  IL_02ea: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_02ef: stfld System.Single Celeste.Level::glitchSeed
+  IL_02f4: ldarg.0
+  IL_02f5: ldfld System.Boolean Celeste.Level::SkippingCutscene
+  IL_02fa: brfalse IL_0325
+  IL_02ff: ldarg.0
+  IL_0300: ldfld Monocle.Coroutine Celeste.Level::skipCoroutine
+  IL_0305: brfalse IL_0315
+  IL_030a: ldarg.0
+  IL_030b: ldfld Monocle.Coroutine Celeste.Level::skipCoroutine
+  IL_0310: callvirt System.Void Monocle.Component::Update()
+  IL_0315: ldarg.0
+  IL_0316: call Monocle.RendererList Monocle.Scene::get_RendererList()
+  IL_031b: callvirt System.Void Monocle.RendererList::Update()
+  IL_0320: br IL_0509
+  IL_0325: ldarg.0
+  IL_0326: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
+  IL_032b: brfalse IL_042a
+  IL_0330: ldsfld System.Boolean Monocle.MInput::Disabled
+  IL_0335: stloc.1
+  IL_0336: ldc.i4.0
+  IL_0337: stsfld System.Boolean Monocle.MInput::Disabled
+  IL_033c: ldarg.0
+  IL_033d: ldfld System.Boolean Monocle.Scene::Paused
+  IL_0342: brtrue IL_0395
+  IL_0347: ldarg.0
+  IL_0348: ldsfld Monocle.BitTag Celeste.Tags::FrozenUpdate
+  IL_034d: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Scene::get_Item(Monocle.BitTag)
+  IL_0352: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0357: stloc.2
+  IL_0358: br IL_0376
+  IL_035d: ldloca.s V_2
+  IL_035f: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0364: stloc.3
+  IL_0365: ldloc.3
+  IL_0366: ldfld System.Boolean Monocle.Entity::Active
+  IL_036b: brfalse IL_0376
+  IL_0370: ldloc.3
+  IL_0371: callvirt System.Void Monocle.Entity::Update()
+  IL_0376: ldloca.s V_2
+  IL_0378: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_037d: brtrue IL_035d
+  IL_0382: leave IL_0395
+  IL_0387: ldloca.s V_2
+  IL_0389: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_038f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0394: endfinally
+  IL_0395: ldarg.0
+  IL_0396: ldsfld Monocle.BitTag Celeste.Tags::PauseUpdate
+  IL_039b: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Scene::get_Item(Monocle.BitTag)
+  IL_03a0: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_03a5: stloc.2
+  IL_03a6: br IL_03c7
+  IL_03ab: ldloca.s V_2
+  IL_03ad: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_03b2: stloc.s V_4
+  IL_03b4: ldloc.s V_4
+  IL_03b6: ldfld System.Boolean Monocle.Entity::Active
+  IL_03bb: brfalse IL_03c7
+  IL_03c0: ldloc.s V_4
+  IL_03c2: callvirt System.Void Monocle.Entity::Update()
+  IL_03c7: ldloca.s V_2
+  IL_03c9: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_03ce: brtrue IL_03ab
+  IL_03d3: leave IL_03e6
+  IL_03d8: ldloca.s V_2
+  IL_03da: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_03e0: callvirt System.Void System.IDisposable::Dispose()
+  IL_03e5: endfinally
+  IL_03e6: ldloc.1
+  IL_03e7: stsfld System.Boolean Monocle.MInput::Disabled
+  IL_03ec: ldarg.0
+  IL_03ed: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
+  IL_03f2: brfalse IL_0403
+  IL_03f7: ldarg.0
+  IL_03f8: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
+  IL_03fd: ldarg.0
+  IL_03fe: callvirt System.Void Monocle.Renderer::Update(Monocle.Scene)
+  IL_0403: ldarg.0
+  IL_0404: ldfld Celeste.HiresSnow Celeste.Level::HiresSnow
+  IL_0409: brfalse IL_041a
+  IL_040e: ldarg.0
+  IL_040f: ldfld Celeste.HiresSnow Celeste.Level::HiresSnow
+  IL_0414: ldarg.0
+  IL_0415: callvirt System.Void Monocle.Renderer::Update(Monocle.Scene)
+  IL_041a: ldarg.0
+  IL_041b: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0420: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_0425: br IL_0509
+  IL_042a: ldarg.0
+  IL_042b: callvirt System.Boolean Celeste.Level::get_Transitioning()
+  IL_0430: brtrue IL_04b2
+  IL_0435: ldarg.0
+  IL_0436: ldfld Celeste.PlayerDeadBody Celeste.Level::RetryPlayerCorpse
+  IL_043b: brtrue IL_044b
+  IL_0440: ldarg.0
+  IL_0441: call System.Void Monocle.Scene::Update()
+  IL_0446: br IL_0509
+  IL_044b: ldarg.0
+  IL_044c: ldfld Celeste.PlayerDeadBody Celeste.Level::RetryPlayerCorpse
+  IL_0451: callvirt System.Void Monocle.Entity::Update()
+  IL_0456: ldarg.0
+  IL_0457: call Monocle.RendererList Monocle.Scene::get_RendererList()
+  IL_045c: callvirt System.Void Monocle.RendererList::Update()
+  IL_0461: ldarg.0
+  IL_0462: ldsfld Monocle.BitTag Celeste.Tags::PauseUpdate
+  IL_0467: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Scene::get_Item(Monocle.BitTag)
+  IL_046c: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0471: stloc.2
+  IL_0472: br IL_0493
+  IL_0477: ldloca.s V_2
+  IL_0479: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_047e: stloc.s V_5
+  IL_0480: ldloc.s V_5
+  IL_0482: ldfld System.Boolean Monocle.Entity::Active
+  IL_0487: brfalse IL_0493
+  IL_048c: ldloc.s V_5
+  IL_048e: callvirt System.Void Monocle.Entity::Update()
+  IL_0493: ldloca.s V_2
+  IL_0495: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_049a: brtrue IL_0477
+  IL_049f: leave IL_0509
+  IL_04a4: ldloca.s V_2
+  IL_04a6: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_04ac: callvirt System.Void System.IDisposable::Dispose()
+  IL_04b1: endfinally
+  IL_04b2: ldarg.0
+  IL_04b3: ldsfld Monocle.BitTag Celeste.Tags::TransitionUpdate
+  IL_04b8: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Scene::get_Item(Monocle.BitTag)
+  IL_04bd: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_04c2: stloc.2
+  IL_04c3: br IL_04d4
+  IL_04c8: ldloca.s V_2
+  IL_04ca: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_04cf: callvirt System.Void Monocle.Entity::Update()
+  IL_04d4: ldloca.s V_2
+  IL_04d6: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_04db: brtrue IL_04c8
+  IL_04e0: leave IL_04f3
+  IL_04e5: ldloca.s V_2
+  IL_04e7: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_04ed: callvirt System.Void System.IDisposable::Dispose()
+  IL_04f2: endfinally
+  IL_04f3: ldarg.0
+  IL_04f4: ldfld Monocle.Coroutine Celeste.Level::transition
+  IL_04f9: callvirt System.Void Monocle.Component::Update()
+  IL_04fe: ldarg.0
+  IL_04ff: call Monocle.RendererList Monocle.Scene::get_RendererList()
+  IL_0504: callvirt System.Void Monocle.RendererList::Update()
+  IL_0509: ldarg.0
+  IL_050a: ldfld Celeste.HudRenderer Celeste.Level::HudRenderer
+  IL_050f: ldarg.0
+  IL_0510: ldfld Celeste.HudRenderer Celeste.Level::HudRenderer
+  IL_0515: ldfld System.Single Celeste.HudRenderer::BackgroundFade
+  IL_051a: ldarg.0
+  IL_051b: ldfld System.Boolean Monocle.Scene::Paused
+  IL_0520: brtrue IL_052f
+  IL_0525: ldc.r4 0
+  IL_052a: br IL_0534
+  IL_052f: ldc.r4 1
+  IL_0534: ldc.r4 8
+  IL_0539: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_053e: mul
+  IL_053f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0544: stfld System.Single Celeste.HudRenderer::BackgroundFade
+  IL_0549: ldarg.0
+  IL_054a: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
+  IL_054f: brtrue IL_0589
+  IL_0554: ldarg.0
+  IL_0555: ldarg.0
+  IL_0556: ldfld System.Single Celeste.Level::WindSineTimer
+  IL_055b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0560: add
+  IL_0561: stfld System.Single Celeste.Level::WindSineTimer
+  IL_0566: ldarg.0
+  IL_0567: ldarg.0
+  IL_0568: ldfld System.Single Celeste.Level::WindSineTimer
+  IL_056d: conv.r8
+  IL_056e: call System.Double System.Math::Sin(System.Double)
+  IL_0573: ldc.r8 1
+  IL_057c: add
+  IL_057d: conv.r4
+  IL_057e: ldc.r4 2
+  IL_0583: div
+  IL_0584: stfld System.Single Celeste.Level::WindSine
+  IL_0589: ldarg.0
+  IL_058a: call Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_058f: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.PostUpdateHook>()
+  IL_0594: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0599: stloc.s V_6
+  IL_059b: br IL_05cb
+  IL_05a0: ldloca.s V_6
+  IL_05a2: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_05a7: castclass Celeste.PostUpdateHook
+  IL_05ac: stloc.s V_7
+  IL_05ae: ldloc.s V_7
+  IL_05b0: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_05b5: ldfld System.Boolean Monocle.Entity::Active
+  IL_05ba: brfalse IL_05cb
+  IL_05bf: ldloc.s V_7
+  IL_05c1: ldfld System.Action Celeste.PostUpdateHook::OnPostUpdate
+  IL_05c6: callvirt System.Void System.Action::Invoke()
+  IL_05cb: ldloca.s V_6
+  IL_05cd: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_05d2: brtrue IL_05a0
+  IL_05d7: leave IL_05ea
+  IL_05dc: ldloca.s V_6
+  IL_05de: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_05e4: callvirt System.Void System.IDisposable::Dispose()
+  IL_05e9: endfinally
+  IL_05ea: ldarg.0
+  IL_05eb: ldfld System.Boolean Celeste.Level::updateHair
+  IL_05f0: brfalse IL_0674
+  IL_05f5: ldarg.0
+  IL_05f6: call Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_05fb: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.PlayerHair>()
+  IL_0600: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0605: stloc.s V_6
+  IL_0607: br IL_063e
+  IL_060c: ldloca.s V_6
+  IL_060e: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0613: stloc.s V_8
+  IL_0615: ldloc.s V_8
+  IL_0617: ldfld System.Boolean Monocle.Component::Active
+  IL_061c: brfalse IL_063e
+  IL_0621: ldloc.s V_8
+  IL_0623: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0628: ldfld System.Boolean Monocle.Entity::Active
+  IL_062d: brfalse IL_063e
+  IL_0632: ldloc.s V_8
+  IL_0634: isinst Celeste.PlayerHair
+  IL_0639: callvirt System.Void Celeste.PlayerHair::AfterUpdate()
+  IL_063e: ldloca.s V_6
+  IL_0640: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0645: brtrue IL_060c
+  IL_064a: leave IL_065d
+  IL_064f: ldloca.s V_6
+  IL_0651: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_0657: callvirt System.Void System.IDisposable::Dispose()
+  IL_065c: endfinally
+  IL_065d: ldarg.0
+  IL_065e: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
+  IL_0663: brfalse IL_0686
+  IL_0668: ldarg.0
+  IL_0669: ldc.i4.0
+  IL_066a: stfld System.Boolean Celeste.Level::updateHair
+  IL_066f: br IL_0686
+  IL_0674: ldarg.0
+  IL_0675: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
+  IL_067a: brtrue IL_0686
+  IL_067f: ldarg.0
+  IL_0680: ldc.i4.1
+  IL_0681: stfld System.Boolean Celeste.Level::updateHair
+  IL_0686: ldarg.0
+  IL_0687: ldfld System.Single Celeste.Level::shakeTimer
+  IL_068c: ldc.r4 0
+  IL_0691: ble.un IL_07d4
+  IL_0696: ldarg.0
+  IL_0697: ldc.r4 0.04
+  IL_069c: call System.Boolean Monocle.Scene::OnRawInterval(System.Single)
+  IL_06a1: brfalse IL_0799
+  IL_06a6: ldarg.0
+  IL_06a7: ldfld System.Single Celeste.Level::shakeTimer
+  IL_06ac: ldc.r4 10
+  IL_06b1: mul
+  IL_06b2: conv.r8
+  IL_06b3: call System.Double System.Math::Ceiling(System.Double)
+  IL_06b8: conv.i4
+  IL_06b9: stloc.s V_10
+  IL_06bb: ldarg.0
+  IL_06bc: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level::shakeDirection
+  IL_06c1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_06c6: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_06cb: brfalse IL_070a
+  IL_06d0: ldarg.0
+  IL_06d1: ldloc.s V_10
+  IL_06d3: neg
+  IL_06d4: ldsfld System.Random Monocle.Calc::Random
+  IL_06d9: ldloc.s V_10
+  IL_06db: ldc.i4.2
+  IL_06dc: mul
+  IL_06dd: ldc.i4.1
+  IL_06de: add
+  IL_06df: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_06e4: add
+  IL_06e5: conv.r4
+  IL_06e6: ldloc.s V_10
+  IL_06e8: neg
+  IL_06e9: ldsfld System.Random Monocle.Calc::Random
+  IL_06ee: ldloc.s V_10
+  IL_06f0: ldc.i4.2
+  IL_06f1: mul
+  IL_06f2: ldc.i4.1
+  IL_06f3: add
+  IL_06f4: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_06f9: add
+  IL_06fa: conv.r4
+  IL_06fb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0700: callvirt System.Void Celeste.Level::set_ShakeVector(Microsoft.Xna.Framework.Vector2)
+  IL_0705: br IL_0754
+  IL_070a: ldarg.0
+  IL_070b: ldfld System.Int32 Celeste.Level::lastDirectionalShake
+  IL_0710: brtrue IL_0721
+  IL_0715: ldarg.0
+  IL_0716: ldc.i4.1
+  IL_0717: stfld System.Int32 Celeste.Level::lastDirectionalShake
+  IL_071c: br IL_072f
+  IL_0721: ldarg.0
+  IL_0722: ldarg.0
+  IL_0723: ldfld System.Int32 Celeste.Level::lastDirectionalShake
+  IL_0728: ldc.i4.m1
+  IL_0729: mul
+  IL_072a: stfld System.Int32 Celeste.Level::lastDirectionalShake
+  IL_072f: ldarg.0
+  IL_0730: ldarg.0
+  IL_0731: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level::shakeDirection
+  IL_0736: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_073b: ldarg.0
+  IL_073c: ldfld System.Int32 Celeste.Level::lastDirectionalShake
+  IL_0741: conv.r4
+  IL_0742: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0747: ldloc.s V_10
+  IL_0749: conv.r4
+  IL_074a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_074f: callvirt System.Void Celeste.Level::set_ShakeVector(Microsoft.Xna.Framework.Vector2)
+  IL_0754: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0759: ldfld Celeste.ScreenshakeAmount Celeste.Settings::ScreenShake
+  IL_075e: ldc.i4.1
+  IL_075f: bne.un IL_0799
+  IL_0764: ldarg.0
+  IL_0765: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_ShakeVector()
+  IL_076a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_076f: call System.Int32 System.Math::Sign(System.Single)
+  IL_0774: conv.r4
+  IL_0775: stloc.s V_11
+  IL_0777: ldarg.0
+  IL_0778: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_ShakeVector()
+  IL_077d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0782: call System.Int32 System.Math::Sign(System.Single)
+  IL_0787: conv.r4
+  IL_0788: stloc.s V_12
+  IL_078a: ldarg.0
+  IL_078b: ldloc.s V_11
+  IL_078d: ldloc.s V_12
+  IL_078f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0794: callvirt System.Void Celeste.Level::set_ShakeVector(Microsoft.Xna.Framework.Vector2)
+  IL_0799: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_079e: ldfld Celeste.ScreenshakeAmount Celeste.Settings::ScreenShake
+  IL_07a3: ldc.i4.1
+  IL_07a4: beq IL_07b3
+  IL_07a9: ldc.r4 1
+  IL_07ae: br IL_07b8
+  IL_07b3: ldc.r4 1.5
+  IL_07b8: stloc.s V_9
+  IL_07ba: ldarg.0
+  IL_07bb: ldarg.0
+  IL_07bc: ldfld System.Single Celeste.Level::shakeTimer
+  IL_07c1: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_07c6: ldloc.s V_9
+  IL_07c8: mul
+  IL_07c9: sub
+  IL_07ca: stfld System.Single Celeste.Level::shakeTimer
+  IL_07cf: br IL_07df
+  IL_07d4: ldarg.0
+  IL_07d5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_07da: callvirt System.Void Celeste.Level::set_ShakeVector(Microsoft.Xna.Framework.Vector2)
+  IL_07df: ldarg.0
+  IL_07e0: ldfld System.Boolean Celeste.Level::doFlash
+  IL_07e5: brfalse IL_0827
+  IL_07ea: ldarg.0
+  IL_07eb: ldarg.0
+  IL_07ec: ldfld System.Single Celeste.Level::flash
+  IL_07f1: ldc.r4 1
+  IL_07f6: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_07fb: ldc.r4 10
+  IL_0800: mul
+  IL_0801: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0806: stfld System.Single Celeste.Level::flash
+  IL_080b: ldarg.0
+  IL_080c: ldfld System.Single Celeste.Level::flash
+  IL_0811: ldc.r4 1
+  IL_0816: blt.un IL_0858
+  IL_081b: ldarg.0
+  IL_081c: ldc.i4.0
+  IL_081d: stfld System.Boolean Celeste.Level::doFlash
+  IL_0822: br IL_0858
+  IL_0827: ldarg.0
+  IL_0828: ldfld System.Single Celeste.Level::flash
+  IL_082d: ldc.r4 0
+  IL_0832: ble.un IL_0858
+  IL_0837: ldarg.0
+  IL_0838: ldarg.0
+  IL_0839: ldfld System.Single Celeste.Level::flash
+  IL_083e: ldc.r4 0
+  IL_0843: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0848: ldc.r4 3
+  IL_084d: mul
+  IL_084e: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0853: stfld System.Single Celeste.Level::flash
+  IL_0858: ldarg.0
+  IL_0859: ldfld System.String Celeste.Level::lastColorGrade
+  IL_085e: ldarg.0
+  IL_085f: ldfld Celeste.Session Celeste.Level::Session
+  IL_0864: ldfld System.String Celeste.Session::ColorGrade
+  IL_0869: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_086e: brfalse IL_08c6
+  IL_0873: ldarg.0
+  IL_0874: ldfld System.Single Celeste.Level::colorGradeEase
+  IL_0879: ldc.r4 1
+  IL_087e: blt.un IL_08a4
+  IL_0883: ldarg.0
+  IL_0884: ldc.r4 0
+  IL_0889: stfld System.Single Celeste.Level::colorGradeEase
+  IL_088e: ldarg.0
+  IL_088f: ldarg.0
+  IL_0890: ldfld Celeste.Session Celeste.Level::Session
+  IL_0895: ldfld System.String Celeste.Session::ColorGrade
+  IL_089a: stfld System.String Celeste.Level::lastColorGrade
+  IL_089f: br IL_08c6
+  IL_08a4: ldarg.0
+  IL_08a5: ldarg.0
+  IL_08a6: ldfld System.Single Celeste.Level::colorGradeEase
+  IL_08ab: ldc.r4 1
+  IL_08b0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_08b5: ldarg.0
+  IL_08b6: ldfld System.Single Celeste.Level::colorGradeEaseSpeed
+  IL_08bb: mul
+  IL_08bc: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_08c1: stfld System.Single Celeste.Level::colorGradeEase
+  IL_08c6: ldsfld Celeste.Celeste/PlayModes Celeste.Celeste::PlayMode
+  IL_08cb: ldc.i4.1
+  IL_08cc: bne.un IL_09ee
+  IL_08d1: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_08d6: call Celeste.Mod.ButtonBinding Celeste.Mod.Core.CoreModuleSettings::get_DebugMap()
+  IL_08db: call System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_08e0: brfalse IL_0923
+  IL_08e5: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_08ea: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_08ef: callvirt T Monocle.Tracker::GetEntity<Celeste.KeyboardConfigUI>()
+  IL_08f4: brtrue IL_0923
+  IL_08f9: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_08fe: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0903: callvirt T Monocle.Tracker::GetEntity<Celeste.ButtonConfigUI>()
+  IL_0908: brtrue IL_0923
+  IL_090d: ldarg.0
+  IL_090e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0913: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0918: ldc.i4.1
+  IL_0919: newobj System.Void Celeste.Editor.MapEditor::.ctor(Celeste.AreaKey,System.Boolean)
+  IL_091e: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_0923: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_0928: ldc.i4.s 112
+  IL_092a: callvirt System.Boolean Monocle.MInput/KeyboardData::Pressed(Microsoft.Xna.Framework.Input.Keys)
+  IL_092f: brfalse IL_0967
+  IL_0934: ldc.i4.1
+  IL_0935: ldc.i4.0
+  IL_0936: ldc.i4.0
+  IL_0937: ldarg.0
+  IL_0938: ldfld Celeste.Session Celeste.Level::Session
+  IL_093d: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0942: newobj System.Void System.Nullable`1<Celeste.AreaKey>::.ctor(T)
+  IL_0947: call System.Void Celeste.Celeste::ReloadAssets(System.Boolean,System.Boolean,System.Boolean,System.Nullable`1<Celeste.AreaKey>)
+  IL_094c: ldarg.0
+  IL_094d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0952: ldloca.s V_13
+  IL_0954: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_095a: ldloc.s V_13
+  IL_095c: newobj System.Void Celeste.LevelLoader::.ctor(Celeste.Session,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_0961: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_0966: ret
+  IL_0967: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_096c: ldc.i4.s 113
+  IL_096e: callvirt System.Boolean Monocle.MInput/KeyboardData::Pressed(Microsoft.Xna.Framework.Input.Keys)
+  IL_0973: brfalse IL_09ab
+  IL_0978: ldc.i4.1
+  IL_0979: ldc.i4.1
+  IL_097a: ldc.i4.0
+  IL_097b: ldarg.0
+  IL_097c: ldfld Celeste.Session Celeste.Level::Session
+  IL_0981: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0986: newobj System.Void System.Nullable`1<Celeste.AreaKey>::.ctor(T)
+  IL_098b: call System.Void Celeste.Celeste::ReloadAssets(System.Boolean,System.Boolean,System.Boolean,System.Nullable`1<Celeste.AreaKey>)
+  IL_0990: ldarg.0
+  IL_0991: ldfld Celeste.Session Celeste.Level::Session
+  IL_0996: ldloca.s V_13
+  IL_0998: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_099e: ldloc.s V_13
+  IL_09a0: newobj System.Void Celeste.LevelLoader::.ctor(Celeste.Session,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_09a5: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_09aa: ret
+  IL_09ab: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_09b0: ldc.i4.s 114
+  IL_09b2: callvirt System.Boolean Monocle.MInput/KeyboardData::Pressed(Microsoft.Xna.Framework.Input.Keys)
+  IL_09b7: brfalse IL_09ee
+  IL_09bc: ldc.i4.1
+  IL_09bd: ldc.i4.1
+  IL_09be: ldc.i4.1
+  IL_09bf: ldarg.0
+  IL_09c0: ldfld Celeste.Session Celeste.Level::Session
+  IL_09c5: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_09ca: newobj System.Void System.Nullable`1<Celeste.AreaKey>::.ctor(T)
+  IL_09cf: call System.Void Celeste.Celeste::ReloadAssets(System.Boolean,System.Boolean,System.Boolean,System.Nullable`1<Celeste.AreaKey>)
+  IL_09d4: ldarg.0
+  IL_09d5: ldfld Celeste.Session Celeste.Level::Session
+  IL_09da: ldloca.s V_13
+  IL_09dc: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_09e2: ldloc.s V_13
+  IL_09e4: newobj System.Void Celeste.LevelLoader::.ctor(Celeste.Session,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_09e9: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_09ee: ret

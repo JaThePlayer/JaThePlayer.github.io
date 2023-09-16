@@ -1,0 +1,193 @@
+IL Diff: System.Void Celeste.SpeedrunTimerDisplay::DrawTime(Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Single)
+  IL_0000: ldsfld System.Collections.Generic.Dictionary`2<System.String,Celeste.Language> Celeste.Dialog::Languages
+  IL_0005: ldstr "english"
+  IL_000a: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Celeste.Language>::get_Item(TKey)
+  IL_000f: callvirt Monocle.PixelFont Celeste.Language::get_Font()
+  IL_0014: stloc.0
+  IL_0015: ldsfld System.Collections.Generic.Dictionary`2<System.String,Celeste.Language> Celeste.Dialog::Languages
+  IL_001a: ldstr "english"
+  IL_001f: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Celeste.Language>::get_Item(TKey)
+  IL_0024: ldfld System.Single Celeste.Language::FontFaceSize
+  IL_0029: stloc.1
+  IL_002a: ldarg.2
+  IL_002b: stloc.2
+  IL_002c: ldarg.0
+  IL_002d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0032: stloc.3
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0039: stloc.s V_4
+  IL_003b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0040: ldarg.s alpha
+  IL_0042: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0047: stloc.s V_5
+  IL_0049: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_LightGray()
+  IL_004e: ldarg.s alpha
+  IL_0050: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0055: stloc.s V_6
++ IL_0057: call System.Boolean Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::IsChangeTimerColor() @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_005c: brfalse IL_0094 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0061: ldstr "afdded" @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0066: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_006b: ldarg alpha @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_006f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0074: stloc V_5 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0078: ldstr "8fc7db" @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_007d: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0082: ldarg alpha @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0086: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_008b: stloc V_6 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_008f: br IL_01bc @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::SetSaveStateColor
++ IL_0094: ldc.i4 7657 @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_0099: ldc.i4 12012347 @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_009e: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
+  |-> retrieves System.Boolean Celeste.Mod.HighFrameRateMod.HighFrameRateModule::<RecolorTimer>b__13_4()
++ IL_00a3: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00a8: brfalse IL_00e0 @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00ad: ldstr "bdf2ce" @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00b2: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00b7: ldarg alpha @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00bb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00c0: stloc V_5 @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00c4: ldstr "92deab" @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00c9: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00ce: ldarg alpha @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00d2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00d7: stloc V_6 @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
++ IL_00db: br IL_01bc @ Celeste.Mod.HighFrameRateMod.HighFrameRateModule::RecolorTimer
+  IL_00e0: ldarg.3
+  IL_00e1: brtrue IL_0111
+  IL_00e6: ldstr "918988"
+  IL_00eb: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_00f0: ldarg.s alpha
+  IL_00f2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00f7: stloc.s V_5
+  IL_00f9: ldstr "7a6f6d"
+  IL_00fe: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0103: ldarg.s alpha
+  IL_0105: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_010a: stloc.s V_6
+  IL_010c: br IL_01bc
++ IL_0111: ldc.i4 7656 @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0116: ldc.i4 16247786 @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_011b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
+  |-> retrieves System.Boolean Celeste.Mod.Randomizer.RandoModule::<SetPlatinumColor>b__79_0()
++ IL_0120: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0125: brfalse IL_015d @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_012a: ldstr "cb19d2" @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_012f: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0134: ldarg alpha @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0138: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_013d: stloc V_5 @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0141: ldstr "994f9c" @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0146: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String) @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_014b: ldarg alpha @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_014f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0154: stloc V_6 @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
++ IL_0158: br IL_01bc @ Celeste.Mod.Randomizer.RandoModule::SetPlatinumColor
+  IL_015d: ldarg.s bestTime
+  IL_015f: brfalse IL_018f
+  IL_0164: ldstr "fad768"
+  IL_0169: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_016e: ldarg.s alpha
+  IL_0170: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0175: stloc.s V_5
+  IL_0177: ldstr "cfa727"
+  IL_017c: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0181: ldarg.s alpha
+  IL_0183: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0188: stloc.s V_6
+  IL_018a: br IL_01bc
+  IL_018f: ldarg.s finished
+  IL_0191: brfalse IL_01bc
+  IL_0196: ldstr "6ded87"
+  IL_019b: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_01a0: ldarg.s alpha
+  IL_01a2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_01a7: stloc.s V_5
+  IL_01a9: ldstr "43d14c"
+  IL_01ae: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_01b3: ldarg.s alpha
+  IL_01b5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_01ba: stloc.s V_6
+  IL_01bc: ldc.i4.0
+  IL_01bd: stloc.s V_7
+  IL_01bf: br IL_028a
+  IL_01c4: ldarg.1
+  IL_01c5: ldloc.s V_7
+  IL_01c7: callvirt System.Char System.String::get_Chars(System.Int32)
+  IL_01cc: stloc.s V_8
+  IL_01ce: ldloc.s V_8
+  IL_01d0: ldc.i4.s 46
+  IL_01d2: bne.un IL_01eb
+  IL_01d7: ldarg.2
+  IL_01d8: ldc.r4 0.7
+  IL_01dd: mul
+  IL_01de: stloc.2
+  IL_01df: ldloc.s V_4
+  IL_01e1: ldc.r4 5
+  IL_01e6: ldarg.2
+  IL_01e7: mul
+  IL_01e8: sub
+  IL_01e9: stloc.s V_4
+  IL_01eb: ldloc.s V_8
+  IL_01ed: ldc.i4.s 58
+  IL_01ef: beq IL_020b
+  IL_01f4: ldloc.s V_8
+  IL_01f6: ldc.i4.s 46
+  IL_01f8: beq IL_020b
+  IL_01fd: ldloc.2
+  IL_01fe: ldarg.2
+  IL_01ff: blt IL_020b
+  IL_0204: ldloc.s V_5
+  IL_0206: br IL_020d
+  IL_020b: ldloc.s V_6
+  IL_020d: stloc.s V_9
+  IL_020f: ldloc.s V_8
+  IL_0211: ldc.i4.s 58
+  IL_0213: beq IL_022b
+  IL_0218: ldloc.s V_8
+  IL_021a: ldc.i4.s 46
+  IL_021c: beq IL_022b
+  IL_0221: ldsfld System.Single Celeste.SpeedrunTimerDisplay::numberWidth
+  IL_0226: br IL_0230
+  IL_022b: ldsfld System.Single Celeste.SpeedrunTimerDisplay::spacerWidth
+  IL_0230: ldc.r4 4
+  IL_0235: add
+  IL_0236: ldloc.2
+  IL_0237: mul
+  IL_0238: stloc.s V_10
+  IL_023a: ldloc.0
+  IL_023b: ldloc.1
+  IL_023c: ldloca.s V_8
+  IL_023e: call System.String System.Char::ToString()
+  IL_0243: ldloc.3
+  IL_0244: ldloc.s V_10
+  IL_0246: ldc.r4 2
+  IL_024b: div
+  IL_024c: add
+  IL_024d: ldloc.s V_4
+  IL_024f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0254: ldc.r4 0.5
+  IL_0259: ldc.r4 1
+  IL_025e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0263: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0268: ldloc.2
+  IL_0269: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_026e: ldloc.s V_9
+  IL_0270: ldc.r4 2
+  IL_0275: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_027a: callvirt System.Void Monocle.PixelFont::DrawOutline(System.Single,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_027f: ldloc.3
+  IL_0280: ldloc.s V_10
+  IL_0282: add
+  IL_0283: stloc.3
+  IL_0284: ldloc.s V_7
+  IL_0286: ldc.i4.1
+  IL_0287: add
+  IL_0288: stloc.s V_7
+  IL_028a: ldloc.s V_7
+  IL_028c: ldarg.1
+  IL_028d: callvirt System.Int32 System.String::get_Length()
+  IL_0292: blt IL_01c4
+  IL_0297: ret

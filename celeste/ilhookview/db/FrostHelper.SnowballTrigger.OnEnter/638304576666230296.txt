@@ -1,0 +1,77 @@
+IL Diff: System.Void FrostHelper.SnowballTrigger::OnEnter(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnEnter(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Boolean FrostHelper.SnowballTrigger::ReplaceExisting
+  IL_000d: brfalse IL_00a2
+  IL_0012: ldarg.0
+  IL_0013: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0018: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_001d: callvirt T Monocle.EntityList::FindFirst<FrostHelper.CustomSnowball>()
+  IL_0022: dup
+  IL_0023: stloc.0
+  IL_0024: brfalse IL_00a2
+  IL_0029: ldloc.0
+  IL_002a: ldarg.0
+  IL_002b: ldfld System.Single FrostHelper.SnowballTrigger::Speed
+  IL_0030: stfld System.Single FrostHelper.CustomSnowball::Speed
+  IL_0035: ldloc.0
+  IL_0036: ldarg.0
+  IL_0037: ldfld System.Single FrostHelper.SnowballTrigger::ResetTime
+  IL_003c: stfld System.Single FrostHelper.CustomSnowball::ResetTime
+  IL_0041: ldloc.0
+  IL_0042: ldfld Monocle.SineWave FrostHelper.CustomSnowball::Sine
+  IL_0047: ldarg.0
+  IL_0048: ldfld System.Single FrostHelper.SnowballTrigger::SineWaveFrequency
+  IL_004d: stfld System.Single Monocle.SineWave::Frequency
+  IL_0052: ldloc.0
+  IL_0053: ldfld Monocle.Sprite FrostHelper.CustomSnowball::Sprite
+  IL_0058: ldfld System.String Monocle.Sprite::Path
+  IL_005d: ldarg.0
+  IL_005e: ldfld System.String FrostHelper.SnowballTrigger::SpritePath
+  IL_0063: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0068: brfalse IL_0079
+  IL_006d: ldloc.0
+  IL_006e: ldarg.0
+  IL_006f: ldfld System.String FrostHelper.SnowballTrigger::SpritePath
+  IL_0074: callvirt System.Void FrostHelper.CustomSnowball::CreateSprite(System.String)
+  IL_0079: ldloc.0
+  IL_007a: ldarg.0
+  IL_007b: ldfld System.Boolean FrostHelper.SnowballTrigger::DrawOutline
+  IL_0080: stfld System.Boolean FrostHelper.CustomSnowball::DrawOutline
+  IL_0085: ldloc.0
+  IL_0086: ldarg.0
+  IL_0087: ldfld FrostHelper.CustomSnowball/AppearDirection FrostHelper.SnowballTrigger::AppearDirection
+  IL_008c: stfld FrostHelper.CustomSnowball/AppearDirection FrostHelper.CustomSnowball::appearDirection
+  IL_0091: ldloc.0
+  IL_0092: ldarg.0
+  IL_0093: ldfld System.Single FrostHelper.SnowballTrigger::SafeZoneSize
+  IL_0098: stfld System.Single FrostHelper.CustomSnowball::SafeZoneSize
+  IL_009d: br IL_00e9
+  IL_00a2: ldarg.0
+  IL_00a3: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld System.String FrostHelper.SnowballTrigger::SpritePath
+  IL_00ae: ldarg.0
+  IL_00af: ldfld System.Single FrostHelper.SnowballTrigger::Speed
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld System.Single FrostHelper.SnowballTrigger::ResetTime
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld System.Single FrostHelper.SnowballTrigger::SineWaveFrequency
+  IL_00c0: ldarg.0
+  IL_00c1: ldfld System.Boolean FrostHelper.SnowballTrigger::DrawOutline
+  IL_00c6: ldarg.0
+  IL_00c7: ldfld FrostHelper.CustomSnowball/AppearDirection FrostHelper.SnowballTrigger::AppearDirection
+  IL_00cc: ldarg.0
+  IL_00cd: ldfld System.Single FrostHelper.SnowballTrigger::SafeZoneSize
+  IL_00d2: ldarg.0
+  IL_00d3: ldfld System.Single FrostHelper.SnowballTrigger::Offset
+  IL_00d8: newobj System.Void FrostHelper.CustomSnowball::.ctor(System.String,System.Single,System.Single,System.Single,System.Boolean,FrostHelper.CustomSnowball/AppearDirection,System.Single,System.Single)
++ IL_00dd: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_00de: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_00df: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_00e4: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00e9: ldarg.0
+  IL_00ea: call System.Void Monocle.Entity::RemoveSelf()
+  IL_00ef: ret

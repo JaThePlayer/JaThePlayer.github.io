@@ -1,0 +1,73 @@
+IL Diff: System.Void Celeste.DreamWipe::Update(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.ScreenWipe::Update(Monocle.Scene)
+  IL_0007: ldc.i4.0
+  IL_0008: stloc.0
+  IL_0009: br IL_00c7
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Boolean Celeste.ScreenWipe::WipeIn
+  IL_0014: brtrue IL_0070
+  IL_0019: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_001e: ldloc.0
+  IL_001f: ldelema Celeste.DreamWipe/Circle
+  IL_0024: ldflda System.Single Celeste.DreamWipe/Circle::Delay
+  IL_0029: dup
+  IL_002a: ldind.r4
+- IL_0028: call System.Single Monocle.Engine::get_DeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
++ IL_002b: call System.Single Monocle.Engine::get_RawDeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
+  IL_0030: sub
+  IL_0031: stind.r4
+  IL_0032: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_0037: ldloc.0
+  IL_0038: ldelema Celeste.DreamWipe/Circle
+  IL_003d: ldfld System.Single Celeste.DreamWipe/Circle::Delay
+  IL_0042: ldc.r4 0
+  IL_0047: bgt.un IL_00c3
+  IL_004c: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_0051: ldloc.0
+  IL_0052: ldelema Celeste.DreamWipe/Circle
+  IL_0057: ldflda System.Single Celeste.DreamWipe/Circle::Radius
+  IL_005c: dup
+  IL_005d: ldind.r4
+- IL_0058: call System.Single Monocle.Engine::get_DeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
++ IL_005e: call System.Single Monocle.Engine::get_RawDeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
+  IL_0063: ldc.r4 400
+  IL_0068: mul
+  IL_0069: add
+  IL_006a: stind.r4
+  IL_006b: br IL_00c3
+  IL_0070: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_0075: ldloc.0
+  IL_0076: ldelema Celeste.DreamWipe/Circle
+  IL_007b: ldfld System.Single Celeste.DreamWipe/Circle::Radius
+  IL_0080: ldc.r4 0
+  IL_0085: ble.un IL_00ae
+  IL_008a: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_008f: ldloc.0
+  IL_0090: ldelema Celeste.DreamWipe/Circle
+  IL_0095: ldflda System.Single Celeste.DreamWipe/Circle::Radius
+  IL_009a: dup
+  IL_009b: ldind.r4
+- IL_0090: call System.Single Monocle.Engine::get_DeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
++ IL_009c: call System.Single Monocle.Engine::get_RawDeltaTime() @ Celeste.Mod.HardcoreMode.HMModule::IL_DreamWipe_Update
+  IL_00a1: ldc.r4 400
+  IL_00a6: mul
+  IL_00a7: sub
+  IL_00a8: stind.r4
+  IL_00a9: br IL_00c3
+  IL_00ae: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_00b3: ldloc.0
+  IL_00b4: ldelema Celeste.DreamWipe/Circle
+  IL_00b9: ldc.r4 0
+  IL_00be: stfld System.Single Celeste.DreamWipe/Circle::Radius
+  IL_00c3: ldloc.0
+  IL_00c4: ldc.i4.1
+  IL_00c5: add
+  IL_00c6: stloc.0
+  IL_00c7: ldloc.0
+  IL_00c8: ldsfld Celeste.DreamWipe/Circle[] Celeste.DreamWipe::circles
+  IL_00cd: ldlen
+  IL_00ce: conv.i4
+  IL_00cf: blt IL_000e
+  IL_00d4: ret

@@ -1,0 +1,65 @@
+IL Diff: System.Int32 Celeste.Player::BoostUpdate()
+  IL_0000: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_0005: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_000a: ldc.r4 3
++ IL_000f: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_BoostUpdate
++ IL_0010: ldc.i4 7417 @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_BoostUpdate
++ IL_0015: ldc.i4 32270471 @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_BoostUpdate
++ IL_001a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_BoostUpdate
+  |-> retrieves System.Single Celeste.Mod.CommunalHelper.Entities.CustomBooster/<>c::<Player_BoostUpdate>b__43_1(System.Single,Celeste.Player)
++ IL_001f: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_BoostUpdate
+  IL_0024: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0029: stloc.0
+  IL_002a: ldarg.0
+  IL_002b: call Microsoft.Xna.Framework.Vector2 Celeste.Actor::get_ExactPosition()
+  IL_0030: ldarg.0
+  IL_0031: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::boostTarget
+  IL_0036: ldarg.0
+  IL_0037: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_003c: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Collider::get_Center()
+  IL_0041: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0046: ldloc.0
+  IL_0047: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_004c: ldc.r4 80
+  IL_0051: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0056: mul
+  IL_0057: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_005c: stloc.1
+  IL_005d: ldarg.0
+  IL_005e: ldloc.1
+  IL_005f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0064: ldnull
+  IL_0065: call System.Void Celeste.Actor::MoveToX(System.Single,Celeste.Collision)
+  IL_006a: ldarg.0
+  IL_006b: ldloc.1
+  IL_006c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0071: ldnull
+  IL_0072: call System.Void Celeste.Actor::MoveToY(System.Single,Celeste.Collision)
+  IL_0077: call System.Boolean Celeste.Input::get_DashPressed()
+  IL_007c: brtrue IL_008b
+  IL_0081: call System.Boolean Celeste.Input::get_CrouchDashPressed()
+  IL_0086: brfalse IL_00d4
+  IL_008b: ldarg.0
+  IL_008c: call System.Boolean Celeste.Input::get_CrouchDashPressed()
+  IL_0091: stfld System.Boolean Celeste.Player::demoDashed
+  IL_0096: ldsfld Monocle.VirtualButton Celeste.Input::Dash
++ IL_009b: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
++ IL_009c: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
++ IL_009d: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
++ IL_00a2: ldc.i4 7463 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
++ IL_00a7: ldc.i4 63771369 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
++ IL_00ac: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
+  |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumePress>b__25_0(System.Object,System.Single)
++ IL_00b1: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumePress
+  IL_00b6: callvirt System.Void Monocle.VirtualButton::ConsumePress()
+  IL_00bb: ldsfld Monocle.VirtualButton Celeste.Input::CrouchDash
+  IL_00c0: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld System.Boolean Celeste.Player::boostRed
+  IL_00cb: brfalse IL_00d2
+  IL_00d0: ldc.i4.5
+  IL_00d1: ret
+  IL_00d2: ldc.i4.2
+  IL_00d3: ret
+  IL_00d4: ldc.i4.4
+  IL_00d5: ret

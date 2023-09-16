@@ -1,0 +1,24 @@
+IL Diff: System.Void Celeste.NPC03_Oshiro_Rooftop::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.NPC::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: call Celeste.Session Celeste.NPC::get_Session()
+  IL_000d: ldstr "oshiro_resort_roof"
+  IL_0012: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_0017: brfalse IL_0023
+  IL_001c: ldarg.0
+  IL_001d: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0022: ret
+  IL_0023: ldarg.0
+  IL_0024: ldc.i4.0
+  IL_0025: stfld System.Boolean Monocle.Entity::Visible
+  IL_002a: ldarg.0
+  IL_002b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0030: ldarg.0
+  IL_0031: newobj System.Void Celeste.CS03_OshiroRooftop::.ctor(Celeste.NPC)
++ IL_0036: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0037: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0038: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_003d: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0042: ret

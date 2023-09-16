@@ -1,0 +1,119 @@
+IL Diff: System.Int32 Celeste.AngryOshiro::ChaseUpdate()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.AngryOshiro::hasEnteredSfx
+  IL_0006: brtrue IL_003e
+  IL_000b: ldarg.0
+  IL_000c: ldfld System.Single Celeste.AngryOshiro::cameraXOffset
+  IL_0011: ldc.r4 -16
+  IL_0016: blt.un IL_003e
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Boolean Celeste.AngryOshiro::doRespawnAnim
+  IL_0021: brtrue IL_003e
+  IL_0026: ldstr "event:/char/oshiro/boss_enter_screen"
+  IL_002b: ldarg.0
+  IL_002c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0031: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0036: pop
+  IL_0037: ldarg.0
+  IL_0038: ldc.i4.1
+  IL_0039: stfld System.Boolean Celeste.AngryOshiro::hasEnteredSfx
+  IL_003e: ldarg.0
+  IL_003f: ldfld System.Boolean Celeste.AngryOshiro::doRespawnAnim
+  IL_0044: brfalse IL_00b4
+  IL_0049: ldarg.0
+  IL_004a: ldfld System.Single Celeste.AngryOshiro::cameraXOffset
+  IL_004f: ldc.r4 0
+  IL_0054: blt.un IL_00b4
+  IL_0059: ldarg.0
+  IL_005a: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_005f: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Collider::Position
+  IL_0064: ldc.r4 -48
+  IL_0069: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4.1
+  IL_0070: stfld System.Boolean Monocle.Entity::Visible
+  IL_0075: ldarg.0
+  IL_0076: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_007b: ldstr "respawn"
+  IL_0080: ldc.i4.0
+  IL_0081: ldc.i4.0
+  IL_0082: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0087: ldarg.0
+  IL_0088: ldc.i4.0
+  IL_0089: stfld System.Boolean Celeste.AngryOshiro::doRespawnAnim
+  IL_008e: ldarg.0
+  IL_008f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0094: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0099: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_009e: brfalse IL_00b4
+  IL_00a3: ldstr "event:/char/oshiro/boss_reform"
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00ae: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00b3: pop
+  IL_00b4: ldarg.0
+  IL_00b5: ldarg.0
+  IL_00b6: ldfld System.Single Celeste.AngryOshiro::cameraXOffset
+  IL_00bb: ldc.r4 20
+  IL_00c0: ldc.r4 80
+  IL_00c5: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00ca: mul
+  IL_00cb: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00d0: stfld System.Single Celeste.AngryOshiro::cameraXOffset
+  IL_00d5: ldarg.0
+  IL_00d6: ldarg.0
+  IL_00d7: ldfld Celeste.Level Celeste.AngryOshiro::level
+  IL_00dc: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00e1: callvirt System.Single Monocle.Camera::get_Left()
+  IL_00e6: ldarg.0
+  IL_00e7: ldfld System.Single Celeste.AngryOshiro::cameraXOffset
+  IL_00ec: add
+  IL_00ed: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_00f2: ldarg.0
+  IL_00f3: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_00f8: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Collider::Position
+  IL_00fd: ldarg.0
+  IL_00fe: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0103: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Collider::Position
+  IL_0108: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_010d: ldarg.0
+  IL_010e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.AngryOshiro::colliderTargetPosition
+  IL_0113: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0118: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_011d: ldc.r4 128
+  IL_0122: mul
+  IL_0123: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0128: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_012d: ldarg.0
+  IL_012e: ldarg.0
+  IL_012f: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0134: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0139: ldarg.0
+  IL_013a: ldfld Celeste.Level Celeste.AngryOshiro::level
+  IL_013f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0144: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0149: brfalse IL_019f
+  IL_014e: ldarg.0
+  IL_014f: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_0154: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0159: ldstr "respawn"
+  IL_015e: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0163: brfalse IL_019f
+  IL_0168: ldarg.0
+  IL_0169: ldarg.0
+  IL_016a: call System.Single Monocle.Entity::get_CenterY()
+  IL_016f: ldarg.0
+  IL_0170: callvirt System.Single Celeste.AngryOshiro::get_TargetY()
++ IL_0175: ldc.i4 7765 @ Celeste.Mod.Randomizer.RandoModule::MoveOutOfTheWay
++ IL_017a: ldc.i4 66295439 @ Celeste.Mod.Randomizer.RandoModule::MoveOutOfTheWay
++ IL_017f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::MoveOutOfTheWay
+  |-> retrieves System.Single Celeste.Mod.Randomizer.RandoModule::<MoveOutOfTheWay>b__52_1(System.Single)
++ IL_0184: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::MoveOutOfTheWay
+  IL_0189: ldarg.0
+  IL_018a: ldfld System.Single Celeste.AngryOshiro::yApproachSpeed
+  IL_018f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0194: mul
+  IL_0195: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_019a: call System.Void Monocle.Entity::set_CenterY(System.Single)
+  IL_019f: ldc.i4.0
+  IL_01a0: ret

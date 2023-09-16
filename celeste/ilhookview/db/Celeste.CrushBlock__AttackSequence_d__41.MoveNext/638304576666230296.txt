@@ -1,0 +1,864 @@
+IL Diff: System.Boolean Celeste.CrushBlock/<AttackSequence>d__41::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.CrushBlock Celeste.CrushBlock/<AttackSequence>d__41::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_007c,IL_0419,IL_08ae,IL_08e0,IL_0b0f
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: newobj System.Void Celeste.CrushBlock/<>c__DisplayClass41_0::.ctor()
+  IL_003b: stfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.CrushBlock Celeste.CrushBlock/<AttackSequence>d__41::<>4__this
+  IL_004c: stfld Celeste.CrushBlock Celeste.CrushBlock/<>c__DisplayClass41_0::<>4__this
+  IL_0051: ldc.i4.2
+  IL_0052: ldc.i4.1
+  IL_0053: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0058: ldloc.1
+  IL_0059: ldc.r4 0.4
+  IL_005e: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_0063: ldarg.0
+  IL_0064: ldc.r4 0.4
+  IL_0069: box System.Single
+  IL_006e: stfld System.Object Celeste.CrushBlock/<AttackSequence>d__41::<>2__current
+  IL_0073: ldarg.0
+  IL_0074: ldc.i4.1
+  IL_0075: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_007a: ldc.i4.1
+  IL_007b: ret
+  IL_007c: ldarg.0
+  IL_007d: ldc.i4.m1
+  IL_007e: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0083: ldloc.1
+  IL_0084: ldfld System.Boolean Celeste.CrushBlock::chillOut
+  IL_0089: brtrue IL_0095
+  IL_008e: ldloc.1
+  IL_008f: ldc.i4.1
+  IL_0090: stfld System.Boolean Celeste.CrushBlock::canActivate
+  IL_0095: ldloc.1
+  IL_0096: ldc.i4.0
+  IL_0097: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_009c: ldarg.0
+  IL_009d: ldc.i4.0
+  IL_009e: stfld System.Boolean Celeste.CrushBlock/<AttackSequence>d__41::<slowing>5__2
+  IL_00a3: ldarg.0
+  IL_00a4: ldc.r4 0
+  IL_00a9: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_00ae: ldloc.1
+  IL_00af: ldfld System.Boolean Celeste.CrushBlock::chillOut
+  IL_00b4: brtrue IL_00df
+  IL_00b9: ldarg.0
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_00c0: ldc.r4 240
+  IL_00c5: ldc.r4 500
+  IL_00ca: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00cf: mul
+  IL_00d0: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00d5: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_00da: br IL_01ad
+  IL_00df: ldarg.0
+  IL_00e0: ldfld System.Boolean Celeste.CrushBlock/<AttackSequence>d__41::<slowing>5__2
+  IL_00e5: brtrue IL_0110
+  IL_00ea: ldloc.1
+  IL_00eb: ldloc.1
+  IL_00ec: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00f1: ldloc.1
+  IL_00f2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_00f7: ldc.r4 256
+  IL_00fc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0101: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0106: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.SolidTiles>(Microsoft.Xna.Framework.Vector2)
+  IL_010b: brfalse IL_018c
+  IL_0110: ldarg.0
+  IL_0111: ldarg.0
+  IL_0112: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0117: ldc.r4 24
+  IL_011c: ldc.r4 500
+  IL_0121: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0126: mul
+  IL_0127: ldc.r4 0.25
+  IL_012c: mul
+  IL_012d: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0132: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0137: ldarg.0
+  IL_0138: ldfld System.Boolean Celeste.CrushBlock/<AttackSequence>d__41::<slowing>5__2
+  IL_013d: brtrue IL_01ad
+  IL_0142: ldarg.0
+  IL_0143: ldc.i4.1
+  IL_0144: stfld System.Boolean Celeste.CrushBlock/<AttackSequence>d__41::<slowing>5__2
+  IL_0149: ldloc.1
+  IL_014a: ldc.r4 0.5
+  IL_014f: ldarg.0
+  IL_0150: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_0155: ldfld System.Action Celeste.CrushBlock/<>c__DisplayClass41_0::<>9__1
+  IL_015a: dup
+  IL_015b: brtrue IL_0180
+  IL_0160: pop
+  IL_0161: ldarg.0
+  IL_0162: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_0167: ldarg.0
+  IL_0168: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_016d: ldftn System.Void Celeste.CrushBlock/<>c__DisplayClass41_0::<AttackSequence>b__1()
+  IL_0173: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0178: dup
+  IL_0179: stloc.3
+  IL_017a: stfld System.Action Celeste.CrushBlock/<>c__DisplayClass41_0::<>9__1
+  IL_017f: ldloc.3
+  IL_0180: ldc.i4.1
+  IL_0181: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_0186: pop
+  IL_0187: br IL_01ad
+  IL_018c: ldarg.0
+  IL_018d: ldarg.0
+  IL_018e: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0193: ldc.r4 240
+  IL_0198: ldc.r4 500
+  IL_019d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01a2: mul
+  IL_01a3: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_01a8: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_01ad: ldloc.1
+  IL_01ae: ldflda Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_01b3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01b8: ldc.r4 0
+  IL_01bd: beq IL_01e6
+  IL_01c2: ldloc.1
+  IL_01c3: ldarg.0
+  IL_01c4: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_01c9: ldloc.1
+  IL_01ca: ldflda Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_01cf: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01d4: mul
+  IL_01d5: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01da: mul
+  IL_01db: callvirt System.Boolean Celeste.CrushBlock::MoveHCheck(System.Single)
+  IL_01e0: stloc.2
+  IL_01e1: br IL_0205
+  IL_01e6: ldloc.1
+  IL_01e7: ldarg.0
+  IL_01e8: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_01ed: ldloc.1
+  IL_01ee: ldflda Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_01f3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01f8: mul
+  IL_01f9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01fe: mul
+  IL_01ff: callvirt System.Boolean Celeste.CrushBlock::MoveVCheck(System.Single)
+  IL_0204: stloc.2
+  IL_0205: ldloc.1
+  IL_0206: callvirt System.Single Monocle.Entity::get_Top()
+  IL_020b: ldloc.1
+  IL_020c: ldfld Celeste.Level Celeste.CrushBlock::level
+  IL_0211: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0216: stloc.s V_4
+  IL_0218: ldloca.s V_4
+  IL_021a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_021f: ldc.i4.s 32
+  IL_0221: add
+  IL_0222: conv.r4
+  IL_0223: blt.un IL_0230
+  IL_0228: ldloc.1
+  IL_0229: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_022e: ldc.i4.0
+  IL_022f: ret
+  IL_0230: ldloc.2
++ IL_0231: ldloc.1 @ Celeste.Mod.CoopHelper.CoopHelperModule+<>c__DisplayClass28_0::<Load>b__0
++ IL_0232: ldc.i4 7199 @ Celeste.Mod.CoopHelper.CoopHelperModule+<>c__DisplayClass28_0::<Load>b__0
++ IL_0237: ldc.i4 32152058 @ Celeste.Mod.CoopHelper.CoopHelperModule+<>c__DisplayClass28_0::<Load>b__0
++ IL_023c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CoopHelper.CoopHelperModule+<>c__DisplayClass28_0::<Load>b__0
+  |-> retrieves System.Boolean Celeste.Mod.CoopHelper.CoopHelperModule/<>c::<ILKevinCollide>b__39_0(System.Boolean,Celeste.CrushBlock)
++ IL_0241: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CoopHelper.CoopHelperModule+<>c__DisplayClass28_0::<Load>b__0
+  IL_0246: brfalse IL_0298
+  IL_024b: ldloc.1
+  IL_024c: ldloc.1
+  IL_024d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0252: ldloc.1
+  IL_0253: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_0258: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_025d: callvirt T Monocle.Entity::CollideFirst<Celeste.FallingBlock>(Microsoft.Xna.Framework.Vector2)
++ IL_0262: ldarg.0 @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_0263: ldfld Celeste.CrushBlock Celeste.CrushBlock/<AttackSequence>d__41::<>4__this @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_0268: dup @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_0269: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_026e: ldc.i4 7253 @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_0273: ldc.i4 65811505 @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
++ IL_0278: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
+  |-> retrieves System.Void VivHelper.VivHelperModule/<>c::<AttackSequence_CrushCustomFallingBlock>b__81_0(Celeste.CrushBlock,Microsoft.Xna.Framework.Vector2)
++ IL_027d: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.CrushBlock,Microsoft.Xna.Framework.Vector2>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ VivHelper.VivHelperModule+<>c__DisplayClass66_0::<Load>b__0
+  IL_0282: stloc.s V_5
+  IL_0284: ldloc.s V_5
+  IL_0286: brfalse IL_0425
+  IL_028b: ldloc.s V_5
+  IL_028d: ldc.i4.1
+  IL_028e: stfld System.Boolean Celeste.FallingBlock::Triggered
+  IL_0293: br IL_0425
+  IL_0298: ldloc.1
+  IL_0299: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_029e: ldc.r4 0.02
+  IL_02a3: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_02a8: brfalse IL_0409
+  IL_02ad: ldloc.1
+  IL_02ae: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_02b3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_02b8: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02bd: brfalse IL_0303
+  IL_02c2: ldloca.s V_6
+  IL_02c4: ldloc.1
+  IL_02c5: callvirt System.Single Monocle.Entity::get_Left()
+  IL_02ca: ldc.r4 1
+  IL_02cf: add
+  IL_02d0: ldsfld System.Random Monocle.Calc::Random
+  IL_02d5: ldloc.1
+  IL_02d6: callvirt System.Single Monocle.Entity::get_Top()
+  IL_02db: ldc.r4 3
+  IL_02e0: add
+  IL_02e1: ldloc.1
+  IL_02e2: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_02e7: ldc.r4 3
+  IL_02ec: sub
+  IL_02ed: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_02f2: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02f7: ldc.r4 3.1415927
+  IL_02fc: stloc.s V_7
+  IL_02fe: br IL_03f0
+  IL_0303: ldloc.1
+  IL_0304: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_0309: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_030e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0313: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0318: brfalse IL_035e
+  IL_031d: ldloca.s V_6
+  IL_031f: ldloc.1
+  IL_0320: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0325: ldc.r4 1
+  IL_032a: sub
+  IL_032b: ldsfld System.Random Monocle.Calc::Random
+  IL_0330: ldloc.1
+  IL_0331: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0336: ldc.r4 3
+  IL_033b: add
+  IL_033c: ldloc.1
+  IL_033d: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0342: ldc.r4 3
+  IL_0347: sub
+  IL_0348: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_034d: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0352: ldc.r4 0
+  IL_0357: stloc.s V_7
+  IL_0359: br IL_03f0
+  IL_035e: ldloc.1
+  IL_035f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_0364: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0369: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_036e: brfalse IL_03b4
+  IL_0373: ldloca.s V_6
+  IL_0375: ldsfld System.Random Monocle.Calc::Random
+  IL_037a: ldloc.1
+  IL_037b: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0380: ldc.r4 3
+  IL_0385: add
+  IL_0386: ldloc.1
+  IL_0387: callvirt System.Single Monocle.Entity::get_Right()
+  IL_038c: ldc.r4 3
+  IL_0391: sub
+  IL_0392: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0397: ldloc.1
+  IL_0398: callvirt System.Single Monocle.Entity::get_Top()
+  IL_039d: ldc.r4 1
+  IL_03a2: add
+  IL_03a3: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03a8: ldc.r4 -1.5707964
+  IL_03ad: stloc.s V_7
+  IL_03af: br IL_03f0
+  IL_03b4: ldloca.s V_6
+  IL_03b6: ldsfld System.Random Monocle.Calc::Random
+  IL_03bb: ldloc.1
+  IL_03bc: callvirt System.Single Monocle.Entity::get_Left()
+  IL_03c1: ldc.r4 3
+  IL_03c6: add
+  IL_03c7: ldloc.1
+  IL_03c8: callvirt System.Single Monocle.Entity::get_Right()
+  IL_03cd: ldc.r4 3
+  IL_03d2: sub
+  IL_03d3: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_03d8: ldloc.1
+  IL_03d9: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_03de: ldc.r4 1
+  IL_03e3: sub
+  IL_03e4: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03e9: ldc.r4 1.5707964
+  IL_03ee: stloc.s V_7
+  IL_03f0: ldloc.1
+  IL_03f1: ldfld Celeste.Level Celeste.CrushBlock::level
+  IL_03f6: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_03fb: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Crushing
+  IL_0400: ldloc.s V_6
+  IL_0402: ldloc.s V_7
+  IL_0404: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0409: ldarg.0
+  IL_040a: ldnull
+  IL_040b: stfld System.Object Celeste.CrushBlock/<AttackSequence>d__41::<>2__current
+  IL_0410: ldarg.0
+  IL_0411: ldc.i4.2
+  IL_0412: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0417: ldc.i4.1
+  IL_0418: ret
+  IL_0419: ldarg.0
+  IL_041a: ldc.i4.m1
+  IL_041b: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0420: br IL_00ae
+  IL_0425: ldloc.1
+  IL_0426: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_042b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0430: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0435: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_043a: brfalse IL_0506
+  IL_043f: ldloca.s V_8
+  IL_0441: ldc.r4 0
+  IL_0446: ldc.r4 2
+  IL_044b: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0450: ldc.i4.0
+  IL_0451: stloc.s V_9
+  IL_0453: br IL_04ed
+  IL_0458: ldloca.s V_10
+  IL_045a: ldloc.1
+  IL_045b: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0460: ldc.r4 1
+  IL_0465: sub
+  IL_0466: ldloc.1
+  IL_0467: callvirt System.Single Monocle.Entity::get_Top()
+  IL_046c: ldc.r4 4
+  IL_0471: add
+  IL_0472: ldloc.s V_9
+  IL_0474: ldc.i4.8
+  IL_0475: mul
+  IL_0476: conv.r4
+  IL_0477: add
+  IL_0478: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_047d: ldloc.1
+  IL_047e: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0483: ldloc.s V_10
+  IL_0485: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Water>(Microsoft.Xna.Framework.Vector2)
+  IL_048a: brtrue IL_04e7
+  IL_048f: ldloc.1
+  IL_0490: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0495: ldloc.s V_10
+  IL_0497: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_049c: brfalse IL_04e7
+  IL_04a1: ldloc.1
+  IL_04a2: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_04a7: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_04ac: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_04b1: ldloc.s V_10
+  IL_04b3: ldloc.s V_8
+  IL_04b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04ba: ldc.r4 0
+  IL_04bf: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_04c4: ldloc.1
+  IL_04c5: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_04ca: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_04cf: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_04d4: ldloc.s V_10
+  IL_04d6: ldloc.s V_8
+  IL_04d8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04dd: ldc.r4 0
+  IL_04e2: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_04e7: ldloc.s V_9
+  IL_04e9: ldc.i4.1
+  IL_04ea: add
+  IL_04eb: stloc.s V_9
+  IL_04ed: ldloc.s V_9
+  IL_04ef: conv.r4
+  IL_04f0: ldloc.1
+  IL_04f1: callvirt System.Single Monocle.Entity::get_Height()
+  IL_04f6: ldc.r4 8
+  IL_04fb: div
+  IL_04fc: blt IL_0458
+  IL_0501: br IL_079a
+  IL_0506: ldloc.1
+  IL_0507: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_050c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0511: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0516: brfalse IL_05e2
+  IL_051b: ldloca.s V_11
+  IL_051d: ldc.r4 0
+  IL_0522: ldc.r4 2
+  IL_0527: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_052c: ldc.i4.0
+  IL_052d: stloc.s V_12
+  IL_052f: br IL_05c9
+  IL_0534: ldloca.s V_13
+  IL_0536: ldloc.1
+  IL_0537: callvirt System.Single Monocle.Entity::get_Right()
+  IL_053c: ldc.r4 1
+  IL_0541: add
+  IL_0542: ldloc.1
+  IL_0543: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0548: ldc.r4 4
+  IL_054d: add
+  IL_054e: ldloc.s V_12
+  IL_0550: ldc.i4.8
+  IL_0551: mul
+  IL_0552: conv.r4
+  IL_0553: add
+  IL_0554: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0559: ldloc.1
+  IL_055a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_055f: ldloc.s V_13
+  IL_0561: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Water>(Microsoft.Xna.Framework.Vector2)
+  IL_0566: brtrue IL_05c3
+  IL_056b: ldloc.1
+  IL_056c: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0571: ldloc.s V_13
+  IL_0573: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0578: brfalse IL_05c3
+  IL_057d: ldloc.1
+  IL_057e: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0583: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0588: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_058d: ldloc.s V_13
+  IL_058f: ldloc.s V_11
+  IL_0591: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0596: ldc.r4 3.1415927
+  IL_059b: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_05a0: ldloc.1
+  IL_05a1: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_05a6: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_05ab: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_05b0: ldloc.s V_13
+  IL_05b2: ldloc.s V_11
+  IL_05b4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05b9: ldc.r4 3.1415927
+  IL_05be: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_05c3: ldloc.s V_12
+  IL_05c5: ldc.i4.1
+  IL_05c6: add
+  IL_05c7: stloc.s V_12
+  IL_05c9: ldloc.s V_12
+  IL_05cb: conv.r4
+  IL_05cc: ldloc.1
+  IL_05cd: callvirt System.Single Monocle.Entity::get_Height()
+  IL_05d2: ldc.r4 8
+  IL_05d7: div
+  IL_05d8: blt IL_0534
+  IL_05dd: br IL_079a
+  IL_05e2: ldloc.1
+  IL_05e3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_05e8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_05ed: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_05f2: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05f7: brfalse IL_06c3
+  IL_05fc: ldloca.s V_14
+  IL_05fe: ldc.r4 2
+  IL_0603: ldc.r4 0
+  IL_0608: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_060d: ldc.i4.0
+  IL_060e: stloc.s V_15
+  IL_0610: br IL_06aa
+  IL_0615: ldloca.s V_16
+  IL_0617: ldloc.1
+  IL_0618: callvirt System.Single Monocle.Entity::get_Left()
+  IL_061d: ldc.r4 4
+  IL_0622: add
+  IL_0623: ldloc.s V_15
+  IL_0625: ldc.i4.8
+  IL_0626: mul
+  IL_0627: conv.r4
+  IL_0628: add
+  IL_0629: ldloc.1
+  IL_062a: callvirt System.Single Monocle.Entity::get_Top()
+  IL_062f: ldc.r4 1
+  IL_0634: sub
+  IL_0635: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_063a: ldloc.1
+  IL_063b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0640: ldloc.s V_16
+  IL_0642: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Water>(Microsoft.Xna.Framework.Vector2)
+  IL_0647: brtrue IL_06a4
+  IL_064c: ldloc.1
+  IL_064d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0652: ldloc.s V_16
+  IL_0654: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0659: brfalse IL_06a4
+  IL_065e: ldloc.1
+  IL_065f: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0664: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0669: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_066e: ldloc.s V_16
+  IL_0670: ldloc.s V_14
+  IL_0672: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0677: ldc.r4 1.5707964
+  IL_067c: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0681: ldloc.1
+  IL_0682: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0687: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_068c: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_0691: ldloc.s V_16
+  IL_0693: ldloc.s V_14
+  IL_0695: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_069a: ldc.r4 1.5707964
+  IL_069f: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_06a4: ldloc.s V_15
+  IL_06a6: ldc.i4.1
+  IL_06a7: add
+  IL_06a8: stloc.s V_15
+  IL_06aa: ldloc.s V_15
+  IL_06ac: conv.r4
+  IL_06ad: ldloc.1
+  IL_06ae: callvirt System.Single Monocle.Entity::get_Width()
+  IL_06b3: ldc.r4 8
+  IL_06b8: div
+  IL_06b9: blt IL_0615
+  IL_06be: br IL_079a
+  IL_06c3: ldloc.1
+  IL_06c4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_06c9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_06ce: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_06d3: brfalse IL_079a
+  IL_06d8: ldloca.s V_17
+  IL_06da: ldc.r4 2
+  IL_06df: ldc.r4 0
+  IL_06e4: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_06e9: ldc.i4.0
+  IL_06ea: stloc.s V_18
+  IL_06ec: br IL_0786
+  IL_06f1: ldloca.s V_19
+  IL_06f3: ldloc.1
+  IL_06f4: callvirt System.Single Monocle.Entity::get_Left()
+  IL_06f9: ldc.r4 4
+  IL_06fe: add
+  IL_06ff: ldloc.s V_18
+  IL_0701: ldc.i4.8
+  IL_0702: mul
+  IL_0703: conv.r4
+  IL_0704: add
+  IL_0705: ldloc.1
+  IL_0706: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_070b: ldc.r4 1
+  IL_0710: add
+  IL_0711: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0716: ldloc.1
+  IL_0717: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_071c: ldloc.s V_19
+  IL_071e: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Water>(Microsoft.Xna.Framework.Vector2)
+  IL_0723: brtrue IL_0780
+  IL_0728: ldloc.1
+  IL_0729: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_072e: ldloc.s V_19
+  IL_0730: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0735: brfalse IL_0780
+  IL_073a: ldloc.1
+  IL_073b: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0740: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0745: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_074a: ldloc.s V_19
+  IL_074c: ldloc.s V_17
+  IL_074e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0753: ldc.r4 -1.5707964
+  IL_0758: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_075d: ldloc.1
+  IL_075e: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0763: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0768: ldsfld Monocle.ParticleType Celeste.CrushBlock::P_Impact
+  IL_076d: ldloc.s V_19
+  IL_076f: ldloc.s V_17
+  IL_0771: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0776: ldc.r4 -1.5707964
+  IL_077b: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0780: ldloc.s V_18
+  IL_0782: ldc.i4.1
+  IL_0783: add
+  IL_0784: stloc.s V_18
+  IL_0786: ldloc.s V_18
+  IL_0788: conv.r4
+  IL_0789: ldloc.1
+  IL_078a: callvirt System.Single Monocle.Entity::get_Width()
+  IL_078f: ldc.r4 8
+  IL_0794: div
+  IL_0795: blt IL_06f1
+  IL_079a: ldstr "event:/game/06_reflection/crushblock_impact"
+  IL_079f: ldloc.1
++ IL_07a0: ldc.i4 7201 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_07a5: ldc.i4 54179929 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_07aa: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockAttackSequence>b__6_0(System.String,Celeste.CrushBlock)
++ IL_07af: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_07b4: ldloc.1 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  IL_07b5: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_07ba: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_07bf: pop
+  IL_07c0: ldloc.1
+  IL_07c1: ldfld Celeste.Level Celeste.CrushBlock::level
+  IL_07c6: ldloc.1
+  IL_07c7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_07cc: ldc.r4 0.3
+  IL_07d1: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_07d6: ldc.i4.1
+  IL_07d7: ldc.i4.1
+  IL_07d8: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_07dd: ldloc.1
+  IL_07de: ldc.r4 0.4
+  IL_07e3: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_07e8: ldloc.1
+  IL_07e9: ldc.i4.1
+  IL_07ea: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_07ef: ldarg.0
+  IL_07f0: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_07f5: ldloc.1
+  IL_07f6: ldfld Celeste.SoundSource Celeste.CrushBlock::currentMoveLoopSfx
+  IL_07fb: stfld Celeste.SoundSource Celeste.CrushBlock/<>c__DisplayClass41_0::sfx
+  IL_0800: ldloc.1
+  IL_0801: ldfld Celeste.SoundSource Celeste.CrushBlock::currentMoveLoopSfx
+  IL_0806: ldstr "end"
+  IL_080b: ldc.r4 1
+  IL_0810: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0815: pop
+  IL_0816: ldloc.1
+  IL_0817: ldnull
+  IL_0818: stfld Celeste.SoundSource Celeste.CrushBlock::currentMoveLoopSfx
+  IL_081d: ldloc.1
+  IL_081e: ldc.r4 0.5
+  IL_0823: ldarg.0
+  IL_0824: ldfld Celeste.CrushBlock/<>c__DisplayClass41_0 Celeste.CrushBlock/<AttackSequence>d__41::<>8__1
+  IL_0829: ldftn System.Void Celeste.CrushBlock/<>c__DisplayClass41_0::<AttackSequence>b__0()
+  IL_082f: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0834: ldc.i4.1
+  IL_0835: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_083a: pop
+  IL_083b: ldloc.1
+  IL_083c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0841: stfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock::crushDir
+  IL_0846: ldloc.1
+  IL_0847: callvirt System.Void Celeste.CrushBlock::TurnOffImages()
+  IL_084c: ldloc.1
+  IL_084d: ldfld System.Boolean Celeste.CrushBlock::chillOut
+  IL_0852: brtrue IL_0b27
+  IL_0857: ldloc.1
+  IL_0858: ldfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_085d: ldstr "hurt"
+  IL_0862: ldc.i4.0
+  IL_0863: ldc.i4.0
+  IL_0864: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0869: ldloc.1
+  IL_086a: ldfld Celeste.SoundSource Celeste.CrushBlock::returnLoopSfx
+  IL_086f: ldstr "event:/game/06_reflection/crushblock_return_loop"
++ IL_0874: ldloc.1 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0875: ldc.i4 7227 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_087a: ldc.i4 26498124 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_087f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockAttackSequence>b__6_0(System.String,Celeste.CrushBlock)
++ IL_0884: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  IL_0889: ldnull
+  IL_088a: ldc.r4 0
+  IL_088f: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_0894: pop
+  IL_0895: ldarg.0
+  IL_0896: ldc.r4 0.4
+  IL_089b: box System.Single
+  IL_08a0: stfld System.Object Celeste.CrushBlock/<AttackSequence>d__41::<>2__current
+  IL_08a5: ldarg.0
+  IL_08a6: ldc.i4.3
+  IL_08a7: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_08ac: ldc.i4.1
+  IL_08ad: ret
+  IL_08ae: ldarg.0
+  IL_08af: ldc.i4.m1
+  IL_08b0: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_08b5: ldarg.0
+  IL_08b6: ldc.r4 0
+  IL_08bb: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_08c0: ldarg.0
+  IL_08c1: ldc.r4 0
+  IL_08c6: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_08cb: br IL_0b16
+  IL_08d0: ldarg.0
+  IL_08d1: ldnull
+  IL_08d2: stfld System.Object Celeste.CrushBlock/<AttackSequence>d__41::<>2__current
+  IL_08d7: ldarg.0
+  IL_08d8: ldc.i4.4
+  IL_08d9: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_08de: ldc.i4.1
+  IL_08df: ret
+  IL_08e0: ldarg.0
+  IL_08e1: ldc.i4.m1
+  IL_08e2: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_08e7: ldloc.1
+  IL_08e8: ldc.i4.0
+  IL_08e9: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_08ee: ldloc.1
+  IL_08ef: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_08f4: ldloc.1
+  IL_08f5: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_08fa: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::get_Count()
+  IL_08ff: ldc.i4.1
+  IL_0900: sub
+  IL_0901: callvirt T System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::get_Item(System.Int32)
+  IL_0906: stloc.s V_20
+  IL_0908: ldarg.0
+  IL_0909: ldarg.0
+  IL_090a: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_090f: ldc.r4 60
+  IL_0914: ldc.r4 160
+  IL_0919: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_091e: mul
+  IL_091f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0924: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0929: ldarg.0
+  IL_092a: ldarg.0
+  IL_092b: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_0930: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0935: sub
+  IL_0936: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_093b: ldloc.s V_20
+  IL_093d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::Direction
+  IL_0942: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0947: ldc.r4 0
+  IL_094c: beq IL_096f
+  IL_0951: ldloc.1
+  IL_0952: ldloc.s V_20
+  IL_0954: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::From
+  IL_0959: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_095e: ldarg.0
+  IL_095f: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0964: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0969: mul
+  IL_096a: callvirt System.Void Celeste.Platform::MoveTowardsX(System.Single,System.Single)
+  IL_096f: ldloc.s V_20
+  IL_0971: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::Direction
+  IL_0976: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_097b: ldc.r4 0
+  IL_0980: beq IL_09a3
+  IL_0985: ldloc.1
+  IL_0986: ldloc.s V_20
+  IL_0988: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::From
+  IL_098d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0992: ldarg.0
+  IL_0993: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0998: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_099d: mul
+  IL_099e: callvirt System.Void Celeste.Platform::MoveTowardsY(System.Single,System.Single)
+  IL_09a3: ldloc.s V_20
+  IL_09a5: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::Direction
+  IL_09aa: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09af: ldc.r4 0
+  IL_09b4: beq IL_09d5
+  IL_09b9: ldloc.1
+  IL_09ba: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_09bf: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09c4: ldloc.s V_20
+  IL_09c6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::From
+  IL_09cb: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09d0: bne.un IL_0a0f
+  IL_09d5: ldloc.s V_20
+  IL_09d7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::Direction
+  IL_09dc: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09e1: ldc.r4 0
+  IL_09e6: beq IL_0a09
+  IL_09eb: ldloc.1
+  IL_09ec: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_09f1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09f6: ldloc.s V_20
+  IL_09f8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrushBlock/MoveState::From
+  IL_09fd: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a02: ceq
+  IL_0a04: br IL_0a10
+  IL_0a09: ldc.i4.1
+  IL_0a0a: br IL_0a10
+  IL_0a0f: ldc.i4.0
+  IL_0a10: brfalse IL_0b16
+  IL_0a15: ldarg.0
+  IL_0a16: ldc.r4 0
+  IL_0a1b: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<speed>5__3
+  IL_0a20: ldloc.1
+  IL_0a21: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_0a26: ldloc.1
+  IL_0a27: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_0a2c: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::get_Count()
+  IL_0a31: ldc.i4.1
+  IL_0a32: sub
+  IL_0a33: callvirt System.Void System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::RemoveAt(System.Int32)
+  IL_0a38: ldloc.1
+  IL_0a39: ldc.i4.1
+  IL_0a3a: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_0a3f: ldloc.1
+  IL_0a40: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_0a45: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::get_Count()
+  IL_0a4a: ldc.i4.0
+  IL_0a4b: bgt IL_0aaa
+  IL_0a50: ldloc.1
+  IL_0a51: ldfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_0a56: ldstr "idle"
+  IL_0a5b: ldc.i4.0
+  IL_0a5c: ldc.i4.0
+  IL_0a5d: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0a62: ldloc.1
+  IL_0a63: ldfld Celeste.SoundSource Celeste.CrushBlock::returnLoopSfx
+  IL_0a68: ldc.i4.1
+  IL_0a69: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_0a6e: pop
+  IL_0a6f: ldarg.0
+  IL_0a70: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_0a75: ldc.r4 0
+  IL_0a7a: bgt.un IL_0ae0
+  IL_0a7f: ldstr "event:/game/06_reflection/crushblock_rest"
+  IL_0a84: ldloc.1
++ IL_0a85: ldc.i4 7249 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0a8a: ldc.i4 65973308 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0a8f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockAttackSequence>b__6_0(System.String,Celeste.CrushBlock)
++ IL_0a94: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0a99: ldloc.1 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  IL_0a9a: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0a9f: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0aa4: pop
+  IL_0aa5: br IL_0ae0
+  IL_0aaa: ldarg.0
+  IL_0aab: ldfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_0ab0: ldc.r4 0
+  IL_0ab5: bgt.un IL_0ae0
+  IL_0aba: ldstr "event:/game/06_reflection/crushblock_rest_waypoint"
+  IL_0abf: ldloc.1
++ IL_0ac0: ldc.i4 7251 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0ac5: ldc.i4 42237712 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0aca: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockAttackSequence>b__6_0(System.String,Celeste.CrushBlock)
++ IL_0acf: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
++ IL_0ad4: ldloc.1 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockAttackSequence
+  IL_0ad5: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0ada: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0adf: pop
+  IL_0ae0: ldarg.0
+  IL_0ae1: ldc.r4 0.1
+  IL_0ae6: stfld System.Single Celeste.CrushBlock/<AttackSequence>d__41::<waypointSfxDelay>5__4
+  IL_0aeb: ldloc.1
+  IL_0aec: ldc.r4 0.2
+  IL_0af1: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_0af6: ldarg.0
+  IL_0af7: ldc.r4 0.2
+  IL_0afc: box System.Single
+  IL_0b01: stfld System.Object Celeste.CrushBlock/<AttackSequence>d__41::<>2__current
+  IL_0b06: ldarg.0
+  IL_0b07: ldc.i4.5
+  IL_0b08: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0b0d: ldc.i4.1
+  IL_0b0e: ret
+  IL_0b0f: ldarg.0
+  IL_0b10: ldc.i4.m1
+  IL_0b11: stfld System.Int32 Celeste.CrushBlock/<AttackSequence>d__41::<>1__state
+  IL_0b16: ldloc.1
+  IL_0b17: ldfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_0b1c: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::get_Count()
+  IL_0b21: ldc.i4.0
+  IL_0b22: bgt IL_08d0
+  IL_0b27: ldc.i4.0
+  IL_0b28: ret

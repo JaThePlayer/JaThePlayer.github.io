@@ -1,0 +1,35 @@
+IL Diff: System.Void TAS.Manager::EnableRun()
+  IL_0000: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0005: isinst Celeste.GameLoader
+  IL_000a: brtrue IL_0019
+  IL_000f: call System.Boolean TAS.EverestInterop.CriticalErrorHandlerFixer::get_Handling()
+  IL_0014: brfalse IL_0032
+  IL_0019: ldc.i4.0
+  IL_001a: stsfld System.Boolean TAS.Manager::Running
+  IL_001f: ldc.i4.0
+  IL_0020: stsfld StudioCommunication.States TAS.Manager::LastStates
+  IL_0025: ldc.i4.0
+  IL_0026: stsfld StudioCommunication.States TAS.Manager::States
+  IL_002b: ldc.i4.0
+  IL_002c: stsfld StudioCommunication.States TAS.Manager::NextStates
+  IL_0031: ret
+  IL_0032: ldc.i4.1
+  IL_0033: stsfld System.Boolean TAS.Manager::Running
+  IL_0038: ldsfld StudioCommunication.States TAS.Manager::States
+  IL_003d: ldc.i4.1
+  IL_003e: or
+  IL_003f: stsfld StudioCommunication.States TAS.Manager::States
+  IL_0044: ldsfld StudioCommunication.States TAS.Manager::States
+  IL_0049: ldc.i4 253
+  IL_004e: and
+  IL_004f: stsfld StudioCommunication.States TAS.Manager::States
+  IL_0054: ldsfld StudioCommunication.States TAS.Manager::NextStates
+  IL_0059: ldc.i4 254
+  IL_005e: and
+  IL_005f: stsfld StudioCommunication.States TAS.Manager::NextStates
+  IL_0064: call System.Void TAS.Utils.AttributeUtils::Invoke<TAS.EnableRunAttribute>()
+  IL_0069: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_006e: ldc.i4.1
+  IL_006f: callvirt System.Void TAS.Input.InputController::RefreshInputs(System.Boolean)
++ IL_0074: call System.Void Celeste.Mod.TASHelper.Utils.RestoreSettingsExt::SkipTASHelper() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0079: ret

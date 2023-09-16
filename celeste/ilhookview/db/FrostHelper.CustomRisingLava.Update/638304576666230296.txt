@@ -1,0 +1,145 @@
+IL Diff: System.Void FrostHelper.CustomRisingLava::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Single FrostHelper.CustomRisingLava::delay
+  IL_0007: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_000c: sub
+  IL_000d: stfld System.Single FrostHelper.CustomRisingLava::delay
+  IL_0012: ldarg.0
+  IL_0013: ldarg.0
+  IL_0014: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0019: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_001e: callvirt System.Single Monocle.Camera::get_X()
+  IL_0023: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_0028: ldarg.0
+  IL_0029: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_002e: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0033: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0038: stloc.0
+  IL_0039: ldarg.0
+  IL_003a: call System.Void Monocle.Entity::Update()
+  IL_003f: ldarg.0
+  IL_0040: ldc.i4.1
+  IL_0041: stfld System.Boolean Monocle.Entity::Visible
+  IL_0046: ldarg.0
+  IL_0047: ldfld System.Boolean FrostHelper.CustomRisingLava::waiting
+  IL_004c: brfalse IL_00f3
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.SoundSource FrostHelper.CustomRisingLava::loopSfx
+  IL_0057: ldstr "rising"
+  IL_005c: ldc.r4 0
+  IL_0061: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0066: pop
+  IL_0067: ldarg.0
+  IL_0068: ldfld System.Boolean FrostHelper.CustomRisingLava::intro
+  IL_006d: brtrue IL_00c0
+  IL_0072: ldloc.0
+  IL_0073: brfalse IL_00c0
+  IL_0078: ldloc.0
++ IL_0079: dup @ Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger::onRisingLavaUpdate
+  IL_007a: ldfld System.Boolean Celeste.Player::JustRespawned
++ IL_007f: ldc.i4 7092 @ Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger::onRisingLavaUpdate
++ IL_0084: ldc.i4 65584837 @ Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger::onRisingLavaUpdate
++ IL_0089: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger::onRisingLavaUpdate
+  |-> retrieves System.Boolean Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger/<>c::<onRisingLavaUpdate>b__6_1(Celeste.Player,System.Boolean)
++ IL_008e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Celeste.Player,System.Boolean>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.InstantLavaBlockerTrigger::onRisingLavaUpdate
+  IL_0093: brfalse IL_00c0
+  IL_0098: ldarg.0
+  IL_0099: ldarg.0
+  IL_009a: call System.Single Monocle.Entity::get_Y()
+  IL_009f: ldloc.0
+  IL_00a0: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00a5: ldc.r4 32
+  IL_00aa: add
+  IL_00ab: ldc.r4 32
+  IL_00b0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00b5: mul
+  IL_00b6: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00bb: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_00c0: ldarg.0
+  IL_00c1: ldfld System.Boolean FrostHelper.CustomRisingLava::iceMode
+  IL_00c6: brfalse IL_00d6
+  IL_00cb: ldarg.0
+  IL_00cc: ldfld System.Boolean FrostHelper.CustomRisingLava::intro
+  IL_00d1: brtrue IL_01d0
+  IL_00d6: ldloc.0
+  IL_00d7: brfalse IL_00e7
+  IL_00dc: ldloc.0
+  IL_00dd: ldfld System.Boolean Celeste.Player::JustRespawned
+  IL_00e2: brtrue IL_01d0
+  IL_00e7: ldarg.0
+  IL_00e8: ldc.i4.0
+  IL_00e9: stfld System.Boolean FrostHelper.CustomRisingLava::waiting
+  IL_00ee: br IL_01d0
+  IL_00f3: ldc.r4 1
+  IL_00f8: stloc.1
+  IL_00f9: ldarg.0
+  IL_00fa: ldfld System.Boolean FrostHelper.CustomRisingLava::DoRubberbanding
+  IL_00ff: brfalse IL_018f
+  IL_0104: ldarg.0
+  IL_0105: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_010a: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_010f: callvirt System.Single Monocle.Camera::get_Bottom()
+  IL_0114: ldc.r4 12
+  IL_0119: sub
+  IL_011a: stloc.2
+  IL_011b: ldarg.0
+  IL_011c: call System.Single Monocle.Entity::get_Top()
+  IL_0121: ldloc.2
+  IL_0122: ldc.r4 96
+  IL_0127: add
+  IL_0128: ble.un IL_013a
+  IL_012d: ldarg.0
+  IL_012e: ldloc.2
+  IL_012f: ldc.r4 96
+  IL_0134: add
+  IL_0135: call System.Void Monocle.Entity::set_Top(System.Single)
+  IL_013a: ldarg.0
+  IL_013b: call System.Single Monocle.Entity::get_Top()
+  IL_0140: ldloc.2
+  IL_0141: ble.un IL_016d
+  IL_0146: ldarg.0
+  IL_0147: call System.Single Monocle.Entity::get_Top()
+  IL_014c: ldloc.2
+  IL_014d: sub
+  IL_014e: ldc.r4 0
+  IL_0153: ldc.r4 96
+  IL_0158: ldc.r4 1
+  IL_015d: ldc.r4 2
+  IL_0162: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0167: stloc.1
+  IL_0168: br IL_018f
+  IL_016d: ldloc.2
+  IL_016e: ldarg.0
+  IL_016f: call System.Single Monocle.Entity::get_Top()
+  IL_0174: sub
+  IL_0175: ldc.r4 0
+  IL_017a: ldc.r4 32
+  IL_017f: ldc.r4 1
+  IL_0184: ldc.r4 0.5
+  IL_0189: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_018e: stloc.1
+  IL_018f: ldarg.0
+  IL_0190: ldfld System.Single FrostHelper.CustomRisingLava::delay
+  IL_0195: ldc.r4 0
+  IL_019a: bgt.un IL_01d0
+  IL_019f: ldarg.0
+  IL_01a0: ldfld Celeste.SoundSource FrostHelper.CustomRisingLava::loopSfx
+  IL_01a5: ldstr "rising"
+  IL_01aa: ldc.r4 1
+  IL_01af: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_01b4: pop
+  IL_01b5: ldarg.0
+  IL_01b6: ldarg.0
+  IL_01b7: call System.Single Monocle.Entity::get_Y()
+  IL_01bc: ldarg.0
+  IL_01bd: ldfld System.Single FrostHelper.CustomRisingLava::Speed
+  IL_01c2: ldloc.1
+  IL_01c3: mul
+  IL_01c4: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01c9: mul
+  IL_01ca: add
+  IL_01cb: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_01d0: ldarg.0
+  IL_01d1: callvirt System.Void FrostHelper.CustomRisingLava::UpdateColors()
+  IL_01d6: ret

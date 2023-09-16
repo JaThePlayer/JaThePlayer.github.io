@@ -1,0 +1,86 @@
+IL Diff: System.Void Celeste.Editor.MapEditor::RenderManualText()
+  IL_0000: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_0005: ldc.i4.s 116
+  IL_0007: callvirt System.Boolean Monocle.MInput/KeyboardData::Pressed(Microsoft.Xna.Framework.Input.Keys)
+  IL_000c: brfalse IL_0028
+  IL_0011: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0016: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_001b: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_ShowManualTextOnDebugMap()
+  IL_0020: ldc.i4.0
+  IL_0021: ceq
+  IL_0023: callvirt System.Void Celeste.Mod.Core.CoreModuleSettings::set_ShowManualTextOnDebugMap(System.Boolean)
+  IL_0028: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_002d: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin()
+  IL_0032: ldstr "F5: Show/Hide instructions"
+  IL_0037: stloc.0
+  IL_0038: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_003d: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_ShowManualTextOnDebugMap()
+  IL_0042: brfalse IL_0061
+  IL_0047: ldstr "Right Click:  Teleport to the room
+Confirm:      Teleport to the room
+Hold Control: Restart Chapter before teleporting
+Hold Shift:   Teleport to the mouse position
+Cancel:       Exit debug map
+Q:            Show red berries
+F1:           Show keys
+F2:           Center on current respawn point
+F5:           Show/Hide instructions"
++ IL_004c: ldc.i4 7915 @ Celeste.Mod.SpeedrunTool.RoomTimer.EndPoint::MapEditorOnRenderManualText
++ IL_0051: ldc.i4 8634929 @ Celeste.Mod.SpeedrunTool.RoomTimer.EndPoint::MapEditorOnRenderManualText
++ IL_0056: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.RoomTimer.EndPoint::MapEditorOnRenderManualText
+  |-> retrieves System.String Celeste.Mod.SpeedrunTool.RoomTimer.EndPoint/<>c::<MapEditorOnRenderManualText>b__10_3(System.String)
++ IL_005b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.RoomTimer.EndPoint::MapEditorOnRenderManualText
+  IL_0060: stloc.0
+  IL_0061: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_0066: ldloc.0
+  IL_0067: callvirt Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Graphics.SpriteFont::MeasureString(System.String)
+  IL_006c: stloc.1
+  IL_006d: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_0072: conv.r4
+  IL_0073: ldloc.1
+  IL_0074: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0079: sub
+  IL_007a: ldc.r4 20
+  IL_007f: sub
+  IL_0080: call System.Int32 Monocle.Engine::get_ViewHeight()
+  IL_0085: conv.r4
+  IL_0086: ldloc.1
+  IL_0087: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_008c: sub
+  IL_008d: ldc.r4 20
+  IL_0092: sub
+  IL_0093: ldloc.1
+  IL_0094: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0099: ldc.r4 20
+  IL_009e: add
+  IL_009f: ldloc.1
+  IL_00a0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a5: ldc.r4 20
+  IL_00aa: add
+  IL_00ab: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_00b0: ldc.r4 0.8
+  IL_00b5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00ba: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_00bf: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00c4: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_00c9: ldloc.0
+  IL_00ca: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_00cf: conv.r4
+  IL_00d0: ldloc.1
+  IL_00d1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d6: sub
+  IL_00d7: ldc.r4 10
+  IL_00dc: sub
+  IL_00dd: call System.Int32 Monocle.Engine::get_ViewHeight()
+  IL_00e2: conv.r4
+  IL_00e3: ldloc.1
+  IL_00e4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00e9: sub
+  IL_00ea: ldc.r4 10
+  IL_00ef: sub
+  IL_00f0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00fa: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::DrawString(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_00ff: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0104: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_0109: ret

@@ -1,0 +1,281 @@
+IL Diff: System.Void Celeste.SandwichLava::Update()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: ldloc.0
+  IL_000e: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0013: callvirt System.Single Monocle.Camera::get_X()
+  IL_0018: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_001d: ldarg.0
+  IL_001e: ldarg.0
+  IL_001f: ldfld System.Single Celeste.SandwichLava::delay
+  IL_0024: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0029: sub
+  IL_002a: stfld System.Single Celeste.SandwichLava::delay
+  IL_002f: ldarg.0
+  IL_0030: call System.Void Monocle.Entity::Update()
+  IL_0035: ldarg.0
+  IL_0036: ldc.i4.1
+  IL_0037: stfld System.Boolean Monocle.Entity::Visible
+  IL_003c: ldarg.0
+  IL_003d: ldfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_0042: brfalse IL_00d0
+  IL_0047: ldarg.0
+  IL_0048: ldarg.0
+  IL_0049: call System.Single Monocle.Entity::get_Y()
+  IL_004e: ldarg.0
+  IL_004f: callvirt System.Single Celeste.SandwichLava::get_centerY()
+  IL_0054: ldc.r4 128
+  IL_0059: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_005e: mul
+  IL_005f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0064: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_0069: ldarg.0
+  IL_006a: ldfld Celeste.SoundSource Celeste.SandwichLava::loopSfx
+  IL_006f: ldstr "rising"
+  IL_0074: ldc.r4 0
+  IL_0079: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_007e: pop
+  IL_007f: ldarg.0
+  IL_0080: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0085: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_008a: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_008f: stloc.1
+  IL_0090: ldloc.1
+  IL_0091: brfalse IL_016d
+  IL_0096: ldloc.1
+  IL_0097: callvirt System.Single Monocle.Entity::get_X()
+  IL_009c: ldarg.0
+  IL_009d: ldfld System.Single Celeste.SandwichLava::startX
+  IL_00a2: blt.un IL_016d
+  IL_00a7: ldloc.1
+  IL_00a8: ldfld System.Boolean Celeste.Player::JustRespawned
+  IL_00ad: brtrue IL_016d
+  IL_00b2: ldloc.1
+  IL_00b3: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00b8: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_00bd: ldc.i4.s 11
+  IL_00bf: beq IL_016d
+  IL_00c4: ldarg.0
+  IL_00c5: ldc.i4.0
+  IL_00c6: stfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_00cb: br IL_016d
+  IL_00d0: ldarg.0
+  IL_00d1: ldfld System.Boolean Celeste.SandwichLava::leaving
+  IL_00d6: brtrue IL_016d
+  IL_00db: ldarg.0
+  IL_00dc: ldfld System.Single Celeste.SandwichLava::delay
+  IL_00e1: ldc.r4 0
+  IL_00e6: bgt.un IL_016d
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld Celeste.SoundSource Celeste.SandwichLava::loopSfx
+  IL_00f1: ldstr "rising"
+  IL_00f6: ldc.r4 1
+  IL_00fb: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0100: pop
+  IL_0101: ldarg.0
+  IL_0102: ldfld System.Boolean Celeste.SandwichLava::iceMode
+  IL_0107: brfalse IL_013f
+  IL_010c: ldarg.0
+  IL_010d: ldarg.0
+  IL_010e: call System.Single Monocle.Entity::get_Y()
+  IL_0113: ldc.r4 20
++ IL_0118: ldarg.0 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_0119: ldc.i4 8009 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_011e: ldc.i4 25580935 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_0123: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.RisingLavaEverywhere::getRisingLavaSpeedFactor(Celeste.SandwichLava)
++ IL_0128: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,Celeste.SandwichLava>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_012d: mul @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
+  IL_012e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0133: mul
+  IL_0134: add
+  IL_0135: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_013a: br IL_016d
+  IL_013f: ldarg.0
+  IL_0140: ldarg.0
+  IL_0141: call System.Single Monocle.Entity::get_Y()
+  IL_0146: ldc.r4 20
++ IL_014b: ldarg.0 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_014c: ldc.i4 8013 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_0151: ldc.i4 58789816 @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_0156: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.RisingLavaEverywhere::getRisingLavaSpeedFactor(Celeste.SandwichLava)
++ IL_015b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,Celeste.SandwichLava>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
++ IL_0160: mul @ ExtendedVariants.Variants.RisingLavaEverywhere::modRisingLavaUpdate
+  IL_0161: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0166: mul
+  IL_0167: sub
+  IL_0168: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_016d: ldarg.0
+  IL_016e: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_0173: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect::Position
+  IL_0178: ldarg.0
+  IL_0179: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_017e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect::Position
+  IL_0183: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0188: ldc.r4 -160
+  IL_018d: ldarg.0
+  IL_018e: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_0193: callvirt System.Single Celeste.LavaRect::get_Height()
+  IL_0198: sub
+  IL_0199: ldarg.0
+  IL_019a: ldfld System.Boolean Celeste.SandwichLava::leaving
+  IL_019f: brtrue IL_01aa
+  IL_01a4: ldc.i4.0
+  IL_01a5: br IL_01af
+  IL_01aa: ldc.i4 -512
+  IL_01af: conv.r4
+  IL_01b0: add
+  IL_01b1: ldarg.0
+  IL_01b2: ldfld System.Boolean Celeste.SandwichLava::leaving
+  IL_01b7: brtrue IL_01c3
+  IL_01bc: ldc.i4.s 64
+  IL_01be: br IL_01c8
+  IL_01c3: ldc.i4 256
+  IL_01c8: conv.r4
+  IL_01c9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01ce: mul
+  IL_01cf: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_01d4: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01d9: ldarg.0
+  IL_01da: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_01df: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect::Position
+  IL_01e4: ldarg.0
+  IL_01e5: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_01ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect::Position
+  IL_01ef: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01f4: ldarg.0
+  IL_01f5: ldfld System.Boolean Celeste.SandwichLava::leaving
+  IL_01fa: brtrue IL_0205
+  IL_01ff: ldc.i4.0
+  IL_0200: br IL_020a
+  IL_0205: ldc.i4 512
+  IL_020a: conv.r4
+  IL_020b: ldarg.0
+  IL_020c: ldfld System.Boolean Celeste.SandwichLava::leaving
+  IL_0211: brtrue IL_021d
+  IL_0216: ldc.i4.s 64
+  IL_0218: br IL_0222
+  IL_021d: ldc.i4 256
+  IL_0222: conv.r4
+  IL_0223: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0228: mul
+  IL_0229: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_022e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0233: ldarg.0
+  IL_0234: ldarg.0
+  IL_0235: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_023a: ldarg.0
+  IL_023b: ldfld System.Boolean Celeste.SandwichLava::iceMode
+  IL_0240: brtrue IL_024b
+  IL_0245: ldc.i4.0
+  IL_0246: br IL_024c
+  IL_024b: ldc.i4.1
+  IL_024c: conv.r4
+  IL_024d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0252: ldc.r4 4
+  IL_0257: mul
+  IL_0258: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_025d: stfld System.Single Celeste.SandwichLava::lerp
+  IL_0262: ldarg.0
+  IL_0263: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0268: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Hot
+  IL_026d: ldc.i4.0
+  IL_026e: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0273: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Cold
+  IL_0278: ldc.i4.0
+  IL_0279: ldelem.any Microsoft.Xna.Framework.Color
+  IL_027e: ldarg.0
+  IL_027f: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_0284: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0289: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::SurfaceColor
+  IL_028e: ldarg.0
+  IL_028f: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0294: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Hot
+  IL_0299: ldc.i4.1
+  IL_029a: ldelem.any Microsoft.Xna.Framework.Color
+  IL_029f: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Cold
+  IL_02a4: ldc.i4.1
+  IL_02a5: ldelem.any Microsoft.Xna.Framework.Color
+  IL_02aa: ldarg.0
+  IL_02ab: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_02b0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_02b5: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::EdgeColor
+  IL_02ba: ldarg.0
+  IL_02bb: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_02c0: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Hot
+  IL_02c5: ldc.i4.2
+  IL_02c6: ldelem.any Microsoft.Xna.Framework.Color
+  IL_02cb: ldsfld Microsoft.Xna.Framework.Color[] Celeste.RisingLava::Cold
+  IL_02d0: ldc.i4.2
+  IL_02d1: ldelem.any Microsoft.Xna.Framework.Color
+  IL_02d6: ldarg.0
+  IL_02d7: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_02dc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_02e1: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::CenterColor
+  IL_02e6: ldarg.0
+  IL_02e7: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_02ec: ldarg.0
+  IL_02ed: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_02f2: ldc.r4 5
+  IL_02f7: mul
+  IL_02f8: stfld System.Single Celeste.LavaRect::Spikey
+  IL_02fd: ldarg.0
+  IL_02fe: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0303: ldc.r4 1
+  IL_0308: ldarg.0
+  IL_0309: ldfld System.Single Celeste.SandwichLava::lerp
+  IL_030e: sub
+  IL_030f: ldc.r4 2
+  IL_0314: mul
+  IL_0315: stfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_031a: ldarg.0
+  IL_031b: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0320: ldarg.0
+  IL_0321: ldfld System.Boolean Celeste.SandwichLava::iceMode
+  IL_0326: brtrue IL_0332
+  IL_032b: ldc.i4.s 32
+  IL_032d: br IL_0337
+  IL_0332: ldc.i4 128
+  IL_0337: conv.r4
+  IL_0338: stfld System.Single Celeste.LavaRect::Fade
+  IL_033d: ldarg.0
+  IL_033e: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_0343: ldarg.0
+  IL_0344: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0349: ldfld Microsoft.Xna.Framework.Color Celeste.LavaRect::SurfaceColor
+  IL_034e: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::SurfaceColor
+  IL_0353: ldarg.0
+  IL_0354: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_0359: ldarg.0
+  IL_035a: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_035f: ldfld Microsoft.Xna.Framework.Color Celeste.LavaRect::EdgeColor
+  IL_0364: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::EdgeColor
+  IL_0369: ldarg.0
+  IL_036a: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_036f: ldarg.0
+  IL_0370: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_0375: ldfld Microsoft.Xna.Framework.Color Celeste.LavaRect::CenterColor
+  IL_037a: stfld Microsoft.Xna.Framework.Color Celeste.LavaRect::CenterColor
+  IL_037f: ldarg.0
+  IL_0380: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_0385: ldarg.0
+  IL_0386: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_038b: ldfld System.Single Celeste.LavaRect::Spikey
+  IL_0390: stfld System.Single Celeste.LavaRect::Spikey
+  IL_0395: ldarg.0
+  IL_0396: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_039b: ldarg.0
+  IL_039c: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_03a1: ldfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_03a6: stfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_03ab: ldarg.0
+  IL_03ac: ldfld Celeste.LavaRect Celeste.SandwichLava::topRect
+  IL_03b1: ldarg.0
+  IL_03b2: ldfld Celeste.LavaRect Celeste.SandwichLava::bottomRect
+  IL_03b7: ldfld System.Single Celeste.LavaRect::Fade
+  IL_03bc: stfld System.Single Celeste.LavaRect::Fade
+  IL_03c1: ret

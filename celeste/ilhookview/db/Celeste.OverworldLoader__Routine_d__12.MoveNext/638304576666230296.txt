@@ -1,0 +1,187 @@
+IL Diff: System.Boolean Celeste.OverworldLoader/<Routine>d__12::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.OverworldLoader Celeste.OverworldLoader/<Routine>d__12::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0036,IL_00e6,IL_0130,IL_014c,IL_0187,IL_01dc,IL_01ff,IL_0225
+  IL_0034: ldc.i4.0
+  IL_0035: ret
+  IL_0036: ldarg.0
+  IL_0037: ldc.i4.m1
+  IL_0038: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_003d: ldloc.1
+  IL_003e: ldfld Celeste.Overworld/StartMode Celeste.OverworldLoader::StartMode
+  IL_0043: ldc.i4.2
+  IL_0044: beq IL_0055
+  IL_0049: ldloc.1
+  IL_004a: ldfld Celeste.Overworld/StartMode Celeste.OverworldLoader::StartMode
+  IL_004f: ldc.i4.3
+  IL_0050: bne.un IL_00bd
+  IL_0055: ldarg.0
+  IL_0056: ldfld Celeste.Session Celeste.OverworldLoader/<Routine>d__12::session
+  IL_005b: brfalse IL_00bd
+  IL_0060: ldarg.0
+  IL_0061: ldfld Celeste.Session Celeste.OverworldLoader/<Routine>d__12::session
+  IL_0066: ldfld System.Boolean Celeste.Session::UnlockedCSide
+  IL_006b: brfalse IL_008c
+  IL_0070: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0075: callvirt Celeste.LevelSetStats Celeste.SaveData::get_LevelSetStats()
+  IL_007a: callvirt System.Int32 Celeste.LevelSetStats::get_MaxAreaMode()
+  IL_007f: ldc.i4.2
+  IL_0080: blt IL_008c
+  IL_0085: ldloc.1
+  IL_0086: ldc.i4.1
+  IL_0087: stfld System.Boolean Celeste.OverworldLoader::showUnlockCSidePostcard
+  IL_008c: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0091: ldfld System.Boolean Celeste.Settings::VariantsUnlocked
+  IL_0096: brtrue IL_00bd
+  IL_009b: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00a0: brfalse IL_00bd
+  IL_00a5: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00aa: callvirt System.Int32 Celeste.SaveData::get_TotalHeartGemsInVanilla()
+  IL_00af: ldc.i4.s 24
+  IL_00b1: blt IL_00bd
+  IL_00b6: ldloc.1
+  IL_00b7: ldc.i4.1
+  IL_00b8: stfld System.Boolean Celeste.OverworldLoader::showVariantPostcard
+  IL_00bd: ldloc.1
+  IL_00be: ldfld System.Boolean Celeste.OverworldLoader::showUnlockCSidePostcard
+  IL_00c3: brfalse IL_0153
+  IL_00c8: ldarg.0
+  IL_00c9: ldc.r4 3
++ IL_00ce: call System.Single Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::ModifyWaitTime(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::IL_OverworldLoader_Routine
+  IL_00d3: box System.Single
+  IL_00d8: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_00dd: ldarg.0
+  IL_00de: ldc.i4.1
+  IL_00df: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_00e4: ldc.i4.1
+  IL_00e5: ret
+  IL_00e6: ldarg.0
+  IL_00e7: ldc.i4.m1
+  IL_00e8: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_00ed: ldloc.1
+  IL_00ee: ldloc.1
+  IL_00ef: ldstr "POSTCARD_CSIDES"
+  IL_00f4: ldnull
+  IL_00f5: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_00fa: ldstr "event:/ui/main/postcard_csides_in"
+  IL_00ff: ldstr "event:/ui/main/postcard_csides_out"
+  IL_0104: newobj System.Void Celeste.Postcard::.ctor(System.String,System.String,System.String)
+  IL_0109: dup
+  IL_010a: stloc.2
+  IL_010b: stfld Celeste.Postcard Celeste.OverworldLoader::postcard
+  IL_0110: ldloc.2
+  IL_0111: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0116: ldarg.0
+  IL_0117: ldloc.1
+  IL_0118: ldfld Celeste.Postcard Celeste.OverworldLoader::postcard
+  IL_011d: callvirt System.Collections.IEnumerator Celeste.Postcard::DisplayRoutine()
+  IL_0122: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_0127: ldarg.0
+  IL_0128: ldc.i4.2
+  IL_0129: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_012e: ldc.i4.1
+  IL_012f: ret
+  IL_0130: ldarg.0
+  IL_0131: ldc.i4.m1
+  IL_0132: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0137: br IL_0153
+  IL_013c: ldarg.0
+  IL_013d: ldnull
+  IL_013e: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_0143: ldarg.0
+  IL_0144: ldc.i4.3
+  IL_0145: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_014a: ldc.i4.1
+  IL_014b: ret
+  IL_014c: ldarg.0
+  IL_014d: ldc.i4.m1
+  IL_014e: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0153: ldloc.1
+  IL_0154: ldfld System.Boolean Celeste.OverworldLoader::loaded
+  IL_0159: brfalse IL_013c
+  IL_015e: ldloc.1
+  IL_015f: ldfld System.Boolean Celeste.OverworldLoader::showVariantPostcard
+  IL_0164: brfalse IL_0236
+  IL_0169: ldarg.0
+  IL_016a: ldc.r4 3
++ IL_016f: call System.Single Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::ModifyWaitTime(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::IL_OverworldLoader_Routine
+  IL_0174: box System.Single
+  IL_0179: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_017e: ldarg.0
+  IL_017f: ldc.i4.4
+  IL_0180: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0185: ldc.i4.1
+  IL_0186: ret
+  IL_0187: ldarg.0
+  IL_0188: ldc.i4.m1
+  IL_0189: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_018e: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0193: ldc.i4.1
+  IL_0194: stfld System.Boolean Celeste.Settings::VariantsUnlocked
+  IL_0199: ldloc.1
+  IL_019a: ldloc.1
+  IL_019b: ldstr "POSTCARD_VARIANTS"
+  IL_01a0: ldnull
+  IL_01a1: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_01a6: ldstr "event:/new_content/ui/postcard_variants_in"
+  IL_01ab: ldstr "event:/new_content/ui/postcard_variants_out"
+  IL_01b0: newobj System.Void Celeste.Postcard::.ctor(System.String,System.String,System.String)
+  IL_01b5: dup
+  IL_01b6: stloc.2
+  IL_01b7: stfld Celeste.Postcard Celeste.OverworldLoader::postcard
+  IL_01bc: ldloc.2
+  IL_01bd: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01c2: ldarg.0
+  IL_01c3: ldloc.1
+  IL_01c4: ldfld Celeste.Postcard Celeste.OverworldLoader::postcard
+  IL_01c9: callvirt System.Collections.IEnumerator Celeste.Postcard::DisplayRoutine()
+  IL_01ce: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_01d3: ldarg.0
+  IL_01d4: ldc.i4.5
+  IL_01d5: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_01da: ldc.i4.1
+  IL_01db: ret
+  IL_01dc: ldarg.0
+  IL_01dd: ldc.i4.m1
+  IL_01de: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_01e3: ldc.i4.0
+  IL_01e4: ldc.i4.1
+  IL_01e5: call System.Void Celeste.UserIO::SaveHandler(System.Boolean,System.Boolean)
+  IL_01ea: br IL_0206
+  IL_01ef: ldarg.0
+  IL_01f0: ldnull
+  IL_01f1: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_01f6: ldarg.0
+  IL_01f7: ldc.i4.6
+  IL_01f8: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_01fd: ldc.i4.1
+  IL_01fe: ret
+  IL_01ff: ldarg.0
+  IL_0200: ldc.i4.m1
+  IL_0201: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0206: call System.Boolean Celeste.UserIO::get_Saving()
+  IL_020b: brtrue IL_01ef
+  IL_0210: br IL_022c
+  IL_0215: ldarg.0
+  IL_0216: ldnull
+  IL_0217: stfld System.Object Celeste.OverworldLoader/<Routine>d__12::<>2__current
+  IL_021c: ldarg.0
+  IL_021d: ldc.i4.7
+  IL_021e: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_0223: ldc.i4.1
+  IL_0224: ret
+  IL_0225: ldarg.0
+  IL_0226: ldc.i4.m1
+  IL_0227: stfld System.Int32 Celeste.OverworldLoader/<Routine>d__12::<>1__state
+  IL_022c: ldsfld Celeste.SaveLoadIcon Celeste.SaveLoadIcon::Instance
+  IL_0231: brtrue IL_0215
+  IL_0236: ldloc.1
+  IL_0237: ldfld Celeste.Overworld Celeste.OverworldLoader::overworld
+  IL_023c: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_0241: ldc.i4.0
+  IL_0242: ret

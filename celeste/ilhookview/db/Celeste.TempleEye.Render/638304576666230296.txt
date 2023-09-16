@@ -1,0 +1,23 @@
+IL Diff: System.Void Celeste.TempleEye::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedClutteredEntity() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0005: brfalse IL_000b @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_000a: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
+  IL_000b: ldarg.0
+  IL_000c: ldfld System.Boolean Celeste.TempleEye::bursting
+  IL_0011: brtrue IL_0043
+  IL_0016: ldarg.0
+  IL_0017: ldfld Monocle.MTexture Celeste.TempleEye::eyeTexture
+  IL_001c: ldarg.0
+  IL_001d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0022: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_0027: ldarg.0
+  IL_0028: ldfld Monocle.MTexture Celeste.TempleEye::pupilTexture
+  IL_002d: ldarg.0
+  IL_002e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0033: ldarg.0
+  IL_0034: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TempleEye::pupilPosition
+  IL_0039: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_003e: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_0043: ldarg.0
+  IL_0044: call System.Void Monocle.Entity::Render()
+  IL_0049: ret

@@ -1,0 +1,42 @@
+IL Diff: System.Void Celeste.Mod.CollabUtils2.Entities.SilverBerry::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
++ IL_0002: call System.Void Celeste.Mod.HardcoreMode.HMModule::ModifySilverBerry(Monocle.Entity,Monocle.Scene) @ Celeste.Mod.HardcoreMode.HMModule::IL_SilverBerry_Added
++ IL_0007: ldarg.0 @ Celeste.Mod.HardcoreMode.HMModule::IL_SilverBerry_Added
++ IL_0008: ldarg.1 @ Celeste.Mod.HardcoreMode.HMModule::IL_SilverBerry_Added
+  IL_0009: call System.Void Celeste.Strawberry::Added(Monocle.Scene)
+  IL_000e: ldarg.1
+  IL_000f: isinst Celeste.Level
+  IL_0014: ldfld Celeste.Session Celeste.Level::Session
+  IL_0019: stloc.0
+  IL_001a: ldarg.0
+  IL_001b: ldfld System.Boolean Celeste.Mod.CollabUtils2.Entities.SilverBerry::spawnedThroughGiveSilver
+  IL_0020: brtrue IL_0090
+  IL_0025: ldloc.0
+  IL_0026: ldfld System.String Celeste.Session::FurthestSeenLevel
+  IL_002b: ldloc.0
+  IL_002c: ldfld System.String Celeste.Session::Level
+  IL_0031: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0036: brfalse IL_0046
+  IL_003b: ldloc.0
+  IL_003c: ldfld System.Int32 Celeste.Session::Deaths
+  IL_0041: brtrue IL_008a
+  IL_0046: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_004b: ldfld System.Boolean Celeste.SaveData::CheatMode
+  IL_0050: brtrue IL_0090
+  IL_0055: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_005a: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_005f: ldloc.0
+  IL_0060: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0065: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_006a: callvirt T System.Collections.Generic.List`1<Celeste.AreaStats>::get_Item(System.Int32)
+  IL_006f: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
+  IL_0074: ldloc.0
+  IL_0075: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_007a: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_007f: ldelem.ref
+  IL_0080: ldfld System.Boolean Celeste.AreaModeStats::Completed
+  IL_0085: brtrue IL_0090
+  IL_008a: ldarg.0
+  IL_008b: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0090: ret

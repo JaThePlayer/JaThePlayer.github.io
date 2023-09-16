@@ -1,0 +1,69 @@
+IL Diff: System.Boolean Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.TempleGate Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_00af
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>1__state
+  IL_0024: ldloc.1
+  IL_0025: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_002a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_002f: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0034: stloc.2
+  IL_0035: ldloc.2
+  IL_0036: brfalse IL_009f
+  IL_003b: ldloc.2
+  IL_003c: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0041: ldloc.1
+  IL_0042: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0047: ldc.r4 4
+  IL_004c: add
+  IL_004d: ble.un IL_009f
+  IL_0052: ldloc.1
+  IL_0053: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0058: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_005d: callvirt T Monocle.Tracker::GetEntity<Celeste.TheoCrystal>()
++ IL_0062: ldc.i4 7324 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
++ IL_0067: ldc.i4 52555980 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
++ IL_006c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
+  |-> retrieves Celeste.TheoCrystal ExtendedVariants.Variants.TheoCrystalsEverywhere/<>c::<addExtendedVariantTheoCrystalToCollideCheck>b__12_0(Celeste.TheoCrystal)
++ IL_0071: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.TheoCrystal,Celeste.TheoCrystal>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
+  IL_0076: stloc.3
+  IL_0077: ldloc.1
+  IL_0078: ldfld System.Boolean Celeste.TempleGate::lockState
+  IL_007d: brtrue IL_009f
+  IL_0082: ldloc.3
+  IL_0083: brfalse IL_009f
+  IL_0088: ldloc.3
+  IL_0089: callvirt System.Single Monocle.Entity::get_Left()
+  IL_008e: ldloc.1
+  IL_008f: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0094: ldc.r4 4
+  IL_0099: add
+  IL_009a: bgt IL_00bb
+  IL_009f: ldarg.0
+  IL_00a0: ldnull
+  IL_00a1: stfld System.Object Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>2__current
+  IL_00a6: ldarg.0
+  IL_00a7: ldc.i4.1
+  IL_00a8: stfld System.Int32 Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>1__state
+  IL_00ad: ldc.i4.1
+  IL_00ae: ret
+  IL_00af: ldarg.0
+  IL_00b0: ldc.i4.m1
+  IL_00b1: stfld System.Int32 Celeste.TempleGate/<CloseBehindPlayerAndTheo>d__28::<>1__state
+  IL_00b6: br IL_0024
+  IL_00bb: ldloc.1
+  IL_00bc: callvirt System.Void Celeste.TempleGate::Close()
+  IL_00c1: ldc.i4.0
+  IL_00c2: ret

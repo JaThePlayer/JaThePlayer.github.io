@@ -1,0 +1,421 @@
+IL Diff: Microsoft.Xna.Framework.Vector2 Celeste.Player::get_CameraTarget()
+  IL_0000: ldloca.s V_0
+  IL_0002: initobj Microsoft.Xna.Framework.Vector2
+  IL_0008: ldloca.s V_1
+  IL_000a: ldarg.0
+  IL_000b: call System.Single Monocle.Entity::get_X()
+  IL_0010: ldc.r4 160
+  IL_0015: sub
+  IL_0016: ldarg.0
+  IL_0017: call System.Single Monocle.Entity::get_Y()
+  IL_001c: ldc.r4 90
+  IL_0021: sub
+  IL_0022: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0027: ldarg.0
+  IL_0028: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_002d: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0032: ldc.i4.s 18
+  IL_0034: beq IL_0065
+  IL_0039: ldloc.1
+  IL_003a: ldarg.0
+  IL_003b: ldfld Celeste.Level Celeste.Player::level
+  IL_0040: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::CameraOffset
+  IL_0045: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_004a: ldarg.0
+  IL_004b: ldfld Celeste.Level Celeste.Player::level
+  IL_0050: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::CameraOffset
+  IL_0055: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_005a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_005f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0064: stloc.1
+  IL_0065: ldarg.0
+  IL_0066: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_006b: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0070: ldc.i4.s 19
+  IL_0072: bne.un IL_00b4
+  IL_0077: ldloca.s V_1
+  IL_0079: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_007e: dup
+  IL_007f: ldind.r4
+  IL_0080: ldc.r4 0.2
+  IL_0085: ldarg.0
+  IL_0086: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_008b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0090: mul
+  IL_0091: add
+  IL_0092: stind.r4
+  IL_0093: ldloca.s V_1
+  IL_0095: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_009a: dup
+  IL_009b: ldind.r4
+  IL_009c: ldc.r4 0.2
+  IL_00a1: ldarg.0
+  IL_00a2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00a7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ac: mul
+  IL_00ad: add
+  IL_00ae: stind.r4
+  IL_00af: br IL_015c
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00ba: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_00bf: ldc.i4.5
+  IL_00c0: bne.un IL_0113
++ IL_00c5: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_get_CameraTarget
++ IL_00c6: call System.Boolean Celeste.Mod.CommunalHelper.Entities.CustomBooster::DoesNotAffectCamera(Celeste.Player) @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_get_CameraTarget
++ IL_00cb: brtrue IL_0113 @ Celeste.Mod.CommunalHelper.Entities.CustomBooster::Player_get_CameraTarget
+  IL_00d0: ldloca.s V_1
+  IL_00d2: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d7: dup
+  IL_00d8: ldind.r4
+  IL_00d9: ldc.i4.s 48
+  IL_00db: ldarg.0
+  IL_00dc: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00e1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00e6: call System.Int32 System.Math::Sign(System.Single)
+  IL_00eb: mul
+  IL_00ec: conv.r4
+  IL_00ed: add
+  IL_00ee: stind.r4
+  IL_00ef: ldloca.s V_1
+  IL_00f1: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00f6: dup
+  IL_00f7: ldind.r4
+  IL_00f8: ldc.i4.s 48
+  IL_00fa: ldarg.0
+  IL_00fb: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0100: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0105: call System.Int32 System.Math::Sign(System.Single)
+  IL_010a: mul
+  IL_010b: conv.r4
+  IL_010c: add
+  IL_010d: stind.r4
+  IL_010e: br IL_015c
+  IL_0113: ldarg.0
+  IL_0114: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0119: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_011e: ldc.i4.s 10
+  IL_0120: bne.un IL_013a
+  IL_0125: ldloca.s V_1
+  IL_0127: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_012c: dup
+  IL_012d: ldind.r4
+  IL_012e: ldc.r4 64
+  IL_0133: sub
+  IL_0134: stind.r4
+  IL_0135: br IL_015c
+  IL_013a: ldarg.0
+  IL_013b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0140: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0145: ldc.i4.s 18
+  IL_0147: bne.un IL_015c
+  IL_014c: ldloca.s V_1
+  IL_014e: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0153: dup
+  IL_0154: ldind.r4
+  IL_0155: ldc.r4 32
+  IL_015a: add
+  IL_015b: stind.r4
+  IL_015c: ldarg.0
+  IL_015d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_0162: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0167: ldc.r4 0
+  IL_016c: ble.un IL_027f
+  IL_0171: ldarg.0
+  IL_0172: ldfld System.Boolean Celeste.Player::CameraAnchorIgnoreX
+  IL_0177: brfalse IL_01b4
+  IL_017c: ldarg.0
+  IL_017d: ldfld System.Boolean Celeste.Player::CameraAnchorIgnoreY
+  IL_0182: brtrue IL_01b4
+  IL_0187: ldloca.s V_1
+  IL_0189: ldloc.1
+  IL_018a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_018f: ldarg.0
+  IL_0190: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchor
+  IL_0195: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_019a: ldarg.0
+  IL_019b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_01a0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01a5: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_01aa: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01af: br IL_027f
+  IL_01b4: ldarg.0
+  IL_01b5: ldfld System.Boolean Celeste.Player::CameraAnchorIgnoreX
+  IL_01ba: brtrue IL_01f7
+  IL_01bf: ldarg.0
+  IL_01c0: ldfld System.Boolean Celeste.Player::CameraAnchorIgnoreY
+  IL_01c5: brfalse IL_01f7
+  IL_01ca: ldloca.s V_1
+  IL_01cc: ldloc.1
+  IL_01cd: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01d2: ldarg.0
+  IL_01d3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchor
+  IL_01d8: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01dd: ldarg.0
+  IL_01de: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_01e3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01e8: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_01ed: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01f2: br IL_027f
+  IL_01f7: ldarg.0
+  IL_01f8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_01fd: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0202: ldarg.0
+  IL_0203: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_0208: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020d: bne.un IL_022f
+  IL_0212: ldloc.1
+  IL_0213: ldarg.0
+  IL_0214: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchor
+  IL_0219: ldarg.0
+  IL_021a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_021f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0224: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0229: stloc.1
+  IL_022a: br IL_027f
+  IL_022f: ldloca.s V_1
+  IL_0231: ldloc.1
+  IL_0232: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0237: ldarg.0
+  IL_0238: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchor
+  IL_023d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0242: ldarg.0
+  IL_0243: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_0248: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_024d: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0252: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0257: ldloca.s V_1
+  IL_0259: ldloc.1
+  IL_025a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_025f: ldarg.0
+  IL_0260: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchor
+  IL_0265: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_026a: ldarg.0
+  IL_026b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::CameraAnchorLerp
+  IL_0270: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0275: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_027a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_027f: ldarg.0
+  IL_0280: ldfld System.Boolean Celeste.Player::EnforceLevelBounds
+  IL_0285: brfalse IL_030f
+  IL_028a: ldloca.s V_0
+  IL_028c: ldloc.1
+  IL_028d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0292: ldarg.0
+  IL_0293: ldfld Celeste.Level Celeste.Player::level
+  IL_0298: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_029d: stloc.2
+  IL_029e: ldloca.s V_2
+  IL_02a0: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_02a5: conv.r4
+  IL_02a6: ldarg.0
+  IL_02a7: ldfld Celeste.Level Celeste.Player::level
+  IL_02ac: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_02b1: stloc.2
+  IL_02b2: ldloca.s V_2
+  IL_02b4: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_02b9: ldc.i4 320
+  IL_02be: sub
+  IL_02bf: conv.r4
+  IL_02c0: call System.Single Microsoft.Xna.Framework.MathHelper::Clamp(System.Single,System.Single,System.Single)
+  IL_02c5: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02ca: ldloca.s V_0
+  IL_02cc: ldloc.1
+  IL_02cd: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02d2: ldarg.0
+  IL_02d3: ldfld Celeste.Level Celeste.Player::level
+  IL_02d8: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_02dd: stloc.2
+  IL_02de: ldloca.s V_2
+  IL_02e0: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_02e5: conv.r4
+  IL_02e6: ldarg.0
+  IL_02e7: ldfld Celeste.Level Celeste.Player::level
+  IL_02ec: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_02f1: stloc.2
+  IL_02f2: ldloca.s V_2
+  IL_02f4: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_02f9: ldc.i4 180
+  IL_02fe: sub
+  IL_02ff: conv.r4
+  IL_0300: call System.Single Microsoft.Xna.Framework.MathHelper::Clamp(System.Single,System.Single,System.Single)
+  IL_0305: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_030a: br IL_0311
+  IL_030f: ldloc.1
+  IL_0310: stloc.0
+  IL_0311: ldarg.0
+  IL_0312: ldfld Celeste.Level Celeste.Player::level
+  IL_0317: ldfld Celeste.Level/CameraLockModes Celeste.Level::CameraLockMode
+  IL_031c: brfalse IL_04cb
+  IL_0321: ldarg.0
+  IL_0322: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0327: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_032c: callvirt T Monocle.Tracker::GetComponent<Celeste.CameraLocker>()
+  IL_0331: stloc.3
+  IL_0332: ldarg.0
+  IL_0333: ldfld Celeste.Level Celeste.Player::level
+  IL_0338: ldfld Celeste.Level/CameraLockModes Celeste.Level::CameraLockMode
+  IL_033d: ldc.i4.1
+  IL_033e: beq IL_03a8
+  IL_0343: ldloca.s V_0
+  IL_0345: ldloc.0
+  IL_0346: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_034b: ldarg.0
+  IL_034c: ldfld Celeste.Level Celeste.Player::level
+  IL_0351: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0356: callvirt System.Single Monocle.Camera::get_X()
+  IL_035b: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_0360: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0365: ldloc.3
+  IL_0366: brfalse IL_03a8
+  IL_036b: ldloca.s V_0
+  IL_036d: ldloc.0
+  IL_036e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0373: ldarg.0
+  IL_0374: ldfld Celeste.Level Celeste.Player::level
+  IL_0379: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_037e: stloc.2
+  IL_037f: ldloca.s V_2
+  IL_0381: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0386: conv.r4
+  IL_0387: ldloc.3
+  IL_0388: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_038d: callvirt System.Single Monocle.Entity::get_X()
+  IL_0392: ldloc.3
+  IL_0393: ldfld System.Single Celeste.CameraLocker::MaxXOffset
+  IL_0398: sub
+  IL_0399: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_039e: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_03a3: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_03a8: ldarg.0
+  IL_03a9: ldfld Celeste.Level Celeste.Player::level
+  IL_03ae: ldfld Celeste.Level/CameraLockModes Celeste.Level::CameraLockMode
+  IL_03b3: ldc.i4.2
+  IL_03b4: bne.un IL_0423
+  IL_03b9: ldloca.s V_0
+  IL_03bb: ldloc.0
+  IL_03bc: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03c1: ldarg.0
+  IL_03c2: ldfld Celeste.Level Celeste.Player::level
+  IL_03c7: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_03cc: callvirt System.Single Monocle.Camera::get_Y()
+  IL_03d1: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_03d6: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03db: ldloc.3
+  IL_03dc: brfalse IL_04cb
+  IL_03e1: ldloca.s V_0
+  IL_03e3: ldloc.0
+  IL_03e4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03e9: ldarg.0
+  IL_03ea: ldfld Celeste.Level Celeste.Player::level
+  IL_03ef: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_03f4: stloc.2
+  IL_03f5: ldloca.s V_2
+  IL_03f7: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_03fc: conv.r4
+  IL_03fd: ldloc.3
+  IL_03fe: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0403: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0408: ldloc.3
+  IL_0409: ldfld System.Single Celeste.CameraLocker::MaxYOffset
+  IL_040e: sub
+  IL_040f: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_0414: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_0419: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_041e: br IL_04cb
+  IL_0423: ldarg.0
+  IL_0424: ldfld Celeste.Level Celeste.Player::level
+  IL_0429: ldfld Celeste.Level/CameraLockModes Celeste.Level::CameraLockMode
+  IL_042e: ldc.i4.1
+  IL_042f: bne.un IL_04cb
+  IL_0434: ldarg.0
+  IL_0435: ldfld Celeste.Level Celeste.Player::level
+  IL_043a: ldarg.0
+  IL_043b: ldfld Celeste.Level Celeste.Player::level
+  IL_0440: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0445: callvirt System.Single Monocle.Camera::get_Y()
+  IL_044a: ldc.r4 180
+  IL_044f: add
+  IL_0450: ldarg.0
+  IL_0451: ldfld Celeste.Level Celeste.Player::level
+  IL_0456: ldfld System.Single Celeste.Level::CameraUpwardMaxY
+  IL_045b: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_0460: stfld System.Single Celeste.Level::CameraUpwardMaxY
+  IL_0465: ldloca.s V_0
+  IL_0467: ldloc.0
+  IL_0468: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_046d: ldarg.0
+  IL_046e: ldfld Celeste.Level Celeste.Player::level
+  IL_0473: ldfld System.Single Celeste.Level::CameraUpwardMaxY
+  IL_0478: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_047d: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0482: ldloc.3
+  IL_0483: brfalse IL_04cb
+  IL_0488: ldloca.s V_0
+  IL_048a: ldloc.0
+  IL_048b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0490: ldarg.0
+  IL_0491: ldfld Celeste.Level Celeste.Player::level
+  IL_0496: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_049b: stloc.2
+  IL_049c: ldloca.s V_2
+  IL_049e: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_04a3: ldc.i4 180
+  IL_04a8: sub
+  IL_04a9: conv.r4
+  IL_04aa: ldloc.3
+  IL_04ab: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_04b0: callvirt System.Single Monocle.Entity::get_Y()
+  IL_04b5: ldloc.3
+  IL_04b6: ldfld System.Single Celeste.CameraLocker::MaxYOffset
+  IL_04bb: sub
+  IL_04bc: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_04c1: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_04c6: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_04cb: ldarg.0
+  IL_04cc: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_04d1: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_04d6: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Killbox>()
+  IL_04db: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_04e0: stloc.s V_4
+  IL_04e2: br IL_0551
+  IL_04e7: ldloca.s V_4
+  IL_04e9: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_04ee: stloc.s V_5
+  IL_04f0: ldloc.s V_5
+  IL_04f2: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_04f7: brfalse IL_0551
+  IL_04fc: ldarg.0
+  IL_04fd: call System.Single Monocle.Entity::get_Top()
+  IL_0502: ldloc.s V_5
+  IL_0504: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0509: bge.un IL_0551
+  IL_050e: ldarg.0
+  IL_050f: call System.Single Monocle.Entity::get_Right()
+  IL_0514: ldloc.s V_5
+  IL_0516: callvirt System.Single Monocle.Entity::get_Left()
+  IL_051b: ble.un IL_0551
+  IL_0520: ldarg.0
+  IL_0521: call System.Single Monocle.Entity::get_Left()
+  IL_0526: ldloc.s V_5
+  IL_0528: callvirt System.Single Monocle.Entity::get_Right()
+  IL_052d: bge.un IL_0551
+  IL_0532: ldloca.s V_0
+  IL_0534: ldloc.0
+  IL_0535: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_053a: ldloc.s V_5
+  IL_053c: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0541: ldc.r4 180
+  IL_0546: sub
+  IL_0547: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_054c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0551: ldloca.s V_4
+  IL_0553: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0558: brtrue IL_04e7
+  IL_055d: leave IL_0570
+  IL_0562: ldloca.s V_4
+  IL_0564: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_056a: callvirt System.Void System.IDisposable::Dispose()
+  IL_056f: endfinally
+  IL_0570: ldloc.0
+  IL_0571: ret

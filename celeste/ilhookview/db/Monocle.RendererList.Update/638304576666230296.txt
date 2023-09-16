@@ -1,0 +1,30 @@
+IL Diff: System.Void Monocle.RendererList::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Monocle.Renderer> Monocle.RendererList::Renderers
+  IL_0006: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Renderer>::GetEnumerator()
+  IL_000b: stloc.0
+  IL_000c: br IL_004b
+  IL_0011: ldloca.s V_0
+  IL_0013: call T System.Collections.Generic.List`1/Enumerator<Monocle.Renderer>::get_Current()
++ IL_0018: ldc.i4 6913 @ vitmod.VitModule::RendererList_Update
++ IL_001d: ldc.i4 19173296 @ vitmod.VitModule::RendererList_Update
++ IL_0022: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ vitmod.VitModule::RendererList_Update
+  |-> retrieves Monocle.Renderer vitmod.VitModule::<RendererList_Update>b__18_0(Monocle.Renderer)
++ IL_0027: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Monocle.Renderer,Monocle.Renderer>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ vitmod.VitModule::RendererList_Update
+  IL_002c: ldarg.0
+  IL_002d: ldfld Monocle.Scene Monocle.RendererList::scene
+  IL_0032: callvirt System.Void Monocle.Renderer::Update(Monocle.Scene)
++ IL_0037: ldc.i4 6926 @ vitmod.VitModule::RendererList_Update
++ IL_003c: ldc.i4 9533130 @ vitmod.VitModule::RendererList_Update
++ IL_0041: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ vitmod.VitModule::RendererList_Update
+  |-> retrieves System.Void vitmod.VitModule::<RendererList_Update>b__18_1()
++ IL_0046: callvirt System.Void System.Action::Invoke() @ vitmod.VitModule::RendererList_Update
+  IL_004b: ldloca.s V_0
+  IL_004d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Renderer>::MoveNext()
+  IL_0052: brtrue IL_0011
+  IL_0057: leave IL_006a
+  IL_005c: ldloca.s V_0
+  IL_005e: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Renderer>
+  IL_0064: callvirt System.Void System.IDisposable::Dispose()
+  IL_0069: endfinally
+  IL_006a: ret

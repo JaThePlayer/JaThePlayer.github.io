@@ -1,0 +1,87 @@
+IL Diff: System.Void Celeste.WaterFall::Update()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0010: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0015: stloc.0
+  IL_0016: ldarg.0
+  IL_0017: ldfld Celeste.SoundSource Celeste.WaterFall::loopingSfx
+  IL_001c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SoundSource::Position
+  IL_0021: ldloc.0
+  IL_0022: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0027: ldc.r4 90
+  IL_002c: add
+  IL_002d: ldarg.0
+  IL_002e: call System.Single Monocle.Entity::get_Y()
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Celeste.WaterFall::height
+  IL_0039: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_003e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0043: ldarg.0
+  IL_0044: ldfld Celeste.Water Celeste.WaterFall::water
+  IL_0049: brfalse IL_00b1
+  IL_004e: ldarg.0
+  IL_004f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0054: ldc.r4 0.3
+  IL_0059: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_005e: brfalse IL_00b1
+  IL_0063: ldarg.0
+  IL_0064: ldfld Celeste.Water Celeste.WaterFall::water
+  IL_0069: ldfld Celeste.Water/Surface Celeste.Water::TopSurface
+  IL_006e: ldarg.0
+  IL_006f: call System.Single Monocle.Entity::get_X()
+  IL_0074: ldc.r4 4
+  IL_0079: add
+  IL_007a: ldarg.0
+  IL_007b: ldfld Celeste.Water Celeste.WaterFall::water
+  IL_0080: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0085: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_008a: ldc.r4 0.75
++ IL_008f: stloc V_3 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_0093: stloc V_2 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_0097: dup @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_0098: ldnull @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_0099: beq IL_00b0 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_009e: ldloc V_2 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_00a2: ldloc V_3 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
+  IL_00a6: callvirt System.Void Celeste.Water/Surface::DoRipple(Microsoft.Xna.Framework.Vector2,System.Single)
++ IL_00ab: br IL_00b1 @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
++ IL_00b0: pop @ ExtendedVariants.Variants.EverythingIsUnderwater::addNullChecksToWaterTopSurface
+  IL_00b1: ldarg.0
+  IL_00b2: ldfld Celeste.Water Celeste.WaterFall::water
+  IL_00b7: brtrue IL_00c7
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld Celeste.Solid Celeste.WaterFall::solid
+  IL_00c2: brfalse IL_012c
+  IL_00c7: ldloca.s V_1
+  IL_00c9: ldarg.0
+  IL_00ca: call System.Single Monocle.Entity::get_X()
+  IL_00cf: ldc.r4 4
+  IL_00d4: add
+  IL_00d5: ldarg.0
+  IL_00d6: call System.Single Monocle.Entity::get_Y()
+  IL_00db: ldarg.0
+  IL_00dc: ldfld System.Single Celeste.WaterFall::height
+  IL_00e1: add
+  IL_00e2: ldc.r4 2
+  IL_00e7: add
+  IL_00e8: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00ed: ldarg.0
+  IL_00ee: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00f3: isinst Celeste.Level
+  IL_00f8: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00fd: ldsfld Monocle.ParticleType Celeste.Water::P_Splash
+  IL_0102: ldc.i4.1
+  IL_0103: ldloc.1
+  IL_0104: ldc.r4 8
+  IL_0109: ldc.r4 2
+  IL_010e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0113: ldc.r4 0
+  IL_0118: ldc.r4 -1
+  IL_011d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0122: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0127: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_012c: ldarg.0
+  IL_012d: call System.Void Monocle.Entity::Update()
+  IL_0132: ret

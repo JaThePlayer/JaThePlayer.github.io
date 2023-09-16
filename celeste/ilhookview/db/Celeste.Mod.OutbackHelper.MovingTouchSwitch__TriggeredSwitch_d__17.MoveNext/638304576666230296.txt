@@ -1,0 +1,271 @@
+IL Diff: System.Boolean Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: brfalse IL_001e
+  IL_000d: br IL_0012
+  IL_0012: ldloc.0
+  IL_0013: ldc.i4.1
+  IL_0014: beq IL_0023
+  IL_0019: br IL_0028
+  IL_001e: br IL_002a
+  IL_0023: br IL_0216
+  IL_0028: ldc.i4.0
+  IL_0029: ret
+  IL_002a: ldarg.0
+  IL_002b: ldc.i4.m1
+  IL_002c: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>1__state
+  IL_0031: nop
+  IL_0032: ldarg.0
+  IL_0033: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0038: ldfld System.Boolean Celeste.Mod.OutbackHelper.MovingTouchSwitch::isMoving
+  IL_003d: stloc.1
+  IL_003e: ldloc.1
+  IL_003f: brfalse IL_0047
+  IL_0044: nop
+  IL_0045: ldc.i4.0
+  IL_0046: ret
+  IL_0047: ldarg.0
+  IL_0048: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_004d: ldc.i4.1
+  IL_004e: stfld System.Boolean Celeste.Mod.OutbackHelper.MovingTouchSwitch::isMoving
+  IL_0053: ldarg.0
+  IL_0054: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0059: callvirt Celeste.Level Celeste.Mod.OutbackHelper.MovingTouchSwitch::get_level()
+  IL_005e: ldc.r4 0.1
+  IL_0063: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0068: nop
+  IL_0069: ldarg.0
+  IL_006a: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_006f: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch::nodeIndex
+  IL_0074: ldarg.0
+  IL_0075: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_007a: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Mod.OutbackHelper.MovingTouchSwitch::touchSwitchNodes
+  IL_007f: ldlen
+  IL_0080: conv.i4
+  IL_0081: clt
+  IL_0083: stloc.2
+  IL_0084: ldloc.2
+  IL_0085: brfalse IL_0304
+  IL_008a: nop
+  IL_008b: ldstr "event:/game/general/crystalheart_bounce"
+  IL_0090: ldarg.0
+  IL_0091: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0096: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_009b: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00a0: pop
+  IL_00a1: ldarg.0
+  IL_00a2: ldc.i4.0
+  IL_00a3: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__2
+  IL_00a8: br IL_0115
+  IL_00ad: nop
+  IL_00ae: ldarg.0
+  IL_00af: ldsfld System.Random Monocle.Calc::Random
+  IL_00b4: ldc.r4 6.2831855
+  IL_00b9: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_00be: stfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__3
+  IL_00c3: ldarg.0
+  IL_00c4: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_00c9: callvirt Celeste.Level Celeste.Mod.OutbackHelper.MovingTouchSwitch::get_level()
+  IL_00ce: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_00d3: ldsfld Monocle.ParticleType Celeste.TouchSwitch::P_FireWhite
+  IL_00d8: ldarg.0
+  IL_00d9: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_00de: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00e3: ldarg.0
+  IL_00e4: ldfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__3
+  IL_00e9: ldc.r4 6
+  IL_00ee: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_00f3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__3
+  IL_00fe: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0103: nop
+  IL_0104: nop
+  IL_0105: ldarg.0
+  IL_0106: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__2
+  IL_010b: stloc.3
+  IL_010c: ldarg.0
+  IL_010d: ldloc.3
+  IL_010e: ldc.i4.1
+  IL_010f: add
+  IL_0110: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__2
+  IL_0115: ldarg.0
+  IL_0116: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__2
+  IL_011b: ldc.i4.s 16
+  IL_011d: clt
+  IL_011f: stloc.s V_4
+  IL_0121: ldloc.s V_4
+  IL_0123: brtrue IL_00ad
+  IL_0128: ldarg.0
+  IL_0129: ldarg.0
+  IL_012a: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_012f: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Mod.OutbackHelper.MovingTouchSwitch::touchSwitchNodes
+  IL_0134: ldarg.0
+  IL_0135: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_013a: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch::nodeIndex
+  IL_013f: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0144: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<targetPosition>5__1
+  IL_0149: ldarg.0
+  IL_014a: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_014f: ldarg.0
+  IL_0150: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0155: ldarg.0
+  IL_0156: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_015b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0160: ldarg.0
+  IL_0161: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<targetPosition>5__1
+  IL_0166: ldc.r4 7
+  IL_016b: ldc.r4 7
+  IL_0170: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0175: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_017a: callvirt System.Collections.IEnumerator Celeste.Mod.OutbackHelper.MovingTouchSwitch::DrawPathParticles(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_017f: ldc.i4.1
+  IL_0180: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0185: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_018a: nop
+  IL_018b: ldarg.0
+  IL_018c: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0191: ldarg.0
+  IL_0192: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<targetPosition>5__1
+  IL_0197: ldc.r4 0.8
++ IL_019c: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_019d: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01a2: ldc.i4 7618 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01a7: ldc.i4 39796499 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01ac: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
+  |-> retrieves System.Single Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch/<>c::<modMovingTouchSwitchColor>b__10_2(System.Single,Celeste.TouchSwitch)
++ IL_01b1: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.TouchSwitch>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
+  IL_01b6: ldsfld Monocle.Ease/Easer Monocle.Ease::SineOut
+  IL_01bb: ldc.i4.1
+  IL_01bc: call Monocle.Tween Monocle.Tween::Position(Monocle.Entity,Microsoft.Xna.Framework.Vector2,System.Single,Monocle.Ease/Easer,Monocle.Tween/TweenMode)
+  IL_01c1: pop
+  IL_01c2: br IL_021e
+  IL_01c7: nop
+  IL_01c8: ldarg.0
+  IL_01c9: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_01ce: ldfld Monocle.Sprite Celeste.Mod.OutbackHelper.MovingTouchSwitch::icon
+  IL_01d3: ldc.r4 1
+  IL_01d8: ldc.r4 0.5
+  IL_01dd: ldc.r4 0.5
+  IL_01e2: newobj System.Void Microsoft.Xna.Framework.Color::.ctor(System.Single,System.Single,System.Single)
++ IL_01e7: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01e8: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01ed: ldc.i4 7616 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01f2: ldc.i4 65114665 @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
++ IL_01f7: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch/<>c::<modMovingTouchSwitchColor>b__10_0(Microsoft.Xna.Framework.Color,Celeste.TouchSwitch)
++ IL_01fc: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.TouchSwitch>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.MovingFlagTouchSwitch::modMovingTouchSwitchColor
+  IL_0201: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0206: ldarg.0
+  IL_0207: ldnull
+  IL_0208: stfld System.Object Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>2__current
+  IL_020d: ldarg.0
+  IL_020e: ldc.i4.1
+  IL_020f: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>1__state
+  IL_0214: ldc.i4.1
+  IL_0215: ret
+  IL_0216: ldarg.0
+  IL_0217: ldc.i4.m1
+  IL_0218: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>1__state
+  IL_021d: nop
+  IL_021e: ldarg.0
+  IL_021f: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0224: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0229: ldarg.0
+  IL_022a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<targetPosition>5__1
+  IL_022f: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0234: stloc.s V_5
+  IL_0236: ldloc.s V_5
+  IL_0238: brtrue IL_01c7
+  IL_023d: ldarg.0
+  IL_023e: ldc.i4.0
+  IL_023f: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__4
+  IL_0244: br IL_02b1
+  IL_0249: nop
+  IL_024a: ldarg.0
+  IL_024b: ldsfld System.Random Monocle.Calc::Random
+  IL_0250: ldc.r4 6.2831855
+  IL_0255: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_025a: stfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__5
+  IL_025f: ldarg.0
+  IL_0260: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0265: callvirt Celeste.Level Celeste.Mod.OutbackHelper.MovingTouchSwitch::get_level()
+  IL_026a: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_026f: ldsfld Monocle.ParticleType Celeste.TouchSwitch::P_FireWhite
+  IL_0274: ldarg.0
+  IL_0275: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_027a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_027f: ldarg.0
+  IL_0280: ldfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__5
+  IL_0285: ldc.r4 6
+  IL_028a: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_028f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0294: ldarg.0
+  IL_0295: ldfld System.Single Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<angle>5__5
+  IL_029a: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_029f: nop
+  IL_02a0: nop
+  IL_02a1: ldarg.0
+  IL_02a2: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__4
+  IL_02a7: stloc.3
+  IL_02a8: ldarg.0
+  IL_02a9: ldloc.3
+  IL_02aa: ldc.i4.1
+  IL_02ab: add
+  IL_02ac: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__4
+  IL_02b1: ldarg.0
+  IL_02b2: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<i>5__4
+  IL_02b7: ldc.i4.s 32
+  IL_02b9: clt
+  IL_02bb: stloc.s V_6
+  IL_02bd: ldloc.s V_6
+  IL_02bf: brtrue IL_0249
+  IL_02c4: ldstr "event:/game/04_cliffside/greenbooster_dash"
+  IL_02c9: ldarg.0
+  IL_02ca: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_02cf: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02d4: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_02d9: pop
+  IL_02da: ldarg.0
+  IL_02db: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_02e0: ldarg.0
+  IL_02e1: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_02e6: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch::nodeIndex
+  IL_02eb: ldc.i4.1
+  IL_02ec: add
+  IL_02ed: stfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch::nodeIndex
+  IL_02f2: nop
+  IL_02f3: ldarg.0
+  IL_02f4: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<targetPosition>5__1
+  IL_02f9: initobj Microsoft.Xna.Framework.Vector2
+  IL_02ff: br IL_033a
+  IL_0304: nop
+  IL_0305: ldarg.0
+  IL_0306: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_030b: ldfld System.Int32 Celeste.Mod.OutbackHelper.MovingTouchSwitch::nodeIndex
+  IL_0310: ldarg.0
+  IL_0311: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0316: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Mod.OutbackHelper.MovingTouchSwitch::touchSwitchNodes
+  IL_031b: ldlen
+  IL_031c: conv.i4
+  IL_031d: clt
+  IL_031f: ldc.i4.0
+  IL_0320: ceq
+  IL_0322: stloc.s V_7
+  IL_0324: ldloc.s V_7
+  IL_0326: brfalse IL_0339
+  IL_032b: nop
+  IL_032c: ldarg.0
+  IL_032d: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0332: callvirt System.Void Celeste.TouchSwitch::TurnOn()
+  IL_0337: nop
+  IL_0338: nop
+  IL_0339: nop
+  IL_033a: ldarg.0
+  IL_033b: ldfld Celeste.Mod.OutbackHelper.MovingTouchSwitch Celeste.Mod.OutbackHelper.MovingTouchSwitch/<TriggeredSwitch>d__17::<>4__this
+  IL_0340: ldc.i4.0
+  IL_0341: stfld System.Boolean Celeste.Mod.OutbackHelper.MovingTouchSwitch::isMoving
+  IL_0346: ldc.i4.0
+  IL_0347: ret

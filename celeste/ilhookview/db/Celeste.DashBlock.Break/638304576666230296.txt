@@ -1,0 +1,109 @@
+IL Diff: System.Void Celeste.DashBlock::Break(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0000: ldarg.3
+  IL_0001: brfalse IL_0080
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Char Celeste.DashBlock::tileType
+  IL_000c: ldc.i4.s 49
+  IL_000e: bne.un IL_0029
+  IL_0013: ldstr "event:/game/general/wall_break_dirt"
+  IL_0018: ldarg.0
+  IL_0019: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_001e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0023: pop
+  IL_0024: br IL_0080
+  IL_0029: ldarg.0
+  IL_002a: ldfld System.Char Celeste.DashBlock::tileType
+  IL_002f: ldc.i4.s 51
+  IL_0031: bne.un IL_004c
+  IL_0036: ldstr "event:/game/general/wall_break_ice"
+  IL_003b: ldarg.0
+  IL_003c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0041: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0046: pop
+  IL_0047: br IL_0080
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Char Celeste.DashBlock::tileType
+  IL_0052: ldc.i4.s 57
+  IL_0054: bne.un IL_006f
+  IL_0059: ldstr "event:/game/general/wall_break_wood"
+  IL_005e: ldarg.0
+  IL_005f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0064: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0069: pop
+  IL_006a: br IL_0080
+  IL_006f: ldstr "event:/game/general/wall_break_stone"
+  IL_0074: ldarg.0
+  IL_0075: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_007a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_007f: pop
+  IL_0080: ldc.i4.0
+  IL_0081: stloc.0
+  IL_0082: br IL_00ed
+  IL_0087: ldc.i4.0
+  IL_0088: stloc.1
+  IL_0089: br IL_00d6
+  IL_008e: ldarg.0
+  IL_008f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0094: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_0099: callvirt T Monocle.Pooler::Create<Celeste.Debris>()
+  IL_009e: ldarg.0
+  IL_009f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00a4: ldc.i4.4
+  IL_00a5: ldloc.0
+  IL_00a6: ldc.i4.8
+  IL_00a7: mul
+  IL_00a8: add
+  IL_00a9: conv.r4
+  IL_00aa: ldc.i4.4
+  IL_00ab: ldloc.1
+  IL_00ac: ldc.i4.8
+  IL_00ad: mul
+  IL_00ae: add
+  IL_00af: conv.r4
+  IL_00b0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld System.Char Celeste.DashBlock::tileType
+  IL_00c0: ldarg.s playDebrisSound
+  IL_00c2: callvirt Celeste.Debris Celeste.Debris::Init(Microsoft.Xna.Framework.Vector2,System.Char,System.Boolean)
+  IL_00c7: ldarg.1
+  IL_00c8: callvirt Celeste.Debris Celeste.Debris::BlastFrom(Microsoft.Xna.Framework.Vector2)
+  IL_00cd: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00d2: ldloc.1
+  IL_00d3: ldc.i4.1
+  IL_00d4: add
+  IL_00d5: stloc.1
+  IL_00d6: ldloc.1
+  IL_00d7: conv.r4
+  IL_00d8: ldarg.0
+  IL_00d9: call System.Single Monocle.Entity::get_Height()
+  IL_00de: ldc.r4 8
+  IL_00e3: div
+  IL_00e4: blt IL_008e
+  IL_00e9: ldloc.0
+  IL_00ea: ldc.i4.1
+  IL_00eb: add
+  IL_00ec: stloc.0
+  IL_00ed: ldloc.0
+  IL_00ee: conv.r4
+  IL_00ef: ldarg.0
+  IL_00f0: call System.Single Monocle.Entity::get_Width()
+  IL_00f5: ldc.r4 8
+  IL_00fa: div
+  IL_00fb: blt IL_0087
+  IL_0100: ldarg.0
+  IL_0101: ldc.i4.0
+  IL_0102: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0107: ldarg.0
++ IL_0108: call System.Boolean Bitsbolts.Entities.SturdyDashBlock::OnBreak(Celeste.DashBlock) @ Bitsbolts.Entities.SturdyDashBlock::ILDashBlockBreak
++ IL_010d: brfalse IL_0113 @ Bitsbolts.Entities.SturdyDashBlock::ILDashBlockBreak
++ IL_0112: ret @ Bitsbolts.Entities.SturdyDashBlock::ILDashBlockBreak
++ IL_0113: ldarg.0 @ Bitsbolts.Entities.SturdyDashBlock::ILDashBlockBreak
+  IL_0114: ldfld System.Boolean Celeste.DashBlock::permanent
+  IL_0119: brfalse IL_0125
+  IL_011e: ldarg.0
+  IL_011f: callvirt System.Void Celeste.DashBlock::RemoveAndFlagAsGone()
+  IL_0124: ret
+  IL_0125: ldarg.0
+  IL_0126: call System.Void Monocle.Entity::RemoveSelf()
+  IL_012b: ret

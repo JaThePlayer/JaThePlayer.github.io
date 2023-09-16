@@ -1,0 +1,104 @@
+IL Diff: System.Void Celeste.DashSwitch::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.DashSwitch::pressed
+  IL_000c: brtrue IL_0153
+  IL_0011: ldarg.0
+  IL_0012: ldfld Celeste.DashSwitch/Sides Celeste.DashSwitch::side
+  IL_0017: ldc.i4.1
+  IL_0018: bne.un IL_0153
+  IL_001d: ldarg.0
+  IL_001e: call Celeste.Player Celeste.Solid::GetPlayerOnTop()
+  IL_0023: stloc.0
+  IL_0024: ldloc.0
+  IL_0025: brfalse IL_00cd
+  IL_002a: ldloc.0
+  IL_002b: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0030: brfalse IL_0047
+  IL_0035: ldarg.0
+  IL_0036: ldloc.0
+  IL_0037: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_003c: callvirt Celeste.DashCollisionResults Celeste.DashSwitch::OnDashed(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0041: pop
+  IL_0042: br IL_0149
+  IL_0047: ldarg.0
+  IL_0048: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_004d: ldc.r4 0
+  IL_0052: bge.un IL_0062
+  IL_0057: ldarg.0
+  IL_0058: ldc.r4 0
+  IL_005d: stfld System.Single Celeste.DashSwitch::speedY
+  IL_0062: ldarg.0
+  IL_0063: ldarg.0
+  IL_0064: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_0069: ldc.r4 70
+  IL_006e: ldc.r4 200
+  IL_0073: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0078: mul
+  IL_0079: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_007e: stfld System.Single Celeste.DashSwitch::speedY
+  IL_0083: ldarg.0
+  IL_0084: ldarg.0
+  IL_0085: ldfld System.Single Celeste.DashSwitch::startY
+  IL_008a: ldc.r4 2
+  IL_008f: add
+  IL_0090: ldarg.0
+  IL_0091: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_0096: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_009b: mul
+  IL_009c: call System.Void Celeste.Platform::MoveTowardsY(System.Single,System.Single)
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld System.Boolean Celeste.DashSwitch::playerWasOn
+  IL_00a7: brtrue IL_0149
+  IL_00ac: ldstr "event:/game/05_mirror_temple/button_depress"
+  IL_00b1: ldarg.0
+  IL_00b2: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b7: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
++ IL_00bc: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
++ IL_00bd: ldc.r4 0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
++ IL_00c2: call FMOD.Studio.EventInstance Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::ModifyVolume(FMOD.Studio.EventInstance,Celeste.DashSwitch,System.Single) @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
+  IL_00c7: pop
+  IL_00c8: br IL_0149
+  IL_00cd: ldarg.0
+  IL_00ce: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_00d3: ldc.r4 0
+  IL_00d8: ble.un IL_00e8
+  IL_00dd: ldarg.0
+  IL_00de: ldc.r4 0
+  IL_00e3: stfld System.Single Celeste.DashSwitch::speedY
+  IL_00e8: ldarg.0
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_00ef: ldc.r4 -150
+  IL_00f4: ldc.r4 200
+  IL_00f9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00fe: mul
+  IL_00ff: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0104: stfld System.Single Celeste.DashSwitch::speedY
+  IL_0109: ldarg.0
+  IL_010a: ldarg.0
+  IL_010b: ldfld System.Single Celeste.DashSwitch::startY
+  IL_0110: ldarg.0
+  IL_0111: ldfld System.Single Celeste.DashSwitch::speedY
+  IL_0116: neg
+  IL_0117: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_011c: mul
+  IL_011d: call System.Void Celeste.Platform::MoveTowardsY(System.Single,System.Single)
+  IL_0122: ldarg.0
+  IL_0123: ldfld System.Boolean Celeste.DashSwitch::playerWasOn
+  IL_0128: brfalse IL_0149
+  IL_012d: ldstr "event:/game/05_mirror_temple/button_return"
+  IL_0132: ldarg.0
+  IL_0133: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0138: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
++ IL_013d: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
++ IL_013e: ldc.r4 0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
++ IL_0143: call FMOD.Studio.EventInstance Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::ModifyVolume(FMOD.Studio.EventInstance,Celeste.DashSwitch,System.Single) @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_Update
+  IL_0148: pop
+  IL_0149: ldarg.0
+  IL_014a: ldloc.0
+  IL_014b: ldnull
+  IL_014c: cgt.un
+  IL_014e: stfld System.Boolean Celeste.DashSwitch::playerWasOn
+  IL_0153: ret

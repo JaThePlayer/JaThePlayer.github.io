@@ -1,0 +1,96 @@
+IL Diff: System.Void Celeste.BadelineOldsite::.ctor(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: newobj System.Void System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::.ctor()
+  IL_0006: stfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_000b: ldarg.0
+  IL_000c: newobj System.Void System.Collections.Generic.List`1<Celeste.SoundSource>::.ctor()
+  IL_0011: stfld System.Collections.Generic.List`1<Celeste.SoundSource> Celeste.BadelineOldsite::inactiveLoopingSounds
+  IL_0016: ldarg.0
+  IL_0017: ldarg.1
+  IL_0018: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_001d: ldarg.0
+  IL_001e: ldarg.2
+  IL_001f: stfld System.Int32 Celeste.BadelineOldsite::index
+  IL_0024: ldarg.0
+  IL_0025: ldc.i4.m1
+  IL_0026: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_002b: ldarg.0
+  IL_002c: ldc.r4 6
+  IL_0031: ldc.r4 6
+  IL_0036: ldc.r4 -3
+  IL_003b: ldc.r4 -7
+  IL_0040: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0045: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_004a: ldarg.0
+  IL_004b: ldc.i4.0
+  IL_004c: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0051: ldarg.0
+  IL_0052: ldc.i4.2
+  IL_0053: newobj System.Void Celeste.PlayerSprite::.ctor(Celeste.PlayerSpriteMode)
+  IL_0058: stfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_005d: ldarg.0
+  IL_005e: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0063: ldstr "fallSlow"
+  IL_0068: ldc.i4.1
+  IL_0069: ldc.i4.0
+  IL_006a: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_006f: ldarg.0
+  IL_0070: ldarg.0
+  IL_0071: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0076: newobj System.Void Celeste.PlayerHair::.ctor(Celeste.PlayerSprite)
+  IL_007b: stfld Celeste.PlayerHair Celeste.BadelineOldsite::Hair
+  IL_0080: ldarg.0
+  IL_0081: ldfld Celeste.PlayerHair Celeste.BadelineOldsite::Hair
+  IL_0086: ldsfld Microsoft.Xna.Framework.Color Celeste.BadelineOldsite::HairColor
+  IL_008b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0090: ldarg.2
+  IL_0091: conv.r4
+  IL_0092: ldc.r4 6
+  IL_0097: div
+  IL_0098: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_009d: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_00a2: ldarg.0
+  IL_00a3: ldfld Celeste.PlayerHair Celeste.BadelineOldsite::Hair
+  IL_00a8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_00ad: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Border
+  IL_00b2: ldarg.0
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld Celeste.PlayerHair Celeste.BadelineOldsite::Hair
+  IL_00b9: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00be: ldarg.0
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_00c5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ca: ldarg.0
+  IL_00cb: ldc.i4.0
+  IL_00cc: stfld System.Boolean Monocle.Entity::Visible
+  IL_00d1: ldarg.0
+  IL_00d2: ldc.r4 1.55
++ IL_00d7: pop @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_00d8: ldc.i4 6902 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_00dd: ldc.i4 33186154 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_00e2: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
+  |-> retrieves System.Single ExtendedVariants.Variants.BadelineChasersEverywhere::determineBadelineLag()
++ IL_00e7: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
+  IL_00ec: stfld System.Single Celeste.BadelineOldsite::followBehindTime
+  IL_00f1: ldarg.0
+  IL_00f2: ldc.r4 0.4
++ IL_00f7: pop @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_00f8: ldc.i4 6903 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_00fd: ldc.i4 30239930 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
++ IL_0102: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
+  |-> retrieves System.Single ExtendedVariants.Variants.BadelineChasersEverywhere::determineDelayBetweenBadelines()
++ IL_0107: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteConstructor
+  IL_010c: ldarg.2
+  IL_010d: conv.r4
+  IL_010e: mul
+  IL_010f: stfld System.Single Celeste.BadelineOldsite::followBehindIndexDelay
+  IL_0114: ldarg.0
+  IL_0115: ldarg.0
+  IL_0116: ldftn System.Void Celeste.BadelineOldsite::OnPlayer(Celeste.Player)
+  IL_011c: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_0121: ldnull
+  IL_0122: ldnull
+  IL_0123: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_0128: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_012d: ret

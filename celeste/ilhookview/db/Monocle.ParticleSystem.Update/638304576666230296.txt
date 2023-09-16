@@ -1,0 +1,32 @@
+IL Diff: System.Void Monocle.ParticleSystem::Update()
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0005: brfalse IL_000b @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_000a: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_000b: ldc.i4.0
+  IL_000c: stloc.0
+  IL_000d: br IL_0046
+  IL_0012: ldarg.0
+  IL_0013: ldfld Monocle.Particle[] Monocle.ParticleSystem::particles
+  IL_0018: ldloc.0
+  IL_0019: ldelema Monocle.Particle
+  IL_001e: ldfld System.Boolean Monocle.Particle::Active
+  IL_0023: brfalse IL_0042
+  IL_0028: ldarg.0
+  IL_0029: ldfld Monocle.Particle[] Monocle.ParticleSystem::particles
+  IL_002e: ldloc.0
+  IL_002f: ldelema Monocle.Particle
+  IL_0034: ldloca.s V_1
+  IL_0036: initobj System.Nullable`1<System.Single>
+  IL_003c: ldloc.1
+  IL_003d: call System.Void Monocle.Particle::Update(System.Nullable`1<System.Single>)
+  IL_0042: ldloc.0
+  IL_0043: ldc.i4.1
+  IL_0044: add
+  IL_0045: stloc.0
+  IL_0046: ldloc.0
+  IL_0047: ldarg.0
+  IL_0048: ldfld Monocle.Particle[] Monocle.ParticleSystem::particles
+  IL_004d: ldlen
+  IL_004e: conv.i4
+  IL_004f: blt IL_0012
+  IL_0054: ret

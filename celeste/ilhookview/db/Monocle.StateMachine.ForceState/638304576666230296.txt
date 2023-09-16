@@ -1,0 +1,150 @@
+IL Diff: System.Void Monocle.StateMachine::ForceState(System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0006: ldarg.1
+  IL_0007: beq IL_002b
+  IL_000c: ldarg.0
+  IL_000d: ldarg.1
+  IL_000e: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0013: ret
++ IL_0014: ldarg this @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
++ IL_0018: dup @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
++ IL_0019: ldfld System.Int32 Monocle.StateMachine::state @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
++ IL_001e: ldarg toState @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
++ IL_0022: call System.Int32 VivHelper.DashPowerupManager::OverrideDashCheck(Monocle.StateMachine,System.Int32,System.Int32) @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
++ IL_0027: starg toState @ VivHelper.DashPowerupManager::ForceSetStateOverrideOnPlayerDash
+  IL_002b: ldarg.0
+  IL_002c: ldfld System.Boolean Monocle.StateMachine::Log
+  IL_0031: brfalse IL_007e
+  IL_0036: ldc.i4.1
+  IL_0037: newarr System.Object
+  IL_003c: dup
+  IL_003d: ldc.i4.0
+  IL_003e: ldc.i4.5
+  IL_003f: newarr System.Object
+  IL_0044: dup
+  IL_0045: ldc.i4.0
+  IL_0046: ldstr "Enter State "
+  IL_004b: stelem.ref
+  IL_004c: dup
+  IL_004d: ldc.i4.1
+  IL_004e: ldarg.1
+  IL_004f: box System.Int32
+  IL_0054: stelem.ref
+  IL_0055: dup
+  IL_0056: ldc.i4.2
+  IL_0057: ldstr " (leaving "
+  IL_005c: stelem.ref
+  IL_005d: dup
+  IL_005e: ldc.i4.3
+  IL_005f: ldarg.0
+  IL_0060: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0065: box System.Int32
+  IL_006a: stelem.ref
+  IL_006b: dup
+  IL_006c: ldc.i4.4
+  IL_006d: ldstr ")"
+  IL_0072: stelem.ref
+  IL_0073: call System.String System.String::Concat(System.Object[])
+  IL_0078: stelem.ref
+  IL_0079: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_007e: ldarg.0
+  IL_007f: ldc.i4.1
+  IL_0080: stfld System.Boolean Monocle.StateMachine::ChangedStates
+  IL_0085: ldarg.0
+  IL_0086: ldarg.0
+  IL_0087: ldfld System.Int32 Monocle.StateMachine::state
+  IL_008c: callvirt System.Void Monocle.StateMachine::set_PreviousState(System.Int32)
+  IL_0091: ldarg.0
+  IL_0092: ldarg.1
+  IL_0093: stfld System.Int32 Monocle.StateMachine::state
+  IL_0098: ldarg.0
+  IL_0099: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
+  IL_009e: ldc.i4.m1
+  IL_009f: beq IL_00f6
+  IL_00a4: ldarg.0
+  IL_00a5: ldfld System.Action[] Monocle.StateMachine::ends
+  IL_00aa: ldarg.0
+  IL_00ab: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
+  IL_00b0: ldelem.ref
+  IL_00b1: brfalse IL_00f6
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld System.Boolean Monocle.StateMachine::Log
+  IL_00bc: brfalse IL_00e4
+  IL_00c1: ldc.i4.1
+  IL_00c2: newarr System.Object
+  IL_00c7: dup
+  IL_00c8: ldc.i4.0
+  IL_00c9: ldstr "Calling End "
+  IL_00ce: ldarg.0
+  IL_00cf: ldfld System.Int32 Monocle.StateMachine::state
+  IL_00d4: box System.Int32
+  IL_00d9: call System.String System.String::Concat(System.Object,System.Object)
+  IL_00de: stelem.ref
+  IL_00df: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld System.Action[] Monocle.StateMachine::ends
+  IL_00ea: ldarg.0
+  IL_00eb: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
+  IL_00f0: ldelem.ref
+  IL_00f1: callvirt System.Void System.Action::Invoke()
+  IL_00f6: ldarg.0
+  IL_00f7: ldfld System.Action[] Monocle.StateMachine::begins
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0102: ldelem.ref
+  IL_0103: brfalse IL_0148
+  IL_0108: ldarg.0
+  IL_0109: ldfld System.Boolean Monocle.StateMachine::Log
+  IL_010e: brfalse IL_0136
+  IL_0113: ldc.i4.1
+  IL_0114: newarr System.Object
+  IL_0119: dup
+  IL_011a: ldc.i4.0
+  IL_011b: ldstr "Calling Begin "
+  IL_0120: ldarg.0
+  IL_0121: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0126: box System.Int32
+  IL_012b: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0130: stelem.ref
+  IL_0131: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_0136: ldarg.0
+  IL_0137: ldfld System.Action[] Monocle.StateMachine::begins
+  IL_013c: ldarg.0
+  IL_013d: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0142: ldelem.ref
+  IL_0143: callvirt System.Void System.Action::Invoke()
+  IL_0148: ldarg.0
+  IL_0149: ldfld System.Func`1<System.Collections.IEnumerator>[] Monocle.StateMachine::coroutines
+  IL_014e: ldarg.0
+  IL_014f: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0154: ldelem.ref
+  IL_0155: brfalse IL_01a6
+  IL_015a: ldarg.0
+  IL_015b: ldfld System.Boolean Monocle.StateMachine::Log
+  IL_0160: brfalse IL_0188
+  IL_0165: ldc.i4.1
+  IL_0166: newarr System.Object
+  IL_016b: dup
+  IL_016c: ldc.i4.0
+  IL_016d: ldstr "Starting Coroutine "
+  IL_0172: ldarg.0
+  IL_0173: ldfld System.Int32 Monocle.StateMachine::state
+  IL_0178: box System.Int32
+  IL_017d: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0182: stelem.ref
+  IL_0183: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_0188: ldarg.0
+  IL_0189: ldfld Monocle.Coroutine Monocle.StateMachine::currentCoroutine
+  IL_018e: ldarg.0
+  IL_018f: ldfld System.Func`1<System.Collections.IEnumerator>[] Monocle.StateMachine::coroutines
+  IL_0194: ldarg.0
+  IL_0195: ldfld System.Int32 Monocle.StateMachine::state
+  IL_019a: ldelem.ref
+  IL_019b: callvirt TResult System.Func`1<System.Collections.IEnumerator>::Invoke()
+  IL_01a0: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_01a5: ret
+  IL_01a6: ldarg.0
+  IL_01a7: ldfld Monocle.Coroutine Monocle.StateMachine::currentCoroutine
+  IL_01ac: callvirt System.Void Monocle.Coroutine::Cancel()
+  IL_01b1: ret

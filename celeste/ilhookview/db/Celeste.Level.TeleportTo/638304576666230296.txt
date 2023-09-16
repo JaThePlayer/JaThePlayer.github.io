@@ -1,0 +1,100 @@
+IL Diff: System.Void Celeste.Level::TeleportTo(Celeste.Player,System.String,Celeste.Player+IntroTypes,System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]])
+  IL_0000: ldarg.1
+  IL_0001: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0006: call System.Void Celeste.Leader::StoreStrawberries(Celeste.Leader)
+  IL_000b: ldarg.1
+  IL_000c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0011: stloc.0
+  IL_0012: ldarg.0
+  IL_0013: ldarg.1
+  IL_0014: call System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_0019: ldarg.0
+  IL_001a: callvirt System.Void Celeste.Level::UnloadLevel()
+  IL_001f: ldarg.0
+  IL_0020: ldfld Celeste.Session Celeste.Level::Session
+  IL_0025: ldarg.2
+  IL_0026: stfld System.String Celeste.Session::Level
+  IL_002b: ldarg.0
+  IL_002c: ldfld Celeste.Session Celeste.Level::Session
+  IL_0031: ldarg.0
+  IL_0032: ldarg.0
+  IL_0033: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0038: stloc.1
+  IL_0039: ldloca.s V_1
+  IL_003b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0040: conv.r4
+  IL_0041: ldarg.0
+  IL_0042: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0047: stloc.1
+  IL_0048: ldloca.s V_1
+  IL_004a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_004f: conv.r4
+  IL_0050: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0055: ldarga.s nearestSpawn
+  IL_0057: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_005c: brtrue IL_006b
+  IL_0061: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0066: br IL_0072
+  IL_006b: ldarga.s nearestSpawn
+  IL_006d: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0072: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0077: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_007c: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0081: ldc.i4 6679 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0086: ldc.i4 65062521 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_008b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  |-> retrieves System.Void ExtendedVariants.Variants.RestoreDashesOnRespawn/<>c::<updateDashCountOnRespawnPointChange>b__6_0()
++ IL_0090: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  IL_0095: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_009a: ldarg.3
+  IL_009b: brtrue IL_00f3
+  IL_00a0: ldarg.1
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld Celeste.Session Celeste.Level::Session
+  IL_00a7: ldflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_00ac: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_00b1: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b6: ldarg.1
+  IL_00b7: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_00bc: ldarg.1
+  IL_00bd: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c2: ldloc.0
+  IL_00c3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c8: callvirt System.Void Celeste.PlayerHair::MoveHairBy(Microsoft.Xna.Framework.Vector2)
+  IL_00cd: ldarg.1
+  IL_00ce: ldc.i4.1
+  IL_00cf: stfld System.Boolean Celeste.Player::MuffleLanding
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.1
+  IL_00d6: call System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00db: ldarg.0
+  IL_00dc: ldc.i4.0
+  IL_00dd: ldc.i4.0
+  IL_00de: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_00e3: ldarg.0
+  IL_00e4: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_00e9: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_00ee: br IL_0113
+  IL_00f3: ldarg.0
+  IL_00f4: ldarg.3
+  IL_00f5: ldc.i4.0
+  IL_00f6: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_00fb: ldarg.0
+  IL_00fc: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0101: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_0106: ldarg.0
+  IL_0107: call Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_010c: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0111: starg.s player
+  IL_0113: ldarg.0
+  IL_0114: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0119: ldarg.1
+  IL_011a: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::get_CameraTarget()
++ IL_011f: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.SSMHelper.Entities.ReverseKillbox::ModifyCameraTarget(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.SSMHelper.Entities.ReverseKillbox::IL_ChangeCameraTargetCalls
+  IL_0124: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0129: ldarg.0
+  IL_012a: callvirt System.Void Monocle.Scene::Update()
+  IL_012f: ldarg.1
+  IL_0130: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0135: call System.Void Celeste.Leader::RestoreStrawberries(Celeste.Leader)
+  IL_013a: ret

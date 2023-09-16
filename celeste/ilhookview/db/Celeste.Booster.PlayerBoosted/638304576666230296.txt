@@ -1,0 +1,144 @@
+IL Diff: System.Void Celeste.Booster::PlayerBoosted(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Booster::red
+  IL_0006: brtrue IL_0015
+  IL_000b: ldstr "event:/game/04_cliffside/greenbooster_dash"
+  IL_0010: br IL_001a
+  IL_0015: ldstr "event:/game/05_mirror_temple/redbooster_dash"
+  IL_001a: ldarg.0
+  IL_001b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
++ IL_0020: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0021: isinst Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0026: brfalse IL_008a @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_002b: stloc V_3 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_002f: dup @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0030: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0031: castclass Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0036: call System.String Celeste.Mod.Procedurline.CustomBooster::get_BoostSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_003b: call System.Boolean System.String::Equals(System.String) @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0040: brfalse IL_0051 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0045: pop @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0046: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0047: castclass Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_004c: callvirt System.String Celeste.Mod.Procedurline.CustomBooster::get_BoostSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0051: ldloc V_3 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0055: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0056: isinst Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_005b: brfalse IL_008a @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0060: stloc V_4 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0064: dup @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0065: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0066: castclass Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_006b: call System.String Celeste.Mod.Procedurline.CustomBooster::get_MoveSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0070: call System.Boolean System.String::Equals(System.String) @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0075: brfalse IL_0086 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_007a: pop @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_007b: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_007c: castclass Celeste.Mod.Procedurline.CustomBooster @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0081: callvirt System.String Celeste.Mod.Procedurline.CustomBooster::get_MoveSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0086: ldloc V_4 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
+  IL_008a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_008f: pop
+  IL_0090: ldarg.0
+  IL_0091: ldfld System.Boolean Celeste.Booster::red
+  IL_0096: brfalse IL_00be
+  IL_009b: ldarg.0
+  IL_009c: ldfld Celeste.SoundSource Celeste.Booster::loopingSfx
+  IL_00a1: ldstr "event:/game/05_mirror_temple/redbooster_move"
+  IL_00a6: ldnull
+  IL_00a7: ldc.r4 0
+  IL_00ac: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00b1: pop
+  IL_00b2: ldarg.0
+  IL_00b3: ldfld Celeste.SoundSource Celeste.Booster::loopingSfx
+  IL_00b8: ldc.i4.0
+  IL_00b9: stfld System.Boolean Celeste.SoundSource::DisposeOnTransition
+  IL_00be: ldarg.0
+  IL_00bf: ldfld System.Boolean Celeste.Booster::Ch9HubBooster
+  IL_00c4: brfalse IL_0166
+  IL_00c9: ldarg.2
+  IL_00ca: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00cf: ldc.r4 0
+  IL_00d4: bge.un IL_0166
+  IL_00d9: ldc.i4.1
+  IL_00da: stloc.0
+  IL_00db: ldarg.0
+  IL_00dc: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00e1: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_00e6: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.LockBlock>()
+  IL_00eb: stloc.1
+  IL_00ec: ldloc.1
+  IL_00ed: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.LockBlock>::get_Count()
+  IL_00f2: ldc.i4.0
+  IL_00f3: ble IL_013b
+  IL_00f8: ldloc.1
+  IL_00f9: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.LockBlock>::GetEnumerator()
+  IL_00fe: stloc.2
+  IL_00ff: br IL_011c
+  IL_0104: ldloca.s V_2
+  IL_0106: call T System.Collections.Generic.List`1/Enumerator<Celeste.LockBlock>::get_Current()
+  IL_010b: ldfld System.Boolean Celeste.LockBlock::UnlockingRegistered
+  IL_0110: brtrue IL_011c
+  IL_0115: ldc.i4.0
+  IL_0116: stloc.0
+  IL_0117: leave IL_013b
+  IL_011c: ldloca.s V_2
+  IL_011e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.LockBlock>::MoveNext()
+  IL_0123: brtrue IL_0104
+  IL_0128: leave IL_013b
+  IL_012d: ldloca.s V_2
+  IL_012f: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.LockBlock>
+  IL_0135: callvirt System.Void System.IDisposable::Dispose()
+  IL_013a: endfinally
+  IL_013b: ldloc.0
+  IL_013c: brfalse IL_0166
+  IL_0141: ldarg.0
+  IL_0142: ldc.i4.1
+  IL_0143: stfld System.Boolean Celeste.Booster::Ch9HubTransition
+  IL_0148: ldarg.0
+  IL_0149: ldc.i4.1
+  IL_014a: ldarg.0
+  IL_014b: ldftn System.Void Celeste.Booster::<PlayerBoosted>b__30_0()
+  IL_0151: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0156: ldc.r4 2
+  IL_015b: ldc.i4.1
+  IL_015c: call Monocle.Alarm Monocle.Alarm::Create(Monocle.Alarm/AlarmMode,System.Action,System.Single,System.Boolean)
+  IL_0161: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0166: ldarg.0
+  IL_0167: ldc.i4.1
+  IL_0168: callvirt System.Void Celeste.Booster::set_BoostingPlayer(System.Boolean)
+  IL_016d: ldarg.0
+  IL_016e: ldsfld Monocle.BitTag Celeste.Tags::Persistent
+  IL_0173: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0178: ldsfld Monocle.BitTag Celeste.Tags::TransitionUpdate
+  IL_017d: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0182: or
+  IL_0183: call System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_0188: ldarg.0
+  IL_0189: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_018e: ldstr "spin"
+  IL_0193: ldc.i4.0
+  IL_0194: ldc.i4.0
+  IL_0195: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_019a: ldarg.0
+  IL_019b: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_01a0: ldarg.1
+  IL_01a1: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_01a6: ldc.i4.m1
+  IL_01a7: ceq
+  IL_01a9: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_01ae: ldarg.0
+  IL_01af: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_01b4: ldc.i4.1
+  IL_01b5: stfld System.Boolean Monocle.Entity::Visible
+  IL_01ba: ldarg.0
+  IL_01bb: ldfld Monocle.Wiggler Celeste.Booster::wiggler
+  IL_01c0: callvirt System.Void Monocle.Wiggler::Start()
+  IL_01c5: ldarg.0
+  IL_01c6: ldfld Monocle.Coroutine Celeste.Booster::dashRoutine
+  IL_01cb: ldarg.0
+  IL_01cc: ldarg.1
+  IL_01cd: ldarg.2
+  IL_01ce: callvirt System.Collections.IEnumerator Celeste.Booster::BoostRoutine(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_01d3: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_01d8: ret

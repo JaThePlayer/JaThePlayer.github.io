@@ -1,0 +1,20 @@
+IL Diff: System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerRenderHelper::DrawSpinnerCollider(Monocle.Entity,Microsoft.Xna.Framework.Color)
+  IL_0000: ldarg.0
++ IL_0001: ldarg.1 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0002: call System.Boolean Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerRenderHelper::DrawVivCollider(Monocle.Entity,Microsoft.Xna.Framework.Color) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0007: brfalse IL_000d @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000c: ret @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000d: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_000e: call System.Boolean Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerRenderHelper::OnGrid(Monocle.Entity)
+  IL_0013: brfalse IL_002b
+  IL_0018: ldarg.0
+  IL_0019: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_001e: ldarg.1
+  IL_001f: ldarg.0
+  IL_0020: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0025: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerRenderHelper::DrawVanillaCollider(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_002a: ret
+  IL_002b: ldarg.0
+  IL_002c: ldarg.1
+  IL_002d: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerRenderHelper::DrawComplexSpinnerCollider(Monocle.Entity,Microsoft.Xna.Framework.Color)
+  IL_0032: ret

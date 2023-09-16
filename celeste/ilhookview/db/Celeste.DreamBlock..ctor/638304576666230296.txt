@@ -1,0 +1,97 @@
+IL Diff: System.Void Celeste.DreamBlock::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]],System.Boolean,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldc.r4 1
+  IL_0006: stfld System.Single Celeste.DreamBlock::whiteHeight
+  IL_000b: ldarg.0
+  IL_000c: ldsfld System.Random Monocle.Calc::Random
+  IL_0011: ldc.r4 6.2831855
+  IL_0016: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_001b: stfld System.Single Celeste.DreamBlock::wobbleFrom
+  IL_0020: ldarg.0
+  IL_0021: ldsfld System.Random Monocle.Calc::Random
+  IL_0026: ldc.r4 6.2831855
+  IL_002b: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_0030: stfld System.Single Celeste.DreamBlock::wobbleTo
+  IL_0035: ldarg.0
+  IL_0036: ldarg.1
+  IL_0037: ldarg.2
+  IL_0038: ldarg.3
+  IL_0039: ldc.i4.1
+  IL_003a: call System.Void Celeste.Solid::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Boolean)
+  IL_003f: ldarg.0
+  IL_0040: ldc.i4 -11000
+  IL_0045: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_004a: ldarg.0
+  IL_004b: ldarg.s node
+  IL_004d: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.DreamBlock::node
+  IL_0052: ldarg.0
+  IL_0053: ldarg.s fastMoving
+  IL_0055: stfld System.Boolean Celeste.DreamBlock::fastMoving
+  IL_005a: ldarg.0
+  IL_005b: ldarg.s oneUse
+  IL_005d: stfld System.Boolean Celeste.DreamBlock::oneUse
+  IL_0062: ldarg.s below
+  IL_0064: brfalse IL_0074
+  IL_0069: ldarg.0
+  IL_006a: ldc.i4 5000
+  IL_006f: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0074: ldarg.0
+  IL_0075: ldc.i4.s 11
+  IL_0077: stfld System.Int32 Celeste.Platform::SurfaceSoundIndex
+  IL_007c: ldarg.0
+  IL_007d: ldc.i4.4
+  IL_007e: newarr Monocle.MTexture
+  IL_0083: dup
+  IL_0084: ldc.i4.0
+  IL_0085: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_008a: ldstr "objects/dreamblock/particles"
++ IL_008f: call System.String SkinModHelper.Module.SkinModHelperModule::ReplaceDreamBlockParticle(System.String) @ SkinModHelper.Module.SkinModHelperModule::DreamBlockHook
+  IL_0094: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0099: ldc.i4.s 14
+  IL_009b: ldc.i4.0
+  IL_009c: ldc.i4.7
+  IL_009d: ldc.i4.7
+  IL_009e: ldnull
+  IL_009f: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_00a4: stelem.ref
+  IL_00a5: dup
+  IL_00a6: ldc.i4.1
+  IL_00a7: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00ac: ldstr "objects/dreamblock/particles"
++ IL_00b1: call System.String SkinModHelper.Module.SkinModHelperModule::ReplaceDreamBlockParticle(System.String) @ SkinModHelper.Module.SkinModHelperModule::DreamBlockHook
+  IL_00b6: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00bb: ldc.i4.7
+  IL_00bc: ldc.i4.0
+  IL_00bd: ldc.i4.7
+  IL_00be: ldc.i4.7
+  IL_00bf: ldnull
+  IL_00c0: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_00c5: stelem.ref
+  IL_00c6: dup
+  IL_00c7: ldc.i4.2
+  IL_00c8: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00cd: ldstr "objects/dreamblock/particles"
++ IL_00d2: call System.String SkinModHelper.Module.SkinModHelperModule::ReplaceDreamBlockParticle(System.String) @ SkinModHelper.Module.SkinModHelperModule::DreamBlockHook
+  IL_00d7: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00dc: ldc.i4.0
+  IL_00dd: ldc.i4.0
+  IL_00de: ldc.i4.7
+  IL_00df: ldc.i4.7
+  IL_00e0: ldnull
+  IL_00e1: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_00e6: stelem.ref
+  IL_00e7: dup
+  IL_00e8: ldc.i4.3
+  IL_00e9: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00ee: ldstr "objects/dreamblock/particles"
++ IL_00f3: call System.String SkinModHelper.Module.SkinModHelperModule::ReplaceDreamBlockParticle(System.String) @ SkinModHelper.Module.SkinModHelperModule::DreamBlockHook
+  IL_00f8: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00fd: ldc.i4.7
+  IL_00fe: ldc.i4.0
+  IL_00ff: ldc.i4.7
+  IL_0100: ldc.i4.7
+  IL_0101: ldnull
+  IL_0102: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_0107: stelem.ref
+  IL_0108: stfld Monocle.MTexture[] Celeste.DreamBlock::particleTextures
+  IL_010d: ret

@@ -1,0 +1,103 @@
+IL Diff: System.Boolean Celeste.Mod.Entities.CustomNPC/<Talk>d__28::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Mod.Entities.CustomNPC Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0026,IL_0075,IL_00a9,IL_010f
+  IL_0024: ldc.i4.0
+  IL_0025: ret
+  IL_0026: ldarg.0
+  IL_0027: ldc.i4.m1
+  IL_0028: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_002d: ldloc.1
+  IL_002e: ldfld System.Boolean Celeste.Mod.Entities.CustomNPC::approachWhenTalking
+  IL_0033: brfalse IL_00b0
+  IL_0038: ldloc.1
+  IL_0039: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.Entities.CustomNPC::scale
+  IL_003e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0043: ldc.r4 0
+  IL_0048: ble.un IL_0081
+  IL_004d: ldarg.0
+  IL_004e: ldloc.1
+  IL_004f: ldarg.0
+  IL_0050: ldfld Celeste.Player Celeste.Mod.Entities.CustomNPC/<Talk>d__28::player
+  IL_0055: ldc.i4.1
+  IL_0056: ldloc.1
+  IL_0057: ldfld System.Int32 Celeste.Mod.Entities.CustomNPC::approachDistance
+  IL_005c: conv.r4
+  IL_005d: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_0062: callvirt System.Collections.IEnumerator Celeste.NPC::PlayerApproachRightSide(Celeste.Player,System.Boolean,System.Nullable`1<System.Single>)
+  IL_0067: stfld System.Object Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>2__current
+  IL_006c: ldarg.0
+  IL_006d: ldc.i4.1
+  IL_006e: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_0073: ldc.i4.1
+  IL_0074: ret
+  IL_0075: ldarg.0
+  IL_0076: ldc.i4.m1
+  IL_0077: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_007c: br IL_00b0
+  IL_0081: ldarg.0
+  IL_0082: ldloc.1
+  IL_0083: ldarg.0
+  IL_0084: ldfld Celeste.Player Celeste.Mod.Entities.CustomNPC/<Talk>d__28::player
+  IL_0089: ldc.i4.1
+  IL_008a: ldloc.1
+  IL_008b: ldfld System.Int32 Celeste.Mod.Entities.CustomNPC::approachDistance
+  IL_0090: conv.r4
+  IL_0091: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_0096: callvirt System.Collections.IEnumerator Celeste.NPC::PlayerApproachLeftSide(Celeste.Player,System.Boolean,System.Nullable`1<System.Single>)
+  IL_009b: stfld System.Object Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>2__current
+  IL_00a0: ldarg.0
+  IL_00a1: ldc.i4.2
+  IL_00a2: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_00a7: ldc.i4.1
+  IL_00a8: ret
+  IL_00a9: ldarg.0
+  IL_00aa: ldc.i4.m1
+  IL_00ab: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_00b0: ldarg.0
+  IL_00b1: ldloc.1
+  IL_00b2: ldfld System.String[] Celeste.Mod.Entities.CustomNPC::dialogs
+  IL_00b7: ldloc.1
+  IL_00b8: callvirt Celeste.Session Celeste.NPC::get_Session()
+  IL_00bd: ldloc.1
+  IL_00be: ldfld Celeste.EntityID Celeste.Mod.Entities.CustomNPC::id
+  IL_00c3: stloc.2
+  IL_00c4: ldloca.s V_2
+  IL_00c6: constrained. Celeste.EntityID
+  IL_00cc: callvirt System.String System.Object::ToString()
+  IL_00d1: ldstr "DialogCounter"
+  IL_00d6: call System.String System.String::Concat(System.String,System.String)
+  IL_00db: callvirt System.Int32 Celeste.Session::GetCounter(System.String)
+  IL_00e0: ldelem.ref
+  IL_00e1: ldnull
++ IL_00e2: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
++ IL_00e3: ldfld Celeste.Mod.Entities.CustomNPC Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
++ IL_00e8: ldc.i4 6448 @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
++ IL_00ed: ldc.i4 63328211 @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
++ IL_00f2: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
+  |-> retrieves System.Func`1[[System.Collections.IEnumerator, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][] Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC/<>c::<modTalkCutscene>b__4_0(System.Func`1[[System.Collections.IEnumerator, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][],Celeste.Mod.Entities.CustomNPC)
++ IL_00f7: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Func`1<System.Collections.IEnumerator>[],System.Func`1<System.Collections.IEnumerator>[],Celeste.Mod.Entities.CustomNPC>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.MoreCustomNPC::modTalkCutscene
+  IL_00fc: call System.Collections.IEnumerator Celeste.Textbox::Say(System.String,System.Func`1<System.Collections.IEnumerator>[])
+  IL_0101: stfld System.Object Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>2__current
+  IL_0106: ldarg.0
+  IL_0107: ldc.i4.3
+  IL_0108: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_010d: ldc.i4.1
+  IL_010e: ret
+  IL_010f: ldarg.0
+  IL_0110: ldc.i4.m1
+  IL_0111: stfld System.Int32 Celeste.Mod.Entities.CustomNPC/<Talk>d__28::<>1__state
+  IL_0116: ldloc.1
+  IL_0117: ldfld Celeste.Level Celeste.NPC::Level
+  IL_011c: callvirt System.Void Celeste.Level::EndCutscene()
+  IL_0121: ldloc.1
+  IL_0122: ldloc.1
+  IL_0123: ldfld Celeste.Level Celeste.NPC::Level
+  IL_0128: callvirt System.Void Celeste.Mod.Entities.CustomNPC::OnTalkEnd(Celeste.Level)
+  IL_012d: ldc.i4.0
+  IL_012e: ret

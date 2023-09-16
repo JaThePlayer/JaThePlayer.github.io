@@ -1,0 +1,481 @@
+IL Diff: System.Void Monocle.Commands::Render()
+  IL_0000: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_0005: stloc.0
+  IL_0006: call System.Int32 Monocle.Engine::get_ViewHeight()
+  IL_000b: stloc.1
+  IL_000c: call Microsoft.Xna.Framework.Input.MouseState Microsoft.Xna.Framework.Input.Mouse::GetState()
+  IL_0011: stloc.2
+  IL_0012: ldloca.s V_2
+  IL_0014: call System.Int32 Microsoft.Xna.Framework.Input.MouseState::get_ScrollWheelValue()
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.Int32 Monocle.Commands::mouseScroll
+  IL_001f: sub
+  IL_0020: stloc.3
+  IL_0021: ldarg.0
+  IL_0022: ldloca.s V_2
+  IL_0024: call System.Int32 Microsoft.Xna.Framework.Input.MouseState::get_ScrollWheelValue()
+  IL_0029: stfld System.Int32 Monocle.Commands::mouseScroll
+  IL_002e: ldloca.s V_4
+  IL_0030: ldloca.s V_2
+  IL_0032: call System.Int32 Microsoft.Xna.Framework.Input.MouseState::get_X()
+  IL_0037: conv.r4
+  IL_0038: ldloca.s V_2
+  IL_003a: call System.Int32 Microsoft.Xna.Framework.Input.MouseState::get_Y()
+  IL_003f: conv.r4
+  IL_0040: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0045: ldloca.s V_5
+  IL_0047: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_004d: ldc.i4.1
+  IL_004e: stloc.s V_6
+  IL_0050: ldstr ""
+  IL_0055: stloc.s V_7
+  IL_0057: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_005c: isinst Celeste.Level
+  IL_0061: stloc.s V_8
+  IL_0063: ldloc.s V_8
+  IL_0065: brfalse IL_009a
+  IL_006a: ldloc.s V_7
+  IL_006c: ldstr "Area: {0} @ {1}
+"
+  IL_0071: ldloc.s V_8
+  IL_0073: ldfld Celeste.Session Celeste.Level::Session
+  IL_0078: ldfld System.String Celeste.Session::Level
+  IL_007d: ldloc.s V_8
+  IL_007f: ldfld Celeste.Session Celeste.Level::Session
+  IL_0084: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0089: box Celeste.AreaKey
+  IL_008e: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_0093: call System.String System.String::Concat(System.String,System.String)
+  IL_0098: stloc.s V_7
+  IL_009a: ldloc.s V_7
+  IL_009c: ldstr "Cursor @
+ screen: {0}, {1}"
+  IL_00a1: ldloc.s V_4
+  IL_00a3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00a8: conv.r8
+  IL_00a9: call System.Double System.Math::Round(System.Double)
+  IL_00ae: conv.i4
+  IL_00af: box System.Int32
+  IL_00b4: ldloc.s V_4
+  IL_00b6: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00bb: conv.r8
+  IL_00bc: call System.Double System.Math::Round(System.Double)
+  IL_00c1: conv.i4
+  IL_00c2: box System.Int32
+  IL_00c7: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_00cc: call System.String System.String::Concat(System.String,System.String)
+  IL_00d1: stloc.s V_7
+  IL_00d3: ldloc.s V_8
+  IL_00d5: brfalse IL_0334
+  IL_00da: ldloc.s V_8
+  IL_00dc: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00e1: stloc.s V_11
+  IL_00e3: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_00e8: conv.r4
+  IL_00e9: call System.Int32 Monocle.Engine::get_Width()
+  IL_00ee: conv.r4
+  IL_00ef: div
+  IL_00f0: stloc.s V_12
+  IL_00f2: ldloc.s V_8
+  IL_00f4: castclass Celeste.Level
+  IL_00f9: ldloc.s V_4
+  IL_00fb: ldloc.s V_12
+  IL_00fd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0102: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::ScreenToWorld(Microsoft.Xna.Framework.Vector2)
+  IL_0107: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_010c: stloc.s V_13
+  IL_010e: ldsfld System.Lazy`1<System.Boolean> Monocle.Commands::celesteTASInstalled
+  IL_0113: callvirt T System.Lazy`1<System.Boolean>::get_Value()
+  IL_0118: brtrue IL_0156
+  IL_011d: ldloc.s V_7
+  IL_011f: ldstr "
+ world:       {0}, {1}"
+  IL_0124: ldloc.s V_13
+  IL_0126: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_012b: conv.r8
+  IL_012c: call System.Double System.Math::Round(System.Double)
+  IL_0131: conv.i4
+  IL_0132: box System.Int32
+  IL_0137: ldloc.s V_13
+  IL_0139: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_013e: conv.r8
+  IL_013f: call System.Double System.Math::Round(System.Double)
+  IL_0144: conv.i4
+  IL_0145: box System.Int32
+  IL_014a: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_014f: call System.String System.String::Concat(System.String,System.String)
+  IL_0154: stloc.s V_7
+  IL_0156: ldloc.s V_13
+  IL_0158: ldloc.s V_8
+  IL_015a: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_LevelOffset()
+  IL_015f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0164: stloc.s V_13
+  IL_0166: ldloc.s V_7
+  IL_0168: ldstr "
+ level:       {0}, {1}"
+  IL_016d: ldloc.s V_13
+  IL_016f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0174: conv.r8
+  IL_0175: call System.Double System.Math::Round(System.Double)
+  IL_017a: conv.i4
+  IL_017b: box System.Int32
+  IL_0180: ldloc.s V_13
+  IL_0182: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0187: conv.r8
+  IL_0188: call System.Double System.Math::Round(System.Double)
+  IL_018d: conv.i4
+  IL_018e: box System.Int32
+- IL_0193: call System.String System.String::Format(System.String,System.Object,System.Object) @ TAS.EverestInterop.ConsoleEnhancements::Commands_Render
++ IL_0193: call System.String TAS.EverestInterop.ConsoleEnhancements::ShowExtraInfo(System.String,System.Object,System.Object) @ TAS.EverestInterop.ConsoleEnhancements::Commands_Render
+  IL_0198: call System.String System.String::Concat(System.String,System.String)
+  IL_019d: stloc.s V_7
+  IL_019f: ldloca.s V_5
+  IL_01a1: ldloc.s V_13
+  IL_01a3: ldc.r4 8
+  IL_01a8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01ad: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_01b2: call System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_01b7: ldloc.s V_7
+  IL_01b9: ldstr "
+ level, /8:   {0}, {1}"
+  IL_01be: ldloca.s V_5
+  IL_01c0: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_01c5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01ca: conv.r8
+  IL_01cb: call System.Double System.Math::Round(System.Double)
+  IL_01d0: conv.i4
+  IL_01d1: box System.Int32
+  IL_01d6: ldloca.s V_5
+  IL_01d8: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_01dd: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01e2: conv.r8
+  IL_01e3: call System.Double System.Math::Round(System.Double)
+  IL_01e8: conv.i4
+  IL_01e9: box System.Int32
+  IL_01ee: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_01f3: call System.String System.String::Concat(System.String,System.String)
+  IL_01f8: stloc.s V_7
+  IL_01fa: ldc.r4 8
+  IL_01ff: stloc.s V_14
+  IL_0201: ldloc.s V_5
+  IL_0203: stloc.s V_15
+  IL_0205: ldloca.s V_15
+  IL_0207: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_020c: brtrue IL_0220
+  IL_0211: ldloca.s V_16
+  IL_0213: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0219: ldloc.s V_16
+  IL_021b: br IL_0233
+  IL_0220: ldloc.s V_14
+  IL_0222: ldloca.s V_15
+  IL_0224: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::GetValueOrDefault()
+  IL_0229: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(System.Single,Microsoft.Xna.Framework.Vector2)
+  IL_022e: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0233: stloc.s V_5
+  IL_0235: ldloc.s V_7
+  IL_0237: ldstr "
+ level, snap: {0}, {1}"
+  IL_023c: ldloca.s V_5
+  IL_023e: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0243: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0248: conv.r8
+  IL_0249: call System.Double System.Math::Round(System.Double)
+  IL_024e: conv.i4
+  IL_024f: box System.Int32
+  IL_0254: ldloca.s V_5
+  IL_0256: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_025b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0260: conv.r8
+  IL_0261: call System.Double System.Math::Round(System.Double)
+  IL_0266: conv.i4
+  IL_0267: box System.Int32
+  IL_026c: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_0271: call System.String System.String::Concat(System.String,System.String)
+  IL_0276: stloc.s V_7
+  IL_0278: ldloc.s V_5
+  IL_027a: stloc.s V_15
+  IL_027c: ldloca.s V_17
+  IL_027e: ldc.r4 4
+  IL_0283: ldc.r4 4
+  IL_0288: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_028d: ldloca.s V_15
+  IL_028f: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_0294: brtrue IL_02a8
+  IL_0299: ldloca.s V_16
+  IL_029b: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_02a1: ldloc.s V_16
+  IL_02a3: br IL_02bb
+  IL_02a8: ldloca.s V_15
+  IL_02aa: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::GetValueOrDefault()
+  IL_02af: ldloc.s V_17
+  IL_02b1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02b6: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_02bb: stloc.s V_5
+  IL_02bd: ldloc.s V_5
+  IL_02bf: stloc.s V_15
+  IL_02c1: ldloc.s V_8
+  IL_02c3: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_LevelOffset()
+  IL_02c8: stloc.s V_17
+  IL_02ca: ldloca.s V_15
+  IL_02cc: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_02d1: brtrue IL_02e5
+  IL_02d6: ldloca.s V_16
+  IL_02d8: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_02de: ldloc.s V_16
+  IL_02e0: br IL_02f8
+  IL_02e5: ldloca.s V_15
+  IL_02e7: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::GetValueOrDefault()
+  IL_02ec: ldloc.s V_17
+  IL_02ee: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02f3: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_02f8: stloc.s V_5
+  IL_02fa: ldloca.s V_5
+  IL_02fc: ldloc.s V_8
+  IL_02fe: castclass Celeste.Level
+  IL_0303: ldloca.s V_5
+  IL_0305: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_030a: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::WorldToScreen(Microsoft.Xna.Framework.Vector2)
+  IL_030f: ldloc.s V_12
+  IL_0311: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0316: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_031b: call System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0320: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_0325: ldloc.s V_11
+  IL_0327: ldflda Microsoft.Xna.Framework.Graphics.Viewport Monocle.Camera::Viewport
+  IL_032c: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Width()
+  IL_0331: div
+  IL_0332: stloc.s V_6
+  IL_0334: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0339: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin()
+  IL_033e: ldloc.3
+  IL_033f: ldc.i4.0
+  IL_0340: bge IL_0358
+  IL_0345: ldarg.0
+  IL_0346: ldarg.0
+  IL_0347: ldfld System.Int32 Monocle.Commands::cursorScale
+  IL_034c: ldc.i4.1
+  IL_034d: sub
+  IL_034e: stfld System.Int32 Monocle.Commands::cursorScale
+  IL_0353: br IL_036d
+  IL_0358: ldloc.3
+  IL_0359: ldc.i4.0
+  IL_035a: ble IL_036d
+  IL_035f: ldarg.0
+  IL_0360: ldarg.0
+  IL_0361: ldfld System.Int32 Monocle.Commands::cursorScale
+  IL_0366: ldc.i4.1
+  IL_0367: add
+  IL_0368: stfld System.Int32 Monocle.Commands::cursorScale
+  IL_036d: ldarg.0
+  IL_036e: ldarg.0
+  IL_036f: ldfld System.Int32 Monocle.Commands::cursorScale
+  IL_0374: ldc.i4.1
+  IL_0375: ldloc.s V_6
+  IL_0377: call System.Int32 Monocle.Calc::Clamp(System.Int32,System.Int32,System.Int32)
+  IL_037c: stfld System.Int32 Monocle.Commands::cursorScale
+  IL_0381: ldloca.s V_5
+  IL_0383: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_0388: brfalse IL_03a5
+  IL_038d: ldarg.0
+  IL_038e: ldloca.s V_5
+  IL_0390: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0395: ldarg.0
+  IL_0396: ldfld System.Int32 Monocle.Commands::cursorScale
+  IL_039b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
+  IL_03a0: callvirt System.Void Monocle.Commands::DrawCursor(Microsoft.Xna.Framework.Vector2,System.Int32,Microsoft.Xna.Framework.Color)
+  IL_03a5: ldarg.0
+  IL_03a6: ldloc.s V_4
+  IL_03a8: ldarg.0
+  IL_03a9: ldfld System.Int32 Monocle.Commands::cursorScale
+  IL_03ae: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Yellow()
+  IL_03b3: callvirt System.Void Monocle.Commands::DrawCursor(Microsoft.Xna.Framework.Vector2,System.Int32,Microsoft.Xna.Framework.Color)
+  IL_03b8: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_03bd: ldloc.s V_7
+  IL_03bf: callvirt Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Graphics.SpriteFont::MeasureString(System.String)
+  IL_03c4: stloc.s V_9
+  IL_03c6: ldc.r4 10
+  IL_03cb: ldc.r4 10
+  IL_03d0: ldloc.s V_9
+  IL_03d2: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_03d7: ldc.r4 20
+  IL_03dc: add
+  IL_03dd: ldloc.s V_9
+  IL_03df: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03e4: ldc.r4 20
+  IL_03e9: add
+  IL_03ea: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_03ef: ldc.r4 0.8
+  IL_03f4: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_03f9: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_03fe: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0403: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_0408: ldloc.s V_7
+  IL_040a: ldc.r4 20
+  IL_040f: ldc.r4 20
+  IL_0414: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0419: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_041e: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::DrawString(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0423: ldc.r4 10
+  IL_0428: ldloc.1
+  IL_0429: conv.r4
+  IL_042a: ldc.r4 50
+  IL_042f: sub
+  IL_0430: ldloc.0
+  IL_0431: conv.r4
+  IL_0432: ldc.r4 20
+  IL_0437: sub
+  IL_0438: ldc.r4 40
+  IL_043d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0442: ldc.r4 0.8
+  IL_0447: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_044c: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0451: ldloca.s V_10
+  IL_0453: ldc.r4 20
+  IL_0458: ldloc.1
+  IL_0459: conv.r4
+  IL_045a: ldc.r4 42
+  IL_045f: sub
+  IL_0460: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0465: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_046a: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_046f: ldstr ">"
++ IL_0474: ldc.i4 7952 @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
++ IL_0479: ldc.i4 5618787 @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
++ IL_047e: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
+  |-> retrieves System.String Celeste.Mod.DebugConsole.DebugConsole::<CustomPrompt>b__22_0(System.String)
++ IL_0483: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
+  IL_0488: ldarg.0
+  IL_0489: ldfld System.String Monocle.Commands::currentText
+  IL_048e: call System.String System.String::Concat(System.String,System.String)
+  IL_0493: ldloc.s V_10
+  IL_0495: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_049a: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::DrawString(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_049f: ldarg.0
+  IL_04a0: ldfld System.Boolean Monocle.Commands::underscore
+  IL_04a5: brfalse IL_0521
+  IL_04aa: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_04af: ldstr ">"
++ IL_04b4: ldc.i4 7954 @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
++ IL_04b9: ldc.i4 52468570 @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
++ IL_04be: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
+  |-> retrieves System.String Celeste.Mod.DebugConsole.DebugConsole::<CustomPrompt>b__22_0(System.String)
++ IL_04c3: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.DebugConsole.DebugConsole::CustomPrompt
+  IL_04c8: ldarg.0
+  IL_04c9: ldfld System.String Monocle.Commands::currentText
+  IL_04ce: ldc.i4.0
+  IL_04cf: ldarg.0
+  IL_04d0: ldfld System.Int32 Monocle.Commands::charIndex
+  IL_04d5: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+  IL_04da: call System.String System.String::Concat(System.String,System.String)
+  IL_04df: callvirt Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Graphics.SpriteFont::MeasureString(System.String)
+  IL_04e4: stloc.s V_18
+  IL_04e6: ldloca.s V_18
+  IL_04e8: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_04ed: dup
+  IL_04ee: ldind.r4
+  IL_04ef: ldc.r4 1
+  IL_04f4: add
+  IL_04f5: stind.r4
+  IL_04f6: ldloc.s V_10
+  IL_04f8: ldloc.s V_18
+  IL_04fa: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_04ff: ldc.r4 0
+  IL_0504: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0509: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_050e: ldloc.s V_10
+  IL_0510: ldloc.s V_18
+  IL_0512: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0517: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_051c: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0521: ldarg.0
+  IL_0522: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_0527: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_052c: ldc.i4.0
+  IL_052d: ble IL_061e
+  IL_0532: ldloc.1
+  IL_0533: ldc.i4.s 100
+  IL_0535: sub
+  IL_0536: ldc.i4.s 30
+  IL_0538: div
+  IL_0539: ldarg.0
+  IL_053a: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_053f: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_0544: ldarg.0
+  IL_0545: ldfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_054a: sub
+  IL_054b: call System.Int32 System.Math::Min(System.Int32,System.Int32)
+  IL_0550: stloc.s V_19
+  IL_0552: ldc.r4 10
+  IL_0557: ldc.r4 30
+  IL_055c: ldloc.s V_19
+  IL_055e: conv.r4
+  IL_055f: mul
+  IL_0560: add
+  IL_0561: stloc.s V_20
+  IL_0563: ldc.r4 10
+  IL_0568: ldloc.1
+  IL_0569: conv.r4
+  IL_056a: ldloc.s V_20
+  IL_056c: sub
+  IL_056d: ldc.r4 60
+  IL_0572: sub
+  IL_0573: ldloc.0
+  IL_0574: conv.r4
+  IL_0575: ldc.r4 20
+  IL_057a: sub
+  IL_057b: ldloc.s V_20
+  IL_057d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0582: ldc.r4 0.8
+  IL_0587: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_058c: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0591: ldc.i4.0
+  IL_0592: stloc.s V_21
+  IL_0594: br IL_05fc
+  IL_0599: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_059e: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_05a3: ldarg.0
+  IL_05a4: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_05a9: ldarg.0
+  IL_05aa: ldfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_05af: ldloc.s V_21
+  IL_05b1: add
+  IL_05b2: callvirt T System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Item(System.Int32)
+  IL_05b7: ldfld System.String Monocle.Commands/Line::Text
+  IL_05bc: ldc.r4 20
+  IL_05c1: ldloc.1
+  IL_05c2: conv.r4
+  IL_05c3: ldc.r4 92
+  IL_05c8: sub
+  IL_05c9: ldc.r4 30
+  IL_05ce: ldloc.s V_21
+  IL_05d0: conv.r4
+  IL_05d1: mul
+  IL_05d2: sub
+  IL_05d3: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_05d8: ldarg.0
+  IL_05d9: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_05de: ldarg.0
+  IL_05df: ldfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_05e4: ldloc.s V_21
+  IL_05e6: add
+  IL_05e7: callvirt T System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Item(System.Int32)
+  IL_05ec: ldfld Microsoft.Xna.Framework.Color Monocle.Commands/Line::Color
+  IL_05f1: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::DrawString(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_05f6: ldloc.s V_21
+  IL_05f8: ldc.i4.1
+  IL_05f9: add
+  IL_05fa: stloc.s V_21
+  IL_05fc: ldloc.s V_21
+  IL_05fe: ldloc.s V_19
+  IL_0600: bge IL_061e
+  IL_0605: ldarg.0
+  IL_0606: ldfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_060b: ldloc.s V_21
+  IL_060d: add
+  IL_060e: ldarg.0
+  IL_060f: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_0614: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_0619: blt IL_0599
+  IL_061e: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0623: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_0628: ret

@@ -1,0 +1,123 @@
+IL Diff: System.Void Monocle.Draw::HollowRect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0000: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0005: ldarg.0
+  IL_0006: conv.i4
+  IL_0007: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::X
+  IL_000c: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0011: ldarg.1
+  IL_0012: conv.i4
+  IL_0013: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_0018: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_001d: ldarg.2
+  IL_001e: conv.i4
+  IL_001f: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width
+  IL_0024: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0029: ldc.i4.1
+  IL_002a: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_002f: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0034: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_0039: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_003e: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_0043: ldsfld Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0048: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_004d: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect()
+  IL_0052: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_0057: ldarg.s color
+  IL_0059: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color)
+  IL_005e: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0063: ldflda System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_0068: dup
+  IL_0069: ldind.i4
+  IL_006a: ldarg.3
+  IL_006b: conv.i4
+  IL_006c: ldc.i4.1
+  IL_006d: sub
+  IL_006e: add
+  IL_006f: stind.i4
+  IL_0070: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0075: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_007a: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_007f: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_0084: ldsfld Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0089: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_008e: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect()
+  IL_0093: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_0098: ldarg.s color
+  IL_009a: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color)
+  IL_009f: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_00a4: ldflda System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_00a9: dup
+  IL_00aa: ldind.i4
+  IL_00ab: ldarg.3
+  IL_00ac: conv.i4
++ IL_00ad: ldc.i4.2 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00ae: sub @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00af: sub @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00b0: stind.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00b1: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_00b6: ldc.i4.1
++ IL_00b7: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00bc: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00c1: ldarg.3 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00c2: conv.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00c3: ldc.i4.2 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_00c4: sub
++ IL_00c5: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00ca: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00cf: ldsfld Monocle.MTexture Monocle.Draw::Pixel @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00d4: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00d9: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00de: ldsfld Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00e3: ldsfld Monocle.MTexture Monocle.Draw::Pixel @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00e8: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00ed: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T) @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00f2: ldarg.s color @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00f4: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color) @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00f9: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_00fe: ldflda System.Int32 Microsoft.Xna.Framework.Rectangle::X @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_0103: dup @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_0104: ldind.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_0105: ldarg.2 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_0106: conv.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
++ IL_0107: ldc.i4.1 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_0108: sub
++ IL_0109: add @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_010a: stind.i4
+- IL_00b1: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00b6: ldc.i4.1 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00b7: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00bc: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00c1: ldarg.3 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00c2: conv.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00c3: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_010b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0110: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_0115: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_011a: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_011f: ldsfld Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect
+  IL_0124: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_0129: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect()
+  IL_012e: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_0133: ldarg.s color
+  IL_0135: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color)
+- IL_00f7: ldsflda Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_00fc: ldflda System.Int32 Microsoft.Xna.Framework.Rectangle::X @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0101: dup @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0102: ldind.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0103: ldarg.2 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0104: conv.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0105: ldc.i4.1 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0106: sub @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0107: add @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0108: stind.i4 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0109: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_010e: ldsfld Monocle.MTexture Monocle.Draw::Pixel @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0113: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0118: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_011d: ldsfld Microsoft.Xna.Framework.Rectangle Monocle.Draw::rect @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0122: ldsfld Monocle.MTexture Monocle.Draw::Pixel @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0127: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect() @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_012c: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T) @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0131: ldarg.s color @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+- IL_0133: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Rectangle,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color) @ TAS.EverestInterop.Hitboxes.HitboxSimplified::AvoidRedrawCorners
+  IL_013a: ret

@@ -1,0 +1,31 @@
+IL Diff: System.Void Monocle.Entity::DebugRender(Monocle.Camera)
+  IL_0000: ldarg.0
++ IL_0001: call System.Boolean TAS.EverestInterop.Hitboxes.HitboxTrigger::IsHideTriggerHitbox(Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxTrigger::ModDebugRender
++ IL_0006: brfalse IL_000c @ TAS.EverestInterop.Hitboxes.HitboxTrigger::ModDebugRender
++ IL_000b: ret @ TAS.EverestInterop.Hitboxes.HitboxTrigger::ModDebugRender
++ IL_000c: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxTrigger::ModDebugRender
++ IL_000d: call System.Boolean TAS.EverestInterop.Hitboxes.HitboxSimplified::HideHitbox(Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxSimplified::ModDebugRender
++ IL_0012: brfalse IL_0018 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::ModDebugRender
++ IL_0017: ret @ TAS.EverestInterop.Hitboxes.HitboxSimplified::ModDebugRender
++ IL_0018: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxSimplified::ModDebugRender
+  IL_0019: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_001e: brfalse IL_0055
+  IL_0023: ldarg.0
+  IL_0024: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0029: ldarg.1
+  IL_002a: ldarg.0
+  IL_002b: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0030: brtrue IL_0045
+  IL_0035: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_DarkRed()
++ IL_003a: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxColor::EntityOnDebugRender
++ IL_003b: call Microsoft.Xna.Framework.Color TAS.EverestInterop.Hitboxes.HitboxColor::GetCustomColor(Microsoft.Xna.Framework.Color,Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxColor::EntityOnDebugRender
+  IL_0040: br IL_0050
+  IL_0045: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
++ IL_004a: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxColor::EntityOnDebugRender
++ IL_004b: call Microsoft.Xna.Framework.Color TAS.EverestInterop.Hitboxes.HitboxColor::GetCustomColor(Microsoft.Xna.Framework.Color,Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxColor::EntityOnDebugRender
+  IL_0050: callvirt System.Void Monocle.Collider::Render(Monocle.Camera,Microsoft.Xna.Framework.Color)
+  IL_0055: ldarg.0
+  IL_0056: callvirt Monocle.ComponentList Monocle.Entity::get_Components()
+  IL_005b: ldarg.1
+  IL_005c: callvirt System.Void Monocle.ComponentList::DebugRender(Monocle.Camera)
+  IL_0061: ret

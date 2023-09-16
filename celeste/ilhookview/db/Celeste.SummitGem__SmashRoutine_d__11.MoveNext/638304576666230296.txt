@@ -1,0 +1,170 @@
+IL Diff: System.Boolean Celeste.SummitGem/<SmashRoutine>d__11::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.SummitGem/<SmashRoutine>d__11::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.SummitGem Celeste.SummitGem/<SmashRoutine>d__11::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_0206
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.SummitGem/<SmashRoutine>d__11::<>1__state
+  IL_0024: ldloc.1
+  IL_0025: ldc.i4.0
+  IL_0026: stfld System.Boolean Monocle.Entity::Visible
+  IL_002b: ldloc.1
+  IL_002c: ldc.i4.0
+  IL_002d: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0032: ldarg.0
+  IL_0033: ldfld Celeste.Player Celeste.SummitGem/<SmashRoutine>d__11::player
+  IL_0038: ldc.r4 110
++ IL_003d: ldc.i4 7316 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0042: ldc.i4 329456 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0047: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_004c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0051: ldc.i4 7314 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_0056: ldc.i4 35629760 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_005b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0060: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  IL_0065: stfld System.Single Celeste.Player::Stamina
+  IL_006a: ldstr "event:/game/07_summit/gem_get"
+  IL_006f: ldloc.1
+  IL_0070: ldloca.s V_3
+  IL_0072: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0078: ldloc.3
+  IL_0079: call Celeste.SoundEmitter Celeste.SoundEmitter::Play(System.String,Monocle.Entity,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_007e: pop
+  IL_007f: ldloc.1
+  IL_0080: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0085: isinst Celeste.Level
+  IL_008a: ldfld Celeste.Session Celeste.Level::Session
+  IL_008f: dup
+  IL_0090: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::DoNotLoad
+  IL_0095: ldloc.1
+  IL_0096: ldfld Celeste.EntityID Celeste.SummitGem::GID
+  IL_009b: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_00a0: pop
+  IL_00a1: ldfld System.Boolean[] Celeste.Session::SummitGems
+  IL_00a6: ldloc.1
+  IL_00a7: ldfld System.Int32 Celeste.SummitGem::GemID
+  IL_00ac: ldc.i4.1
+  IL_00ad: stelem.i1
+  IL_00ae: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00b3: ldloc.1
+  IL_00b4: ldfld System.Int32 Celeste.SummitGem::GemID
+  IL_00b9: callvirt System.Void Celeste.SaveData::RegisterSummitGem(System.Int32)
+  IL_00be: ldarg.0
+  IL_00bf: ldfld Celeste.Level Celeste.SummitGem/<SmashRoutine>d__11::level
+  IL_00c4: ldc.r4 0.3
+  IL_00c9: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_00ce: ldc.r4 0.1
+  IL_00d3: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_00d8: ldsfld Monocle.ParticleType Celeste.SummitGem::P_Shatter
+  IL_00dd: ldsfld Microsoft.Xna.Framework.Color[] Celeste.SummitGem::GemColors
+  IL_00e2: ldloc.1
+  IL_00e3: ldfld System.Int32 Celeste.SummitGem::GemID
+  IL_00e8: ldelem.any Microsoft.Xna.Framework.Color
+  IL_00ed: stfld Microsoft.Xna.Framework.Color Monocle.ParticleType::Color
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld Celeste.Player Celeste.SummitGem/<SmashRoutine>d__11::player
+  IL_00f8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00fd: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0102: stloc.2
+  IL_0103: ldarg.0
+  IL_0104: ldfld Celeste.Level Celeste.SummitGem/<SmashRoutine>d__11::level
+  IL_0109: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_010e: ldsfld Monocle.ParticleType Celeste.SummitGem::P_Shatter
+  IL_0113: ldc.i4.5
+  IL_0114: ldloc.1
+  IL_0115: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_011a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_011f: ldc.r4 4
+  IL_0124: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0129: ldloc.2
+  IL_012a: ldc.r4 1.5707964
+  IL_012f: sub
+  IL_0130: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0135: ldarg.0
+  IL_0136: ldfld Celeste.Level Celeste.SummitGem/<SmashRoutine>d__11::level
+  IL_013b: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0140: ldsfld Monocle.ParticleType Celeste.SummitGem::P_Shatter
+  IL_0145: ldc.i4.5
+  IL_0146: ldloc.1
+  IL_0147: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_014c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0151: ldc.r4 4
+  IL_0156: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_015b: ldloc.2
+  IL_015c: ldc.r4 1.5707964
+  IL_0161: add
+  IL_0162: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0167: ldloc.1
+  IL_0168: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_016d: ldloc.2
+  IL_016e: call Celeste.SlashFx Celeste.SlashFx::Burst(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0173: pop
+  IL_0174: ldc.i4.0
+  IL_0175: stloc.s V_4
+  IL_0177: br IL_01a7
+  IL_017c: ldloc.1
+  IL_017d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0182: ldloc.1
+  IL_0183: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0188: ldarg.0
+  IL_0189: ldfld Celeste.Player Celeste.SummitGem/<SmashRoutine>d__11::player
+  IL_018e: ldloca.s V_3
+  IL_0190: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0196: ldloc.3
+  IL_0197: newobj System.Void Celeste.AbsorbOrb::.ctor(Microsoft.Xna.Framework.Vector2,Monocle.Entity,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_019c: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01a1: ldloc.s V_4
+  IL_01a3: ldc.i4.1
+  IL_01a4: add
+  IL_01a5: stloc.s V_4
+  IL_01a7: ldloc.s V_4
+  IL_01a9: ldc.i4.s 10
+  IL_01ab: blt IL_017c
+  IL_01b0: ldarg.0
+  IL_01b1: ldfld Celeste.Level Celeste.SummitGem/<SmashRoutine>d__11::level
+  IL_01b6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_01bb: ldc.i4.1
+  IL_01bc: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_01c1: ldloc.1
+  IL_01c2: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01c7: newobj System.Void Celeste.SummitGem/BgFlash::.ctor()
+  IL_01cc: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01d1: ldc.r4 0.5
+  IL_01d6: stsfld System.Single Monocle.Engine::TimeRate
+  IL_01db: br IL_020d
+  IL_01e0: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_01e5: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_01ea: ldc.r4 0.5
+  IL_01ef: mul
+  IL_01f0: add
+  IL_01f1: stsfld System.Single Monocle.Engine::TimeRate
+  IL_01f6: ldarg.0
+  IL_01f7: ldnull
+  IL_01f8: stfld System.Object Celeste.SummitGem/<SmashRoutine>d__11::<>2__current
+  IL_01fd: ldarg.0
+  IL_01fe: ldc.i4.1
+  IL_01ff: stfld System.Int32 Celeste.SummitGem/<SmashRoutine>d__11::<>1__state
+  IL_0204: ldc.i4.1
+  IL_0205: ret
+  IL_0206: ldarg.0
+  IL_0207: ldc.i4.m1
+  IL_0208: stfld System.Int32 Celeste.SummitGem/<SmashRoutine>d__11::<>1__state
+  IL_020d: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_0212: ldc.r4 1
+  IL_0217: blt IL_01e0
+  IL_021c: ldloc.1
+  IL_021d: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0222: ldc.i4.0
+  IL_0223: ret

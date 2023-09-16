@@ -1,0 +1,65 @@
+IL Diff: System.Void Celeste.HeartGem::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.HeartGem::collected
+  IL_0006: brtrue IL_00de
+  IL_000b: ldarg.0
+  IL_000c: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0011: isinst Celeste.Level
+  IL_0016: ldfld System.Boolean Celeste.Level::Frozen
+  IL_001b: brtrue IL_00de
+  IL_0020: ldarg.1
+  IL_0021: callvirt System.Boolean Celeste.Player::get_DashAttacking()
++ IL_0026: ldc.i4 7454 @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
++ IL_002b: ldc.i4 40044224 @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
++ IL_0030: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
+  |-> retrieves System.Boolean Celeste.Mod.Randomizer.RandoModule::<DashlessAccessability>b__48_1(System.Boolean)
++ IL_0035: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
+  IL_003a: brfalse IL_0047
+  IL_003f: ldarg.0
+  IL_0040: ldarg.1
+  IL_0041: callvirt System.Void Celeste.HeartGem::Collect(Celeste.Player)
+  IL_0046: ret
+  IL_0047: ldarg.0
+  IL_0048: ldfld System.Single Celeste.HeartGem::bounceSfxDelay
+  IL_004d: ldc.r4 0
+  IL_0052: bgt.un IL_0094
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Boolean Celeste.HeartGem::IsFake
+  IL_005d: brfalse IL_0078
+  IL_0062: ldstr "event:/new_content/game/10_farewell/fakeheart_bounce"
+  IL_0067: ldarg.0
+  IL_0068: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_006d: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0072: pop
+  IL_0073: br IL_0089
+  IL_0078: ldstr "event:/game/general/crystalheart_bounce"
+  IL_007d: ldarg.0
+  IL_007e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0083: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0088: pop
+  IL_0089: ldarg.0
+  IL_008a: ldc.r4 0.1
+  IL_008f: stfld System.Single Celeste.HeartGem::bounceSfxDelay
+  IL_0094: ldarg.1
+  IL_0095: ldarg.0
+  IL_0096: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_009b: callvirt System.Void Celeste.Player::PointBounce(Microsoft.Xna.Framework.Vector2)
+  IL_00a0: ldarg.0
+  IL_00a1: ldfld Monocle.Wiggler Celeste.HeartGem::moveWiggler
+  IL_00a6: callvirt System.Void Monocle.Wiggler::Start()
+  IL_00ab: ldarg.0
+  IL_00ac: ldfld Monocle.Wiggler Celeste.HeartGem::ScaleWiggler
+  IL_00b1: callvirt System.Void Monocle.Wiggler::Start()
+  IL_00b6: ldarg.0
+  IL_00b7: ldarg.0
+  IL_00b8: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00bd: ldarg.1
+  IL_00be: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00c3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00cd: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d2: stfld Microsoft.Xna.Framework.Vector2 Celeste.HeartGem::moveWiggleDir
+  IL_00d7: ldc.i4.1
+  IL_00d8: ldc.i4.1
+  IL_00d9: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_00de: ret

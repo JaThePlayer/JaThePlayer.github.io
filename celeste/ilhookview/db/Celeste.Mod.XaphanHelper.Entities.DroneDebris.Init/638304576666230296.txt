@@ -1,0 +1,41 @@
+IL Diff: System.Void Celeste.Mod.XaphanHelper.Entities.DroneDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
++ IL_0004: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_0009: nop
+  IL_000a: ldarg.0
+  IL_000b: ldarg.1
+  IL_000c: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.DroneDebris::image
+  IL_0017: ldarg.0
+  IL_0018: ldarg.2
+  IL_0019: dup
+  IL_001a: stloc.0
+  IL_001b: stfld Microsoft.Xna.Framework.Color Celeste.Mod.XaphanHelper.Entities.DroneDebris::color
+  IL_0020: ldloc.0
+  IL_0021: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0026: ldarg.0
+  IL_0027: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.DroneDebris::image
+  IL_002c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0031: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0036: ldarg.0
+  IL_0037: ldc.r4 0
+  IL_003c: stfld System.Single Celeste.Mod.XaphanHelper.Entities.DroneDebris::percent
+  IL_0041: ldarg.0
+  IL_0042: ldsfld System.Random Monocle.Calc::Random
+  IL_0047: ldc.r4 0.8
+  IL_004c: ldc.r4 1.6
+  IL_0051: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0056: stfld System.Single Celeste.Mod.XaphanHelper.Entities.DroneDebris::duration
+  IL_005b: ldarg.0
+  IL_005c: ldsfld System.Random Monocle.Calc::Random
+  IL_0061: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_0066: ldsfld System.Random Monocle.Calc::Random
+  IL_006b: ldc.i4.s 40
+  IL_006d: ldc.i4.s 120
+  IL_006f: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0074: conv.r4
+  IL_0075: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_007a: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.XaphanHelper.Entities.DroneDebris::speed
++ IL_007f: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_0084: ret

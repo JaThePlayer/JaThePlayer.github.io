@@ -1,0 +1,82 @@
+IL Diff: Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.RainbowSpinnerColorController::getModHue(Microsoft.Xna.Framework.Color[],System.Single,Monocle.Scene,Microsoft.Xna.Framework.Vector2,System.Boolean,Microsoft.Xna.Framework.Vector2,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedSpinnerColorNotNull() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0005: brfalse IL_0010 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000a: call Microsoft.Xna.Framework.Color TAS.EverestInterop.SimplifiedGraphicsFeature::GetSimplifiedSpinnerColor() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000f: ret @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0010: ldarg.0
+  IL_0011: ldlen
+  IL_0012: conv.i4
+  IL_0013: ldc.i4.1
+  IL_0014: bne.un IL_0021
+  IL_0019: ldarg.0
+  IL_001a: ldc.i4.0
+  IL_001b: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0020: ret
+  IL_0021: ldarg.3
+  IL_0022: ldarg.s center
+  IL_0024: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0029: stloc.3
+  IL_002a: ldloca.s V_3
+  IL_002c: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0031: ldarg.2
+  IL_0032: ldfld System.Single Monocle.Scene::TimeActive
+  IL_0037: ldarg.s gradientSpeed
+  IL_0039: mul
+  IL_003a: add
+  IL_003b: stloc.0
+  IL_003c: br IL_0045
+  IL_0041: ldloc.0
+  IL_0042: ldarg.1
+  IL_0043: add
+  IL_0044: stloc.0
+  IL_0045: ldloc.0
+  IL_0046: ldc.r4 0
+  IL_004b: blt IL_0041
+  IL_0050: ldloc.0
+  IL_0051: ldarg.1
+  IL_0052: rem
+  IL_0053: ldarg.1
+  IL_0054: div
+  IL_0055: stloc.0
+  IL_0056: ldarg.s loopColors
+  IL_0058: brtrue IL_0064
+  IL_005d: ldloc.0
+  IL_005e: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_0063: stloc.0
+  IL_0064: ldloc.0
+  IL_0065: ldc.r4 1
+  IL_006a: bne.un IL_007b
+  IL_006f: ldarg.0
+  IL_0070: ldarg.0
+  IL_0071: ldlen
+  IL_0072: conv.i4
+  IL_0073: ldc.i4.1
+  IL_0074: sub
+  IL_0075: ldelem.any Microsoft.Xna.Framework.Color
+  IL_007a: ret
+  IL_007b: ldarg.0
+  IL_007c: ldlen
+  IL_007d: conv.i4
+  IL_007e: ldc.i4.1
+  IL_007f: sub
+  IL_0080: conv.r4
+  IL_0081: ldloc.0
+  IL_0082: mul
+  IL_0083: dup
+  IL_0084: conv.i4
+  IL_0085: stloc.1
+  IL_0086: ldloc.1
+  IL_0087: conv.r4
+  IL_0088: sub
+  IL_0089: stloc.2
+  IL_008a: ldarg.0
+  IL_008b: ldloc.1
+  IL_008c: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0091: ldarg.0
+  IL_0092: ldloc.1
+  IL_0093: ldc.i4.1
+  IL_0094: add
+  IL_0095: ldelem.any Microsoft.Xna.Framework.Color
+  IL_009a: ldloc.2
+  IL_009b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00a0: ret

@@ -1,0 +1,211 @@
+IL Diff: System.Void Celeste.PlayerHair::Render()
++ IL_0000: ldc.i4 -1 @ Celeste.Mod.Procedurline.PlayerManager::HairRenderModifier
++ IL_0005: stloc V_8 @ Celeste.Mod.Procedurline.PlayerManager::HairRenderModifier
+  IL_0009: ldarg.0
+  IL_000a: ldfld Celeste.PlayerSprite Celeste.PlayerHair::Sprite
+  IL_000f: stloc.0
+  IL_0010: ldloc.0
+  IL_0011: callvirt System.Boolean Celeste.PlayerSprite::get_HasHair()
+  IL_0016: brtrue IL_001c
+  IL_001b: ret
+  IL_001c: ldloca.s V_1
+  IL_001e: ldc.r4 5
+  IL_0023: ldc.r4 5
+  IL_0028: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_002d: ldarg.0
+  IL_002e: ldfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Border
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Celeste.PlayerHair::Alpha
+  IL_0039: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_003e: stloc.2
+  IL_003f: ldarg.0
+  IL_0040: ldfld System.Boolean Celeste.PlayerHair::DrawPlayerSpriteOutline
+  IL_0045: brfalse IL_00f7
+  IL_004a: ldloc.0
+  IL_004b: ldfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0050: stloc.3
+  IL_0051: ldloc.0
+  IL_0052: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0057: stloc.s V_4
+  IL_0059: ldloc.0
+  IL_005a: ldloc.2
+  IL_005b: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0060: ldloc.0
+  IL_0061: ldloc.s V_4
+  IL_0063: ldc.r4 0
+  IL_0068: ldc.r4 -1
+  IL_006d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0072: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0077: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_007c: ldloc.0
+  IL_007d: callvirt System.Void Monocle.Component::Render()
+  IL_0082: ldloc.0
+  IL_0083: ldloc.s V_4
+  IL_0085: ldc.r4 0
+  IL_008a: ldc.r4 1
+  IL_008f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0094: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0099: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_009e: ldloc.0
+  IL_009f: callvirt System.Void Monocle.Component::Render()
+  IL_00a4: ldloc.0
+  IL_00a5: ldloc.s V_4
+  IL_00a7: ldc.r4 -1
+  IL_00ac: ldc.r4 0
+  IL_00b1: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00bb: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00c0: ldloc.0
+  IL_00c1: callvirt System.Void Monocle.Component::Render()
+  IL_00c6: ldloc.0
+  IL_00c7: ldloc.s V_4
+  IL_00c9: ldc.r4 1
+  IL_00ce: ldc.r4 0
+  IL_00d3: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00d8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00dd: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00e2: ldloc.0
+  IL_00e3: callvirt System.Void Monocle.Component::Render()
+  IL_00e8: ldloc.0
+  IL_00e9: ldloc.3
+  IL_00ea: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00ef: ldloc.0
+  IL_00f0: ldloc.s V_4
+  IL_00f2: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00f7: ldarg.0
+  IL_00f8: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_00fd: ldc.i4.0
+  IL_00fe: ldarg.0
+  IL_00ff: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_0104: ldc.i4.0
+  IL_0105: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_010a: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_010f: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::set_Item(System.Int32,T)
+  IL_0114: ldloca.s V_2
+  IL_0116: call System.Byte Microsoft.Xna.Framework.Color::get_A()
+  IL_011b: ldc.i4.0
+  IL_011c: ble IL_0225
+  IL_0121: ldc.i4.0
+  IL_0122: stloc.s V_5
+  IL_0124: br IL_0203
+  IL_0129: ldarg.0
+  IL_012a: ldloc.s V_5
+  IL_012c: callvirt Monocle.MTexture Celeste.PlayerHair::GetHairTexture(System.Int32)
+  IL_0131: ldarg.0
+  IL_0132: ldloc.s V_5
+  IL_0134: callvirt Microsoft.Xna.Framework.Vector2 Celeste.PlayerHair::GetHairScale(System.Int32)
++ IL_0139: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_013a: ldloc.s V_5 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_013c: ldc.i4 7968 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0141: ldc.i4 11893911 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0146: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger/<>c::<hookHairScaleAndHairCount>b__6_0(Microsoft.Xna.Framework.Vector2,Celeste.PlayerHair,System.Int32)
++ IL_014b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.PlayerHair,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  IL_0150: stloc.s V_6
+  IL_0152: dup
+  IL_0153: ldarg.0
+  IL_0154: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_0159: ldloc.s V_5
+  IL_015b: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0160: ldc.r4 -1
+  IL_0165: ldc.r4 0
+  IL_016a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_016f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0174: ldloc.1
+  IL_0175: ldloc.2
+  IL_0176: ldloc.s V_6
+  IL_0178: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_017d: dup
+  IL_017e: ldarg.0
+  IL_017f: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_0184: ldloc.s V_5
+  IL_0186: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_018b: ldc.r4 1
+  IL_0190: ldc.r4 0
+  IL_0195: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_019a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_019f: ldloc.1
+  IL_01a0: ldloc.2
+  IL_01a1: ldloc.s V_6
+  IL_01a3: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_01a8: dup
+  IL_01a9: ldarg.0
+  IL_01aa: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_01af: ldloc.s V_5
+  IL_01b1: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_01b6: ldc.r4 0
+  IL_01bb: ldc.r4 -1
+  IL_01c0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01c5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01ca: ldloc.1
+  IL_01cb: ldloc.2
+  IL_01cc: ldloc.s V_6
+  IL_01ce: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_01d3: ldarg.0
+  IL_01d4: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_01d9: ldloc.s V_5
+  IL_01db: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_01e0: ldc.r4 0
+  IL_01e5: ldc.r4 1
+  IL_01ea: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01ef: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01f4: ldloc.1
+  IL_01f5: ldloc.2
+  IL_01f6: ldloc.s V_6
+  IL_01f8: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_01fd: ldloc.s V_5
+  IL_01ff: ldc.i4.1
+  IL_0200: add
+  IL_0201: stloc.s V_5
+  IL_0203: ldloc.s V_5
+  IL_0205: ldloc.0
+  IL_0206: ldfld System.Int32 Celeste.PlayerSprite::HairCount
++ IL_020b: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_020c: ldc.i4 7972 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0211: ldc.i4 55455036 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0216: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger/<>c::<hookHairCount>b__8_0(System.Int32,Celeste.PlayerHair)
++ IL_021b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.PlayerHair>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  IL_0220: blt IL_0129
+  IL_0225: ldloc.0
+  IL_0226: ldfld System.Int32 Celeste.PlayerSprite::HairCount
++ IL_022b: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_022c: ldc.i4 7978 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0231: ldc.i4 62672937 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0236: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger/<>c::<hookHairCount>b__8_0(System.Int32,Celeste.PlayerHair)
++ IL_023b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.PlayerHair>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  IL_0240: ldc.i4.1
+  IL_0241: sub
+  IL_0242: stloc.s V_7
+  IL_0244: br IL_0291
+  IL_0249: ldarg.0
+  IL_024a: ldloc.s V_7
+  IL_024c: callvirt Monocle.MTexture Celeste.PlayerHair::GetHairTexture(System.Int32)
+  IL_0251: ldarg.0
+  IL_0252: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_0257: ldloc.s V_7
+  IL_0259: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_025e: ldloc.1
+  IL_025f: ldarg.0
+  IL_0260: ldloc.s V_7
+  IL_0262: callvirt Microsoft.Xna.Framework.Color Celeste.PlayerHair::GetHairColor(System.Int32)
+  IL_0267: ldarg.0
+  IL_0268: ldloc.s V_7
+  IL_026a: callvirt Microsoft.Xna.Framework.Vector2 Celeste.PlayerHair::GetHairScale(System.Int32)
++ IL_026f: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0270: ldloc.s V_7 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0272: ldc.i4 7970 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_0277: ldc.i4 23882755 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
++ IL_027c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger/<>c::<hookHairScaleAndHairCount>b__6_0(Microsoft.Xna.Framework.Vector2,Celeste.PlayerHair,System.Int32)
++ IL_0281: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.PlayerHair,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairScaleAndHairCount
+  IL_0286: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_028b: ldloc.s V_7
+  IL_028d: ldc.i4.1
+  IL_028e: sub
+  IL_028f: stloc.s V_7
+  IL_0291: ldloc.s V_7
+  IL_0293: ldc.i4.0
+  IL_0294: bge IL_0249
+  IL_0299: ret

@@ -1,0 +1,93 @@
+IL Diff: System.Void Celeste.Player::PointBounce(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldc.i4 7712 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0005: ldc.i4 6551468 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils/<>c::<Initialize>b__12_4()
++ IL_000f: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0014: ldarg.0
+  IL_0015: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_001a: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_001f: ldc.i4.2
+  IL_0020: bne.un IL_0031
+  IL_0025: ldarg.0
+  IL_0026: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_002b: ldc.i4.0
+  IL_002c: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0031: ldarg.0
+  IL_0032: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0037: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_003c: ldc.i4.4
+  IL_003d: bne.un IL_0058
+  IL_0042: ldarg.0
+  IL_0043: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0048: brfalse IL_0058
+  IL_004d: ldarg.0
+  IL_004e: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0053: callvirt System.Void Celeste.Booster::PlayerReleased()
+  IL_0058: ldarg.0
+  IL_0059: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_005e: pop
+  IL_005f: ldarg.0
+  IL_0060: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_0065: ldarg.0
+  IL_0066: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_006b: ldarg.1
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0071: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0076: stloc.0
+  IL_0077: ldloc.0
+  IL_0078: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_007d: ldc.r4 -0.2
+  IL_0082: ble.un IL_00a3
+  IL_0087: ldloc.0
+  IL_0088: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_008d: ldc.r4 0.4
+  IL_0092: bgt.un IL_00a3
+  IL_0097: ldloca.s V_0
+  IL_0099: ldc.r4 -0.2
+  IL_009e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a3: ldarg.0
+  IL_00a4: ldloc.0
+  IL_00a5: ldc.r4 220
+  IL_00aa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00af: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00b4: ldarg.0
+  IL_00b5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00ba: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00bf: dup
+  IL_00c0: ldind.r4
+  IL_00c1: ldc.r4 1.5
+  IL_00c6: mul
+  IL_00c7: stind.r4
+  IL_00c8: ldarg.0
+  IL_00c9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00ce: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d3: call System.Single System.Math::Abs(System.Single)
+  IL_00d8: ldc.r4 100
+  IL_00dd: bge.un IL_0133
+  IL_00e2: ldarg.0
+  IL_00e3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00e8: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ed: ldc.r4 0
+  IL_00f2: bne.un IL_0111
+  IL_00f7: ldarg.0
+  IL_00f8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00fd: ldarg.0
+  IL_00fe: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0103: neg
+  IL_0104: conv.r4
+  IL_0105: ldc.r4 100
+  IL_010a: mul
+  IL_010b: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0110: ret
+  IL_0111: ldarg.0
+  IL_0112: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0117: ldarg.0
+  IL_0118: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_011d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0122: call System.Int32 System.Math::Sign(System.Single)
+  IL_0127: conv.r4
+  IL_0128: ldc.r4 100
+  IL_012d: mul
+  IL_012e: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0133: ret

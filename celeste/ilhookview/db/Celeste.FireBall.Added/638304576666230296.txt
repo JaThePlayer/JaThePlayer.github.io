@@ -1,0 +1,89 @@
+IL Diff: System.Void Celeste.FireBall::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: callvirt Celeste.Session/CoreModes Celeste.Level::get_CoreMode()
+  IL_0013: ldc.i4.2
+  IL_0014: beq IL_0024
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.Boolean Celeste.FireBall::notCoreMode
+  IL_001f: br IL_0025
+  IL_0024: ldc.i4.1
+  IL_0025: stfld System.Boolean Celeste.FireBall::iceMode
+  IL_002a: ldarg.0
+  IL_002b: ldarg.0
+  IL_002c: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_0031: brtrue IL_003c
+  IL_0036: ldc.i4.1
+  IL_0037: br IL_003d
+  IL_003c: ldc.i4.0
+  IL_003d: conv.r4
+  IL_003e: stfld System.Single Celeste.FireBall::speedMult
+  IL_0043: ldarg.0
+  IL_0044: ldfld Monocle.Sprite Celeste.FireBall::sprite
+  IL_0049: ldarg.0
+  IL_004a: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_004f: brtrue IL_005e
+  IL_0054: ldstr "hot"
+  IL_0059: br IL_0063
+  IL_005e: ldstr "ice"
+  IL_0063: ldc.i4.0
+  IL_0064: ldc.i4.1
+  IL_0065: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_006a: ldarg.0
+  IL_006b: ldfld System.Int32 Celeste.FireBall::index
+  IL_0070: brtrue IL_00c2
+  IL_0075: ldc.i4.1
+  IL_0076: stloc.0
+  IL_0077: br IL_00b6
+  IL_007c: ldarg.0
+  IL_007d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0082: ldarg.0
+  IL_0083: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FireBall::nodes
+  IL_0088: ldarg.0
+  IL_0089: ldfld System.Int32 Celeste.FireBall::amount
+  IL_008e: ldloc.0
+  IL_008f: ldarg.0
+  IL_0090: ldfld System.Single Celeste.FireBall::offset
+  IL_0095: ldarg.0
+  IL_0096: ldfld System.Single Celeste.FireBall::mult
+  IL_009b: ldarg.0
+  IL_009c: ldfld System.Boolean Celeste.FireBall::notCoreMode
+  IL_00a1: newobj System.Void Celeste.FireBall::.ctor(Microsoft.Xna.Framework.Vector2[],System.Int32,System.Int32,System.Single,System.Single,System.Boolean)
++ IL_00a6: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_00a7: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_00a8: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_00ad: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00b2: ldloc.0
+  IL_00b3: ldc.i4.1
+  IL_00b4: add
+  IL_00b5: stloc.0
+  IL_00b6: ldloc.0
+  IL_00b7: ldarg.0
+  IL_00b8: ldfld System.Int32 Celeste.FireBall::amount
+  IL_00bd: blt IL_007c
+  IL_00c2: ldarg.0
+  IL_00c3: ldfld Celeste.SoundSource Celeste.FireBall::trackSfx
+  IL_00c8: brfalse IL_00f5
+  IL_00cd: ldarg.0
+  IL_00ce: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_00d3: brtrue IL_00f5
+  IL_00d8: ldarg.0
+  IL_00d9: callvirt System.Void Celeste.FireBall::PositionTrackSfx()
+  IL_00de: ldarg.0
+  IL_00df: ldfld Celeste.SoundSource Celeste.FireBall::trackSfx
+  IL_00e4: ldstr "event:/env/local/09_core/fireballs_idle"
+  IL_00e9: ldnull
+  IL_00ea: ldc.r4 0
+  IL_00ef: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00f4: pop
++ IL_00f5: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_00f6: ldc.i4 7063 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_00fb: ldc.i4 41758102 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0100: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.FireBallTrack/<>c::<Initialize>b__2_0(Celeste.FireBall)
++ IL_0105: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.FireBall>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_010a: ret

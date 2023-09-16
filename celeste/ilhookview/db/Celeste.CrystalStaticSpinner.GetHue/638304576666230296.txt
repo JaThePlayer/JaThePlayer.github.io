@@ -1,0 +1,27 @@
+IL Diff: Microsoft.Xna.Framework.Color Celeste.CrystalStaticSpinner::GetHue(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldc.r4 280
+  IL_0005: stloc.0
+  IL_0006: ldarga.s position
+  IL_0008: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_000d: ldarg.0
+  IL_000e: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0013: ldfld System.Single Monocle.Scene::TimeActive
+  IL_0018: ldc.r4 50
+  IL_001d: mul
+  IL_001e: add
+  IL_001f: ldloc.0
+  IL_0020: rem
+  IL_0021: ldloc.0
+  IL_0022: div
+  IL_0023: stloc.1
+  IL_0024: ldc.r4 0.4
+  IL_0029: ldloc.1
+  IL_002a: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_002f: ldc.r4 0.4
+  IL_0034: mul
+  IL_0035: add
+  IL_0036: ldc.r4 0.4
+  IL_003b: ldc.r4 0.9
+  IL_0040: call Microsoft.Xna.Framework.Color Monocle.Calc::HsvToColor(System.Single,System.Single,System.Single)
++ IL_0045: call Microsoft.Xna.Framework.Color TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedSpinnerColor(Microsoft.Xna.Framework.Color) @ TAS.EverestInterop.SimplifiedGraphicsFeature::CrystalStaticSpinnerOnGetHue
+  IL_004a: ret

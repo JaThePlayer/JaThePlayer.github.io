@@ -1,0 +1,119 @@
+IL Diff: System.Void Celeste.Player::ClimbBegin()
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.0
+  IL_0002: stfld System.Boolean Celeste.Player::AutoJump
+  IL_0007: ldarg.0
+  IL_0008: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_000d: ldc.r4 0
+  IL_0012: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0017: ldarg.0
+  IL_0018: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_001d: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0022: dup
+  IL_0023: ldind.r4
+  IL_0024: ldc.r4 0.2
+  IL_0029: mul
+  IL_002a: stind.r4
+  IL_002b: ldarg.0
+  IL_002c: ldc.r4 1.2
+  IL_0031: stfld System.Single Celeste.Player::wallSlideTimer
+  IL_0036: ldarg.0
+  IL_0037: ldc.r4 0.1
+  IL_003c: stfld System.Single Celeste.Player::climbNoMoveTimer
+  IL_0041: ldarg.0
+  IL_0042: ldc.r4 0
+  IL_0047: stfld System.Single Celeste.Player::wallBoostTimer
+  IL_004c: ldarg.0
+  IL_004d: ldc.i4.0
+  IL_004e: stfld System.Int32 Celeste.Player::lastClimbMove
+  IL_0053: ldc.i4.1
+  IL_0054: ldc.i4.0
+  IL_0055: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_005a: ldc.i4.0
+  IL_005b: stloc.1
+  IL_005c: br IL_00ae
+  IL_0061: ldarg.0
+  IL_0062: ldarg.0
+  IL_0063: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0068: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_006d: ldarg.0
+  IL_006e: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0073: conv.r4
+  IL_0074: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0079: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_007e: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0083: brtrue IL_00b5
+  IL_0088: ldarg.0
+  IL_0089: ldarg.0
+  IL_008a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_008f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0094: ldarg.0
+  IL_0095: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_009a: conv.r4
+  IL_009b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00a0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a5: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00aa: ldloc.1
+  IL_00ab: ldc.i4.1
+  IL_00ac: add
+  IL_00ad: stloc.1
+  IL_00ae: ldloc.1
+  IL_00af: ldc.i4.2
+  IL_00b0: blt IL_0061
+  IL_00b5: ldarg.0
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00bc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_00c7: conv.r4
+  IL_00c8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00cd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d2: ldarg.0
+  IL_00d3: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Player::temp
+  IL_00d8: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.Solid>(Microsoft.Xna.Framework.Vector2,System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_00dd: call Celeste.Platform Celeste.SurfaceIndex::GetPlatformByPriority(System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_00e2: stloc.0
+  IL_00e3: ldloc.0
+  IL_00e4: brfalse IL_016b
+  IL_00e9: ldarg.0
+  IL_00ea: ldloc V_0
+  IL_00ee: ldarg.0
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_00f5: callvirt System.Int32 Celeste.Platform::GetWallSoundIndex(Celeste.Player,System.Int32)
+  IL_00fa: call System.String Celeste.SurfaceIndex::GetPathFromIndex(System.Int32)
+  IL_00ff: ldstr "/grab"
+  IL_0104: call System.String System.String::Concat(System.String,System.String)
+  IL_0109: ldstr "surface_index"
+  IL_010e: ldloc.0
+  IL_010f: ldarg.0
+  IL_0110: ldarg.0
+  IL_0111: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0116: callvirt System.Int32 Celeste.Platform::GetWallSoundIndex(Celeste.Player,System.Int32)
+  IL_011b: conv.r4
+  IL_011c: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0121: pop
+  IL_0122: ldloc.0
++ IL_0123: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_ClimbBegin
++ IL_0124: ldc.i4 6389 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_ClimbBegin
++ IL_0129: ldc.i4 53073180 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_ClimbBegin
++ IL_012e: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_ClimbBegin
+  |-> retrieves Celeste.Platform Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry/<>c::<Player_ClimbBegin>b__42_1(Celeste.Platform,Celeste.Player)
++ IL_0133: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.Platform,Celeste.Platform,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_ClimbBegin
+  IL_0138: isinst Celeste.DreamBlock
+  IL_013d: brfalse IL_016b
+  IL_0142: ldloc.0
+  IL_0143: isinst Celeste.DreamBlock
+  IL_0148: ldarg.0
+  IL_0149: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_014e: ldarg.0
+  IL_014f: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0154: ldc.i4.3
+  IL_0155: mul
+  IL_0156: conv.r4
+  IL_0157: ldc.r4 -4
+  IL_015c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0161: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0166: callvirt System.Void Celeste.DreamBlock::FootstepRipple(Microsoft.Xna.Framework.Vector2)
+  IL_016b: ret

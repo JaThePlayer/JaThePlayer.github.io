@@ -1,0 +1,74 @@
+IL Diff: System.Void Celeste.FlutterBird::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0007: ldarg.2
+  IL_0008: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_000d: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0012: ldarg.0
+  IL_0013: ldc.i4 -9999
+  IL_0018: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_001d: ldarg.0
+  IL_001e: ldarg.0
+  IL_001f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0024: stfld Microsoft.Xna.Framework.Vector2 Celeste.FlutterBird::start
+  IL_0029: ldarg.0
+  IL_002a: ldarg.0
++ IL_002b: ldarg.0 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_002c: isinst FrostHelper.CustomFlutterBird @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_0031: brfalse IL_0041 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_0036: ldarg.1 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_0037: call Monocle.Sprite FrostHelper.CustomFlutterBird::CustomCreate(Celeste.EntityData) @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_003c: br IL_0050 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
+  IL_0041: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_0046: ldstr "flutterbird"
+  IL_004b: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0050: dup
+  IL_0051: stloc.0
+  IL_0052: stfld Monocle.Sprite Celeste.FlutterBird::sprite
+  IL_0057: ldloc.0
+  IL_0058: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005d: ldarg.0
+  IL_005e: ldfld Monocle.Sprite Celeste.FlutterBird::sprite
+  IL_0063: ldsfld System.Random Monocle.Calc::Random
+  IL_0068: ldsfld Microsoft.Xna.Framework.Color[] Celeste.FlutterBird::colors
+  IL_006d: call T Monocle.Calc::Choose<Microsoft.Xna.Framework.Color>(System.Random,T[])
+  IL_0072: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0077: ldarg.0
+  IL_0078: ldarg.0
+  IL_0079: ldarg.0
+  IL_007a: callvirt System.Collections.IEnumerator Celeste.FlutterBird::IdleRoutine()
+  IL_007f: ldc.i4.1
+  IL_0080: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0085: dup
+  IL_0086: stloc.1
+  IL_0087: stfld Monocle.Coroutine Celeste.FlutterBird::routine
+  IL_008c: ldloc.1
+  IL_008d: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0092: ldarg.0
+  IL_0093: ldarg.0
+  IL_0094: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_0099: dup
+  IL_009a: stloc.2
+  IL_009b: stfld Celeste.SoundSource Celeste.FlutterBird::flyawaySfx
+  IL_00a0: ldloc.2
+  IL_00a1: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00a6: ldarg.0
+  IL_00a7: ldarg.0
+  IL_00a8: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_00ad: dup
+  IL_00ae: stloc.2
+  IL_00af: stfld Celeste.SoundSource Celeste.FlutterBird::tweetingSfx
+  IL_00b4: ldloc.2
+  IL_00b5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld Celeste.SoundSource Celeste.FlutterBird::tweetingSfx
+  IL_00c0: ldstr "event:/game/general/birdbaby_tweet_loop"
++ IL_00c5: ldarg.0 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_00c6: ldarg.1 @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
++ IL_00c7: call System.String FrostHelper.CustomFlutterBird::GetTweetingSfx(System.String,Celeste.FlutterBird,Celeste.EntityData) @ FrostHelper.CustomFlutterBird::IL_FlutterBird_ctor
+  IL_00cc: ldnull
+  IL_00cd: ldc.r4 0
+  IL_00d2: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00d7: pop
+  IL_00d8: ret

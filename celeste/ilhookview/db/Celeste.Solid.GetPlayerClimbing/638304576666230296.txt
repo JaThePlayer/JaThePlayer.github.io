@@ -1,0 +1,59 @@
+IL Diff: Celeste.Player Celeste.Solid::GetPlayerClimbing()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_000b: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Player>()
+  IL_0010: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0015: stloc.0
+  IL_0016: br IL_0097
+  IL_001b: ldloca.s V_0
+  IL_001d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0022: castclass Celeste.Player
+  IL_0027: stloc.1
+  IL_0028: ldloc.1
+  IL_0029: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_002e: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0033: ldc.i4.1
+  IL_0034: bne.un IL_0097
+  IL_0039: ldloc.1
+  IL_003a: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_003f: ldc.i4.m1
+  IL_0040: bne.un IL_0068
+  IL_0045: ldarg.0
+  IL_0046: ldloc.1
+  IL_0047: ldarg.0
+  IL_0048: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_004d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0052: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0057: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_005c: brfalse IL_0068
+  IL_0061: ldloc.1
+  IL_0062: stloc.2
+  IL_0063: leave IL_00b8
+  IL_0068: ldloc.1
+  IL_0069: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_006e: ldc.i4.1
+  IL_006f: bne.un IL_0097
+  IL_0074: ldarg.0
+  IL_0075: ldloc.1
+  IL_0076: ldarg.0
+  IL_0077: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_007c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0081: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0086: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_008b: brfalse IL_0097
+  IL_0090: ldloc.1
+  IL_0091: stloc.2
+  IL_0092: leave IL_00b8
+  IL_0097: ldloca.s V_0
+  IL_0099: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_009e: brtrue IL_001b
+  IL_00a3: leave IL_00b6
+  IL_00a8: ldloca.s V_0
+  IL_00aa: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00b0: callvirt System.Void System.IDisposable::Dispose()
+  IL_00b5: endfinally
+  IL_00b6: ldnull
+  IL_00b7: ret
+  IL_00b8: ldloc.2
+  IL_00b9: ret

@@ -1,0 +1,28 @@
+IL Diff: System.Void Celeste.Player::SwimBegin()
+  IL_0000: ldarg.0
+  IL_0001: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0006: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_000b: ldc.r4 0
+  IL_0010: ble.un IL_0029
+  IL_0015: ldarg.0
+  IL_0016: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_001b: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0020: dup
+  IL_0021: ldind.r4
+  IL_0022: ldc.r4 0.5
+  IL_0027: mul
+  IL_0028: stind.r4
+  IL_0029: ldarg.0
+  IL_002a: ldc.r4 110
++ IL_002f: ldc.i4 7823 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0034: ldc.i4 23602978 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0039: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_003e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0043: ldc.i4 7818 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_0048: ldc.i4 55801195 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_004d: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0052: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  IL_0057: stfld System.Single Celeste.Player::Stamina
+  IL_005c: ret

@@ -1,0 +1,23 @@
+IL Diff: System.Void Celeste.Spring::BounceAnimate()
+  IL_0000: ldstr "event:/game/general/spring"
+  IL_0005: ldarg.0
+  IL_0006: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
++ IL_000b: ldarg.0 @ VivHelper.Entities.EntityMuterComponent+<>c__DisplayClass8_0::<HookMethodInfoWithAudioMute>b__0
++ IL_000c: stsfld System.Object VivHelper.Entities.EntityMuterComponent::objPlayingAudio @ VivHelper.Entities.EntityMuterComponent+<>c__DisplayClass8_0::<HookMethodInfoWithAudioMute>b__0
+  IL_0011: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
++ IL_0016: ldnull @ VivHelper.Entities.EntityMuterComponent+<>c__DisplayClass8_0::<HookMethodInfoWithAudioMute>b__0
++ IL_0017: stsfld System.Object VivHelper.Entities.EntityMuterComponent::objPlayingAudio @ VivHelper.Entities.EntityMuterComponent+<>c__DisplayClass8_0::<HookMethodInfoWithAudioMute>b__0
+  IL_001c: pop
+  IL_001d: ldarg.0
+  IL_001e: ldfld Celeste.StaticMover Celeste.Spring::staticMover
+  IL_0023: callvirt System.Void Celeste.StaticMover::TriggerPlatform()
+  IL_0028: ldarg.0
+  IL_0029: ldfld Monocle.Sprite Celeste.Spring::sprite
+  IL_002e: ldstr "bounce"
+  IL_0033: ldc.i4.1
+  IL_0034: ldc.i4.0
+  IL_0035: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_003a: ldarg.0
+  IL_003b: ldfld Monocle.Wiggler Celeste.Spring::wiggler
+  IL_0040: callvirt System.Void Monocle.Wiggler::Start()
+  IL_0045: ret

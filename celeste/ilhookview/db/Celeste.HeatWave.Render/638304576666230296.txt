@@ -1,0 +1,111 @@
+IL Diff: System.Void Celeste.HeatWave::Render(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Single Celeste.HeatWave::fade
+  IL_0006: ldc.r4 0
+  IL_000b: bgt.un IL_0011
+  IL_0010: ret
+  IL_0011: ldarg.1
+  IL_0012: isinst Celeste.Level
+  IL_0017: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_001c: stloc.0
+  IL_001d: ldc.i4.0
+  IL_001e: stloc.1
+  IL_001f: br IL_0126
+  IL_0024: ldloca.s V_4
+  IL_0026: initobj Microsoft.Xna.Framework.Vector2
+  IL_002c: ldloca.s V_4
+  IL_002e: ldarg.0
+  IL_002f: ldarg.0
+  IL_0030: ldfld Celeste.HeatWave/Particle[] Celeste.HeatWave::particles
+  IL_0035: ldloc.1
+  IL_0036: ldelema Celeste.HeatWave/Particle
+  IL_003b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HeatWave/Particle::Position
+  IL_0040: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0045: ldloc.0
+  IL_0046: callvirt System.Single Monocle.Camera::get_X()
+  IL_004b: sub
+  IL_004c: ldc.r4 320
+  IL_0051: callvirt System.Single Celeste.HeatWave::Mod(System.Single,System.Single)
+  IL_0056: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_005b: ldloca.s V_4
+  IL_005d: ldarg.0
+  IL_005e: ldarg.0
+  IL_005f: ldfld Celeste.HeatWave/Particle[] Celeste.HeatWave::particles
+  IL_0064: ldloc.1
+  IL_0065: ldelema Celeste.HeatWave/Particle
+  IL_006a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HeatWave/Particle::Position
+  IL_006f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0074: ldloc.0
+  IL_0075: callvirt System.Single Monocle.Camera::get_Y()
+  IL_007a: sub
+  IL_007b: ldc.r4 180
+  IL_0080: callvirt System.Single Celeste.HeatWave::Mod(System.Single,System.Single)
+  IL_0085: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_008a: ldloc.s V_4
+  IL_008c: ldarg.0
+  IL_008d: ldfld Celeste.HeatWave/Particle[] Celeste.HeatWave::particles
+  IL_0092: ldloc.1
+  IL_0093: ldelema Celeste.HeatWave/Particle
+  IL_0098: ldfld System.Single Celeste.HeatWave/Particle::Percent
+  IL_009d: stloc.2
+  IL_009e: ldc.r4 0
+  IL_00a3: stloc.3
+  IL_00a4: ldloc.2
+  IL_00a5: ldc.r4 0.7
+  IL_00aa: bge.un IL_00cf
+  IL_00af: ldloc.2
+  IL_00b0: ldc.r4 0
+  IL_00b5: ldc.r4 0.3
+  IL_00ba: ldc.r4 0
+  IL_00bf: ldc.r4 1
+  IL_00c4: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_00c9: stloc.3
+  IL_00ca: br IL_00ea
+  IL_00cf: ldloc.2
+  IL_00d0: ldc.r4 0.7
+  IL_00d5: ldc.r4 1
+  IL_00da: ldc.r4 1
+  IL_00df: ldc.r4 0
+  IL_00e4: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_00e9: stloc.3
+  IL_00ea: ldc.r4 1
+  IL_00ef: ldc.r4 1
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld Microsoft.Xna.Framework.Color[] Celeste.HeatWave::currentColors
+  IL_00fa: ldarg.0
+  IL_00fb: ldfld Celeste.HeatWave/Particle[] Celeste.HeatWave::particles
+  IL_0100: ldloc.1
+  IL_0101: ldelema Celeste.HeatWave/Particle
+  IL_0106: ldfld System.Int32 Celeste.HeatWave/Particle::Color
+  IL_010b: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0110: ldarg.0
+  IL_0111: ldfld System.Single Celeste.HeatWave::fade
+  IL_0116: ldloc.3
+  IL_0117: mul
+  IL_0118: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_011d: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0122: ldloc.1
+  IL_0123: ldc.i4.1
+  IL_0124: add
+  IL_0125: stloc.1
+  IL_0126: ldloc.1
+  IL_0127: ldarg.0
+  IL_0128: ldfld Celeste.HeatWave/Particle[] Celeste.HeatWave::particles
+  IL_012d: ldlen
++ IL_012e: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade::modHeatWaveRender
++ IL_012f: ldc.i4 7645 @ Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade::modHeatWaveRender
++ IL_0134: ldc.i4 8834657 @ Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade::modHeatWaveRender
++ IL_0139: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade::modHeatWaveRender
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade/<>c::<modHeatWaveRender>b__7_2(System.Int32,Celeste.HeatWave)
++ IL_013e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.HeatWave>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.HeatWaveNoColorGrade::modHeatWaveRender
+  IL_0143: conv.i4
+  IL_0144: blt IL_0024
+  IL_0149: ldarg.0
+  IL_014a: ldfld Celeste.Parallax Celeste.HeatWave::mist1
+  IL_014f: ldarg.1
+  IL_0150: callvirt System.Void Celeste.Backdrop::Render(Monocle.Scene)
+  IL_0155: ldarg.0
+  IL_0156: ldfld Celeste.Parallax Celeste.HeatWave::mist2
+  IL_015b: ldarg.1
+  IL_015c: callvirt System.Void Celeste.Backdrop::Render(Monocle.Scene)
+  IL_0161: ret

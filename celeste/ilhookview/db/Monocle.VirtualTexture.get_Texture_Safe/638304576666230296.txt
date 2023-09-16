@@ -1,0 +1,81 @@
+IL Diff: Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Object Monocle.VirtualTexture::_Texture_QueuedLoadLock
+  IL_0006: stloc.0
+  IL_0007: ldc.i4.0
+  IL_0008: stloc.1
+  IL_0009: ldloc.0
+  IL_000a: brfalse IL_0076
+  IL_000f: ldloc.0
+  IL_0010: stloc.2
+  IL_0011: ldc.i4.0
+  IL_0012: stloc.3
+  IL_0013: ldloc.2
+  IL_0014: ldloca.s V_3
+  IL_0016: call System.Void System.Threading.Monitor::Enter(System.Object,System.Boolean&)
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Object Monocle.VirtualTexture::_Texture_QueuedLoadLock
+  IL_0021: ldloc.0
+  IL_0022: beq IL_0034
+  IL_0027: ldarg.0
+  IL_0028: ldfld Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::Texture
+  IL_002d: stloc.s V_4
+  IL_002f: leave IL_00df
+  IL_0034: call System.Boolean Celeste.Mod.MainThreadHelper::get_IsMainThread()
+  IL_0039: brfalse IL_004e
+  IL_003e: ldarg.0
+  IL_003f: ldnull
+  IL_0040: stfld System.Object Monocle.VirtualTexture::_Texture_QueuedLoadLock
+  IL_0045: ldarg.0
+  IL_0046: ldc.i4.0
+  IL_0047: stfld System.Boolean Monocle.VirtualTexture::_Texture_Reloading
+  IL_004c: ldc.i4.1
+  IL_004d: stloc.1
+  IL_004e: leave IL_0060
+  IL_0053: ldloc.3
+  IL_0054: brfalse IL_005f
+  IL_0059: ldloc.2
+  IL_005a: call System.Void System.Threading.Monitor::Exit(System.Object)
+  IL_005f: endfinally
+  IL_0060: call System.Boolean Celeste.Mod.MainThreadHelper::get_IsMainThread()
+  IL_0065: brtrue IL_0076
+  IL_006a: ldarg.0
+  IL_006b: ldflda System.Threading.Tasks.ValueTask`1<Microsoft.Xna.Framework.Graphics.Texture2D> Monocle.VirtualTexture::_Texture_QueuedLoad
+  IL_0070: call TResult System.Threading.Tasks.ValueTask`1<Microsoft.Xna.Framework.Graphics.Texture2D>::get_Result()
+  IL_0075: ret
+  IL_0076: ldarg.0
+  IL_0077: ldfld System.Boolean Monocle.VirtualTexture::_Texture_Reloading
+  IL_007c: brtrue IL_00a7
+  IL_0081: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0086: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_LazyLoading()
++ IL_008b: ldarg.0 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::lazyLoadTexturesOnAccess
++ IL_008c: ldc.i4 6930 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::lazyLoadTexturesOnAccess
++ IL_0091: ldc.i4 41591107 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::lazyLoadTexturesOnAccess
++ IL_0096: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::lazyLoadTexturesOnAccess
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LazyLoadingHandler/<>c::<lazyLoadTexturesOnAccess>b__17_1(System.Boolean,Monocle.VirtualTexture)
++ IL_009b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Monocle.VirtualTexture>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::lazyLoadTexturesOnAccess
+  IL_00a0: ldloc.1
+  IL_00a1: or
+  IL_00a2: brtrue IL_00ae
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::Texture
+  IL_00ad: ret
+  IL_00ae: ldarg.0
+  IL_00af: ldfld Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::Texture
+  IL_00b4: dup
+  IL_00b5: brtrue IL_00c1
+  IL_00ba: pop
+  IL_00bb: ldc.i4.1
+  IL_00bc: br IL_00c6
+  IL_00c1: callvirt System.Boolean Microsoft.Xna.Framework.Graphics.GraphicsResource::get_IsDisposed()
+  IL_00c6: brfalse IL_00d8
+  IL_00cb: ldarg.0
+  IL_00cc: ldc.i4.1
+  IL_00cd: stfld System.Boolean Monocle.VirtualTexture::_Texture_Requesting
+  IL_00d2: ldarg.0
+  IL_00d3: callvirt System.Void Monocle.VirtualAsset::Reload()
+  IL_00d8: ldarg.0
+  IL_00d9: ldfld Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::Texture
+  IL_00de: ret
+  IL_00df: ldloc.s V_4
+  IL_00e1: ret

@@ -1,0 +1,50 @@
+IL Diff: System.Void Celeste.SeekerBarrier::Render()
+  IL_0000: ldarg.0
+  IL_0001: call System.Boolean Celeste.SeekerBarrier::IsVisible()
+  IL_0006: brtrue IL_000c
+  IL_000b: ret
+  IL_000c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0011: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookParticleColors
++ IL_0012: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentParticleColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrier) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookParticleColors
+  IL_0017: ldc.r4 0.5
++ IL_001c: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookParticleColors
++ IL_001d: call System.Single Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentParticleTransparency(System.Single,Celeste.SeekerBarrier) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookParticleColors
+  IL_0022: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0027: stloc.0
+  IL_0028: ldarg.0
+  IL_0029: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.SeekerBarrier::particles
+  IL_002e: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::GetEnumerator()
+  IL_0033: stloc.1
+  IL_0034: br IL_005d
+  IL_0039: ldloca.s V_1
+  IL_003b: call T System.Collections.Generic.List`1/Enumerator<Microsoft.Xna.Framework.Vector2>::get_Current()
+  IL_0040: stloc.2
+  IL_0041: ldsfld Monocle.MTexture Monocle.Draw::Pixel
+  IL_0046: ldarg.0
+  IL_0047: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_004c: ldloc.2
+  IL_004d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0052: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0057: ldloc.0
+  IL_0058: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_005d: ldloca.s V_1
+  IL_005f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Microsoft.Xna.Framework.Vector2>::MoveNext()
+  IL_0064: brtrue IL_0039
+  IL_0069: leave IL_007c
+  IL_006e: ldloca.s V_1
+  IL_0070: constrained. System.Collections.Generic.List`1/Enumerator<Microsoft.Xna.Framework.Vector2>
+  IL_0076: callvirt System.Void System.IDisposable::Dispose()
+  IL_007b: endfinally
+  IL_007c: ldarg.0
+  IL_007d: ldfld System.Boolean Celeste.SeekerBarrier::Flashing
+  IL_0082: brfalse IL_00ac
+  IL_0087: ldarg.0
+  IL_0088: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_008d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0092: ldarg.0
+  IL_0093: ldfld System.Single Celeste.SeekerBarrier::Flash
+  IL_0098: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_009d: ldc.r4 0.5
+  IL_00a2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00a7: call System.Void Monocle.Draw::Rect(Monocle.Collider,Microsoft.Xna.Framework.Color)
+  IL_00ac: ret

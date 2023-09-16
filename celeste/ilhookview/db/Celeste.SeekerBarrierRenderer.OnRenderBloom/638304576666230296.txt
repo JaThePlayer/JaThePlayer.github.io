@@ -1,0 +1,123 @@
+IL Diff: System.Void Celeste.SeekerBarrierRenderer::OnRenderBloom()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0010: stloc.0
+  IL_0011: ldloc.0
+  IL_0012: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0017: conv.i4
+  IL_0018: ldloc.0
+  IL_0019: callvirt System.Single Monocle.Camera::get_Top()
+  IL_001e: conv.i4
+  IL_001f: ldloc.0
+  IL_0020: callvirt System.Single Monocle.Camera::get_Right()
+  IL_0025: ldloc.0
+  IL_0026: callvirt System.Single Monocle.Camera::get_Left()
+  IL_002b: sub
+  IL_002c: conv.i4
+  IL_002d: ldloc.0
+  IL_002e: callvirt System.Single Monocle.Camera::get_Bottom()
+  IL_0033: ldloc.0
+  IL_0034: callvirt System.Single Monocle.Camera::get_Top()
+  IL_0039: sub
+  IL_003a: conv.i4
+  IL_003b: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0040: pop
+  IL_0041: ldarg.0
+  IL_0042: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrier> Celeste.SeekerBarrierRenderer::list
+  IL_0047: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SeekerBarrier>::GetEnumerator()
+  IL_004c: stloc.1
+  IL_004d: br IL_008d
+  IL_0052: ldloca.s V_1
+  IL_0054: call T System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>::get_Current()
+  IL_0059: stloc.2
+  IL_005a: ldloc.2
+  IL_005b: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0060: brfalse IL_008d
+  IL_0065: ldloc.2
+  IL_0066: callvirt System.Single Monocle.Entity::get_X()
+  IL_006b: ldloc.2
+  IL_006c: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0071: ldloc.2
+  IL_0072: callvirt System.Single Monocle.Entity::get_Width()
+  IL_0077: ldloc.2
+  IL_0078: callvirt System.Single Monocle.Entity::get_Height()
+  IL_007d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0082: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0083: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_0088: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_008d: ldloca.s V_1
+  IL_008f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>::MoveNext()
+  IL_0094: brtrue IL_0052
+  IL_0099: leave IL_00ac
+  IL_009e: ldloca.s V_1
+  IL_00a0: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>
+  IL_00a6: callvirt System.Void System.IDisposable::Dispose()
+  IL_00ab: endfinally
+  IL_00ac: ldarg.0
+  IL_00ad: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge> Celeste.SeekerBarrierRenderer::edges
+  IL_00b2: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge>::GetEnumerator()
+  IL_00b7: stloc.3
+  IL_00b8: br IL_0164
+  IL_00bd: ldloca.s V_3
+  IL_00bf: call T System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>::get_Current()
+  IL_00c4: stloc.s V_4
+  IL_00c6: ldloc.s V_4
+  IL_00c8: ldfld System.Boolean Celeste.SeekerBarrierRenderer/Edge::Visible
+  IL_00cd: brfalse IL_0164
+  IL_00d2: ldloc.s V_4
+  IL_00d4: ldfld Celeste.SeekerBarrier Celeste.SeekerBarrierRenderer/Edge::Parent
+  IL_00d9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00de: ldloc.s V_4
+  IL_00e0: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::A
+  IL_00e5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ea: stloc.s V_5
+  IL_00ec: ldloc.s V_4
+  IL_00ee: ldfld Celeste.SeekerBarrier Celeste.SeekerBarrierRenderer/Edge::Parent
+  IL_00f3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00f8: ldloc.s V_4
+  IL_00fa: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::B
+  IL_00ff: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0104: pop
+  IL_0105: ldc.i4.0
+  IL_0106: stloc.s V_6
+  IL_0108: br IL_0155
+  IL_010d: ldloc.s V_5
+  IL_010f: ldloc.s V_4
+  IL_0111: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::Normal
+  IL_0116: ldloc.s V_6
+  IL_0118: conv.r4
+  IL_0119: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_011e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0123: dup
+  IL_0124: ldloc.s V_4
+  IL_0126: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::Perpendicular
+  IL_012b: ldloc.s V_4
+  IL_012d: ldfld System.Single[] Celeste.SeekerBarrierRenderer/Edge::Wave
+  IL_0132: ldloc.s V_6
+  IL_0134: ldelem.r4
+  IL_0135: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_013a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_013f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0144: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0145: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_014a: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_014f: ldloc.s V_6
+  IL_0151: ldc.i4.1
+  IL_0152: add
+  IL_0153: stloc.s V_6
+  IL_0155: ldloc.s V_6
+  IL_0157: conv.r4
+  IL_0158: ldloc.s V_4
+  IL_015a: ldfld System.Single Celeste.SeekerBarrierRenderer/Edge::Length
+  IL_015f: ble IL_010d
+  IL_0164: ldloca.s V_3
+  IL_0166: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>::MoveNext()
+  IL_016b: brtrue IL_00bd
+  IL_0170: leave IL_0183
+  IL_0175: ldloca.s V_3
+  IL_0177: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>
+  IL_017d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0182: endfinally
+  IL_0183: ret

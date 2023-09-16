@@ -1,0 +1,26 @@
+IL Diff: System.Single Celeste.OuiChapterPanel::_FixTitleLength(System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.AreaKey Celeste.OuiChapterPanel::Area
+  IL_0006: call Celeste.AreaData Celeste.AreaData::Get(Celeste.AreaKey)
+  IL_000b: ldfld System.String Celeste.AreaData::Name
+  IL_0010: ldnull
+  IL_0011: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0016: call Microsoft.Xna.Framework.Vector2 Celeste.ActiveFont::Measure(System.String)
+  IL_001b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
++ IL_0020: ldarg.0 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModFixTitleLength
++ IL_0021: ldc.i4 6744 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModFixTitleLength
++ IL_0026: ldc.i4 13203393 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModFixTitleLength
++ IL_002b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModFixTitleLength
+  |-> retrieves System.Single Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModFixTitleLength>b__57_3(System.Single,Celeste.OuiChapterPanel)
++ IL_0030: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.OuiChapterPanel>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModFixTitleLength
+  IL_0035: stloc.0
+  IL_0036: ldarg.1
+  IL_0037: ldc.r4 0
+  IL_003c: ldloc.0
+  IL_003d: ldarg.1
+  IL_003e: add
+  IL_003f: ldc.r4 490
+  IL_0044: sub
+  IL_0045: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_004a: sub
+  IL_004b: ret

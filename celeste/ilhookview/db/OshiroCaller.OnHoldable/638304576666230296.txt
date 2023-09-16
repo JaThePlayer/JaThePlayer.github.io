@@ -1,0 +1,363 @@
+IL Diff: System.Void OshiroCaller::OnHoldable(Celeste.Holdable)
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0007: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_000c: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0011: stloc.0
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0018: brfalse IL_002e
+  IL_001d: ldarg.1
+  IL_001e: ldarg.0
+  IL_001f: ldfld Celeste.HoldableCollider OshiroCaller::crystalCollider
+  IL_0024: callvirt System.Boolean Celeste.Holdable::Dangerous(Celeste.HoldableCollider)
+  IL_0029: br IL_002f
+  IL_002e: ldc.i4.0
+  IL_002f: stloc.1
+  IL_0030: ldloc.1
+  IL_0031: brfalse IL_0481
+  IL_0036: nop
+  IL_0037: ldarg.0
+  IL_0038: ldfld System.Boolean OshiroCaller::repell
+  IL_003d: stloc.2
+  IL_003e: ldloc.2
+  IL_003f: brfalse IL_032d
+  IL_0044: nop
+  IL_0045: ldarg.0
+  IL_0046: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0050: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_0055: ldnull
+  IL_0056: cgt.un
+  IL_0058: stloc.3
+  IL_0059: ldloc.3
+  IL_005a: brfalse IL_0327
+  IL_005f: nop
+  IL_0060: ldarg.0
+  IL_0061: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0066: stloc.s V_4
+  IL_0068: ldarg.0
+  IL_0069: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_006e: isinst Celeste.Level
+  IL_0073: ldfld Celeste.Session Celeste.Level::Session
+  IL_0078: ldarg.0
+  IL_0079: ldfld System.String OshiroCaller::customFlag
+  IL_007e: ldarg.0
+  IL_007f: ldfld System.Boolean OshiroCaller::flagSet
+  IL_0084: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0089: nop
+  IL_008a: ldloc.s V_4
+  IL_008c: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_0091: ldarg.0
+  IL_0092: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0097: ldc.r4 1
+  IL_009c: ldc.r4 8
+  IL_00a1: ldc.r4 48
+  IL_00a6: ldc.r4 0.5
+  IL_00ab: ldnull
+  IL_00ac: ldnull
+  IL_00ad: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_00b2: pop
+  IL_00b3: ldc.r4 0.1
+  IL_00b8: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_00bd: nop
+  IL_00be: ldloc.s V_4
+  IL_00c0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00c5: ldc.r4 0.25
+  IL_00ca: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00cf: ldc.i4.1
+  IL_00d0: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_00d5: nop
+  IL_00d6: ldarg.0
+  IL_00d7: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00dc: ldc.r4 0.3
+  IL_00e1: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_00e6: nop
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld System.Boolean OshiroCaller::justMakeOshiroLeave
+  IL_00ed: stloc.s V_5
+  IL_00ef: ldloc.s V_5
+  IL_00f1: brfalse IL_017c
+  IL_00f6: nop
+  IL_00f7: ldarg.0
+  IL_00f8: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00fd: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0102: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_0107: dup
+  IL_0108: brtrue IL_0113
+  IL_010d: pop
+  IL_010e: br IL_0119
+  IL_0113: callvirt System.Void Celeste.AngryOshiro::Leave()
+  IL_0118: nop
+  IL_0119: ldarg.0
+  IL_011a: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_011f: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_0124: ldarg.0
+  IL_0125: ldfld Monocle.ParticleType OshiroCaller::callerParticle
+  IL_012a: ldc.i4.1
+  IL_012b: ldarg.0
+  IL_012c: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0131: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0136: ldc.r4 8
+  IL_013b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0140: ldsfld System.Random Monocle.Calc::Random
+  IL_0145: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_014a: ldc.r4 6.2831855
+  IL_014f: mul
+  IL_0150: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0155: nop
+  IL_0156: ldstr "event:/FemtoHelper/oshirorepeller_disappear"
+  IL_015b: ldarg.0
+  IL_015c: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0161: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0166: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_016b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0170: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0175: pop
+  IL_0176: nop
+  IL_0177: br IL_031f
+  IL_017c: nop
+  IL_017d: ldloc.s V_4
+  IL_017f: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_0184: ldarg.0
+  IL_0185: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_018a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_018f: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_0194: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0199: ldc.r4 0.75
+  IL_019e: ldc.r4 8
+  IL_01a3: ldc.r4 64
+  IL_01a8: ldc.r4 1
+  IL_01ad: ldnull
+  IL_01ae: ldnull
+  IL_01af: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_01b4: pop
+  IL_01b5: ldstr "event:/FemtoHelper/oshirorepeller_disappear"
+  IL_01ba: ldarg.0
+  IL_01bb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01c0: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_01c5: pop
+  IL_01c6: ldc.i4.0
+  IL_01c7: stloc.s V_6
+  IL_01c9: br IL_02ab
+  IL_01ce: nop
+  IL_01cf: ldarg.0
+  IL_01d0: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_01d5: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_01da: ldarg.0
+  IL_01db: ldfld Monocle.ParticleType OshiroCaller::callerParticle
+  IL_01e0: ldc.i4.1
+  IL_01e1: ldarg.0
+  IL_01e2: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_01e7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_01ec: ldc.r4 8
+  IL_01f1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01f6: ldsfld System.Random Monocle.Calc::Random
+  IL_01fb: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_0200: ldc.r4 6.2831855
+  IL_0205: mul
+  IL_0206: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_020b: nop
+  IL_020c: ldarg.0
+  IL_020d: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0212: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_0217: ldarg.0
+  IL_0218: ldfld Monocle.ParticleType OshiroCaller::callerParticle
+  IL_021d: ldc.i4.1
+  IL_021e: ldarg.0
+  IL_021f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0224: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0229: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_022e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0233: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0238: ldc.r4 8
+  IL_023d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0242: ldsfld System.Random Monocle.Calc::Random
+  IL_0247: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_024c: ldc.r4 6.2831855
+  IL_0251: mul
+  IL_0252: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0257: nop
+  IL_0258: ldarg.0
+  IL_0259: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_025e: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_0263: ldarg.0
+  IL_0264: ldfld Monocle.ParticleType OshiroCaller::callerParticle
+  IL_0269: ldc.i4.1
+  IL_026a: ldarg.0
+  IL_026b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0270: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0275: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_027a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_027f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0284: ldc.r4 8
+  IL_0289: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_028e: ldsfld System.Random Monocle.Calc::Random
+  IL_0293: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_0298: ldc.r4 6.2831855
+  IL_029d: mul
+  IL_029e: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02a3: nop
+  IL_02a4: nop
+  IL_02a5: ldloc.s V_6
+  IL_02a7: ldc.i4.1
+  IL_02a8: add
+  IL_02a9: stloc.s V_6
+  IL_02ab: ldloc.s V_6
+  IL_02ad: ldc.i4.s 20
+  IL_02af: clt
+  IL_02b1: stloc.s V_7
+  IL_02b3: ldloc.s V_7
+  IL_02b5: brtrue IL_01ce
+  IL_02ba: ldarg.0
+  IL_02bb: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02c0: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_02c5: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_02ca: dup
+  IL_02cb: brtrue IL_02d6
+  IL_02d0: pop
+  IL_02d1: br IL_02dc
+  IL_02d6: callvirt System.Void Celeste.AngryOshiro::StopControllingTime()
+  IL_02db: nop
+  IL_02dc: ldarg.0
+  IL_02dd: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02e2: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_02e7: callvirt T Monocle.Tracker::GetEntity<Celeste.AngryOshiro>()
+  IL_02ec: dup
+  IL_02ed: brtrue IL_02f8
+  IL_02f2: pop
+  IL_02f3: br IL_02fe
+  IL_02f8: call System.Void Monocle.Entity::RemoveSelf()
+  IL_02fd: nop
+  IL_02fe: ldc.r4 1
+  IL_0303: call System.Void Celeste.Distort::set_GameRate(System.Single)
+  IL_0308: nop
+  IL_0309: ldc.r4 1
+  IL_030e: stsfld System.Single Monocle.Engine::TimeRate
+  IL_0313: ldc.r4 0
+  IL_0318: call System.Void Celeste.Distort::set_Anxiety(System.Single)
+  IL_031d: nop
+  IL_031e: nop
+  IL_031f: ldarg.0
+  IL_0320: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0325: nop
+  IL_0326: nop
+  IL_0327: nop
+  IL_0328: br IL_0480
+  IL_032d: nop
+  IL_032e: ldarg.0
+  IL_032f: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0334: stloc.s V_8
+  IL_0336: ldarg.0
+  IL_0337: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_033c: isinst Celeste.Level
+  IL_0341: ldfld Celeste.Session Celeste.Level::Session
+  IL_0346: ldarg.0
+  IL_0347: ldfld System.String OshiroCaller::customFlag
+  IL_034c: ldarg.0
+  IL_034d: ldfld System.Boolean OshiroCaller::flagSet
+  IL_0352: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0357: nop
+  IL_0358: ldloc.s V_8
+  IL_035a: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_035f: ldarg.0
+  IL_0360: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0365: ldc.r4 1
+  IL_036a: ldc.r4 8
+  IL_036f: ldc.r4 48
+  IL_0374: ldc.r4 0.5
+  IL_0379: ldnull
+  IL_037a: ldnull
+  IL_037b: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_0380: pop
+  IL_0381: ldstr "event:/FemtoHelper/oshirocaller_hit"
+  IL_0386: ldarg.0
+  IL_0387: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_038c: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0391: pop
+  IL_0392: ldc.i4.0
+  IL_0393: stloc.s V_10
+  IL_0395: br IL_03df
+  IL_039a: nop
+  IL_039b: ldarg.0
+  IL_039c: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_03a1: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_03a6: ldarg.0
+  IL_03a7: ldfld Monocle.ParticleType OshiroCaller::callerParticle
+  IL_03ac: ldc.i4.1
+  IL_03ad: ldarg.0
+  IL_03ae: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_03b3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_03b8: ldc.r4 8
+  IL_03bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03c2: ldsfld System.Random Monocle.Calc::Random
+  IL_03c7: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_03cc: ldc.r4 6.2831855
+  IL_03d1: mul
+  IL_03d2: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03d7: nop
+  IL_03d8: nop
+  IL_03d9: ldloc.s V_10
+  IL_03db: ldc.i4.1
+  IL_03dc: add
+  IL_03dd: stloc.s V_10
+  IL_03df: ldloc.s V_10
+  IL_03e1: ldc.i4.s 20
+  IL_03e3: clt
+  IL_03e5: stloc.s V_11
+  IL_03e7: ldloc.s V_11
+  IL_03e9: brtrue IL_039a
+  IL_03ee: ldc.r4 0.1
+  IL_03f3: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_03f8: nop
+  IL_03f9: ldloc.s V_8
+  IL_03fb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0400: ldc.r4 0.25
+  IL_0405: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_040a: ldc.i4.1
+  IL_040b: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_0410: nop
+  IL_0411: ldloca.s V_9
+  IL_0413: ldloc.s V_8
+  IL_0415: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_041a: stloc.s V_12
+  IL_041c: ldloca.s V_12
+  IL_041e: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0423: ldc.i4.s 32
+  IL_0425: sub
+  IL_0426: conv.r4
+  IL_0427: ldloc.s V_8
+  IL_0429: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_042e: stloc.s V_12
+  IL_0430: ldloca.s V_12
+  IL_0432: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0437: ldloc.s V_8
+  IL_0439: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_043e: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_0443: ldc.i4.2
+  IL_0444: div
+  IL_0445: add
+  IL_0446: conv.r4
+  IL_0447: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_044c: ldarg.0
+  IL_044d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0452: ldloc.s V_9
+  IL_0454: ldc.i4.0
+  IL_0455: newobj System.Void Celeste.AngryOshiro::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean)
++ IL_045a: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_045b: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_045c: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0461: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0466: nop
+  IL_0467: ldarg.0
+  IL_0468: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_046d: ldc.r4 0.3
+  IL_0472: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0477: nop
+  IL_0478: ldarg.0
+  IL_0479: call System.Void Monocle.Entity::RemoveSelf()
+  IL_047e: nop
+  IL_047f: nop
+  IL_0480: nop
+  IL_0481: ret

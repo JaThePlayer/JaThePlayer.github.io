@@ -1,0 +1,55 @@
+IL Diff: System.Void Celeste.Mod.Everest/Content::Crawl(Celeste.Mod.ModContent)
+  IL_0000: ldsfld System.Collections.Generic.List`1<Celeste.Mod.ModContent> Celeste.Mod.Everest/Content::Mods
+  IL_0005: ldarg.0
+  IL_0006: callvirt System.Boolean System.Collections.Generic.List`1<Celeste.Mod.ModContent>::Contains(T)
+  IL_000b: brtrue IL_001b
+  IL_0010: ldsfld System.Collections.Generic.List`1<Celeste.Mod.ModContent> Celeste.Mod.Everest/Content::Mods
+  IL_0015: ldarg.0
+  IL_0016: callvirt System.Void System.Collections.Generic.List`1<Celeste.Mod.ModContent>::Add(T)
+  IL_001b: ldarg.0
+  IL_001c: callvirt System.Void Celeste.Mod.ModContent::_Crawl()
++ IL_0021: ldarg.0 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::registerLazyLoadingModsOnLoad
++ IL_0022: call System.Void Celeste.Mod.CollabUtils2.LazyLoadingHandler::registerLazyLoadingMods(Celeste.Mod.ModContent) @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::registerLazyLoadingModsOnLoad
+  IL_0027: ldsfld System.Boolean Celeste.Mod.Everest::_ContentLoaded
+  IL_002c: brfalse IL_00b5
+  IL_0031: ldc.i4.0
+  IL_0032: ldstr "content"
+  IL_0037: ldstr "Late ingest via update for "
+  IL_003c: ldarg.0
+  IL_003d: callvirt System.String Celeste.Mod.ModContent::get_Name()
+  IL_0042: call System.String System.String::Concat(System.String,System.String)
+  IL_0047: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
+  IL_004c: ldsfld System.Diagnostics.Stopwatch Celeste.Celeste::LoadTimer
+  IL_0051: stloc.0
+  IL_0052: call System.Diagnostics.Stopwatch System.Diagnostics.Stopwatch::StartNew()
+  IL_0057: stloc.1
+  IL_0058: ldloc.1
+  IL_0059: stsfld System.Diagnostics.Stopwatch Celeste.Celeste::LoadTimer
+  IL_005e: ldarg.0
+  IL_005f: ldfld System.Collections.Generic.List`1<Celeste.Mod.ModAsset> Celeste.Mod.ModContent::List
+  IL_0064: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Mod.ModAsset>::GetEnumerator()
+  IL_0069: stloc.2
+  IL_006a: br IL_0089
+  IL_006f: ldloca.s V_2
+  IL_0071: call T System.Collections.Generic.List`1/Enumerator<Celeste.Mod.ModAsset>::get_Current()
+  IL_0076: stloc.3
+  IL_0077: ldloc.3
+  IL_0078: ldfld System.String Celeste.Mod.ModAsset::PathVirtual
+  IL_007d: ldc.i4.1
+  IL_007e: call Celeste.Mod.ModAsset Celeste.Mod.Everest/Content::Get(System.String,System.Boolean)
+  IL_0083: ldloc.3
+  IL_0084: call System.Void Celeste.Mod.Everest/Content::Update(Celeste.Mod.ModAsset,Celeste.Mod.ModAsset)
+  IL_0089: ldloca.s V_2
+  IL_008b: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Mod.ModAsset>::MoveNext()
+  IL_0090: brtrue IL_006f
+  IL_0095: leave IL_00b5
+  IL_009a: ldloca.s V_2
+  IL_009c: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Mod.ModAsset>
+  IL_00a2: callvirt System.Void System.IDisposable::Dispose()
+  IL_00a7: endfinally
+  IL_00a8: ldloc.1
+  IL_00a9: callvirt System.Void System.Diagnostics.Stopwatch::Stop()
+  IL_00ae: ldloc.0
+  IL_00af: stsfld System.Diagnostics.Stopwatch Celeste.Celeste::LoadTimer
+  IL_00b4: endfinally
+  IL_00b5: ret

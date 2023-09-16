@@ -1,0 +1,78 @@
+IL Diff: System.Single Celeste.Mod.YetAnotherHelper.Entities.FlagKillBarrierRenderer/Edge::GetWaveAt(System.Single,System.Single,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedWavedBlock() @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0005: brfalse IL_0010 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_000a: ldc.r4 0 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_000f: ret @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
+  IL_0010: nop
+  IL_0011: ldarg.2
+  IL_0012: ldc.r4 1
+  IL_0017: ble IL_002e
+  IL_001c: ldarg.2
+  IL_001d: ldarg.3
+  IL_001e: ldc.r4 1
+  IL_0023: sub
+  IL_0024: clt.un
+  IL_0026: ldc.i4.0
+  IL_0027: ceq
+  IL_0029: br IL_002f
+  IL_002e: ldc.i4.1
+  IL_002f: stloc.2
+  IL_0030: ldloc.2
+  IL_0031: brfalse IL_0042
+  IL_0036: nop
+  IL_0037: ldc.r4 0
+  IL_003c: stloc.3
+  IL_003d: br IL_00c9
+  IL_0042: ldarg.0
+  IL_0043: ldfld Celeste.Mod.YetAnotherHelper.Entities.FlagKillBarrier Celeste.Mod.YetAnotherHelper.Entities.FlagKillBarrierRenderer/Edge::Parent
+  IL_0048: ldfld System.Single Celeste.SeekerBarrier::Solidify
+  IL_004d: ldc.r4 1
+  IL_0052: clt.un
+  IL_0054: ldc.i4.0
+  IL_0055: ceq
+  IL_0057: stloc.s V_4
+  IL_0059: ldloc.s V_4
+  IL_005b: brfalse IL_006c
+  IL_0060: nop
+  IL_0061: ldc.r4 0
+  IL_0066: stloc.3
+  IL_0067: br IL_00c9
+  IL_006c: ldarg.1
+  IL_006d: ldarg.2
+  IL_006e: ldc.r4 0.25
+  IL_0073: mul
+  IL_0074: add
+  IL_0075: stloc.0
+  IL_0076: ldloc.0
+  IL_0077: conv.r8
+  IL_0078: call System.Double System.Math::Sin(System.Double)
+  IL_007d: ldc.r8 2
+  IL_0086: mul
+  IL_0087: ldloc.0
+  IL_0088: ldc.r4 0.25
+  IL_008d: mul
+  IL_008e: conv.r8
+  IL_008f: call System.Double System.Math::Sin(System.Double)
+  IL_0094: add
+  IL_0095: conv.r4
+  IL_0096: stloc.1
+  IL_0097: ldc.r4 1
+  IL_009c: ldloc.1
+  IL_009d: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_00a2: ldarg.2
+  IL_00a3: ldarg.3
+  IL_00a4: div
+  IL_00a5: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_00aa: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00af: mul
+  IL_00b0: add
+  IL_00b1: ldc.r4 1
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Celeste.Mod.YetAnotherHelper.Entities.FlagKillBarrier Celeste.Mod.YetAnotherHelper.Entities.FlagKillBarrierRenderer/Edge::Parent
+  IL_00bc: ldfld System.Single Celeste.SeekerBarrier::Solidify
+  IL_00c1: sub
+  IL_00c2: mul
+  IL_00c3: stloc.3
+  IL_00c4: br IL_00c9
+  IL_00c9: ldloc.3
+  IL_00ca: ret

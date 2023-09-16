@@ -1,0 +1,175 @@
+IL Diff: Celeste.DashCollisionResults Celeste.DashSwitch::OnDashed(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.DashSwitch::pressed
+  IL_0006: brtrue IL_0257
+  IL_000b: ldarg.2
+  IL_000c: ldarg.0
+  IL_000d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DashSwitch::pressDirection
+  IL_0012: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0017: brfalse IL_0257
+  IL_001c: ldc.i4.1
+  IL_001d: ldc.i4.1
+  IL_001e: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0023: ldstr "event:/game/05_mirror_temple/button_activate"
+  IL_0028: ldarg.0
+  IL_0029: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_002e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
++ IL_0033: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
++ IL_0034: ldc.r4 0.8 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
++ IL_0039: call FMOD.Studio.EventInstance Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::ModifyVolume(FMOD.Studio.EventInstance,Celeste.DashSwitch,System.Single) @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
+  IL_003e: pop
+  IL_003f: ldarg.0
+  IL_0040: ldfld Monocle.Sprite Celeste.DashSwitch::sprite
+  IL_0045: ldstr "push"
+  IL_004a: ldc.i4.0
+  IL_004b: ldc.i4.0
+  IL_004c: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0051: ldarg.0
+  IL_0052: ldc.i4.1
+  IL_0053: stfld System.Boolean Celeste.DashSwitch::pressed
+  IL_0058: ldarg.0
+  IL_0059: ldarg.0
+  IL_005a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DashSwitch::pressedTarget
+  IL_005f: call System.Void Celeste.Platform::MoveTo(Microsoft.Xna.Framework.Vector2)
+  IL_0064: ldarg.0
+  IL_0065: ldc.i4.0
+  IL_0066: stfld System.Boolean Monocle.Entity::Collidable
+  IL_006b: ldarg.0
+  IL_006c: ldarg.0
+  IL_006d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0072: ldarg.0
+  IL_0073: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DashSwitch::pressDirection
+  IL_0078: ldc.r4 2
+  IL_007d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0082: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0087: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_008c: ldarg.0
++ IL_008d: call System.Boolean Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IsResizableDashSwitch(Celeste.DashSwitch) @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
++ IL_0092: brtrue IL_015c @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
++ IL_0097: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.ResizableDashSwitch::IL_DashSwitch_OnDashed
+  IL_0098: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_009d: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00a2: ldarg.0
+  IL_00a3: ldfld System.Boolean Celeste.DashSwitch::mirrorMode
+  IL_00a8: brtrue IL_00b7
+  IL_00ad: ldsfld Monocle.ParticleType Celeste.DashSwitch::P_PressA
+  IL_00b2: br IL_00bc
+  IL_00b7: ldsfld Monocle.ParticleType Celeste.DashSwitch::P_PressAMirror
+  IL_00bc: ldc.i4.s 10
+  IL_00be: ldarg.0
+  IL_00bf: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c4: ldarg.0
+  IL_00c5: ldfld Monocle.Sprite Celeste.DashSwitch::sprite
+  IL_00ca: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00cf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d4: ldarg.2
+  IL_00d5: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Perpendicular(Microsoft.Xna.Framework.Vector2)
+  IL_00da: ldc.r4 6
+  IL_00df: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld Monocle.Sprite Celeste.DashSwitch::sprite
+  IL_00ea: ldfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_00ef: ldc.r4 3.1415927
+  IL_00f4: sub
+  IL_00f5: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fa: ldarg.0
+  IL_00fb: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0100: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0105: ldarg.0
+  IL_0106: ldfld System.Boolean Celeste.DashSwitch::mirrorMode
+  IL_010b: brtrue IL_011a
+  IL_0110: ldsfld Monocle.ParticleType Celeste.DashSwitch::P_PressB
+  IL_0115: br IL_011f
+  IL_011a: ldsfld Monocle.ParticleType Celeste.DashSwitch::P_PressBMirror
+  IL_011f: ldc.i4.4
+  IL_0120: ldarg.0
+  IL_0121: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0126: ldarg.0
+  IL_0127: ldfld Monocle.Sprite Celeste.DashSwitch::sprite
+  IL_012c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0131: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0136: ldarg.2
+  IL_0137: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Perpendicular(Microsoft.Xna.Framework.Vector2)
+  IL_013c: ldc.r4 6
+  IL_0141: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0146: ldarg.0
+  IL_0147: ldfld Monocle.Sprite Celeste.DashSwitch::sprite
+  IL_014c: ldfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_0151: ldc.r4 3.1415927
+  IL_0156: sub
+  IL_0157: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_015c: ldarg.0
+  IL_015d: ldfld System.Boolean Celeste.DashSwitch::allGates
+  IL_0162: brfalse IL_01da
+  IL_0167: ldarg.0
+  IL_0168: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_016d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0172: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.TempleGate>()
+  IL_0177: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_017c: stloc.1
+  IL_017d: br IL_01bb
+  IL_0182: ldloca.s V_1
+  IL_0184: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0189: castclass Celeste.TempleGate
+  IL_018e: stloc.2
+  IL_018f: ldloc.2
+  IL_0190: ldfld Celeste.TempleGate/Types Celeste.TempleGate::Type
+  IL_0195: brtrue IL_01bb
+  IL_019a: ldloc.2
+  IL_019b: ldfld System.String Celeste.TempleGate::LevelID
+  IL_01a0: ldarg.0
+  IL_01a1: ldflda Celeste.EntityID Celeste.DashSwitch::id
+  IL_01a6: ldfld System.String Celeste.EntityID::Level
+  IL_01ab: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01b0: brfalse IL_01bb
+  IL_01b5: ldloc.2
+  IL_01b6: callvirt System.Void Celeste.TempleGate::SwitchOpen()
+  IL_01bb: ldloca.s V_1
+  IL_01bd: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01c2: brtrue IL_0182
+  IL_01c7: leave IL_01ed
+  IL_01cc: ldloca.s V_1
+  IL_01ce: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01d4: callvirt System.Void System.IDisposable::Dispose()
+  IL_01d9: endfinally
+  IL_01da: ldarg.0
+  IL_01db: callvirt Celeste.TempleGate Celeste.DashSwitch::GetGate()
+  IL_01e0: stloc.3
+  IL_01e1: ldloc.3
+  IL_01e2: brfalse IL_01ed
+  IL_01e7: ldloc.3
+  IL_01e8: callvirt System.Void Celeste.TempleGate::SwitchOpen()
+  IL_01ed: ldarg.0
+  IL_01ee: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01f3: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_01f8: callvirt T Monocle.EntityList::FindFirst<Celeste.TempleMirrorPortal>()
+  IL_01fd: stloc.0
+  IL_01fe: ldloc.0
+  IL_01ff: brfalse IL_0235
+  IL_0204: ldloc.0
+  IL_0205: ldarg.0
+  IL_0206: call System.Single Monocle.Entity::get_X()
+  IL_020b: ldarg.0
+  IL_020c: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0211: isinst Celeste.Level
+  IL_0216: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_021b: stloc.s V_4
+  IL_021d: ldloca.s V_4
+  IL_021f: call Microsoft.Xna.Framework.Point Microsoft.Xna.Framework.Rectangle::get_Center()
+  IL_0224: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0229: conv.r4
+  IL_022a: sub
+  IL_022b: call System.Int32 System.Math::Sign(System.Single)
+  IL_0230: callvirt System.Void Celeste.TempleMirrorPortal::OnSwitchHit(System.Int32)
+  IL_0235: ldarg.0
+  IL_0236: ldfld System.Boolean Celeste.DashSwitch::persistent
+  IL_023b: brfalse IL_0257
+  IL_0240: ldarg.0
+  IL_0241: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0246: ldfld Celeste.Session Celeste.Level::Session
+  IL_024b: ldarg.0
+  IL_024c: callvirt System.String Celeste.DashSwitch::get_FlagName()
+  IL_0251: ldc.i4.1
+  IL_0252: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0257: ldc.i4.1
+  IL_0258: ret

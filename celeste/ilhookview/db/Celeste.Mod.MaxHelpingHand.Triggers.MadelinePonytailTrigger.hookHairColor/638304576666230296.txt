@@ -1,0 +1,41 @@
+IL Diff: Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hookHairColor(On.Celeste.PlayerHair+orig_GetHairColor,Celeste.PlayerHair,System.Int32)
+  IL_0000: call Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule::get_Instance()
+  IL_0005: callvirt Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandSession Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule::get_Session()
+  IL_000a: callvirt System.Boolean Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandSession::get_MadelineHasPonytail()
++ IL_000f: ldc.i4 7594 @ ExtendedVariants.Variants.MadelineHasPonytail::hookMadelineHasPonytail
++ IL_0014: ldc.i4 65235212 @ ExtendedVariants.Variants.MadelineHasPonytail::hookMadelineHasPonytail
++ IL_0019: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MadelineHasPonytail::hookMadelineHasPonytail
+  |-> retrieves System.Boolean ExtendedVariants.Variants.MadelineHasPonytail::<hookMadelineHasPonytail>b__6_0(System.Boolean)
++ IL_001e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.MadelineHasPonytail::hookMadelineHasPonytail
+  IL_0023: brfalse IL_0076
+  IL_0028: ldarg.1
+  IL_0029: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_002e: isinst Celeste.Player
+  IL_0033: stloc.0
+  IL_0034: ldloc.0
+  IL_0035: brfalse IL_0076
+  IL_003a: ldarg.2
+  IL_003b: ldc.i4.1
+  IL_003c: bne.un IL_0052
+  IL_0041: ldsfld Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::hairTieColor
+  IL_0046: ldarg.1
+  IL_0047: ldfld System.Single Celeste.PlayerHair::Alpha
+  IL_004c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0051: ret
+  IL_0052: ldarg.2
+  IL_0053: ldc.i4.5
+  IL_0054: bne.un IL_0065
+  IL_0059: ldloc.0
+  IL_005a: ldfld System.Int32 Celeste.Player::Dashes
+  IL_005f: ldc.i4.1
+  IL_0060: bne.un IL_0076
+  IL_0065: ldsfld Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelinePonytailTrigger::mainHairColor
+  IL_006a: ldarg.1
+  IL_006b: ldfld System.Single Celeste.PlayerHair::Alpha
+  IL_0070: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0075: ret
+  IL_0076: ldarg.0
+  IL_0077: ldarg.1
+  IL_0078: ldarg.2
+  IL_0079: callvirt Microsoft.Xna.Framework.Color On.Celeste.PlayerHair/orig_GetHairColor::Invoke(Celeste.PlayerHair,System.Int32)
+  IL_007e: ret

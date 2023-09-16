@@ -1,0 +1,44 @@
+IL Diff: System.Void Celeste.HeartGem::RegisterAsCollected(Celeste.Level,System.String)
+  IL_0000: ldarg.1
+  IL_0001: ldfld Celeste.Session Celeste.Level::Session
+  IL_0006: ldc.i4.1
+  IL_0007: stfld System.Boolean Celeste.Session::HeartGem
+  IL_000c: ldarg.1
+  IL_000d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0012: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
++ IL_0017: ldc.i4 7329 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_001c: ldc.i4 56066930 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0021: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
++ IL_0026: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  IL_002b: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0030: callvirt System.Int32 Celeste.SaveData::get_UnlockedModes()
+  IL_0035: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_003a: ldarg.1
+  IL_003b: ldfld Celeste.Session Celeste.Level::Session
+  IL_0040: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0045: callvirt System.Void Celeste.SaveData::RegisterHeartGem(Celeste.AreaKey)
+  IL_004a: ldarg.2
+  IL_004b: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0050: brtrue IL_0061
+  IL_0055: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_005a: ldarg.2
+  IL_005b: callvirt System.Boolean Celeste.SaveData::RegisterPoemEntry(System.String)
+  IL_0060: pop
+  IL_0061: ldc.i4.3
+  IL_0062: bge IL_0083
+  IL_0067: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_006c: callvirt System.Int32 Celeste.SaveData::get_UnlockedModes()
+  IL_0071: ldc.i4.3
+  IL_0072: blt IL_0083
+  IL_0077: ldarg.1
+  IL_0078: ldfld Celeste.Session Celeste.Level::Session
+  IL_007d: ldc.i4.1
+  IL_007e: stfld System.Boolean Celeste.Session::UnlockedCSide
+  IL_0083: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0088: callvirt System.Int32 Celeste.SaveData::get_TotalHeartGemsInVanilla()
+  IL_008d: ldc.i4.s 24
+  IL_008f: blt IL_009b
+  IL_0094: ldc.i4.s 29
+  IL_0096: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_009b: ret

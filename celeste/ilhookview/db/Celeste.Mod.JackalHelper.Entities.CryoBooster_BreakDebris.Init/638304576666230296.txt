@@ -1,0 +1,62 @@
+IL Diff: Celeste.Mod.JackalHelper.Entities.CryoBooster+BreakDebris Celeste.Mod.JackalHelper.Entities.CryoBooster/BreakDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
++ IL_0004: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_0009: nop
+  IL_000a: ldarg.0
+  IL_000b: ldc.i4 -1000
+  IL_0010: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0015: nop
+  IL_0016: ldarg.0
+  IL_0017: ldarg.1
+  IL_0018: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.1
+  IL_001f: stfld System.Boolean Monocle.Entity::Visible
+  IL_0024: ldarg.2
+  IL_0025: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_002a: ldsfld System.Random Monocle.Calc::Random
+  IL_002f: ldc.r4 -0.1
+  IL_0034: ldc.r4 0.1
+  IL_0039: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_003e: add
+  IL_003f: ldc.r4 1
+  IL_0044: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0049: starg.s direction
+  IL_004b: ldarga.s direction
+  IL_004d: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0052: dup
+  IL_0053: ldind.r4
+  IL_0054: ldsfld System.Random Monocle.Calc::Random
+  IL_0059: ldc.r4 -0.3
+  IL_005e: ldc.r4 0.3
+  IL_0063: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0068: add
+  IL_0069: stind.r4
+  IL_006a: ldarga.s direction
+  IL_006c: call System.Void Microsoft.Xna.Framework.Vector2::Normalize()
+  IL_0071: nop
+  IL_0072: ldarg.0
+  IL_0073: ldarg.2
+  IL_0074: ldsfld System.Random Monocle.Calc::Random
+  IL_0079: ldc.i4 140
+  IL_007e: ldc.i4 180
+  IL_0083: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0088: conv.r4
+  IL_0089: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_008e: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.JackalHelper.Entities.CryoBooster/BreakDebris::speed
+  IL_0093: ldarg.0
+  IL_0094: ldc.r4 0
+  IL_0099: stfld System.Single Celeste.Mod.JackalHelper.Entities.CryoBooster/BreakDebris::percent
+  IL_009e: ldarg.0
+  IL_009f: ldsfld System.Random Monocle.Calc::Random
+  IL_00a4: ldc.i4.2
+  IL_00a5: ldc.i4.4
+  IL_00a6: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00ab: conv.r4
+  IL_00ac: stfld System.Single Celeste.Mod.JackalHelper.Entities.CryoBooster/BreakDebris::duration
+  IL_00b1: ldarg.0
+  IL_00b2: stloc.0
+  IL_00b3: br IL_00b8
+  IL_00b8: ldloc.0
++ IL_00b9: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_00be: ret

@@ -1,0 +1,40 @@
+IL Diff: System.Boolean Celeste.Player::get_CanDash()
+  IL_0000: call System.Boolean Celeste.Input::get_CrouchDashPressed()
+  IL_0005: brtrue IL_0014
+  IL_000a: call System.Boolean Celeste.Input::get_DashPressed()
+  IL_000f: brfalse IL_0089
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.Player::dashCooldownTimer
++ IL_001a: ldc.i4 7216 @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
++ IL_001f: ldc.i4 10964691 @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
++ IL_0024: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
+  |-> retrieves System.Single ExtendedVariants.Variants.DisableDashCooldown::modDashCooldownTimer(System.Single)
++ IL_0029: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
+  IL_002e: ldc.r4 0
+  IL_0033: bgt.un IL_0089
+  IL_0038: ldarg.0
+  IL_0039: ldfld System.Int32 Celeste.Player::Dashes
+  IL_003e: ldc.i4.0
+  IL_003f: ble IL_0089
+  IL_0044: ldsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_0049: brfalse IL_005d
+  IL_004e: ldsfld Monocle.VirtualButton Celeste.Input::Talk
+  IL_0053: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0058: brtrue IL_0089
+  IL_005d: ldarg.0
+  IL_005e: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_0063: brfalse IL_0087
+  IL_0068: ldarg.0
+  IL_0069: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_006e: ldfld System.Boolean Celeste.Booster::Ch9HubTransition
+  IL_0073: brfalse IL_0087
+  IL_0078: ldarg.0
+  IL_0079: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_007e: callvirt System.Boolean Celeste.Booster::get_BoostingPlayer()
+  IL_0083: ldc.i4.0
+  IL_0084: ceq
+  IL_0086: ret
+  IL_0087: ldc.i4.1
+  IL_0088: ret
+  IL_0089: ldc.i4.0
+  IL_008a: ret

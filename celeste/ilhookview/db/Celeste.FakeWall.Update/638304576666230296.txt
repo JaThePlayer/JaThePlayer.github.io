@@ -1,0 +1,67 @@
+IL Diff: System.Void Celeste.FakeWall::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.FakeWall::fade
+  IL_000c: brfalse IL_006e
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.TileGrid Celeste.FakeWall::tiles
+  IL_0017: ldarg.0
+  IL_0018: ldfld Monocle.TileGrid Celeste.FakeWall::tiles
+  IL_001d: ldfld System.Single Monocle.TileGrid::Alpha
+  IL_0022: ldc.r4 0
+  IL_0027: ldc.r4 2
+  IL_002c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0031: mul
+  IL_0032: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0037: stfld System.Single Monocle.TileGrid::Alpha
+  IL_003c: ldarg.0
+  IL_003d: ldfld Celeste.EffectCutout Celeste.FakeWall::cutout
+  IL_0042: ldarg.0
+  IL_0043: ldfld Monocle.TileGrid Celeste.FakeWall::tiles
+  IL_0048: ldfld System.Single Monocle.TileGrid::Alpha
+  IL_004d: stfld System.Single Celeste.EffectCutout::Alpha
+  IL_0052: ldarg.0
+  IL_0053: ldfld Monocle.TileGrid Celeste.FakeWall::tiles
+  IL_0058: ldfld System.Single Monocle.TileGrid::Alpha
+  IL_005d: ldc.r4 0
+  IL_0062: bgt.un IL_00e1
+  IL_0067: ldarg.0
+  IL_0068: call System.Void Monocle.Entity::RemoveSelf()
+  IL_006d: ret
+  IL_006e: ldarg.0
+  IL_006f: call T Monocle.Entity::CollideFirst<Celeste.Player>()
+  IL_0074: stloc.0
+  IL_0075: ldloc.0
+  IL_0076: brfalse IL_00e1
+  IL_007b: ldloc.0
+  IL_007c: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0081: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_0086: dup @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_0087: ldc.i4 6610 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_008c: ldc.i4 538288 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_0091: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c__DisplayClass44_0::<Check_State_DreamDash>b__1(System.Int32)
++ IL_0096: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_009b: brfalse IL_00a6 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_00a0: pop @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
++ IL_00a1: br IL_00ad @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_1
+  IL_00a6: ldc.i4.s 9
+  IL_00a8: beq IL_00e1
+  IL_00ad: ldarg.0
+  IL_00ae: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00b3: ldfld Celeste.Session Celeste.Level::Session
+  IL_00b8: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::DoNotLoad
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Celeste.EntityID Celeste.FakeWall::eid
+  IL_00c3: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_00c8: pop
+  IL_00c9: ldarg.0
+  IL_00ca: ldc.i4.1
+  IL_00cb: stfld System.Boolean Celeste.FakeWall::fade
+  IL_00d0: ldstr "event:/game/general/secret_revealed"
+  IL_00d5: ldarg.0
+  IL_00d6: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00db: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00e0: pop
+  IL_00e1: ret

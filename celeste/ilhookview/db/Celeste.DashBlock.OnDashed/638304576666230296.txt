@@ -1,0 +1,31 @@
+IL Diff: Celeste.DashCollisionResults Celeste.DashBlock::OnDashed(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.DashBlock::canDash
+  IL_0006: brtrue IL_0046
+  IL_000b: ldarg.1
+  IL_000c: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0011: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0016: ldc.i4.5
++ IL_0017: ldarg.1 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashStateDashBlock
++ IL_0018: ldfld Monocle.StateMachine Celeste.Player::StateMachine @ VivHelper.Entities.Boosters.BoostFunctions::TranslateRedDash2
++ IL_001d: callvirt System.Int32 Monocle.StateMachine::get_State() @ VivHelper.Entities.Boosters.BoostFunctions::TranslateRedDash2
++ IL_0022: call System.Int32 VivHelper.Entities.Boosters.BoostFunctions::TransRedDash2(System.Int32,System.Int32) @ VivHelper.Entities.Boosters.BoostFunctions::TranslateRedDash2
++ IL_0027: ldarg.1 @ VivHelper.Entities.Boosters.BoostFunctions::TranslateRedDash2
++ IL_0028: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashStateDashBlock
+  IL_002d: beq IL_0046
+  IL_0032: ldarg.1
+  IL_0033: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0038: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_003d: ldc.i4.s 10
+  IL_003f: beq IL_0046
+  IL_0044: ldc.i4.1
+  IL_0045: ret
+  IL_0046: ldarg.0
+  IL_0047: ldarg.1
+  IL_0048: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_004d: ldarg.2
+  IL_004e: ldc.i4.1
+  IL_004f: ldc.i4.1
+  IL_0050: callvirt System.Void Celeste.DashBlock::Break(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0055: ldc.i4.0
+  IL_0056: ret

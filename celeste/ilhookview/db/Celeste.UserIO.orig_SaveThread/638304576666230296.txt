@@ -1,0 +1,33 @@
+IL Diff: System.Void Celeste.UserIO::orig_SaveThread()
+  IL_0000: ldc.i4.0
+  IL_0001: call System.Void Celeste.UserIO::set_SavingResult(System.Boolean)
+  IL_0006: ldc.i4.1
+  IL_0007: call System.Boolean Celeste.UserIO::Open(Celeste.UserIO/Mode)
+  IL_000c: brfalse IL_0078
+  IL_0011: ldc.i4.1
+  IL_0012: call System.Void Celeste.UserIO::set_SavingResult(System.Boolean)
+  IL_0017: ldsfld System.Boolean Celeste.UserIO::savingFile
+  IL_001c: brfalse IL_003b
+  IL_0021: call System.Boolean Celeste.UserIO::get_SavingResult()
+  IL_0026: call System.String Celeste.SaveData::GetFilename()
+  IL_002b: ldsfld System.Byte[] Celeste.UserIO::savingFileData
+  IL_0030: call System.Boolean Celeste.UserIO::Save<Celeste.SaveData>(System.String,System.Byte[])
+  IL_0035: and
+  IL_0036: call System.Void Celeste.UserIO::set_SavingResult(System.Boolean)
+  IL_003b: ldsfld System.Boolean Celeste.UserIO::savingSettings
+  IL_0040: brfalse IL_005f
+  IL_0045: call System.Boolean Celeste.UserIO::get_SavingResult()
+  IL_004a: ldstr "settings"
+  IL_004f: ldsfld System.Byte[] Celeste.UserIO::savingSettingsData
+  IL_0054: call System.Boolean Celeste.UserIO::Save<Celeste.Settings>(System.String,System.Byte[])
+  IL_0059: and
+  IL_005a: call System.Void Celeste.UserIO::set_SavingResult(System.Boolean)
++ IL_005f: ldc.i4 6906 @ Celeste.Mod.InfiniteBackups.Modules.InfiniteBackups::patch_UserIO_orig_SaveThread
++ IL_0064: ldc.i4 25417535 @ Celeste.Mod.InfiniteBackups.Modules.InfiniteBackups::patch_UserIO_orig_SaveThread
++ IL_0069: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.InfiniteBackups.Modules.InfiniteBackups::patch_UserIO_orig_SaveThread
+  |-> retrieves System.Void Celeste.Mod.InfiniteBackups.Modules.InfiniteBackups/<>c::<patch_UserIO_orig_SaveThread>b__6_1()
++ IL_006e: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.InfiniteBackups.Modules.InfiniteBackups::patch_UserIO_orig_SaveThread
+  IL_0073: call System.Void Celeste.UserIO::Close()
+  IL_0078: ldc.i4.0
+  IL_0079: stsfld System.Boolean Celeste.UserIO::savingInternal
+  IL_007e: ret

@@ -1,0 +1,99 @@
+IL Diff: System.Void Celeste.CS06_Campfire/Question::.ctor(System.String)
+  IL_0000: ldarg.0
+  IL_0001: call System.Void System.Object::.ctor()
+  IL_0006: ldc.i4 1828
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: ldstr "ch6_theo_ask_"
+  IL_0012: ldarg.1
+  IL_0013: call System.String System.String::Concat(System.String,System.String)
+  IL_0018: stfld System.String Celeste.CS06_Campfire/Question::Ask
+  IL_001d: ldarg.0
+  IL_001e: ldstr "ch6_theo_say_"
+  IL_0023: ldarg.1
+  IL_0024: call System.String System.String::Concat(System.String,System.String)
+  IL_0029: stfld System.String Celeste.CS06_Campfire/Question::Answer
+  IL_002e: ldarg.0
+  IL_002f: ldarg.0
+  IL_0030: ldfld System.String Celeste.CS06_Campfire/Question::Ask
+  IL_0035: ldnull
+  IL_0036: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_003b: ldloc.0
+  IL_003c: ldc.i4.m1
+  IL_003d: ldc.r4 1
+  IL_0042: ldloca.s V_1
+  IL_0044: initobj System.Nullable`1<Microsoft.Xna.Framework.Color>
+  IL_004a: ldloc.1
+  IL_004b: ldnull
+  IL_004c: call Celeste.FancyText/Text Celeste.FancyText::Parse(System.String,System.Int32,System.Int32,System.Single,System.Nullable`1<Microsoft.Xna.Framework.Color>,Celeste.Language)
+  IL_0051: stfld Celeste.FancyText/Text Celeste.CS06_Campfire/Question::AskText
+  IL_0056: ldarg.0
+  IL_0057: ldfld Celeste.FancyText/Text Celeste.CS06_Campfire/Question::AskText
+  IL_005c: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0061: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.FancyText/Node>::GetEnumerator()
+  IL_0066: stloc.2
+  IL_0067: br IL_0131
+  IL_006c: ldloca.s V_2
+  IL_006e: call T System.Collections.Generic.List`1/Enumerator<Celeste.FancyText/Node>::get_Current()
+  IL_0073: stloc.3
+  IL_0074: ldloc.3
+  IL_0075: isinst Celeste.FancyText/Portrait
+  IL_007a: brfalse IL_0131
+  IL_007f: ldloc.3
+  IL_0080: isinst Celeste.FancyText/Portrait
++ IL_0085: call Celeste.FancyText/Portrait SkinModHelper.Module.SkinModHelperModule::ReplacePortraitPath(Celeste.FancyText/Portrait) @ SkinModHelper.Module.SkinModHelperModule::CampfireQuestionHook
+  IL_008a: stloc.s V_4
+  IL_008c: ldarg.0
+  IL_008d: ldsfld Monocle.SpriteBank Celeste.GFX::PortraitsSpriteBank
+  IL_0092: ldloc.s V_4
+  IL_0094: callvirt System.String Celeste.FancyText/Portrait::get_SpriteId()
+  IL_0099: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_009e: stfld Monocle.Sprite Celeste.CS06_Campfire/Question::Portrait
+  IL_00a3: ldarg.0
+  IL_00a4: ldfld Monocle.Sprite Celeste.CS06_Campfire/Question::Portrait
+  IL_00a9: ldloc.s V_4
+  IL_00ab: callvirt System.String Celeste.FancyText/Portrait::get_IdleAnimation()
+  IL_00b0: ldc.i4.0
+  IL_00b1: ldc.i4.0
+  IL_00b2: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00b7: ldarg.0
+  IL_00b8: ldloc.s V_4
+  IL_00ba: ldfld System.Int32 Celeste.FancyText/Portrait::Side
+  IL_00bf: stfld Celeste.Facings Celeste.CS06_Campfire/Question::PortraitSide
+  IL_00c4: ldarg.0
+  IL_00c5: ldstr "textbox/"
+  IL_00ca: ldloc.s V_4
+  IL_00cc: ldfld System.String Celeste.FancyText/Portrait::Sprite
+  IL_00d1: ldstr "_ask"
+  IL_00d6: call System.String System.String::Concat(System.String,System.String,System.String)
++ IL_00db: call System.String SkinModHelper.Module.SkinModHelperModule::ReplaceTextboxPath(System.String) @ SkinModHelper.Module.SkinModHelperModule::CampfireQuestionHook
+  IL_00e0: stfld System.String Celeste.CS06_Campfire/Question::Textbox
+  IL_00e5: ldsfld Monocle.SpriteBank Celeste.GFX::PortraitsSpriteBank
+  IL_00ea: ldfld System.Collections.Generic.Dictionary`2<System.String,Monocle.SpriteData> Monocle.SpriteBank::SpriteData
+  IL_00ef: ldloc.s V_4
+  IL_00f1: callvirt System.String Celeste.FancyText/Portrait::get_SpriteId()
+  IL_00f6: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Monocle.SpriteData>::get_Item(TKey)
+  IL_00fb: ldfld System.Collections.Generic.List`1<Monocle.SpriteDataSource> Monocle.SpriteData::Sources
+  IL_0100: ldc.i4.0
+  IL_0101: callvirt T System.Collections.Generic.List`1<Monocle.SpriteDataSource>::get_Item(System.Int32)
+  IL_0106: ldfld System.Xml.XmlElement Monocle.SpriteDataSource::XML
+  IL_010b: stloc.s V_5
+  IL_010d: ldloc.s V_5
+  IL_010f: brfalse IL_013d
+  IL_0114: ldarg.0
+  IL_0115: ldloc.s V_5
+  IL_0117: ldstr "size"
+  IL_011c: ldc.i4 160
+  IL_0121: call System.Int32 Monocle.Calc::AttrInt(System.Xml.XmlElement,System.String,System.Int32)
+  IL_0126: conv.r4
+  IL_0127: stfld System.Single Celeste.CS06_Campfire/Question::PortraitSize
+  IL_012c: leave IL_0150
+  IL_0131: ldloca.s V_2
+  IL_0133: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.FancyText/Node>::MoveNext()
+  IL_0138: brtrue IL_006c
+  IL_013d: leave IL_0150
+  IL_0142: ldloca.s V_2
+  IL_0144: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.FancyText/Node>
+  IL_014a: callvirt System.Void System.IDisposable::Dispose()
+  IL_014f: endfinally
+  IL_0150: ret

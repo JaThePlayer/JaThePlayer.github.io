@@ -1,0 +1,103 @@
+IL Diff: System.Void Celeste.GoldenBlock::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldarg.2
+  IL_0003: ldarg.3
+  IL_0004: ldc.i4.0
+  IL_0005: call System.Void Celeste.Solid::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Boolean)
+  IL_000a: ldarg.0
+  IL_000b: ldarg.0
+  IL_000c: call System.Single Monocle.Entity::get_Y()
+  IL_0011: stfld System.Single Celeste.GoldenBlock::startY
+  IL_0016: ldarg.0
+  IL_0017: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_001c: ldstr "collectables/goldberry/idle00"
++ IL_0021: ldarg.0 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_0022: ldc.i4 7791 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_0027: ldc.i4 58491616 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_002c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.Entities.SilverBlock/<>c::<modGoldenBlockConstructor>b__2_1(System.String,Celeste.GoldenBlock)
++ IL_0031: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.GoldenBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
+  IL_0036: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_003b: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0040: stfld Monocle.Image Celeste.GoldenBlock::berry
+  IL_0045: ldarg.0
+  IL_0046: ldfld Monocle.Image Celeste.GoldenBlock::berry
+  IL_004b: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0050: pop
+  IL_0051: ldarg.0
+  IL_0052: ldfld Monocle.Image Celeste.GoldenBlock::berry
+  IL_0057: ldarg.2
+  IL_0058: ldc.r4 2
+  IL_005d: div
+  IL_005e: ldarg.3
+  IL_005f: ldc.r4 2
+  IL_0064: div
+  IL_0065: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_006a: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_006f: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0074: ldstr "objects/goldblock"
++ IL_0079: ldarg.0 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_007a: ldc.i4 7793 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_007f: ldc.i4 40200465 @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
++ IL_0084: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.Entities.SilverBlock/<>c::<modGoldenBlockConstructor>b__2_3(System.String,Celeste.GoldenBlock)
++ IL_0089: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.GoldenBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.Entities.SilverBlock::modGoldenBlockConstructor
+  IL_008e: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0093: stloc.0
+  IL_0094: ldarg.0
+  IL_0095: ldc.i4.3
+  IL_0096: ldc.i4.3
+  IL_0097: newobj System.Void Monocle.MTexture[0...,0...]::.ctor(System.Int32,System.Int32)
+  IL_009c: stfld Monocle.MTexture[0...,0...] Celeste.GoldenBlock::nineSlice
+  IL_00a1: ldc.i4.0
+  IL_00a2: stloc.1
+  IL_00a3: br IL_00de
+  IL_00a8: ldc.i4.0
+  IL_00a9: stloc.2
+  IL_00aa: br IL_00d3
+  IL_00af: ldarg.0
+  IL_00b0: ldfld Monocle.MTexture[0...,0...] Celeste.GoldenBlock::nineSlice
+  IL_00b5: ldloc.1
+  IL_00b6: ldloc.2
+  IL_00b7: ldloc.0
+  IL_00b8: ldloc.1
+  IL_00b9: ldc.i4.8
+  IL_00ba: mul
+  IL_00bb: ldloc.2
+  IL_00bc: ldc.i4.8
+  IL_00bd: mul
+  IL_00be: ldc.i4.8
+  IL_00bf: ldc.i4.8
+  IL_00c0: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00c5: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(Microsoft.Xna.Framework.Rectangle)
+  IL_00ca: call System.Void Monocle.MTexture[0...,0...]::Set(System.Int32,System.Int32,Monocle.MTexture)
+  IL_00cf: ldloc.2
+  IL_00d0: ldc.i4.1
+  IL_00d1: add
+  IL_00d2: stloc.2
+  IL_00d3: ldloc.2
+  IL_00d4: ldc.i4.3
+  IL_00d5: blt IL_00af
+  IL_00da: ldloc.1
+  IL_00db: ldc.i4.1
+  IL_00dc: add
+  IL_00dd: stloc.1
+  IL_00de: ldloc.1
+  IL_00df: ldc.i4.3
+  IL_00e0: blt IL_00a8
+  IL_00e5: ldarg.0
+  IL_00e6: ldc.i4 -10000
+  IL_00eb: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_00f0: ldarg.0
+  IL_00f1: ldc.r4 1
+  IL_00f6: newobj System.Void Celeste.LightOcclude::.ctor(System.Single)
+  IL_00fb: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0100: ldarg.0
+  IL_0101: ldnull
+  IL_0102: newobj System.Void Celeste.MirrorSurface::.ctor(System.Action)
+  IL_0107: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_010c: ldarg.0
+  IL_010d: ldc.i4.s 32
+  IL_010f: stfld System.Int32 Celeste.Platform::SurfaceSoundIndex
+  IL_0114: ret

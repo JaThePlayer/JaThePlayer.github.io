@@ -1,0 +1,1033 @@
+IL Diff: System.Void Celeste.OuiFileSelectSlot::orig_Render()
+  IL_0000: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_0005: ldarg.0
+  IL_0006: ldfld System.Single Celeste.OuiFileSelectSlot::highlightEase
+  IL_000b: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0010: stloc.0
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.Wiggler Celeste.OuiFileSelectSlot::wiggler
+  IL_0017: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_001c: ldc.r4 8
+  IL_0021: mul
+  IL_0022: stloc.1
+  IL_0023: ldarg.0
+  IL_0024: ldfld System.Single Celeste.OuiFileSelectSlot::selectedEase
+  IL_0029: ldc.r4 0
+  IL_002e: ble.un IL_013d
+  IL_0033: ldarg.0
+  IL_0034: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0039: ldc.r4 0
+  IL_003e: ldc.r4 -150
+  IL_0043: ldc.r4 350
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Single Celeste.OuiFileSelectSlot::selectedEase
+  IL_004e: mul
+  IL_004f: add
+  IL_0050: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0055: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_005a: stloc.2
+  IL_005b: call System.Single Celeste.ActiveFont::get_LineHeight()
+  IL_0060: stloc.3
+  IL_0061: ldc.i4.0
+  IL_0062: stloc.s V_4
+  IL_0064: br IL_012b
+  IL_0069: ldarg.0
+  IL_006a: ldfld System.Collections.Generic.List`1<Celeste.OuiFileSelectSlot/Button> Celeste.OuiFileSelectSlot::buttons
+  IL_006f: ldloc.s V_4
+  IL_0071: callvirt T System.Collections.Generic.List`1<Celeste.OuiFileSelectSlot/Button>::get_Item(System.Int32)
+  IL_0076: stloc.s V_5
+  IL_0078: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_007d: ldarg.0
+  IL_007e: ldfld System.Int32 Celeste.OuiFileSelectSlot::buttonIndex
+  IL_0083: ldloc.s V_4
+  IL_0085: bne.un IL_0095
+  IL_008a: ldarg.0
+  IL_008b: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_0090: brfalse IL_009f
+  IL_0095: ldc.r4 0
+  IL_009a: br IL_00a0
+  IL_009f: ldloc.1
+  IL_00a0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00a5: stloc.s V_6
+  IL_00a7: ldarg.0
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld System.Int32 Celeste.OuiFileSelectSlot::buttonIndex
+  IL_00ae: ldloc.s V_4
+  IL_00b0: bne.un IL_00c3
+  IL_00b5: ldarg.0
+  IL_00b6: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_00bb: ldc.i4.0
+  IL_00bc: ceq
+  IL_00be: br IL_00c4
+  IL_00c3: ldc.i4.0
+  IL_00c4: callvirt Microsoft.Xna.Framework.Color Celeste.OuiFileSelectSlot::SelectionColor(System.Boolean)
+  IL_00c9: stloc.s V_7
+  IL_00cb: ldloc.s V_5
+  IL_00cd: ldfld System.String Celeste.OuiFileSelectSlot/Button::Label
+  IL_00d2: ldloc.2
+  IL_00d3: ldloc.s V_6
+  IL_00d5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00da: ldc.r4 0.5
+  IL_00df: ldc.r4 0
+  IL_00e4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00e9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00ee: ldloc.s V_5
+  IL_00f0: ldfld System.Single Celeste.OuiFileSelectSlot/Button::Scale
+  IL_00f5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fa: ldloc.s V_7
+  IL_00fc: ldc.r4 2
+  IL_0101: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0106: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_010b: ldloca.s V_2
+  IL_010d: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0112: dup
+  IL_0113: ldind.r4
+  IL_0114: ldloc.3
+  IL_0115: ldloc.s V_5
+  IL_0117: ldfld System.Single Celeste.OuiFileSelectSlot/Button::Scale
+  IL_011c: mul
+  IL_011d: ldc.r4 15
+  IL_0122: add
+  IL_0123: add
+  IL_0124: stind.r4
+  IL_0125: ldloc.s V_4
+  IL_0127: ldc.i4.1
+  IL_0128: add
+  IL_0129: stloc.s V_4
+  IL_012b: ldloc.s V_4
+  IL_012d: ldarg.0
+  IL_012e: ldfld System.Collections.Generic.List`1<Celeste.OuiFileSelectSlot/Button> Celeste.OuiFileSelectSlot::buttons
+  IL_0133: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.OuiFileSelectSlot/Button>::get_Count()
+  IL_0138: blt IL_0069
+  IL_013d: ldarg.0
+  IL_013e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0143: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0148: ldloc.0
+  IL_0149: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_014e: ldc.r4 360
+  IL_0153: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0158: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_015d: stloc.s V_8
+  IL_015f: ldarg.0
+  IL_0160: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Ticket()
+  IL_0165: ldloc.s V_8
+  IL_0167: callvirt System.Void Monocle.GraphicsComponent::set_RenderPosition(Microsoft.Xna.Framework.Vector2)
+  IL_016c: ldarg.0
+  IL_016d: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Ticket()
+  IL_0172: callvirt System.Void Monocle.Component::Render()
+  IL_0177: ldarg.0
+  IL_0178: ldfld System.Single Celeste.OuiFileSelectSlot::highlightEase
+  IL_017d: ldc.r4 0
+  IL_0182: ble.un IL_046e
+  IL_0187: ldarg.0
+  IL_0188: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_018d: brfalse IL_046e
+  IL_0192: ldarg.0
+  IL_0193: ldfld System.Boolean Celeste.OuiFileSelectSlot::Corrupted
+  IL_0198: brtrue IL_046e
+  IL_019d: ldc.i4 -280
+  IL_01a2: stloc.s V_9
+  IL_01a4: ldc.i4 600
+  IL_01a9: stloc.s V_10
+  IL_01ab: ldc.i4.0
+  IL_01ac: stloc.s V_11
+  IL_01ae: br IL_03d2
+  IL_01b3: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_01b8: ldarg.0
+  IL_01b9: ldfld System.Collections.Generic.List`1<System.Boolean> Celeste.OuiFileSelectSlot::Cassettes
+  IL_01be: ldloc.s V_11
+  IL_01c0: callvirt T System.Collections.Generic.List`1<System.Boolean>::get_Item(System.Int32)
+  IL_01c5: brtrue IL_01d4
+  IL_01ca: ldstr "dot"
+  IL_01cf: br IL_01d9
+  IL_01d4: ldstr "cassette"
+  IL_01d9: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
++ IL_01de: ldarg.0 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01df: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01e4: ldloc.s V_11 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01e6: ldc.i4 7864 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01eb: ldc.i4 16284068 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01f0: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
+  |-> retrieves Monocle.MTexture AltSidesHelper.AltSidesHelperModule/<>c::<ModFileSelectSlotRender>b__24_0(Monocle.MTexture,Celeste.SaveData,System.Int32)
++ IL_01f5: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.MTexture,Monocle.MTexture,Celeste.SaveData,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_01fa: ldarg.0 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_01fb: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0200: ldloc.s V_11 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0202: ldc.i4 7852 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0207: ldc.i4 5302611 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_020c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
+  |-> retrieves Monocle.MTexture AltSidesHelper.AltSidesHelperModule/<>c::<ModFileSelectSlotRender>b__24_0(Monocle.MTexture,Celeste.SaveData,System.Int32)
++ IL_0211: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.MTexture,Monocle.MTexture,Celeste.SaveData,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
+  IL_0216: ldloc.s V_8
+  IL_0218: ldloc.s V_9
+  IL_021a: conv.r4
+  IL_021b: ldloc.s V_11
+  IL_021d: conv.r4
+  IL_021e: ldc.r4 0.5
+  IL_0223: add
+  IL_0224: ldc.r4 75
+  IL_0229: mul
+  IL_022a: add
+  IL_022b: ldc.r4 -75
+  IL_0230: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0235: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_023a: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_023f: ldarg.0
++ IL_0240: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0245: ldloc.s V_11 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0247: ldloc.s V_8 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0249: ldc.i4 7866 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_024e: ldc.i4 43941135 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0253: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
+  |-> retrieves System.Void AltSidesHelper.AltSidesHelperModule/<>c::<ModFileSelectSlotRender>b__24_1(Celeste.SaveData,System.Int32,Microsoft.Xna.Framework.Vector2)
++ IL_0258: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal3<Celeste.SaveData,System.Int32,Microsoft.Xna.Framework.Vector2>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/VoidVal3`3<T0,T1,T2>) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_025d: ldarg.0 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_025e: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0263: ldloc.s V_11 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0265: ldloc.s V_8 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0267: ldc.i4 7854 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_026c: ldc.i4 26858314 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0271: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
+  |-> retrieves System.Void AltSidesHelper.AltSidesHelperModule/<>c::<ModFileSelectSlotRender>b__24_1(Celeste.SaveData,System.Int32,Microsoft.Xna.Framework.Vector2)
++ IL_0276: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal3<Celeste.SaveData,System.Int32,Microsoft.Xna.Framework.Vector2>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/VoidVal3`3<T0,T1,T2>) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_027b: ldarg.0 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
+  IL_027c: ldfld System.Collections.Generic.List`1<System.Boolean[]> Celeste.OuiFileSelectSlot::HeartGems
+  IL_0281: ldloc.s V_11
+  IL_0283: callvirt T System.Collections.Generic.List`1<System.Boolean[]>::get_Item(System.Int32)
+  IL_0288: stloc.s V_12
+  IL_028a: ldc.i4.0
+  IL_028b: stloc.s V_13
+  IL_028d: ldc.i4.0
+  IL_028e: stloc.s V_15
+  IL_0290: br IL_02ab
+  IL_0295: ldloc.s V_12
+  IL_0297: ldloc.s V_15
+  IL_0299: ldelem.u1
+  IL_029a: brfalse IL_02a5
+  IL_029f: ldloc.s V_13
+  IL_02a1: ldc.i4.1
+  IL_02a2: add
+  IL_02a3: stloc.s V_13
+  IL_02a5: ldloc.s V_15
+  IL_02a7: ldc.i4.1
+  IL_02a8: add
+  IL_02a9: stloc.s V_15
+  IL_02ab: ldloc.s V_15
+  IL_02ad: ldloc.s V_12
+  IL_02af: ldlen
+  IL_02b0: conv.i4
+  IL_02b1: blt IL_0295
+  IL_02b6: ldloc.s V_8
+  IL_02b8: ldloc.s V_9
+  IL_02ba: conv.r4
+  IL_02bb: ldloc.s V_11
+  IL_02bd: conv.r4
+  IL_02be: ldc.r4 0.5
+  IL_02c3: add
+  IL_02c4: ldc.r4 75
+  IL_02c9: mul
+  IL_02ca: add
+  IL_02cb: ldc.r4 -12
+  IL_02d0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02d5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02da: stloc.s V_14
+  IL_02dc: ldloc.s V_13
+  IL_02de: brtrue IL_02fe
+  IL_02e3: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_02e8: ldstr "dot"
+  IL_02ed: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_02f2: ldloc.s V_14
+  IL_02f4: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_02f9: br IL_03cc
+  IL_02fe: ldloca.s V_14
+  IL_0300: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0305: dup
+  IL_0306: ldind.r4
+  IL_0307: ldloc.s V_13
+  IL_0309: ldc.i4.1
+  IL_030a: sub
+  IL_030b: conv.r4
+  IL_030c: ldc.r4 0.5
+  IL_0311: mul
+  IL_0312: ldc.r4 14
+  IL_0317: mul
+  IL_0318: sub
+  IL_0319: stind.r4
+  IL_031a: ldc.i4.0
+  IL_031b: stloc.s V_16
+  IL_031d: ldc.i4.0
+  IL_031e: stloc.s V_17
+  IL_0320: br IL_03c1
+  IL_0325: ldloc.s V_12
+  IL_0327: ldloc.s V_16
+  IL_0329: ldelem.u1
+  IL_032a: brfalse IL_03bb
+  IL_032f: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_0334: ldstr "heartgem"
+  IL_0339: ldloc.s V_16
+  IL_033b: box System.Int32
+  IL_0340: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0345: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
++ IL_034a: ldarg.0 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_034b: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0350: ldloc.s V_11 @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
++ IL_0352: ldc.i4 7888 @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
++ IL_0357: ldc.i4 2462158 @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
++ IL_035c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
+  |-> retrieves Monocle.MTexture Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modOuiFileSelectSlotRender>b__47_5(Monocle.MTexture,Celeste.OuiFileSelectSlot,System.Int32)
++ IL_0361: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.MTexture,Monocle.MTexture,Celeste.SaveData,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
++ IL_0366: ldarg.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modOuiFileSelectSlotRender
++ IL_0367: ldloc.s V_11 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0369: ldc.i4 7862 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_036e: ldc.i4 1029542 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_0373: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
+  |-> retrieves Monocle.MTexture Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modOuiFileSelectSlotRender>b__47_5(Monocle.MTexture,Celeste.OuiFileSelectSlot,System.Int32)
++ IL_0378: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.MTexture,Monocle.MTexture,Celeste.OuiFileSelectSlot,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_037d: ldarg.0 @ Celeste.Mod.JackalHelper.JackalModule::ModFileSelectSlotRenderCryo
++ IL_037e: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0383: ldloc.s V_11 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_0385: ldc.i4 7856 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_038a: ldc.i4 28039846 @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
++ IL_038f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
+  |-> retrieves Monocle.MTexture AltSidesHelper.AltSidesHelperModule/<>c::<ModFileSelectSlotRender>b__24_2(Monocle.MTexture,Celeste.SaveData,System.Int32)
++ IL_0394: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.MTexture,Monocle.MTexture,Celeste.SaveData,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ AltSidesHelper.AltSidesHelperModule::ModFileSelectSlotRender
+  IL_0399: ldloc.s V_14
+  IL_039b: ldc.r4 0
+  IL_03a0: ldloc.s V_17
+  IL_03a2: ldc.i4.s 14
+  IL_03a4: mul
+  IL_03a5: conv.r4
+  IL_03a6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03ab: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03b0: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_03b5: ldloc.s V_17
+  IL_03b7: ldc.i4.1
+  IL_03b8: add
+  IL_03b9: stloc.s V_17
+  IL_03bb: ldloc.s V_16
+  IL_03bd: ldc.i4.1
+  IL_03be: add
+  IL_03bf: stloc.s V_16
+  IL_03c1: ldloc.s V_16
+  IL_03c3: ldloc.s V_12
+  IL_03c5: ldlen
+  IL_03c6: conv.i4
+  IL_03c7: blt IL_0325
+  IL_03cc: ldloc.s V_11
+  IL_03ce: ldc.i4.1
+  IL_03cf: add
+  IL_03d0: stloc.s V_11
+  IL_03d2: ldloc.s V_11
+  IL_03d4: ldarg.0
+  IL_03d5: ldfld System.Collections.Generic.List`1<System.Boolean> Celeste.OuiFileSelectSlot::Cassettes
+  IL_03da: callvirt System.Int32 System.Collections.Generic.List`1<System.Boolean>::get_Count()
+  IL_03df: blt IL_01b3
+  IL_03e4: ldarg.0
+  IL_03e5: ldfld Celeste.DeathsCounter Celeste.OuiFileSelectSlot::Deaths
+  IL_03ea: ldloc.s V_8
+  IL_03ec: ldloc.s V_9
+  IL_03ee: conv.r4
+  IL_03ef: ldc.r4 68
+  IL_03f4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03f9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03fe: ldarg.0
+  IL_03ff: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0404: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0409: stfld Microsoft.Xna.Framework.Vector2 Celeste.DeathsCounter::Position
+  IL_040e: ldarg.0
+  IL_040f: ldfld Celeste.DeathsCounter Celeste.OuiFileSelectSlot::Deaths
+  IL_0414: callvirt System.Void Monocle.Component::Render()
+  IL_0419: ldarg.0
+  IL_041a: ldfld System.String Celeste.OuiFileSelectSlot::Time
+  IL_041f: ldloc.s V_8
+  IL_0421: ldloc.s V_9
+  IL_0423: ldloc.s V_10
+  IL_0425: add
+  IL_0426: conv.r4
+  IL_0427: ldc.r4 68
+  IL_042c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0431: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0436: ldc.r4 1
+  IL_043b: ldc.r4 0.5
+  IL_0440: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0445: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_044a: ldarg.0
+  IL_044b: ldfld System.Single Celeste.OuiFileSelectSlot::timeScale
+  IL_0450: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0455: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_045a: ldc.r4 0.6
+  IL_045f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0464: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0469: br IL_04f3
+  IL_046e: ldarg.0
+  IL_046f: ldfld System.Boolean Celeste.OuiFileSelectSlot::Corrupted
+  IL_0474: brfalse IL_04b3
+  IL_0479: ldstr "file_corrupted"
+  IL_047e: ldnull
+  IL_047f: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0484: ldloc.s V_8
+  IL_0486: ldc.r4 0.5
+  IL_048b: ldc.r4 0.5
+  IL_0490: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0495: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_049a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_049f: ldc.r4 0.8
+  IL_04a4: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_04a9: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_04ae: br IL_04f3
+  IL_04b3: ldarg.0
+  IL_04b4: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_04b9: brtrue IL_04f3
+  IL_04be: ldstr "file_newgame"
+  IL_04c3: ldnull
+  IL_04c4: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_04c9: ldloc.s V_8
+  IL_04cb: ldc.r4 0.5
+  IL_04d0: ldc.r4 0.5
+  IL_04d5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04da: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_04df: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_04e4: ldc.r4 0.8
+  IL_04e9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_04ee: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_04f3: ldarg.0
+  IL_04f4: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_04f9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_04fe: ldloc.0
+  IL_04ff: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0504: ldc.r4 360
+  IL_0509: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_050e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0513: stloc.s V_18
+  IL_0515: ldc.i4.s 64
+  IL_0517: stloc.s V_19
+  IL_0519: ldc.i4.s 16
+  IL_051b: stloc.s V_20
+  IL_051d: ldarg.0
+  IL_051e: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Card()
+  IL_0523: callvirt System.Single Monocle.Image::get_Width()
+  IL_0528: ldloc.s V_19
+  IL_052a: ldc.i4.2
+  IL_052b: mul
+  IL_052c: conv.r4
+  IL_052d: sub
+  IL_052e: ldc.r4 200
+  IL_0533: sub
+  IL_0534: ldloc.s V_20
+  IL_0536: conv.r4
+  IL_0537: sub
+  IL_0538: stloc.s V_21
+  IL_053a: ldarg.0
+  IL_053b: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Card()
+  IL_0540: callvirt System.Single Monocle.Image::get_Width()
+  IL_0545: neg
+  IL_0546: ldc.r4 2
+  IL_054b: div
+  IL_054c: ldloc.s V_19
+  IL_054e: conv.r4
+  IL_054f: add
+  IL_0550: ldc.r4 200
+  IL_0555: add
+  IL_0556: ldloc.s V_20
+  IL_0558: conv.r4
+  IL_0559: add
+  IL_055a: ldloc.s V_21
+  IL_055c: ldc.r4 2
+  IL_0561: div
+  IL_0562: add
+  IL_0563: stloc.s V_22
+  IL_0565: ldarg.0
+  IL_0566: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_056b: brtrue IL_057b
+  IL_0570: ldarg.0
+  IL_0571: ldfld System.Single Celeste.OuiFileSelectSlot::newgameFade
+  IL_0576: br IL_0580
+  IL_057b: ldc.r4 1
+  IL_0580: stloc.s V_23
+  IL_0582: ldarg.0
+  IL_0583: ldfld System.Boolean Celeste.OuiFileSelectSlot::Corrupted
+  IL_0588: brtrue IL_0644
+  IL_058d: ldarg.0
+  IL_058e: ldfld System.Single Celeste.OuiFileSelectSlot::newgameFade
+  IL_0593: ldc.r4 0
+  IL_0598: bgt IL_05a8
+  IL_059d: ldarg.0
+  IL_059e: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_05a3: brfalse IL_0607
+  IL_05a8: ldarg.0
+  IL_05a9: ldfld System.Boolean Celeste.OuiFileSelectSlot::AssistModeEnabled
+  IL_05ae: brfalse IL_05da
+  IL_05b3: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_05b8: ldstr "assist"
+  IL_05bd: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_05c2: ldloc.s V_18
+  IL_05c4: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_05c9: ldloc.s V_23
+  IL_05cb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_05d0: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_05d5: br IL_0607
+  IL_05da: ldarg.0
+  IL_05db: ldfld System.Boolean Celeste.OuiFileSelectSlot::VariantModeEnabled
+  IL_05e0: brfalse IL_0607
+  IL_05e5: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_05ea: ldstr "variants"
+  IL_05ef: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_05f4: ldloc.s V_18
+  IL_05f6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_05fb: ldloc.s V_23
+  IL_05fd: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0602: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0607: ldarg.0
+  IL_0608: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_060d: brfalse IL_0644
+  IL_0612: ldarg.0
+  IL_0613: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData
+  IL_0618: ldfld System.Boolean Celeste.SaveData::CheatMode
+  IL_061d: brfalse IL_0644
+  IL_0622: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_0627: ldstr "cheatmode"
+  IL_062c: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0631: ldloc.s V_18
+  IL_0633: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0638: ldloc.s V_23
+  IL_063a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_063f: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0644: ldarg.0
+  IL_0645: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Card()
+  IL_064a: ldloc.s V_18
+  IL_064c: callvirt System.Void Monocle.GraphicsComponent::set_RenderPosition(Microsoft.Xna.Framework.Vector2)
+  IL_0651: ldarg.0
+  IL_0652: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Card()
+  IL_0657: callvirt System.Void Monocle.Component::Render()
+  IL_065c: ldarg.0
+  IL_065d: ldfld System.Boolean Celeste.OuiFileSelectSlot::Corrupted
+  IL_0662: brtrue IL_0aab
+  IL_0667: ldarg.0
+  IL_0668: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_066d: brfalse IL_0812
+  IL_0672: ldarg.0
+  IL_0673: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData
+  IL_0678: callvirt System.Int32 Celeste.SaveData::get_TotalStrawberries_Safe()
+  IL_067d: ldarg.0
++ IL_067e: ldc.i4 7860 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_0683: ldc.i4 24039340 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_0688: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
+  |-> retrieves System.Int32 Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modSelectSlotCollectedStrawberries>b__46_0(System.Int32,Celeste.OuiFileSelectSlot)
++ IL_068d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.OuiFileSelectSlot>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_0692: ldarg.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
+  IL_0693: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxStrawberryCount
+  IL_0698: blt IL_06bf
+  IL_069d: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_06a2: ldstr "strawberry"
+  IL_06a7: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_06ac: ldloc.s V_18
+  IL_06ae: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_06b3: ldloc.s V_23
+  IL_06b5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_06ba: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_06bf: ldarg.0
+  IL_06c0: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData
+  IL_06c5: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_06ca: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaStats>::get_Count()
+  IL_06cf: ldc.i4.7
+  IL_06d0: ble IL_0702
+  IL_06d5: ldarg.0
+  IL_06d6: ldfld System.Boolean Celeste.OuiFileSelectSlot::summitStamp
+  IL_06db: brfalse IL_0702
+  IL_06e0: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_06e5: ldstr "flag"
+  IL_06ea: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_06ef: ldloc.s V_18
+  IL_06f1: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_06f6: ldloc.s V_23
+  IL_06f8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_06fd: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0702: ldarg.0
+  IL_0703: ldfld System.Int32 Celeste.OuiFileSelectSlot::totalCassettes
+  IL_0708: ldarg.0
+  IL_0709: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxCassettes
+  IL_070e: blt IL_0735
+  IL_0713: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_0718: ldstr "cassettes"
+  IL_071d: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0722: ldloc.s V_18
+  IL_0724: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0729: ldloc.s V_23
+  IL_072b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0730: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0735: ldarg.0
+  IL_0736: ldfld System.Int32 Celeste.OuiFileSelectSlot::totalHeartGems
+  IL_073b: ldarg.0
+  IL_073c: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxCrystalHeartsExcludingCSides
+  IL_0741: blt IL_0768
+  IL_0746: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_074b: ldstr "heart"
+  IL_0750: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0755: ldloc.s V_18
+  IL_0757: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_075c: ldloc.s V_23
+  IL_075e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0763: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0768: ldarg.0
+  IL_0769: ldfld System.Int32 Celeste.OuiFileSelectSlot::totalGoldenStrawberries
+  IL_076e: ldarg.0
+  IL_076f: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxGoldenStrawberryCount
+  IL_0774: blt IL_079b
+  IL_0779: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_077e: ldstr "goldberry"
+  IL_0783: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0788: ldloc.s V_18
+  IL_078a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_078f: ldloc.s V_23
+  IL_0791: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0796: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_079b: ldarg.0
+  IL_079c: ldfld System.Int32 Celeste.OuiFileSelectSlot::totalHeartGems
+  IL_07a1: ldarg.0
+  IL_07a2: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxCrystalHearts
+  IL_07a7: blt IL_07ce
+  IL_07ac: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_07b1: ldstr "goldheart"
+  IL_07b6: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_07bb: ldloc.s V_18
+  IL_07bd: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_07c2: ldloc.s V_23
+  IL_07c4: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_07c9: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_07ce: ldarg.0
+  IL_07cf: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData
+  IL_07d4: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_07d9: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaStats>::get_Count()
+  IL_07de: ldc.i4.s 10
+  IL_07e0: ble IL_0812
+  IL_07e5: ldarg.0
+  IL_07e6: ldfld System.Boolean Celeste.OuiFileSelectSlot::farewellStamp
+  IL_07eb: brfalse IL_0812
+  IL_07f0: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_07f5: ldstr "farewell"
+  IL_07fa: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_07ff: ldloc.s V_18
+  IL_0801: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0806: ldloc.s V_23
+  IL_0808: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_080d: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0812: ldarg.0
+  IL_0813: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_0818: brtrue IL_0838
+  IL_081d: ldarg.0
+  IL_081e: ldfld System.Boolean Celeste.OuiFileSelectSlot::Renaming
+  IL_0823: brtrue IL_0838
+  IL_0828: ldarg.0
+  IL_0829: ldfld System.Single Celeste.OuiFileSelectSlot::newgameFade
+  IL_082e: ldc.r4 0
+  IL_0833: ble.un IL_09dd
+  IL_0838: ldarg.0
+  IL_0839: ldfld Monocle.Sprite Celeste.OuiFileSelectSlot::Portrait
+  IL_083e: ldloc.s V_18
+  IL_0840: ldarg.0
+  IL_0841: callvirt Monocle.Sprite Celeste.OuiFileSelectSlot::get_Card()
+  IL_0846: callvirt System.Single Monocle.Image::get_Width()
+  IL_084b: neg
+  IL_084c: ldc.r4 2
+  IL_0851: div
+  IL_0852: ldloc.s V_19
+  IL_0854: conv.r4
+  IL_0855: add
+  IL_0856: ldc.r4 100
+  IL_085b: add
+  IL_085c: ldc.r4 0
+  IL_0861: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0866: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_086b: callvirt System.Void Monocle.GraphicsComponent::set_RenderPosition(Microsoft.Xna.Framework.Vector2)
+  IL_0870: ldarg.0
+  IL_0871: ldfld Monocle.Sprite Celeste.OuiFileSelectSlot::Portrait
+  IL_0876: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_087b: ldloc.s V_23
+  IL_087d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0882: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0887: ldarg.0
+  IL_0888: ldfld Monocle.Sprite Celeste.OuiFileSelectSlot::Portrait
+  IL_088d: callvirt System.Void Monocle.Component::Render()
+  IL_0892: ldsfld Monocle.Atlas Celeste.MTN::FileSelect
+  IL_0897: ldarg.0
+  IL_0898: callvirt System.Boolean Celeste.OuiFileSelectSlot::get_Golden()
+  IL_089d: brfalse IL_08ac
+  IL_08a2: ldstr "portraitOverlayGold"
+  IL_08a7: br IL_08b1
+  IL_08ac: ldstr "portraitOverlay"
+  IL_08b1: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_08b6: ldarg.0
+  IL_08b7: ldfld Monocle.Sprite Celeste.OuiFileSelectSlot::Portrait
+  IL_08bc: callvirt Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::get_RenderPosition()
+  IL_08c1: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_08c6: ldloc.s V_23
+  IL_08c8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_08cd: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_08d2: ldarg.0
+  IL_08d3: ldfld System.String Celeste.OuiFileSelectSlot::Name
+  IL_08d8: stloc.s V_24
+  IL_08da: ldloc.s V_18
+  IL_08dc: ldloc.s V_22
+  IL_08de: ldc.i4.s -32
+  IL_08e0: ldarg.0
+  IL_08e1: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_08e6: brtrue IL_08f2
+  IL_08eb: ldc.i4.s 64
+  IL_08ed: br IL_08f3
+  IL_08f2: ldc.i4.0
+  IL_08f3: add
+  IL_08f4: conv.r4
+  IL_08f5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_08fa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_08ff: stloc.s V_25
+  IL_0901: ldc.r4 1
+  IL_0906: ldc.r4 440
+  IL_090b: ldloc.s V_24
+  IL_090d: call Microsoft.Xna.Framework.Vector2 Celeste.ActiveFont::Measure(System.String)
+  IL_0912: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0917: div
+  IL_0918: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_091d: stloc.s V_26
+  IL_091f: ldloc.s V_24
+  IL_0921: ldloc.s V_25
+  IL_0923: ldc.r4 0.5
+  IL_0928: ldc.r4 1
+  IL_092d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0932: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0937: ldloc.s V_26
+  IL_0939: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_093e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0943: ldc.r4 0.8
+  IL_0948: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_094d: ldloc.s V_23
+  IL_094f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0954: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0959: ldarg.0
+  IL_095a: ldfld System.Boolean Celeste.OuiFileSelectSlot::Renaming
+  IL_095f: brfalse IL_09dd
+  IL_0964: ldarg.0
+  IL_0965: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_096a: ldc.r4 0.3
+  IL_096f: callvirt System.Boolean Monocle.Scene::BetweenInterval(System.Single)
+  IL_0974: brfalse IL_09dd
+  IL_0979: ldstr "|"
+  IL_097e: ldloc.s V_25
+  IL_0980: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0985: ldloc.s V_24
+  IL_0987: call Microsoft.Xna.Framework.Vector2 Celeste.ActiveFont::Measure(System.String)
+  IL_098c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0991: ldloc.s V_26
+  IL_0993: mul
+  IL_0994: ldc.r4 0.5
+  IL_0999: mul
+  IL_099a: add
+  IL_099b: ldloc.s V_25
+  IL_099d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09a2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_09a7: ldc.r4 0
+  IL_09ac: ldc.r4 1
+  IL_09b1: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_09b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_09bb: ldloc.s V_26
+  IL_09bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_09c2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_09c7: ldc.r4 0.8
+  IL_09cc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_09d1: ldloc.s V_23
+  IL_09d3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_09d8: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_09dd: ldarg.0
+  IL_09de: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_09e3: brfalse IL_0ae0
+  IL_09e8: ldarg.0
+  IL_09e9: ldfld System.Int32 Celeste.OuiFileSelectSlot::FurthestArea
+  IL_09ee: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_09f3: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_09f8: bge IL_0a72
+  IL_09fd: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0a02: ldarg.0
+  IL_0a03: ldfld System.Int32 Celeste.OuiFileSelectSlot::FurthestArea
+  IL_0a08: callvirt T System.Collections.Generic.List`1<Celeste.AreaData>::get_Item(System.Int32)
+  IL_0a0d: ldfld System.String Celeste.AreaData::Name
++ IL_0a12: ldarg.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotLevelSetDisplayName
++ IL_0a13: ldc.i4 7858 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotLevelSetDisplayName
++ IL_0a18: ldc.i4 56635087 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotLevelSetDisplayName
++ IL_0a1d: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotLevelSetDisplayName
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modSelectSlotLevelSetDisplayName>b__45_0(System.String,Celeste.OuiFileSelectSlot)
++ IL_0a22: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.OuiFileSelectSlot>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotLevelSetDisplayName
+  IL_0a27: ldnull
+  IL_0a28: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0a2d: ldloc.s V_18
+  IL_0a2f: ldloc.s V_22
+  IL_0a31: ldc.r4 -10
+  IL_0a36: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0a3b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0a40: ldc.r4 0.5
+  IL_0a45: ldc.r4 0.5
+  IL_0a4a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0a4f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0a54: ldc.r4 0.8
+  IL_0a59: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0a5e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0a63: ldc.r4 0.6
+  IL_0a68: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0a6d: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0a72: ldarg.0
+  IL_0a73: ldfld Celeste.StrawberriesCounter Celeste.OuiFileSelectSlot::Strawberries
+  IL_0a78: ldloc.s V_18
+  IL_0a7a: ldloc.s V_22
+  IL_0a7c: ldc.r4 55
+  IL_0a81: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0a86: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0a8b: ldarg.0
+  IL_0a8c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0a91: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0a96: stfld Microsoft.Xna.Framework.Vector2 Celeste.StrawberriesCounter::Position
+  IL_0a9b: ldarg.0
+  IL_0a9c: ldfld Celeste.StrawberriesCounter Celeste.OuiFileSelectSlot::Strawberries
+  IL_0aa1: callvirt System.Void Monocle.Component::Render()
+  IL_0aa6: br IL_0ae0
+  IL_0aab: ldstr "file_failedtoload"
+  IL_0ab0: ldnull
+  IL_0ab1: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0ab6: ldloc.s V_18
+  IL_0ab8: ldc.r4 0.5
+  IL_0abd: ldc.r4 0.5
+  IL_0ac2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0ac7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0acc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0ad1: ldc.r4 0.8
+  IL_0ad6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0adb: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0ae0: ldarg.0
+  IL_0ae1: ldfld System.Single Celeste.OuiFileSelectSlot::deletingEase
+  IL_0ae6: ldc.r4 0
+  IL_0aeb: ble.un IL_0df5
+  IL_0af0: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_0af5: ldarg.0
+  IL_0af6: ldfld System.Single Celeste.OuiFileSelectSlot::deletingEase
+  IL_0afb: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0b00: stloc.s V_27
+  IL_0b02: ldloca.s V_28
+  IL_0b04: ldc.r4 960
+  IL_0b09: ldc.r4 540
+  IL_0b0e: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0b13: call System.Single Celeste.ActiveFont::get_LineHeight()
+  IL_0b18: stloc.s V_29
+  IL_0b1a: ldc.r4 -10
+  IL_0b1f: ldc.r4 -10
+  IL_0b24: ldc.r4 1940
+  IL_0b29: ldc.r4 1100
+  IL_0b2e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0b33: ldloc.s V_27
+  IL_0b35: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0b3a: ldc.r4 0.9
+  IL_0b3f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0b44: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0b49: ldstr "file_delete_really"
+  IL_0b4e: ldnull
+  IL_0b4f: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0b54: ldloc.s V_28
+  IL_0b56: ldc.r4 0
+  IL_0b5b: ldc.r4 -16
+  IL_0b60: ldc.r4 64
+  IL_0b65: ldc.r4 1
+  IL_0b6a: ldloc.s V_27
+  IL_0b6c: sub
+  IL_0b6d: mul
+  IL_0b6e: sub
+  IL_0b6f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0b74: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0b79: ldc.r4 0.5
+  IL_0b7e: ldc.r4 1
+  IL_0b83: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0b88: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0b8d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0b92: ldloc.s V_27
+  IL_0b94: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0b99: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0b9e: ldstr "file_delete_yes"
+  IL_0ba3: ldnull
+  IL_0ba4: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0ba9: ldloc.s V_28
+  IL_0bab: ldarg.0
+  IL_0bac: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_0bb1: brfalse IL_0bc1
+  IL_0bb6: ldarg.0
+  IL_0bb7: ldfld System.Int32 Celeste.OuiFileSelectSlot::deleteIndex
+  IL_0bbc: brfalse IL_0bcb
+  IL_0bc1: ldc.r4 0
+  IL_0bc6: br IL_0bcc
+  IL_0bcb: ldloc.1
+  IL_0bcc: ldc.r4 1.2
+  IL_0bd1: mul
+  IL_0bd2: ldloc.s V_27
+  IL_0bd4: mul
+  IL_0bd5: ldc.r4 16
+  IL_0bda: ldc.r4 64
+  IL_0bdf: ldc.r4 1
+  IL_0be4: ldloc.s V_27
+  IL_0be6: sub
+  IL_0be7: mul
+  IL_0be8: add
+  IL_0be9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0bee: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0bf3: ldc.r4 0.5
+  IL_0bf8: ldc.r4 0
+  IL_0bfd: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0c02: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0c07: ldc.r4 0.8
+  IL_0c0c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0c11: ldarg.0
+  IL_0c12: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_0c17: brtrue IL_0c26
+  IL_0c1c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Gray()
+  IL_0c21: br IL_0c35
+  IL_0c26: ldarg.0
+  IL_0c27: ldarg.0
+  IL_0c28: ldfld System.Int32 Celeste.OuiFileSelectSlot::deleteIndex
+  IL_0c2d: ldc.i4.0
+  IL_0c2e: ceq
+  IL_0c30: callvirt Microsoft.Xna.Framework.Color Celeste.OuiFileSelectSlot::SelectionColor(System.Boolean)
+  IL_0c35: ldc.r4 2
+  IL_0c3a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0c3f: ldloc.s V_27
+  IL_0c41: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0c46: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0c4b: ldstr "file_delete_no"
+  IL_0c50: ldnull
+  IL_0c51: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0c56: ldloc.s V_28
+  IL_0c58: ldarg.0
+  IL_0c59: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_0c5e: brfalse IL_0c6f
+  IL_0c63: ldarg.0
+  IL_0c64: ldfld System.Int32 Celeste.OuiFileSelectSlot::deleteIndex
+  IL_0c69: ldc.i4.1
+  IL_0c6a: beq IL_0c79
+  IL_0c6f: ldc.r4 0
+  IL_0c74: br IL_0c7a
+  IL_0c79: ldloc.1
+  IL_0c7a: ldc.r4 1.2
+  IL_0c7f: mul
+  IL_0c80: ldloc.s V_27
+  IL_0c82: mul
+  IL_0c83: ldc.r4 16
+  IL_0c88: ldloc.s V_29
+  IL_0c8a: add
+  IL_0c8b: ldc.r4 64
+  IL_0c90: ldc.r4 1
+  IL_0c95: ldloc.s V_27
+  IL_0c97: sub
+  IL_0c98: mul
+  IL_0c99: add
+  IL_0c9a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0c9f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0ca4: ldc.r4 0.5
+  IL_0ca9: ldc.r4 0
+  IL_0cae: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0cb3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0cb8: ldc.r4 0.8
+  IL_0cbd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0cc2: ldarg.0
+  IL_0cc3: ldfld System.Boolean Celeste.OuiFileSelectSlot::deleting
+  IL_0cc8: brtrue IL_0cd7
+  IL_0ccd: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Gray()
+  IL_0cd2: br IL_0ce6
+  IL_0cd7: ldarg.0
+  IL_0cd8: ldarg.0
+  IL_0cd9: ldfld System.Int32 Celeste.OuiFileSelectSlot::deleteIndex
+  IL_0cde: ldc.i4.1
+  IL_0cdf: ceq
+  IL_0ce1: callvirt Microsoft.Xna.Framework.Color Celeste.OuiFileSelectSlot::SelectionColor(System.Boolean)
+  IL_0ce6: ldc.r4 2
+  IL_0ceb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0cf0: ldloc.s V_27
+  IL_0cf2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0cf7: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0cfc: ldarg.0
+  IL_0cfd: ldfld System.Single Celeste.OuiFileSelectSlot::failedToDeleteEase
+  IL_0d02: ldc.r4 0
+  IL_0d07: ble.un IL_0df5
+  IL_0d0c: ldloca.s V_30
+  IL_0d0e: ldc.r4 960
+  IL_0d13: ldc.r4 980
+  IL_0d18: ldc.r4 100
+  IL_0d1d: ldarg.0
+  IL_0d1e: ldfld System.Single Celeste.OuiFileSelectSlot::deletingEase
+  IL_0d23: mul
+  IL_0d24: sub
+  IL_0d25: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0d2a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0d2f: ldc.r4 0.8
+  IL_0d34: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0d39: stloc.s V_31
+  IL_0d3b: ldarg.0
+  IL_0d3c: ldfld System.Single Celeste.OuiFileSelectSlot::failedToDeleteEase
+  IL_0d41: ldc.r4 1
+  IL_0d46: bge.un IL_0dad
+  IL_0d4b: ldarg.0
+  IL_0d4c: ldfld System.Single Celeste.OuiFileSelectSlot::failedToDeleteTimer
+  IL_0d51: ldc.r4 0
+  IL_0d56: ble.un IL_0dad
+  IL_0d5b: ldloc.s V_30
+  IL_0d5d: ldc.i4.s -5
+  IL_0d5f: ldsfld System.Random Monocle.Calc::Random
+  IL_0d64: ldc.i4.s 10
+  IL_0d66: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_0d6b: add
+  IL_0d6c: conv.r4
+  IL_0d6d: ldc.i4.s -5
+  IL_0d6f: ldsfld System.Random Monocle.Calc::Random
+  IL_0d74: ldc.i4.s 10
+  IL_0d76: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_0d7b: add
+  IL_0d7c: conv.r4
+  IL_0d7d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0d82: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0d87: stloc.s V_30
+  IL_0d89: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0d8e: ldc.r4 0.8
+  IL_0d93: ldc.r4 0.2
+  IL_0d98: ldc.r4 1
+  IL_0d9d: ldarg.0
+  IL_0d9e: ldfld System.Single Celeste.OuiFileSelectSlot::failedToDeleteEase
+  IL_0da3: sub
+  IL_0da4: mul
+  IL_0da5: add
+  IL_0da6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0dab: stloc.s V_31
+  IL_0dad: ldstr "file_delete_failed"
+  IL_0db2: ldnull
+  IL_0db3: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0db8: ldloc.s V_30
+  IL_0dba: ldc.r4 0.5
+  IL_0dbf: ldc.r4 0
+  IL_0dc4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0dc9: ldloc.s V_31
+  IL_0dcb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_PaleVioletRed()
+  IL_0dd0: ldarg.0
+  IL_0dd1: ldfld System.Single Celeste.OuiFileSelectSlot::deletingEase
+  IL_0dd6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0ddb: ldc.r4 2
+  IL_0de0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0de5: ldarg.0
+  IL_0de6: ldfld System.Single Celeste.OuiFileSelectSlot::deletingEase
+  IL_0deb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0df0: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0df5: ldarg.0
+  IL_0df6: ldfld System.Single Celeste.OuiFileSelectSlot::screenFlash
+  IL_0dfb: ldc.r4 0
+  IL_0e00: ble.un IL_0e38
+  IL_0e05: ldc.r4 -10
+  IL_0e0a: ldc.r4 -10
+  IL_0e0f: ldc.r4 1940
+  IL_0e14: ldc.r4 1100
+  IL_0e19: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0e1e: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_0e23: ldarg.0
+  IL_0e24: ldfld System.Single Celeste.OuiFileSelectSlot::screenFlash
+  IL_0e29: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0e2e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0e33: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0e38: ret

@@ -1,0 +1,96 @@
+IL Diff: System.Single Celeste.LavaRect::Wave(System.Int32,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedWavedBlock() @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0005: brfalse IL_0010 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_000a: ldc.r4 0 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_000f: ret @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
+  IL_0010: ldarg.1
+  IL_0011: ldarg.0
+  IL_0012: callvirt System.Int32 Celeste.LavaRect::get_SurfaceStep()
+  IL_0017: mul
+  IL_0018: stloc.0
+  IL_0019: ldarg.0
+  IL_001a: ldfld Celeste.LavaRect/OnlyModes Celeste.LavaRect::OnlyMode
+  IL_001f: brtrue IL_0060
+  IL_0024: ldloc.0
+  IL_0025: conv.r4
+  IL_0026: ldc.r4 0
+  IL_002b: ldarg.2
+  IL_002c: ldc.r4 0.1
+  IL_0031: mul
+  IL_0032: ldc.r4 0
+  IL_0037: ldc.r4 1
+  IL_003c: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0041: ldloc.0
+  IL_0042: conv.r4
+  IL_0043: ldarg.2
+  IL_0044: ldc.r4 0.9
+  IL_0049: mul
+  IL_004a: ldarg.2
+  IL_004b: ldc.r4 1
+  IL_0050: ldc.r4 0
+  IL_0055: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_005a: mul
+  IL_005b: br IL_0065
+  IL_0060: ldc.r4 1
+  IL_0065: stloc.1
+  IL_0066: ldarg.0
+  IL_0067: ldloc.0
+  IL_0068: conv.r4
+  IL_0069: ldc.r4 0.25
+  IL_006e: mul
+  IL_006f: ldarg.0
+  IL_0070: ldfld System.Single Celeste.LavaRect::timer
+  IL_0075: ldc.r4 4
+  IL_007a: mul
+  IL_007b: add
+  IL_007c: callvirt System.Single Celeste.LavaRect::Sin(System.Single)
+  IL_0081: ldarg.0
+  IL_0082: ldfld System.Single Celeste.LavaRect::SmallWaveAmplitude
+  IL_0087: mul
+  IL_0088: stloc.2
+  IL_0089: ldloc.2
+  IL_008a: ldarg.0
+  IL_008b: ldloc.0
+  IL_008c: conv.r4
+  IL_008d: ldc.r4 0.05
+  IL_0092: mul
+  IL_0093: ldarg.0
+  IL_0094: ldfld System.Single Celeste.LavaRect::timer
+  IL_0099: ldc.r4 0.5
+  IL_009e: mul
+  IL_009f: add
+  IL_00a0: callvirt System.Single Celeste.LavaRect::Sin(System.Single)
+  IL_00a5: ldarg.0
+  IL_00a6: ldfld System.Single Celeste.LavaRect::BigWaveAmplitude
+  IL_00ab: mul
+  IL_00ac: add
+  IL_00ad: stloc.2
+  IL_00ae: ldarg.1
+  IL_00af: ldc.i4.2
+  IL_00b0: rem
+  IL_00b1: brtrue IL_00bf
+  IL_00b6: ldloc.2
+  IL_00b7: ldarg.0
+  IL_00b8: ldfld System.Single Celeste.LavaRect::Spikey
+  IL_00bd: add
+  IL_00be: stloc.2
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Celeste.LavaRect/OnlyModes Celeste.LavaRect::OnlyMode
+  IL_00c5: brfalse IL_00e3
+  IL_00ca: ldloc.2
+  IL_00cb: ldc.r4 1
+  IL_00d0: ldloc.0
+  IL_00d1: conv.r4
+  IL_00d2: ldarg.2
+  IL_00d3: div
+  IL_00d4: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_00d9: sub
+  IL_00da: ldarg.0
+  IL_00db: ldfld System.Single Celeste.LavaRect::CurveAmplitude
+  IL_00e0: mul
+  IL_00e1: add
+  IL_00e2: stloc.2
+  IL_00e3: ldloc.2
+  IL_00e4: ldloc.1
+  IL_00e5: mul
+  IL_00e6: ret

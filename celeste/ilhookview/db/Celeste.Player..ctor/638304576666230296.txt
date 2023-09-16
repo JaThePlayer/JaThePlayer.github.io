@@ -1,0 +1,629 @@
+IL Diff: System.Void Celeste.Player::.ctor(Microsoft.Xna.Framework.Vector2,Celeste.PlayerSpriteMode)
+  IL_0000: ldarg.0
+  IL_0001: ldc.r4 110
++ IL_0006: ldc.i4 6631 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_000b: ldc.i4 22033951 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0010: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0015: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_001a: ldc.i4 6622 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_001f: ldc.i4 59095843 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_0024: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0029: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  IL_002e: stfld System.Single Celeste.Player::Stamina
+  IL_0033: ldarg.0
+  IL_0034: ldc.i4.1
+  IL_0035: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.1
+  IL_003c: stfld System.Boolean Celeste.Player::EnforceLevelBounds
+  IL_0041: ldarg.0
+  IL_0042: ldc.r4 1.2
+  IL_0047: stfld System.Single Celeste.Player::wallSlideTimer
+  IL_004c: ldarg.0
+  IL_004d: newobj System.Void System.Collections.Generic.List`1<Celeste.Player/ChaserStateSound>::.ctor()
+  IL_0052: stfld System.Collections.Generic.List`1<Celeste.Player/ChaserStateSound> Celeste.Player::activeSounds
+  IL_0057: ldarg.0
+  IL_0058: ldc.r4 8
+  IL_005d: ldc.r4 11
+  IL_0062: ldc.r4 -4
+  IL_0067: ldc.r4 -11
+  IL_006c: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0071: stfld Monocle.Hitbox Celeste.Player::normalHitbox
+  IL_0076: ldarg.0
+  IL_0077: ldc.r4 8
+  IL_007c: ldc.r4 6
+  IL_0081: ldc.r4 -4
+  IL_0086: ldc.r4 -6
+  IL_008b: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0090: stfld Monocle.Hitbox Celeste.Player::duckHitbox
+  IL_0095: ldarg.0
+  IL_0096: ldc.r4 8
+  IL_009b: ldc.r4 9
+  IL_00a0: ldc.r4 -4
+  IL_00a5: ldc.r4 -11
+  IL_00aa: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_00af: stfld Monocle.Hitbox Celeste.Player::normalHurtbox
+  IL_00b4: ldarg.0
+  IL_00b5: ldc.r4 8
+  IL_00ba: ldc.r4 4
+  IL_00bf: ldc.r4 -4
+  IL_00c4: ldc.r4 -6
+  IL_00c9: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_00ce: stfld Monocle.Hitbox Celeste.Player::duckHurtbox
+  IL_00d3: ldarg.0
+  IL_00d4: ldc.r4 8
+  IL_00d9: ldc.r4 8
+  IL_00de: ldc.r4 -4
+  IL_00e3: ldc.r4 -10
+  IL_00e8: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_00ed: stfld Monocle.Hitbox Celeste.Player::starFlyHitbox
+  IL_00f2: ldarg.0
+  IL_00f3: ldc.r4 6
+  IL_00f8: ldc.r4 6
+  IL_00fd: ldc.r4 -3
+  IL_0102: ldc.r4 -9
+  IL_0107: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_010c: stfld Monocle.Hitbox Celeste.Player::starFlyHurtbox
+  IL_0111: ldarg.0
+  IL_0112: ldc.r4 0
+  IL_0117: ldc.r4 -8
+  IL_011c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0121: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::normalLightOffset
+  IL_0126: ldarg.0
+  IL_0127: ldc.r4 0
+  IL_012c: ldc.r4 -3
+  IL_0131: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0136: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::duckingLightOffset
+  IL_013b: ldarg.0
+  IL_013c: newobj System.Void System.Collections.Generic.List`1<Monocle.Entity>::.ctor()
+  IL_0141: stfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Player::temp
+  IL_0146: ldarg.0
+  IL_0147: ldstr "ffd65c"
+  IL_014c: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0151: stfld Microsoft.Xna.Framework.Color Celeste.Player::starFlyColor
+  IL_0156: ldarg.0
+  IL_0157: ldc.i4.1
+  IL_0158: stfld System.Boolean Celeste.Player::DummyGravity
+  IL_015d: ldarg.0
+  IL_015e: ldc.i4.1
+  IL_015f: stfld System.Boolean Celeste.Player::DummyFriction
+  IL_0164: ldarg.0
+  IL_0165: ldc.i4.1
+  IL_0166: stfld System.Boolean Celeste.Player::DummyMaxspeed
+  IL_016b: ldarg.0
+  IL_016c: ldarg.1
+  IL_016d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0172: conv.i4
+  IL_0173: conv.r4
+  IL_0174: ldarg.1
+  IL_0175: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_017a: conv.i4
+  IL_017b: conv.r4
+  IL_017c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0181: call System.Void Celeste.Actor::.ctor(Microsoft.Xna.Framework.Vector2)
+- IL_0186: call System.Void Celeste.Input::ResetGrab() @ Celeste.Mod.SSMQoLMod.Modifications.KeepToggleGrabOnDeath::IL_Player_ctor
++ IL_0186: call System.Void Celeste.Mod.SSMQoLMod.Modifications.KeepToggleGrabOnDeath::ResetGrabIfEnabled() @ Celeste.Mod.SSMQoLMod.Modifications.KeepToggleGrabOnDeath::IL_Player_ctor
+  IL_018b: ldarg.0
+  IL_018c: ldarg.2
+  IL_018d: stfld Celeste.PlayerSpriteMode Celeste.Player::DefaultSpriteMode
+  IL_0192: ldarg.0
+  IL_0193: ldc.i4.0
+  IL_0194: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0199: ldarg.0
+  IL_019a: ldsfld Monocle.BitTag Celeste.Tags::Persistent
+  IL_019f: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_01a4: call System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_01a9: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_01ae: brfalse IL_01ca
+  IL_01b3: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_01b8: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_01bd: ldfld System.Boolean Celeste.Assists::PlayAsBadeline
+  IL_01c2: brfalse IL_01ca
+  IL_01c7: ldc.i4.3
+  IL_01c8: starg.s spriteMode
+  IL_01ca: ldarg.0
+  IL_01cb: ldarg.2
+  IL_01cc: newobj System.Void Celeste.PlayerSprite::.ctor(Celeste.PlayerSpriteMode)
+  IL_01d1: stfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01d6: ldarg.0
++ IL_01d7: ldc.i4 6620 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::IL_Player_ctor
++ IL_01dc: ldc.i4 42154803 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::IL_Player_ctor
++ IL_01e1: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::IL_Player_ctor
+  |-> retrieves System.Void Celeste.Mod.CommunalHelper.DashStates.SeekerDash/<>c::<IL_Player_ctor>b__18_1(Celeste.Player)
++ IL_01e6: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::IL_Player_ctor
+  IL_01eb: ldarg.0
+  IL_01ec: ldarg.0
++ IL_01ed: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.SeekerDash::IL_Player_ctor
+  IL_01ee: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01f3: newobj System.Void Celeste.PlayerHair::.ctor(Celeste.PlayerSprite)
+  IL_01f8: dup
+  IL_01f9: stloc.0
+  IL_01fa: stfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_01ff: ldloc.0
+  IL_0200: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0205: ldarg.0
+  IL_0206: ldarg.0
+  IL_0207: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_020c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0211: ldarg.2
+  IL_0212: ldc.i4.3
+  IL_0213: bne.un IL_022d
+  IL_0218: ldarg.0
+  IL_0219: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_021e: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::NormalBadelineHairColor
+  IL_0223: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_0228: br IL_023d
+  IL_022d: ldarg.0
+  IL_022e: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_0233: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::NormalHairColor
+  IL_0238: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_023d: ldarg.0
+  IL_023e: ldarg.0
+  IL_023f: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0244: ldfld System.Int32 Celeste.PlayerSprite::HairCount
+  IL_0249: stfld System.Int32 Celeste.Player::startHairCount
+  IL_024e: ldarg.0
+  IL_024f: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_0254: ldstr "player_sweat"
+  IL_0259: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_025e: stfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_0263: ldarg.0
+  IL_0264: ldarg.0
+  IL_0265: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_026a: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_026f: ldarg.0
+  IL_0270: ldarg.0
+  IL_0271: ldfld Monocle.Hitbox Celeste.Player::normalHitbox
+  IL_0276: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_027b: ldarg.0
+  IL_027c: ldarg.0
+  IL_027d: ldfld Monocle.Hitbox Celeste.Player::normalHurtbox
+  IL_0282: stfld Monocle.Hitbox Celeste.Player::hurtbox
+  IL_0287: ldarg.0
+  IL_0288: ldarg.0
+  IL_0289: ldftn System.Void Celeste.Player::OnCollideH(Celeste.CollisionData)
+  IL_028f: newobj System.Void Celeste.Collision::.ctor(System.Object,System.IntPtr)
+  IL_0294: stfld Celeste.Collision Celeste.Player::onCollideH
+  IL_0299: ldarg.0
+  IL_029a: ldarg.0
+  IL_029b: ldftn System.Void Celeste.Player::OnCollideV(Celeste.CollisionData)
+  IL_02a1: newobj System.Void Celeste.Collision::.ctor(System.Object,System.IntPtr)
+  IL_02a6: stfld Celeste.Collision Celeste.Player::onCollideV
+  IL_02ab: ldarg.0
+  IL_02ac: ldc.i4.s 26
+  IL_02ae: newobj System.Void Monocle.StateMachine::.ctor(System.Int32)
+  IL_02b3: stfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_02b8: ldarg.0
+  IL_02b9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_02be: ldc.i4.0
+  IL_02bf: ldarg.0
+  IL_02c0: ldftn System.Int32 Celeste.Player::NormalUpdate()
+  IL_02c6: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_02cb: ldnull
+  IL_02cc: ldarg.0
+  IL_02cd: ldftn System.Void Celeste.Player::NormalBegin()
+  IL_02d3: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_02d8: ldarg.0
+  IL_02d9: ldftn System.Void Celeste.Player::NormalEnd()
+  IL_02df: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_02e4: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_02e9: ldarg.0
+  IL_02ea: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_02ef: ldc.i4.1
+  IL_02f0: ldarg.0
+  IL_02f1: ldftn System.Int32 Celeste.Player::ClimbUpdate()
+  IL_02f7: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_02fc: ldnull
+  IL_02fd: ldarg.0
+  IL_02fe: ldftn System.Void Celeste.Player::ClimbBegin()
+  IL_0304: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0309: ldarg.0
+  IL_030a: ldftn System.Void Celeste.Player::ClimbEnd()
+  IL_0310: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0315: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_031a: ldarg.0
+  IL_031b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0320: ldc.i4.2
+  IL_0321: ldarg.0
+  IL_0322: ldftn System.Int32 Celeste.Player::DashUpdate()
+  IL_0328: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_032d: ldarg.0
+  IL_032e: ldftn System.Collections.IEnumerator Celeste.Player::DashCoroutine()
+  IL_0334: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0339: ldarg.0
+  IL_033a: ldftn System.Void Celeste.Player::DashBegin()
+  IL_0340: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0345: ldarg.0
+  IL_0346: ldftn System.Void Celeste.Player::DashEnd()
+  IL_034c: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0351: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0356: ldarg.0
+  IL_0357: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_035c: ldc.i4.3
+  IL_035d: ldarg.0
+  IL_035e: ldftn System.Int32 Celeste.Player::SwimUpdate()
+  IL_0364: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0369: ldnull
+  IL_036a: ldarg.0
+  IL_036b: ldftn System.Void Celeste.Player::SwimBegin()
+  IL_0371: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0376: ldnull
+  IL_0377: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_037c: ldarg.0
+  IL_037d: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0382: ldc.i4.4
+  IL_0383: ldarg.0
+  IL_0384: ldftn System.Int32 Celeste.Player::BoostUpdate()
+  IL_038a: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_038f: ldarg.0
+  IL_0390: ldftn System.Collections.IEnumerator Celeste.Player::BoostCoroutine()
+  IL_0396: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_039b: ldarg.0
+  IL_039c: ldftn System.Void Celeste.Player::BoostBegin()
+  IL_03a2: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_03a7: ldarg.0
+  IL_03a8: ldftn System.Void Celeste.Player::BoostEnd()
+  IL_03ae: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_03b3: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_03b8: ldarg.0
+  IL_03b9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_03be: ldc.i4.5
+  IL_03bf: ldarg.0
+  IL_03c0: ldftn System.Int32 Celeste.Player::RedDashUpdate()
+  IL_03c6: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_03cb: ldarg.0
+  IL_03cc: ldftn System.Collections.IEnumerator Celeste.Player::RedDashCoroutine()
+  IL_03d2: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_03d7: ldarg.0
+  IL_03d8: ldftn System.Void Celeste.Player::RedDashBegin()
+  IL_03de: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_03e3: ldarg.0
+  IL_03e4: ldftn System.Void Celeste.Player::RedDashEnd()
+  IL_03ea: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_03ef: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_03f4: ldarg.0
+  IL_03f5: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_03fa: ldc.i4.6
+  IL_03fb: ldarg.0
+  IL_03fc: ldftn System.Int32 Celeste.Player::HitSquashUpdate()
+  IL_0402: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0407: ldnull
+  IL_0408: ldarg.0
+  IL_0409: ldftn System.Void Celeste.Player::HitSquashBegin()
+  IL_040f: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0414: ldnull
+  IL_0415: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_041a: ldarg.0
+  IL_041b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0420: ldc.i4.7
+  IL_0421: ldarg.0
+  IL_0422: ldftn System.Int32 Celeste.Player::LaunchUpdate()
+  IL_0428: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_042d: ldnull
+  IL_042e: ldarg.0
+  IL_042f: ldftn System.Void Celeste.Player::LaunchBegin()
+  IL_0435: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_043a: ldnull
+  IL_043b: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0440: ldarg.0
+  IL_0441: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0446: ldc.i4.8
+  IL_0447: ldnull
+  IL_0448: ldarg.0
+  IL_0449: ldftn System.Collections.IEnumerator Celeste.Player::PickupCoroutine()
+  IL_044f: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0454: ldnull
+  IL_0455: ldnull
+  IL_0456: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_045b: ldarg.0
+  IL_045c: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0461: ldc.i4.s 9
+  IL_0463: ldarg.0
+  IL_0464: ldftn System.Int32 Celeste.Player::DreamDashUpdate()
+  IL_046a: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_046f: ldnull
+  IL_0470: ldarg.0
+  IL_0471: ldftn System.Void Celeste.Player::DreamDashBegin()
+  IL_0477: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_047c: ldarg.0
+  IL_047d: ldftn System.Void Celeste.Player::DreamDashEnd()
+  IL_0483: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0488: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_048d: ldarg.0
+  IL_048e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0493: ldc.i4.s 10
+  IL_0495: ldarg.0
+  IL_0496: ldftn System.Int32 Celeste.Player::SummitLaunchUpdate()
+  IL_049c: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_04a1: ldnull
+  IL_04a2: ldarg.0
+  IL_04a3: ldftn System.Void Celeste.Player::SummitLaunchBegin()
+  IL_04a9: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_04ae: ldnull
+  IL_04af: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_04b4: ldarg.0
+  IL_04b5: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_04ba: ldc.i4.s 11
+  IL_04bc: ldarg.0
+  IL_04bd: ldftn System.Int32 Celeste.Player::DummyUpdate()
+  IL_04c3: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_04c8: ldnull
+  IL_04c9: ldarg.0
+  IL_04ca: ldftn System.Void Celeste.Player::DummyBegin()
+  IL_04d0: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_04d5: ldnull
+  IL_04d6: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_04db: ldarg.0
+  IL_04dc: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_04e1: ldc.i4.s 12
+  IL_04e3: ldnull
+  IL_04e4: ldarg.0
+  IL_04e5: ldftn System.Collections.IEnumerator Celeste.Player::IntroWalkCoroutine()
+  IL_04eb: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_04f0: ldnull
+  IL_04f1: ldnull
+  IL_04f2: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_04f7: ldarg.0
+  IL_04f8: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_04fd: ldc.i4.s 13
+  IL_04ff: ldnull
+  IL_0500: ldarg.0
+  IL_0501: ldftn System.Collections.IEnumerator Celeste.Player::IntroJumpCoroutine()
+  IL_0507: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_050c: ldnull
+  IL_050d: ldnull
+  IL_050e: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0513: ldarg.0
+  IL_0514: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0519: ldc.i4.s 14
+  IL_051b: ldnull
+  IL_051c: ldnull
+  IL_051d: ldarg.0
+  IL_051e: ldftn System.Void Celeste.Player::IntroRespawnBegin()
+  IL_0524: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0529: ldarg.0
+  IL_052a: ldftn System.Void Celeste.Player::IntroRespawnEnd()
+  IL_0530: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0535: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_053a: ldarg.0
+  IL_053b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0540: ldc.i4.s 15
+  IL_0542: ldnull
+  IL_0543: ldarg.0
+  IL_0544: ldftn System.Collections.IEnumerator Celeste.Player::IntroWakeUpCoroutine()
+  IL_054a: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_054f: ldnull
+  IL_0550: ldnull
+  IL_0551: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0556: ldarg.0
+  IL_0557: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_055c: ldc.i4.s 20
+  IL_055e: ldarg.0
+  IL_055f: ldftn System.Int32 Celeste.Player::TempleFallUpdate()
+  IL_0565: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_056a: ldarg.0
+  IL_056b: ldftn System.Collections.IEnumerator Celeste.Player::TempleFallCoroutine()
+  IL_0571: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0576: ldnull
+  IL_0577: ldnull
+  IL_0578: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_057d: ldarg.0
+  IL_057e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0583: ldc.i4.s 18
+  IL_0585: ldarg.0
+  IL_0586: ldftn System.Int32 Celeste.Player::ReflectionFallUpdate()
+  IL_058c: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0591: ldarg.0
+  IL_0592: ldftn System.Collections.IEnumerator Celeste.Player::ReflectionFallCoroutine()
+  IL_0598: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_059d: ldarg.0
+  IL_059e: ldftn System.Void Celeste.Player::ReflectionFallBegin()
+  IL_05a4: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_05a9: ldarg.0
+  IL_05aa: ldftn System.Void Celeste.Player::ReflectionFallEnd()
+  IL_05b0: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_05b5: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_05ba: ldarg.0
+  IL_05bb: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_05c0: ldc.i4.s 16
+  IL_05c2: ldarg.0
+  IL_05c3: ldftn System.Int32 Celeste.Player::BirdDashTutorialUpdate()
+  IL_05c9: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_05ce: ldarg.0
+  IL_05cf: ldftn System.Collections.IEnumerator Celeste.Player::BirdDashTutorialCoroutine()
+  IL_05d5: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_05da: ldarg.0
+  IL_05db: ldftn System.Void Celeste.Player::BirdDashTutorialBegin()
+  IL_05e1: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_05e6: ldnull
+  IL_05e7: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_05ec: ldarg.0
+  IL_05ed: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_05f2: ldc.i4.s 17
+  IL_05f4: ldarg.0
+  IL_05f5: ldftn System.Int32 Celeste.Player::FrozenUpdate()
+  IL_05fb: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0600: ldnull
+  IL_0601: ldnull
+  IL_0602: ldnull
+  IL_0603: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0608: ldarg.0
+  IL_0609: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_060e: ldc.i4.s 19
+  IL_0610: ldarg.0
+  IL_0611: ldftn System.Int32 Celeste.Player::StarFlyUpdate()
+  IL_0617: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_061c: ldarg.0
+  IL_061d: ldftn System.Collections.IEnumerator Celeste.Player::StarFlyCoroutine()
+  IL_0623: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0628: ldarg.0
+  IL_0629: ldftn System.Void Celeste.Player::StarFlyBegin()
+  IL_062f: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0634: ldarg.0
+  IL_0635: ldftn System.Void Celeste.Player::StarFlyEnd()
+  IL_063b: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0640: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0645: ldarg.0
+  IL_0646: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_064b: ldc.i4.s 21
+  IL_064d: ldarg.0
+  IL_064e: ldftn System.Int32 Celeste.Player::CassetteFlyUpdate()
+  IL_0654: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0659: ldarg.0
+  IL_065a: ldftn System.Collections.IEnumerator Celeste.Player::CassetteFlyCoroutine()
+  IL_0660: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0665: ldarg.0
+  IL_0666: ldftn System.Void Celeste.Player::CassetteFlyBegin()
+  IL_066c: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0671: ldarg.0
+  IL_0672: ldftn System.Void Celeste.Player::CassetteFlyEnd()
+  IL_0678: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_067d: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0682: ldarg.0
+  IL_0683: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0688: ldc.i4.s 22
+  IL_068a: ldarg.0
+  IL_068b: ldftn System.Int32 Celeste.Player::AttractUpdate()
+  IL_0691: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0696: ldnull
+  IL_0697: ldarg.0
+  IL_0698: ldftn System.Void Celeste.Player::AttractBegin()
+  IL_069e: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_06a3: ldarg.0
+  IL_06a4: ldftn System.Void Celeste.Player::AttractEnd()
+  IL_06aa: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_06af: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_06b4: ldarg.0
+  IL_06b5: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_06ba: ldc.i4.s 23
+  IL_06bc: ldnull
+  IL_06bd: ldarg.0
+  IL_06be: ldftn System.Collections.IEnumerator Celeste.Player::IntroMoonJumpCoroutine()
+  IL_06c4: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_06c9: ldnull
+  IL_06ca: ldnull
+  IL_06cb: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_06d0: ldarg.0
+  IL_06d1: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_06d6: ldc.i4.s 24
+  IL_06d8: ldarg.0
+  IL_06d9: ldftn System.Int32 Celeste.Player::FlingBirdUpdate()
+  IL_06df: newobj System.Void System.Func`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_06e4: ldarg.0
+  IL_06e5: ldftn System.Collections.IEnumerator Celeste.Player::FlingBirdCoroutine()
+  IL_06eb: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_06f0: ldarg.0
+  IL_06f1: ldftn System.Void Celeste.Player::FlingBirdBegin()
+  IL_06f7: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_06fc: ldarg.0
+  IL_06fd: ldftn System.Void Celeste.Player::FlingBirdEnd()
+  IL_0703: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0708: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_070d: ldarg.0
+  IL_070e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0713: ldc.i4.s 25
+  IL_0715: ldnull
+  IL_0716: ldarg.0
+  IL_0717: ldftn System.Collections.IEnumerator Celeste.Player::IntroThinkForABitCoroutine()
+  IL_071d: newobj System.Void System.Func`1<System.Collections.IEnumerator>::.ctor(System.Object,System.IntPtr)
+  IL_0722: ldnull
+  IL_0723: ldnull
+  IL_0724: callvirt System.Void Monocle.StateMachine::SetCallbacks(System.Int32,System.Func`1<System.Int32>,System.Func`1<System.Collections.IEnumerator>,System.Action,System.Action)
+  IL_0729: ldarg.0
+  IL_072a: ldarg.0
+  IL_072b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0730: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0735: ldarg.0
+  IL_0736: ldarg.0
+  IL_0737: ldc.r4 0
+  IL_073c: ldc.r4 -8
+  IL_0741: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0746: newobj System.Void Celeste.Leader::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_074b: dup
+  IL_074c: stloc.1
+  IL_074d: stfld Celeste.Leader Celeste.Player::Leader
+  IL_0752: ldloc.1
+  IL_0753: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0758: ldarg.0
+  IL_0759: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_075e: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::lastAim
+  IL_0763: ldarg.0
+  IL_0764: ldc.i4.1
+  IL_0765: stfld Celeste.Facings Celeste.Player::Facing
+  IL_076a: ldarg.0
+  IL_076b: newobj System.Void System.Collections.Generic.List`1<Celeste.Player/ChaserState>::.ctor()
+  IL_0770: stfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_0775: ldarg.0
+  IL_0776: newobj System.Void System.Collections.Generic.HashSet`1<Celeste.Trigger>::.ctor()
+  IL_077b: stfld System.Collections.Generic.HashSet`1<Celeste.Trigger> Celeste.Player::triggersInside
+  IL_0780: ldarg.0
+  IL_0781: ldarg.0
+  IL_0782: ldarg.0
+  IL_0783: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::normalLightOffset
+  IL_0788: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_078d: ldc.r4 1
+  IL_0792: ldc.i4.s 32
+  IL_0794: ldc.i4.s 64
+  IL_0796: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_079b: dup
+  IL_079c: stloc.2
+  IL_079d: stfld Celeste.VertexLight Celeste.Player::Light
+  IL_07a2: ldloc.2
+  IL_07a3: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_07a8: ldarg.0
+  IL_07a9: ldarg.0
+  IL_07aa: ldftn System.Boolean Celeste.Player::<.ctor>b__280_0()
+  IL_07b0: newobj System.Void System.Func`1<System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_07b5: newobj System.Void Celeste.WaterInteraction::.ctor(System.Func`1<System.Boolean>)
+  IL_07ba: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_07bf: ldarg.0
+  IL_07c0: ldarg.0
+  IL_07c1: ldftn System.Void Celeste.Player::WindMove(Microsoft.Xna.Framework.Vector2)
+  IL_07c7: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_07cc: newobj System.Void Celeste.WindMover::.ctor(System.Action`1<Microsoft.Xna.Framework.Vector2>)
+  IL_07d1: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_07d6: ldarg.0
+  IL_07d7: ldarg.0
+  IL_07d8: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_07dd: dup
+  IL_07de: stloc.3
+  IL_07df: stfld Celeste.SoundSource Celeste.Player::wallSlideSfx
+  IL_07e4: ldloc.3
+  IL_07e5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_07ea: ldarg.0
+  IL_07eb: ldarg.0
+  IL_07ec: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_07f1: dup
+  IL_07f2: stloc.3
+  IL_07f3: stfld Celeste.SoundSource Celeste.Player::swimSurfaceLoopSfx
+  IL_07f8: ldloc.3
+  IL_07f9: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_07fe: ldarg.0
+  IL_07ff: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0804: ldarg.0
+  IL_0805: ldftn System.Void Celeste.Player::<.ctor>b__280_1(System.String)
+  IL_080b: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_0810: stfld System.Action`1<System.String> Monocle.Sprite::OnFrameChange
+  IL_0815: ldarg.0
+  IL_0816: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_081b: ldarg.0
+  IL_081c: ldftn System.Void Celeste.Player::<.ctor>b__280_2(System.String)
+  IL_0822: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_0827: stfld System.Action`1<System.String> Monocle.Sprite::OnLastFrame
+  IL_082c: ldarg.0
+  IL_082d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0832: ldarg.0
+  IL_0833: ldftn System.Void Celeste.Player::<.ctor>b__280_3(System.String,System.String)
+  IL_0839: newobj System.Void System.Action`2<System.String,System.String>::.ctor(System.Object,System.IntPtr)
+  IL_083e: stfld System.Action`2<System.String,System.String> Monocle.Sprite::OnChange
+  IL_0843: ldarg.0
+  IL_0844: ldarg.0
+  IL_0845: newobj System.Void Celeste.MirrorReflection::.ctor()
+  IL_084a: dup
+  IL_084b: stloc.s V_4
+  IL_084d: stfld Celeste.MirrorReflection Celeste.Player::reflection
+  IL_0852: ldloc.s V_4
+  IL_0854: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0859: ret

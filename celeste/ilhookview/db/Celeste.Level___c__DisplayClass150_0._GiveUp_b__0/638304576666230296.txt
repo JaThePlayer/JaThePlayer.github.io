@@ -1,0 +1,92 @@
+IL Diff: System.Void Celeste.Level/<>c__DisplayClass150_0::<GiveUp>b__0()
+  IL_0000: ldc.r4 1
+  IL_0005: stsfld System.Single Monocle.Engine::TimeRate
+  IL_000a: ldarg.0
+  IL_000b: ldfld Celeste.TextMenu Celeste.Level/<>c__DisplayClass150_0::menu
+  IL_0010: ldc.i4.0
+  IL_0011: stfld System.Boolean Celeste.TextMenu::Focused
+  IL_0016: ldarg.0
+  IL_0017: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass150_0::<>4__this
+  IL_001c: ldfld Celeste.Session Celeste.Level::Session
+  IL_0021: ldc.i4.0
+  IL_0022: stfld System.Boolean Celeste.Session::InArea
+  IL_0027: ldnull
+  IL_0028: ldc.i4.1
+  IL_0029: ldc.i4.1
+  IL_002a: call System.Boolean Celeste.Audio::SetMusic(System.String,System.Boolean,System.Boolean)
+  IL_002f: pop
+  IL_0030: ldstr "bus:/gameplay_sfx"
+  IL_0035: ldc.i4.1
+  IL_0036: call System.Void Celeste.Audio::BusStopAll(System.String,System.Boolean)
+  IL_003b: ldarg.0
+  IL_003c: ldfld System.Boolean Celeste.Level/<>c__DisplayClass150_0::restartArea
+  IL_0041: brfalse IL_0093
++ IL_0046: ldc.i4 7063 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_004b: ldc.i4 4905434 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_0050: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.RespawnRestartSpeed/<>c::<ModRestartMenu>b__6_2()
++ IL_0055: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_005a: brtrue IL_0093 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
+  IL_005f: ldarg.0
+  IL_0060: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass150_0::<>4__this
+  IL_0065: ldc.i4.0
+  IL_0066: ldarg.0
+  IL_0067: ldfld System.Action Celeste.Level/<>c__DisplayClass150_0::<>9__4
+  IL_006c: dup
+  IL_006d: brtrue IL_0088
+  IL_0072: pop
+  IL_0073: ldarg.0
+  IL_0074: ldarg.0
+  IL_0075: ldftn System.Void Celeste.Level/<>c__DisplayClass150_0::<GiveUp>b__4()
+  IL_007b: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0080: dup
+  IL_0081: stloc.0
+  IL_0082: stfld System.Action Celeste.Level/<>c__DisplayClass150_0::<>9__4
+  IL_0087: ldloc.0
+  IL_0088: ldc.i4.0
+  IL_0089: callvirt System.Void Celeste.Level::DoScreenWipe(System.Boolean,System.Action,System.Boolean)
+  IL_008e: br IL_00c2
+  IL_0093: ldarg.0
+  IL_0094: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass150_0::<>4__this
+  IL_0099: ldc.i4.0
+  IL_009a: ldarg.0
+  IL_009b: ldfld System.Action Celeste.Level/<>c__DisplayClass150_0::<>9__5
+  IL_00a0: dup
+  IL_00a1: brtrue IL_00bc
+  IL_00a6: pop
+  IL_00a7: ldarg.0
+  IL_00a8: ldarg.0
+  IL_00a9: ldftn System.Void Celeste.Level/<>c__DisplayClass150_0::<GiveUp>b__5()
+  IL_00af: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_00b4: dup
+  IL_00b5: stloc.0
+  IL_00b6: stfld System.Action Celeste.Level/<>c__DisplayClass150_0::<>9__5
+  IL_00bb: ldloc.0
+  IL_00bc: ldc.i4.1
+  IL_00bd: callvirt System.Void Celeste.Level::DoScreenWipe(System.Boolean,System.Action,System.Boolean)
+  IL_00c2: ldarg.0
+  IL_00c3: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass150_0::<>4__this
+  IL_00c8: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00cd: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.LevelEndingHook>()
+  IL_00d2: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_00d7: stloc.1
+  IL_00d8: br IL_0100
+  IL_00dd: ldloca.s V_1
+  IL_00df: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_00e4: castclass Celeste.LevelEndingHook
+  IL_00e9: stloc.2
+  IL_00ea: ldloc.2
+  IL_00eb: ldfld System.Action Celeste.LevelEndingHook::OnEnd
+  IL_00f0: brfalse IL_0100
+  IL_00f5: ldloc.2
+  IL_00f6: ldfld System.Action Celeste.LevelEndingHook::OnEnd
+  IL_00fb: callvirt System.Void System.Action::Invoke()
+  IL_0100: ldloca.s V_1
+  IL_0102: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0107: brtrue IL_00dd
+  IL_010c: leave IL_011f
+  IL_0111: ldloca.s V_1
+  IL_0113: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_0119: callvirt System.Void System.IDisposable::Dispose()
+  IL_011e: endfinally
+  IL_011f: ret

@@ -1,0 +1,25 @@
+IL Diff: System.Void Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::onPlayerSpriteConstructor(On.Celeste.PlayerSprite+orig_ctor,Celeste.PlayerSprite,Celeste.PlayerSpriteMode)
+  IL_0000: call Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule::get_Instance()
+  IL_0005: callvirt Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandSession Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandModule::get_Session()
+  IL_000a: callvirt System.Boolean Celeste.Mod.MaxHelpingHand.Module.MaxHelpingHandSession::get_MadelineIsSilhouette()
++ IL_000f: ldc.i4 6686 @ ExtendedVariants.Variants.MadelineIsSilhouette::hookMadelineIsSilhouette
++ IL_0014: ldc.i4 34662926 @ ExtendedVariants.Variants.MadelineIsSilhouette::hookMadelineIsSilhouette
++ IL_0019: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MadelineIsSilhouette::hookMadelineIsSilhouette
+  |-> retrieves System.Boolean ExtendedVariants.Variants.MadelineIsSilhouette::<hookMadelineIsSilhouette>b__8_0(System.Boolean)
++ IL_001e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.MadelineIsSilhouette::hookMadelineIsSilhouette
+  IL_0023: brfalse IL_003f
+  IL_0028: ldarg.2
+  IL_0029: brfalse IL_003c
+  IL_002e: ldarg.2
+  IL_002f: ldc.i4.3
+  IL_0030: beq IL_003c
+  IL_0035: ldarg.2
+  IL_0036: ldc.i4.1
+  IL_0037: bne.un IL_003f
+  IL_003c: ldc.i4.4
+  IL_003d: starg.s mode
+  IL_003f: ldarg.0
+  IL_0040: ldarg.1
+  IL_0041: ldarg.2
+  IL_0042: callvirt System.Void On.Celeste.PlayerSprite/orig_ctor::Invoke(Celeste.PlayerSprite,Celeste.PlayerSpriteMode)
+  IL_0047: ret

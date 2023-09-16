@@ -1,0 +1,84 @@
+IL Diff: System.Void Celeste.CassetteBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.CassetteBlock::groupLeader
+  IL_000c: brfalse IL_00e5
+  IL_0011: ldarg.0
+  IL_0012: ldfld System.Boolean Celeste.CassetteBlock::Activated
+  IL_0017: brfalse IL_00e5
+  IL_001c: ldarg.0
+  IL_001d: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0022: brtrue IL_00e5
+  IL_0027: ldc.i4.0
+  IL_0028: stloc.0
+  IL_0029: ldarg.0
+  IL_002a: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
++ IL_002f: ldc.i4 7774 @ Celeste.Mod.CommunalHelper.Entities.CustomCassetteBlock::CassetteBlock_Update
++ IL_0034: ldc.i4 1205261 @ Celeste.Mod.CommunalHelper.Entities.CustomCassetteBlock::CassetteBlock_Update
++ IL_0039: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.CustomCassetteBlock::CassetteBlock_Update
+  |-> retrieves System.Collections.Generic.List`1[[Celeste.CassetteBlock, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.CommunalHelper.Entities.CustomCassetteBlock/<>c::<CassetteBlock_Update>b__32_1(System.Collections.Generic.List`1[[Celeste.CassetteBlock, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_003e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Collections.Generic.List`1<Celeste.CassetteBlock>,System.Collections.Generic.List`1<Celeste.CassetteBlock>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.CustomCassetteBlock::CassetteBlock_Update
+  IL_0043: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.CassetteBlock>::GetEnumerator()
+  IL_0048: stloc.1
+  IL_0049: br IL_0066
+  IL_004e: ldloca.s V_1
+  IL_0050: call T System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::get_Current()
+  IL_0055: callvirt System.Boolean Celeste.CassetteBlock::BlockedCheck()
+  IL_005a: brfalse IL_0066
+  IL_005f: ldc.i4.1
+  IL_0060: stloc.0
+  IL_0061: leave IL_0085
+  IL_0066: ldloca.s V_1
+  IL_0068: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::MoveNext()
+  IL_006d: brtrue IL_004e
+  IL_0072: leave IL_0085
+  IL_0077: ldloca.s V_1
+  IL_0079: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>
+  IL_007f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0084: endfinally
+  IL_0085: ldloc.0
+  IL_0086: brtrue IL_010f
+  IL_008b: ldarg.0
+  IL_008c: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_0091: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.CassetteBlock>::GetEnumerator()
+  IL_0096: stloc.1
+  IL_0097: br IL_00b6
+  IL_009c: ldloca.s V_1
+  IL_009e: call T System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::get_Current()
+  IL_00a3: dup
+  IL_00a4: ldc.i4.1
+  IL_00a5: stfld System.Boolean Monocle.Entity::Collidable
+  IL_00aa: dup
+  IL_00ab: callvirt System.Void Celeste.Platform::EnableStaticMovers()
+  IL_00b0: ldc.i4.m1
+  IL_00b1: callvirt System.Void Celeste.CassetteBlock::ShiftSize(System.Int32)
+  IL_00b6: ldloca.s V_1
+  IL_00b8: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::MoveNext()
+  IL_00bd: brtrue IL_009c
+  IL_00c2: leave IL_00d5
+  IL_00c7: ldloca.s V_1
+  IL_00c9: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>
+  IL_00cf: callvirt System.Void System.IDisposable::Dispose()
+  IL_00d4: endfinally
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Monocle.Wiggler Celeste.CassetteBlock::wiggler
+  IL_00db: callvirt System.Void Monocle.Wiggler::Start()
+  IL_00e0: br IL_010f
+  IL_00e5: ldarg.0
+  IL_00e6: ldfld System.Boolean Celeste.CassetteBlock::Activated
+  IL_00eb: brtrue IL_010f
+  IL_00f0: ldarg.0
+  IL_00f1: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_00f6: brfalse IL_010f
+  IL_00fb: ldarg.0
+  IL_00fc: ldc.i4.1
+  IL_00fd: callvirt System.Void Celeste.CassetteBlock::ShiftSize(System.Int32)
+  IL_0102: ldarg.0
+  IL_0103: ldc.i4.0
+  IL_0104: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0109: ldarg.0
+  IL_010a: call System.Void Celeste.Platform::DisableStaticMovers()
+  IL_010f: ldarg.0
+  IL_0110: callvirt System.Void Celeste.CassetteBlock::UpdateVisualState()
+  IL_0115: ret
