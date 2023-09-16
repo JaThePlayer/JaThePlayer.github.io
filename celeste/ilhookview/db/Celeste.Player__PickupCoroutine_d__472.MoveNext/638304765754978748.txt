@@ -1,0 +1,227 @@
+IL Diff: System.Boolean Celeste.Player/<PickupCoroutine>d__472::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Player/<PickupCoroutine>d__472::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Player Celeste.Player/<PickupCoroutine>d__472::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_01c5
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.Player/<PickupCoroutine>d__472::<>1__state
+  IL_0024: newobj System.Void Celeste.Player/<>c__DisplayClass472_0::.ctor()
+  IL_0029: stloc.2
+  IL_002a: ldloc.2
+  IL_002b: ldarg.0
+  IL_002c: ldfld Celeste.Player Celeste.Player/<PickupCoroutine>d__472::<>4__this
+  IL_0031: stfld Celeste.Player Celeste.Player/<>c__DisplayClass472_0::<>4__this
+  IL_0036: ldloc.1
+  IL_0037: ldstr "event:/char/madeline/crystaltheo_lift"
+  IL_003c: ldnull
+  IL_003d: ldc.r4 0
+  IL_0042: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0047: pop
+  IL_0048: ldc.i4.1
+  IL_0049: ldc.i4.0
+  IL_004a: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_004f: ldloc.1
+  IL_0050: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0055: brfalse IL_00d0
+  IL_005a: ldloc.1
+  IL_005b: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0060: ldfld System.Boolean Celeste.Holdable::SlowFall
+  IL_0065: brfalse IL_00d0
+  IL_006a: ldloc.1
+  IL_006b: ldfld System.Single Celeste.Player::gliderBoostTimer
+  IL_0070: ldc.r4 0.16
+  IL_0075: sub
+  IL_0076: ldc.r4 0
+  IL_007b: ble.un IL_0095
+  IL_0080: ldloc.1
+  IL_0081: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::gliderBoostDir
+  IL_0086: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_008b: ldc.r4 0
+  IL_0090: blt IL_00bf
+  IL_0095: ldloc.1
+  IL_0096: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_009b: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_00a0: ldc.r4 180
+  IL_00a5: ble.un IL_00d0
+  IL_00aa: ldloc.1
+  IL_00ab: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00b0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b5: ldc.r4 0
+  IL_00ba: bgt.un IL_00d0
+  IL_00bf: ldstr "event:/new_content/game/10_farewell/glider_platform_dissipate"
+  IL_00c4: ldloc.1
+  IL_00c5: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00ca: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00cf: pop
+  IL_00d0: ldarg.0
+  IL_00d1: ldloc.1
+  IL_00d2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00d7: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player/<PickupCoroutine>d__472::<oldSpeed>5__2
+  IL_00dc: ldarg.0
+  IL_00dd: ldloc.1
+  IL_00de: ldfld System.Single Celeste.Player::varJumpTimer
+  IL_00e3: stfld System.Single Celeste.Player/<PickupCoroutine>d__472::<varJump>5__3
+  IL_00e8: ldloc.1
+  IL_00e9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00ee: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00f3: ldloc.1
+  IL_00f4: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00f9: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_00fe: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0103: ldloc.1
+  IL_0104: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0109: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_010e: ldc.i4 5062 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
++ IL_0113: ldc.i4 34550884 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
++ IL_0118: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_011d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
+  IL_0122: stloc.3
+  IL_0123: ldsfld Microsoft.Xna.Framework.Vector2 Celeste.Player::CarryOffsetTarget
+  IL_0128: stloc.s V_4
+  IL_012a: ldloca.s V_5
+  IL_012c: ldloc.3
+  IL_012d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0132: ldloc.3
+  IL_0133: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0138: call System.Int32 System.Math::Sign(System.Single)
+  IL_013d: ldc.i4.2
+  IL_013e: mul
+  IL_013f: conv.r4
+  IL_0140: add
+  IL_0141: ldsfld Microsoft.Xna.Framework.Vector2 Celeste.Player::CarryOffsetTarget
+  IL_0146: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_014b: ldc.r4 2
+  IL_0150: sub
+  IL_0151: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0156: ldloc.2
+  IL_0157: ldloc.3
+  IL_0158: ldloc.s V_4
+  IL_015a: ldloc.s V_5
+  IL_015c: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0161: stfld Monocle.SimpleCurve Celeste.Player/<>c__DisplayClass472_0::curve
+  IL_0166: ldloc.1
+  IL_0167: ldloc.3
+  IL_0168: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::carryOffset
+  IL_016d: ldc.i4.1
+  IL_016e: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_0173: ldc.r4 0.16
++ IL_0178: ldc.i4 5060 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
++ IL_017d: ldc.i4 2624964 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
++ IL_0182: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
+  |-> retrieves System.Single ExtendedVariants.Variants.PickupDuration::<hookPickupCoroutine>b__6_0(System.Single)
++ IL_0187: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
+  IL_018c: ldc.i4.1
+  IL_018d: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_0192: stloc.s V_6
+  IL_0194: ldloc.s V_6
+  IL_0196: ldloc.2
+  IL_0197: ldftn System.Void Celeste.Player/<>c__DisplayClass472_0::<PickupCoroutine>b__0(Monocle.Tween)
+  IL_019d: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_01a2: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_01a7: ldloc.1
+  IL_01a8: ldloc.s V_6
+  IL_01aa: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01af: ldarg.0
+  IL_01b0: ldloc.s V_6
+  IL_01b2: callvirt System.Collections.IEnumerator Monocle.Tween::Wait()
+  IL_01b7: stfld System.Object Celeste.Player/<PickupCoroutine>d__472::<>2__current
+  IL_01bc: ldarg.0
+  IL_01bd: ldc.i4.1
+  IL_01be: stfld System.Int32 Celeste.Player/<PickupCoroutine>d__472::<>1__state
+  IL_01c3: ldc.i4.1
+  IL_01c4: ret
+  IL_01c5: ldarg.0
+  IL_01c6: ldc.i4.m1
+  IL_01c7: stfld System.Int32 Celeste.Player/<PickupCoroutine>d__472::<>1__state
+  IL_01cc: ldloc.1
+  IL_01cd: ldarg.0
+  IL_01ce: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player/<PickupCoroutine>d__472::<oldSpeed>5__2
+  IL_01d3: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01d8: ldloc.1
+  IL_01d9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01de: ldloc.1
+  IL_01df: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01e4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01e9: ldc.r4 0
+  IL_01ee: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_01f3: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01f8: ldloc.1
+  IL_01f9: ldarg.0
+  IL_01fa: ldfld System.Single Celeste.Player/<PickupCoroutine>d__472::<varJump>5__3
+  IL_01ff: stfld System.Single Celeste.Player::varJumpTimer
+  IL_0204: ldloc.1
+  IL_0205: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_020a: ldc.i4.0
+  IL_020b: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0210: ldloc.1
+  IL_0211: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0216: brfalse IL_02f3
+  IL_021b: ldloc.1
+  IL_021c: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0221: ldfld System.Boolean Celeste.Holdable::SlowFall
+  IL_0226: brfalse IL_02f3
+  IL_022b: ldloc.1
+  IL_022c: ldfld System.Single Celeste.Player::gliderBoostTimer
+  IL_0231: ldc.r4 0
+  IL_0236: ble.un IL_0298
+  IL_023b: ldloc.1
+  IL_023c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::gliderBoostDir
+  IL_0241: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0246: ldc.r4 0
+  IL_024b: bge.un IL_0298
+  IL_0250: ldc.i4.1
+  IL_0251: ldc.i4.0
+  IL_0252: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0257: ldloc.1
+  IL_0258: ldc.r4 0
+  IL_025d: stfld System.Single Celeste.Player::gliderBoostTimer
+  IL_0262: ldloc.1
+  IL_0263: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0268: ldloc.1
+  IL_0269: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_026e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0273: ldc.r4 -240
+  IL_0278: ldloc.1
+  IL_0279: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::gliderBoostDir
+  IL_027e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0283: call System.Single System.Math::Abs(System.Single)
+  IL_0288: mul
+  IL_0289: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_028e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0293: br IL_02cd
+  IL_0298: ldloc.1
+  IL_0299: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_029e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02a3: ldc.r4 0
+  IL_02a8: bge.un IL_02cd
+  IL_02ad: ldloc.1
+  IL_02ae: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_02b3: ldloc.1
+  IL_02b4: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_02b9: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02be: ldc.r4 -105
+  IL_02c3: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_02c8: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02cd: ldloc.1
+  IL_02ce: ldfld System.Boolean Celeste.Player::onGround
+  IL_02d3: brfalse IL_02f3
+  IL_02d8: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveY
+  IL_02dd: call System.Single Monocle.VirtualIntegerAxis::op_Implicit(Monocle.VirtualIntegerAxis)
+  IL_02e2: ldc.r4 1
+  IL_02e7: bne.un IL_02f3
+  IL_02ec: ldloc.1
+  IL_02ed: ldc.i4.1
+  IL_02ee: stfld System.Boolean Celeste.Player::holdCannotDuck
+  IL_02f3: ldc.i4.0
+  IL_02f4: ret

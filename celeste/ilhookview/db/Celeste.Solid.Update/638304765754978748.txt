@@ -1,0 +1,96 @@
+IL Diff: System.Void Celeste.Solid::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Platform::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldarg.0
+  IL_0008: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Solid::Speed
+  IL_000d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0012: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0017: mul
+  IL_0018: call System.Void Celeste.Platform::MoveH(System.Single)
+  IL_001d: ldarg.0
+  IL_001e: ldarg.0
+  IL_001f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Solid::Speed
+  IL_0024: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0029: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_002e: mul
+  IL_002f: call System.Void Celeste.Platform::MoveV(System.Single)
+  IL_0034: ldarg.0
+  IL_0035: ldfld System.Boolean Celeste.Solid::EnableAssistModeChecks
+  IL_003a: brfalse IL_0140
+  IL_003f: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0044: brfalse IL_0140
+  IL_0049: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_004e: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0053: ldfld System.Boolean Celeste.Assists::Invincible
+  IL_0058: brfalse IL_0140
+  IL_005d: ldarg.0
+  IL_005e: call Monocle.ComponentList Monocle.Entity::get_Components()
+  IL_0063: callvirt T Monocle.ComponentList::Get<Celeste.SolidOnInvinciblePlayer>()
+  IL_0068: brtrue IL_0140
+  IL_006d: ldarg.0
+  IL_006e: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0073: brfalse IL_0140
+  IL_0078: ldarg.0
+  IL_0079: call T Monocle.Entity::CollideFirst<Celeste.Player>()
+  IL_007e: stloc.0
+  IL_007f: ldarg.0
+  IL_0080: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0085: isinst Celeste.Level
+  IL_008a: stloc.1
+  IL_008b: ldloc.0
+  IL_008c: brtrue IL_00c2
+  IL_0091: ldarg.0
+  IL_0092: call System.Single Monocle.Entity::get_Bottom()
+  IL_0097: ldloc.1
+  IL_0098: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_009d: stloc.2
+  IL_009e: ldloca.s V_2
+  IL_00a0: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_00a5: conv.r4
+  IL_00a6: ble.un IL_00c2
+  IL_00ab: ldarg.0
+  IL_00ac: ldarg.0
+  IL_00ad: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00b7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00bc: call T Monocle.Entity::CollideFirst<Celeste.Player>(Microsoft.Xna.Framework.Vector2)
+  IL_00c1: stloc.0
+  IL_00c2: ldloc.0
+  IL_00c3: brfalse IL_0118
+  IL_00c8: ldloc.0
+  IL_00c9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00ce: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_00d3: dup @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00d4: ldc.i4 4132 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00d9: ldc.i4 494499 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00de: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c__DisplayClass44_0::<Check_State_DreamDash>b__1(System.Int32)
++ IL_00e3: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00e8: brfalse IL_00f3 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00ed: pop @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
++ IL_00ee: br IL_0118 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__58_3
+  IL_00f3: ldc.i4.s 9
+  IL_00f5: beq IL_0118
+  IL_00fa: ldloc.0
+  IL_00fb: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0100: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0105: ldc.i4.s 21
+  IL_0107: beq IL_0118
+  IL_010c: ldarg.0
+  IL_010d: newobj System.Void Celeste.SolidOnInvinciblePlayer::.ctor()
+  IL_0112: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0117: ret
+  IL_0118: ldarg.0
+  IL_0119: call T Monocle.Entity::CollideFirst<Celeste.TheoCrystal>()
+  IL_011e: stloc.3
+  IL_011f: ldloc.3
+  IL_0120: brfalse IL_0140
+  IL_0125: ldloc.3
+  IL_0126: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_012b: callvirt System.Boolean Celeste.Holdable::get_IsHeld()
+  IL_0130: brtrue IL_0140
+  IL_0135: ldarg.0
+  IL_0136: newobj System.Void Celeste.SolidOnInvinciblePlayer::.ctor()
+  IL_013b: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0140: ret

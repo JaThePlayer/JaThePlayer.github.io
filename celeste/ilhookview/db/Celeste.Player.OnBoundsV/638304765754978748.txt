@@ -1,0 +1,23 @@
+IL Diff: System.Void Celeste.Player::OnBoundsV()
+  IL_0000: ldarg.0
+  IL_0001: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0006: ldc.r4 0
+  IL_000b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0010: ldarg.0
+  IL_0011: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0016: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_001b: ldc.i4.5
++ IL_001c: ldarg.0 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashState
++ IL_001d: ldc.i4 3560 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_3
++ IL_0022: ldc.i4 37235755 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_3
++ IL_0027: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_3
+  |-> retrieves System.Int32 VivHelper.Entities.Boosters.BoostFunctions/<>c::<TranslateRedDash>b__2_0(System.Int32,Celeste.Player)
++ IL_002c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_3
++ IL_0031: ldarg.0 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_3
++ IL_0032: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashState
+  IL_0037: bne.un IL_0048
+  IL_003c: ldarg.0
+  IL_003d: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0042: ldc.i4.0
+  IL_0043: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0048: ret

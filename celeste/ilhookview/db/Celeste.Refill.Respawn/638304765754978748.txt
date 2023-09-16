@@ -1,0 +1,72 @@
+IL Diff: System.Void Celeste.Refill::Respawn()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0006: brtrue IL_00f4
+  IL_000b: ldarg.0
+  IL_000c: ldc.i4.1
+  IL_000d: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0012: ldarg.0
+  IL_0013: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_0018: ldc.i4.1
+  IL_0019: stfld System.Boolean Monocle.Component::Visible
+  IL_001e: ldarg.0
+  IL_001f: ldfld Monocle.Image Celeste.Refill::outline
+  IL_0024: ldc.i4.0
+  IL_0025: stfld System.Boolean Monocle.Component::Visible
+  IL_002a: ldarg.0
+  IL_002b: ldc.i4.s -100
+  IL_002d: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0032: ldarg.0
+  IL_0033: ldfld Monocle.Wiggler Celeste.Refill::wiggler
+  IL_0038: callvirt System.Void Monocle.Wiggler::Start()
+  IL_003d: ldarg.0
+  IL_003e: ldfld System.Boolean Celeste.Refill::twoDashes
+  IL_0043: brtrue IL_0067
+  IL_0048: ldstr "event:/game/general/diamond_return"
++ IL_004d: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_004e: ldc.i4 6231 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_0053: ldc.i4 14089580 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_0058: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.DashStates.DashStateRefill/<>c::<Refill_Respawn>b__20_2(System.String,Celeste.Refill)
++ IL_005d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Refill>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
+  IL_0062: br IL_006c
+  IL_0067: ldstr "event:/new_content/game/10_farewell/pinkdiamond_return"
+  IL_006c: ldarg.0
+  IL_006d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
++ IL_0072: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0073: isinst Celeste.Mod.Procedurline.CustomRefill @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0078: brfalse IL_00a7 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_007d: stloc V_0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0081: dup @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0082: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0083: castclass Celeste.Mod.Procedurline.CustomRefill @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0088: call System.String Celeste.Mod.Procedurline.CustomRefill::get_RespawnSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_008d: call System.Boolean System.String::Equals(System.String) @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0092: brfalse IL_00a3 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0097: pop @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0098: ldarg.0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_0099: castclass Celeste.Mod.Procedurline.CustomRefill @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_009e: callvirt System.String Celeste.Mod.Procedurline.CustomRefill::get_RespawnSFX() @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
++ IL_00a3: ldloc V_0 @ Celeste.Mod.Procedurline.PatchUtils+<>c__DisplayClass11_0::<PatchSFX>b__0
+  IL_00a7: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00ac: pop
+  IL_00ad: ldarg.0
++ IL_00ae: ldc.i4 6229 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_00b3: ldc.i4 23372071 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_00b8: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DashStateRefill/<>c__DisplayClass21_0::<PatchRefillParticles>b__1(Celeste.Refill)
++ IL_00bd: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Refill>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_00c2: brtrue IL_00f4 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
++ IL_00c7: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Respawn
+  IL_00c8: ldfld Celeste.Level Celeste.Refill::level
+  IL_00cd: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00d2: ldarg.0
+  IL_00d3: ldfld Monocle.ParticleType Celeste.Refill::p_regen
+  IL_00d8: ldc.i4.s 16
+  IL_00da: ldarg.0
+  IL_00db: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00e0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00e5: ldc.r4 2
+  IL_00ea: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ef: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f4: ret

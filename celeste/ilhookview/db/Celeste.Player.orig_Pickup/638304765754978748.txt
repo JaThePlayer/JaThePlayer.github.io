@@ -1,0 +1,23 @@
+IL Diff: System.Boolean Celeste.Player::orig_Pickup(Celeste.Holdable)
+  IL_0000: ldarg.1
+  IL_0001: ldarg.0
+  IL_0002: callvirt System.Boolean Celeste.Holdable::Pickup(Celeste.Player)
+  IL_0007: brfalse IL_003b
+  IL_000c: ldarg.0
+  IL_000d: ldc.i4.0
+  IL_000e: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_0013: ldarg.0
+  IL_0014: ldarg.1
+  IL_0015: callvirt System.Void Celeste.Player::set_Holding(Celeste.Holdable)
+  IL_001a: ldarg.0
+  IL_001b: ldc.r4 0.35
++ IL_0020: ldc.i4 6335 @ ExtendedVariants.Variants.MinimumDelayBeforeThrowing::hookOrigPickup
++ IL_0025: ldc.i4 40441089 @ ExtendedVariants.Variants.MinimumDelayBeforeThrowing::hookOrigPickup
++ IL_002a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MinimumDelayBeforeThrowing::hookOrigPickup
+  |-> retrieves System.Single ExtendedVariants.Variants.MinimumDelayBeforeThrowing::<hookOrigPickup>b__6_0(System.Single)
++ IL_002f: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.MinimumDelayBeforeThrowing::hookOrigPickup
+  IL_0034: stfld System.Single Celeste.Player::minHoldTimer
+  IL_0039: ldc.i4.1
+  IL_003a: ret
+  IL_003b: ldc.i4.0
+  IL_003c: ret

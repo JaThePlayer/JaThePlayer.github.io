@@ -1,0 +1,72 @@
+IL Diff: System.Boolean Celeste.Player/<RedDashCoroutine>d__454::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Player/<RedDashCoroutine>d__454::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Player Celeste.Player/<RedDashCoroutine>d__454::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_0034
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.Player/<RedDashCoroutine>d__454::<>1__state
+  IL_0024: ldarg.0
+  IL_0025: ldnull
+  IL_0026: stfld System.Object Celeste.Player/<RedDashCoroutine>d__454::<>2__current
+  IL_002b: ldarg.0
+  IL_002c: ldc.i4.1
+  IL_002d: stfld System.Int32 Celeste.Player/<RedDashCoroutine>d__454::<>1__state
+  IL_0032: ldc.i4.1
+  IL_0033: ret
+  IL_0034: ldarg.0
+  IL_0035: ldc.i4.m1
+  IL_0036: stfld System.Int32 Celeste.Player/<RedDashCoroutine>d__454::<>1__state
+  IL_003b: ldloc.1
+  IL_003c: ldloc.1
+  IL_003d: ldloc.1
+  IL_003e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::lastAim
+  IL_0043: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::CorrectDashPrecision(Microsoft.Xna.Framework.Vector2)
+  IL_0048: ldc.r4 240
++ IL_004d: ldc.i4 6244 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0052: ldc.i4 32492635 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0057: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
+  |-> retrieves System.Single ExtendedVariants.Variants.DashSpeed::getDashSpeedMultiplier()
++ IL_005c: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0061: mul @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
+  IL_0062: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0067: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_006c: ldloc.1
+  IL_006d: ldloc.1
+  IL_006e: ldloc.1
+  IL_006f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::lastAim
+  IL_0074: dup
+  IL_0075: stloc.2
+  IL_0076: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_007b: ldloc.2
+  IL_007c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::gliderBoostDir
+  IL_0081: ldloc.1
+  IL_0082: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0087: ldloc.1
+  IL_0088: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_008d: ldc.r4 0.2
+  IL_0092: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0097: ldloc.1
+  IL_0098: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_009d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00a2: ldc.r4 0
+  IL_00a7: beq IL_00c2
+  IL_00ac: ldloc.1
+  IL_00ad: ldloc.1
+  IL_00ae: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00b3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00b8: call System.Int32 System.Math::Sign(System.Single)
+  IL_00bd: stfld Celeste.Facings Celeste.Player::Facing
+  IL_00c2: ldloc.1
+  IL_00c3: callvirt System.Void Celeste.Player::CallDashEvents()
+  IL_00c8: ldc.i4.0
+  IL_00c9: ret

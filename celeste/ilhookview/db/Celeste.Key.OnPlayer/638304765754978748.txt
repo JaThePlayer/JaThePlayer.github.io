@@ -1,0 +1,72 @@
+IL Diff: System.Void Celeste.Key::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_000b: ldsfld Monocle.ParticleType Celeste.Key::P_Collect
+  IL_0010: ldc.i4.s 10
+  IL_0012: ldarg.0
+  IL_0013: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0018: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_001d: ldc.r4 3
+  IL_0022: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0027: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_002c: ldstr "event:/game/general/key_get"
+  IL_0031: ldarg.0
+  IL_0032: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0037: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_003c: pop
+  IL_003d: ldc.i4.1
+  IL_003e: ldc.i4.1
+  IL_003f: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0044: ldarg.1
+  IL_0045: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_004a: ldarg.0
+  IL_004b: ldfld Celeste.Follower Celeste.Key::follower
+  IL_0050: callvirt System.Void Celeste.Leader::GainFollower(Celeste.Follower)
+  IL_0055: ldarg.0
+  IL_0056: ldc.i4.0
+  IL_0057: stfld System.Boolean Monocle.Entity::Collidable
+  IL_005c: ldarg.0
+  IL_005d: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0062: ldfld Celeste.Session Celeste.Level::Session
+  IL_0067: dup
+  IL_0068: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::DoNotLoad
+  IL_006d: ldarg.0
+  IL_006e: ldfld Celeste.EntityID Celeste.Key::ID
+  IL_0073: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_0078: pop
+  IL_0079: dup
+  IL_007a: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Keys
+  IL_007f: ldarg.0
+  IL_0080: ldfld Celeste.EntityID Celeste.Key::ID
+  IL_0085: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_008a: pop
+  IL_008b: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
++ IL_0090: ldc.i4 3171 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0095: ldc.i4 49986643 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_009a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
++ IL_009f: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  IL_00a4: ldarg.0
+  IL_00a5: ldfld Monocle.Wiggler Celeste.Key::wiggler
+  IL_00aa: callvirt System.Void Monocle.Wiggler::Start()
+  IL_00af: ldarg.0
+  IL_00b0: ldc.i4 -1000000
+  IL_00b5: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Key::nodes
+  IL_00c0: brfalse IL_00e6
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Key::nodes
+  IL_00cb: ldlen
+  IL_00cc: conv.i4
+  IL_00cd: ldc.i4.2
+  IL_00ce: blt IL_00e6
+  IL_00d3: ldarg.0
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.1
+  IL_00d6: callvirt System.Collections.IEnumerator Celeste.Key::NodeRoutine(Celeste.Player)
+  IL_00db: ldc.i4.1
+  IL_00dc: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_00e1: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00e6: ret

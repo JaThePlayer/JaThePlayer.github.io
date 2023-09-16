@@ -1,0 +1,306 @@
+IL Diff: System.Void Celeste.SwapBlock::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Vector2,Celeste.SwapBlock+Themes)
+  IL_0000: ldarg.0
+  IL_0001: ldc.r4 1
+  IL_0006: stfld System.Single Celeste.SwapBlock::redAlpha
+  IL_000b: ldarg.0
+  IL_000c: ldarg.1
+  IL_000d: ldarg.2
+  IL_000e: ldarg.3
+  IL_000f: ldc.i4.0
+  IL_0010: call System.Void Celeste.Solid::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Boolean)
+  IL_0015: ldarg.0
+  IL_0016: ldarg.s theme
+  IL_0018: stfld Celeste.SwapBlock/Themes Celeste.SwapBlock::Theme
+  IL_001d: ldarg.0
+  IL_001e: ldarg.0
+  IL_001f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0024: stfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_0029: ldarg.0
+  IL_002a: ldarg.s node
+  IL_002c: stfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_0031: ldarg.0
+  IL_0032: ldc.r4 360
+  IL_0037: ldarg.0
+  IL_0038: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_003d: ldarg.0
+  IL_003e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_0043: call System.Single Microsoft.Xna.Framework.Vector2::Distance(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0048: div
+  IL_0049: stfld System.Single Celeste.SwapBlock::maxForwardSpeed
+  IL_004e: ldarg.0
+  IL_004f: ldarg.0
+  IL_0050: ldfld System.Single Celeste.SwapBlock::maxForwardSpeed
+  IL_0055: ldc.r4 0.4
+  IL_005a: mul
+  IL_005b: stfld System.Single Celeste.SwapBlock::maxBackwardSpeed
+  IL_0060: ldarg.0
+  IL_0061: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::Direction
+  IL_0066: ldarg.0
+  IL_0067: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_006c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0071: ldarg.0
+  IL_0072: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_0077: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_007c: sub
+  IL_007d: call System.Int32 System.Math::Sign(System.Single)
+  IL_0082: conv.r4
+  IL_0083: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0088: ldarg.0
+  IL_0089: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::Direction
+  IL_008e: ldarg.0
+  IL_008f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_0094: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0099: ldarg.0
+  IL_009a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_009f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a4: sub
+  IL_00a5: call System.Int32 System.Math::Sign(System.Single)
+  IL_00aa: conv.r4
+  IL_00ab: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b0: newobj System.Void Celeste.DashListener::.ctor()
+  IL_00b5: stloc.0
+  IL_00b6: ldloc.0
+  IL_00b7: ldarg.0
+  IL_00b8: ldftn System.Void Celeste.SwapBlock::OnDash(Microsoft.Xna.Framework.Vector2)
+  IL_00be: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_00c3: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.DashListener::OnDash
+  IL_00c8: ldarg.0
+  IL_00c9: ldloc.0
+  IL_00ca: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00cf: ldarg.0
+  IL_00d0: call System.Single Monocle.Entity::get_X()
+  IL_00d5: ldarg.s node
+  IL_00d7: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00dc: call System.Single Microsoft.Xna.Framework.MathHelper::Min(System.Single,System.Single)
+  IL_00e1: conv.i4
+  IL_00e2: stloc.1
+  IL_00e3: ldarg.0
+  IL_00e4: call System.Single Monocle.Entity::get_Y()
+  IL_00e9: ldarg.s node
+  IL_00eb: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00f0: call System.Single Microsoft.Xna.Framework.MathHelper::Min(System.Single,System.Single)
+  IL_00f5: conv.i4
+  IL_00f6: stloc.2
+  IL_00f7: ldarg.0
+  IL_00f8: call System.Single Monocle.Entity::get_X()
+  IL_00fd: ldarg.0
+  IL_00fe: call System.Single Monocle.Entity::get_Width()
+  IL_0103: add
+  IL_0104: ldarg.s node
+  IL_0106: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_010b: ldarg.0
+  IL_010c: call System.Single Monocle.Entity::get_Width()
+  IL_0111: add
+  IL_0112: call System.Single Microsoft.Xna.Framework.MathHelper::Max(System.Single,System.Single)
+  IL_0117: conv.i4
+  IL_0118: stloc.3
+  IL_0119: ldarg.0
+  IL_011a: call System.Single Monocle.Entity::get_Y()
+  IL_011f: ldarg.0
+  IL_0120: call System.Single Monocle.Entity::get_Height()
+  IL_0125: add
+  IL_0126: ldarg.s node
+  IL_0128: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_012d: ldarg.0
+  IL_012e: call System.Single Monocle.Entity::get_Height()
+  IL_0133: add
+  IL_0134: call System.Single Microsoft.Xna.Framework.MathHelper::Max(System.Single,System.Single)
+  IL_0139: conv.i4
+  IL_013a: stloc.s V_4
+  IL_013c: ldarg.0
+  IL_013d: ldloc.1
+  IL_013e: ldloc.2
+  IL_013f: ldloc.3
+  IL_0140: ldloc.1
+  IL_0141: sub
+  IL_0142: ldloc.s V_4
+  IL_0144: ldloc.2
+  IL_0145: sub
+  IL_0146: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_014b: stfld Microsoft.Xna.Framework.Rectangle Celeste.SwapBlock::moveRect
+  IL_0150: ldarg.0
+  IL_0151: ldfld Celeste.SwapBlock/Themes Celeste.SwapBlock::Theme
+  IL_0156: ldc.i4.1
+  IL_0157: bne.un IL_0194
+  IL_015c: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0161: ldstr "objects/swapblock/moon/block"
+  IL_0166: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_016b: stloc.s V_5
+  IL_016d: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0172: ldstr "objects/swapblock/moon/blockRed"
+  IL_0177: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_017c: stloc.s V_6
+  IL_017e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0183: ldstr "objects/swapblock/moon/target"
+  IL_0188: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_018d: stloc.s V_7
+  IL_018f: br IL_0206
+  IL_0194: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0199: ldstr "objects/swapblock/block"
++ IL_019e: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_019f: ldc.i4 6065 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01a4: ldc.i4 37785308 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01a9: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c::<modSwapBlockTextures>b__7_0(System.String,Celeste.SwapBlock)
++ IL_01ae: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  IL_01b3: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_01b8: stloc.s V_5
+  IL_01ba: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_01bf: ldstr "objects/swapblock/blockRed"
++ IL_01c4: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01c5: ldc.i4 6067 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01ca: ldc.i4 40711117 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01cf: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c::<modSwapBlockTextures>b__7_0(System.String,Celeste.SwapBlock)
++ IL_01d4: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  IL_01d9: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_01de: stloc.s V_6
+  IL_01e0: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_01e5: ldstr "objects/swapblock/target"
++ IL_01ea: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01eb: ldc.i4 6069 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01f0: ldc.i4 9266182 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
++ IL_01f5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c::<modSwapBlockTextures>b__7_0(System.String,Celeste.SwapBlock)
++ IL_01fa: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockTexturesInConstructor
+  IL_01ff: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0204: stloc.s V_7
+  IL_0206: ldarg.0
+  IL_0207: ldc.i4.3
+  IL_0208: ldc.i4.3
+  IL_0209: newobj System.Void Monocle.MTexture[0...,0...]::.ctor(System.Int32,System.Int32)
+  IL_020e: stfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceGreen
+  IL_0213: ldarg.0
+  IL_0214: ldc.i4.3
+  IL_0215: ldc.i4.3
+  IL_0216: newobj System.Void Monocle.MTexture[0...,0...]::.ctor(System.Int32,System.Int32)
+  IL_021b: stfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceRed
+  IL_0220: ldarg.0
+  IL_0221: ldc.i4.3
+  IL_0222: ldc.i4.3
+  IL_0223: newobj System.Void Monocle.MTexture[0...,0...]::.ctor(System.Int32,System.Int32)
+  IL_0228: stfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceTarget
+  IL_022d: ldc.i4.0
+  IL_022e: stloc.s V_8
+  IL_0230: br IL_02c0
+  IL_0235: ldc.i4.0
+  IL_0236: stloc.s V_9
+  IL_0238: br IL_02b2
+  IL_023d: ldarg.0
+  IL_023e: ldfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceGreen
+  IL_0243: ldloc.s V_8
+  IL_0245: ldloc.s V_9
+  IL_0247: ldloc.s V_5
+  IL_0249: ldloc.s V_8
+  IL_024b: ldc.i4.8
+  IL_024c: mul
+  IL_024d: ldloc.s V_9
+  IL_024f: ldc.i4.8
+  IL_0250: mul
+  IL_0251: ldc.i4.8
+  IL_0252: ldc.i4.8
+  IL_0253: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0258: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(Microsoft.Xna.Framework.Rectangle)
+  IL_025d: call System.Void Monocle.MTexture[0...,0...]::Set(System.Int32,System.Int32,Monocle.MTexture)
+  IL_0262: ldarg.0
+  IL_0263: ldfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceRed
+  IL_0268: ldloc.s V_8
+  IL_026a: ldloc.s V_9
+  IL_026c: ldloc.s V_6
+  IL_026e: ldloc.s V_8
+  IL_0270: ldc.i4.8
+  IL_0271: mul
+  IL_0272: ldloc.s V_9
+  IL_0274: ldc.i4.8
+  IL_0275: mul
+  IL_0276: ldc.i4.8
+  IL_0277: ldc.i4.8
+  IL_0278: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_027d: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(Microsoft.Xna.Framework.Rectangle)
+  IL_0282: call System.Void Monocle.MTexture[0...,0...]::Set(System.Int32,System.Int32,Monocle.MTexture)
+  IL_0287: ldarg.0
+  IL_0288: ldfld Monocle.MTexture[0...,0...] Celeste.SwapBlock::nineSliceTarget
+  IL_028d: ldloc.s V_8
+  IL_028f: ldloc.s V_9
+  IL_0291: ldloc.s V_7
+  IL_0293: ldloc.s V_8
+  IL_0295: ldc.i4.8
+  IL_0296: mul
+  IL_0297: ldloc.s V_9
+  IL_0299: ldc.i4.8
+  IL_029a: mul
+  IL_029b: ldc.i4.8
+  IL_029c: ldc.i4.8
+  IL_029d: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_02a2: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(Microsoft.Xna.Framework.Rectangle)
+  IL_02a7: call System.Void Monocle.MTexture[0...,0...]::Set(System.Int32,System.Int32,Monocle.MTexture)
+  IL_02ac: ldloc.s V_9
+  IL_02ae: ldc.i4.1
+  IL_02af: add
+  IL_02b0: stloc.s V_9
+  IL_02b2: ldloc.s V_9
+  IL_02b4: ldc.i4.3
+  IL_02b5: blt IL_023d
+  IL_02ba: ldloc.s V_8
+  IL_02bc: ldc.i4.1
+  IL_02bd: add
+  IL_02be: stloc.s V_8
+  IL_02c0: ldloc.s V_8
+  IL_02c2: ldc.i4.3
+  IL_02c3: blt IL_0235
+  IL_02c8: ldarg.0
+  IL_02c9: ldfld Celeste.SwapBlock/Themes Celeste.SwapBlock::Theme
+  IL_02ce: brtrue IL_0318
+  IL_02d3: ldarg.0
+  IL_02d4: ldarg.0
+  IL_02d5: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_02da: ldstr "swapBlockLight"
+  IL_02df: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_02e4: dup
+  IL_02e5: stloc.s V_10
+  IL_02e7: stfld Monocle.Sprite Celeste.SwapBlock::middleGreen
+  IL_02ec: ldloc.s V_10
+  IL_02ee: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_02f3: ldarg.0
+  IL_02f4: ldarg.0
+  IL_02f5: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_02fa: ldstr "swapBlockLightRed"
+  IL_02ff: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0304: dup
+  IL_0305: stloc.s V_10
+  IL_0307: stfld Monocle.Sprite Celeste.SwapBlock::middleRed
+  IL_030c: ldloc.s V_10
+  IL_030e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0313: br IL_0364
+  IL_0318: ldarg.0
+  IL_0319: ldfld Celeste.SwapBlock/Themes Celeste.SwapBlock::Theme
+  IL_031e: ldc.i4.1
+  IL_031f: bne.un IL_0364
+  IL_0324: ldarg.0
+  IL_0325: ldarg.0
+  IL_0326: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_032b: ldstr "swapBlockLightMoon"
+  IL_0330: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0335: dup
+  IL_0336: stloc.s V_10
+  IL_0338: stfld Monocle.Sprite Celeste.SwapBlock::middleGreen
+  IL_033d: ldloc.s V_10
+  IL_033f: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0344: ldarg.0
+  IL_0345: ldarg.0
+  IL_0346: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_034b: ldstr "swapBlockLightRedMoon"
+  IL_0350: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0355: dup
+  IL_0356: stloc.s V_10
+  IL_0358: stfld Monocle.Sprite Celeste.SwapBlock::middleRed
+  IL_035d: ldloc.s V_10
+  IL_035f: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0364: ldarg.0
+  IL_0365: ldc.r4 0.2
+  IL_036a: newobj System.Void Celeste.LightOcclude::.ctor(System.Single)
+  IL_036f: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0374: ldarg.0
+  IL_0375: ldc.i4 -9999
+  IL_037a: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_037f: ret

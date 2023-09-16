@@ -1,0 +1,120 @@
+IL Diff: System.Boolean Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_006a
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>1__state
+  IL_0024: ldloc.1
+  IL_0025: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_002a: brtrue IL_0040
+  IL_002f: ldloc.1
+  IL_0030: callvirt Celeste.Overworld Celeste.Oui::get_Overworld()
+  IL_0035: callvirt T Celeste.Overworld::Goto<Celeste.OuiChapterSelect>()
+  IL_003a: pop
+  IL_003b: br IL_0129
+  IL_0040: ldloc.1
+  IL_0041: ldloc.1
+  IL_0042: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_0047: call System.Int32 System.Math::Sign(System.Int32)
+  IL_004c: stfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_0051: ldarg.0
+  IL_0052: ldc.r4 0.25
+  IL_0057: box System.Single
+  IL_005c: stfld System.Object Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>2__current
+  IL_0061: ldarg.0
+  IL_0062: ldc.i4.1
+  IL_0063: stfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>1__state
+  IL_0068: ldc.i4.1
+  IL_0069: ret
+  IL_006a: ldarg.0
+  IL_006b: ldc.i4.m1
+  IL_006c: stfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet/<Enter>d__2::<>1__state
+  IL_0071: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0076: ldflda Celeste.AreaKey Celeste.SaveData::LastArea_Safe
+  IL_007b: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0080: stloc.2
+  IL_0081: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0086: call System.String Celeste.SaveDataExt::GetLevelSet(Celeste.SaveData)
+  IL_008b: stloc.3
+  IL_008c: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0091: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_0096: stloc.s V_4
+  IL_0098: ldloc.s V_4
+  IL_009a: ldloc.2
+  IL_009b: add
+  IL_009c: ldloc.1
+  IL_009d: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_00a2: add
+  IL_00a3: ldloc.s V_4
+  IL_00a5: rem
+  IL_00a6: stloc.s V_5
+  IL_00a8: br IL_0121
+  IL_00ad: ldloc.s V_5
++ IL_00af: dup @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00b0: ldsfld System.Int32 Celeste.Mod.Procedurline.Demo.DemoMap::DemoMapID @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00b5: ceq @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00b7: brfalse IL_00c3 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00bc: pop @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00bd: ldnull @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_00be: br IL_00c8 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
+  IL_00c3: call Celeste.AreaData Celeste.AreaData::Get(System.Int32)
+  IL_00c8: stloc.s V_6
+  IL_00ca: ldloc.s V_6
+  IL_00cc: brfalse IL_0110
+  IL_00d1: ldloc.s V_6
+  IL_00d3: call System.String Celeste.AreaDataExt::GetLevelSet(Celeste.AreaData)
+  IL_00d8: ldloc.3
+  IL_00d9: call System.Boolean System.String::op_Inequality(System.String,System.String)
++ IL_00de: ldloc.s V_6 @ Celeste.Mod.CollabUtils2.LobbyHelper::modLevelSetSwitch
++ IL_00e0: ldc.i4 3128 @ Celeste.Mod.CollabUtils2.LobbyHelper::modLevelSetSwitch
++ IL_00e5: ldc.i4 49585089 @ Celeste.Mod.CollabUtils2.LobbyHelper::modLevelSetSwitch
++ IL_00ea: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modLevelSetSwitch
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modLevelSetSwitch>b__30_4(System.Boolean,Celeste.AreaData)
++ IL_00ef: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.AreaData>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modLevelSetSwitch
+  IL_00f4: brfalse IL_0110
+  IL_00f9: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00fe: ldloc.s V_6
+  IL_0100: ldc.i4.0
+  IL_0101: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
+  IL_0106: stfld Celeste.AreaKey Celeste.SaveData::LastArea_Safe
+  IL_010b: br IL_0129
+  IL_0110: ldloc.s V_4
+  IL_0112: ldloc.s V_5
+  IL_0114: add
+  IL_0115: ldloc.1
+  IL_0116: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_011b: add
+  IL_011c: ldloc.s V_4
+  IL_011e: rem
+  IL_011f: stloc.s V_5
+  IL_0121: ldloc.s V_5
+  IL_0123: ldloc.2
+  IL_0124: bne.un IL_00ad
+  IL_0129: ldloc.1
+  IL_012a: ldfld System.Int32 Celeste.Mod.UI.OuiHelper_ChapterSelect_LevelSet::Direction
+  IL_012f: ldc.i4.0
+  IL_0130: ble IL_0145
+  IL_0135: ldstr "event:/ui/world_map/chapter/pane_expand"
+  IL_013a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_013f: pop
+  IL_0140: br IL_0150
+  IL_0145: ldstr "event:/ui/world_map/chapter/pane_contract"
+  IL_014a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_014f: pop
+  IL_0150: ldloc.1
+  IL_0151: callvirt Celeste.Overworld Celeste.Oui::get_Overworld()
+  IL_0156: callvirt T Celeste.Overworld::Goto<Celeste.OuiChapterSelect>()
+  IL_015b: pop
+  IL_015c: ldc.i4.0
+  IL_015d: ret

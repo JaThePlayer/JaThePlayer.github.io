@@ -1,0 +1,127 @@
+IL Diff: System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_0000: ldc.i4.3
++ IL_0001: ldc.i4 6172 @ ExtendedVariants.Variants.WallJumpDistance::onPlayerWallJumpCheck
++ IL_0006: ldc.i4 33841763 @ ExtendedVariants.Variants.WallJumpDistance::onPlayerWallJumpCheck
++ IL_000b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.WallJumpDistance::onPlayerWallJumpCheck
+  |-> retrieves System.Int32 ExtendedVariants.Variants.WallJumpDistance::<onPlayerWallJumpCheck>b__5_0(System.Int32)
++ IL_0010: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.WallJumpDistance::onPlayerWallJumpCheck
+  IL_0015: stloc.0
+  IL_0016: ldarg.0
+  IL_0017: callvirt System.Boolean Celeste.Player::get_DashAttacking()
+  IL_001c: brfalse IL_004d
+  IL_0021: ldarg.0
+  IL_0022: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0027: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_002c: ldc.r4 0
+  IL_0031: bne.un IL_004d
+  IL_0036: ldarg.0
+  IL_0037: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_003c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0041: ldc.r4 -1
+  IL_0046: ceq
+  IL_0048: br IL_004e
+  IL_004d: ldc.i4.0
+  IL_004e: stloc.1
++ IL_004f: ldarg.0 @ VivHelper.VivHelperModule::Player_WallJumpCheck
++ IL_0050: ldarg.1 @ VivHelper.VivHelperModule::Player_WallJumpCheck
++ IL_0051: call System.Boolean VivHelper.Entities.RestrictingEntityHooks::AddWallCheck(Celeste.Player,System.Int32) @ VivHelper.VivHelperModule::Player_WallJumpCheck
++ IL_0056: brtrue IL_018a @ VivHelper.VivHelperModule::Player_WallJumpCheck
+  IL_005b: ldloc.1
+  IL_005c: brfalse IL_010f
+  IL_0061: ldarg.1
+  IL_0062: ldc.i4.0
+  IL_0063: ble IL_006f
+  IL_0068: ldc.i4.2
+  IL_0069: stloc.2
+  IL_006a: br IL_0071
+  IL_006f: ldc.i4.3
+  IL_0070: stloc.2
+  IL_0071: ldarg.0
+  IL_0072: ldfld Celeste.Level Celeste.Player::level
+  IL_0077: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_007c: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Spikes>()
+  IL_0081: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0086: stloc.3
+  IL_0087: br IL_00f0
+  IL_008c: ldloca.s V_3
+  IL_008e: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0093: castclass Celeste.Spikes
+  IL_0098: stloc.s V_4
+  IL_009a: ldloc.s V_4
+  IL_009c: ldfld Celeste.Spikes/Directions Celeste.Spikes::Direction
+  IL_00a1: ldloc.2
+  IL_00a2: bne.un IL_00f0
+  IL_00a7: ldarg.0
+  IL_00a8: ldloc.s V_4
+  IL_00aa: ldarg.0
+  IL_00ab: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00b5: ldarg.1
+  IL_00b6: conv.r4
+  IL_00b7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00bc: ldc.r4 5
++ IL_00c1: ldc.i4 6184 @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
++ IL_00c6: ldc.i4 39686994 @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
++ IL_00cb: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
+  |-> retrieves System.Single ExtendedVariants.Variants.WallBounceDistance::<onPlayerWallJumpCheck>b__5_3(System.Single)
++ IL_00d0: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
+  IL_00d5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00da: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00df: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_00e4: brfalse IL_00f0
+  IL_00e9: ldc.i4.0
+  IL_00ea: stloc.1
+  IL_00eb: leave IL_010f
+  IL_00f0: ldloca.s V_3
+  IL_00f2: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00f7: brtrue IL_008c
+  IL_00fc: leave IL_010f
+  IL_0101: ldloca.s V_3
+  IL_0103: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0109: callvirt System.Void System.IDisposable::Dispose()
+  IL_010e: endfinally
+  IL_010f: ldloc.1
++ IL_0110: ldarg.0 @ VivHelper.VivHelperModule::Player_WallJumpCheck
++ IL_0111: ldarg.1 @ VivHelper.VivHelperModule::Player_WallJumpCheck
++ IL_0112: call System.Boolean VivHelper.Entities.CustomSpike::AddWallCheck(System.Boolean,Celeste.Player,System.Int32) @ VivHelper.VivHelperModule::Player_WallJumpCheck
+  IL_0117: brfalse IL_0132
+  IL_011c: ldc.i4.5
++ IL_011d: ldc.i4 6174 @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
++ IL_0122: ldc.i4 56828268 @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
++ IL_0127: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
+  |-> retrieves System.Int32 ExtendedVariants.Variants.WallBounceDistance::<onPlayerWallJumpCheck>b__5_0(System.Int32)
++ IL_012c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.WallBounceDistance::onPlayerWallJumpCheck
+  IL_0131: stloc.0
+  IL_0132: ldarg.0
+  IL_0133: ldarg.1
+  IL_0134: callvirt System.Boolean Celeste.Player::ClimbBoundsCheck(System.Int32)
+  IL_0139: brfalse IL_018a
+  IL_013e: ldarg.0
+  IL_013f: ldfld Celeste.Level Celeste.Player::level
+  IL_0144: ldarg.0
+  IL_0145: ldarg.1
+  IL_0146: ldloc.0
+  IL_0147: mul
+  IL_0148: call System.Boolean Celeste.ClimbBlocker::EdgeCheck(Monocle.Scene,Monocle.Entity,System.Int32)
+  IL_014d: brtrue IL_018a
+  IL_0152: ldarg.0
+  IL_0153: ldarg.0
+  IL_0154: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0159: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_015e: ldarg.1
+  IL_015f: conv.r4
+  IL_0160: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0165: ldloc.0
+  IL_0166: conv.r4
+  IL_0167: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_016c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0171: stloc V_5 @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
++ IL_0175: ldloc V_5 @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
+  IL_0179: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
++ IL_017e: ldarg.0 @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
++ IL_017f: ldarg.1 @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
++ IL_0180: ldloc V_5 @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
++ IL_0184: call System.Boolean VivHelper.SolidModifierComponent::ModifyWallJumpCheck(System.Boolean,Celeste.Player,System.Int32,Microsoft.Xna.Framework.Vector2) @ VivHelper.SolidModifierComponent::Player_WallJumpCheck
+  IL_0189: ret
+  IL_018a: ldc.i4.0
+  IL_018b: ret

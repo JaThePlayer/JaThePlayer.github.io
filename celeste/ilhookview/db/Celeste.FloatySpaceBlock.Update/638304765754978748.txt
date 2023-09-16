@@ -1,0 +1,115 @@
+IL Diff: System.Void Celeste.FloatySpaceBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0006: ldarg.0
+  IL_0007: callvirt System.Boolean Celeste.FloatySpaceBlock::get_MasterOfGroup()
+  IL_000c: brfalse IL_0185
+  IL_0011: ldc.i4.0
+  IL_0012: stloc.0
+  IL_0013: ldarg.0
+  IL_0014: ldfld System.Collections.Generic.List`1<Celeste.FloatySpaceBlock> Celeste.FloatySpaceBlock::Group
+  IL_0019: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.FloatySpaceBlock>::GetEnumerator()
+  IL_001e: stloc.1
+  IL_001f: br IL_003c
+  IL_0024: ldloca.s V_1
+  IL_0026: call T System.Collections.Generic.List`1/Enumerator<Celeste.FloatySpaceBlock>::get_Current()
+  IL_002b: callvirt System.Boolean Celeste.Solid::HasPlayerRider()
+  IL_0030: brfalse IL_003c
+  IL_0035: ldc.i4.1
+  IL_0036: stloc.0
+  IL_0037: leave IL_005b
+  IL_003c: ldloca.s V_1
+  IL_003e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.FloatySpaceBlock>::MoveNext()
+  IL_0043: brtrue IL_0024
+  IL_0048: leave IL_005b
+  IL_004d: ldloca.s V_1
+  IL_004f: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.FloatySpaceBlock>
+  IL_0055: callvirt System.Void System.IDisposable::Dispose()
+  IL_005a: endfinally
+  IL_005b: ldloc.0
+  IL_005c: brtrue IL_00a9
+  IL_0061: ldarg.0
+  IL_0062: ldfld System.Collections.Generic.List`1<Celeste.JumpThru> Celeste.FloatySpaceBlock::Jumpthrus
+  IL_0067: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.JumpThru>::GetEnumerator()
+  IL_006c: stloc.2
+  IL_006d: br IL_008a
+  IL_0072: ldloca.s V_2
+  IL_0074: call T System.Collections.Generic.List`1/Enumerator<Celeste.JumpThru>::get_Current()
+  IL_0079: callvirt System.Boolean Celeste.JumpThru::HasPlayerRider()
+  IL_007e: brfalse IL_008a
+  IL_0083: ldc.i4.1
+  IL_0084: stloc.0
+  IL_0085: leave IL_00a9
+  IL_008a: ldloca.s V_2
+  IL_008c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.JumpThru>::MoveNext()
+  IL_0091: brtrue IL_0072
+  IL_0096: leave IL_00a9
+  IL_009b: ldloca.s V_2
+  IL_009d: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.JumpThru>
+  IL_00a3: callvirt System.Void System.IDisposable::Dispose()
+  IL_00a8: endfinally
+  IL_00a9: ldloc.0
+  IL_00aa: brfalse IL_00bf
+  IL_00af: ldarg.0
+  IL_00b0: ldc.r4 0.3
+  IL_00b5: stfld System.Single Celeste.FloatySpaceBlock::sinkTimer
+  IL_00ba: br IL_00e1
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld System.Single Celeste.FloatySpaceBlock::sinkTimer
+  IL_00c5: ldc.r4 0
+  IL_00ca: ble.un IL_00e1
+  IL_00cf: ldarg.0
+  IL_00d0: ldarg.0
+  IL_00d1: ldfld System.Single Celeste.FloatySpaceBlock::sinkTimer
+  IL_00d6: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00db: sub
+  IL_00dc: stfld System.Single Celeste.FloatySpaceBlock::sinkTimer
+  IL_00e1: ldarg.0
+  IL_00e2: ldfld System.Single Celeste.FloatySpaceBlock::sinkTimer
+  IL_00e7: ldc.r4 0
+  IL_00ec: ble.un IL_012b
+  IL_00f1: ldarg.0
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld System.Single Celeste.FloatySpaceBlock::yLerp
+  IL_00f8: ldc.r4 1
++ IL_00fd: ldc.i4 5083 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
++ IL_0102: ldc.i4 29598753 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
++ IL_0107: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_010c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
+  IL_0111: ldc.r4 1
+  IL_0116: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_011b: mul
+  IL_011c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0121: stfld System.Single Celeste.FloatySpaceBlock::yLerp
+  IL_0126: br IL_014c
+  IL_012b: ldarg.0
+  IL_012c: ldarg.0
+  IL_012d: ldfld System.Single Celeste.FloatySpaceBlock::yLerp
+  IL_0132: ldc.r4 0
+  IL_0137: ldc.r4 1
+  IL_013c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0141: mul
+  IL_0142: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0147: stfld System.Single Celeste.FloatySpaceBlock::yLerp
+  IL_014c: ldarg.0
+  IL_014d: ldarg.0
+  IL_014e: ldfld System.Single Celeste.FloatySpaceBlock::sineWave
+  IL_0153: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0158: add
+  IL_0159: stfld System.Single Celeste.FloatySpaceBlock::sineWave
+  IL_015e: ldarg.0
+  IL_015f: ldarg.0
+  IL_0160: ldfld System.Single Celeste.FloatySpaceBlock::dashEase
+  IL_0165: ldc.r4 0
+  IL_016a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_016f: ldc.r4 1.5
+  IL_0174: mul
+  IL_0175: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_017a: stfld System.Single Celeste.FloatySpaceBlock::dashEase
+  IL_017f: ldarg.0
+  IL_0180: callvirt System.Void Celeste.FloatySpaceBlock::MoveToTarget()
+  IL_0185: ldarg.0
+  IL_0186: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_018b: stfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_0190: ret

@@ -1,0 +1,80 @@
+IL Diff: System.Void Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::changeStartingLevelSet(System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: stfld System.Int32 Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::lastDirection
+  IL_0007: ldarg.1
+  IL_0008: ldc.i4.0
+  IL_0009: bgt IL_0018
+  IL_000e: ldstr "event:/ui/main/button_toggle_off"
+  IL_0013: br IL_001d
+  IL_0018: ldstr "event:/ui/main/button_toggle_on"
+  IL_001d: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_0022: pop
+  IL_0023: ldarg.0
+  IL_0024: callvirt System.String Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::get_NewGameLevelSet()
+  IL_0029: brtrue IL_0039
+  IL_002e: ldarg.0
+  IL_002f: ldstr "Celeste"
+  IL_0034: callvirt System.Void Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::set_NewGameLevelSet(System.String)
+  IL_0039: ldarg.1
+  IL_003a: ldc.i4.0
+  IL_003b: ble IL_005e
+  IL_0040: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0045: ldarg.0
+  IL_0046: ldftn System.Boolean Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::<changeStartingLevelSet>b__10_0(Celeste.AreaData)
+  IL_004c: newobj System.Void System.Predicate`1<Celeste.AreaData>::.ctor(System.Object,System.IntPtr)
+  IL_0051: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::FindLastIndex(System.Predicate`1<T>)
+  IL_0056: ldarg.1
+  IL_0057: add
+  IL_0058: stloc.0
+  IL_0059: br IL_0077
+  IL_005e: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0063: ldarg.0
+  IL_0064: ldftn System.Boolean Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::<changeStartingLevelSet>b__10_1(Celeste.AreaData)
+  IL_006a: newobj System.Void System.Predicate`1<Celeste.AreaData>::.ctor(System.Object,System.IntPtr)
+  IL_006f: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::FindIndex(System.Predicate`1<T>)
+  IL_0074: ldarg.1
+  IL_0075: add
+  IL_0076: stloc.0
+  IL_0077: ldloc.0
+  IL_0078: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_007d: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_0082: blt IL_0089
+  IL_0087: ldc.i4.0
+  IL_0088: stloc.0
+  IL_0089: ldloc.0
+  IL_008a: ldc.i4.0
+  IL_008b: bge IL_009d
+  IL_0090: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0095: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_009a: ldc.i4.1
+  IL_009b: sub
+  IL_009c: stloc.0
++ IL_009d: ldloc.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
++ IL_009e: ldarg.1 @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
++ IL_009f: ldc.i4 2799 @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
++ IL_00a4: ldc.i4 60877439 @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
++ IL_00a9: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
+  |-> retrieves System.Int32 Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modFileSelectChangeStartingLevelSet>b__33_4(System.Int32,System.Int32)
++ IL_00ae: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,System.Int32>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
++ IL_00b3: stloc.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modFileSelectChangeStartingLevelSet
+  IL_00b4: ldarg.0
+  IL_00b5: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_00ba: ldloc.0
+  IL_00bb: callvirt T System.Collections.Generic.List`1<Celeste.AreaData>::get_Item(System.Int32)
+  IL_00c0: call System.String Celeste.AreaDataExt::GetLevelSet(Celeste.AreaData)
+  IL_00c5: callvirt System.Void Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::set_NewGameLevelSet(System.String)
+  IL_00ca: ldarg.0
+  IL_00cb: ldarg.0
+  IL_00cc: callvirt System.String Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::get_NewGameLevelSet()
+  IL_00d1: dup
+  IL_00d2: brtrue IL_00dd
+  IL_00d7: pop
+  IL_00d8: ldstr "Celeste"
+  IL_00dd: call System.String Celeste.DialogExt::CleanLevelSet(System.String)
+  IL_00e2: stfld System.String Celeste.OuiFileSelectSlot/Button::Label
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld Celeste.OuiFileSelectSlot Celeste.Mod.UI.OuiFileSelectSlotLevelSetPicker::selectSlot
+  IL_00ed: castclass Celeste.OuiFileSelectSlot
+  IL_00f2: callvirt System.Void Celeste.OuiFileSelectSlot::WiggleMenu()
+  IL_00f7: ret

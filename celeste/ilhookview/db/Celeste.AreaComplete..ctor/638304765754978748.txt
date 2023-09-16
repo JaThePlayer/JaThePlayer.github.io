@@ -1,0 +1,188 @@
+IL Diff: System.Void Celeste.AreaComplete::.ctor(Celeste.Session,System.Xml.XmlElement,Monocle.Atlas,Celeste.HiresSnow,Celeste.Mod.Meta.MapMetaCompleteScreen)
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.1
+  IL_0002: stfld System.Boolean Celeste.AreaComplete::canConfirm
+  IL_0007: ldarg.0
+  IL_0008: ldc.r4 1.1
+  IL_000d: stfld System.Single Celeste.AreaComplete::speedrunTimerDelay
+  IL_0012: ldarg.0
+  IL_0013: ldstr "OPTIONS_SPEEDRUN_CHAPTER"
+  IL_0018: ldnull
+  IL_0019: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_001e: ldstr ":"
+  IL_0023: call System.String System.String::Concat(System.String,System.String)
+  IL_0028: stfld System.String Celeste.AreaComplete::chapterSpeedrunText
+  IL_002d: ldarg.0
+  IL_002e: call System.Void Monocle.Scene::.ctor()
+  IL_0033: ldarg.0
+  IL_0034: ldarg.1
+  IL_0035: stfld Celeste.Session Celeste.AreaComplete::Session
+  IL_003a: ldarg.0
+  IL_003b: ldsfld Celeste.Celeste Celeste.Celeste::Instance
+  IL_0040: ldfld System.Version Monocle.Engine::Version
+  IL_0045: callvirt System.String System.Object::ToString()
+  IL_004a: stfld System.String Celeste.AreaComplete::version
+  IL_004f: ldarg.1
+  IL_0050: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0055: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_005a: ldc.i4.7
+  IL_005b: beq IL_00fa
+  IL_0060: ldarg.0
+  IL_0061: call System.String Celeste.AreaComplete::GetCustomCompleteScreenTitle()
+  IL_0066: stloc.s V_1
+  IL_0068: ldloc.s V_1
+  IL_006a: brtrue IL_00be
+  IL_006f: ldstr "areacomplete_"
+  IL_0074: ldarg.1
+  IL_0075: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_007a: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_007f: box Celeste.AreaMode
+  IL_0084: ldarg.1
+  IL_0085: callvirt System.Boolean Celeste.Session::get_FullClear()
+  IL_008a: brtrue IL_0099
+  IL_008f: ldstr ""
+  IL_0094: br IL_009e
+  IL_0099: ldstr "_fullclear"
+  IL_009e: call System.String System.String::Concat(System.Object,System.Object,System.Object)
+  IL_00a3: ldnull
+  IL_00a4: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
++ IL_00a9: ldc.i4 6831 @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
++ IL_00ae: ldc.i4 23873397 @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
++ IL_00b3: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
+  |-> retrieves System.String Celeste.Mod.Randomizer.RandoModule::<SetEndlessTitle>b__69_0(System.String)
++ IL_00b8: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
+  IL_00bd: stloc.1
+  IL_00be: ldloca.s V_2
+  IL_00c0: ldc.r4 960
+  IL_00c5: ldc.r4 200
+  IL_00ca: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00cf: ldc.r4 1600
+  IL_00d4: ldloc.1
+  IL_00d5: call Microsoft.Xna.Framework.Vector2 Celeste.ActiveFont::Measure(System.String)
+  IL_00da: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00df: div
+  IL_00e0: ldc.r4 3
+  IL_00e5: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_00ea: stloc.3
+  IL_00eb: ldarg.0
+  IL_00ec: ldloc.2
+  IL_00ed: ldloc.1
+  IL_00ee: ldloc.3
+  IL_00ef: ldc.i4.0
+  IL_00f0: newobj System.Void Celeste.AreaCompleteTitle::.ctor(Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.Boolean)
+  IL_00f5: stfld Celeste.AreaCompleteTitle Celeste.AreaComplete::title
+  IL_00fa: ldarg.0
+  IL_00fb: ldarg.0
+  IL_00fc: ldarg.2
+  IL_00fd: ldarg.3
+  IL_00fe: ldc.r4 1
+  IL_0103: ldarg.0
+  IL_0104: ldftn System.Void Celeste.AreaComplete::<.ctor>b__12_0()
+  IL_010a: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_010f: ldarg meta
+  IL_0113: newobj System.Void Celeste.CompleteRenderer::.ctor(System.Xml.XmlElement,Monocle.Atlas,System.Single,System.Action,Celeste.Mod.Meta.MapMetaCompleteScreen)
+  IL_0118: dup
+  IL_0119: stloc.s V_4
+  IL_011b: stfld Celeste.CompleteRenderer Celeste.AreaComplete::complete
+  IL_0120: ldloc.s V_4
+  IL_0122: call System.Void Monocle.Scene::Add(Monocle.Renderer)
+  IL_0127: ldarg.0
++ IL_0128: ldc.i4 6833 @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
++ IL_012d: ldc.i4 54696995 @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
++ IL_0132: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
+  |-> retrieves System.Void Celeste.Mod.Randomizer.RandoModule::<SetEndlessTitle>b__69_1(Celeste.AreaComplete)
++ IL_0137: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.AreaComplete>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
++ IL_013c: ldarg.0 @ Celeste.Mod.Randomizer.RandoModule::SetEndlessTitle
+  IL_013d: ldfld Celeste.AreaCompleteTitle Celeste.AreaComplete::title
+  IL_0142: brfalse IL_015e
+  IL_0147: ldarg.0
+  IL_0148: ldfld Celeste.CompleteRenderer Celeste.AreaComplete::complete
+  IL_014d: ldarg.0
+  IL_014e: ldftn System.Void Celeste.AreaComplete::<.ctor>b__12_1(Microsoft.Xna.Framework.Vector2)
+  IL_0154: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_0159: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.CompleteRenderer::RenderUI
+  IL_015e: ldarg.0
+  IL_015f: ldfld Celeste.CompleteRenderer Celeste.AreaComplete::complete
+  IL_0164: ldarg.0
+  IL_0165: ldftn System.Void Celeste.AreaComplete::RenderUI()
+  IL_016b: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0170: stfld System.Action Celeste.CompleteRenderer::RenderPostUI
+  IL_0175: ldarg.0
+  IL_0176: ldarg.0
+  IL_0177: ldfld Celeste.Session Celeste.AreaComplete::Session
+  IL_017c: ldfld System.Int64 Celeste.Session::Time
+  IL_0181: call System.TimeSpan System.TimeSpan::FromTicks(System.Int64)
+  IL_0186: call System.String Monocle.Calc::ShortGameplayFormat(System.TimeSpan)
+  IL_018b: stfld System.String Celeste.AreaComplete::speedrunTimerChapterString
+  IL_0190: ldarg.0
+  IL_0191: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0196: ldfld System.Int64 Celeste.SaveData::Time
+  IL_019b: call System.String Celeste.Dialog::FileTime(System.Int64)
+  IL_01a0: stfld System.String Celeste.AreaComplete::speedrunTimerFileString
+  IL_01a5: call System.Void Celeste.SpeedrunTimerDisplay::CalculateBaseSizes()
+  IL_01aa: ldarg.0
+  IL_01ab: ldarg.0
+  IL_01ac: ldarg.s snow
+  IL_01ae: dup
+  IL_01af: stloc.s V_5
+  IL_01b1: stfld Celeste.HiresSnow Celeste.AreaComplete::snow
+  IL_01b6: ldloc.s V_5
+  IL_01b8: call System.Void Monocle.Scene::Add(Monocle.Renderer)
+  IL_01bd: ldarg.0
+  IL_01be: call Monocle.RendererList Monocle.Scene::get_RendererList()
+  IL_01c3: callvirt System.Void Monocle.RendererList::UpdateLists()
+  IL_01c8: ldarg.1
+  IL_01c9: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_01ce: stloc.0
+  IL_01cf: ldloc.0
+  IL_01d0: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_01d5: brtrue IL_025e
+  IL_01da: ldloc.0
+  IL_01db: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_01e0: ldc.i4.1
+  IL_01e1: bne.un IL_01ed
+  IL_01e6: ldc.i4.0
+  IL_01e7: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_01ec: ret
+  IL_01ed: ldloc.0
+  IL_01ee: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_01f3: ldc.i4.2
+  IL_01f4: bne.un IL_0200
+  IL_01f9: ldc.i4.1
+  IL_01fa: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_01ff: ret
+  IL_0200: ldloc.0
+  IL_0201: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0206: ldc.i4.3
+  IL_0207: bne.un IL_0213
+  IL_020c: ldc.i4.2
+  IL_020d: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_0212: ret
+  IL_0213: ldloc.0
+  IL_0214: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0219: ldc.i4.4
+  IL_021a: bne.un IL_0226
+  IL_021f: ldc.i4.3
+  IL_0220: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_0225: ret
+  IL_0226: ldloc.0
+  IL_0227: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_022c: ldc.i4.5
+  IL_022d: bne.un IL_0239
+  IL_0232: ldc.i4.4
+  IL_0233: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_0238: ret
+  IL_0239: ldloc.0
+  IL_023a: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_023f: ldc.i4.6
+  IL_0240: bne.un IL_024c
+  IL_0245: ldc.i4.5
+  IL_0246: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_024b: ret
+  IL_024c: ldloc.0
+  IL_024d: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0252: ldc.i4.7
+  IL_0253: bne.un IL_025e
+  IL_0258: ldc.i4.6
+  IL_0259: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_025e: ret

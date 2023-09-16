@@ -1,0 +1,541 @@
+IL Diff: System.Void Celeste.BounceBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Single Celeste.BounceBlock::reappearFlash
+  IL_000d: ldc.r4 0
+  IL_0012: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0017: ldc.r4 8
+  IL_001c: mul
+  IL_001d: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0022: stfld System.Single Celeste.BounceBlock::reappearFlash
+  IL_0027: ldarg.0
+  IL_0028: ldfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_002d: brtrue IL_0183
+  IL_0032: ldarg.0
+  IL_0033: callvirt System.Void Celeste.BounceBlock::CheckModeChange()
+  IL_0038: ldarg.0
+  IL_0039: ldarg.0
+  IL_003a: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_003f: ldc.r4 100
+  IL_0044: ldc.r4 400
+  IL_0049: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_004e: mul
+  IL_004f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0054: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0059: ldarg.0
+  IL_005a: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_005f: ldarg.0
+  IL_0060: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::startPos
+  IL_0065: ldarg.0
+  IL_0066: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_006b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0070: mul
+  IL_0071: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0076: stloc.0
+  IL_0077: ldloc.0
+  IL_0078: ldarg.0
+  IL_0079: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_007e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0083: ldarg.0
+  IL_0084: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0089: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_008e: stloc.1
+  IL_008f: ldloca.s V_1
+  IL_0091: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0096: dup
+  IL_0097: ldind.r4
+  IL_0098: ldc.r4 0.75
+  IL_009d: mul
+  IL_009e: stind.r4
+  IL_009f: ldarg.0
+  IL_00a0: ldloc.0
+  IL_00a1: ldloc.1
+  IL_00a2: call System.Void Celeste.Platform::MoveTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a7: ldarg.0
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_00ae: ldc.r4 0
+  IL_00b3: ldc.r4 1
+  IL_00b8: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00bd: mul
+  IL_00be: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00c3: stfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_00c8: ldarg.0
+  IL_00c9: callvirt Celeste.Player Celeste.BounceBlock::WindUpPlayerCheck()
+  IL_00ce: stloc.2
+  IL_00cf: ldloc.2
+  IL_00d0: brfalse IL_06d1
+  IL_00d5: ldarg.0
+  IL_00d6: ldc.r4 80
+  IL_00db: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_00e0: ldarg.0
+  IL_00e1: ldc.r4 0
+  IL_00e6: stfld System.Single Celeste.BounceBlock::windUpStartTimer
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_00f1: brfalse IL_011f
+  IL_00f6: ldarg.0
+  IL_00f7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00fc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
++ IL_0101: ldc.i4 6180 @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
++ IL_0106: ldc.i4 28927152 @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
++ IL_010b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_0110: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
+  IL_0115: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_011a: br IL_013b
+  IL_011f: ldarg.0
+  IL_0120: ldloc.2
+  IL_0121: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0126: ldarg.0
+  IL_0127: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_012c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0131: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0136: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_013b: ldarg.0
+  IL_013c: ldc.i4.1
+  IL_013d: stfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_0142: ldc.i4.1
+  IL_0143: ldc.i4.1
+  IL_0144: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0149: ldarg.0
+  IL_014a: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_014f: brfalse IL_0171
+  IL_0154: ldarg.0
+  IL_0155: ldc.r4 0.2
+  IL_015a: call System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_015f: ldstr "event:/game/09_core/iceblock_touch"
+  IL_0164: ldarg.0
+  IL_0165: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_016a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_016f: pop
+  IL_0170: ret
+  IL_0171: ldstr "event:/game/09_core/bounceblock_touch"
+  IL_0176: ldarg.0
+  IL_0177: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_017c: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0181: pop
+  IL_0182: ret
+  IL_0183: ldarg.0
+  IL_0184: ldfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_0189: ldc.i4.1
+  IL_018a: bne.un IL_03cd
+  IL_018f: ldarg.0
+  IL_0190: callvirt Celeste.Player Celeste.BounceBlock::WindUpPlayerCheck()
+  IL_0195: stloc.3
+  IL_0196: ldloc.3
+  IL_0197: brfalse IL_01ec
+  IL_019c: ldarg.0
+  IL_019d: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_01a2: brfalse IL_01d0
+  IL_01a7: ldarg.0
+  IL_01a8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_01ad: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
++ IL_01b2: ldc.i4 6182 @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
++ IL_01b7: ldc.i4 61397981 @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
++ IL_01bc: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_01c1: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.BounceBlockHooks::BounceBlock_Update
+  IL_01c6: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_01cb: br IL_01ec
+  IL_01d0: ldarg.0
+  IL_01d1: ldloc.3
+  IL_01d2: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_01d7: ldarg.0
+  IL_01d8: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_01dd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01e2: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_01e7: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_01ec: ldarg.0
+  IL_01ed: ldfld System.Single Celeste.BounceBlock::windUpStartTimer
+  IL_01f2: ldc.r4 0
+  IL_01f7: ble.un IL_0230
+  IL_01fc: ldarg.0
+  IL_01fd: ldarg.0
+  IL_01fe: ldfld System.Single Celeste.BounceBlock::windUpStartTimer
+  IL_0203: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0208: sub
+  IL_0209: stfld System.Single Celeste.BounceBlock::windUpStartTimer
+  IL_020e: ldarg.0
+  IL_020f: ldarg.0
+  IL_0210: ldfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_0215: ldc.r4 0
+  IL_021a: ldc.r4 1
+  IL_021f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0224: mul
+  IL_0225: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_022a: stfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_022f: ret
+  IL_0230: ldarg.0
+  IL_0231: ldarg.0
+  IL_0232: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0237: ldarg.0
+  IL_0238: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_023d: brtrue IL_024c
+  IL_0242: ldc.r4 40
+  IL_0247: br IL_0251
+  IL_024c: ldc.r4 35
+  IL_0251: ldc.r4 600
+  IL_0256: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_025b: mul
+  IL_025c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0261: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0266: ldarg.0
+  IL_0267: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_026c: brtrue IL_027b
+  IL_0271: ldc.r4 1
+  IL_0276: br IL_0280
+  IL_027b: ldc.r4 0.333
+  IL_0280: stloc.s V_4
+  IL_0282: ldarg.0
+  IL_0283: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::startPos
+  IL_0288: ldarg.0
+  IL_0289: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_028e: ldarg.0
+  IL_028f: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_0294: brtrue IL_02a3
+  IL_0299: ldc.r4 10
+  IL_029e: br IL_02a8
+  IL_02a3: ldc.r4 16
+  IL_02a8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02ad: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02b2: stloc.s V_5
+  IL_02b4: ldarg.0
+  IL_02b5: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_02ba: ldloc.s V_5
+  IL_02bc: ldarg.0
+  IL_02bd: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_02c2: ldloc.s V_4
+  IL_02c4: mul
+  IL_02c5: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02ca: mul
+  IL_02cb: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02d0: stloc.s V_6
+  IL_02d2: ldloc.s V_6
+  IL_02d4: ldarg.0
+  IL_02d5: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_02da: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02df: ldarg.0
+  IL_02e0: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_02e5: ldloc.s V_4
+  IL_02e7: mul
+  IL_02e8: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02ed: stloc.s V_7
+  IL_02ef: ldloca.s V_7
+  IL_02f1: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02f6: dup
+  IL_02f7: ldind.r4
+  IL_02f8: ldc.r4 0.75
+  IL_02fd: mul
+  IL_02fe: stind.r4
+  IL_02ff: ldarg.0
+  IL_0300: ldloc.s V_6
+  IL_0302: ldloc.s V_7
+  IL_0304: call System.Void Celeste.Platform::MoveTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0309: ldarg.0
+  IL_030a: ldarg.0
+  IL_030b: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_0310: ldloc.s V_5
+  IL_0312: call System.Single Microsoft.Xna.Framework.Vector2::Distance(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0317: ldc.r4 16
+  IL_031c: ldc.r4 2
+  IL_0321: ldc.r4 0
+  IL_0326: ldc.r4 1
+  IL_032b: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0330: stfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_0335: ldarg.0
+  IL_0336: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_033b: brfalse IL_0367
+  IL_0340: ldarg.0
+  IL_0341: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_0346: ldloc.s V_5
+  IL_0348: call System.Single Microsoft.Xna.Framework.Vector2::DistanceSquared(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_034d: ldc.r4 12
+  IL_0352: bgt.un IL_0367
+  IL_0357: ldarg.0
+  IL_0358: ldc.r4 0.1
+  IL_035d: call System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_0362: br IL_038d
+  IL_0367: ldarg.0
+  IL_0368: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_036d: brtrue IL_038d
+  IL_0372: ldarg.0
+  IL_0373: ldfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_0378: ldc.r4 0.5
+  IL_037d: blt.un IL_038d
+  IL_0382: ldarg.0
+  IL_0383: ldc.r4 0.1
+  IL_0388: call System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_038d: ldarg.0
+  IL_038e: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_0393: ldloc.s V_5
+  IL_0395: call System.Single Microsoft.Xna.Framework.Vector2::DistanceSquared(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_039a: ldc.r4 2
+  IL_039f: bgt.un IL_06d1
+  IL_03a4: ldarg.0
+  IL_03a5: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_03aa: brfalse IL_03ba
+  IL_03af: ldarg.0
+  IL_03b0: callvirt System.Void Celeste.BounceBlock::Break()
+  IL_03b5: br IL_03c1
+  IL_03ba: ldarg.0
+  IL_03bb: ldc.i4.2
+  IL_03bc: stfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_03c1: ldarg.0
+  IL_03c2: ldc.r4 0
+  IL_03c7: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_03cc: ret
+  IL_03cd: ldarg.0
+  IL_03ce: ldfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_03d3: ldc.i4.2
+  IL_03d4: bne.un IL_050d
+  IL_03d9: ldarg.0
+  IL_03da: ldarg.0
+  IL_03db: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_03e0: ldc.r4 140
+  IL_03e5: ldc.r4 800
+  IL_03ea: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03ef: mul
+  IL_03f0: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_03f5: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_03fa: ldarg.0
+  IL_03fb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::startPos
+  IL_0400: ldarg.0
+  IL_0401: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceDir
+  IL_0406: ldc.r4 24
+  IL_040b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0410: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0415: stloc.s V_8
+  IL_0417: ldarg.0
+  IL_0418: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_041d: ldloc.s V_8
+  IL_041f: ldarg.0
+  IL_0420: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0425: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_042a: mul
+  IL_042b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0430: stloc.s V_9
+  IL_0432: ldarg.0
+  IL_0433: ldloc.s V_9
+  IL_0435: ldarg.0
+  IL_0436: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_043b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0440: ldarg.0
+  IL_0441: ldfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_0446: ldc.r4 3
+  IL_044b: mul
+  IL_044c: ldc.r4 200
+  IL_0451: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_0456: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_045b: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceLift
+  IL_0460: ldarg.0
+  IL_0461: ldflda Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceLift
+  IL_0466: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_046b: dup
+  IL_046c: ldind.r4
+  IL_046d: ldc.r4 0.75
+  IL_0472: mul
+  IL_0473: stind.r4
+  IL_0474: ldarg.0
+  IL_0475: ldloc.s V_9
+  IL_0477: ldarg.0
+  IL_0478: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceLift
+  IL_047d: call System.Void Celeste.Platform::MoveTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0482: ldarg.0
+  IL_0483: ldc.r4 1
+  IL_0488: stfld System.Single Celeste.BounceBlock::windUpProgress
+  IL_048d: ldarg.0
+  IL_048e: call Microsoft.Xna.Framework.Vector2 Celeste.Platform::get_ExactPosition()
+  IL_0493: ldloc.s V_8
+  IL_0495: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_049a: brtrue IL_04be
+  IL_049f: ldarg.0
+  IL_04a0: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_04a5: brtrue IL_04b8
+  IL_04aa: ldarg.0
+  IL_04ab: callvirt Celeste.Player Celeste.BounceBlock::WindUpPlayerCheck()
+  IL_04b0: ldnull
+  IL_04b1: ceq
+  IL_04b3: br IL_04bf
+  IL_04b8: ldc.i4.0
+  IL_04b9: br IL_04bf
+  IL_04be: ldc.i4.1
+  IL_04bf: brfalse IL_06d1
+  IL_04c4: ldarg.0
+  IL_04c5: ldloc.s V_8
+  IL_04c7: ldarg.0
+  IL_04c8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::startPos
+  IL_04cd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04d2: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_04d7: stfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::debrisDirection
+  IL_04dc: ldarg.0
+  IL_04dd: ldc.i4.3
+  IL_04de: stfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_04e3: ldc.i4.1
+  IL_04e4: ldc.i4.1
+  IL_04e5: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_04ea: ldarg.0
+  IL_04eb: ldc.r4 0
+  IL_04f0: stfld System.Single Celeste.BounceBlock::moveSpeed
+  IL_04f5: ldarg.0
+  IL_04f6: ldc.r4 0.05
+  IL_04fb: stfld System.Single Celeste.BounceBlock::bounceEndTimer
+  IL_0500: ldarg.0
+  IL_0501: ldarg.0
+  IL_0502: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::bounceLift
+  IL_0507: callvirt System.Void Celeste.BounceBlock::ShakeOffPlayer(Microsoft.Xna.Framework.Vector2)
+  IL_050c: ret
+  IL_050d: ldarg.0
+  IL_050e: ldfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_0513: ldc.i4.3
+  IL_0514: bne.un IL_0542
+  IL_0519: ldarg.0
+  IL_051a: ldarg.0
+  IL_051b: ldfld System.Single Celeste.BounceBlock::bounceEndTimer
+  IL_0520: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0525: sub
+  IL_0526: stfld System.Single Celeste.BounceBlock::bounceEndTimer
+  IL_052b: ldarg.0
+  IL_052c: ldfld System.Single Celeste.BounceBlock::bounceEndTimer
+  IL_0531: ldc.r4 0
+  IL_0536: bgt.un IL_06d1
+  IL_053b: ldarg.0
+  IL_053c: callvirt System.Void Celeste.BounceBlock::Break()
+  IL_0541: ret
+  IL_0542: ldarg.0
+  IL_0543: ldfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_0548: ldc.i4.4
+  IL_0549: bne.un IL_06d1
+  IL_054e: ldarg.0
+  IL_054f: ldc.i4 8990
+  IL_0554: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0559: ldarg.0
+  IL_055a: ldc.i4.0
+  IL_055b: stfld System.Boolean Celeste.BounceBlock::reformed
+  IL_0560: ldarg.0
+  IL_0561: ldfld System.Single Celeste.BounceBlock::respawnTimer
+  IL_0566: ldc.r4 0
+  IL_056b: ble.un IL_0583
+  IL_0570: ldarg.0
+  IL_0571: ldarg.0
+  IL_0572: ldfld System.Single Celeste.BounceBlock::respawnTimer
+  IL_0577: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_057c: sub
+  IL_057d: stfld System.Single Celeste.BounceBlock::respawnTimer
+  IL_0582: ret
+  IL_0583: ldarg.0
+  IL_0584: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0589: stloc.s V_10
+  IL_058b: ldarg.0
+  IL_058c: ldarg.0
+  IL_058d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BounceBlock::startPos
+  IL_0592: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0597: ldarg.0
+  IL_0598: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Actor>()
+  IL_059d: brtrue IL_06c9
+  IL_05a2: ldarg.0
+  IL_05a3: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_05a8: brtrue IL_06c9
+  IL_05ad: ldarg.0
+  IL_05ae: callvirt System.Void Celeste.BounceBlock::CheckModeChange()
+  IL_05b3: ldarg.0
+  IL_05b4: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_05b9: brtrue IL_05c8
+  IL_05be: ldstr "event:/game/09_core/bounceblock_reappear"
+  IL_05c3: br IL_05cd
+  IL_05c8: ldstr "event:/game/09_core/iceblock_reappear"
+  IL_05cd: ldarg.0
+  IL_05ce: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_05d3: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_05d8: pop
+  IL_05d9: ldc.r4 0.35
+  IL_05de: stloc.s V_11
+  IL_05e0: ldc.i4.0
+  IL_05e1: stloc.s V_12
+  IL_05e3: br IL_0678
+  IL_05e8: ldc.i4.0
+  IL_05e9: stloc.s V_13
+  IL_05eb: br IL_0664
+  IL_05f0: ldloca.s V_14
+  IL_05f2: ldarg.0
+  IL_05f3: call System.Single Monocle.Entity::get_X()
+  IL_05f8: ldloc.s V_12
+  IL_05fa: conv.r4
+  IL_05fb: add
+  IL_05fc: ldc.r4 4
+  IL_0601: add
+  IL_0602: ldarg.0
+  IL_0603: call System.Single Monocle.Entity::get_Y()
+  IL_0608: ldloc.s V_13
+  IL_060a: conv.r4
+  IL_060b: add
+  IL_060c: ldc.r4 4
+  IL_0611: add
+  IL_0612: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0617: ldarg.0
+  IL_0618: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_061d: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_0622: callvirt T Monocle.Pooler::Create<Celeste.BounceBlock/RespawnDebris>()
+  IL_0627: ldloc.s V_14
+  IL_0629: ldloc.s V_14
+  IL_062b: ldarg.0
+  IL_062c: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0631: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0636: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_063b: ldc.r4 12
+  IL_0640: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0645: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_064a: ldloc.s V_14
+  IL_064c: ldarg.0
+  IL_064d: ldfld System.Boolean Celeste.BounceBlock::iceMode
+  IL_0652: ldloc.s V_11
+  IL_0654: callvirt Celeste.BounceBlock/RespawnDebris Celeste.BounceBlock/RespawnDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Single)
+  IL_0659: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_065e: ldloc.s V_13
+  IL_0660: ldc.i4.8
+  IL_0661: add
+  IL_0662: stloc.s V_13
+  IL_0664: ldloc.s V_13
+  IL_0666: conv.r4
+  IL_0667: ldarg.0
+  IL_0668: call System.Single Monocle.Entity::get_Height()
+  IL_066d: blt IL_05f0
+  IL_0672: ldloc.s V_12
+  IL_0674: ldc.i4.8
+  IL_0675: add
+  IL_0676: stloc.s V_12
+  IL_0678: ldloc.s V_12
+  IL_067a: conv.r4
+  IL_067b: ldarg.0
+  IL_067c: call System.Single Monocle.Entity::get_Width()
+  IL_0681: blt IL_05e8
+  IL_0686: ldarg.0
+  IL_0687: ldloc.s V_11
+  IL_0689: ldarg.0
+  IL_068a: ldftn System.Void Celeste.BounceBlock::<Update>b__38_0()
+  IL_0690: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0695: ldc.i4.1
+  IL_0696: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_069b: pop
+  IL_069c: ldarg.0
+  IL_069d: ldc.i4 -9000
+  IL_06a2: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_06a7: ldarg.0
+  IL_06a8: ldarg.0
+  IL_06a9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_06ae: ldloc.s V_10
+  IL_06b0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_06b5: call System.Void Celeste.Platform::MoveStaticMovers(Microsoft.Xna.Framework.Vector2)
+  IL_06ba: ldarg.0
+  IL_06bb: ldc.i4.1
+  IL_06bc: stfld System.Boolean Monocle.Entity::Collidable
+  IL_06c1: ldarg.0
+  IL_06c2: ldc.i4.0
+  IL_06c3: stfld Celeste.BounceBlock/States Celeste.BounceBlock::state
+  IL_06c8: ret
+  IL_06c9: ldarg.0
+  IL_06ca: ldloc.s V_10
+  IL_06cc: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_06d1: ret

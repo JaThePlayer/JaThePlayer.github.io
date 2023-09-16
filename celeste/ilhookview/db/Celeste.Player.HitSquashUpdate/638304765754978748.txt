@@ -1,0 +1,162 @@
+IL Diff: System.Int32 Celeste.Player::HitSquashUpdate()
+  IL_0000: ldarg.0
+  IL_0001: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0006: ldarg.0
+  IL_0007: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_000c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0011: ldc.r4 0
+  IL_0016: ldc.r4 800
+  IL_001b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0020: mul
+  IL_0021: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0026: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_002b: ldarg.0
+  IL_002c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0031: ldarg.0
+  IL_0032: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0037: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003c: ldc.r4 0
+  IL_0041: ldc.r4 800
+  IL_0046: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_004b: mul
+  IL_004c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0051: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0056: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_005b: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0060: brfalse IL_01ca
+  IL_0065: ldarg.0
+  IL_0066: ldfld System.Boolean Celeste.Player::onGround
+  IL_006b: brfalse IL_007d
+  IL_0070: ldarg.0
+  IL_0071: ldc.i4.1
+  IL_0072: ldc.i4.1
+  IL_0073: callvirt System.Void Celeste.Player::Jump(System.Boolean,System.Boolean)
+  IL_0078: br IL_01c8
+  IL_007d: ldarg.0
+  IL_007e: ldc.i4.1
+  IL_007f: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_0084: brfalse IL_0110
+  IL_0089: ldarg.0
+  IL_008a: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_008f: ldc.i4.1
+  IL_0090: bne.un IL_0104
+  IL_0095: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_009a: ldc.i4 3243 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_009f: ldc.i4 58244385 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_00a4: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_00a9: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_00ae: brfalse IL_0104
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld System.Single Celeste.Player::Stamina
+  IL_00b9: ldc.r4 0
+  IL_00be: ble.un IL_0104
+  IL_00c3: ldarg.0
+  IL_00c4: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00c9: brtrue IL_0104
+  IL_00ce: ldarg.0
+  IL_00cf: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00db: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00e0: ldc.r4 3
+  IL_00e5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ea: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ef: call System.Boolean Celeste.ClimbBlocker::Check(Monocle.Scene,Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_00f4: brtrue IL_0104
+  IL_00f9: ldarg.0
+  IL_00fa: callvirt System.Void Celeste.Player::ClimbJump()
+  IL_00ff: br IL_01c8
+  IL_0104: ldarg.0
+  IL_0105: ldc.i4.m1
+  IL_0106: callvirt System.Void Celeste.Player::WallJump(System.Int32)
+  IL_010b: br IL_01c8
+  IL_0110: ldarg.0
+  IL_0111: ldc.i4.m1
+  IL_0112: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_0117: brfalse IL_01a3
+  IL_011c: ldarg.0
+  IL_011d: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0122: ldc.i4.m1
+  IL_0123: bne.un IL_0197
+  IL_0128: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_012d: ldc.i4 3247 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0132: ldc.i4 20174781 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0137: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_013c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_0141: brfalse IL_0197
+  IL_0146: ldarg.0
+  IL_0147: ldfld System.Single Celeste.Player::Stamina
+  IL_014c: ldc.r4 0
+  IL_0151: ble.un IL_0197
+  IL_0156: ldarg.0
+  IL_0157: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_015c: brtrue IL_0197
+  IL_0161: ldarg.0
+  IL_0162: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0167: ldarg.0
+  IL_0168: ldarg.0
+  IL_0169: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_016e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0173: ldc.r4 -3
+  IL_0178: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_017d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0182: call System.Boolean Celeste.ClimbBlocker::Check(Monocle.Scene,Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0187: brtrue IL_0197
+  IL_018c: ldarg.0
+  IL_018d: callvirt System.Void Celeste.Player::ClimbJump()
+  IL_0192: br IL_01c8
+  IL_0197: ldarg.0
+  IL_0198: ldc.i4.1
+  IL_0199: callvirt System.Void Celeste.Player::WallJump(System.Int32)
+  IL_019e: br IL_01c8
+  IL_01a3: ldsfld Monocle.VirtualButton Celeste.Input::Jump
++ IL_01a8: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_01a9: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_01aa: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_01af: ldc.i4 3202 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_01b4: ldc.i4 3209802 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_01b9: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumeBuffer>b__24_0(System.Object,System.Single)
++ IL_01be: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  IL_01c3: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_01c8: ldc.i4.0
+  IL_01c9: ret
+  IL_01ca: ldarg.0
+  IL_01cb: callvirt System.Boolean Celeste.Player::get_CanDash()
+  IL_01d0: brfalse IL_01dc
+  IL_01d5: ldarg.0
+  IL_01d6: callvirt System.Int32 Celeste.Player::StartDash()
+  IL_01db: ret
+  IL_01dc: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_01e1: ldc.i4 3249 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_01e6: ldc.i4 23544532 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_01eb: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_01f0: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_01f5: brfalse IL_020e
+  IL_01fa: ldarg.0
+  IL_01fb: ldarg.0
+  IL_01fc: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0201: ldc.i4.0
+  IL_0202: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_0207: brfalse IL_020e
+  IL_020c: ldc.i4.1
+  IL_020d: ret
+  IL_020e: ldarg.0
+  IL_020f: ldfld System.Single Celeste.Player::hitSquashNoMoveTimer
+  IL_0214: ldc.r4 0
+  IL_0219: ble.un IL_0235
+  IL_021e: ldarg.0
+  IL_021f: ldarg.0
+  IL_0220: ldfld System.Single Celeste.Player::hitSquashNoMoveTimer
+  IL_0225: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_022a: sub
+  IL_022b: stfld System.Single Celeste.Player::hitSquashNoMoveTimer
+  IL_0230: br IL_0237
+  IL_0235: ldc.i4.0
+  IL_0236: ret
+  IL_0237: ldc.i4.6
+  IL_0238: ret

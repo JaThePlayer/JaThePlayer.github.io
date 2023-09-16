@@ -1,0 +1,403 @@
+IL Diff: System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Player Celeste.Player/<IntroJumpCoroutine>d__551::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_003a,IL_00cd,IL_018e,IL_022b,IL_027b,IL_02bf,IL_02e4,IL_0337,IL_04ba
+  IL_0038: ldc.i4.0
+  IL_0039: ret
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.m1
+  IL_003c: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0041: ldarg.0
+  IL_0042: ldloc.1
+  IL_0043: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0048: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player/<IntroJumpCoroutine>d__551::<start>5__2
+  IL_004d: ldarg.0
+  IL_004e: ldloc.1
+  IL_004f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0054: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
+  IL_0059: ldc.i4.s 10
+  IL_005b: ceq
+  IL_005d: stfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_0062: ldloc.1
+  IL_0063: ldc.i4 -1000000
+  IL_0068: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_006d: ldloc.1
+  IL_006e: ldc.i4.1
+  IL_006f: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_007a: brtrue IL_00d9
+  IL_007f: ldloc.1
+  IL_0080: ldloc.1
+  IL_0081: ldfld Celeste.Level Celeste.Player::level
+  IL_0086: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_008b: stloc.2
+  IL_008c: ldloca.s V_2
+  IL_008e: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0093: ldc.i4.s 16
+  IL_0095: add
+  IL_0096: conv.r4
++ IL_0097: ldloc V_1 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_009b: ldc.i4 6458 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_00a0: ldc.i4 54802493 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_00a5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_IntroJumpCoroutine>b__25_3(System.Single,Celeste.Player)
++ IL_00aa: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_00af: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_00b4: ldarg.0
+  IL_00b5: ldc.r4 0.5
+  IL_00ba: box System.Single
+  IL_00bf: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_00c4: ldarg.0
+  IL_00c5: ldc.i4.1
+  IL_00c6: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_00cb: ldc.i4.1
+  IL_00cc: ret
+  IL_00cd: ldarg.0
+  IL_00ce: ldc.i4.m1
+  IL_00cf: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_00d4: br IL_0130
+  IL_00d9: ldarg.0
+  IL_00da: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player/<IntroJumpCoroutine>d__551::<start>5__2
+  IL_00df: ldloc.1
+  IL_00e0: ldfld Celeste.Level Celeste.Player::level
+  IL_00e5: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_00ea: stloc.2
+  IL_00eb: ldloca.s V_2
+  IL_00ed: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_00f2: ldc.i4.s 24
+  IL_00f4: sub
+  IL_00f5: conv.r4
++ IL_00f6: ldloc V_1 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_00fa: ldc.i4 6466 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_00ff: ldc.i4 9816916 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_0104: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_IntroJumpCoroutine>b__25_5(System.Single,Celeste.Player)
++ IL_0109: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_010e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0113: ldloc.1
+  IL_0114: ldloc.1
+  IL_0115: callvirt System.Single Monocle.Entity::get_X()
+  IL_011a: ldc.r4 8
+  IL_011f: div
+  IL_0120: conv.r8
+  IL_0121: call System.Double System.Math::Round(System.Double)
+  IL_0126: conv.i4
+  IL_0127: ldc.i4.8
+  IL_0128: mul
+  IL_0129: conv.r4
+  IL_012a: ldnull
+  IL_012b: callvirt System.Void Celeste.Actor::MoveToX(System.Single,Celeste.Collision)
+  IL_0130: ldarg.0
+  IL_0131: ldfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_0136: brtrue IL_0195
+  IL_013b: ldloc.1
+  IL_013c: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0141: ldstr "jumpSlow"
+  IL_0146: ldc.i4.0
+  IL_0147: ldc.i4.0
+  IL_0148: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_014d: br IL_0195
+  IL_0152: ldloc.1
+  IL_0153: ldloc.1
+  IL_0154: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0159: ldc.r4 -120
++ IL_015e: ldc.i4 6468 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_0163: ldc.i4 56972752 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_0168: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_016d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_0172: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0177: mul
+  IL_0178: add
+  IL_0179: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_017e: ldarg.0
+  IL_017f: ldnull
+  IL_0180: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_0185: ldarg.0
+  IL_0186: ldc.i4.2
+  IL_0187: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_018c: ldc.i4.1
+  IL_018d: ret
+  IL_018e: ldarg.0
+  IL_018f: ldc.i4.m1
+  IL_0190: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0195: ldloc.1
+  IL_0196: callvirt System.Single Monocle.Entity::get_Y()
+  IL_019b: ldarg.0
+  IL_019c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player/<IntroJumpCoroutine>d__551::<start>5__2
+  IL_01a1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01a6: ldc.r4 8
++ IL_01ab: ldc.i4 6470 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_01b0: ldc.i4 51390233 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_01b5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_01ba: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_01bf: sub
++ IL_01c0: call System.Boolean Celeste.Mod.GravityHelper.GravityHelperModule::get_ShouldInvertPlayer() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_01c5: brfalse IL_01d4 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_01ca: blt IL_0152 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_01cf: br IL_01d9 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_01d4: bgt IL_0152
+  IL_01d9: ldloc.1
+  IL_01da: ldloc.1
+  IL_01db: callvirt System.Single Monocle.Entity::get_Y()
+  IL_01e0: conv.r8
+  IL_01e1: call System.Double System.Math::Round(System.Double)
+  IL_01e6: conv.r4
+  IL_01e7: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_01ec: ldloc.1
+  IL_01ed: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01f2: ldc.r4 -100
+  IL_01f7: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01fc: br IL_0232
+  IL_0201: ldloc.1
+  IL_0202: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0207: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020c: dup
+  IL_020d: ldind.r4
+  IL_020e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0213: ldc.r4 800
+  IL_0218: mul
+  IL_0219: add
+  IL_021a: stind.r4
+  IL_021b: ldarg.0
+  IL_021c: ldnull
+  IL_021d: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_0222: ldarg.0
+  IL_0223: ldc.i4.3
+  IL_0224: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0229: ldc.i4.1
+  IL_022a: ret
+  IL_022b: ldarg.0
+  IL_022c: ldc.i4.m1
+  IL_022d: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0232: ldloc.1
+  IL_0233: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0238: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_023d: ldc.r4 0
+  IL_0242: blt IL_0201
+  IL_0247: ldloc.1
+  IL_0248: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_024d: ldc.r4 0
+  IL_0252: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0257: ldarg.0
+  IL_0258: ldfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_025d: brfalse IL_02cb
+  IL_0262: ldarg.0
+  IL_0263: ldc.r4 0.2
+  IL_0268: box System.Single
+  IL_026d: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_0272: ldarg.0
+  IL_0273: ldc.i4.4
+  IL_0274: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0279: ldc.i4.1
+  IL_027a: ret
+  IL_027b: ldarg.0
+  IL_027c: ldc.i4.m1
+  IL_027d: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0282: ldloc.1
+  IL_0283: ldstr "event:/char/madeline/summit_areastart"
+  IL_0288: ldnull
+  IL_0289: ldc.r4 0
+  IL_028e: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0293: pop
+  IL_0294: ldloc.1
+  IL_0295: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_029a: ldstr "launchRecover"
+  IL_029f: ldc.i4.0
+  IL_02a0: ldc.i4.0
+  IL_02a1: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_02a6: ldarg.0
+  IL_02a7: ldc.r4 0.1
+  IL_02ac: box System.Single
+  IL_02b1: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_02b6: ldarg.0
+  IL_02b7: ldc.i4.5
+  IL_02b8: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_02bd: ldc.i4.1
+  IL_02be: ret
+  IL_02bf: ldarg.0
+  IL_02c0: ldc.i4.m1
+  IL_02c1: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_02c6: br IL_02eb
+  IL_02cb: ldarg.0
+  IL_02cc: ldc.r4 0.1
+  IL_02d1: box System.Single
+  IL_02d6: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_02db: ldarg.0
+  IL_02dc: ldc.i4.6
+  IL_02dd: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_02e2: ldc.i4.1
+  IL_02e3: ret
+  IL_02e4: ldarg.0
+  IL_02e5: ldc.i4.m1
+  IL_02e6: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_02eb: ldarg.0
+  IL_02ec: ldfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_02f1: brtrue IL_033e
+  IL_02f6: ldloc.1
+  IL_02f7: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_02fc: ldstr "fallSlow"
+  IL_0301: ldc.i4.0
+  IL_0302: ldc.i4.0
+  IL_0303: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0308: br IL_033e
+  IL_030d: ldloc.1
+  IL_030e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0313: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0318: dup
+  IL_0319: ldind.r4
+  IL_031a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_031f: ldc.r4 800
+  IL_0324: mul
+  IL_0325: add
+  IL_0326: stind.r4
+  IL_0327: ldarg.0
+  IL_0328: ldnull
+  IL_0329: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_032e: ldarg.0
+  IL_032f: ldc.i4.7
+  IL_0330: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_0335: ldc.i4.1
+  IL_0336: ret
+  IL_0337: ldarg.0
+  IL_0338: ldc.i4.m1
+  IL_0339: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_033e: ldloc.1
+  IL_033f: ldfld System.Boolean Celeste.Player::onGround
+  IL_0344: brfalse IL_030d
+  IL_0349: ldloc.1
+  IL_034a: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_034f: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
+  IL_0354: ldc.i4.s 10
+  IL_0356: beq IL_0367
+  IL_035b: ldloc.1
+  IL_035c: ldarg.0
+  IL_035d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player/<IntroJumpCoroutine>d__551::<start>5__2
+  IL_0362: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0367: ldloc.1
+  IL_0368: ldc.i4.0
+  IL_0369: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_036e: ldloc.1
+  IL_036f: ldfld Celeste.Level Celeste.Player::level
+  IL_0374: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0379: ldc.r4 0.3
+  IL_037e: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0383: ldc.i4.2
+  IL_0384: ldc.i4.1
+  IL_0385: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_038a: ldarg.0
+  IL_038b: ldfld System.Boolean Celeste.Player/<IntroJumpCoroutine>d__551::<wasSummitJump>5__3
+  IL_0390: brfalse IL_0501
++ IL_0395: call System.Boolean Celeste.Mod.GravityHelper.GravityHelperModule::get_ShouldInvertPlayer() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_039a: brfalse IL_03bc @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_039f: ldloc V_1 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_03a3: ldc.i4 6472 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_03a8: ldc.i4 1859350 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_03ad: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  |-> retrieves System.Void Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_IntroJumpCoroutine>b__25_15(Celeste.Player)
++ IL_03b2: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
++ IL_03b7: br IL_04a1 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_IntroJumpCoroutine
+  IL_03bc: ldloc.1
+  IL_03bd: ldfld Celeste.Level Celeste.Player::level
+  IL_03c2: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_03c7: ldsfld Monocle.ParticleType Celeste.Player::P_SummitLandA
+  IL_03cc: ldc.i4.s 12
+  IL_03ce: ldloc.1
+  IL_03cf: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_03d4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_03d9: ldc.r4 3
+  IL_03de: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03e3: ldc.r4 -1.5707964
+  IL_03e8: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03ed: ldloc.1
+  IL_03ee: ldfld Celeste.Level Celeste.Player::level
+  IL_03f3: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_03f8: ldsfld Monocle.ParticleType Celeste.Player::P_SummitLandB
+  IL_03fd: ldc.i4.8
+  IL_03fe: ldloc.1
+  IL_03ff: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_0404: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0409: ldc.r4 2
+  IL_040e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0413: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0418: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_041d: ldc.r4 2
+  IL_0422: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0427: ldc.r4 3.403392
+  IL_042c: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0431: ldloc.1
+  IL_0432: ldfld Celeste.Level Celeste.Player::level
+  IL_0437: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_043c: ldsfld Monocle.ParticleType Celeste.Player::P_SummitLandB
+  IL_0441: ldc.i4.8
+  IL_0442: ldloc.1
+  IL_0443: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_0448: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_044d: ldc.r4 2
+  IL_0452: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0457: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_045c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0461: ldc.r4 2
+  IL_0466: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_046b: ldc.r4 -0.2617994
+  IL_0470: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0475: ldloc.1
+  IL_0476: ldfld Celeste.Level Celeste.Player::level
+  IL_047b: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesBG
+  IL_0480: ldsfld Monocle.ParticleType Celeste.Player::P_SummitLandC
+  IL_0485: ldc.i4.s 30
+  IL_0487: ldloc.1
+  IL_0488: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_048d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0492: ldc.r4 5
+  IL_0497: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_049c: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04a1: ldarg.0
+  IL_04a2: ldc.r4 0.35
+  IL_04a7: box System.Single
+  IL_04ac: stfld System.Object Celeste.Player/<IntroJumpCoroutine>d__551::<>2__current
+  IL_04b1: ldarg.0
+  IL_04b2: ldc.i4.8
+  IL_04b3: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_04b8: ldc.i4.1
+  IL_04b9: ret
+  IL_04ba: ldarg.0
+  IL_04bb: ldc.i4.m1
+  IL_04bc: stfld System.Int32 Celeste.Player/<IntroJumpCoroutine>d__551::<>1__state
+  IL_04c1: ldc.i4.0
+  IL_04c2: stloc.3
+  IL_04c3: br IL_04eb
+  IL_04c8: ldloc.1
+  IL_04c9: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_04ce: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_04d3: ldloc.3
+  IL_04d4: ldc.r4 0
+  IL_04d9: ldc.i4.2
+  IL_04da: ldloc.3
+  IL_04db: add
+  IL_04dc: conv.r4
+  IL_04dd: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04e2: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::set_Item(System.Int32,T)
+  IL_04e7: ldloc.3
+  IL_04e8: ldc.i4.1
+  IL_04e9: add
+  IL_04ea: stloc.3
+  IL_04eb: ldloc.3
+  IL_04ec: ldloc.1
+  IL_04ed: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_04f2: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.PlayerHair::Nodes
+  IL_04f7: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_04fc: blt IL_04c8
+  IL_0501: ldloc.1
+  IL_0502: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0507: ldc.i4.0
+  IL_0508: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_050d: ldc.i4.0
+  IL_050e: ret

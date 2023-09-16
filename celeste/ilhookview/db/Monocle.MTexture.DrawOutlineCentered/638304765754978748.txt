@@ -1,0 +1,90 @@
+IL Diff: System.Void Monocle.MTexture::DrawOutlineCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Single Monocle.MTexture::get_ScaleFix()
+  IL_0006: stloc.0
+  IL_0007: ldarg.3
+  IL_0008: ldloc.0
+  IL_0009: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_000e: starg.s scale
+  IL_0010: ldarg.0
+  IL_0011: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect()
+  IL_0016: stloc.1
+  IL_0017: ldarg.0
+  IL_0018: callvirt Microsoft.Xna.Framework.Vector2 Monocle.MTexture::get_Center()
+  IL_001d: ldarg.0
+  IL_001e: callvirt Microsoft.Xna.Framework.Vector2 Monocle.MTexture::get_DrawOffset()
+  IL_0023: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0028: ldloc.0
+  IL_0029: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_002e: stloc.2
+  IL_002f: ldc.i4.m1
+  IL_0030: stloc.3
+  IL_0031: br IL_00a8
+  IL_0036: ldc.i4.m1
+  IL_0037: stloc.s V_4
+  IL_0039: br IL_009c
+  IL_003e: ldloc.3
+  IL_003f: brtrue IL_004b
+  IL_0044: ldloc.s V_4
+  IL_0046: brfalse IL_0096
+  IL_004b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0050: ldarg.0
+  IL_0051: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_0056: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_005b: ldarg.1
+  IL_005c: ldloc.3
+  IL_005d: conv.r4
+  IL_005e: ldloc.s V_4
+  IL_0060: conv.r4
+  IL_0061: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0066: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_006b: ldloc.1
+  IL_006c: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_0071: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0076: ldarg.s rotation
+  IL_0078: ldloc.2
+  IL_0079: ldarg.3
+  IL_007a: ldarg.s flip
+  IL_007c: ldc.r4 0
+- IL_0075: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_0081: ldarg.0 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_0082: ldc.i4 6753 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_0087: ldc.i4 43165041 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_008c: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
+  |-> retrieves System.Void Celeste.Mod.Procedurline.ScaledMTexture/<>c::<DrawModifier>b__9_2(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1[[Microsoft.Xna.Framework.Rectangle, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]],Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Monocle.MTexture)
++ IL_0091: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal11<Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Monocle.MTexture>(T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,MonoMod.Cil.FastDelegateInvokers/VoidVal11`11<T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10>) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
+  IL_0096: ldloc.s V_4
+  IL_0098: ldc.i4.1
+  IL_0099: add
+  IL_009a: stloc.s V_4
+  IL_009c: ldloc.s V_4
+  IL_009e: ldc.i4.1
+  IL_009f: ble IL_003e
+  IL_00a4: ldloc.3
+  IL_00a5: ldc.i4.1
+  IL_00a6: add
+  IL_00a7: stloc.3
+  IL_00a8: ldloc.3
+  IL_00a9: ldc.i4.1
+  IL_00aa: ble IL_0036
+  IL_00af: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00b4: ldarg.0
+  IL_00b5: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_00ba: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_00bf: ldarg.1
+  IL_00c0: ldloc.1
+  IL_00c1: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_00c6: ldarg.2
+  IL_00c7: ldarg.s rotation
+  IL_00c9: ldloc.2
+  IL_00ca: ldarg.3
+  IL_00cb: ldarg.s flip
+  IL_00cd: ldc.r4 0
+- IL_00b0: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_00d2: ldarg.0 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_00d3: ldc.i4 2250 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_00d8: ldc.i4 6707414 @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
++ IL_00dd: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
+  |-> retrieves System.Void Celeste.Mod.Procedurline.ScaledMTexture/<>c::<DrawModifier>b__9_2(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1[[Microsoft.Xna.Framework.Rectangle, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]],Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Monocle.MTexture)
++ IL_00e2: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal11<Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single,Monocle.MTexture>(T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,MonoMod.Cil.FastDelegateInvokers/VoidVal11`11<T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10>) @ Celeste.Mod.Procedurline.ScaledMTexture::DrawModifier
+  IL_00e7: ret

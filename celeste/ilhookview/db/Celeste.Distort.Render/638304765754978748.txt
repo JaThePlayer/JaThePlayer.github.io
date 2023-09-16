@@ -1,0 +1,85 @@
+IL Diff: System.Void Celeste.Distort::Render(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D,System.Boolean)
+  IL_0000: ldsfld Microsoft.Xna.Framework.Graphics.Effect Celeste.GFX::FxDistort
++ IL_0005: call Microsoft.Xna.Framework.Graphics.Effect TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedDistort(Microsoft.Xna.Framework.Graphics.Effect) @ TAS.EverestInterop.SimplifiedGraphicsFeature::DistortOnRender
++ IL_000a: call Microsoft.Xna.Framework.Graphics.Effect TAS.EverestInterop.Hitboxes.HitboxToggle::DisableDistortWhenShowHitbox(Microsoft.Xna.Framework.Graphics.Effect) @ TAS.EverestInterop.Hitboxes.HitboxToggle::DistortOnRender
+  IL_000f: stloc.0
+  IL_0010: ldloc.0
+  IL_0011: brfalse IL_010b
+  IL_0016: ldsfld System.Single Celeste.Distort::anxiety
++ IL_001b: ldc.i4 3825 @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
++ IL_0020: ldc.i4 49456202 @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
++ IL_0025: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
+  |-> retrieves System.Single ExtendedVariants.Variants.AnxietyEffect::transformAnxietyValue(System.Single)
++ IL_002a: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
+  IL_002f: ldc.r4 0
+  IL_0034: bgt IL_004a
+  IL_0039: ldsfld System.Single Celeste.Distort::gamerate
+  IL_003e: ldc.r4 1
+  IL_0043: clt
+  IL_0045: br IL_004b
+  IL_004a: ldc.i4.1
+  IL_004b: ldarg.2
+  IL_004c: or
+  IL_004d: brfalse IL_010b
+  IL_0052: ldsfld System.Single Celeste.Distort::anxiety
++ IL_0057: ldc.i4 3827 @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
++ IL_005c: ldc.i4 46529414 @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
++ IL_0061: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
+  |-> retrieves System.Single ExtendedVariants.Variants.AnxietyEffect::transformAnxietyValue(System.Single)
++ IL_0066: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.AnxietyEffect::modDistortRender
+  IL_006b: ldc.r4 0
+  IL_0070: bgt IL_0084
+  IL_0075: ldsfld System.Single Celeste.Distort::gamerate
+  IL_007a: ldc.r4 1
+  IL_007f: bge.un IL_009f
+  IL_0084: ldloc.0
+  IL_0085: ldloc.0
+  IL_0086: callvirt Microsoft.Xna.Framework.Graphics.EffectTechniqueCollection Microsoft.Xna.Framework.Graphics.Effect::get_Techniques()
+  IL_008b: ldstr "Distort"
+  IL_0090: callvirt Microsoft.Xna.Framework.Graphics.EffectTechnique Microsoft.Xna.Framework.Graphics.EffectTechniqueCollection::get_Item(System.String)
+  IL_0095: callvirt System.Void Microsoft.Xna.Framework.Graphics.Effect::set_CurrentTechnique(Microsoft.Xna.Framework.Graphics.EffectTechnique)
+  IL_009a: br IL_00b5
+  IL_009f: ldloc.0
+  IL_00a0: ldloc.0
+  IL_00a1: callvirt Microsoft.Xna.Framework.Graphics.EffectTechniqueCollection Microsoft.Xna.Framework.Graphics.Effect::get_Techniques()
+  IL_00a6: ldstr "Displace"
+  IL_00ab: callvirt Microsoft.Xna.Framework.Graphics.EffectTechnique Microsoft.Xna.Framework.Graphics.EffectTechniqueCollection::get_Item(System.String)
+  IL_00b0: callvirt System.Void Microsoft.Xna.Framework.Graphics.Effect::set_CurrentTechnique(Microsoft.Xna.Framework.Graphics.EffectTechnique)
+  IL_00b5: call Microsoft.Xna.Framework.GraphicsDeviceManager Monocle.Engine::get_Graphics()
+  IL_00ba: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.GraphicsDeviceManager::get_GraphicsDevice()
+  IL_00bf: callvirt Microsoft.Xna.Framework.Graphics.TextureCollection Microsoft.Xna.Framework.Graphics.GraphicsDevice::get_Textures()
+  IL_00c4: ldc.i4.1
+  IL_00c5: ldarg.1
+  IL_00c6: callvirt System.Void Microsoft.Xna.Framework.Graphics.TextureCollection::set_Item(System.Int32,Microsoft.Xna.Framework.Graphics.Texture)
+  IL_00cb: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00d0: ldc.i4.0
+  IL_00d1: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_00d6: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointClamp
+  IL_00db: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::Default
+  IL_00e0: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_00e5: ldloc.0
+  IL_00e6: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect)
+  IL_00eb: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00f0: ldarg.0
+  IL_00f1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00f6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00fb: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0100: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0105: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_010a: ret
+  IL_010b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0110: ldc.i4.0
+  IL_0111: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_0116: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointClamp
+  IL_011b: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::Default
+  IL_0120: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_0125: ldnull
+  IL_0126: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect)
+  IL_012b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0130: ldarg.0
+  IL_0131: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0136: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_013b: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0140: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0145: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_014a: ret

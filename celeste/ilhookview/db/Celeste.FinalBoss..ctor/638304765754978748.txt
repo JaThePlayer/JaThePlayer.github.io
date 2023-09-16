@@ -1,0 +1,153 @@
+IL Diff: System.Void Celeste.FinalBoss::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2[],System.Int32,System.Single,System.Boolean,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.3
++ IL_0009: ldc.i4 6764 @ ExtendedVariants.Variants.BadelineBossesEverywhere::modBadelineBossConstructor
++ IL_000e: ldc.i4 18886394 @ ExtendedVariants.Variants.BadelineBossesEverywhere::modBadelineBossConstructor
++ IL_0013: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BadelineBossesEverywhere::modBadelineBossConstructor
+  |-> retrieves System.Int32 ExtendedVariants.Variants.BadelineBossesEverywhere::modAttackPattern(System.Int32)
++ IL_0018: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.BadelineBossesEverywhere::modBadelineBossConstructor
+  IL_001d: stfld System.Int32 Celeste.FinalBoss::patternIndex
+  IL_0022: ldarg.0
+  IL_0023: ldarg.s cameraYPastMax
+  IL_0025: stfld System.Single Celeste.FinalBoss::CameraYPastMax
+  IL_002a: ldarg.0
+  IL_002b: ldarg.s dialog
+  IL_002d: stfld System.Boolean Celeste.FinalBoss::dialog
+  IL_0032: ldarg.0
+  IL_0033: ldarg.s startHit
+  IL_0035: stfld System.Boolean Celeste.FinalBoss::startHit
+  IL_003a: ldarg.0
+  IL_003b: ldarg.0
+  IL_003c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0041: ldc.r4 1
+  IL_0046: ldc.i4.s 32
+  IL_0048: ldc.i4.s 64
+  IL_004a: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_004f: dup
+  IL_0050: stloc.0
+  IL_0051: stfld Celeste.VertexLight Celeste.FinalBoss::light
+  IL_0056: ldloc.0
+  IL_0057: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005c: ldarg.0
+  IL_005d: ldarg.0
+  IL_005e: ldc.r4 14
+  IL_0063: ldc.r4 0
+  IL_0068: ldc.r4 -6
+  IL_006d: newobj System.Void Monocle.Circle::.ctor(System.Single,System.Single,System.Single)
+  IL_0072: dup
+  IL_0073: stloc.1
+  IL_0074: stfld Monocle.Circle Celeste.FinalBoss::circle
+  IL_0079: ldloc.1
+  IL_007a: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_007f: ldarg.0
+  IL_0080: ldarg.0
+  IL_0081: ldftn System.Void Celeste.FinalBoss::OnPlayer(Celeste.Player)
+  IL_0087: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_008c: ldnull
+  IL_008d: ldnull
+  IL_008e: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_0093: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0098: ldarg.0
+  IL_0099: ldarg.2
+  IL_009a: ldlen
+  IL_009b: conv.i4
+  IL_009c: ldc.i4.1
+  IL_009d: add
+  IL_009e: newarr Microsoft.Xna.Framework.Vector2
+  IL_00a3: stfld Microsoft.Xna.Framework.Vector2[] Celeste.FinalBoss::nodes
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FinalBoss::nodes
+  IL_00ae: ldc.i4.0
+  IL_00af: ldarg.0
+  IL_00b0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b5: stelem.any Microsoft.Xna.Framework.Vector2
+  IL_00ba: ldc.i4.0
+  IL_00bb: stloc.2
+  IL_00bc: br IL_00da
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FinalBoss::nodes
+  IL_00c7: ldloc.2
+  IL_00c8: ldc.i4.1
+  IL_00c9: add
+  IL_00ca: ldarg.2
+  IL_00cb: ldloc.2
+  IL_00cc: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_00d1: stelem.any Microsoft.Xna.Framework.Vector2
+  IL_00d6: ldloc.2
+  IL_00d7: ldc.i4.1
+  IL_00d8: add
+  IL_00d9: stloc.2
+  IL_00da: ldloc.2
+  IL_00db: ldarg.2
+  IL_00dc: ldlen
+  IL_00dd: conv.i4
+  IL_00de: blt IL_00c1
+  IL_00e3: ldarg.0
+  IL_00e4: ldc.i4.0
+  IL_00e5: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_00ea: stfld Monocle.Coroutine Celeste.FinalBoss::attackCoroutine
+  IL_00ef: ldarg.0
+  IL_00f0: ldarg.0
+  IL_00f1: ldfld Monocle.Coroutine Celeste.FinalBoss::attackCoroutine
+  IL_00f6: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00fb: ldarg.0
+  IL_00fc: ldc.i4.0
+  IL_00fd: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_0102: stfld Monocle.Coroutine Celeste.FinalBoss::triggerBlocksCoroutine
+  IL_0107: ldarg.0
+  IL_0108: ldarg.0
+  IL_0109: ldfld Monocle.Coroutine Celeste.FinalBoss::triggerBlocksCoroutine
+  IL_010e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0113: ldarg.0
+  IL_0114: ldarg.s cameraLockY
+  IL_0116: brtrue IL_0121
+  IL_011b: ldc.i4.3
+  IL_011c: br IL_0122
+  IL_0121: ldc.i4.2
+  IL_0122: ldc.r4 140
+  IL_0127: ldarg.s cameraYPastMax
+  IL_0129: newobj System.Void Celeste.CameraLocker::.ctor(Celeste.Level/CameraLockModes,System.Single,System.Single)
+  IL_012e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0133: ldarg.0
+  IL_0134: ldarg.0
+  IL_0135: ldc.r4 0.6
+  IL_013a: ldc.r4 0
+  IL_013f: newobj System.Void Monocle.SineWave::.ctor(System.Single,System.Single)
+  IL_0144: dup
+  IL_0145: stloc.3
+  IL_0146: stfld Monocle.SineWave Celeste.FinalBoss::floatSine
+  IL_014b: ldloc.3
+  IL_014c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0151: ldarg.0
+  IL_0152: ldarg.0
+  IL_0153: ldc.r4 0.6
+  IL_0158: ldc.r4 3
+  IL_015d: ldnull
+  IL_015e: ldc.i4.0
+  IL_015f: ldc.i4.0
+  IL_0160: call Monocle.Wiggler Monocle.Wiggler::Create(System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.Boolean)
+  IL_0165: dup
+  IL_0166: stloc.s V_4
+  IL_0168: stfld Monocle.Wiggler Celeste.FinalBoss::scaleWiggler
+  IL_016d: ldloc.s V_4
+  IL_016f: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0174: ldarg.0
+  IL_0175: ldarg.0
+  IL_0176: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_017b: dup
+  IL_017c: stloc.s V_5
+  IL_017e: stfld Celeste.SoundSource Celeste.FinalBoss::chargeSfx
+  IL_0183: ldloc.s V_5
+  IL_0185: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_018a: ldarg.0
+  IL_018b: ldarg.0
+  IL_018c: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_0191: dup
+  IL_0192: stloc.s V_5
+  IL_0194: stfld Celeste.SoundSource Celeste.FinalBoss::laserSfx
+  IL_0199: ldloc.s V_5
+  IL_019b: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01a0: ret

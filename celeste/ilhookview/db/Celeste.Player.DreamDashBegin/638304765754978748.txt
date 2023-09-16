@@ -1,0 +1,89 @@
+IL Diff: System.Void Celeste.Player::DreamDashBegin()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.SoundSource Celeste.Player::dreamSfxLoop
+  IL_0006: brtrue IL_001f
+  IL_000b: ldarg.0
+  IL_000c: ldarg.0
+  IL_000d: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_0012: dup
+  IL_0013: stloc.0
+  IL_0014: stfld Celeste.SoundSource Celeste.Player::dreamSfxLoop
+  IL_0019: ldloc.0
+  IL_001a: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_001f: ldarg.0
+  IL_0020: ldarg.0
+  IL_0021: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0026: ldc.r4 240
++ IL_002b: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Player_DreamDashBegin
++ IL_002c: call System.Single Celeste.Mod.SSMHelper.Entities.DashBoostField::ModifySpeed(System.Single,Celeste.Player) @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Player_DreamDashBegin
+  IL_0031: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
++ IL_0036: ldarg.0 @ FrostHelper.CustomDreamBlockV2::Player_DreamDashBegin
++ IL_0037: ldc.i4 6380 @ FrostHelper.CustomDreamBlockV2::Player_DreamDashBegin
++ IL_003c: ldc.i4 59813113 @ FrostHelper.CustomDreamBlockV2::Player_DreamDashBegin
++ IL_0041: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ FrostHelper.CustomDreamBlockV2::Player_DreamDashBegin
+  |-> retrieves Microsoft.Xna.Framework.Vector2 FrostHelper.CustomDreamBlockV2/<>c::<Player_DreamDashBegin>b__31_0(Microsoft.Xna.Framework.Vector2,Celeste.Player)
++ IL_0046: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ FrostHelper.CustomDreamBlockV2::Player_DreamDashBegin
+  IL_004b: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0050: ldarg.0
+  IL_0051: ldc.i4.1
+  IL_0052: stfld System.Boolean Celeste.Actor::TreatNaive
+  IL_0057: ldarg.0
+  IL_0058: ldc.i4 -12000
+  IL_005d: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0062: ldarg.0
+  IL_0063: ldc.r4 0.1
+  IL_0068: stfld System.Single Celeste.Player::dreamDashCanEndTimer
+  IL_006d: ldarg.0
+  IL_006e: ldc.r4 110
++ IL_0073: ldc.i4 6375 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0078: ldc.i4 55223625 @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_007d: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0082: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay::patchOutStamina
++ IL_0087: ldc.i4 6371 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_008c: ldc.i4 37135970 @ ExtendedVariants.Variants.Stamina::patchOutStamina
++ IL_0091: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  |-> retrieves System.Single Celeste.Mod.XaphanHelper.UI_Elements.UpgradesDisplay/<>c::<patchOutStamina>b__25_0(System.Single)
++ IL_0096: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.Stamina::patchOutStamina
+  IL_009b: stfld System.Single Celeste.Player::Stamina
+  IL_00a0: ldarg.0
+  IL_00a1: ldc.i4.0
+  IL_00a2: stfld System.Boolean Celeste.Player::dreamJump
+  IL_00a7: ldarg.0
+  IL_00a8: ldstr "event:/char/madeline/dreamblock_enter"
++ IL_00ad: ldloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00b1: dup @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00b2: brtrue IL_00c8 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00b7: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00b8: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00b9: call T Monocle.Entity::CollideFirst<Celeste.DreamBlock>() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00be: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00c3: dup @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00c4: stloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00c8: brfalse IL_00d7 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00cd: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00ce: ldloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00d2: callvirt System.String Celeste.Mod.Procedurline.CustomDreamBlock::get_EnterSFX() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
+  IL_00d7: ldnull
+  IL_00d8: ldc.r4 0
+  IL_00dd: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_00e2: pop
+  IL_00e3: ldarg.0
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld Celeste.SoundSource Celeste.Player::dreamSfxLoop
+  IL_00ea: ldstr "event:/char/madeline/dreamblock_travel"
++ IL_00ef: ldloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00f3: dup @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00f4: brtrue IL_010a @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00f9: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00fa: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_00fb: call T Monocle.Entity::CollideFirst<Celeste.DreamBlock>() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_0100: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_0105: dup @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_0106: stloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_010a: brfalse IL_0119 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_010f: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_0110: ldloc V_1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
++ IL_0114: callvirt System.String Celeste.Mod.Procedurline.CustomDreamBlock::get_TravelSFX() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashBeginModifier
+  IL_0119: callvirt System.Void Celeste.Player::Loop(Celeste.SoundSource,System.String)
+  IL_011e: ret

@@ -1,0 +1,108 @@
+IL Diff: System.Void Celeste.Holdable::Release(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0006: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_000b: brfalse IL_00f2
++ IL_0010: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
++ IL_0011: ldc.i4 5072 @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
++ IL_0016: ldc.i4 14072582 @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
++ IL_001b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.MiscHooks/<>c::<Holdable_Release>b__16_0(Celeste.Holdable)
++ IL_0020: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Holdable>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
++ IL_0025: brtrue IL_00f2 @ Celeste.Mod.EeveeHelper.MiscHooks::Holdable_Release
+  IL_002a: ldarg.1
+  IL_002b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0030: ldc.r4 0
+  IL_0035: beq IL_00e2
+  IL_003a: ldc.i4.0
+  IL_003b: stloc.0
+  IL_003c: ldarg.1
+  IL_003d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0042: call System.Int32 System.Math::Sign(System.Single)
+  IL_0047: stloc.1
+  IL_0048: ldc.i4.0
+  IL_0049: stloc.2
+  IL_004a: br IL_007f
+  IL_004f: ldarg.0
+  IL_0050: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0055: ldarg.0
+  IL_0056: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_005b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0060: ldloc.1
+  IL_0061: ldloc.2
+  IL_0062: mul
+  IL_0063: conv.r4
+  IL_0064: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0069: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(System.Single,Microsoft.Xna.Framework.Vector2)
+  IL_006e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0073: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0078: brtrue IL_007f
+  IL_007d: ldc.i4.1
+  IL_007e: stloc.0
+  IL_007f: ldloc.0
+  IL_0080: brtrue IL_0091
+  IL_0085: ldloc.2
+  IL_0086: dup
+  IL_0087: ldc.i4.1
+  IL_0088: add
+  IL_0089: stloc.2
+  IL_008a: ldc.i4.s 10
+  IL_008c: blt IL_004f
+  IL_0091: ldloc.0
+  IL_0092: brfalse IL_00e2
+  IL_0097: ldarg.0
+  IL_0098: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_009d: dup
+  IL_009e: callvirt System.Single Monocle.Entity::get_X()
+  IL_00a3: ldloc.1
+  IL_00a4: ldloc.2
+  IL_00a5: mul
+  IL_00a6: conv.r4
+  IL_00a7: add
+  IL_00a8: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_00ad: br IL_00e2
+  IL_00b2: ldarg.0
+  IL_00b3: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00b8: dup
+  IL_00b9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00be: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
++ IL_00c3: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.HoldableHooks::Holdable_Release
++ IL_00c4: ldc.i4 5074 @ Celeste.Mod.GravityHelper.Hooks.HoldableHooks::Holdable_Release
++ IL_00c9: ldc.i4 58365315 @ Celeste.Mod.GravityHelper.Hooks.HoldableHooks::Holdable_Release
++ IL_00ce: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.HoldableHooks::Holdable_Release
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Hooks.HoldableHooks/<>c::<Holdable_Release>b__3_1(Microsoft.Xna.Framework.Vector2,Celeste.Holdable)
++ IL_00d3: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Holdable>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.HoldableHooks::Holdable_Release
+  IL_00d8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00dd: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00e2: ldarg.0
+  IL_00e3: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00e8: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_00ed: brtrue IL_00b2
+  IL_00f2: ldarg.0
+  IL_00f3: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld System.Int32 Celeste.Holdable::idleDepth
+  IL_00fe: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0103: ldarg.0
+  IL_0104: ldnull
+  IL_0105: callvirt System.Void Celeste.Holdable::set_Holder(Celeste.Player)
+  IL_010a: ldarg.0
+  IL_010b: ldc.r4 0.1
+  IL_0110: stfld System.Single Celeste.Holdable::gravityTimer
+  IL_0115: ldarg.0
+  IL_0116: ldarg.0
+  IL_0117: ldfld System.Single Celeste.Holdable::cannotHoldDelay
++ IL_011c: ldc.i4 5070 @ ExtendedVariants.Variants.DelayBeforeRegrabbing::modHoldableRelease
++ IL_0121: ldc.i4 32485410 @ ExtendedVariants.Variants.DelayBeforeRegrabbing::modHoldableRelease
++ IL_0126: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DelayBeforeRegrabbing::modHoldableRelease
+  |-> retrieves System.Single ExtendedVariants.Variants.DelayBeforeRegrabbing::<modHoldableRelease>b__5_0(System.Single)
++ IL_012b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DelayBeforeRegrabbing::modHoldableRelease
+  IL_0130: stfld System.Single Celeste.Holdable::cannotHoldTimer
+  IL_0135: ldarg.0
+  IL_0136: ldfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.Holdable::OnRelease
+  IL_013b: brfalse IL_014c
+  IL_0140: ldarg.0
+  IL_0141: ldfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.Holdable::OnRelease
+  IL_0146: ldarg.1
+  IL_0147: callvirt System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::Invoke(T)
+  IL_014c: ret

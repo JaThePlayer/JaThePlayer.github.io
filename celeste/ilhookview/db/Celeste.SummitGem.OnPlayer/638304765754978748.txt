@@ -1,0 +1,68 @@
+IL Diff: System.Void Celeste.SummitGem::OnPlayer(Celeste.Player)
++ IL_0000: ldarg.1 @ Celeste.Mod.Randomizer.RandoModule::GemRefillsDashes
++ IL_0001: ldc.i4 5050 @ Celeste.Mod.Randomizer.RandoModule::GemRefillsDashes
++ IL_0006: ldc.i4 37335622 @ Celeste.Mod.Randomizer.RandoModule::GemRefillsDashes
++ IL_000b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::GemRefillsDashes
+  |-> retrieves System.Void Celeste.Mod.Randomizer.RandoModule::<GemRefillsDashes>b__49_1(Celeste.Player)
++ IL_0010: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.Randomizer.RandoModule::GemRefillsDashes
+  IL_0015: ldarg.0
+  IL_0016: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001b: isinst Celeste.Level
+  IL_0020: stloc.0
+  IL_0021: ldarg.1
+  IL_0022: callvirt System.Boolean Celeste.Player::get_DashAttacking()
++ IL_0027: ldc.i4 5054 @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
++ IL_002c: ldc.i4 38578906 @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
++ IL_0031: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
+  |-> retrieves System.Boolean Celeste.Mod.Randomizer.RandoModule::<DashlessAccessability>b__48_1(System.Boolean)
++ IL_0036: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::DashlessAccessability
+  IL_003b: brfalse IL_006a
+  IL_0040: ldarg.0
+  IL_0041: ldarg.0
+  IL_0042: ldarg.1
+  IL_0043: ldloc.0
++ IL_0044: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SummitGem_OnPlayer
++ IL_0045: isinst Celeste.Mod.CommunalHelper.Entities.CustomSummitGem @ Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SummitGem_OnPlayer
++ IL_004a: brfalse IL_0059 @ Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SummitGem_OnPlayer
++ IL_004f: callvirt System.Collections.IEnumerator Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SmashRoutine(Celeste.Player,Celeste.Level) @ Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SummitGem_OnPlayer
++ IL_0054: br IL_005e @ Celeste.Mod.CommunalHelper.Entities.CustomSummitGem::SummitGem_OnPlayer
+  IL_0059: callvirt System.Collections.IEnumerator Celeste.SummitGem::SmashRoutine(Celeste.Player,Celeste.Level)
+  IL_005e: ldc.i4.1
+  IL_005f: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0064: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0069: ret
+  IL_006a: ldarg.1
+  IL_006b: ldarg.0
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0071: callvirt System.Void Celeste.Player::PointBounce(Microsoft.Xna.Framework.Vector2)
+  IL_0076: ldarg.0
+  IL_0077: ldfld Monocle.Wiggler Celeste.SummitGem::moveWiggler
+  IL_007c: callvirt System.Void Monocle.Wiggler::Start()
+  IL_0081: ldarg.0
+  IL_0082: ldfld Monocle.Wiggler Celeste.SummitGem::scaleWiggler
+  IL_0087: callvirt System.Void Monocle.Wiggler::Start()
+  IL_008c: ldarg.0
+  IL_008d: ldarg.0
+  IL_008e: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0093: ldarg.1
+  IL_0094: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0099: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_009e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00a3: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a8: stfld Microsoft.Xna.Framework.Vector2 Celeste.SummitGem::moveWiggleDir
+  IL_00ad: ldc.i4.1
+  IL_00ae: ldc.i4.1
+  IL_00af: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld System.Single Celeste.SummitGem::bounceSfxDelay
+  IL_00ba: ldc.r4 0
+  IL_00bf: bgt.un IL_00e0
+  IL_00c4: ldstr "event:/game/general/crystalheart_bounce"
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00cf: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00d4: pop
+  IL_00d5: ldarg.0
+  IL_00d6: ldc.r4 0.1
+  IL_00db: stfld System.Single Celeste.SummitGem::bounceSfxDelay
+  IL_00e0: ret

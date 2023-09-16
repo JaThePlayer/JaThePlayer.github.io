@@ -1,0 +1,62 @@
+IL Diff: System.Void Celeste.Player::Rebound(System.Int32)
++ IL_0000: ldc.i4 5432 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0005: ldc.i4 28059984 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_000a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils/<>c::<Initialize>b__12_2()
++ IL_000f: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0014: ldarg.0
+  IL_0015: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_001a: ldarg.1
+  IL_001b: conv.r4
+  IL_001c: ldc.r4 120
+  IL_0021: mul
+  IL_0022: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0027: ldarg.0
+  IL_0028: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_002d: ldc.r4 -120
+  IL_0032: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0037: ldarg.0
+  IL_0038: ldarg.0
+  IL_0039: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_003e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0043: stfld System.Single Celeste.Player::varJumpSpeed
+  IL_0048: ldarg.0
+  IL_0049: ldc.r4 0.15
++ IL_004e: ldc.i4 5430 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0053: ldc.i4 28483812 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0058: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpDuration::<modVarJumpTimer>b__6_0(System.Single)
++ IL_005d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  IL_0062: stfld System.Single Celeste.Player::varJumpTimer
+  IL_0067: ldarg.0
+  IL_0068: ldc.i4.1
+  IL_0069: stfld System.Boolean Celeste.Player::AutoJump
+  IL_006e: ldarg.0
+  IL_006f: ldc.r4 0
+  IL_0074: stfld System.Single Celeste.Player::AutoJumpTimer
+  IL_0079: ldarg.0
+  IL_007a: ldc.r4 0
+  IL_007f: stfld System.Single Celeste.Player::dashAttackTimer
+  IL_0084: ldarg.0
+  IL_0085: ldc.r4 0
+  IL_008a: stfld System.Single Celeste.Player::gliderBoostTimer
+  IL_008f: ldarg.0
+  IL_0090: ldc.r4 1.2
+  IL_0095: stfld System.Single Celeste.Player::wallSlideTimer
+  IL_009a: ldarg.0
+  IL_009b: ldc.r4 0
+  IL_00a0: stfld System.Single Celeste.Player::wallBoostTimer
+  IL_00a5: ldarg.0
+  IL_00a6: ldc.i4.0
+  IL_00a7: stfld System.Boolean Celeste.Player::launched
+  IL_00ac: ldarg.0
+  IL_00ad: ldc.r4 0.15
+  IL_00b2: stfld System.Single Celeste.Player::lowFrictionStopTimer
+  IL_00b7: ldarg.0
+  IL_00b8: ldc.r4 0
+  IL_00bd: stfld System.Single Celeste.Player::forceMoveXTimer
+  IL_00c2: ldarg.0
+  IL_00c3: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00c8: ldc.i4.0
+  IL_00c9: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_00ce: ret

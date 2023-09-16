@@ -1,0 +1,78 @@
+IL Diff: System.Void Celeste.CS02_DreamingPhonecall::OnEnd(Celeste.Level)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Player Celeste.CS02_DreamingPhonecall::player
+  IL_0006: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_000b: call System.Void Celeste.Leader::StoreStrawberries(Celeste.Leader)
+  IL_0010: ldarg.1
+  IL_0011: callvirt System.Void Celeste.Level::ResetZoom()
+  IL_0016: ldarg.1
+  IL_0017: ldfld Celeste.BloomRenderer Celeste.Level::Bloom
+  IL_001c: ldc.r4 0
+  IL_0021: stfld System.Single Celeste.BloomRenderer::Base
+  IL_0026: ldarg.1
+  IL_0027: ldarg.0
+  IL_0028: ldfld Celeste.Player Celeste.CS02_DreamingPhonecall::player
+  IL_002d: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_0032: ldarg.1
+  IL_0033: callvirt System.Void Celeste.Level::UnloadLevel()
+  IL_0038: ldarg.1
+  IL_0039: ldfld Celeste.Session Celeste.Level::Session
+  IL_003e: ldc.i4.0
+  IL_003f: stfld System.Boolean Celeste.Session::Dreaming
+  IL_0044: ldarg.1
+  IL_0045: ldfld Celeste.Session Celeste.Level::Session
+  IL_004a: ldstr "end_0"
++ IL_004f: ldc.i4 6089 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0054: ldc.i4 10479763 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0059: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  |-> retrieves System.String Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__112_0(System.String)
++ IL_005e: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  IL_0063: stfld System.String Celeste.Session::Level
+  IL_0068: ldarg.1
+  IL_0069: ldfld Celeste.Session Celeste.Level::Session
+  IL_006e: ldarg.1
+  IL_006f: ldarg.1
+  IL_0070: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0075: stloc.0
+  IL_0076: ldloca.s V_0
+  IL_0078: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_007d: conv.r4
+  IL_007e: ldarg.1
+  IL_007f: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0084: stloc.0
+  IL_0085: ldloca.s V_0
+  IL_0087: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_008c: conv.r4
+  IL_008d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0092: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_0097: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_009c: ldc.i4 6173 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_00a1: ldc.i4 43554489 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_00a6: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  |-> retrieves System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__112_1(System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_00ab: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Nullable`1<Microsoft.Xna.Framework.Vector2>,System.Nullable`1<Microsoft.Xna.Framework.Vector2>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  IL_00b0: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_00b5: ldarg.1
+  IL_00b6: ldfld Celeste.Session Celeste.Level::Session
+  IL_00bb: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_00c0: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_00c5: ldstr "event:/music/lvl2/awake"
+  IL_00ca: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_00cf: ldarg.1
+  IL_00d0: ldfld Celeste.Session Celeste.Level::Session
+  IL_00d5: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_00da: ldfld Celeste.AudioTrackState Celeste.AudioState::Ambience
+  IL_00df: ldstr "event:/env/amb/02_awake"
+  IL_00e4: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_00e9: ldarg.1
+  IL_00ea: ldc.i4.5
+  IL_00eb: ldc.i4.0
+  IL_00ec: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_00f1: ldarg.1
+  IL_00f2: callvirt System.Void Celeste.Level::EndCutscene()
+  IL_00f7: ldarg.1
+  IL_00f8: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00fd: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0102: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0107: call System.Void Celeste.Leader::RestoreStrawberries(Celeste.Leader)
+  IL_010c: ret

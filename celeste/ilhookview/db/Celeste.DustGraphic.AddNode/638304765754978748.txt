@@ -1,0 +1,210 @@
+IL Diff: System.Void Celeste.DustGraphic::AddNode(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_0000: ldloca.s V_0
+  IL_0002: ldc.r4 1
+  IL_0007: ldc.r4 1
+  IL_000c: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0011: ldarg.0
+  IL_0012: ldfld System.Boolean Celeste.DustGraphic::autoExpandDust
+  IL_0017: brfalse IL_017c
+  IL_001c: ldarg.1
+  IL_001d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0022: call System.Int32 System.Math::Sign(System.Single)
+  IL_0027: stloc.2
+  IL_0028: ldarg.1
+  IL_0029: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_002e: call System.Int32 System.Math::Sign(System.Single)
+  IL_0033: stloc.3
+  IL_0034: ldarg.0
+  IL_0035: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_003a: ldc.i4.0
+  IL_003b: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0040: ldarg.0
+  IL_0041: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_0046: ldarg.0
+  IL_0047: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_004c: callvirt System.Single Monocle.Entity::get_X()
+  IL_0051: ldc.r4 4
+  IL_0056: sub
+  IL_0057: ldloc.2
+  IL_0058: ldc.i4.s 16
+  IL_005a: mul
+  IL_005b: conv.r4
+  IL_005c: add
+  IL_005d: conv.i4
+  IL_005e: ldarg.0
+  IL_005f: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0064: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0069: ldc.r4 4
+  IL_006e: sub
+  IL_006f: ldloc.3
+  IL_0070: ldc.i4.4
+  IL_0071: mul
+  IL_0072: conv.r4
+  IL_0073: add
+  IL_0074: conv.i4
+  IL_0075: ldc.i4.8
+  IL_0076: ldc.i4.8
+  IL_0077: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_007c: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_0081: brtrue IL_00cc
+  IL_0086: ldarg.0
+  IL_0087: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_008c: ldarg.0
+  IL_008d: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0092: callvirt System.Single Monocle.Entity::get_X()
+  IL_0097: ldc.r4 4
+  IL_009c: sub
+  IL_009d: ldloc.2
+  IL_009e: ldc.i4.s 16
+  IL_00a0: mul
+  IL_00a1: conv.r4
+  IL_00a2: add
+  IL_00a3: conv.i4
+  IL_00a4: ldarg.0
+  IL_00a5: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00aa: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00af: ldc.r4 4
+  IL_00b4: sub
+  IL_00b5: ldloc.3
+  IL_00b6: ldc.i4.4
+  IL_00b7: mul
+  IL_00b8: conv.r4
+  IL_00b9: add
+  IL_00ba: conv.i4
+  IL_00bb: ldc.i4.8
+  IL_00bc: ldc.i4.8
+  IL_00bd: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00c2: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.DustStaticSpinner>(Microsoft.Xna.Framework.Rectangle)
+  IL_00c7: brfalse IL_00d8
+  IL_00cc: ldloca.s V_0
+  IL_00ce: ldc.r4 5
+  IL_00d3: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d8: ldarg.0
+  IL_00d9: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_00de: ldarg.0
+  IL_00df: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00e4: callvirt System.Single Monocle.Entity::get_X()
+  IL_00e9: ldc.r4 4
+  IL_00ee: sub
+  IL_00ef: ldloc.2
+  IL_00f0: ldc.i4.4
+  IL_00f1: mul
+  IL_00f2: conv.r4
+  IL_00f3: add
+  IL_00f4: conv.i4
+  IL_00f5: ldarg.0
+  IL_00f6: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00fb: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0100: ldc.r4 4
+  IL_0105: sub
+  IL_0106: ldloc.3
+  IL_0107: ldc.i4.s 16
+  IL_0109: mul
+  IL_010a: conv.r4
+  IL_010b: add
+  IL_010c: conv.i4
+  IL_010d: ldc.i4.8
+  IL_010e: ldc.i4.8
+  IL_010f: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0114: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_0119: brtrue IL_0164
+  IL_011e: ldarg.0
+  IL_011f: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_0124: ldarg.0
+  IL_0125: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_012a: callvirt System.Single Monocle.Entity::get_X()
+  IL_012f: ldc.r4 4
+  IL_0134: sub
+  IL_0135: ldloc.2
+  IL_0136: ldc.i4.4
+  IL_0137: mul
+  IL_0138: conv.r4
+  IL_0139: add
+  IL_013a: conv.i4
+  IL_013b: ldarg.0
+  IL_013c: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0141: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0146: ldc.r4 4
+  IL_014b: sub
+  IL_014c: ldloc.3
+  IL_014d: ldc.i4.s 16
+  IL_014f: mul
+  IL_0150: conv.r4
+  IL_0151: add
+  IL_0152: conv.i4
+  IL_0153: ldc.i4.8
+  IL_0154: ldc.i4.8
+  IL_0155: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_015a: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.DustStaticSpinner>(Microsoft.Xna.Framework.Rectangle)
+  IL_015f: brfalse IL_0170
+  IL_0164: ldloca.s V_0
+  IL_0166: ldc.r4 5
+  IL_016b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0170: ldarg.0
+  IL_0171: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0176: ldc.i4.1
+  IL_0177: stfld System.Boolean Monocle.Entity::Collidable
+  IL_017c: newobj System.Void Celeste.DustGraphic/Node::.ctor()
+  IL_0181: stloc.1
+  IL_0182: ldloc.1
+  IL_0183: ldsfld System.Random Monocle.Calc::Random
+  IL_0188: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_018d: ldstr "danger/dustcreature/base"
++ IL_0192: ldarg.0 @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddNode
++ IL_0193: call System.String FrostHelper.Entities.CustomDustGraphic::GetBaseTexture(System.String,Celeste.DustGraphic) @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddNode
+  IL_0198: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_019d: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_01a2: stfld Monocle.MTexture Celeste.DustGraphic/Node::Base
+  IL_01a7: ldloc.1
+  IL_01a8: ldsfld System.Random Monocle.Calc::Random
+  IL_01ad: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_01b2: ldstr "danger/dustcreature/overlay"
++ IL_01b7: ldarg.0 @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddNode
++ IL_01b8: call System.String FrostHelper.Entities.CustomDustGraphic::GetOverlayTexture(System.String,Celeste.DustGraphic) @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddNode
+  IL_01bd: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_01c2: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_01c7: stfld Monocle.MTexture Celeste.DustGraphic/Node::Overlay
+  IL_01cc: ldloc.1
+  IL_01cd: ldsfld System.Random Monocle.Calc::Random
+  IL_01d2: ldc.r4 6.2831855
+  IL_01d7: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_01dc: stfld System.Single Celeste.DustGraphic/Node::Rotation
+  IL_01e1: ldloc.1
+  IL_01e2: ldarg.1
+  IL_01e3: ldloc.0
+  IL_01e4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01e9: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic/Node::Angle
+  IL_01ee: ldloc.1
+  IL_01ef: ldarg.2
+  IL_01f0: stfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_01f5: ldarg.0
+  IL_01f6: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_01fb: ldloc.1
+  IL_01fc: callvirt System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::Add(T)
+  IL_0201: ldarg.1
+  IL_0202: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0207: ldc.r4 0
+  IL_020c: bge.un IL_0222
+  IL_0211: ldarg.0
+  IL_0212: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::LeftNodes
+  IL_0217: ldloc.1
+  IL_0218: callvirt System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::Add(T)
+  IL_021d: br IL_022e
+  IL_0222: ldarg.0
+  IL_0223: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::RightNodes
+  IL_0228: ldloc.1
+  IL_0229: callvirt System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::Add(T)
+  IL_022e: ldarg.1
+  IL_022f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0234: ldc.r4 0
+  IL_0239: bge.un IL_024b
+  IL_023e: ldarg.0
+  IL_023f: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::TopNodes
+  IL_0244: ldloc.1
+  IL_0245: callvirt System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::Add(T)
+  IL_024a: ret
+  IL_024b: ldarg.0
+  IL_024c: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::BottomNodes
+  IL_0251: ldloc.1
+  IL_0252: callvirt System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::Add(T)
+  IL_0257: ret

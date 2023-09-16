@@ -1,0 +1,80 @@
+IL Diff: System.Boolean Celeste.FlyFeather/<CollectRoutine>d__26::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.FlyFeather/<CollectRoutine>d__26::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.FlyFeather Celeste.FlyFeather/<CollectRoutine>d__26::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: brfalse IL_001d
+  IL_0014: ldloc.0
+  IL_0015: ldc.i4.1
+  IL_0016: beq IL_0059
+  IL_001b: ldc.i4.0
+  IL_001c: ret
+  IL_001d: ldarg.0
+  IL_001e: ldc.i4.m1
+  IL_001f: stfld System.Int32 Celeste.FlyFeather/<CollectRoutine>d__26::<>1__state
+  IL_0024: ldloc.1
+  IL_0025: ldfld Celeste.Level Celeste.FlyFeather::level
+  IL_002a: ldc.r4 0.3
+  IL_002f: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0034: ldloc.1
+  IL_0035: ldfld Monocle.Sprite Celeste.FlyFeather::sprite
+  IL_003a: ldc.i4.0
+  IL_003b: stfld System.Boolean Monocle.Component::Visible
+  IL_0040: ldarg.0
+  IL_0041: ldc.r4 0.05
+  IL_0046: box System.Single
+  IL_004b: stfld System.Object Celeste.FlyFeather/<CollectRoutine>d__26::<>2__current
+  IL_0050: ldarg.0
+  IL_0051: ldc.i4.1
+  IL_0052: stfld System.Int32 Celeste.FlyFeather/<CollectRoutine>d__26::<>1__state
+  IL_0057: ldc.i4.1
+  IL_0058: ret
+  IL_0059: ldarg.0
+  IL_005a: ldc.i4.m1
+  IL_005b: stfld System.Int32 Celeste.FlyFeather/<CollectRoutine>d__26::<>1__state
+  IL_0060: ldc.r4 0
+  IL_0065: stloc.2
+  IL_0066: ldarg.0
+  IL_0067: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FlyFeather/<CollectRoutine>d__26::playerSpeed
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0071: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0076: brfalse IL_008c
+  IL_007b: ldarg.0
+  IL_007c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FlyFeather/<CollectRoutine>d__26::playerSpeed
+  IL_0081: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0086: stloc.2
+  IL_0087: br IL_00a8
+  IL_008c: ldloc.1
+  IL_008d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0092: ldarg.0
+  IL_0093: ldfld Celeste.Player Celeste.FlyFeather/<CollectRoutine>d__26::player
+  IL_0098: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_009d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a2: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_00a7: stloc.2
+  IL_00a8: ldloc.1
+  IL_00a9: ldfld Celeste.Level Celeste.FlyFeather::level
+  IL_00ae: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00b3: ldsfld Monocle.ParticleType Celeste.FlyFeather::P_Collect
+  IL_00b8: ldc.i4.s 10
+  IL_00ba: ldloc.1
+  IL_00bb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00c5: ldc.r4 6
+  IL_00ca: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00cf: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d4: ldloc.1
+  IL_00d5: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00da: ldloc.2
++ IL_00db: ldc.i4 6454 @ Celeste.Mod.GravityHelper.Hooks.FlyFeatherHooks::FlyFeather_CollectRoutine
++ IL_00e0: ldc.i4 53992159 @ Celeste.Mod.GravityHelper.Hooks.FlyFeatherHooks::FlyFeather_CollectRoutine
++ IL_00e5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.FlyFeatherHooks::FlyFeather_CollectRoutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_00ea: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.FlyFeatherHooks::FlyFeather_CollectRoutine
+  IL_00ef: call Celeste.SlashFx Celeste.SlashFx::Burst(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00f4: pop
+  IL_00f5: ldc.i4.0
+  IL_00f6: ret

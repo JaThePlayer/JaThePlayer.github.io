@@ -1,0 +1,183 @@
+IL Diff: System.Void Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000c: isinst Celeste.Level
+  IL_0011: brtrue IL_0017
+  IL_0016: ret
+  IL_0017: ldarg.0
+  IL_0018: ldfld Monocle.Entity Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Tracking
+  IL_001d: dup
+  IL_001e: brtrue IL_002a
+  IL_0023: pop
+  IL_0024: ldnull
+  IL_0025: br IL_002f
+  IL_002a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_002f: ldarg.0
+  IL_0030: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0035: beq IL_0041
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.1
+  IL_003c: stfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopOut
+  IL_0041: ldarg.0
+  IL_0042: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopIn
+  IL_0047: brtrue IL_0062
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::FadeOut
+  IL_0052: brtrue IL_0062
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopOut
+  IL_005d: brfalse IL_01f8
+  IL_0062: ldarg.0
+  IL_0063: ldarg.0
+  IL_0064: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_0069: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_006e: add
+  IL_006f: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_007a: ldc.r4 0.1
+  IL_007f: bge.un IL_00c3
+  IL_0084: ldarg.0
+  IL_0085: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopIn
+  IL_008a: brfalse IL_00c3
+  IL_008f: ldarg.0
+  IL_0090: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_0095: ldc.r4 0.1
+  IL_009a: div
+  IL_009b: stloc.0
+  IL_009c: ldarg.0
+  IL_009d: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_00a2: ldloc.0
+  IL_00a3: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00a8: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_00ad: ldarg.0
+  IL_00ae: ldsfld Monocle.Ease/Easer Monocle.Ease::ElasticOut
+  IL_00b3: ldloc.0
+  IL_00b4: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00b9: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupScale
+  IL_00be: br IL_01f8
+  IL_00c3: ldarg.0
+  IL_00c4: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_00c9: ldc.r4 1
+  IL_00ce: bge.un IL_00ee
+  IL_00d3: ldarg.0
+  IL_00d4: ldc.r4 1
+  IL_00d9: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_00de: ldarg.0
+  IL_00df: ldc.r4 1
+  IL_00e4: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupScale
+  IL_00e9: br IL_01f8
+  IL_00ee: ldarg.0
+  IL_00ef: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::FadeOut
+  IL_00f4: brfalse IL_0156
+  IL_00f9: ldarg.0
+  IL_00fa: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_00ff: ldc.r4 2
+  IL_0104: bge.un IL_014f
+  IL_0109: ldarg.0
+  IL_010a: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_010f: ldc.r4 1
+  IL_0114: sub
+  IL_0115: stloc.1
+  IL_0116: ldarg.0
+  IL_0117: ldc.r4 1
+  IL_011c: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_0121: ldloc.1
+  IL_0122: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0127: sub
+  IL_0128: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_012d: ldarg.0
+  IL_012e: ldc.r4 1
+  IL_0133: ldc.r4 0.4
+  IL_0138: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_013d: ldloc.1
+  IL_013e: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0143: mul
+  IL_0144: sub
+  IL_0145: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupScale
+  IL_014a: br IL_01f8
+  IL_014f: ldarg.0
+  IL_0150: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0155: ret
+  IL_0156: ldarg.0
+  IL_0157: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopOut
+  IL_015c: brfalse IL_01d7
+  IL_0161: ldarg.0
+  IL_0162: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_0167: ldc.r4 1.1
+  IL_016c: bge.un IL_01d0
+  IL_0171: ldarg.0
+  IL_0172: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_0177: ldc.r4 1
+  IL_017c: sub
+  IL_017d: ldc.r4 0.1
+  IL_0182: div
+  IL_0183: stloc.2
+  IL_0184: ldarg.0
+  IL_0185: ldc.r4 1
+  IL_018a: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_018f: ldloc.2
+  IL_0190: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0195: sub
+  IL_0196: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_019b: ldarg.0
+  IL_019c: ldarg.0
+  IL_019d: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_01a2: ldarg.0
+  IL_01a3: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_01a8: mul
+  IL_01a9: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_01ae: ldarg.0
+  IL_01af: ldc.r4 1
+  IL_01b4: ldc.r4 0.4
+  IL_01b9: ldsfld Monocle.Ease/Easer Monocle.Ease::BounceIn
+  IL_01be: ldloc.2
+  IL_01bf: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_01c4: mul
+  IL_01c5: sub
+  IL_01c6: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupScale
+  IL_01cb: br IL_01f8
+  IL_01d0: ldarg.0
+  IL_01d1: call System.Void Monocle.Entity::RemoveSelf()
+  IL_01d6: ret
+  IL_01d7: ldarg.0
+  IL_01d8: ldc.r4 1
+  IL_01dd: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::AnimationTime
+  IL_01e2: ldarg.0
+  IL_01e3: ldc.r4 1
+  IL_01e8: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupAlpha
+  IL_01ed: ldarg.0
+  IL_01ee: ldc.r4 1
+  IL_01f3: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::PopupScale
+  IL_01f8: ldarg.0
+  IL_01f9: ldarg.0
+  IL_01fa: ldfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Time
+  IL_01ff: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_0204: add
+  IL_0205: stfld System.Single Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Time
+  IL_020a: ldarg.0
+  IL_020b: ldfld Monocle.Entity Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Tracking
+  IL_0210: brtrue IL_0216
+  IL_0215: ret
+  IL_0216: ldarg.0
+  IL_0217: ldarg.0
+  IL_0218: ldfld Monocle.Entity Celeste.Mod.CelesteNet.Client.Entities.GhostEmote::Tracking
+  IL_021d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0222: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0227: ldarg.0
+  IL_0228: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_022d: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0232: dup
+  IL_0233: ldind.r4
+  IL_0234: ldc.r4 22
++ IL_0239: ldarg.0 @ Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport::GhostEmote_Update
++ IL_023a: ldc.i4 3031 @ Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport::GhostEmote_Update
++ IL_023f: ldc.i4 46172631 @ Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport::GhostEmote_Update
++ IL_0244: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport::GhostEmote_Update
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport/<>c__DisplayClass10_1::<GhostEmote_Update>b__2(System.Single,Monocle.Entity)
++ IL_0249: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Monocle.Entity>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.ThirdParty.CelesteNet.CelesteNetModSupport::GhostEmote_Update
+  IL_024e: sub
+  IL_024f: stind.r4
+  IL_0250: ret

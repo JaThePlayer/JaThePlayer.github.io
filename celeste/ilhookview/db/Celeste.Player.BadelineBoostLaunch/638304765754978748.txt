@@ -1,0 +1,47 @@
+IL Diff: System.Void Celeste.Player::BadelineBoostLaunch(System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_0007: stfld System.Nullable`1<System.Single> Celeste.Player::launchApproachX
+  IL_000c: ldarg.0
+  IL_000d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0012: ldc.r4 0
+  IL_0017: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_001c: ldarg.0
+  IL_001d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0022: ldc.r4 -330
++ IL_0027: ldarg.0 @ VivHelper.Entities.BadelineBoostCustom::BaddyBoostLaunchMod
++ IL_0028: ldc.i4 6306 @ VivHelper.Entities.BadelineBoostCustom::BaddyBoostLaunchMod
++ IL_002d: ldc.i4 21741632 @ VivHelper.Entities.BadelineBoostCustom::BaddyBoostLaunchMod
++ IL_0032: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.BadelineBoostCustom::BaddyBoostLaunchMod
+  |-> retrieves System.Single VivHelper.Entities.BadelineBoostCustom/<>c::<BaddyBoostLaunchMod>b__6_0(System.Single,Celeste.Player)
++ IL_0037: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.BadelineBoostCustom::BaddyBoostLaunchMod
+  IL_003c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0041: ldarg.0
+  IL_0042: ldc.i4.1
+  IL_0043: stfld System.Boolean Celeste.Player::AutoJump
+  IL_0048: ldarg.0
+  IL_0049: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_004e: brfalse IL_0059
+  IL_0053: ldarg.0
+  IL_0054: callvirt System.Void Celeste.Player::Drop()
+  IL_0059: ldarg.0
+  IL_005a: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_005f: ldarg.0
+  IL_0060: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0065: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_006a: call Celeste.SlashFx Celeste.SlashFx::Burst(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_006f: pop
+  IL_0070: ldarg.0
+  IL_0071: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_0076: pop
+  IL_0077: ldarg.0
+  IL_0078: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_007d: ldarg.0
+  IL_007e: ldc.r4 0.2
+  IL_0083: stfld System.Single Celeste.Player::dashCooldownTimer
+  IL_0088: ldarg.0
+  IL_0089: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_008e: ldc.i4.7
+  IL_008f: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0094: ret

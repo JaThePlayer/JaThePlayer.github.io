@@ -1,0 +1,229 @@
+IL Diff: System.Boolean Celeste.PlayerDeadBody/<DeathRoutine>d__15::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.PlayerDeadBody Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002a,IL_009f,IL_0146,IL_02b6,IL_02e7
+  IL_0028: ldc.i4.0
+  IL_0029: ret
+  IL_002a: ldarg.0
+  IL_002b: ldc.i4.m1
+  IL_002c: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_0031: ldarg.0
+  IL_0032: ldloc.1
+  IL_0033: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0038: stfld Celeste.Level Celeste.PlayerDeadBody/<DeathRoutine>d__15::<level>5__2
+  IL_003d: ldloc.1
+  IL_003e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerDeadBody::bounce
+  IL_0043: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0048: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_004d: brfalse IL_0166
+  IL_0052: ldarg.0
+  IL_0053: newobj System.Void Celeste.PlayerDeadBody/<>c__DisplayClass15_0::.ctor()
+  IL_0058: stfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_005d: ldarg.0
+  IL_005e: ldfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_0063: ldloc.1
+  IL_0064: stfld Celeste.PlayerDeadBody Celeste.PlayerDeadBody/<>c__DisplayClass15_0::<>4__this
+  IL_0069: ldstr "event:/char/madeline/predeath"
+  IL_006e: ldloc.1
+  IL_006f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0074: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0079: pop
+  IL_007a: ldloc.1
+  IL_007b: ldc.r4 1.5
+  IL_0080: stfld System.Single Celeste.PlayerDeadBody::scale
+  IL_0085: ldc.r4 0.05
+  IL_008a: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_008f: ldarg.0
+  IL_0090: ldnull
+  IL_0091: stfld System.Object Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>2__current
+  IL_0096: ldarg.0
+  IL_0097: ldc.i4.1
+  IL_0098: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_009d: ldc.i4.1
+  IL_009e: ret
+  IL_009f: ldarg.0
+  IL_00a0: ldc.i4.m1
+  IL_00a1: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_00a6: ldarg.0
+  IL_00a7: ldfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_00ac: ldloc.1
+  IL_00ad: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b2: stfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerDeadBody/<>c__DisplayClass15_0::from
+  IL_00b7: ldarg.0
+  IL_00b8: ldfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_00c3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerDeadBody/<>c__DisplayClass15_0::from
+  IL_00c8: ldloc.1
+  IL_00c9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerDeadBody::bounce
+  IL_00ce: ldc.r4 24
+  IL_00d3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00d8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00dd: stfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerDeadBody/<>c__DisplayClass15_0::to
+  IL_00e2: ldarg.0
+  IL_00e3: ldc.i4.1
+  IL_00e4: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_00e9: ldc.r4 0.5
+  IL_00ee: ldc.i4.1
+  IL_00ef: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_00f4: stfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_00f9: ldloc.1
+  IL_00fa: ldarg.0
+  IL_00fb: ldfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_0100: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0105: ldarg.0
+  IL_0106: ldfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_010b: ldarg.0
+  IL_010c: ldfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_0111: ldftn System.Void Celeste.PlayerDeadBody/<>c__DisplayClass15_0::<DeathRoutine>b__1(Monocle.Tween)
+  IL_0117: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_011c: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_0121: ldarg.0
+  IL_0122: ldarg.0
+  IL_0123: ldfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_0128: callvirt System.Single Monocle.Tween::get_Duration()
+  IL_012d: ldc.r4 0.75
+  IL_0132: mul
+  IL_0133: box System.Single
+  IL_0138: stfld System.Object Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>2__current
+  IL_013d: ldarg.0
+  IL_013e: ldc.i4.2
+  IL_013f: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_0144: ldc.i4.1
+  IL_0145: ret
+  IL_0146: ldarg.0
+  IL_0147: ldc.i4.m1
+  IL_0148: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_014d: ldarg.0
+  IL_014e: ldfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_0153: callvirt System.Void Monocle.Tween::Stop()
+  IL_0158: ldarg.0
+  IL_0159: ldnull
+  IL_015a: stfld Celeste.PlayerDeadBody/<>c__DisplayClass15_0 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>8__1
+  IL_015f: ldarg.0
+  IL_0160: ldnull
+  IL_0161: stfld Monocle.Tween Celeste.PlayerDeadBody/<DeathRoutine>d__15::<tween>5__3
+  IL_0166: ldloc.1
+  IL_0167: ldloc.1
+  IL_0168: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_016d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0172: ldc.r4 -5
++ IL_0177: ldc.i4 6314 @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
++ IL_017c: ldc.i4 3969514 @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
++ IL_0181: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0186: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
+  IL_018b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0190: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0195: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_019a: ldarg.0
+  IL_019b: ldfld Celeste.Level Celeste.PlayerDeadBody/<DeathRoutine>d__15::<level>5__2
+  IL_01a0: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_01a5: ldloc.1
+  IL_01a6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01ab: ldc.r4 0.3
+  IL_01b0: ldc.r4 0
+  IL_01b5: ldc.r4 80
+  IL_01ba: ldc.r4 1
+  IL_01bf: ldnull
+  IL_01c0: ldnull
+  IL_01c1: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_01c6: pop
+  IL_01c7: ldarg.0
+  IL_01c8: ldfld Celeste.Level Celeste.PlayerDeadBody/<DeathRoutine>d__15::<level>5__2
+  IL_01cd: ldc.r4 0.3
+  IL_01d2: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_01d7: ldc.i4.2
+  IL_01d8: ldc.i4.2
+  IL_01d9: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_01de: ldloc.1
+  IL_01df: ldfld System.Boolean Celeste.PlayerDeadBody::HasGolden
+  IL_01e4: brtrue IL_0208
+  IL_01e9: ldstr "event:/char/madeline/death"
++ IL_01ee: pop @ Celeste.Mod.HardcoreMode.HMModule::IL_DeathRoutine
++ IL_01ef: ldc.i4 6305 @ Celeste.Mod.HardcoreMode.HMModule::IL_DeathRoutine
++ IL_01f4: ldc.i4 4388610 @ Celeste.Mod.HardcoreMode.HMModule::IL_DeathRoutine
++ IL_01f9: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.String>>(System.Int32,System.Int32) @ Celeste.Mod.HardcoreMode.HMModule::IL_DeathRoutine
+  |-> retrieves System.String Celeste.Mod.HardcoreMode.HMModule::DetermineDeathSound()
++ IL_01fe: callvirt TResult System.Func`1<System.String>::Invoke() @ Celeste.Mod.HardcoreMode.HMModule::IL_DeathRoutine
+  IL_0203: br IL_0227
+  IL_0208: ldstr "event:/new_content/char/madeline/death_golden"
++ IL_020d: ldarg.0 @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
++ IL_020e: ldfld Celeste.PlayerDeadBody Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>4__this @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
++ IL_0213: ldc.i4 6303 @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
++ IL_0218: ldc.i4 64677530 @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
++ IL_021d: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.Entities.StrawberryHooks/<>c::<modDeathSound>b__10_1(System.String,Celeste.PlayerDeadBody)
++ IL_0222: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.PlayerDeadBody>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.Entities.StrawberryHooks::modDeathSound
+  IL_0227: ldloc.1
+  IL_0228: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_022d: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0232: pop
+  IL_0233: ldloc.1
+  IL_0234: ldloc.1
+  IL_0235: ldfld Microsoft.Xna.Framework.Color Celeste.PlayerDeadBody::initialHairColor
+  IL_023a: ldloc.1
+  IL_023b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0240: ldloc.1
+  IL_0241: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0246: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_024b: ldc.i4 6306 @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
++ IL_0250: ldc.i4 19933114 @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
++ IL_0255: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_025a: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerDeadBodyHooks::PlayerDeadBody_DeathRoutine
+  IL_025f: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0264: newobj System.Void Celeste.DeathEffect::.ctor(Microsoft.Xna.Framework.Color,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_0269: stfld Celeste.DeathEffect Celeste.PlayerDeadBody::deathEffect
+  IL_026e: ldloc.1
+  IL_026f: ldfld Celeste.DeathEffect Celeste.PlayerDeadBody::deathEffect
+  IL_0274: ldloc.1
+  IL_0275: ldftn System.Void Celeste.PlayerDeadBody::<DeathRoutine>b__15_0(System.Single)
+  IL_027b: newobj System.Void System.Action`1<System.Single>::.ctor(System.Object,System.IntPtr)
+  IL_0280: stfld System.Action`1<System.Single> Celeste.DeathEffect::OnUpdate
+  IL_0285: ldloc.1
+  IL_0286: ldloc.1
+  IL_0287: ldfld Celeste.DeathEffect Celeste.PlayerDeadBody::deathEffect
+  IL_028c: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0291: ldarg.0
+  IL_0292: ldloc.1
+  IL_0293: ldfld Celeste.DeathEffect Celeste.PlayerDeadBody::deathEffect
+  IL_0298: ldfld System.Single Celeste.DeathEffect::Duration
+  IL_029d: ldc.r4 0.65
+  IL_02a2: mul
+  IL_02a3: box System.Single
+  IL_02a8: stfld System.Object Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>2__current
+  IL_02ad: ldarg.0
+  IL_02ae: ldc.i4.3
+  IL_02af: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_02b4: ldc.i4.1
+  IL_02b5: ret
+  IL_02b6: ldarg.0
+  IL_02b7: ldc.i4.m1
+  IL_02b8: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_02bd: ldloc.1
+  IL_02be: ldfld System.Single Celeste.PlayerDeadBody::ActionDelay
+  IL_02c3: ldc.r4 0
+  IL_02c8: ble.un IL_02ee
+  IL_02cd: ldarg.0
+  IL_02ce: ldloc.1
+  IL_02cf: ldfld System.Single Celeste.PlayerDeadBody::ActionDelay
+  IL_02d4: box System.Single
+  IL_02d9: stfld System.Object Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>2__current
+  IL_02de: ldarg.0
+  IL_02df: ldc.i4.4
+  IL_02e0: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_02e5: ldc.i4.1
+  IL_02e6: ret
+  IL_02e7: ldarg.0
+  IL_02e8: ldc.i4.m1
+  IL_02e9: stfld System.Int32 Celeste.PlayerDeadBody/<DeathRoutine>d__15::<>1__state
+  IL_02ee: ldloc.1
+  IL_02ef: callvirt System.Void Celeste.PlayerDeadBody::End()
+  IL_02f4: ldc.i4.0
+  IL_02f5: ret

@@ -1,0 +1,301 @@
+IL Diff: System.Int32 Celeste.Player::SwimUpdate()
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Boolean Celeste.Player::SwimCheck()
+  IL_0006: brtrue IL_000d
+  IL_000b: ldc.i4.0
+  IL_000c: ret
+  IL_000d: ldarg.0
+  IL_000e: callvirt System.Boolean Celeste.Player::get_CanUnDuck()
+  IL_0013: brfalse IL_001f
+  IL_0018: ldarg.0
+  IL_0019: ldc.i4.0
+  IL_001a: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_001f: ldarg.0
+  IL_0020: callvirt System.Boolean Celeste.Player::get_CanDash()
+  IL_0025: brfalse IL_0081
+  IL_002a: ldarg.0
+  IL_002b: call System.Boolean Celeste.Input::get_CrouchDashPressed()
+  IL_0030: stfld System.Boolean Celeste.Player::demoDashed
+  IL_0035: ldsfld Monocle.VirtualButton Celeste.Input::Dash
++ IL_003a: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_003b: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_003c: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0041: ldc.i4 4647 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0046: ldc.i4 52675511 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_004b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumeBuffer>b__24_0(System.Object,System.Single)
++ IL_0050: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  IL_0055: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_005a: ldsfld Monocle.VirtualButton Celeste.Input::CrouchDash
++ IL_005f: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0060: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0061: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0066: ldc.i4 4670 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_006b: ldc.i4 38857971 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0070: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumeBuffer>b__24_0(System.Object,System.Single)
++ IL_0075: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
+  IL_007a: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_007f: ldc.i4.2
+  IL_0080: ret
+  IL_0081: ldarg.0
+  IL_0082: callvirt System.Boolean Celeste.Player::SwimUnderwaterCheck()
+  IL_0087: stloc.0
+  IL_0088: ldloc.0
+  IL_0089: brtrue IL_0141
+  IL_008e: ldarg.0
+  IL_008f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0094: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0099: ldc.r4 0
+  IL_009e: blt.un IL_0141
+  IL_00a3: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_00a8: ldc.i4 4745 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_00ad: ldc.i4 578738 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_00b2: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_00b7: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_00bc: brfalse IL_0141
+  IL_00c1: ldarg.0
+  IL_00c2: callvirt System.Boolean Celeste.Player::get_IsTired()
+  IL_00c7: brtrue IL_0141
+  IL_00cc: ldarg.0
+  IL_00cd: callvirt System.Boolean Celeste.Player::get_CanUnDuck()
+  IL_00d2: brfalse IL_0141
+  IL_00d7: ldarg.0
+  IL_00d8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00dd: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00e2: call System.Int32 System.Math::Sign(System.Single)
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_00ed: neg
+  IL_00ee: beq IL_0141
+  IL_00f3: ldarg.0
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_00fa: ldc.i4.0
+  IL_00fb: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_0100: brfalse IL_0141
+  IL_0105: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_010a: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_010f: ldfld System.Boolean Celeste.Assists::NoGrabbing
+  IL_0114: brfalse IL_012a
+  IL_0119: ldarg.0
+  IL_011a: ldarg.0
+  IL_011b: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0120: callvirt System.Void Celeste.Player::ClimbTrigger(System.Int32)
+  IL_0125: br IL_0141
+  IL_012a: ldarg.0
+  IL_012b: ldc.i4.m1
+  IL_012c: ldnull
+  IL_012d: ldnull
+  IL_012e: call System.Boolean Celeste.Actor::MoveVExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_0133: brtrue IL_0141
+  IL_0138: ldarg.0
+  IL_0139: ldc.i4.0
+  IL_013a: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_013f: ldc.i4.1
+  IL_0140: ret
+  IL_0141: ldsfld Monocle.VirtualJoystick Celeste.Input::Feather
+  IL_0146: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_014b: stloc.1
+  IL_014c: ldloc.1
+  IL_014d: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0152: stloc.1
+  IL_0153: ldloc.0
+  IL_0154: brtrue IL_0177
+  IL_0159: ldc.r4 80
++ IL_015e: ldc.i4 4747 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0163: ldc.i4 19247275 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0168: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_016d: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_0172: br IL_0190
+  IL_0177: ldc.r4 60
++ IL_017c: ldc.i4 4749 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0181: ldc.i4 15525406 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0186: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_018b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_0190: stloc.2
+  IL_0191: ldc.r4 80
++ IL_0196: ldc.i4 4751 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_019b: ldc.i4 49598411 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_01a0: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_01a5: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_01aa: stloc.3
+  IL_01ab: ldarg.0
+  IL_01ac: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01b1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01b6: call System.Single System.Math::Abs(System.Single)
+  IL_01bb: ldc.r4 80
++ IL_01c0: ldc.i4 4753 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_01c5: ldc.i4 58048344 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_01ca: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_01cf: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_01d4: ble.un IL_022c
+  IL_01d9: ldarg.0
+  IL_01da: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01df: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01e4: call System.Int32 System.Math::Sign(System.Single)
+  IL_01e9: ldloc.1
+  IL_01ea: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01ef: call System.Int32 System.Math::Sign(System.Single)
+  IL_01f4: bne.un IL_022c
+  IL_01f9: ldarg.0
+  IL_01fa: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01ff: ldarg.0
+  IL_0200: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0205: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_020a: ldloc.2
+  IL_020b: ldloc.1
+  IL_020c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0211: mul
+  IL_0212: ldc.r4 400
+  IL_0217: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_021c: mul
+  IL_021d: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0222: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0227: br IL_025a
+  IL_022c: ldarg.0
+  IL_022d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0232: ldarg.0
+  IL_0233: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0238: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_023d: ldloc.2
+  IL_023e: ldloc.1
+  IL_023f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0244: mul
+  IL_0245: ldc.r4 600
+  IL_024a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_024f: mul
+  IL_0250: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0255: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_025a: ldloc.1
+  IL_025b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0260: ldc.r4 0
+  IL_0265: bne.un IL_02b9
+  IL_026a: ldarg.0
+  IL_026b: callvirt System.Boolean Celeste.Player::SwimRiseCheck()
+  IL_0270: brfalse IL_02b9
+  IL_0275: ldarg.0
+  IL_0276: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_027b: ldarg.0
+  IL_027c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0281: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0286: ldc.r4 -60
++ IL_028b: ldc.i4 4755 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0290: ldc.i4 4295405 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0295: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_029a: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_029f: ldc.r4 600
+  IL_02a4: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02a9: mul
+  IL_02aa: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_02af: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02b4: br IL_0383
+  IL_02b9: ldloc.1
+  IL_02ba: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02bf: ldc.r4 0
+  IL_02c4: bge IL_02d4
+  IL_02c9: ldarg.0
+  IL_02ca: callvirt System.Boolean Celeste.Player::SwimUnderwaterCheck()
+  IL_02cf: brfalse IL_0383
+  IL_02d4: ldarg.0
+  IL_02d5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_02da: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02df: call System.Single System.Math::Abs(System.Single)
+  IL_02e4: ldc.r4 80
++ IL_02e9: ldc.i4 4757 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_02ee: ldc.i4 12383539 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_02f3: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
++ IL_02f8: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
+  IL_02fd: ble.un IL_0355
+  IL_0302: ldarg.0
+  IL_0303: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0308: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_030d: call System.Int32 System.Math::Sign(System.Single)
+  IL_0312: ldloc.1
+  IL_0313: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0318: call System.Int32 System.Math::Sign(System.Single)
+  IL_031d: bne.un IL_0355
+  IL_0322: ldarg.0
+  IL_0323: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0328: ldarg.0
+  IL_0329: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_032e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0333: ldloc.3
+  IL_0334: ldloc.1
+  IL_0335: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_033a: mul
+  IL_033b: ldc.r4 400
+  IL_0340: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0345: mul
+  IL_0346: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_034b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0350: br IL_0383
+  IL_0355: ldarg.0
+  IL_0356: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_035b: ldarg.0
+  IL_035c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0361: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0366: ldloc.3
+  IL_0367: ldloc.1
+  IL_0368: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_036d: mul
+  IL_036e: ldc.r4 600
+  IL_0373: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0378: mul
+  IL_0379: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_037e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0383: ldloc.0
+  IL_0384: brtrue IL_03e8
+  IL_0389: ldarg.0
+  IL_038a: ldfld System.Int32 Celeste.Player::moveX
+  IL_038f: brfalse IL_03e8
+  IL_0394: ldarg.0
+  IL_0395: ldarg.0
+  IL_0396: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_039b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_03a0: ldarg.0
+  IL_03a1: ldfld System.Int32 Celeste.Player::moveX
+  IL_03a6: conv.r4
+  IL_03a7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03ac: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03b1: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_03b6: brfalse IL_03e8
+  IL_03bb: ldarg.0
+  IL_03bc: ldarg.0
+  IL_03bd: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03c2: ldarg.0
+  IL_03c3: ldfld System.Int32 Celeste.Player::moveX
+  IL_03c8: conv.r4
+  IL_03c9: ldc.r4 -3
+  IL_03ce: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03d3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03d8: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_03dd: brtrue IL_03e8
+  IL_03e2: ldarg.0
+  IL_03e3: callvirt System.Void Celeste.Player::ClimbHop()
+  IL_03e8: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_03ed: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
++ IL_03f2: ldc.i4 4737 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
++ IL_03f7: ldc.i4 60487972 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
++ IL_03fc: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
+  |-> retrieves System.Boolean ExtendedVariants.Variants.DisableJumpingOutOfWater::modInputJumpResult(System.Boolean)
++ IL_0401: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
+  IL_0406: brfalse IL_0420
+  IL_040b: ldarg.0
+  IL_040c: callvirt System.Boolean Celeste.Player::SwimJumpCheck()
+  IL_0411: brfalse IL_0420
+  IL_0416: ldarg.0
+  IL_0417: ldc.i4.1
+  IL_0418: ldc.i4.1
+  IL_0419: callvirt System.Void Celeste.Player::Jump(System.Boolean,System.Boolean)
+  IL_041e: ldc.i4.0
+  IL_041f: ret
+  IL_0420: ldc.i4.3
+  IL_0421: ret

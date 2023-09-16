@@ -1,0 +1,928 @@
+IL Diff: System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_003a,IL_003f,IL_0044,IL_0049,IL_004e,IL_0053,IL_0058,IL_005d,IL_0062,IL_0067
+  IL_0035: br IL_006c
+  IL_003a: br IL_006e
+  IL_003f: br IL_00c1
+  IL_0044: br IL_03e7
+  IL_0049: br IL_04de
+  IL_004e: br IL_051a
+  IL_0053: br IL_0783
+  IL_0058: br IL_081b
+  IL_005d: br IL_0882
+  IL_0062: br IL_0994
+  IL_0067: br IL_0b3a
+  IL_006c: ldc.i4.0
+  IL_006d: ret
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4.m1
+  IL_0070: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0075: nop
+  IL_0076: ldarg.0
+  IL_0077: ldarg.0
+  IL_0078: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_007d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0082: isinst Celeste.Level
+  IL_0087: stfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_008c: ldarg.0
+  IL_008d: ldarg.0
+  IL_008e: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0093: ldfld System.Boolean LunaticHelper.StrawberryGate::startHidden
+  IL_0098: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag>5__2
+  IL_009d: ldarg.0
+  IL_009e: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag>5__2
+  IL_00a3: stloc.1
+  IL_00a4: ldloc.1
+  IL_00a5: brfalse IL_0522
+  IL_00aa: nop
+  IL_00ab: br IL_0143
+  IL_00b0: nop
+  IL_00b1: ldarg.0
+  IL_00b2: ldnull
+  IL_00b3: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_00b8: ldarg.0
+  IL_00b9: ldc.i4.1
+  IL_00ba: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_00bf: ldc.i4.1
+  IL_00c0: ret
+  IL_00c1: ldarg.0
+  IL_00c2: ldc.i4.m1
+  IL_00c3: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_00c8: ldarg.0
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_00cf: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d4: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00d9: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_00de: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player>5__11
+  IL_00e3: ldarg.0
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player>5__11
+  IL_00ea: brfalse IL_011c
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player>5__11
+  IL_00f5: callvirt System.Single Monocle.Entity::get_X()
+  IL_00fa: ldarg.0
+  IL_00fb: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0100: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0105: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_010a: sub
+  IL_010b: call System.Single System.Math::Abs(System.Single)
+  IL_0110: ldc.r4 100
+  IL_0115: clt
+  IL_0117: br IL_011d
+  IL_011c: ldc.i4.0
+  IL_011d: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag2>5__12
+  IL_0122: ldarg.0
+  IL_0123: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag2>5__12
+  IL_0128: stloc.2
+  IL_0129: ldloc.2
+  IL_012a: brfalse IL_0134
+  IL_012f: br IL_0148
+  IL_0134: ldarg.0
+  IL_0135: ldnull
+  IL_0136: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player>5__11
+  IL_013b: nop
+  IL_013c: ldarg.0
+  IL_013d: ldnull
+  IL_013e: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player>5__11
+  IL_0143: br IL_00b0
+  IL_0148: ldstr "event:/new_content/game/10_farewell/heart_door"
+  IL_014d: ldarg.0
+  IL_014e: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0153: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0158: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_015d: pop
+  IL_015e: ldarg.0
+  IL_015f: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0164: ldc.i4.1
+  IL_0165: stfld System.Boolean Monocle.Entity::Visible
+  IL_016a: ldarg.0
+  IL_016b: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0170: ldc.r4 0
+  IL_0175: stfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_017a: ldarg.0
+  IL_017b: ldarg.0
+  IL_017c: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0181: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0186: callvirt System.Single Monocle.Entity::get_Y()
+  IL_018b: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo>5__7
+  IL_0190: ldarg.0
+  IL_0191: ldarg.0
+  IL_0192: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0197: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_019c: callvirt System.Single Monocle.Entity::get_Y()
+  IL_01a1: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo>5__8
+  IL_01a6: ldarg.0
+  IL_01a7: ldarg.0
+  IL_01a8: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_01ad: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_01b2: dup
+  IL_01b3: callvirt System.Single Monocle.Entity::get_Y()
+  IL_01b8: ldc.r4 240
+  IL_01bd: sub
+  IL_01be: dup
+  IL_01bf: stloc.3
+  IL_01c0: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_01c5: nop
+  IL_01c6: ldloc.3
+  IL_01c7: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topFrom>5__9
+  IL_01cc: ldarg.0
+  IL_01cd: ldarg.0
+  IL_01ce: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_01d3: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_01d8: dup
+  IL_01d9: callvirt System.Single Monocle.Entity::get_Y()
+  IL_01de: ldc.r4 240
+  IL_01e3: sub
+  IL_01e4: dup
+  IL_01e5: stloc.3
+  IL_01e6: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_01eb: nop
+  IL_01ec: ldloc.3
+  IL_01ed: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botFrom>5__10
+  IL_01f2: ldarg.0
+  IL_01f3: ldc.r4 0
+  IL_01f8: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p>5__13
+  IL_01fd: br IL_0415
+  IL_0202: nop
+  IL_0203: ldarg.0
+  IL_0204: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_0209: ldarg.0
+  IL_020a: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p>5__13
+  IL_020f: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0214: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<ease>5__14
+  IL_0219: ldarg.0
+  IL_021a: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_021f: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0224: ldarg.0
+  IL_0225: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topFrom>5__9
+  IL_022a: ldarg.0
+  IL_022b: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo>5__7
+  IL_0230: ldarg.0
+  IL_0231: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topFrom>5__9
+  IL_0236: sub
+  IL_0237: ldarg.0
+  IL_0238: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<ease>5__14
+  IL_023d: mul
+  IL_023e: add
+  IL_023f: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0244: nop
+  IL_0245: ldarg.0
+  IL_0246: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_024b: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0250: ldarg.0
+  IL_0251: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botFrom>5__10
+  IL_0256: ldarg.0
+  IL_0257: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo>5__8
+  IL_025c: ldarg.0
+  IL_025d: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botFrom>5__10
+  IL_0262: sub
+  IL_0263: ldarg.0
+  IL_0264: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<ease>5__14
+  IL_0269: mul
+  IL_026a: add
+  IL_026b: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0270: nop
+  IL_0271: ldarg.0
+  IL_0272: ldarg.0
+  IL_0273: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0278: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_027d: ldarg.0
+  IL_027e: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0283: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0288: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_028d: callvirt Microsoft.Xna.Framework.Rectangle Monocle.Collider::get_Bounds()
+  IL_0292: callvirt T Monocle.Scene::CollideFirst<Celeste.DashBlock>(Microsoft.Xna.Framework.Rectangle)
+  IL_0297: stfld Celeste.DashBlock LunaticHelper.StrawberryGate/<Routine>d__31::<block>5__15
+  IL_029c: ldarg.0
+  IL_029d: ldarg.0
+  IL_029e: ldfld Celeste.DashBlock LunaticHelper.StrawberryGate/<Routine>d__31::<block>5__15
+  IL_02a3: ldnull
+  IL_02a4: cgt.un
+  IL_02a6: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag3>5__16
+  IL_02ab: ldarg.0
+  IL_02ac: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag3>5__16
+  IL_02b1: stloc.s V_4
+  IL_02b3: ldloc.s V_4
+  IL_02b5: brfalse IL_03d7
+  IL_02ba: nop
+  IL_02bb: ldarg.0
+  IL_02bc: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_02c1: ldfld System.Boolean LunaticHelper.StrawberryGate::shake
+  IL_02c6: stloc.s V_5
+  IL_02c8: ldloc.s V_5
+  IL_02ca: brfalse IL_02e0
+  IL_02cf: ldarg.0
+  IL_02d0: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_02d5: ldc.r4 0.2
+  IL_02da: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_02df: nop
+  IL_02e0: ldarg.0
+  IL_02e1: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_02e6: ldfld System.Boolean LunaticHelper.StrawberryGate::freeze
+  IL_02eb: stloc.s V_6
+  IL_02ed: ldloc.s V_6
+  IL_02ef: brfalse IL_02ff
+  IL_02f4: ldc.r4 0.1
+  IL_02f9: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_02fe: nop
+  IL_02ff: ldc.i4.2
+  IL_0300: ldc.i4.1
+  IL_0301: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0306: nop
+  IL_0307: ldarg.0
+  IL_0308: ldfld Celeste.DashBlock LunaticHelper.StrawberryGate/<Routine>d__31::<block>5__15
+  IL_030d: ldarg.0
+  IL_030e: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0313: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0318: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_031d: ldc.r4 0
+  IL_0322: ldc.r4 1
+  IL_0327: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_032c: ldc.i4.1
+  IL_032d: ldc.i4.0
+  IL_032e: callvirt System.Void Celeste.DashBlock::Break(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0333: nop
+  IL_0334: ldarg.0
+  IL_0335: ldarg.0
+  IL_0336: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_033b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0340: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0345: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_034a: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_034f: ldarg.0
+  IL_0350: ldarg.0
+  IL_0351: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_0356: brfalse IL_0388
+  IL_035b: ldarg.0
+  IL_035c: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_0361: callvirt System.Single Monocle.Entity::get_X()
+  IL_0366: ldarg.0
+  IL_0367: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_036c: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0371: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0376: sub
+  IL_0377: call System.Single System.Math::Abs(System.Single)
+  IL_037c: ldc.r4 40
+  IL_0381: clt
+  IL_0383: br IL_0389
+  IL_0388: ldc.i4.0
+  IL_0389: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag4>5__18
+  IL_038e: ldarg.0
+  IL_038f: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag4>5__18
+  IL_0394: stloc.s V_7
+  IL_0396: ldloc.s V_7
+  IL_0398: brfalse IL_03c8
+  IL_039d: ldarg.0
+  IL_039e: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_03a3: ldarg.0
+  IL_03a4: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_03a9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03ae: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_03b3: ldc.r4 8
+  IL_03b8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03c2: callvirt System.Void Celeste.Player::PointBounce(Microsoft.Xna.Framework.Vector2)
+  IL_03c7: nop
+  IL_03c8: ldarg.0
+  IL_03c9: ldnull
+  IL_03ca: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_03cf: nop
+  IL_03d0: ldarg.0
+  IL_03d1: ldnull
+  IL_03d2: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player2>5__17
+  IL_03d7: ldarg.0
+  IL_03d8: ldnull
+  IL_03d9: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_03de: ldarg.0
+  IL_03df: ldc.i4.2
+  IL_03e0: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_03e5: ldc.i4.1
+  IL_03e6: ret
+  IL_03e7: ldarg.0
+  IL_03e8: ldc.i4.m1
+  IL_03e9: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_03ee: ldarg.0
+  IL_03ef: ldnull
+  IL_03f0: stfld Celeste.DashBlock LunaticHelper.StrawberryGate/<Routine>d__31::<block>5__15
+  IL_03f5: nop
+  IL_03f6: ldarg.0
+  IL_03f7: ldnull
+  IL_03f8: stfld Celeste.DashBlock LunaticHelper.StrawberryGate/<Routine>d__31::<block>5__15
+  IL_03fd: ldarg.0
+  IL_03fe: ldarg.0
+  IL_03ff: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p>5__13
+  IL_0404: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0409: ldc.r4 1.2
+  IL_040e: mul
+  IL_040f: add
+  IL_0410: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p>5__13
+  IL_0415: ldarg.0
+  IL_0416: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p>5__13
+  IL_041b: ldc.r4 1
+  IL_0420: clt
+  IL_0422: stloc.s V_8
+  IL_0424: ldloc.s V_8
+  IL_0426: brtrue IL_0202
+  IL_042b: ldarg.0
+  IL_042c: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0431: ldfld System.Boolean LunaticHelper.StrawberryGate::shake
+  IL_0436: stloc.s V_9
+  IL_0438: ldloc.s V_9
+  IL_043a: brfalse IL_0450
+  IL_043f: ldarg.0
+  IL_0440: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_0445: ldc.r4 0.25
+  IL_044a: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_044f: nop
+  IL_0450: ldarg.0
+  IL_0451: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0456: ldfld System.Boolean LunaticHelper.StrawberryGate::freeze
+  IL_045b: stloc.s V_10
+  IL_045d: ldloc.s V_10
+  IL_045f: brfalse IL_046f
+  IL_0464: ldc.r4 0.1
+  IL_0469: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_046e: nop
+  IL_046f: ldarg.0
+  IL_0470: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0475: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_047a: ldarg.0
+  IL_047b: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo>5__7
+  IL_0480: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_0485: nop
+  IL_0486: ldarg.0
+  IL_0487: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_048c: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0491: ldarg.0
+  IL_0492: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo>5__8
+  IL_0497: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_049c: nop
+  IL_049d: br IL_04e6
+  IL_04a2: nop
+  IL_04a3: ldarg.0
+  IL_04a4: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_04a9: ldarg.0
+  IL_04aa: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_04af: ldfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_04b4: ldc.r4 1
+  IL_04b9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04be: ldc.r4 2
+  IL_04c3: mul
+  IL_04c4: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_04c9: stfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_04ce: ldarg.0
+  IL_04cf: ldnull
+  IL_04d0: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_04d5: ldarg.0
+  IL_04d6: ldc.i4.3
+  IL_04d7: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_04dc: ldc.i4.1
+  IL_04dd: ret
+  IL_04de: ldarg.0
+  IL_04df: ldc.i4.m1
+  IL_04e0: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_04e5: nop
+  IL_04e6: ldarg.0
+  IL_04e7: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_04ec: ldfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_04f1: ldc.r4 1
+  IL_04f6: clt
+  IL_04f8: stloc.s V_11
+  IL_04fa: ldloc.s V_11
+  IL_04fc: brtrue IL_04a2
+  IL_0501: ldarg.0
+  IL_0502: ldc.r4 0.6
+  IL_0507: box System.Single
+  IL_050c: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_0511: ldarg.0
+  IL_0512: ldc.i4.4
+  IL_0513: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0518: ldc.i4.1
+  IL_0519: ret
+  IL_051a: ldarg.0
+  IL_051b: ldc.i4.m1
+  IL_051c: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0521: nop
+  IL_0522: br IL_0831
+  IL_0527: nop
+  IL_0528: ldarg.0
+  IL_0529: ldarg.0
+  IL_052a: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_052f: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0534: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0539: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_053e: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_0543: ldarg.0
+  IL_0544: ldarg.0
+  IL_0545: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_054a: brfalse IL_0597
+  IL_054f: ldarg.0
+  IL_0550: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_0555: callvirt System.Single Monocle.Entity::get_X()
+  IL_055a: ldarg.0
+  IL_055b: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0560: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0565: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_056a: sub
+  IL_056b: call System.Single System.Math::Abs(System.Single)
+  IL_0570: ldc.r4 80
+  IL_0575: bge.un IL_0597
+  IL_057a: ldarg.0
+  IL_057b: ldfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_0580: callvirt System.Single Monocle.Entity::get_X()
+  IL_0585: ldarg.0
+  IL_0586: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_058b: callvirt System.Single Monocle.Entity::get_X()
+  IL_0590: clt
+  IL_0592: br IL_0598
+  IL_0597: ldc.i4.0
+  IL_0598: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag5>5__20
+  IL_059d: ldarg.0
+  IL_059e: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag5>5__20
+  IL_05a3: stloc.s V_12
+  IL_05a5: ldloc.s V_12
+  IL_05a7: brfalse IL_07d0
+  IL_05ac: nop
+  IL_05ad: ldarg.0
+  IL_05ae: ldarg.0
+  IL_05af: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_05b4: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_05b9: ldc.r4 0
+  IL_05be: bne.un IL_0604
+  IL_05c3: ldarg.0
+  IL_05c4: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_05c9: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_05ce: isinst Celeste.Level
+  IL_05d3: ldfld Celeste.Session Celeste.Level::Session
+  IL_05d8: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_05dd: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.EntityID>::get_Count()
++ IL_05e2: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_05e3: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_05e8: ldc.i4 5489 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_05ed: ldc.i4 22404749 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_05f2: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate/<>c::<modStrawberryGateRoutine>b__16_0(System.Int32,LunaticHelper.StrawberryGate)
++ IL_05f7: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,LunaticHelper.StrawberryGate>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  IL_05fc: ldc.i4.0
+  IL_05fd: cgt
+  IL_05ff: br IL_0605
+  IL_0604: ldc.i4.0
+  IL_0605: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag6>5__21
+  IL_060a: ldarg.0
+  IL_060b: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag6>5__21
+  IL_0610: stloc.s V_13
+  IL_0612: ldloc.s V_13
+  IL_0614: brfalse IL_062f
+  IL_0619: ldstr "event:/LunaticHelper/BerryGate_Fill"
+  IL_061e: ldarg.0
+  IL_061f: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0624: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0629: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_062e: pop
+  IL_062f: ldarg.0
+  IL_0630: ldarg.0
+  IL_0631: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0636: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_063b: isinst Celeste.Level
+  IL_0640: ldfld Celeste.Session Celeste.Level::Session
+  IL_0645: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_064a: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.EntityID>::get_Count()
+  IL_064f: ldarg.0
+  IL_0650: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
++ IL_0655: ldc.i4 5491 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_065a: ldc.i4 2845385 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_065f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate/<>c::<modStrawberryGateRoutine>b__16_0(System.Int32,LunaticHelper.StrawberryGate)
++ IL_0664: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,LunaticHelper.StrawberryGate>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_0669: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_066a: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  IL_066f: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_0674: clt
+  IL_0676: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag7>5__22
+  IL_067b: ldarg.0
+  IL_067c: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag7>5__22
+  IL_0681: stloc.s V_14
+  IL_0683: ldloc.s V_14
+  IL_0685: brfalse IL_06a1
+  IL_068a: ldarg.0
+  IL_068b: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_0690: ldfld Celeste.Session Celeste.Level::Session
+  IL_0695: ldstr "granny_door"
+  IL_069a: ldc.i4.1
+  IL_069b: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_06a0: nop
+  IL_06a1: ldarg.0
+  IL_06a2: ldarg.0
+  IL_06a3: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_06a8: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_06ad: conv.i4
+  IL_06ae: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<was>5__23
+  IL_06b3: ldarg.0
+  IL_06b4: ldarg.0
+  IL_06b5: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_06ba: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_06bf: isinst Celeste.Level
+  IL_06c4: ldfld Celeste.Session Celeste.Level::Session
+  IL_06c9: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_06ce: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.EntityID>::get_Count()
+  IL_06d3: ldarg.0
+  IL_06d4: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
++ IL_06d9: ldc.i4 5493 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_06de: ldc.i4 29149629 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_06e3: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  |-> retrieves System.Int32 Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate/<>c::<modStrawberryGateRoutine>b__16_0(System.Int32,LunaticHelper.StrawberryGate)
++ IL_06e8: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,LunaticHelper.StrawberryGate>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_06ed: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_06ee: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  IL_06f3: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_06f8: call System.Int32 System.Math::Min(System.Int32,System.Int32)
+  IL_06fd: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<target>5__24
+  IL_0702: ldarg.0
+  IL_0703: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0708: ldarg.0
+  IL_0709: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_070e: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_0713: ldarg.0
+  IL_0714: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<target>5__24
+  IL_0719: conv.r4
+  IL_071a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_071f: ldarg.0
+  IL_0720: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0725: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_072a: conv.r4
+  IL_072b: mul
+  IL_072c: ldc.r4 0.8
+  IL_0731: mul
+  IL_0732: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0737: callvirt System.Void LunaticHelper.StrawberryGate::set_Counter(System.Single)
+  IL_073c: nop
+  IL_073d: ldarg.0
+  IL_073e: ldarg.0
+  IL_073f: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<was>5__23
+  IL_0744: ldarg.0
+  IL_0745: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_074a: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_074f: conv.i4
+  IL_0750: ceq
+  IL_0752: ldc.i4.0
+  IL_0753: ceq
+  IL_0755: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag8>5__25
+  IL_075a: ldarg.0
+  IL_075b: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag8>5__25
+  IL_0760: stloc.s V_15
+  IL_0762: ldloc.s V_15
+  IL_0764: brfalse IL_07ca
+  IL_0769: nop
+  IL_076a: ldarg.0
+  IL_076b: ldc.r4 0.1
+  IL_0770: box System.Single
+  IL_0775: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_077a: ldarg.0
+  IL_077b: ldc.i4.5
+  IL_077c: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0781: ldc.i4.1
+  IL_0782: ret
+  IL_0783: ldarg.0
+  IL_0784: ldc.i4.m1
+  IL_0785: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_078a: ldarg.0
+  IL_078b: ldarg.0
+  IL_078c: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0791: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_0796: ldarg.0
+  IL_0797: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<target>5__24
+  IL_079c: conv.r4
+  IL_079d: clt
+  IL_079f: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag9>5__26
+  IL_07a4: ldarg.0
+  IL_07a5: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag9>5__26
+  IL_07aa: stloc.s V_16
+  IL_07ac: ldloc.s V_16
+  IL_07ae: brfalse IL_07c9
+  IL_07b3: ldstr "event:/LunaticHelper/BerryGate_Fill"
+  IL_07b8: ldarg.0
+  IL_07b9: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_07be: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_07c3: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_07c8: pop
+  IL_07c9: nop
+  IL_07ca: nop
+  IL_07cb: br IL_080b
+  IL_07d0: nop
+  IL_07d1: ldarg.0
+  IL_07d2: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_07d7: ldarg.0
+  IL_07d8: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_07dd: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_07e2: ldc.r4 0
+  IL_07e7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_07ec: ldarg.0
+  IL_07ed: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_07f2: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_07f7: conv.r4
+  IL_07f8: mul
+  IL_07f9: ldc.r4 4
+  IL_07fe: mul
+  IL_07ff: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0804: callvirt System.Void LunaticHelper.StrawberryGate::set_Counter(System.Single)
+  IL_0809: nop
+  IL_080a: nop
+  IL_080b: ldarg.0
+  IL_080c: ldnull
+  IL_080d: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_0812: ldarg.0
+  IL_0813: ldc.i4.6
+  IL_0814: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0819: ldc.i4.1
+  IL_081a: ret
+  IL_081b: ldarg.0
+  IL_081c: ldc.i4.m1
+  IL_081d: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0822: ldarg.0
+  IL_0823: ldnull
+  IL_0824: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_0829: nop
+  IL_082a: ldarg.0
+  IL_082b: ldnull
+  IL_082c: stfld Celeste.Player LunaticHelper.StrawberryGate/<Routine>d__31::<player3>5__19
+  IL_0831: ldarg.0
+  IL_0832: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0837: callvirt System.Boolean LunaticHelper.StrawberryGate::get_Opened()
+  IL_083c: brtrue IL_085f
+  IL_0841: ldarg.0
+  IL_0842: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0847: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_084c: ldarg.0
+  IL_084d: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0852: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_0857: conv.r4
+  IL_0858: clt
+  IL_085a: br IL_0860
+  IL_085f: ldc.i4.0
+  IL_0860: stloc.s V_17
+  IL_0862: ldloc.s V_17
+  IL_0864: brtrue IL_0527
+  IL_0869: ldarg.0
+  IL_086a: ldc.r4 0.5
+  IL_086f: box System.Single
+  IL_0874: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_0879: ldarg.0
+  IL_087a: ldc.i4.7
+  IL_087b: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0880: ldc.i4.1
+  IL_0881: ret
+  IL_0882: ldarg.0
+  IL_0883: ldc.i4.m1
+  IL_0884: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0889: ldarg.0
+  IL_088a: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_088f: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0894: ldarg.0
+  IL_0895: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_089a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_089f: ldarg.0
+  IL_08a0: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_08a5: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_08aa: newobj System.Void LunaticHelper.StrawberryGate/WhiteLine::.ctor(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_08af: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_08b4: nop
+  IL_08b5: ldarg.0
+  IL_08b6: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_08bb: ldfld System.Boolean LunaticHelper.StrawberryGate::shake
+  IL_08c0: stloc.s V_18
+  IL_08c2: ldloc.s V_18
+  IL_08c4: brfalse IL_08da
+  IL_08c9: ldarg.0
+  IL_08ca: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_08cf: ldc.r4 0.2
+  IL_08d4: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_08d9: nop
+  IL_08da: ldc.i4.2
+  IL_08db: ldc.i4.2
+  IL_08dc: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_08e1: nop
+  IL_08e2: ldarg.0
+  IL_08e3: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_08e8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_08ed: ldc.r4 0.5
+  IL_08f2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_08f7: ldc.i4.0
+  IL_08f8: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_08fd: nop
+  IL_08fe: ldstr "event:/game/09_core/frontdoor_unlock"
+  IL_0903: ldarg.0
+  IL_0904: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0909: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_090e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0913: pop
+  IL_0914: ldarg.0
+  IL_0915: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_091a: ldc.i4.1
+  IL_091b: callvirt System.Void LunaticHelper.StrawberryGate::set_Opened(System.Boolean)
+  IL_0920: nop
+  IL_0921: ldarg.0
+  IL_0922: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_0927: ldfld Celeste.Session Celeste.Level::Session
+  IL_092c: ldstr "opened_strawberrygate_"
+  IL_0931: ldarg.0
+  IL_0932: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0937: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_093c: stloc.s V_19
+  IL_093e: ldloca.s V_19
+  IL_0940: call System.String System.Int32::ToString()
+  IL_0945: call System.String System.String::Concat(System.String,System.String)
+  IL_094a: ldc.i4.1
+  IL_094b: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
++ IL_0950: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_0951: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_0956: ldc.i4 5495 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_095b: ldc.i4 12309778 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
++ IL_0960: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate/<>c::<modStrawberryGateRoutine>b__16_3(LunaticHelper.StrawberryGate)
++ IL_0965: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<LunaticHelper.StrawberryGate>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::modStrawberryGateRoutine
+  IL_096a: nop
+  IL_096b: ldarg.0
+  IL_096c: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0971: ldc.r4 0
+  IL_0976: stfld System.Single LunaticHelper.StrawberryGate::offset
+  IL_097b: ldarg.0
+  IL_097c: ldc.r4 0.6
+  IL_0981: box System.Single
+  IL_0986: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_098b: ldarg.0
+  IL_098c: ldc.i4.8
+  IL_098d: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0992: ldc.i4.1
+  IL_0993: ret
+  IL_0994: ldarg.0
+  IL_0995: ldc.i4.m1
+  IL_0996: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_099b: ldarg.0
+  IL_099c: ldarg.0
+  IL_099d: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_09a2: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_09a7: callvirt System.Single Monocle.Entity::get_Y()
+  IL_09ac: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topFrom2>5__3
+  IL_09b1: ldarg.0
+  IL_09b2: ldarg.0
+  IL_09b3: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_09b8: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_09bd: callvirt System.Single Monocle.Entity::get_Y()
+  IL_09c2: ldarg.0
+  IL_09c3: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_09c8: ldfld System.Single LunaticHelper.StrawberryGate::openDistance
+  IL_09cd: sub
+  IL_09ce: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo2>5__4
+  IL_09d3: ldarg.0
+  IL_09d4: ldarg.0
+  IL_09d5: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_09da: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_09df: callvirt System.Single Monocle.Entity::get_Y()
+  IL_09e4: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botFrom2>5__5
+  IL_09e9: ldarg.0
+  IL_09ea: ldarg.0
+  IL_09eb: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_09f0: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_09f5: callvirt System.Single Monocle.Entity::get_Y()
+  IL_09fa: ldarg.0
+  IL_09fb: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a00: ldfld System.Single LunaticHelper.StrawberryGate::openDistance
+  IL_0a05: add
+  IL_0a06: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo2>5__6
+  IL_0a0b: ldarg.0
+  IL_0a0c: ldc.r4 0
+  IL_0a11: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0a16: br IL_0b54
+  IL_0a1b: nop
+  IL_0a1c: ldarg.0
+  IL_0a1d: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a22: ldfld System.Boolean LunaticHelper.StrawberryGate::shake
+  IL_0a27: stloc.s V_20
+  IL_0a29: ldloc.s V_20
+  IL_0a2b: brfalse IL_0a41
+  IL_0a30: ldarg.0
+  IL_0a31: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_0a36: ldc.r4 0.2
+  IL_0a3b: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0a40: nop
+  IL_0a41: ldarg.0
+  IL_0a42: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a47: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_0a4c: ldarg.0
+  IL_0a4d: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0a52: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0a57: stfld System.Single LunaticHelper.StrawberryGate::openPercent
+  IL_0a5c: ldarg.0
+  IL_0a5d: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a62: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0a67: ldarg.0
+  IL_0a68: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topFrom2>5__3
+  IL_0a6d: ldarg.0
+  IL_0a6e: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo2>5__4
+  IL_0a73: ldarg.0
+  IL_0a74: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a79: ldfld System.Single LunaticHelper.StrawberryGate::openPercent
+  IL_0a7e: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0a83: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0a88: nop
+  IL_0a89: ldarg.0
+  IL_0a8a: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0a8f: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0a94: ldarg.0
+  IL_0a95: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botFrom2>5__5
+  IL_0a9a: ldarg.0
+  IL_0a9b: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo2>5__6
+  IL_0aa0: ldarg.0
+  IL_0aa1: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0aa6: ldfld System.Single LunaticHelper.StrawberryGate::openPercent
+  IL_0aab: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0ab0: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0ab5: nop
+  IL_0ab6: ldarg.0
+  IL_0ab7: ldarg.0
+  IL_0ab8: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0abd: ldc.r4 0.4
+  IL_0ac2: blt.un IL_0adc
+  IL_0ac7: ldarg.0
+  IL_0ac8: ldfld Celeste.Level LunaticHelper.StrawberryGate/<Routine>d__31::<level>5__1
+  IL_0acd: ldc.r4 0.1
+  IL_0ad2: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0ad7: br IL_0add
+  IL_0adc: ldc.i4.0
+  IL_0add: stfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag10>5__28
+  IL_0ae2: ldarg.0
+  IL_0ae3: ldfld System.Boolean LunaticHelper.StrawberryGate/<Routine>d__31::<flag10>5__28
+  IL_0ae8: stloc.s V_21
+  IL_0aea: ldloc.s V_21
+  IL_0aec: brfalse IL_0b29
+  IL_0af1: ldarg.0
+  IL_0af2: ldc.i4.4
+  IL_0af3: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<i>5__29
+  IL_0af8: br IL_0b0d
+  IL_0afd: nop
+  IL_0afe: nop
+  IL_0aff: ldarg.0
+  IL_0b00: ldarg.0
+  IL_0b01: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<i>5__29
+  IL_0b06: ldc.i4.4
+  IL_0b07: add
+  IL_0b08: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<i>5__29
+  IL_0b0d: ldarg.0
+  IL_0b0e: ldfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<i>5__29
+  IL_0b13: ldarg.0
+  IL_0b14: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0b19: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_0b1e: clt
+  IL_0b20: stloc.s V_22
+  IL_0b22: ldloc.s V_22
+  IL_0b24: brtrue IL_0afd
+  IL_0b29: ldarg.0
+  IL_0b2a: ldnull
+  IL_0b2b: stfld System.Object LunaticHelper.StrawberryGate/<Routine>d__31::<>2__current
+  IL_0b30: ldarg.0
+  IL_0b31: ldc.i4.s 9
+  IL_0b33: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0b38: ldc.i4.1
+  IL_0b39: ret
+  IL_0b3a: ldarg.0
+  IL_0b3b: ldc.i4.m1
+  IL_0b3c: stfld System.Int32 LunaticHelper.StrawberryGate/<Routine>d__31::<>1__state
+  IL_0b41: nop
+  IL_0b42: ldarg.0
+  IL_0b43: ldarg.0
+  IL_0b44: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0b49: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0b4e: add
+  IL_0b4f: stfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0b54: ldarg.0
+  IL_0b55: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<p2>5__27
+  IL_0b5a: ldc.r4 1
+  IL_0b5f: clt
+  IL_0b61: stloc.s V_23
+  IL_0b63: ldloc.s V_23
+  IL_0b65: brtrue IL_0a1b
+  IL_0b6a: ldarg.0
+  IL_0b6b: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0b70: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0b75: ldarg.0
+  IL_0b76: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<topTo2>5__4
+  IL_0b7b: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0b80: nop
+  IL_0b81: ldarg.0
+  IL_0b82: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0b87: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0b8c: ldarg.0
+  IL_0b8d: ldfld System.Single LunaticHelper.StrawberryGate/<Routine>d__31::<botTo2>5__6
+  IL_0b92: callvirt System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_0b97: nop
+  IL_0b98: ldarg.0
+  IL_0b99: ldfld LunaticHelper.StrawberryGate LunaticHelper.StrawberryGate/<Routine>d__31::<>4__this
+  IL_0b9e: ldc.r4 1
+  IL_0ba3: stfld System.Single LunaticHelper.StrawberryGate::openPercent
+  IL_0ba8: ldc.i4.0
+  IL_0ba9: ret

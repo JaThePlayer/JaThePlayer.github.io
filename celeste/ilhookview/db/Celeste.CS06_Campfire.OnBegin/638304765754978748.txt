@@ -1,0 +1,142 @@
+IL Diff: System.Void Celeste.CS06_Campfire::OnBegin(Celeste.Level)
+  IL_0000: ldnull
+  IL_0001: ldc.i4.0
+  IL_0002: ldc.i4.0
+  IL_0003: call System.Boolean Celeste.Audio::SetMusic(System.String,System.Boolean,System.Boolean)
+  IL_0008: pop
+  IL_0009: ldarg.1
+  IL_000a: ldnull
+  IL_000b: callvirt System.Void Celeste.Level::SnapColorGrade(System.String)
+  IL_0010: ldarg.1
+  IL_0011: ldfld Celeste.BloomRenderer Celeste.Level::Bloom
+  IL_0016: ldc.r4 0
+  IL_001b: stfld System.Single Celeste.BloomRenderer::Base
+  IL_0020: ldarg.1
+  IL_0021: ldfld Celeste.Session Celeste.Level::Session
+  IL_0026: ldstr "duskbg"
+  IL_002b: ldc.i4.1
+  IL_002c: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0031: ldarg.0
+  IL_0032: ldarg.0
+  IL_0033: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0038: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_003d: callvirt T Monocle.EntityList::FindFirst<Celeste.Plateau>()
+  IL_0042: stfld Celeste.Plateau Celeste.CS06_Campfire::plateau
+  IL_0047: ldarg.0
+  IL_0048: ldarg.0
+  IL_0049: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004e: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0053: callvirt T Monocle.Tracker::GetEntity<Celeste.Bonfire>()
+  IL_0058: stfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_005d: ldarg.1
+  IL_005e: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0063: ldarg.1
+  IL_0064: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0069: stloc.0
+  IL_006a: ldloca.s V_0
+  IL_006c: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0071: conv.r4
+  IL_0072: ldarg.0
+  IL_0073: ldfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_0078: callvirt System.Single Monocle.Entity::get_Y()
+  IL_007d: ldc.r4 144
+  IL_0082: sub
+  IL_0083: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0088: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_008d: ldarg.1
+  IL_008e: ldc.r4 80
+  IL_0093: ldc.r4 120
+  IL_0098: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_009d: ldc.r4 2
+  IL_00a2: callvirt System.Void Celeste.Level::ZoomSnap(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00a7: ldarg.0
+  IL_00a8: ldarg.1
+  IL_00a9: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00ae: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_00b3: stfld Microsoft.Xna.Framework.Vector2 Celeste.CS06_Campfire::cameraStart
+  IL_00b8: ldarg.0
+  IL_00b9: ldfld Celeste.NPC Celeste.CS06_Campfire::theo
+  IL_00be: ldarg.1
+  IL_00bf: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00c4: callvirt System.Single Monocle.Camera::get_X()
+  IL_00c9: ldc.r4 48
+  IL_00ce: sub
+  IL_00cf: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_00db: callvirt System.Single Monocle.Entity::get_X()
+  IL_00e0: ldc.r4 16
+  IL_00e5: sub
+  IL_00e6: ldarg.0
+  IL_00e7: ldfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_00ec: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00f1: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f6: stfld Microsoft.Xna.Framework.Vector2 Celeste.CS06_Campfire::theoCampfirePosition
+  IL_00fb: ldarg.0
+  IL_00fc: ldfld Celeste.Player Celeste.CS06_Campfire::player
+  IL_0101: ldfld Celeste.VertexLight Celeste.Player::Light
+  IL_0106: ldc.r4 0
+  IL_010b: stfld System.Single Celeste.VertexLight::Alpha
+  IL_0110: ldarg.0
+  IL_0111: ldfld Celeste.Player Celeste.CS06_Campfire::player
+  IL_0116: ldarg.1
+  IL_0117: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_011c: stloc.0
+  IL_011d: ldloca.s V_0
+  IL_011f: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0124: ldc.i4.s 40
+  IL_0126: sub
+  IL_0127: conv.r4
+  IL_0128: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_012d: ldarg.0
+  IL_012e: ldfld Celeste.Player Celeste.CS06_Campfire::player
+  IL_0133: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0138: ldc.i4.s 11
+  IL_013a: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_013f: ldarg.0
+  IL_0140: ldfld Celeste.Player Celeste.CS06_Campfire::player
+  IL_0145: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_014a: ldc.i4.1
+  IL_014b: stfld System.Boolean Monocle.StateMachine::Locked
+  IL_0150: ldarg.0
+  IL_0151: ldarg.0
+  IL_0152: ldfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_0157: callvirt System.Single Monocle.Entity::get_X()
+  IL_015c: ldc.r4 20
+  IL_0161: add
+  IL_0162: ldarg.0
+  IL_0163: ldfld Celeste.Bonfire Celeste.CS06_Campfire::bonfire
+  IL_0168: callvirt System.Single Monocle.Entity::get_Y()
+  IL_016d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0172: stfld Microsoft.Xna.Framework.Vector2 Celeste.CS06_Campfire::playerCampfirePosition
+  IL_0177: ldarg.1
+  IL_0178: ldfld Celeste.Session Celeste.Level::Session
+  IL_017d: ldstr "campfire_chat"
+  IL_0182: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
++ IL_0187: ldc.i4 5054 @ Celeste.Mod.Randomizer.RandoModule::FuckUpLess
++ IL_018c: ldc.i4 42922708 @ Celeste.Mod.Randomizer.RandoModule::FuckUpLess
++ IL_0191: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::FuckUpLess
+  |-> retrieves System.Boolean Celeste.Mod.Randomizer.RandoModule::<FuckUpLess>b__54_0(System.Boolean)
++ IL_0196: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::FuckUpLess
+  IL_019b: brfalse IL_01bc
+  IL_01a0: ldarg.0
+  IL_01a1: ldc.i4.1
+  IL_01a2: stfld System.Boolean Celeste.CutsceneEntity::WasSkipped
+  IL_01a7: ldarg.1
+  IL_01a8: callvirt System.Void Celeste.Level::ResetZoom()
+  IL_01ad: ldarg.1
+  IL_01ae: callvirt System.Void Celeste.Level::EndCutscene()
+  IL_01b3: ldarg.0
+  IL_01b4: ldarg.1
+  IL_01b5: ldc.i4.1
+  IL_01b6: call System.Void Celeste.CutsceneEntity::EndCutscene(Celeste.Level,System.Boolean)
+  IL_01bb: ret
+  IL_01bc: ldarg.0
+  IL_01bd: ldarg.0
+  IL_01be: ldarg.1
+  IL_01bf: callvirt System.Collections.IEnumerator Celeste.CS06_Campfire::Cutscene(Celeste.Level)
+  IL_01c4: ldc.i4.1
+  IL_01c5: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_01ca: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01cf: ret

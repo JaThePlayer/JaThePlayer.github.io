@@ -1,0 +1,280 @@
+IL Diff: System.Void Celeste.Player::orig_WallJump(System.Int32)
++ IL_0000: ldc.i4 6572 @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
++ IL_0005: ldc.i4 11349371 @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
++ IL_000a: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
+  |-> retrieves System.Boolean ExtendedVariants.Variants.DisableWallJumping::isWallJumpingDisabled()
++ IL_000f: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
++ IL_0014: brfalse IL_001a @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
++ IL_0019: ret @ ExtendedVariants.Variants.DisableWallJumping::modWallJump
+  IL_001a: ldarg.0
+  IL_001b: ldc.i4.0
+  IL_001c: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_0021: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_0026: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_002b: ldarg.0
+  IL_002c: ldc.r4 0
+  IL_0031: stfld System.Single Celeste.Player::jumpGraceTimer
+  IL_0036: ldarg.0
+  IL_0037: ldc.r4 0.2
++ IL_003c: ldc.i4 6567 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0041: ldc.i4 53960416 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0046: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpDuration::<modVarJumpTimer>b__6_0(System.Single)
++ IL_004b: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  IL_0050: stfld System.Single Celeste.Player::varJumpTimer
+  IL_0055: ldarg.0
+  IL_0056: ldc.i4.0
+  IL_0057: stfld System.Boolean Celeste.Player::AutoJump
+  IL_005c: ldarg.0
+  IL_005d: ldc.r4 0
+  IL_0062: stfld System.Single Celeste.Player::dashAttackTimer
+  IL_0067: ldarg.0
+  IL_0068: ldc.r4 0
+  IL_006d: stfld System.Single Celeste.Player::gliderBoostTimer
+  IL_0072: ldarg.0
+  IL_0073: ldc.r4 1.2
+  IL_0078: stfld System.Single Celeste.Player::wallSlideTimer
+  IL_007d: ldarg.0
+  IL_007e: ldc.r4 0
+  IL_0083: stfld System.Single Celeste.Player::wallBoostTimer
+  IL_0088: ldarg.0
+  IL_0089: ldc.r4 0.15
+  IL_008e: stfld System.Single Celeste.Player::lowFrictionStopTimer
+  IL_0093: ldarg.0
+  IL_0094: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0099: brfalse IL_00d9
+  IL_009e: ldarg.0
+  IL_009f: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00a4: ldfld System.Boolean Celeste.Holdable::SlowFall
+  IL_00a9: brfalse IL_00d9
+  IL_00ae: ldarg.0
+  IL_00af: ldarg.1
+  IL_00b0: stfld System.Int32 Celeste.Player::forceMoveX
+  IL_00b5: ldarg.0
+  IL_00b6: ldc.r4 0.26
++ IL_00bb: ldc.i4 6573 @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
++ IL_00c0: ldc.i4 35035479 @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
++ IL_00c5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.HorizontalWallJumpDuration::<modForceMoveXTimer>b__6_0(System.Single)
++ IL_00ca: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
+  IL_00cf: stfld System.Single Celeste.Player::forceMoveXTimer
+  IL_00d4: br IL_0156
+  IL_00d9: ldarg.0
++ IL_00da: pop @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00db: ldc.i4 6541 @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00e0: ldc.i4 10608231 @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00e5: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
+  |-> retrieves System.Boolean Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::neutralJumpingEnabled()
++ IL_00ea: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00ef: brfalse IL_0130 @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00f4: ldarg.0 @ Celeste.Mod.XaphanHelper.Upgrades.ClimbingKit::modWallJump
++ IL_00f5: pop @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
++ IL_00f6: ldc.i4 6577 @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
++ IL_00fb: ldc.i4 19920992 @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
++ IL_0100: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
+  |-> retrieves System.Boolean ExtendedVariants.Variants.DisableNeutralJumping::neutralJumpingEnabled()
++ IL_0105: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
++ IL_010a: brfalse IL_0130 @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
++ IL_010f: ldarg.0 @ ExtendedVariants.Variants.DisableNeutralJumping::modWallJump
+  IL_0110: ldfld System.Int32 Celeste.Player::moveX
++ IL_0115: ldarg.0 @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
++ IL_0116: ldarg.1 @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
++ IL_0117: ldc.i4 6578 @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
++ IL_011c: ldc.i4 45071201 @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
++ IL_0121: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
+  |-> retrieves System.Int32 VivHelper.VivHelperModule/<>c::<DisableNeutralsOnHoldable>b__107_0(System.Int32,Celeste.Player,System.Int32)
++ IL_0126: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Int32,System.Int32,Celeste.Player,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ VivHelper.VivHelperModule::DisableNeutralsOnHoldable
+  IL_012b: brfalse IL_0156
+  IL_0130: ldarg.0
+  IL_0131: ldarg.1
+  IL_0132: stfld System.Int32 Celeste.Player::forceMoveX
+  IL_0137: ldarg.0
+  IL_0138: ldc.r4 0.16
++ IL_013d: ldc.i4 6575 @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
++ IL_0142: ldc.i4 19301541 @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
++ IL_0147: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.HorizontalWallJumpDuration::<modForceMoveXTimer>b__6_0(System.Single)
++ IL_014c: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.HorizontalWallJumpDuration::modForceMoveXTimer
+  IL_0151: stfld System.Single Celeste.Player::forceMoveXTimer
+  IL_0156: ldarg.0
+  IL_0157: call Microsoft.Xna.Framework.Vector2 Celeste.Actor::get_LiftSpeed()
+  IL_015c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0161: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0166: brfalse IL_01a6
+  IL_016b: ldarg.0
+  IL_016c: ldarg.0
+  IL_016d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0172: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0177: ldc.r4 3
+  IL_017c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0181: ldarg.1
+  IL_0182: neg
+  IL_0183: conv.r4
+  IL_0184: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0189: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_018e: call T Monocle.Entity::CollideFirst<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0193: stloc.2
+  IL_0194: ldloc.2
+  IL_0195: brfalse IL_01a6
+  IL_019a: ldarg.0
+  IL_019b: ldloc.2
+  IL_019c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_01a1: call System.Void Celeste.Actor::set_LiftSpeed(Microsoft.Xna.Framework.Vector2)
+  IL_01a6: ldarg.0
+  IL_01a7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01ac: ldc.r4 130
++ IL_01b1: ldc.i4 6571 @ ExtendedVariants.Variants.SpeedX::modWallJump
++ IL_01b6: ldc.i4 8717581 @ ExtendedVariants.Variants.SpeedX::modWallJump
++ IL_01bb: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SpeedX::modWallJump
+  |-> retrieves System.Single ExtendedVariants.Variants.SpeedX::determineSpeedXFactor()
++ IL_01c0: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.SpeedX::modWallJump
++ IL_01c5: mul @ ExtendedVariants.Variants.SpeedX::modWallJump
++ IL_01c6: call System.Single Celeste.Mod.XaphanHelper.Entities.Liquid::determineSpeedXFactor() @ Celeste.Mod.XaphanHelper.Entities.Liquid::modWallJump
++ IL_01cb: mul @ Celeste.Mod.XaphanHelper.Entities.Liquid::modWallJump
++ IL_01cc: call System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineSpeedXFactor() @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modWallJump
++ IL_01d1: mul @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modWallJump
+  IL_01d2: ldarg.1
+  IL_01d3: conv.r4
+  IL_01d4: mul
+  IL_01d5: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01da: ldarg.0
+  IL_01db: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01e0: ldc.r4 -105
++ IL_01e5: ldc.i4 6542 @ ExtendedVariants.Variants.JumpHeight::modWallJump
++ IL_01ea: ldc.i4 28365223 @ ExtendedVariants.Variants.JumpHeight::modWallJump
++ IL_01ef: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpHeight::modWallJump
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpHeight::determineJumpHeightFactor()
++ IL_01f4: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.JumpHeight::modWallJump
++ IL_01f9: mul @ ExtendedVariants.Variants.JumpHeight::modWallJump
++ IL_01fa: call System.Single Celeste.Mod.XaphanHelper.Entities.Liquid::determineJumpHeightFactor() @ Celeste.Mod.XaphanHelper.Entities.Liquid::modWallJump
++ IL_01ff: mul @ Celeste.Mod.XaphanHelper.Entities.Liquid::modWallJump
++ IL_0200: call System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineJumpHeightFactor() @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modWallJump
++ IL_0205: mul @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modWallJump
++ IL_0206: call System.Single Celeste.Mod.XaphanHelper.Upgrades.JumpBoost::determineJumpHeightFactor() @ Celeste.Mod.XaphanHelper.Upgrades.JumpBoost::ilWallJump
++ IL_020b: mul @ Celeste.Mod.XaphanHelper.Upgrades.JumpBoost::ilWallJump
+  IL_020c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0211: ldarg.0
+  IL_0212: ldarg.0
+  IL_0213: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0218: ldarg.0
+- IL_0219: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::get_LiftBoost() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_orig_WallJump
++ IL_0219: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Hooks.PlayerHooks::getLiftBoost(Celeste.Player) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_orig_WallJump
+  IL_021e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0223: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0228: ldarg.0
+  IL_0229: ldarg.0
+  IL_022a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_022f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0234: stfld System.Single Celeste.Player::varJumpSpeed
+  IL_0239: ldarg.0
+  IL_023a: callvirt System.Boolean Celeste.Player::LaunchedBoostCheck()
+  IL_023f: pop
+  IL_0240: ldc.i4.m1
+  IL_0241: stloc.0
+  IL_0242: ldarg.0
+  IL_0243: ldarg.0
+  IL_0244: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0249: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_024e: ldarg.1
+  IL_024f: conv.r4
+  IL_0250: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0255: ldc.r4 4
+  IL_025a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_025f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0264: ldarg.0
+  IL_0265: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Player::temp
+  IL_026a: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.Platform>(Microsoft.Xna.Framework.Vector2,System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_026f: call Celeste.Platform Celeste.SurfaceIndex::GetPlatformByPriority(System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_0274: stloc.1
+  IL_0275: ldloc.1
+  IL_0276: brfalse IL_02e8
+  IL_027b: ldloc.1
+  IL_027c: ldarg.0
+  IL_027d: ldarg.1
+  IL_027e: neg
+  IL_027f: callvirt System.Int32 Celeste.Platform::GetWallSoundIndex(Celeste.Player,System.Int32)
+  IL_0284: stloc.0
+  IL_0285: ldarg.0
+  IL_0286: ldloc.0
+  IL_0287: call System.String Celeste.SurfaceIndex::GetPathFromIndex(System.Int32)
+  IL_028c: ldstr "/landing"
+  IL_0291: call System.String System.String::Concat(System.String,System.String)
+  IL_0296: ldstr "surface_index"
+  IL_029b: ldloc.0
+  IL_029c: conv.r4
+  IL_029d: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_02a2: pop
+  IL_02a3: ldloc.1
++ IL_02a4: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
++ IL_02a5: ldarg.1 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
++ IL_02a6: ldc.i4 6522 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
++ IL_02ab: ldc.i4 10073019 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
++ IL_02b0: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
+  |-> retrieves Celeste.Platform Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry/<>c::<Player_orig_WallJump>b__44_1(Celeste.Platform,Celeste.Player,System.Int32)
++ IL_02b5: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Celeste.Platform,Celeste.Platform,Celeste.Player,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_orig_WallJump
+  IL_02ba: isinst Celeste.DreamBlock
+  IL_02bf: brfalse IL_02e8
+  IL_02c4: ldloc.1
+  IL_02c5: isinst Celeste.DreamBlock
+  IL_02ca: ldarg.0
+  IL_02cb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02d0: ldarg.1
+  IL_02d1: ldc.i4.3
+  IL_02d2: mul
+  IL_02d3: conv.r4
+  IL_02d4: ldc.r4 -4
+  IL_02d9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02de: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02e3: callvirt System.Void Celeste.DreamBlock::FootstepRipple(Microsoft.Xna.Framework.Vector2)
+  IL_02e8: ldarg.0
+  IL_02e9: ldarg.1
+  IL_02ea: ldc.i4.0
+  IL_02eb: blt IL_02fa
+  IL_02f0: ldstr "event:/char/madeline/jump_wall_left"
+  IL_02f5: br IL_02ff
+  IL_02fa: ldstr "event:/char/madeline/jump_wall_right"
+  IL_02ff: ldnull
+  IL_0300: ldc.r4 0
+  IL_0305: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_030a: pop
+  IL_030b: ldarg.0
+  IL_030c: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0311: ldc.r4 0.6
+  IL_0316: ldc.r4 1.4
+  IL_031b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0320: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0325: ldarg.1
+  IL_0326: ldc.i4.m1
+  IL_0327: bne.un IL_035d
+  IL_032c: ldarg.0
+  IL_032d: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0332: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0337: ldc.r4 2
+  IL_033c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0341: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0346: ldc.r4 -2.3561945
+  IL_034b: ldc.i4.4
+  IL_034c: ldarg.0
+  IL_034d: ldloc.0
+  IL_034e: callvirt Monocle.ParticleType Celeste.Player::DustParticleFromSurfaceIndex(System.Int32)
+  IL_0353: call System.Void Celeste.Dust::Burst(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Monocle.ParticleType)
+  IL_0358: br IL_0389
+  IL_035d: ldarg.0
+  IL_035e: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0363: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0368: ldc.r4 -2
+  IL_036d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0372: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0377: ldc.r4 -0.7853982
+  IL_037c: ldc.i4.4
+  IL_037d: ldarg.0
+  IL_037e: ldloc.0
+  IL_037f: callvirt Monocle.ParticleType Celeste.Player::DustParticleFromSurfaceIndex(System.Int32)
+  IL_0384: call System.Void Celeste.Dust::Burst(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Monocle.ParticleType)
+  IL_0389: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_038e: dup
+  IL_038f: ldfld System.Int32 Celeste.SaveData::TotalWallJumps
+  IL_0394: ldc.i4.1
+  IL_0395: add
+  IL_0396: stfld System.Int32 Celeste.SaveData::TotalWallJumps
+  IL_039b: ret

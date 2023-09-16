@@ -1,0 +1,749 @@
+IL Diff: System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_049d,IL_05f5,IL_0642,IL_06e6,IL_0936
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: newobj System.Void Celeste.BadelineBoost/<>c__DisplayClass22_0::.ctor()
+  IL_003b: stfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.Player Celeste.BadelineBoost/<BoostRoutine>d__22::player
+  IL_004c: stfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0057: ldarg.0
+  IL_0058: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this
+  IL_005d: stfld Celeste.BadelineBoost Celeste.BadelineBoost/<>c__DisplayClass22_0::<>4__this
+  IL_0062: ldloc.1
+  IL_0063: ldarg.0
+  IL_0064: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0069: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_006e: stfld Celeste.Player Celeste.BadelineBoost::holding
+  IL_0073: ldloc.1
+  IL_0074: ldc.i4.1
+  IL_0075: stfld System.Boolean Celeste.BadelineBoost::travelling
+  IL_007a: ldloc.1
+  IL_007b: ldloc.1
+  IL_007c: ldfld System.Int32 Celeste.BadelineBoost::nodeIndex
+  IL_0081: ldc.i4.1
+  IL_0082: add
+  IL_0083: stfld System.Int32 Celeste.BadelineBoost::nodeIndex
+  IL_0088: ldloc.1
+  IL_0089: ldfld Monocle.Sprite Celeste.BadelineBoost::sprite
+  IL_008e: ldc.i4.0
+  IL_008f: stfld System.Boolean Monocle.Component::Visible
+  IL_0094: ldloc.1
+  IL_0095: ldfld Monocle.Sprite Celeste.BadelineBoost::sprite
+  IL_009a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_009f: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00a4: ldloc.1
+  IL_00a5: ldc.i4.0
+  IL_00a6: stfld System.Boolean Monocle.Entity::Collidable
+  IL_00ab: ldarg.0
+  IL_00ac: ldloc.1
+  IL_00ad: ldfld System.Int32 Celeste.BadelineBoost::nodeIndex
+  IL_00b2: ldloc.1
+  IL_00b3: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.BadelineBoost::nodes
+  IL_00b8: ldlen
+  IL_00b9: conv.i4
+  IL_00ba: clt
+  IL_00bc: ldc.i4.0
+  IL_00bd: ceq
+  IL_00bf: stfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_00c4: ldarg.0
+  IL_00c5: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_00ca: ldloc.1
+  IL_00cb: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d0: isinst Celeste.Level
+  IL_00d5: stfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_00da: ldarg.0
+  IL_00db: ldc.i4.0
+  IL_00dc: stfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<endLevel>5__3
+  IL_00e1: ldarg.0
+  IL_00e2: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_00e7: brfalse IL_0103
+  IL_00ec: ldloc.1
+  IL_00ed: ldfld System.Boolean Celeste.BadelineBoost::finalCh9GoldenBoost
+  IL_00f2: brfalse IL_0103
+  IL_00f7: ldarg.0
+  IL_00f8: ldc.i4.1
+  IL_00f9: stfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<endLevel>5__3
+  IL_00fe: br IL_0198
+  IL_0103: ldc.i4.0
+  IL_0104: stloc.3
+  IL_0105: ldarg.0
+  IL_0106: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_010b: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0110: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0115: ldfld System.Collections.Generic.List`1<Celeste.Follower> Celeste.Leader::Followers
+  IL_011a: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Follower>::GetEnumerator()
+  IL_011f: stloc.s V_4
+  IL_0121: br IL_0153
+  IL_0126: ldloca.s V_4
+  IL_0128: call T System.Collections.Generic.List`1/Enumerator<Celeste.Follower>::get_Current()
+  IL_012d: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0132: isinst Celeste.Strawberry
+  IL_0137: stloc.s V_5
+  IL_0139: ldloc.s V_5
+  IL_013b: brfalse IL_0153
+  IL_0140: ldloc.s V_5
+  IL_0142: callvirt System.Boolean Celeste.Strawberry::get_Golden()
+  IL_0147: brfalse IL_0153
+  IL_014c: ldc.i4.1
+  IL_014d: stloc.3
+  IL_014e: leave IL_0172
+  IL_0153: ldloca.s V_4
+  IL_0155: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Follower>::MoveNext()
+  IL_015a: brtrue IL_0126
+  IL_015f: leave IL_0172
+  IL_0164: ldloca.s V_4
+  IL_0166: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Follower>
+  IL_016c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0171: endfinally
+  IL_0172: ldarg.0
+  IL_0173: ldarg.0
+  IL_0174: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_0179: brfalse IL_0192
+  IL_017e: ldloc.1
+  IL_017f: ldfld System.Boolean Celeste.BadelineBoost::finalCh9Boost
+  IL_0184: brfalse IL_0192
+  IL_0189: ldloc.3
+  IL_018a: ldc.i4.0
+  IL_018b: ceq
+  IL_018d: br IL_0193
+  IL_0192: ldc.i4.0
+  IL_0193: stfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<endLevel>5__3
+  IL_0198: ldarg.0
+  IL_0199: newobj System.Void System.Diagnostics.Stopwatch::.ctor()
+  IL_019e: stfld System.Diagnostics.Stopwatch Celeste.BadelineBoost/<BoostRoutine>d__22::<sw>5__4
+  IL_01a3: ldarg.0
+  IL_01a4: ldfld System.Diagnostics.Stopwatch Celeste.BadelineBoost/<BoostRoutine>d__22::<sw>5__4
+  IL_01a9: callvirt System.Void System.Diagnostics.Stopwatch::Start()
+  IL_01ae: ldloc.1
+  IL_01af: ldfld System.Boolean Celeste.BadelineBoost::finalCh9Boost
+  IL_01b4: brfalse IL_01cf
+  IL_01b9: ldstr "event:/new_content/char/badeline/booster_finalfinal_part1"
+  IL_01be: ldloc.1
+  IL_01bf: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01c4: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_01c9: pop
+  IL_01ca: br IL_0201
+  IL_01cf: ldarg.0
+  IL_01d0: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_01d5: brtrue IL_01f0
+  IL_01da: ldstr "event:/char/badeline/booster_begin"
+  IL_01df: ldloc.1
+  IL_01e0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01e5: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_01ea: pop
+  IL_01eb: br IL_0201
+  IL_01f0: ldstr "event:/char/badeline/booster_final"
+  IL_01f5: ldloc.1
+  IL_01f6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01fb: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0200: pop
+  IL_0201: ldarg.0
+  IL_0202: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0207: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_020c: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0211: brfalse IL_0226
+  IL_0216: ldarg.0
+  IL_0217: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_021c: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0221: callvirt System.Void Celeste.Player::Drop()
+  IL_0226: ldarg.0
+  IL_0227: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_022c: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0231: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0236: ldc.i4.s 11
+  IL_0238: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_023d: ldarg.0
+  IL_023e: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0243: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0248: ldc.i4.0
+  IL_0249: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_024e: ldarg.0
+  IL_024f: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0254: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0259: ldc.i4.0
+  IL_025a: stfld System.Boolean Celeste.Player::DummyGravity
+  IL_025f: ldarg.0
++ IL_0260: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0265: ldc.i4 4885 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_026a: ldc.i4 25486137 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_026f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  |-> retrieves System.Boolean VivHelper.Entities.BadelineBoostCustom/<>c::<BoostRoutineAddCustomRefillTraits>b__10_4(Celeste.BadelineBoost)
++ IL_0274: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.BadelineBoost>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0279: brtrue IL_02d0 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_027e: ldarg.0 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  IL_027f: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0284: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0289: callvirt Celeste.PlayerInventory Celeste.Player::get_Inventory()
+  IL_028e: ldfld System.Int32 Celeste.PlayerInventory::Dashes
+  IL_0293: ldc.i4.1
+  IL_0294: ble IL_02af
+  IL_0299: ldarg.0
+  IL_029a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_029f: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_02a4: ldc.i4.1
+  IL_02a5: stfld System.Int32 Celeste.Player::Dashes
+  IL_02aa: br IL_02c0
+  IL_02af: ldarg.0
+  IL_02b0: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_02b5: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_02ba: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_02bf: pop
+  IL_02c0: ldarg.0
+  IL_02c1: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_02c6: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_02cb: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_02d0: ldarg.0
+  IL_02d1: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_02d6: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_02db: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_02e0: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_02e5: ldarg.0
+  IL_02e6: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_02eb: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_02f0: callvirt System.Single Monocle.Entity::get_X()
+  IL_02f5: ldloc.1
+  IL_02f6: callvirt System.Single Monocle.Entity::get_X()
+  IL_02fb: sub
+  IL_02fc: call System.Int32 System.Math::Sign(System.Single)
+  IL_0301: stloc.2
+  IL_0302: ldloc.2
+  IL_0303: brtrue IL_030a
+  IL_0308: ldc.i4.m1
+  IL_0309: stloc.2
+  IL_030a: ldarg.0
+  IL_030b: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0310: ldloc.1
+  IL_0311: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0316: newobj System.Void Celeste.BadelineDummy::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_031b: stfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_0320: ldloc.1
+  IL_0321: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0326: ldarg.0
+  IL_0327: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_032c: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_0331: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0336: ldarg.0
+  IL_0337: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_033c: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0341: ldloc.2
+  IL_0342: neg
+  IL_0343: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0348: ldarg.0
+  IL_0349: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_034e: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
++ IL_0353: ldc.i4 4879 @ Celeste.Mod.GravityHelper.Hooks.BadelineBoostHooks::BadelineBoost_BoostRoutine
++ IL_0358: ldc.i4 51126070 @ Celeste.Mod.GravityHelper.Hooks.BadelineBoostHooks::BadelineBoost_BoostRoutine
++ IL_035d: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BadelineBoostHooks::BadelineBoost_BoostRoutine
+  |-> retrieves Celeste.BadelineDummy Celeste.Mod.GravityHelper.Hooks.BadelineBoostHooks/<>c::<BadelineBoost_BoostRoutine>b__4_3(Celeste.BadelineDummy)
++ IL_0362: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.BadelineDummy,Celeste.BadelineDummy>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.BadelineBoostHooks::BadelineBoost_BoostRoutine
+  IL_0367: ldfld Celeste.PlayerSprite Celeste.BadelineDummy::Sprite
+  IL_036c: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0371: ldloc.2
+  IL_0372: conv.r4
+  IL_0373: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0378: ldarg.0
+  IL_0379: ldarg.0
+  IL_037a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_037f: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0384: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0389: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerFrom>5__5
+  IL_038e: ldarg.0
+  IL_038f: ldloc.1
+  IL_0390: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0395: ldloc.2
+  IL_0396: ldc.i4.4
+  IL_0397: mul
+  IL_0398: conv.r4
+  IL_0399: ldc.r4 -3
+  IL_039e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03a8: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerTo>5__6
+  IL_03ad: ldarg.0
+  IL_03ae: ldarg.0
+  IL_03af: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_03b4: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_03b9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03be: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineFrom>5__7
+  IL_03c3: ldarg.0
+  IL_03c4: ldloc.1
+  IL_03c5: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03ca: ldloc.2
+  IL_03cb: neg
+  IL_03cc: ldc.i4.4
+  IL_03cd: mul
+  IL_03ce: conv.r4
+  IL_03cf: ldc.r4 3
+  IL_03d4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03d9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03de: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineTo>5__8
+  IL_03e3: ldarg.0
+  IL_03e4: ldc.r4 0
+  IL_03e9: stfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_03ee: br IL_04bc
+  IL_03f3: ldarg.0
+  IL_03f4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerFrom>5__5
+  IL_03f9: ldarg.0
+  IL_03fa: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerTo>5__6
+  IL_03ff: ldarg.0
+  IL_0400: ldfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_0405: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_040a: stloc.s V_6
+  IL_040c: ldarg.0
+  IL_040d: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0412: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0417: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_041c: brfalse IL_0439
+  IL_0421: ldarg.0
+  IL_0422: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0427: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_042c: ldloc.s V_6
+  IL_042e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0433: ldnull
+  IL_0434: callvirt System.Void Celeste.Actor::MoveToX(System.Single,Celeste.Collision)
+  IL_0439: ldarg.0
+  IL_043a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_043f: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0444: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0449: brfalse IL_0466
+  IL_044e: ldarg.0
+  IL_044f: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0454: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0459: ldloc.s V_6
+  IL_045b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0460: ldnull
+  IL_0461: callvirt System.Void Celeste.Actor::MoveToY(System.Single,Celeste.Collision)
+  IL_0466: ldarg.0
+  IL_0467: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_046c: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_0471: ldarg.0
+  IL_0472: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineFrom>5__7
+  IL_0477: ldarg.0
+  IL_0478: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineTo>5__8
+  IL_047d: ldarg.0
+  IL_047e: ldfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_0483: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0488: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_048d: ldarg.0
+  IL_048e: ldnull
+  IL_048f: stfld System.Object Celeste.BadelineBoost/<BoostRoutine>d__22::<>2__current
+  IL_0494: ldarg.0
+  IL_0495: ldc.i4.1
+  IL_0496: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_049b: ldc.i4.1
+  IL_049c: ret
+  IL_049d: ldarg.0
+  IL_049e: ldc.i4.m1
+  IL_049f: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_04a4: ldarg.0
+  IL_04a5: ldarg.0
+  IL_04a6: ldfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_04ab: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04b0: ldc.r4 0.2
+  IL_04b5: div
+  IL_04b6: add
+  IL_04b7: stfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_04bc: ldarg.0
+  IL_04bd: ldfld System.Single Celeste.BadelineBoost/<BoostRoutine>d__22::<p>5__9
+  IL_04c2: ldc.r4 1
+  IL_04c7: blt IL_03f3
+  IL_04cc: ldarg.0
+  IL_04cd: ldflda Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerFrom>5__5
+  IL_04d2: initobj Microsoft.Xna.Framework.Vector2
+  IL_04d8: ldarg.0
+  IL_04d9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<playerTo>5__6
+  IL_04de: initobj Microsoft.Xna.Framework.Vector2
+  IL_04e4: ldarg.0
+  IL_04e5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineFrom>5__7
+  IL_04ea: initobj Microsoft.Xna.Framework.Vector2
+  IL_04f0: ldarg.0
+  IL_04f1: ldflda Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<BoostRoutine>d__22::<badelineTo>5__8
+  IL_04f6: initobj Microsoft.Xna.Framework.Vector2
+  IL_04fc: ldarg.0
+  IL_04fd: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_0502: brfalse IL_05af
+  IL_0507: ldloca.s V_7
+  IL_0509: ldarg.0
+  IL_050a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_050f: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0514: callvirt System.Single Monocle.Entity::get_X()
+  IL_0519: ldarg.0
+  IL_051a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_051f: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_0524: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0529: callvirt System.Single Monocle.Camera::get_X()
+  IL_052e: sub
+  IL_052f: ldc.r4 120
+  IL_0534: ldc.r4 200
+  IL_0539: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_053e: ldarg.0
+  IL_053f: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0544: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0549: callvirt System.Single Monocle.Entity::get_Y()
+  IL_054e: ldarg.0
+  IL_054f: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0554: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_0559: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_055e: callvirt System.Single Monocle.Camera::get_Y()
+  IL_0563: sub
+  IL_0564: ldc.r4 60
+  IL_0569: ldc.r4 120
+  IL_056e: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0573: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0578: ldloc.1
+  IL_0579: ldarg.0
+  IL_057a: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_057f: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_0584: ldloc.s V_7
+  IL_0586: ldc.r4 1.5
+  IL_058b: ldc.r4 0.18
+  IL_0590: callvirt System.Collections.IEnumerator Celeste.Level::ZoomTo(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_0595: ldc.i4.1
+  IL_0596: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_059b: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_05a0: ldc.r4 0.5
+  IL_05a5: stsfld System.Single Monocle.Engine::TimeRate
+  IL_05aa: br IL_05c0
+  IL_05af: ldstr "event:/char/badeline/booster_throw"
+  IL_05b4: ldloc.1
+  IL_05b5: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_05ba: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_05bf: pop
+  IL_05c0: ldarg.0
+  IL_05c1: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_05c6: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_05cb: ldfld Celeste.PlayerSprite Celeste.BadelineDummy::Sprite
+  IL_05d0: ldstr "boost"
+  IL_05d5: ldc.i4.0
+  IL_05d6: ldc.i4.0
+  IL_05d7: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_05dc: ldarg.0
+  IL_05dd: ldc.r4 0.1
+  IL_05e2: box System.Single
+  IL_05e7: stfld System.Object Celeste.BadelineBoost/<BoostRoutine>d__22::<>2__current
+  IL_05ec: ldarg.0
+  IL_05ed: ldc.i4.2
+  IL_05ee: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_05f3: ldc.i4.1
+  IL_05f4: ret
+  IL_05f5: ldarg.0
+  IL_05f6: ldc.i4.m1
+  IL_05f7: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_05fc: ldarg.0
+  IL_05fd: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0602: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_0607: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_060c: brtrue IL_0629
+  IL_0611: ldarg.0
+  IL_0612: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0617: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_061c: ldc.r4 5
+  IL_0621: ldnull
+  IL_0622: ldnull
+  IL_0623: callvirt System.Boolean Celeste.Actor::MoveV(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0628: pop
+  IL_0629: ldarg.0
+  IL_062a: ldc.r4 0.1
+  IL_062f: box System.Single
+  IL_0634: stfld System.Object Celeste.BadelineBoost/<BoostRoutine>d__22::<>2__current
+  IL_0639: ldarg.0
+  IL_063a: ldc.i4.3
+  IL_063b: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_0640: ldc.i4.1
+  IL_0641: ret
+  IL_0642: ldarg.0
+  IL_0643: ldc.i4.m1
+  IL_0644: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_0649: ldarg.0
+  IL_064a: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<endLevel>5__3
+  IL_064f: brfalse IL_0675
+  IL_0654: ldarg.0
+  IL_0655: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_065a: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_065f: ldc.i4.1
+  IL_0660: stfld System.Boolean Celeste.Level::TimerStopped
+  IL_0665: ldarg.0
+  IL_0666: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_066b: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_0670: callvirt System.Void Celeste.Level::RegisterAreaComplete()
+  IL_0675: ldarg.0
+  IL_0676: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_067b: brfalse IL_070f
+  IL_0680: ldloc.1
+  IL_0681: ldfld System.Boolean Celeste.BadelineBoost::finalCh9Boost
+  IL_0686: brfalse IL_070f
+  IL_068b: ldloc.1
+  IL_068c: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0691: ldarg.0
+  IL_0692: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0697: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_069c: ldloc.1
+  IL_069d: ldloc.1
+  IL_069e: ldfld System.Boolean Celeste.BadelineBoost::finalCh9Dialog
+  IL_06a3: newobj System.Void Celeste.CS10_FinalLaunch::.ctor(Celeste.Player,Celeste.BadelineBoost,System.Boolean)
+  IL_06a8: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_06ad: ldarg.0
+  IL_06ae: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_06b3: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_06b8: ldc.i4.0
+  IL_06b9: stfld System.Boolean Monocle.Entity::Active
+  IL_06be: ldarg.0
+  IL_06bf: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_06c4: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_06c9: ldc.i4.0
+  IL_06ca: stfld System.Boolean Monocle.Entity::Active
+  IL_06cf: ldloc.1
+  IL_06d0: ldc.i4.0
+  IL_06d1: stfld System.Boolean Monocle.Entity::Active
+  IL_06d6: ldarg.0
+  IL_06d7: ldnull
+  IL_06d8: stfld System.Object Celeste.BadelineBoost/<BoostRoutine>d__22::<>2__current
+  IL_06dd: ldarg.0
+  IL_06de: ldc.i4.4
+  IL_06df: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_06e4: ldc.i4.1
+  IL_06e5: ret
+  IL_06e6: ldarg.0
+  IL_06e7: ldc.i4.m1
+  IL_06e8: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_06ed: ldarg.0
+  IL_06ee: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_06f3: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_06f8: ldc.i4.1
+  IL_06f9: stfld System.Boolean Monocle.Entity::Active
+  IL_06fe: ldarg.0
+  IL_06ff: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0704: ldfld Celeste.BadelineDummy Celeste.BadelineBoost/<>c__DisplayClass22_0::badeline
+  IL_0709: ldc.i4.1
+  IL_070a: stfld System.Boolean Monocle.Entity::Active
+  IL_070f: ldloc.1
+  IL_0710: ldc.i4.1
+  IL_0711: ldarg.0
+  IL_0712: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0717: ldftn System.Void Celeste.BadelineBoost/<>c__DisplayClass22_0::<BoostRoutine>b__0()
+  IL_071d: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
++ IL_0722: ldarg.0 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0723: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0728: call System.Action VivHelper.Entities.BadelineBoostCustom::ModifiedBoostAlarm(System.Action,Celeste.BadelineBoost) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  IL_072d: ldc.r4 0.15
+  IL_0732: ldc.i4.1
+  IL_0733: call Monocle.Alarm Monocle.Alarm::Create(Monocle.Alarm/AlarmMode,System.Action,System.Single,System.Boolean)
+  IL_0738: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_073d: ldloc.1
+  IL_073e: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0743: isinst Celeste.Level
+  IL_0748: ldc.r4 0.3
+  IL_074d: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0752: ldloc.1
+  IL_0753: ldnull
+  IL_0754: stfld Celeste.Player Celeste.BadelineBoost::holding
+  IL_0759: ldarg.0
+  IL_075a: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<finalBoost>5__2
+  IL_075f: brtrue IL_08fb
+  IL_0764: newobj System.Void Celeste.BadelineBoost/<>c__DisplayClass22_1::.ctor()
+  IL_0769: stloc.s V_8
++ IL_076b: ldarg.0 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_076c: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0771: ldc.i4 4890 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_0776: ldc.i4 51111250 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_077b: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  |-> retrieves System.Void VivHelper.Entities.BadelineBoostCustom/<>c::<BoostRoutineAddCustomRefillTraits>b__10_5(Celeste.BadelineBoost)
++ IL_0780: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.BadelineBoost>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  IL_0785: ldloc.s V_8
+  IL_0787: ldarg.0
+  IL_0788: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_078d: stfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<>c__DisplayClass22_1::CS$<>8__locals1
+  IL_0792: ldloc.s V_8
+  IL_0794: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<>c__DisplayClass22_1::CS$<>8__locals1
+  IL_0799: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
++ IL_079e: ldarg.0 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_079f: ldfld Celeste.BadelineBoost Celeste.BadelineBoost/<BoostRoutine>d__22::<>4__this @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_07a4: ldc.i4 4892 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_07a9: ldc.i4 46370591 @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
++ IL_07ae: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  |-> retrieves Celeste.Player VivHelper.Entities.BadelineBoostCustom/<>c::<BoostRoutineAddCustomRefillTraits>b__10_6(Celeste.Player,Celeste.BadelineBoost)
++ IL_07b3: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.Player,Celeste.Player,Celeste.BadelineBoost>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.BadelineBoostCustom+<>c__DisplayClass3_0::<Load>b__0
+  IL_07b8: ldloc.1
+  IL_07b9: callvirt System.Single Monocle.Entity::get_CenterX()
+  IL_07be: callvirt System.Void Celeste.Player::BadelineBoostLaunch(System.Single)
+  IL_07c3: ldloc.s V_8
+  IL_07c5: ldloc.1
+  IL_07c6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_07cb: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::from
+  IL_07d0: ldloc.s V_8
+  IL_07d2: ldloc.1
+  IL_07d3: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.BadelineBoost::nodes
+  IL_07d8: ldloc.1
+  IL_07d9: ldfld System.Int32 Celeste.BadelineBoost::nodeIndex
+  IL_07de: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_07e3: stfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::to
+  IL_07e8: ldloc.s V_8
+  IL_07ea: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::from
+  IL_07ef: ldloc.s V_8
+  IL_07f1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::to
+  IL_07f6: call System.Single Microsoft.Xna.Framework.Vector2::Distance(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_07fb: ldc.r4 320
+  IL_0800: div
+  IL_0801: stloc.s V_9
+  IL_0803: ldc.r4 3
+  IL_0808: ldloc.s V_9
+  IL_080a: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_080f: stloc.s V_9
+  IL_0811: ldloc.1
+  IL_0812: ldfld Monocle.Image Celeste.BadelineBoost::stretch
+  IL_0817: ldc.i4.1
+  IL_0818: stfld System.Boolean Monocle.Component::Visible
+  IL_081d: ldloc.1
+  IL_081e: ldfld Monocle.Image Celeste.BadelineBoost::stretch
+  IL_0823: ldloc.s V_8
+  IL_0825: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::to
+  IL_082a: ldloc.s V_8
+  IL_082c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BadelineBoost/<>c__DisplayClass22_1::from
+  IL_0831: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0836: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_083b: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_0840: ldc.i4.1
+  IL_0841: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0846: ldloc.s V_9
+  IL_0848: ldc.i4.1
+  IL_0849: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_084e: stloc.s V_10
+  IL_0850: ldloc.s V_10
+  IL_0852: ldloc.s V_8
+  IL_0854: ldftn System.Void Celeste.BadelineBoost/<>c__DisplayClass22_1::<BoostRoutine>b__1(Monocle.Tween)
+  IL_085a: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_085f: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_0864: ldloc.s V_10
+  IL_0866: ldloc.s V_8
+  IL_0868: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<>c__DisplayClass22_1::CS$<>8__locals1
+  IL_086d: ldftn System.Void Celeste.BadelineBoost/<>c__DisplayClass22_0::<BoostRoutine>b__2(Monocle.Tween)
+  IL_0873: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_0878: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnComplete
+  IL_087d: ldloc.1
+  IL_087e: ldloc.s V_10
+  IL_0880: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0885: ldloc.1
+  IL_0886: ldfld Celeste.SoundSource Celeste.BadelineBoost::relocateSfx
+  IL_088b: ldstr "event:/char/badeline/booster_relocate"
+  IL_0890: ldnull
+  IL_0891: ldc.r4 0
+  IL_0896: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_089b: pop
+  IL_089c: ldc.i4.2
+  IL_089d: ldc.i4.1
+  IL_089e: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_08a3: ldloc.s V_8
+  IL_08a5: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<>c__DisplayClass22_1::CS$<>8__locals1
+  IL_08aa: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_08af: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_08b4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_08b9: ldc.r4 0.3
+  IL_08be: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_08c3: ldloc.s V_8
+  IL_08c5: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<>c__DisplayClass22_1::CS$<>8__locals1
+  IL_08ca: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_08cf: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_08d4: ldloc.1
+  IL_08d5: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_08da: ldc.r4 0.4
+  IL_08df: ldc.r4 8
+  IL_08e4: ldc.r4 32
+  IL_08e9: ldc.r4 0.5
+  IL_08ee: ldnull
+  IL_08ef: ldnull
+  IL_08f0: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_08f5: pop
+  IL_08f6: br IL_0a07
+  IL_08fb: ldloc.1
+  IL_08fc: ldfld System.Boolean Celeste.BadelineBoost::finalCh9Boost
+  IL_0901: brfalse IL_091c
+  IL_0906: ldloc.1
+  IL_0907: ldstr "event:/new_content/char/badeline/booster_finalfinal_part2"
+  IL_090c: ldloc.1
+  IL_090d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0912: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0917: stfld FMOD.Studio.EventInstance Celeste.BadelineBoost::Ch9FinalBoostSfx
+  IL_091c: ldc.r4 0.1
+  IL_0921: stsfld System.Single Monocle.Engine::FreezeTimer
+  IL_0926: ldarg.0
+  IL_0927: ldnull
+  IL_0928: stfld System.Object Celeste.BadelineBoost/<BoostRoutine>d__22::<>2__current
+  IL_092d: ldarg.0
+  IL_092e: ldc.i4.5
+  IL_092f: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_0934: ldc.i4.1
+  IL_0935: ret
+  IL_0936: ldarg.0
+  IL_0937: ldc.i4.m1
+  IL_0938: stfld System.Int32 Celeste.BadelineBoost/<BoostRoutine>d__22::<>1__state
+  IL_093d: ldarg.0
+  IL_093e: ldfld System.Boolean Celeste.BadelineBoost/<BoostRoutine>d__22::<endLevel>5__3
+  IL_0943: brfalse IL_0959
+  IL_0948: ldarg.0
+  IL_0949: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_094e: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_0953: ldc.i4.1
+  IL_0954: stfld System.Boolean Celeste.Level::TimerHidden
+  IL_0959: ldc.i4.2
+  IL_095a: ldc.i4.2
+  IL_095b: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0960: ldarg.0
+  IL_0961: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0966: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_096b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0970: ldc.r4 0.5
+  IL_0975: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_097a: ldc.i4.1
+  IL_097b: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_0980: ldarg.0
+  IL_0981: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_0986: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_098b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0990: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0995: ldc.r4 0.6
+  IL_099a: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_099f: ldarg.0
+  IL_09a0: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_09a5: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_09aa: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_09af: ldloc.1
+  IL_09b0: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_09b5: ldc.r4 0.6
+  IL_09ba: ldc.r4 8
+  IL_09bf: ldc.r4 64
+  IL_09c4: ldc.r4 0.5
+  IL_09c9: ldnull
+  IL_09ca: ldnull
+  IL_09cb: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_09d0: pop
+  IL_09d1: ldarg.0
+  IL_09d2: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_09d7: ldfld Celeste.Level Celeste.BadelineBoost/<>c__DisplayClass22_0::level
+  IL_09dc: callvirt System.Void Celeste.Level::ResetZoom()
+  IL_09e1: ldarg.0
+  IL_09e2: ldfld Celeste.BadelineBoost/<>c__DisplayClass22_0 Celeste.BadelineBoost/<BoostRoutine>d__22::<>8__1
+  IL_09e7: ldfld Celeste.Player Celeste.BadelineBoost/<>c__DisplayClass22_0::player
+  IL_09ec: ldloc.1
+  IL_09ed: callvirt System.Single Monocle.Entity::get_X()
+  IL_09f2: callvirt System.Void Celeste.Player::SummitLaunch(System.Single)
+  IL_09f7: ldc.r4 1
+  IL_09fc: stsfld System.Single Monocle.Engine::TimeRate
+  IL_0a01: ldloc.1
+  IL_0a02: callvirt System.Void Celeste.BadelineBoost::Finish()
+  IL_0a07: ldc.i4.0
+  IL_0a08: ret

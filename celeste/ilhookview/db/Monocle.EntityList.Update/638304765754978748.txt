@@ -1,0 +1,39 @@
+IL Diff: System.Void Monocle.EntityList::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
+  IL_0006: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_000b: stloc.0
+  IL_000c: br IL_0063
+  IL_0011: ldloca.s V_0
+  IL_0013: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0018: stloc.1
+  IL_0019: ldloc.1
+  IL_001a: callvirt System.Void Monocle.Entity::_PreUpdate()
+  IL_001f: ldloc.1
+  IL_0020: ldfld System.Boolean Monocle.Entity::Active
+  IL_0025: brfalse IL_005d
++ IL_002a: ldarg.0 @ vitmod.VitModule::EntityList_Update
++ IL_002b: ldloc V_1 @ vitmod.VitModule::EntityList_Update
++ IL_002f: ldc.i4 5261 @ vitmod.VitModule::EntityList_Update
++ IL_0034: ldc.i4 55913707 @ vitmod.VitModule::EntityList_Update
++ IL_0039: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ vitmod.VitModule::EntityList_Update
+  |-> retrieves System.Void vitmod.VitModule/<>c__DisplayClass17_0::<EntityList_Update>b__0(Monocle.EntityList,Monocle.Entity)
++ IL_003e: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Monocle.EntityList,Monocle.Entity>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ vitmod.VitModule::EntityList_Update
+  IL_0043: ldloc.1
+  IL_0044: callvirt System.Void Monocle.Entity::Update()
++ IL_0049: ldc.i4 5263 @ vitmod.VitModule::EntityList_Update
++ IL_004e: ldc.i4 32716418 @ vitmod.VitModule::EntityList_Update
++ IL_0053: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ vitmod.VitModule::EntityList_Update
+  |-> retrieves System.Void vitmod.VitModule/<>c__DisplayClass17_0::<EntityList_Update>b__1()
++ IL_0058: callvirt System.Void System.Action::Invoke() @ vitmod.VitModule::EntityList_Update
+  IL_005d: ldloc.1
+  IL_005e: callvirt System.Void Monocle.Entity::_PostUpdate()
+  IL_0063: ldloca.s V_0
+  IL_0065: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_006a: brtrue IL_0011
+  IL_006f: leave IL_0082
+  IL_0074: ldloca.s V_0
+  IL_0076: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_007c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0081: endfinally
+  IL_0082: ret

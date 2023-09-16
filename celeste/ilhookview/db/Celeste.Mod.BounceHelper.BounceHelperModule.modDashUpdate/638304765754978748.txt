@@ -1,0 +1,99 @@
+IL Diff: System.Int32 Celeste.Mod.BounceHelper.BounceHelperModule::modDashUpdate(On.Celeste.Player+orig_DashUpdate,Celeste.Player)
+  IL_0000: nop
+  IL_0001: ldarg.1
+  IL_0002: ldarg.2
+  IL_0003: callvirt System.Int32 On.Celeste.Player/orig_DashUpdate::Invoke(Celeste.Player)
+  IL_0008: stloc.0
+  IL_0009: ldarg.0
+  IL_000a: ldarg.2
+  IL_000b: callvirt MonoMod.Utils.DynamicData Celeste.Mod.BounceHelper.BounceHelperModule::getPlayerData(Celeste.Player)
+  IL_0010: stloc.1
+  IL_0011: call System.Boolean Celeste.Mod.BounceHelper.BounceHelperModule::get_isEnabled()
+  IL_0016: brfalse IL_0042
+  IL_001b: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_0020: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0025: brfalse IL_0042
+  IL_002a: ldloc.0
+  IL_002b: ldc.i4.2
+  IL_002c: beq IL_003c
+  IL_0031: ldarg.0
+  IL_0032: ldfld System.Boolean Celeste.Mod.BounceHelper.BounceHelperModule::cornerBounced
+  IL_0037: br IL_003d
+  IL_003c: ldc.i4.1
+  IL_003d: br IL_0043
+  IL_0042: ldc.i4.0
+  IL_0043: stloc.2
+  IL_0044: ldloc.2
+  IL_0045: brfalse IL_0116
+  IL_004a: nop
+  IL_004b: ldarg.2
+  IL_004c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0051: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0056: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_005b: brfalse IL_0086
+  IL_0060: ldloc.1
+  IL_0061: ldstr "jumpGraceTimer"
+  IL_0066: callvirt T MonoMod.Utils.DynamicData::Get<System.Single>(System.String)
+  IL_006b: ldc.r4 0
+  IL_0070: bgt IL_0080
+  IL_0075: ldarg.0
+  IL_0076: ldfld System.Boolean Celeste.Mod.BounceHelper.BounceHelperModule::cornerBounced
+  IL_007b: br IL_0081
+  IL_0080: ldc.i4.1
+  IL_0081: br IL_0087
+  IL_0086: ldc.i4.0
+  IL_0087: stloc.3
+  IL_0088: ldloc.3
+  IL_0089: brfalse IL_00ab
+  IL_008e: nop
+  IL_008f: ldarg.0
+  IL_0090: ldarg.2
+  IL_0091: ldc.i4.1
+  IL_0092: callvirt System.Void Celeste.Mod.BounceHelper.BounceHelperModule::downwardBounce(Celeste.Player,System.Boolean)
+  IL_0097: nop
+  IL_0098: ldarg.0
+  IL_0099: ldc.r4 0
+  IL_009e: stfld System.Single Celeste.Mod.BounceHelper.BounceHelperModule::jellyfishBounceTimer
+  IL_00a3: ldc.i4.0
+  IL_00a4: stloc.0
+  IL_00a5: nop
+  IL_00a6: br IL_0115
+  IL_00ab: ldarg.2
+  IL_00ac: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00b1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_00bb: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c0: brfalse IL_00f4
+  IL_00c5: ldarg.2
+  IL_00c6: ldarg.2
+  IL_00c7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00cc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
++ IL_00d1: ldc.i4 4122 @ Celeste.Mod.GravityHelper.ThirdParty.BounceHelperModSupport::BounceHelperModule_modDashUpdate
++ IL_00d6: ldc.i4 24192049 @ Celeste.Mod.GravityHelper.ThirdParty.BounceHelperModSupport::BounceHelperModule_modDashUpdate
++ IL_00db: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.ThirdParty.BounceHelperModSupport::BounceHelperModule_modDashUpdate
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_00e0: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.ThirdParty.BounceHelperModSupport::BounceHelperModule_modDashUpdate
+  IL_00e5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ea: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_00ef: br IL_00f5
+  IL_00f4: ldc.i4.0
+  IL_00f5: stloc.s V_4
+  IL_00f7: ldloc.s V_4
+  IL_00f9: brfalse IL_0115
+  IL_00fe: nop
+  IL_00ff: ldarg.0
+  IL_0100: ldarg.2
+  IL_0101: callvirt System.Void Celeste.Mod.BounceHelper.BounceHelperModule::ceilingBounce(Celeste.Player)
+  IL_0106: nop
+  IL_0107: ldarg.0
+  IL_0108: ldc.r4 0
+  IL_010d: stfld System.Single Celeste.Mod.BounceHelper.BounceHelperModule::jellyfishBounceTimer
+  IL_0112: ldc.i4.0
+  IL_0113: stloc.0
+  IL_0114: nop
+  IL_0115: nop
+  IL_0116: ldloc.0
+  IL_0117: stloc.s V_5
+  IL_0119: br IL_011e
+  IL_011e: ldloc.s V_5
+  IL_0120: ret

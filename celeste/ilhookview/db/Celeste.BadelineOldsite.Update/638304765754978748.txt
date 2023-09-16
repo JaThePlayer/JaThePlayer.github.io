@@ -1,0 +1,327 @@
+IL Diff: System.Void Celeste.BadelineOldsite::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Player Celeste.BadelineOldsite::player
+  IL_0006: brfalse IL_00ca
+  IL_000b: ldarg.0
+  IL_000c: ldfld Celeste.Player Celeste.BadelineOldsite::player
+  IL_0011: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0016: brfalse IL_00ca
+  IL_001b: ldarg.0
+  IL_001c: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0021: ldstr "laugh"
+  IL_0026: ldc.i4.0
+  IL_0027: ldc.i4.0
+  IL_0028: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_002d: ldarg.0
+  IL_002e: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_0039: conv.r8
+  IL_003a: call System.Double System.Math::Sin(System.Double)
+  IL_003f: ldc.r8 4
+  IL_0048: mul
+  IL_0049: conv.r4
+  IL_004a: callvirt System.Void Monocle.GraphicsComponent::set_X(System.Single)
+  IL_004f: ldarg.0
+  IL_0050: ldc.i4.1
+  IL_0051: stfld System.Boolean Celeste.BadelineOldsite::Hovering
+  IL_0056: ldarg.0
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_005d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0062: ldc.r4 2
+  IL_0067: mul
+  IL_0068: add
+  IL_0069: stfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4 -12500
+  IL_0074: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0079: ldarg.0
+  IL_007a: ldfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_007f: callvirt System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::GetEnumerator()
+  IL_0084: stloc.0
+  IL_0085: br IL_00a0
+  IL_008a: ldloca.s V_0
+  IL_008c: call System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,Celeste.SoundSource>::get_Current()
+  IL_0091: stloc.1
+  IL_0092: ldloca.s V_1
+  IL_0094: call TValue System.Collections.Generic.KeyValuePair`2<System.String,Celeste.SoundSource>::get_Value()
+  IL_0099: ldc.i4.1
+  IL_009a: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_009f: pop
+  IL_00a0: ldloca.s V_0
+  IL_00a2: call System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.String,Celeste.SoundSource>::MoveNext()
+  IL_00a7: brtrue IL_008a
+  IL_00ac: leave IL_00bf
+  IL_00b1: ldloca.s V_0
+  IL_00b3: constrained. System.Collections.Generic.Dictionary`2/Enumerator<System.String,Celeste.SoundSource>
+  IL_00b9: callvirt System.Void System.IDisposable::Dispose()
+  IL_00be: endfinally
+  IL_00bf: ldarg.0
+  IL_00c0: callvirt System.Void Celeste.BadelineOldsite::Trail()
+  IL_00c5: br IL_035d
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld System.Boolean Celeste.BadelineOldsite::following
+  IL_00d0: brfalse IL_035d
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Celeste.Player Celeste.BadelineOldsite::player
+  IL_00db: ldarg.0
+  IL_00dc: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00e1: ldfld System.Single Monocle.Scene::TimeActive
+  IL_00e6: ldarg.0
+  IL_00e7: ldfld System.Single Celeste.BadelineOldsite::followBehindTime
+  IL_00ec: ldarg.0
+  IL_00ed: ldfld System.Single Celeste.BadelineOldsite::followBehindIndexDelay
+  IL_00f2: add
+  IL_00f3: ldloca.s V_2
+  IL_00f5: callvirt System.Boolean Celeste.Player::GetChasePosition(System.Single,System.Single,Celeste.Player/ChaserState&)
+  IL_00fa: brfalse IL_035d
+  IL_00ff: ldarg.0
+  IL_0100: ldarg.0
+  IL_0101: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0106: ldloc.2
+  IL_0107: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player/ChaserState::Position
+  IL_010c: ldc.r4 500
+  IL_0111: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0116: mul
+  IL_0117: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_011c: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0121: ldarg.0
++ IL_0122: ldloc V_2 @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
++ IL_0126: ldc.i4 825 @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
++ IL_012b: ldc.i4 59538488 @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
++ IL_0130: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
+  |-> retrieves System.Void Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks/<>c::<BadelineOldsite_Update>b__7_3(Celeste.BadelineOldsite,Celeste.Player+ChaserState)
++ IL_0135: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.BadelineOldsite,Celeste.Player/ChaserState>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
++ IL_013a: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.BadelineOldsiteHooks::BadelineOldsite_Update
+  IL_013b: ldfld System.Boolean Celeste.BadelineOldsite::ignorePlayerAnim
+  IL_0140: brtrue IL_0194
+  IL_0145: ldloc.2
+  IL_0146: ldfld System.String Celeste.Player/ChaserState::Animation
+  IL_014b: ldarg.0
+  IL_014c: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0151: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0156: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_015b: brfalse IL_0194
+  IL_0160: ldloc.2
+  IL_0161: ldfld System.String Celeste.Player/ChaserState::Animation
+  IL_0166: brfalse IL_0194
+  IL_016b: ldarg.0
+  IL_016c: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0171: ldloc.2
+  IL_0172: ldfld System.String Celeste.Player/ChaserState::Animation
+  IL_0177: callvirt System.Boolean Monocle.Sprite::Has(System.String)
+  IL_017c: brfalse IL_0194
+  IL_0181: ldarg.0
+  IL_0182: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0187: ldloc.2
+  IL_0188: ldfld System.String Celeste.Player/ChaserState::Animation
+  IL_018d: ldc.i4.1
+  IL_018e: ldc.i4.0
+  IL_018f: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0194: ldarg.0
+  IL_0195: ldfld System.Boolean Celeste.BadelineOldsite::ignorePlayerAnim
+  IL_019a: brtrue IL_01cc
+  IL_019f: ldarg.0
+  IL_01a0: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_01a5: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01aa: ldarg.0
+  IL_01ab: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_01b0: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01b5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01ba: call System.Single System.Math::Abs(System.Single)
+  IL_01bf: ldloc.2
+  IL_01c0: ldfld Celeste.Facings Celeste.Player/ChaserState::Facing
+  IL_01c5: conv.r4
+  IL_01c6: mul
+  IL_01c7: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01cc: ldc.i4.0
+  IL_01cd: stloc.3
+  IL_01ce: br IL_033f
+  IL_01d3: ldloca.s V_2
+  IL_01d5: ldloc.3
+  IL_01d6: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_01db: ldfld Celeste.Player/ChaserStateSound/Actions Celeste.Player/ChaserStateSound::Action
+  IL_01e0: brtrue IL_0229
+  IL_01e5: ldloca.s V_2
+  IL_01e7: ldloc.3
+  IL_01e8: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_01ed: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_01f2: ldarg.0
+  IL_01f3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01f8: ldloca.s V_2
+  IL_01fa: ldloc.3
+  IL_01fb: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_0200: ldfld System.String Celeste.Player/ChaserStateSound::Parameter
+  IL_0205: ldloca.s V_2
+  IL_0207: ldloc.3
+  IL_0208: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_020d: ldfld System.Single Celeste.Player/ChaserStateSound::ParameterValue
+  IL_0212: ldstr "chaser_count"
+  IL_0217: ldarg.0
+  IL_0218: ldfld System.Int32 Celeste.BadelineOldsite::index
+  IL_021d: conv.r4
+  IL_021e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.String,System.Single)
+  IL_0223: pop
+  IL_0224: br IL_033b
+  IL_0229: ldloca.s V_2
+  IL_022b: ldloc.3
+  IL_022c: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_0231: ldfld Celeste.Player/ChaserStateSound/Actions Celeste.Player/ChaserStateSound::Action
+  IL_0236: ldc.i4.1
+  IL_0237: bne.un IL_02d7
+  IL_023c: ldarg.0
+  IL_023d: ldfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_0242: ldloca.s V_2
+  IL_0244: ldloc.3
+  IL_0245: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_024a: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_024f: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::ContainsKey(TKey)
+  IL_0254: brtrue IL_02d7
+  IL_0259: ldarg.0
+  IL_025a: ldfld System.Collections.Generic.List`1<Celeste.SoundSource> Celeste.BadelineOldsite::inactiveLoopingSounds
+  IL_025f: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.SoundSource>::get_Count()
+  IL_0264: ldc.i4.0
+  IL_0265: ble IL_0289
+  IL_026a: ldarg.0
+  IL_026b: ldfld System.Collections.Generic.List`1<Celeste.SoundSource> Celeste.BadelineOldsite::inactiveLoopingSounds
+  IL_0270: ldc.i4.0
+  IL_0271: callvirt T System.Collections.Generic.List`1<Celeste.SoundSource>::get_Item(System.Int32)
+  IL_0276: stloc.s V_4
+  IL_0278: ldarg.0
+  IL_0279: ldfld System.Collections.Generic.List`1<Celeste.SoundSource> Celeste.BadelineOldsite::inactiveLoopingSounds
+  IL_027e: ldc.i4.0
+  IL_027f: callvirt System.Void System.Collections.Generic.List`1<Celeste.SoundSource>::RemoveAt(System.Int32)
+  IL_0284: br IL_0297
+  IL_0289: ldarg.0
+  IL_028a: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_028f: dup
+  IL_0290: stloc.s V_4
+  IL_0292: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0297: ldloc.s V_4
+  IL_0299: ldloca.s V_2
+  IL_029b: ldloc.3
+  IL_029c: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_02a1: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_02a6: ldstr "chaser_count"
+  IL_02ab: ldarg.0
+  IL_02ac: ldfld System.Int32 Celeste.BadelineOldsite::index
+  IL_02b1: conv.r4
+  IL_02b2: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_02b7: pop
+  IL_02b8: ldarg.0
+  IL_02b9: ldfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_02be: ldloca.s V_2
+  IL_02c0: ldloc.3
+  IL_02c1: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_02c6: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_02cb: ldloc.s V_4
+  IL_02cd: callvirt System.Void System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::Add(TKey,TValue)
+  IL_02d2: br IL_033b
+  IL_02d7: ldloca.s V_2
+  IL_02d9: ldloc.3
+  IL_02da: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_02df: ldfld Celeste.Player/ChaserStateSound/Actions Celeste.Player/ChaserStateSound::Action
+  IL_02e4: ldc.i4.2
+  IL_02e5: bne.un IL_033b
+  IL_02ea: ldnull
+  IL_02eb: stloc.s V_5
+  IL_02ed: ldarg.0
+  IL_02ee: ldfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_02f3: ldloca.s V_2
+  IL_02f5: ldloc.3
+  IL_02f6: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_02fb: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_0300: ldloca.s V_5
+  IL_0302: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::TryGetValue(TKey,TValue&)
+  IL_0307: brfalse IL_033b
+  IL_030c: ldloc.s V_5
+  IL_030e: ldc.i4.1
+  IL_030f: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_0314: pop
+  IL_0315: ldarg.0
+  IL_0316: ldfld System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource> Celeste.BadelineOldsite::loopingSounds
+  IL_031b: ldloca.s V_2
+  IL_031d: ldloc.3
+  IL_031e: call Celeste.Player/ChaserStateSound Celeste.Player/ChaserState::get_Item(System.Int32)
+  IL_0323: ldfld System.String Celeste.Player/ChaserStateSound::Event
+  IL_0328: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,Celeste.SoundSource>::Remove(TKey)
+  IL_032d: pop
+  IL_032e: ldarg.0
+  IL_032f: ldfld System.Collections.Generic.List`1<Celeste.SoundSource> Celeste.BadelineOldsite::inactiveLoopingSounds
+  IL_0334: ldloc.s V_5
+  IL_0336: callvirt System.Void System.Collections.Generic.List`1<Celeste.SoundSource>::Add(T)
+  IL_033b: ldloc.3
+  IL_033c: ldc.i4.1
+  IL_033d: add
+  IL_033e: stloc.3
+  IL_033f: ldloc.3
+  IL_0340: ldloc.2
+  IL_0341: ldfld System.Int32 Celeste.Player/ChaserState::Sounds
+  IL_0346: blt IL_01d3
+  IL_034b: ldarg.0
+  IL_034c: ldloc.2
+  IL_034d: ldfld System.Int32 Celeste.Player/ChaserState::Depth
+  IL_0352: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0357: ldarg.0
+  IL_0358: callvirt System.Void Celeste.BadelineOldsite::Trail()
+  IL_035d: ldarg.0
+  IL_035e: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0363: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0368: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_036d: ldc.r4 0
+  IL_0372: beq IL_0397
+  IL_0377: ldarg.0
+  IL_0378: ldfld Celeste.PlayerHair Celeste.BadelineOldsite::Hair
+  IL_037d: ldarg.0
+  IL_037e: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_0383: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0388: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_038d: call System.Int32 System.Math::Sign(System.Single)
+  IL_0392: stfld Celeste.Facings Celeste.PlayerHair::Facing
+  IL_0397: ldarg.0
+  IL_0398: ldfld System.Boolean Celeste.BadelineOldsite::Hovering
+  IL_039d: brfalse IL_03e1
+  IL_03a2: ldarg.0
+  IL_03a3: ldarg.0
+  IL_03a4: ldfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_03a9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03ae: add
+  IL_03af: stfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_03b4: ldarg.0
+  IL_03b5: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_03ba: ldarg.0
+  IL_03bb: ldfld System.Single Celeste.BadelineOldsite::hoveringTimer
+  IL_03c0: ldc.r4 2
+  IL_03c5: mul
+  IL_03c6: conv.r8
+  IL_03c7: call System.Double System.Math::Sin(System.Double)
+  IL_03cc: ldc.r8 4
+  IL_03d5: mul
+  IL_03d6: conv.r4
+  IL_03d7: callvirt System.Void Monocle.GraphicsComponent::set_Y(System.Single)
+  IL_03dc: br IL_040c
+  IL_03e1: ldarg.0
+  IL_03e2: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_03e7: ldarg.0
+  IL_03e8: ldfld Celeste.PlayerSprite Celeste.BadelineOldsite::Sprite
+  IL_03ed: callvirt System.Single Monocle.GraphicsComponent::get_Y()
+  IL_03f2: ldc.r4 0
+  IL_03f7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03fc: ldc.r4 4
+  IL_0401: mul
+  IL_0402: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0407: callvirt System.Void Monocle.GraphicsComponent::set_Y(System.Single)
+  IL_040c: ldarg.0
+  IL_040d: ldfld Celeste.LightOcclude Celeste.BadelineOldsite::occlude
+  IL_0412: brfalse IL_042b
+  IL_0417: ldarg.0
+  IL_0418: ldfld Celeste.LightOcclude Celeste.BadelineOldsite::occlude
+  IL_041d: ldarg.0
+  IL_041e: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_0423: ldc.i4.0
+  IL_0424: ceq
+  IL_0426: stfld System.Boolean Monocle.Component::Visible
+  IL_042b: ldarg.0
+  IL_042c: call System.Void Monocle.Entity::Update()
+  IL_0431: ret

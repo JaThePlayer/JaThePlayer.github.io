@@ -1,0 +1,41 @@
+IL Diff: System.Void Celeste.Mod.MaxHelpingHand.Entities.UpsideDownJumpThru::onPlayerOnCollideV(On.Celeste.Player+orig_OnCollideV,Celeste.Player,Celeste.CollisionData)
++ IL_0000: br IL_0081 @ Celeste.Mod.GravityHelper.ThirdParty.MaddieHelpingHandModSupport::MaddieHelpingHand_onPlayerOnCollideV
+  IL_0005: ldarg.1
+  IL_0006: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_000b: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0010: ldc.i4.s 19
+  IL_0012: beq IL_0081
+  IL_0017: ldarg.1
+  IL_0018: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_001d: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0022: ldc.i4.3
+  IL_0023: beq IL_0081
+  IL_0028: ldarg.1
+  IL_0029: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_002e: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0033: ldc.i4.s 9
+  IL_0035: beq IL_0081
+  IL_003a: ldarg.1
+  IL_003b: call System.Boolean Celeste.Mod.MaxHelpingHand.Entities.UpsideDownJumpThru::playerMovingUp(Celeste.Player)
+  IL_0040: brfalse IL_0081
+  IL_0045: ldarg.1
+  IL_0046: ldarg.1
+  IL_0047: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_004c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0051: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0056: callvirt System.Boolean Monocle.Entity::CollideCheckOutside<Celeste.Mod.MaxHelpingHand.Entities.UpsideDownJumpThru>(Microsoft.Xna.Framework.Vector2)
+  IL_005b: brfalse IL_0081
+  IL_0060: ldarg.1
+  IL_0061: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0066: ldc.r4 0
+  IL_006b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0070: ldsfld System.Reflection.FieldInfo Celeste.Mod.MaxHelpingHand.Entities.UpsideDownJumpThru::playerVarJumpTimer
+  IL_0075: ldarg.1
+  IL_0076: ldc.i4.0
+  IL_0077: box System.Int32
+  IL_007c: callvirt System.Void System.Reflection.FieldInfo::SetValue(System.Object,System.Object)
+  IL_0081: ldarg.0
+  IL_0082: ldarg.1
+  IL_0083: ldarg.2
+  IL_0084: callvirt System.Void On.Celeste.Player/orig_OnCollideV::Invoke(Celeste.Player,Celeste.CollisionData)
+  IL_0089: ret

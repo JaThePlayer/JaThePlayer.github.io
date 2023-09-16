@@ -1,0 +1,33 @@
+IL Diff: System.Void Celeste.CS07_Ascend::OnEnd(Celeste.Level)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.BadelineDummy Celeste.CS07_Ascend::badeline
+  IL_0006: brfalse IL_0016
+  IL_000b: ldarg.0
+  IL_000c: ldfld Celeste.BadelineDummy Celeste.CS07_Ascend::badeline
+  IL_0011: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0016: ldarg.0
+  IL_0017: ldfld Celeste.Player Celeste.CS07_Ascend::player
+  IL_001c: brfalse IL_0052
+  IL_0021: ldarg.0
+  IL_0022: ldfld Celeste.Player Celeste.CS07_Ascend::player
+  IL_0027: ldc.i4.2
++ IL_0028: ldc.i4 6651 @ Celeste.Mod.Randomizer.RandoModule::DontGiveTwoDashes
++ IL_002d: ldc.i4 7100510 @ Celeste.Mod.Randomizer.RandoModule::DontGiveTwoDashes
++ IL_0032: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::DontGiveTwoDashes
+  |-> retrieves System.Int32 Celeste.Mod.Randomizer.RandoModule::<DontGiveTwoDashes>b__50_0(System.Int32)
++ IL_0037: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::DontGiveTwoDashes
+  IL_003c: stfld System.Int32 Celeste.Player::Dashes
+  IL_0041: ldarg.0
+  IL_0042: ldfld Celeste.Player Celeste.CS07_Ascend::player
+  IL_0047: ldarg.0
+  IL_0048: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CS07_Ascend::origin
+  IL_004d: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0052: ldarg.0
+  IL_0053: ldfld System.Boolean Celeste.CS07_Ascend::dark
+  IL_0058: brtrue IL_006e
+  IL_005d: ldarg.1
+  IL_005e: ldarg.0
+  IL_005f: ldfld System.Int32 Celeste.CS07_Ascend::index
+  IL_0064: newobj System.Void Celeste.HeightDisplay::.ctor(System.Int32)
+  IL_0069: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_006e: ret

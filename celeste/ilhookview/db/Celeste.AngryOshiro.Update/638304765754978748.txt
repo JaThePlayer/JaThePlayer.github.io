@@ -1,0 +1,155 @@
+IL Diff: System.Void Celeste.AngryOshiro::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_000c: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_0017: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_001c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0021: ldc.r4 1
+  IL_0026: ldc.r4 0.6
+  IL_002b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0030: mul
+  IL_0031: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0036: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_003b: ldarg.0
+  IL_003c: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_0041: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0046: ldarg.0
+  IL_0047: ldfld Monocle.Sprite Celeste.AngryOshiro::Sprite
+  IL_004c: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0051: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0056: ldc.r4 1
+  IL_005b: ldc.r4 0.6
+  IL_0060: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0065: mul
+  IL_0066: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_006b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0070: ldarg.0
+  IL_0071: ldfld System.Boolean Celeste.AngryOshiro::doRespawnAnim
+  IL_0076: brtrue IL_00aa
+  IL_007b: ldarg.0
+  IL_007c: ldarg.0
+  IL_007d: call System.Single Monocle.Entity::get_X()
+  IL_0082: ldarg.0
+  IL_0083: ldfld Celeste.Level Celeste.AngryOshiro::level
+  IL_0088: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_008d: stloc.0
+  IL_008e: ldloca.s V_0
+  IL_0090: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0095: conv.r4
+  IL_0096: ldarg.0
+  IL_0097: call System.Single Monocle.Entity::get_Width()
+  IL_009c: ldc.r4 2
+  IL_00a1: div
+  IL_00a2: sub
+  IL_00a3: cgt
+  IL_00a5: stfld System.Boolean Monocle.Entity::Visible
+  IL_00aa: ldarg.0
+  IL_00ab: ldarg.0
+  IL_00ac: ldfld System.Single Celeste.AngryOshiro::yApproachSpeed
+  IL_00b1: ldc.r4 100
+  IL_00b6: ldc.r4 300
+  IL_00bb: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00c0: mul
+  IL_00c1: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00c6: stfld System.Single Celeste.AngryOshiro::yApproachSpeed
+  IL_00cb: ldarg.0
+  IL_00cc: ldfld Monocle.StateMachine Celeste.AngryOshiro::state
+  IL_00d1: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_00d6: ldc.i4.3
+  IL_00d7: beq IL_0232
+  IL_00dc: ldarg.0
+  IL_00dd: ldfld System.Boolean Celeste.AngryOshiro::canControlTimeRate
+  IL_00e2: brfalse IL_0232
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld Monocle.StateMachine Celeste.AngryOshiro::state
+  IL_00ed: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_00f2: ldc.i4.2
+  IL_00f3: bne.un IL_01ce
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld System.Single Celeste.AngryOshiro::attackSpeed
+  IL_00fe: ldc.r4 200
+  IL_0103: ble.un IL_01ce
+  IL_0108: ldarg.0
+  IL_0109: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_010e: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0113: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0118: stloc.1
+  IL_0119: ldloc.1
+  IL_011a: brfalse IL_01bf
+  IL_011f: ldloc.1
+  IL_0120: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0125: brtrue IL_01bf
++ IL_012a: ldc.i4 6255 @ ExtendedVariants.Variants.OshiroEverywhere::modAngryOshiroUpdate
++ IL_012f: ldc.i4 9034317 @ ExtendedVariants.Variants.OshiroEverywhere::modAngryOshiroUpdate
++ IL_0134: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.OshiroEverywhere::modAngryOshiroUpdate
+  |-> retrieves System.Boolean ExtendedVariants.Variants.OshiroEverywhere::isOshiroSlowdownDisabled()
++ IL_0139: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ ExtendedVariants.Variants.OshiroEverywhere::modAngryOshiroUpdate
++ IL_013e: brtrue IL_01bf @ ExtendedVariants.Variants.OshiroEverywhere::modAngryOshiroUpdate
+  IL_0143: ldarg.0
+  IL_0144: call System.Single Monocle.Entity::get_CenterX()
+  IL_0149: ldloc.1
+  IL_014a: callvirt System.Single Monocle.Entity::get_CenterX()
+  IL_014f: ldc.r4 4
+  IL_0154: add
+  IL_0155: bge.un IL_01bf
+  IL_015a: ldloc.1
+  IL_015b: callvirt System.Single Monocle.Entity::get_CenterX()
+  IL_0160: ldarg.0
+  IL_0161: call System.Single Monocle.Entity::get_CenterX()
+  IL_0166: sub
+  IL_0167: ldc.r4 30
+  IL_016c: ldc.r4 80
+  IL_0171: ldc.r4 0.5
+  IL_0176: ldc.r4 1
+  IL_017b: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0180: ldc.r4 1
+  IL_0185: ldloc.1
+  IL_0186: callvirt System.Single Monocle.Entity::get_CenterY()
+  IL_018b: ldarg.0
+  IL_018c: call System.Single Monocle.Entity::get_CenterY()
+  IL_0191: sub
+  IL_0192: call System.Single System.Math::Abs(System.Single)
+  IL_0197: ldc.r4 32
+  IL_019c: ldc.r4 48
+  IL_01a1: ldc.r4 0
+  IL_01a6: ldc.r4 1
+  IL_01ab: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_01b0: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_01b5: stsfld System.Single Monocle.Engine::TimeRate
+  IL_01ba: br IL_01d8
+  IL_01bf: ldc.r4 1
+  IL_01c4: stsfld System.Single Monocle.Engine::TimeRate
+  IL_01c9: br IL_01d8
+  IL_01ce: ldc.r4 1
+  IL_01d3: stsfld System.Single Monocle.Engine::TimeRate
+  IL_01d8: call System.Single Celeste.Distort::get_GameRate()
+  IL_01dd: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_01e2: ldc.r4 0.5
+  IL_01e7: ldc.r4 1
+  IL_01ec: ldc.r4 0
+  IL_01f1: ldc.r4 1
+  IL_01f6: call System.Single Monocle.Calc::Map(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_01fb: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0200: ldc.r4 8
+  IL_0205: mul
+  IL_0206: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_020b: call System.Void Celeste.Distort::set_GameRate(System.Single)
+  IL_0210: call System.Single Celeste.Distort::get_Anxiety()
+  IL_0215: ldarg.0
+  IL_0216: ldfld System.Single Celeste.AngryOshiro::targetAnxiety
+  IL_021b: ldarg.0
+  IL_021c: ldfld System.Single Celeste.AngryOshiro::anxietySpeed
+  IL_0221: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0226: mul
+  IL_0227: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_022c: call System.Void Celeste.Distort::set_Anxiety(System.Single)
+  IL_0231: ret
+  IL_0232: ldc.r4 1
+  IL_0237: call System.Void Celeste.Distort::set_GameRate(System.Single)
+  IL_023c: ldc.r4 0
+  IL_0241: call System.Void Celeste.Distort::set_Anxiety(System.Single)
+  IL_0246: ret

@@ -1,0 +1,73 @@
+IL Diff: System.Void Celeste.Puffer::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Puffer/States Celeste.Puffer::state
+  IL_0006: ldc.i4.2
+  IL_0007: beq IL_00e8
+  IL_000c: ldarg.0
+  IL_000d: ldfld System.Single Celeste.Puffer::cantExplodeTimer
+  IL_0012: ldc.r4 0
+  IL_0017: bgt.un IL_00e8
+  IL_001c: ldarg.0
+  IL_001d: ldfld System.Single Celeste.Puffer::cannotHitTimer
+  IL_0022: ldc.r4 0
+  IL_0027: bgt.un IL_00dd
+  IL_002c: ldarg.1
+  IL_002d: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0032: ldarg.0
+  IL_0033: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastSpeedPosition
+  IL_0038: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003d: ldc.r4 3
+  IL_0042: add
+  IL_0043: ble.un IL_0074
+  IL_0048: ldarg.0
++ IL_0049: ldarg.1 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_004a: ldc.i4 3037 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_004f: ldc.i4 11426993 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_0054: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ FrostHelper.DirectionalPuffer::IL_OnPlayer
+  |-> retrieves System.Boolean FrostHelper.DirectionalPuffer/<>c::<IL_OnPlayer>b__22_1(Celeste.Puffer,Celeste.Player)
++ IL_0059: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Celeste.Puffer,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_005e: brtrue IL_0074 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_0063: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
+  IL_0064: callvirt System.Void Celeste.Puffer::Explode()
+  IL_0069: ldarg.0
+  IL_006a: callvirt System.Void Celeste.Puffer::GotoGone()
+  IL_006f: br IL_00dd
+  IL_0074: ldarg.1
+  IL_0075: ldarg.0
+  IL_0076: call System.Single Monocle.Entity::get_Top()
++ IL_007b: stloc V_1 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_007f: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_0080: call System.Boolean FrostHelper.DirectionalPuffer::HandleCustomBounceEvents(Celeste.Player,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_0085: brfalse IL_00e8 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_008a: ldarg.1 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
++ IL_008b: ldloc V_1 @ FrostHelper.DirectionalPuffer::IL_OnPlayer
+  IL_008f: callvirt System.Void Celeste.Player::Bounce(System.Single)
+  IL_0094: ldarg.0
+  IL_0095: ldarg.1
+  IL_0096: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_009b: callvirt System.Void Celeste.Puffer::GotoHit(Microsoft.Xna.Framework.Vector2)
+  IL_00a0: ldarg.0
+  IL_00a1: ldarg.0
+  IL_00a2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::anchorPosition
+  IL_00a7: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ac: ldnull
+  IL_00ad: call System.Void Celeste.Actor::MoveToX(System.Single,Celeste.Collision)
+  IL_00b2: ldarg.0
+  IL_00b3: ldfld Monocle.SineWave Celeste.Puffer::idleSine
+  IL_00b8: callvirt System.Void Monocle.SineWave::Reset()
+  IL_00bd: ldarg.0
+  IL_00be: ldarg.0
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c5: dup
+  IL_00c6: stloc.0
+  IL_00c7: stfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastSinePosition
+  IL_00cc: ldloc.0
+  IL_00cd: stfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::anchorPosition
+  IL_00d2: ldarg.0
+  IL_00d3: ldc.r4 1
+  IL_00d8: stfld System.Single Celeste.Puffer::eyeSpin
+  IL_00dd: ldarg.0
+  IL_00de: ldc.r4 0.1
+  IL_00e3: stfld System.Single Celeste.Puffer::cannotHitTimer
+  IL_00e8: ret

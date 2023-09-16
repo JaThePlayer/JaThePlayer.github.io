@@ -1,0 +1,77 @@
+IL Diff: System.Void Celeste.Strawberry::orig_OnCollect()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Strawberry::collected
+  IL_0006: brfalse IL_000c
+  IL_000b: ret
+  IL_000c: ldc.i4.0
+  IL_000d: stloc.0
+  IL_000e: ldarg.0
+  IL_000f: ldc.i4.1
+  IL_0010: stfld System.Boolean Celeste.Strawberry::collected
+  IL_0015: ldarg.0
+  IL_0016: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_001b: ldfld Celeste.Leader Celeste.Follower::Leader
+  IL_0020: brfalse IL_006f
+  IL_0025: ldarg.0
+  IL_0026: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_002b: ldfld Celeste.Leader Celeste.Follower::Leader
+  IL_0030: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0035: isinst Celeste.Player
+  IL_003a: dup
+  IL_003b: ldfld System.Int32 Celeste.Player::StrawberryCollectIndex
+  IL_0040: stloc.0
+  IL_0041: dup
+  IL_0042: dup
+  IL_0043: ldfld System.Int32 Celeste.Player::StrawberryCollectIndex
+  IL_0048: ldc.i4.1
+  IL_0049: add
+  IL_004a: stfld System.Int32 Celeste.Player::StrawberryCollectIndex
+  IL_004f: ldc.r4 2.5
+  IL_0054: stfld System.Single Celeste.Player::StrawberryCollectResetTimer
+  IL_0059: ldarg.0
+  IL_005a: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_005f: ldfld Celeste.Leader Celeste.Follower::Leader
+  IL_0064: ldarg.0
+  IL_0065: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_006a: callvirt System.Void Celeste.Leader::LoseFollower(Celeste.Follower)
+  IL_006f: ldarg.0
+  IL_0070: callvirt System.Boolean Celeste.Strawberry::get_Moon()
+  IL_0075: brfalse IL_0081
+  IL_007a: ldc.i4.s 31
+  IL_007c: call System.Void Celeste.Achievements::Register(Celeste.Achievement)
+  IL_0081: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0086: ldarg.0
+  IL_0087: ldfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_008c: ldarg.0
+  IL_008d: callvirt System.Boolean Celeste.Strawberry::get_Golden()
+  IL_0092: callvirt System.Void Celeste.SaveData::AddStrawberry(Celeste.EntityID,System.Boolean)
+  IL_0097: ldarg.0
+  IL_0098: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_009d: isinst Celeste.Level
+  IL_00a2: ldfld Celeste.Session Celeste.Level::Session
+  IL_00a7: dup
+  IL_00a8: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::DoNotLoad
+  IL_00ad: ldarg.0
+  IL_00ae: ldfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_00b3: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_00b8: pop
+  IL_00b9: dup
+  IL_00ba: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_00c5: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_00ca: pop
+  IL_00cb: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
++ IL_00d0: ldc.i4 5588 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_00d5: ldc.i4 35226768 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_00da: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
++ IL_00df: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  IL_00e4: ldarg.0
+  IL_00e5: ldarg.0
+  IL_00e6: ldloc.0
+  IL_00e7: callvirt System.Collections.IEnumerator Celeste.Strawberry::CollectRoutine(System.Int32)
+  IL_00ec: ldc.i4.1
+  IL_00ed: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_00f2: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00f7: ret

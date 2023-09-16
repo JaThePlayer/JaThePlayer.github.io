@@ -1,0 +1,47 @@
+IL Diff: System.Void Celeste.Mod.MaxHelpingHand.Effects.HdParallax::renderForReal(Monocle.Scene)
+  IL_0000: ldsfld Microsoft.Xna.Framework.Matrix Monocle.Engine::ScreenMatrix
++ IL_0005: ldc.i4 6649 @ ExtendedVariants.Variants.UpsideDown::patchHDStylegroundsRendering
++ IL_000a: ldc.i4 1227616 @ ExtendedVariants.Variants.UpsideDown::patchHDStylegroundsRendering
++ IL_000f: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.UpsideDown::patchHDStylegroundsRendering
+  |-> retrieves Microsoft.Xna.Framework.Matrix ExtendedVariants.Variants.UpsideDown/<>c::<patchHDStylegroundsRendering>b__15_1(Microsoft.Xna.Framework.Matrix)
++ IL_0014: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.UpsideDown::patchHDStylegroundsRendering
+  IL_0019: stloc.0
+  IL_001a: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_001f: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0024: ldfld System.Boolean Celeste.Assists::MirrorMode
+  IL_0029: brfalse IL_006e
+  IL_002e: ldloc.0
+  IL_002f: call Microsoft.Xna.Framework.Graphics.Viewport Monocle.Engine::get_Viewport()
+  IL_0034: stloc.1
+  IL_0035: ldloca.s V_1
+  IL_0037: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Width()
+  IL_003c: neg
+  IL_003d: conv.r4
+  IL_003e: ldc.r4 0
+  IL_0043: ldc.r4 0
+  IL_0048: call Microsoft.Xna.Framework.Matrix Microsoft.Xna.Framework.Matrix::CreateTranslation(System.Single,System.Single,System.Single)
+  IL_004d: call Microsoft.Xna.Framework.Matrix Microsoft.Xna.Framework.Matrix::op_Multiply(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)
+  IL_0052: stloc.0
+  IL_0053: ldloc.0
+  IL_0054: ldc.r4 -1
+  IL_0059: ldc.r4 1
+  IL_005e: ldc.r4 1
+  IL_0063: call Microsoft.Xna.Framework.Matrix Microsoft.Xna.Framework.Matrix::CreateScale(System.Single,System.Single,System.Single)
+  IL_0068: call Microsoft.Xna.Framework.Matrix Microsoft.Xna.Framework.Matrix::op_Multiply(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)
+  IL_006d: stloc.0
+  IL_006e: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0073: ldc.i4.0
+  IL_0074: ldarg.0
+  IL_0075: ldfld Microsoft.Xna.Framework.Graphics.BlendState Celeste.Parallax::BlendState
+  IL_007a: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointWrap
+  IL_007f: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::None
+  IL_0084: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_0089: call Microsoft.Xna.Framework.Graphics.Effect Celeste.ColorGrade::get_Effect()
+  IL_008e: ldloc.0
+  IL_008f: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_0094: ldarg.0
+  IL_0095: ldarg.1
+  IL_0096: call System.Void Celeste.Parallax::Render(Monocle.Scene)
+  IL_009b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00a0: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_00a5: ret
