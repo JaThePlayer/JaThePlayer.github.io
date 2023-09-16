@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celeste IL Hook Viewer - Info</title>
+    <link href="./../../style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <h1>Celeste IL Hook Viewer</h1>
+
+    This viewer receives data about all IL hooks applied on all methods, via launching the game, then opening a map with all mods from these gamebanana categories:
+<pre>
+helpers
+other/misc
+tools:other/misc</pre>
+    Then, the <code>ildiff_all</code> command from Mapping Utils is used to automatically create the database.
+
+    <h3>Warning</h3>
+    Not all code mods are included in the database yet. Most notably, none of the code mods that ship with maps are included. This may change in the future.<br>
+    This database may not include all hooks - if a mod lazily loads hooks as they're needed, it's likely that they won't be included.<br>
+    <br>
+    The database is updated <b>manually</b>.
+
+    <h2>Stats</h2>
+    <ul>
+        <li>Last Update: <span id="last-update"></span></li>
+        <li>Everest Version: <span id="everest-ver"></span> (core branch)</li>
+    </ul>
+
+    <h2>Mod List</h2>
+    <ul id="mod-list"></ul>
+    <!--
+    <footer>
+      <a href="./../../index.html">Homepage</a>
+    </footer>
+    -->
+    <script type="module" src="info_main.js"></script>
+  </body>
+</html>

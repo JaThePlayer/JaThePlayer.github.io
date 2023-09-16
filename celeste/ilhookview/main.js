@@ -18,19 +18,31 @@ console.log(targetMethodName)
 
 const db = await fetch('db/info.json').then((r) => r.json());
 db.methods = db.methods.sort((a, b) => a.name.localeCompare(b.name))
-console.log(db.methods)
+
+function updateUrl(data) {
+    const url = new URL(location);
+
+    for (const toUpdate of data) {
+        if (toUpdate.value) {
+            url.searchParams.set(toUpdate.name, toUpdate.value);
+        } else {
+            url.searchParams.delete(toUpdate.name ?? toUpdate)
+        }
+    }
+
+    history.pushState({}, "", url);
+}
+
 // create the dropdown
 const methodDropdown = document.getElementById('methodSelect')
-const a = [1, 2]
 for (var x of db.methods) {
     methodDropdown.options[methodDropdown.options.length] = new Option(x.name, x.directoryName);
 }
 methodDropdown.onchange = async function() {
-    const url = new URL(location);
-    url.searchParams.set("method", this.value);
-    url.searchParams.delete("line")
-    history.pushState({}, "", url);
-
+    updateUrl([
+        { name: "method", value: this.value },
+        "line"
+    ])
 
     await createILViewAsync(this.value)
 }
@@ -88,8 +100,12 @@ async function fetchMethodAsync(func) {
         }]
     }
 
-    const response = await fetch(`db/${methodInfo.directoryName}/${filename}`);
-    return (await response.text()).split('\n').map((v) => parseILInstructionString(v.trimEnd()));
+    const rawPath = `db/${methodInfo.directoryName}/${filename}`
+    const response = await fetch(rawPath);
+    return {
+        data: (await response.text()).split('\n').map((v) => parseILInstructionString(v.trimEnd())),
+        rawAdress: rawPath
+    };
 }
 
 function appendSpanElement(toElement, text) {
@@ -111,14 +127,13 @@ function scrollToOpcodeAtOffset(offset) {
 }
 
 async function createILViewAsync(func) {
-    console.log(`createILViewAsync(${func})`)
     const methodInfo = getMethodInfo(func)
     if (methodInfo) {
-        //methodDropdown.options[0] = new Option(methodInfo.name, methodInfo)
-        let funcIL = await fetchMethodAsync(func)
-        //console.log(funcIL)
-    
-        document.querySelector('.method-name').textContent = methodInfo.name
+        const funcData = await fetchMethodAsync(func);
+        const funcIL = funcData.data;
+
+        document.querySelector('.method-name').textContent = methodInfo.name;
+        document.getElementById('raw-link').href = funcData.rawAdress;
     
         const ilDiffViewElement = document.querySelector('.il-diff-view')
         while (ilDiffViewElement.lastChild) {
@@ -154,14 +169,18 @@ async function createILViewAsync(func) {
             appendSpanElement(d, `${instr.opcode} `)
             if (instr.operand) {
                 if (instr.operand.startsWith("IL_")) {
-                    const targetLabel = instr.operand.substring("IL_".length)
+                    const targetLabel = instr.operand.substring("IL_".length).trim()
                     let target = null
         
                     const jumpToLabelButton = document.createElement("a")
-                    jumpToLabelButton.textContent = instr.operand
+                    jumpToLabelButton.textContent = instr.operand.trim()
                     jumpToLabelButton.onclick = function() {
                         target ??= codeElements.find(e => e.instr.offset == targetLabel)
                         target.div.scrollIntoView()
+
+                        updateUrl([
+                            { name: "line", value: targetLabel },
+                        ])
                     }
                     jumpToLabelButton.onmouseover = function() {
                         target ??= codeElements.find(e => e.instr.offset == targetLabel)
@@ -173,6 +192,7 @@ async function createILViewAsync(func) {
                     }
         
                     d.appendChild(jumpToLabelButton)
+                    appendSpanElement(d, ` `)
                 } else {
                     appendSpanElement(d, `${instr.operand}`)
                 }
@@ -193,7 +213,6 @@ async function createILViewAsync(func) {
 }
 
 await createILViewAsync(func)
-
 
 if (queryStringParams.line) {
     scrollToOpcodeAtOffset(queryStringParams.line.padStart(4, '0'))
