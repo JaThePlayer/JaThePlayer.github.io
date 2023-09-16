@@ -66,7 +66,8 @@ async function getFileListAsync(func) {
     return files;
 }
 
-const ilRegex = /(.) IL_([\da-f]+): ([^ \n]+)(?: ([^@\n]+))?(?:@(.*))?/
+const ilRegex = /(.) IL_([\da-f]+): ([^ \n]+)(?: ([^@\n]+))? ?(?:@(.*))?/
+// /(.) IL_([\da-f]+): ([^ \n]+)(?: ([^@\n]+))?(?:@(.*))?/
 function parseILInstructionString(instr) {
     const ilMatches = instr.match(ilRegex)
     //console.log(ilMatches)
