@@ -169,7 +169,7 @@ async function createILViewAsync(func) {
             appendSpanElement(d, `${instr.opcode} `)
             if (instr.operand) {
                 if (instr.operand.startsWith("IL_")) {
-                    const targetLabel = instr.operand.substring("IL_".length).trim()
+                    const targetLabel = instr.operand.trim().substring("IL_".length)
                     let target = null
         
                     const jumpToLabelButton = document.createElement("a")
