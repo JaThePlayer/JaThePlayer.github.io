@@ -1,0 +1,36 @@
+IL Diff: System.Void Celeste.SummitCheckpoint::Awake(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Awake(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Boolean Celeste.SummitCheckpoint::Activated
+  IL_000d: brtrue.s IL_005f
+  IL_000f: ldarg.0
+  IL_0010: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Player>()
+  IL_0015: brfalse.s IL_005f
+  IL_0017: ldarg.0
+  IL_0018: ldc.i4.1
+  IL_0019: stfld System.Boolean Celeste.SummitCheckpoint::Activated
+  IL_001e: ldarg.0
+  IL_001f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0024: isinst Celeste.Level
+  IL_0029: dup
+  IL_002a: ldfld Celeste.Session Celeste.Level::Session
+  IL_002f: ldstr "summit_checkpoint_"
+  IL_0034: ldarg.0
+  IL_0035: ldfld System.Int32 Celeste.SummitCheckpoint::Number
+  IL_003a: box System.Int32
+  IL_003f: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0044: ldc.i4.1
+  IL_0045: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_004a: ldfld Celeste.Session Celeste.Level::Session
+  IL_004f: ldarg.0
+  IL_0050: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SummitCheckpoint::respawn
+  IL_0055: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: ldc.i4 21530999 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  |-> retrieves System.Void ExtendedVariants.Variants.RestoreDashesOnRespawn/<>c::<updateDashCountOnRespawnPointChange>b__6_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  IL_005a: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_005f: ret

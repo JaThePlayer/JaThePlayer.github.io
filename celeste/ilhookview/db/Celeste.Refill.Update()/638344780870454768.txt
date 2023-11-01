@@ -1,0 +1,91 @@
+IL Diff: System.Void Celeste.Refill::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Single Celeste.Refill::respawnTimer
+  IL_000c: ldc.r4 0
+  IL_0011: ble.un.s IL_003a
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.Refill::respawnTimer
+  IL_001a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_001f: sub
+  IL_0020: stfld System.Single Celeste.Refill::respawnTimer
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Single Celeste.Refill::respawnTimer
+  IL_002b: ldc.r4 0
+  IL_0030: bgt.un.s IL_0078
+  IL_0032: ldarg.0
+  IL_0033: callvirt System.Void Celeste.Refill::Respawn()
+  IL_0038: br.s IL_0078
+  IL_003a: ldarg.0
+  IL_003b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0040: ldc.r4 0.1
+  IL_0045: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_004a: brfalse.s IL_0078
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
++ IL_0000: ldc.i4 4779067 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DashStateRefill/<>c__DisplayClass21_0::<PatchRefillParticles>b__1(Celeste.Refill)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Refill>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
++ IL_0000: brtrue IL_0078 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
++ IL_004c: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_Update
+  IL_004d: ldfld Celeste.Level Celeste.Refill::level
+  IL_0052: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0057: ldarg.0
+  IL_0058: ldfld Monocle.ParticleType Celeste.Refill::p_glow
+  IL_005d: ldc.i4.1
+  IL_005e: ldarg.0
+  IL_005f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0064: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0069: ldc.r4 5
+  IL_006e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0073: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0078: ldarg.0
+  IL_0079: callvirt System.Void Celeste.Refill::UpdateY()
+  IL_007e: ldarg.0
+  IL_007f: ldfld Celeste.VertexLight Celeste.Refill::light
+  IL_0084: ldarg.0
+  IL_0085: ldfld Celeste.VertexLight Celeste.Refill::light
+  IL_008a: ldfld System.Single Celeste.VertexLight::Alpha
+  IL_008f: ldarg.0
+  IL_0090: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_0095: ldfld System.Boolean Monocle.Component::Visible
+  IL_009a: brtrue.s IL_00a3
+  IL_009c: ldc.r4 0
+  IL_00a1: br.s IL_00a8
+  IL_00a3: ldc.r4 1
+  IL_00a8: ldc.r4 4
+  IL_00ad: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00b2: mul
+  IL_00b3: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00b8: stfld System.Single Celeste.VertexLight::Alpha
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Celeste.BloomPoint Celeste.Refill::bloom
+  IL_00c3: ldarg.0
+  IL_00c4: ldfld Celeste.VertexLight Celeste.Refill::light
+  IL_00c9: ldfld System.Single Celeste.VertexLight::Alpha
+  IL_00ce: ldc.r4 0.8
+  IL_00d3: mul
+  IL_00d4: stfld System.Single Celeste.BloomPoint::Alpha
+  IL_00d9: ldarg.0
+  IL_00da: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00df: ldc.r4 2
+  IL_00e4: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_00e9: brfalse.s IL_0116
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_00f1: ldfld System.Boolean Monocle.Component::Visible
+  IL_00f6: brfalse.s IL_0116
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_00fe: ldstr "flash"
+  IL_0103: ldc.i4.1
+  IL_0104: ldc.i4.0
+  IL_0105: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_010a: ldarg.0
+  IL_010b: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_0110: ldc.i4.1
+  IL_0111: stfld System.Boolean Monocle.Component::Visible
+  IL_0116: ret

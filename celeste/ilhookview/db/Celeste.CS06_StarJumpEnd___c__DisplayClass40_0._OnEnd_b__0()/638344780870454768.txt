@@ -1,0 +1,65 @@
+IL Diff: System.Void Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::<OnEnd>b__0()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_0006: ldfld Celeste.Session Celeste.Level::Session
+  IL_000b: ldstr "00"
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0000: ldc.i4 28021750 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  |-> retrieves System.String Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__112_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  IL_0010: stfld System.String Celeste.Session::Level
+  IL_0015: ldarg.0
+  IL_0016: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_001b: ldfld Celeste.Session Celeste.Level::Session
+  IL_0020: ldarg.0
+  IL_0021: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_0026: ldarg.0
+  IL_0027: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_002c: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0031: stloc.0
+  IL_0032: ldloca.s V_0
+  IL_0034: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0039: conv.r4
+  IL_003a: ldarg.0
+  IL_003b: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_0040: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0045: stloc.0
+  IL_0046: ldloca.s V_0
+  IL_0048: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_004d: conv.r4
+  IL_004e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0053: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_0058: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0000: ldc.i4 55169258 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  |-> retrieves System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__112_1(System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Nullable`1<Microsoft.Xna.Framework.Vector2>,System.Nullable`1<Microsoft.Xna.Framework.Vector2>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTarget
+  IL_005d: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_0068: ldc.i4.8
+  IL_0069: ldc.i4.0
+  IL_006a: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
++ IL_0000: ldc.i4 2583 @ Celeste.Mod.Randomizer.RandoModule::RestoreBerries
++ IL_0000: ldc.i4 20179843 @ Celeste.Mod.Randomizer.RandoModule::RestoreBerries
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::RestoreBerries
+  |-> retrieves System.Void Celeste.Mod.Randomizer.RandoModule/<>c::<RestoreBerries>b__98_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.Randomizer.RandoModule::RestoreBerries
+  IL_006f: ldc.i4.0
+  IL_0070: call System.Void Celeste.FallEffects::Show(System.Boolean)
+  IL_0075: ldarg.0
+  IL_0076: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_007b: ldfld Celeste.Session Celeste.Level::Session
+  IL_0080: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0085: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_008a: ldstr "event:/music/lvl6/main"
+  IL_008f: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_0094: ldarg.0
+  IL_0095: ldfld Celeste.Level Celeste.CS06_StarJumpEnd/<>c__DisplayClass40_0::level
+  IL_009a: ldfld Celeste.Session Celeste.Level::Session
+  IL_009f: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_00a4: ldc.i4.0
+  IL_00a5: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_00aa: ret

@@ -1,0 +1,679 @@
+IL Diff: System.Boolean Celeste.Level/<TransitionRoutine>d__126::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Level Celeste.Level/<TransitionRoutine>d__126::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0026,IL_042f,IL_0491,IL_0666
+  IL_0024: ldc.i4.0
+  IL_0025: ret
+  IL_0026: ldarg.0
+  IL_0027: ldc.i4.m1
+  IL_0028: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_002d: ldarg.0
+  IL_002e: newobj System.Void Celeste.Level/<>c__DisplayClass126_0::.ctor()
+  IL_0033: stfld Celeste.Level/<>c__DisplayClass126_0 Celeste.Level/<TransitionRoutine>d__126::<>8__1
+  IL_0038: ldarg.0
+  IL_0039: ldloc.1
+  IL_003a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_003f: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0044: stfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0049: ldarg.0
+  IL_004a: ldloc.1
+  IL_004b: ldsfld Monocle.BitTag Celeste.Tags::Persistent
+  IL_0050: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0055: ldsfld Monocle.BitTag Celeste.Tags::Global
+  IL_005a: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_005f: or
+  IL_0060: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Scene::GetEntitiesExcludingTagMask(System.Int32)
+  IL_0065: stfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Level/<TransitionRoutine>d__126::<toRemove>5__3
+  IL_006a: ldarg.0
+  IL_006b: ldfld Celeste.Level/<>c__DisplayClass126_0 Celeste.Level/<TransitionRoutine>d__126::<>8__1
+  IL_0070: ldloc.1
+  IL_0071: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0076: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponentsCopy<Celeste.TransitionListener>()
+  IL_007b: stfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<>c__DisplayClass126_0::transitionOut
+  IL_0080: ldarg.0
+  IL_0081: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0086: callvirt System.Void Celeste.Player::CleanUpTriggers()
+  IL_008b: ldloc.1
+  IL_008c: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0091: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.SoundSource>()
+  IL_0096: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_009b: stloc.2
+  IL_009c: br.s IL_00bb
+  IL_009e: ldloca.s V_2
+  IL_00a0: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_00a5: castclass Celeste.SoundSource
+  IL_00aa: stloc.3
+  IL_00ab: ldloc.3
+  IL_00ac: ldfld System.Boolean Celeste.SoundSource::DisposeOnTransition
+  IL_00b1: brfalse.s IL_00bb
+  IL_00b3: ldloc.3
+  IL_00b4: ldc.i4.1
+  IL_00b5: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_00ba: pop
+  IL_00bb: ldloca.s V_2
+  IL_00bd: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_00c2: brtrue.s IL_009e
+  IL_00c4: leave.s IL_00d4
+  IL_00c6: ldloca.s V_2
+  IL_00c8: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_00ce: callvirt System.Void System.IDisposable::Dispose()
+  IL_00d3: endfinally
+  IL_00d4: ldloc.1
+  IL_00d5: ldloc.1
+  IL_00d6: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_00db: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_00e0: callvirt System.Void Celeste.Level::set_PreviousBounds(System.Nullable`1<Microsoft.Xna.Framework.Rectangle>)
+  IL_00e5: ldloc.1
+  IL_00e6: ldfld Celeste.Session Celeste.Level::Session
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld Celeste.LevelData Celeste.Level/<TransitionRoutine>d__126::next
+  IL_00f1: ldfld System.String Celeste.LevelData::Name
+  IL_00f6: stfld System.String Celeste.Session::Level
+  IL_00fb: ldloc.1
+  IL_00fc: ldfld Celeste.Session Celeste.Level::Session
+  IL_0101: ldc.i4.0
+  IL_0102: stfld System.Boolean Celeste.Session::FirstLevel
+  IL_0107: ldloc.1
+  IL_0108: ldfld Celeste.Session Celeste.Level::Session
+  IL_010d: ldc.i4.0
+  IL_010e: stfld System.Int32 Celeste.Session::DeathsInCurrentLevel
+  IL_0113: ldloc.1
+  IL_0114: ldc.i4.0
+  IL_0115: ldc.i4.0
+  IL_0116: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_011b: call FMOD.Studio.EventInstance Celeste.Audio::get_CurrentAmbienceEventInstance()
+  IL_0120: ldstr "has_conveyors"
+  IL_0125: ldloc.1
+  IL_0126: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_012b: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.WallBooster>()
+  IL_0130: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_0135: ldc.i4.0
+  IL_0136: bgt.s IL_013b
+  IL_0138: ldc.i4.0
+  IL_0139: br.s IL_013c
+  IL_013b: ldc.i4.1
+  IL_013c: conv.r4
+  IL_013d: call System.Void Celeste.Audio::SetParameter(FMOD.Studio.EventInstance,System.String,System.Single)
+  IL_0142: ldarg.0
+  IL_0143: ldloc.1
+  IL_0144: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0149: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponentsCopy<Celeste.TransitionListener>()
+  IL_014e: stfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<TransitionRoutine>d__126::<transitionIn>5__4
+  IL_0153: ldarg.0
+  IL_0154: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<TransitionRoutine>d__126::<transitionIn>5__4
+  IL_0159: ldarg.0
+  IL_015a: ldfld Celeste.Level/<>c__DisplayClass126_0 Celeste.Level/<TransitionRoutine>d__126::<>8__1
+  IL_015f: ldftn System.Boolean Celeste.Level/<>c__DisplayClass126_0::<TransitionRoutine>b__0(Monocle.Component)
+  IL_0165: newobj System.Void System.Predicate`1<Monocle.Component>::.ctor(System.Object,System.IntPtr)
+  IL_016a: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Component>::RemoveAll(System.Predicate`1<T>)
+  IL_016f: pop
+  IL_0170: call System.Void Celeste.Level::_GCCollect()
+  IL_0175: ldarg.0
+  IL_0176: ldc.r4 0
+  IL_017b: stfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_0180: ldarg.0
+  IL_0181: ldloc.1
+  IL_0182: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0187: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_018c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraFrom>5__6
+  IL_0191: ldarg.0
+  IL_0192: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
+  IL_0197: ldc.r4 4
+  IL_019c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01a1: stloc.s V_5
+  IL_01a3: ldarg.0
+  IL_01a4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
++ IL_0000: ldc.i4 2451 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: ldc.i4 54532308 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  IL_01a9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_01ae: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01b3: brfalse.s IL_01c7
+  IL_01b5: ldarg.0
+  IL_01b6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
+  IL_01bb: ldc.r4 12
+  IL_01c0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01c5: stloc.s V_5
+  IL_01c7: ldarg.0
+  IL_01c8: ldarg.0
+  IL_01c9: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_01ce: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01d3: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_01d8: br.s IL_01ee
+  IL_01da: ldarg.0
+  IL_01db: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_01e0: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01e5: dup
+  IL_01e6: ldind.r4
+  IL_01e7: ldc.r4 1
++ IL_0000: ldc.i4 2463 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: ldc.i4 55040799 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  IL_01ec: sub
+  IL_01ed: stind.r4
+  IL_01ee: ldarg.0
+  IL_01ef: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
+  IL_01f4: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01f9: ldc.r4 0
+  IL_01fe: beq.s IL_0236
+  IL_0200: ldarg.0
+  IL_0201: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0206: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
++ IL_0000: ldc.i4 2584 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: ldc.i4 29119739 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  IL_020b: ldloc.1
+  IL_020c: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0211: stloc.s V_6
+  IL_0213: ldloca.s V_6
++ IL_0000: call System.Boolean Celeste.Mod.GravityHelper.GravityHelperModule::get_ShouldInvertPlayer() @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: brfalse.s IL_0215 @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top() @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: neg @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
++ IL_0000: br.s IL_021a @ Celeste.Mod.GravityHelper.Hooks.LevelHooks::Level_orig_TransitionRoutine
+  IL_0215: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_021a: conv.r4
+  IL_021b: bge.s IL_01da
+  IL_021d: br.s IL_0236
+  IL_021f: ldarg.0
+  IL_0220: ldarg.0
+  IL_0221: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0226: ldarg.0
+  IL_0227: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
+  IL_022c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0231: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0236: ldloc.1
+  IL_0237: ldarg.0
+  IL_0238: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_023d: ldloc.s V_5
+  IL_023f: callvirt System.Boolean Celeste.Level::IsInBounds(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0244: brfalse.s IL_021f
+  IL_0246: ldarg.0
+  IL_0247: ldloc.1
+  IL_0248: ldarg.0
+  IL_0249: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_024e: ldarg.0
+  IL_024f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0254: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetFullCameraTargetAt(Celeste.Player,Microsoft.Xna.Framework.Vector2)
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.XaphanHelper.Triggers.CameraBlocker::modCameraTarget(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.XaphanHelper.Triggers.CameraBlocker::ilHookGetFullCameraTarget
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Triggers.OneWayCameraTrigger::modCameraTarget(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.MaxHelpingHand.Triggers.OneWayCameraTrigger::ilHookGetFullCameraTarget
+  IL_0259: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraTo>5__8
+  IL_025e: ldarg.0
+  IL_025f: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0264: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0269: stloc.s V_7
+  IL_026b: ldarg.0
+  IL_026c: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0271: ldarg.0
+  IL_0272: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0277: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_027c: ldarg.0
+  IL_027d: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0282: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.WindTrigger>()
+  IL_0287: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_028c: stloc.s V_8
+  IL_028e: br.s IL_02c1
+  IL_0290: ldloca.s V_8
+  IL_0292: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0297: stloc.s V_9
+  IL_0299: ldarg.0
+  IL_029a: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Level/<TransitionRoutine>d__126::<toRemove>5__3
+  IL_029f: ldloc.s V_9
+  IL_02a1: callvirt System.Boolean System.Collections.Generic.List`1<Monocle.Entity>::Contains(T)
+  IL_02a6: brtrue.s IL_02c1
+  IL_02a8: ldloc.1
+  IL_02a9: ldfld Celeste.WindController Celeste.Level::windController
+  IL_02ae: ldloc.s V_9
+  IL_02b0: isinst Celeste.WindTrigger
+  IL_02b5: ldfld Celeste.WindController/Patterns Celeste.WindTrigger::Pattern
+  IL_02ba: callvirt System.Void Celeste.WindController::SetPattern(Celeste.WindController/Patterns)
+  IL_02bf: leave.s IL_02da
+  IL_02c1: ldloca.s V_8
+  IL_02c3: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_02c8: brtrue.s IL_0290
+  IL_02ca: leave.s IL_02da
+  IL_02cc: ldloca.s V_8
+  IL_02ce: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_02d4: callvirt System.Void System.IDisposable::Dispose()
+  IL_02d9: endfinally
+  IL_02da: ldloc.1
+  IL_02db: ldfld Celeste.WindController Celeste.Level::windController
+  IL_02e0: callvirt System.Void Celeste.WindController::SetStartPattern()
+  IL_02e5: ldarg.0
+  IL_02e6: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_02eb: ldloc.s V_7
+  IL_02ed: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02f2: ldarg.0
+  IL_02f3: ldfld Celeste.Level/<>c__DisplayClass126_0 Celeste.Level/<TransitionRoutine>d__126::<>8__1
+  IL_02f8: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<>c__DisplayClass126_0::transitionOut
+  IL_02fd: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0302: stloc.2
+  IL_0303: br.s IL_0328
+  IL_0305: ldloca.s V_2
+  IL_0307: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_030c: castclass Celeste.TransitionListener
+  IL_0311: stloc.s V_10
+  IL_0313: ldloc.s V_10
+  IL_0315: ldfld System.Action Celeste.TransitionListener::OnOutBegin
+  IL_031a: brfalse.s IL_0328
+  IL_031c: ldloc.s V_10
+  IL_031e: ldfld System.Action Celeste.TransitionListener::OnOutBegin
+  IL_0323: callvirt System.Void System.Action::Invoke()
+  IL_0328: ldloca.s V_2
+  IL_032a: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_032f: brtrue.s IL_0305
+  IL_0331: leave.s IL_0341
+  IL_0333: ldloca.s V_2
+  IL_0335: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_033b: callvirt System.Void System.IDisposable::Dispose()
+  IL_0340: endfinally
+  IL_0341: ldarg.0
+  IL_0342: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<TransitionRoutine>d__126::<transitionIn>5__4
+  IL_0347: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_034c: stloc.2
+  IL_034d: br.s IL_0372
+  IL_034f: ldloca.s V_2
+  IL_0351: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0356: castclass Celeste.TransitionListener
+  IL_035b: stloc.s V_11
+  IL_035d: ldloc.s V_11
+  IL_035f: ldfld System.Action Celeste.TransitionListener::OnInBegin
+  IL_0364: brfalse.s IL_0372
+  IL_0366: ldloc.s V_11
+  IL_0368: ldfld System.Action Celeste.TransitionListener::OnInBegin
+  IL_036d: callvirt System.Void System.Action::Invoke()
+  IL_0372: ldloca.s V_2
+  IL_0374: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0379: brtrue.s IL_034f
+  IL_037b: leave.s IL_038b
+  IL_037d: ldloca.s V_2
+  IL_037f: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_0385: callvirt System.Void System.IDisposable::Dispose()
+  IL_038a: endfinally
+  IL_038b: ldarg.0
+  IL_038c: ldloc.1
+  IL_038d: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0392: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_0397: stfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_039c: ldarg.0
+  IL_039d: ldloc.1
+  IL_039e: ldfld System.Boolean Celeste.Level::DarkRoom
+  IL_03a3: brtrue.s IL_03b9
+  IL_03a5: ldloc.1
+  IL_03a6: ldfld System.Single Celeste.Level::BaseLightingAlpha
+  IL_03ab: ldloc.1
+  IL_03ac: ldfld Celeste.Session Celeste.Level::Session
+  IL_03b1: ldfld System.Single Celeste.Session::LightingAlphaAdd
+  IL_03b6: add
+  IL_03b7: br.s IL_03c4
+  IL_03b9: ldloc.1
+  IL_03ba: ldfld Celeste.Session Celeste.Level::Session
+  IL_03bf: ldfld System.Single Celeste.Session::DarkRoomAlpha
+  IL_03c4: stfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_03c9: ldarg.0
+  IL_03ca: ldarg.0
+  IL_03cb: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_03d0: ldloc.1
+  IL_03d1: ldfld Celeste.Session Celeste.Level::Session
+  IL_03d6: ldfld System.Single Celeste.Session::DarkRoomAlpha
+  IL_03db: bge.s IL_03f5
+  IL_03dd: ldarg.0
+  IL_03de: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_03e3: ldloc.1
+  IL_03e4: ldfld Celeste.Session Celeste.Level::Session
+  IL_03e9: ldfld System.Single Celeste.Session::DarkRoomAlpha
+  IL_03ee: clt.un
+  IL_03f0: ldc.i4.0
+  IL_03f1: ceq
+  IL_03f3: br.s IL_03f6
+  IL_03f5: ldc.i4.1
+  IL_03f6: stfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<lightingWait>5__11
+  IL_03fb: ldarg.0
+  IL_03fc: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0401: ldarg.0
+  IL_0402: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_0407: cgt
+  IL_0409: ldarg.0
+  IL_040a: ldfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<lightingWait>5__11
+  IL_040f: and
+  IL_0410: brfalse.s IL_0475
+  IL_0412: ldstr "event:/game/05_mirror_temple/room_lightlevel_down"
+  IL_0417: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_041c: pop
+  IL_041d: br.s IL_0462
+  IL_041f: ldarg.0
+  IL_0420: ldnull
+  IL_0421: stfld System.Object Celeste.Level/<TransitionRoutine>d__126::<>2__current
+  IL_0426: ldarg.0
+  IL_0427: ldc.i4.1
+  IL_0428: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_042d: ldc.i4.1
+  IL_042e: ret
+  IL_042f: ldarg.0
+  IL_0430: ldc.i4.m1
+  IL_0431: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_0436: ldloc.1
+  IL_0437: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_043c: ldloc.1
+  IL_043d: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0442: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_0447: ldarg.0
+  IL_0448: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_044d: ldc.r4 2
+  IL_0452: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0457: mul
+  IL_0458: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_045d: stfld System.Single Celeste.LightingRenderer::Alpha
+  IL_0462: ldloc.1
+  IL_0463: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0468: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_046d: ldarg.0
+  IL_046e: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0473: bne.un.s IL_041f
+  IL_0475: ldarg.0
+  IL_0476: ldc.i4.0
+  IL_0477: stfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<cameraFinished>5__12
+  IL_047c: br IL_0606
+  IL_0481: ldarg.0
+  IL_0482: ldnull
+  IL_0483: stfld System.Object Celeste.Level/<TransitionRoutine>d__126::<>2__current
+  IL_0488: ldarg.0
+  IL_0489: ldc.i4.2
+  IL_048a: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_048f: ldc.i4.1
+  IL_0490: ret
+  IL_0491: ldarg.0
+  IL_0492: ldc.i4.m1
+  IL_0493: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_0498: ldarg.0
+  IL_0499: ldfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<cameraFinished>5__12
+  IL_049e: brtrue IL_0606
+  IL_04a3: ldarg.0
+  IL_04a4: ldarg.0
+  IL_04a5: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_04aa: ldc.r4 1
+  IL_04af: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04b4: ldloc.1
+  IL_04b5: ldfld System.Single Celeste.Level::NextTransitionDuration
+  IL_04ba: div
+  IL_04bb: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_04c0: stfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_04c5: ldarg.0
+  IL_04c6: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_04cb: ldc.r4 0.9
+  IL_04d0: ble.un.s IL_04e5
+  IL_04d2: ldloc.1
+  IL_04d3: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_04d8: ldarg.0
+  IL_04d9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraTo>5__8
+  IL_04de: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_04e3: br.s IL_0511
+  IL_04e5: ldloc.1
+  IL_04e6: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_04eb: ldarg.0
+  IL_04ec: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraFrom>5__6
+  IL_04f1: ldarg.0
+  IL_04f2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraTo>5__8
+  IL_04f7: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_04fc: ldarg.0
+  IL_04fd: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_0502: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0507: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_050c: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0511: ldarg.0
+  IL_0512: ldfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<lightingWait>5__11
+  IL_0517: brtrue.s IL_054d
+  IL_0519: ldarg.0
+  IL_051a: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_051f: ldarg.0
+  IL_0520: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0525: bge.un.s IL_054d
+  IL_0527: ldloc.1
+  IL_0528: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_052d: ldarg.0
+  IL_052e: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_0533: ldarg.0
+  IL_0534: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0539: ldarg.0
+  IL_053a: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_053f: sub
+  IL_0540: ldarg.0
+  IL_0541: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_0546: mul
+  IL_0547: add
+  IL_0548: stfld System.Single Celeste.LightingRenderer::Alpha
+  IL_054d: ldarg.0
+  IL_054e: ldfld Celeste.Level/<>c__DisplayClass126_0 Celeste.Level/<TransitionRoutine>d__126::<>8__1
+  IL_0553: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<>c__DisplayClass126_0::transitionOut
+  IL_0558: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_055d: stloc.2
+  IL_055e: br.s IL_0589
+  IL_0560: ldloca.s V_2
+  IL_0562: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0567: castclass Celeste.TransitionListener
+  IL_056c: stloc.s V_12
+  IL_056e: ldloc.s V_12
+  IL_0570: ldfld System.Action`1<System.Single> Celeste.TransitionListener::OnOut
+  IL_0575: brfalse.s IL_0589
+  IL_0577: ldloc.s V_12
+  IL_0579: ldfld System.Action`1<System.Single> Celeste.TransitionListener::OnOut
+  IL_057e: ldarg.0
+  IL_057f: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_0584: callvirt System.Void System.Action`1<System.Single>::Invoke(T)
+  IL_0589: ldloca.s V_2
+  IL_058b: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0590: brtrue.s IL_0560
+  IL_0592: leave.s IL_05a2
+  IL_0594: ldloca.s V_2
+  IL_0596: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_059c: callvirt System.Void System.IDisposable::Dispose()
+  IL_05a1: endfinally
+  IL_05a2: ldarg.0
+  IL_05a3: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<TransitionRoutine>d__126::<transitionIn>5__4
+  IL_05a8: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_05ad: stloc.2
+  IL_05ae: br.s IL_05d9
+  IL_05b0: ldloca.s V_2
+  IL_05b2: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_05b7: castclass Celeste.TransitionListener
+  IL_05bc: stloc.s V_13
+  IL_05be: ldloc.s V_13
+  IL_05c0: ldfld System.Action`1<System.Single> Celeste.TransitionListener::OnIn
+  IL_05c5: brfalse.s IL_05d9
+  IL_05c7: ldloc.s V_13
+  IL_05c9: ldfld System.Action`1<System.Single> Celeste.TransitionListener::OnIn
+  IL_05ce: ldarg.0
+  IL_05cf: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_05d4: callvirt System.Void System.Action`1<System.Single>::Invoke(T)
+  IL_05d9: ldloca.s V_2
+  IL_05db: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_05e0: brtrue.s IL_05b0
+  IL_05e2: leave.s IL_05f2
+  IL_05e4: ldloca.s V_2
+  IL_05e6: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_05ec: callvirt System.Void System.IDisposable::Dispose()
+  IL_05f1: endfinally
+  IL_05f2: ldarg.0
+  IL_05f3: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_05f8: ldc.r4 1
+  IL_05fd: blt.un.s IL_0606
+  IL_05ff: ldarg.0
+  IL_0600: ldc.i4.1
+  IL_0601: stfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<cameraFinished>5__12
+  IL_0606: ldarg.0
+  IL_0607: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_060c: ldarg.0
+  IL_060d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_0612: ldarg.0
+  IL_0613: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::direction
+  IL_0618: callvirt System.Boolean Celeste.Player::TransitionTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_061d: brfalse IL_0481
+  IL_0622: ldarg.0
+  IL_0623: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<cameraAt>5__5
+  IL_0628: ldc.r4 1
+  IL_062d: blt IL_0481
+  IL_0632: ldarg.0
+  IL_0633: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0638: ldarg.0
+  IL_0639: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingStart>5__9
+  IL_063e: clt
+  IL_0640: ldarg.0
+  IL_0641: ldfld System.Boolean Celeste.Level/<TransitionRoutine>d__126::<lightingWait>5__11
+  IL_0646: and
+  IL_0647: brfalse.s IL_06ac
+  IL_0649: ldstr "event:/game/05_mirror_temple/room_lightlevel_up"
+  IL_064e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_0653: pop
+  IL_0654: br.s IL_0699
+  IL_0656: ldarg.0
+  IL_0657: ldnull
+  IL_0658: stfld System.Object Celeste.Level/<TransitionRoutine>d__126::<>2__current
+  IL_065d: ldarg.0
+  IL_065e: ldc.i4.3
+  IL_065f: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_0664: ldc.i4.1
+  IL_0665: ret
+  IL_0666: ldarg.0
+  IL_0667: ldc.i4.m1
+  IL_0668: stfld System.Int32 Celeste.Level/<TransitionRoutine>d__126::<>1__state
+  IL_066d: ldloc.1
+  IL_066e: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0673: ldloc.1
+  IL_0674: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0679: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_067e: ldarg.0
+  IL_067f: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_0684: ldc.r4 2
+  IL_0689: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_068e: mul
+  IL_068f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0694: stfld System.Single Celeste.LightingRenderer::Alpha
+  IL_0699: ldloc.1
+  IL_069a: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_069f: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_06a4: ldarg.0
+  IL_06a5: ldfld System.Single Celeste.Level/<TransitionRoutine>d__126::<lightingEnd>5__10
+  IL_06aa: bne.un.s IL_0656
+  IL_06ac: ldloc.1
+  IL_06ad: ldarg.0
+  IL_06ae: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Level/<TransitionRoutine>d__126::<toRemove>5__3
+  IL_06b3: callvirt System.Void Celeste.Level::UnloadEntities(System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_06b8: ldloc.1
+  IL_06b9: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_06be: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_06c3: ldloc.1
+  IL_06c4: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_06c9: stloc.s V_4
+  IL_06cb: ldloca.s V_4
+  IL_06cd: ldc.i4.s 16
+  IL_06cf: ldc.i4.s 16
+  IL_06d1: call System.Void Microsoft.Xna.Framework.Rectangle::Inflate(System.Int32,System.Int32)
+  IL_06d6: ldloc.1
+  IL_06d7: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_06dc: ldloc.s V_4
+  IL_06de: ldc.i4.0
+  IL_06df: callvirt System.Void Monocle.ParticleSystem::ClearRect(Microsoft.Xna.Framework.Rectangle,System.Boolean)
+  IL_06e4: ldloc.1
+  IL_06e5: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesBG
+  IL_06ea: ldloc.s V_4
+  IL_06ec: ldc.i4.0
+  IL_06ed: callvirt System.Void Monocle.ParticleSystem::ClearRect(Microsoft.Xna.Framework.Rectangle,System.Boolean)
+  IL_06f2: ldloc.1
+  IL_06f3: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_06f8: ldloc.s V_4
+  IL_06fa: ldc.i4.0
+  IL_06fb: callvirt System.Void Monocle.ParticleSystem::ClearRect(Microsoft.Xna.Framework.Rectangle,System.Boolean)
+  IL_0700: ldarg.0
+  IL_0701: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0706: callvirt T Monocle.Entity::CollideFirst<Celeste.RespawnTargetTrigger>()
+  IL_070b: stloc.s V_15
+  IL_070d: ldloc.s V_15
+  IL_070f: brtrue.s IL_0720
+  IL_0711: ldarg.0
+  IL_0712: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0717: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_071c: stloc.s V_14
+  IL_071e: br.s IL_0729
+  IL_0720: ldloc.s V_15
+  IL_0722: ldfld Microsoft.Xna.Framework.Vector2 Celeste.RespawnTargetTrigger::Target
+  IL_0727: stloc.s V_14
+  IL_0729: ldloc.1
+  IL_072a: ldfld Celeste.Session Celeste.Level::Session
+  IL_072f: ldloc.1
+  IL_0730: ldfld Celeste.Session Celeste.Level::Session
+  IL_0735: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
+  IL_073a: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.LevelData::Spawns
+  IL_073f: ldloc.s V_14
+  IL_0741: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::ClosestTo(System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>,Microsoft.Xna.Framework.Vector2)
+  IL_0746: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: ldc.i4 18900337 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  |-> retrieves System.Void ExtendedVariants.Variants.RestoreDashesOnRespawn/<>c::<updateDashCountOnRespawnPointChange>b__6_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  IL_074b: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_0750: ldarg.0
+  IL_0751: ldfld Celeste.Player Celeste.Level/<TransitionRoutine>d__126::<player>5__2
+  IL_0756: callvirt System.Void Celeste.Player::OnTransition()
+  IL_075b: ldarg.0
+  IL_075c: ldfld System.Collections.Generic.List`1<Monocle.Component> Celeste.Level/<TransitionRoutine>d__126::<transitionIn>5__4
+  IL_0761: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0766: stloc.2
+  IL_0767: br.s IL_078c
+  IL_0769: ldloca.s V_2
+  IL_076b: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0770: castclass Celeste.TransitionListener
+  IL_0775: stloc.s V_16
+  IL_0777: ldloc.s V_16
+  IL_0779: ldfld System.Action Celeste.TransitionListener::OnInEnd
+  IL_077e: brfalse.s IL_078c
+  IL_0780: ldloc.s V_16
+  IL_0782: ldfld System.Action Celeste.TransitionListener::OnInEnd
+  IL_0787: callvirt System.Void System.Action::Invoke()
+  IL_078c: ldloca.s V_2
+  IL_078e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0793: brtrue.s IL_0769
+  IL_0795: leave.s IL_07a5
+  IL_0797: ldloca.s V_2
+  IL_0799: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_079f: callvirt System.Void System.IDisposable::Dispose()
+  IL_07a4: endfinally
+  IL_07a5: ldloc.1
+  IL_07a6: ldfld Celeste.Session Celeste.Level::Session
+  IL_07ab: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
+  IL_07b0: ldfld System.Boolean Celeste.LevelData::DelayAltMusic
+  IL_07b5: brfalse.s IL_07d1
+  IL_07b7: ldloc.1
+  IL_07b8: ldfld Celeste.Session Celeste.Level::Session
+  IL_07bd: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
+  IL_07c2: ldfld System.String Celeste.LevelData::AltMusic
+  IL_07c7: call System.String Celeste.SFX::EventnameByHandle(System.String)
+  IL_07cc: call System.Void Celeste.Audio::SetAltMusic(System.String)
+  IL_07d1: ldarg.0
+  IL_07d2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraFrom>5__6
+  IL_07d7: initobj Microsoft.Xna.Framework.Vector2
+  IL_07dd: ldarg.0
+  IL_07de: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<playerTo>5__7
+  IL_07e3: initobj Microsoft.Xna.Framework.Vector2
+  IL_07e9: ldarg.0
+  IL_07ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level/<TransitionRoutine>d__126::<cameraTo>5__8
+  IL_07ef: initobj Microsoft.Xna.Framework.Vector2
+  IL_07f5: ldloc.1
+  IL_07f6: ldc.r4 0.65
+  IL_07fb: stfld System.Single Celeste.Level::NextTransitionDuration
+  IL_0800: ldloc.1
+  IL_0801: ldnull
+  IL_0802: stfld Monocle.Coroutine Celeste.Level::transition
+  IL_0807: ldc.i4.0
+  IL_0808: ret

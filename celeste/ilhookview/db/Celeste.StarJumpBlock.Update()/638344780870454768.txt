@@ -1,0 +1,73 @@
+IL Diff: System.Void Celeste.StarJumpBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.StarJumpBlock::sinks
+  IL_000c: brfalse IL_00c5
+  IL_0011: ldarg.0
+  IL_0012: call System.Boolean Celeste.Solid::HasPlayerRider()
+  IL_0017: brfalse.s IL_0026
+  IL_0019: ldarg.0
+  IL_001a: ldc.r4 0.1
+  IL_001f: stfld System.Single Celeste.StarJumpBlock::sinkTimer
+  IL_0024: br.s IL_0045
+  IL_0026: ldarg.0
+  IL_0027: ldfld System.Single Celeste.StarJumpBlock::sinkTimer
+  IL_002c: ldc.r4 0
+  IL_0031: ble.un.s IL_0045
+  IL_0033: ldarg.0
+  IL_0034: ldarg.0
+  IL_0035: ldfld System.Single Celeste.StarJumpBlock::sinkTimer
+  IL_003a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_003f: sub
+  IL_0040: stfld System.Single Celeste.StarJumpBlock::sinkTimer
+  IL_0045: ldarg.0
+  IL_0046: ldfld System.Single Celeste.StarJumpBlock::sinkTimer
+  IL_004b: ldc.r4 0
+  IL_0050: ble.un.s IL_0075
+  IL_0052: ldarg.0
+  IL_0053: ldarg.0
+  IL_0054: ldfld System.Single Celeste.StarJumpBlock::yLerp
+  IL_0059: ldc.r4 1
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
++ IL_0000: ldc.i4 14594376 @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
+  IL_005e: ldc.r4 1
+  IL_0063: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0068: mul
+  IL_0069: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_006e: stfld System.Single Celeste.StarJumpBlock::yLerp
+  IL_0073: br.s IL_0096
+  IL_0075: ldarg.0
+  IL_0076: ldarg.0
+  IL_0077: ldfld System.Single Celeste.StarJumpBlock::yLerp
+  IL_007c: ldc.r4 0
+  IL_0081: ldc.r4 1
+  IL_0086: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_008b: mul
+  IL_008c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0091: stfld System.Single Celeste.StarJumpBlock::yLerp
+  IL_0096: ldarg.0
+  IL_0097: ldfld System.Single Celeste.StarJumpBlock::startY
+  IL_009c: ldarg.0
+  IL_009d: ldfld System.Single Celeste.StarJumpBlock::startY
+  IL_00a2: ldc.r4 12
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
++ IL_0000: ldc.i4 41293770 @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks/<>c::<StarJumpBlock_Update>b__2_6(System.Single,Celeste.StarJumpBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.StarJumpBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.StarJumpBlockHooks::StarJumpBlock_Update
+  IL_00a7: add
+  IL_00a8: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_00ad: ldarg.0
+  IL_00ae: ldfld System.Single Celeste.StarJumpBlock::yLerp
+  IL_00b3: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00b8: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_00bd: stloc.0
+  IL_00be: ldarg.0
+  IL_00bf: ldloc.0
+  IL_00c0: call System.Void Celeste.Platform::MoveToY(System.Single)
+  IL_00c5: ret

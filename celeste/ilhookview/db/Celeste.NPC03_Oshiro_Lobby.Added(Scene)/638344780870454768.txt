@@ -1,0 +1,61 @@
+IL Diff: System.Void Celeste.NPC03_Oshiro_Lobby::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.NPC::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: call Celeste.Session Celeste.NPC::get_Session()
+  IL_000d: ldstr "oshiro_resort_talked_1"
+  IL_0012: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_0017: brfalse.s IL_0062
+  IL_0019: ldarg.0
+  IL_001a: call Celeste.Session Celeste.NPC::get_Session()
+  IL_001f: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0024: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0029: ldstr "event:/music/lvl3/explore"
+  IL_002e: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_0033: ldarg.0
+  IL_0034: call Celeste.Session Celeste.NPC::get_Session()
+  IL_0039: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_003e: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0043: ldc.i4.1
+  IL_0044: callvirt System.Void Celeste.AudioTrackState::set_Progress(System.Int32)
+  IL_0049: ldarg.0
+  IL_004a: call Celeste.Session Celeste.NPC::get_Session()
+  IL_004f: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0054: ldc.i4.0
+  IL_0055: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_005a: ldarg.0
+  IL_005b: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0060: br.s IL_0089
+  IL_0062: ldarg.0
+  IL_0063: call Celeste.Session Celeste.NPC::get_Session()
+  IL_0068: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_006d: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0072: ldnull
+- IL_0073: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String) @ Celeste.Mod.Randomizer.RandoModule::PleaseDontStopTheMusic
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.Randomizer.RandoModule::PleaseDontStopTheMusic
++ IL_0000: ldc.i4 24056142 @ Celeste.Mod.Randomizer.RandoModule::PleaseDontStopTheMusic
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::PleaseDontStopTheMusic
+  |-> retrieves System.Void Celeste.Mod.Randomizer.RandoModule::<PleaseDontStopTheMusic>b__53_1(Celeste.AudioTrackState,System.String)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.AudioTrackState,System.String>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.Randomizer.RandoModule::PleaseDontStopTheMusic
+  IL_0078: ldarg.0
+  IL_0079: call Celeste.Session Celeste.NPC::get_Session()
+  IL_007e: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0083: ldc.i4.0
+  IL_0084: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_0089: ldarg.1
+  IL_008a: ldarg.0
+  IL_008b: call System.Single Monocle.Entity::get_X()
+  IL_0090: ldc.r4 14
+  IL_0095: sub
+  IL_0096: ldarg.0
+  IL_0097: call System.Single Monocle.Entity::get_Y()
+  IL_009c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a1: newobj System.Void Celeste.OshiroLobbyBell::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_00a6: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00ab: ldarg.0
+  IL_00ac: ldarg.0
+  IL_00ad: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b2: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00b7: stfld System.Single Celeste.NPC03_Oshiro_Lobby::startX
+  IL_00bc: ret

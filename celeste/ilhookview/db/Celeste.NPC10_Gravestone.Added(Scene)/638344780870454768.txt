@@ -1,0 +1,33 @@
+IL Diff: System.Void Celeste.NPC10_Gravestone::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.NPC::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Level Celeste.NPC::Level
+  IL_000d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0012: ldstr "gravestone"
+  IL_0017: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_001c: brfalse.s IL_0051
+  IL_001e: ldarg.0
+  IL_001f: ldfld Celeste.Level Celeste.NPC::Level
+  IL_0024: ldc.i4.1
+  IL_0025: newarr Microsoft.Xna.Framework.Vector2
+  IL_002a: dup
+  IL_002b: ldc.i4.0
+  IL_002c: ldarg.0
+  IL_002d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.NPC10_Gravestone::boostTarget
+  IL_0032: stelem.any Microsoft.Xna.Framework.Vector2
+  IL_0037: ldc.i4.0
+  IL_0038: ldc.i4.0
+  IL_0039: ldc.i4.0
+  IL_003a: ldc.i4.0
+  IL_003b: ldc.i4.0
+  IL_003c: newobj System.Void Celeste.BadelineBoost::.ctor(Microsoft.Xna.Framework.Vector2[],System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0041: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.TalkComponent Celeste.NPC10_Gravestone::talk
+  IL_004c: callvirt System.Void Monocle.Component::RemoveSelf()
+  IL_0051: ret

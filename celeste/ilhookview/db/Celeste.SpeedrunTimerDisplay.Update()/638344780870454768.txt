@@ -1,0 +1,67 @@
+IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Update()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: stloc.0
+  IL_000c: ldloc.0
+  IL_000d: ldfld System.Boolean Celeste.Level::Completed
+  IL_0012: brfalse.s IL_003e
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.SpeedrunTimerDisplay::CompleteTimer
+  IL_001a: ldc.r4 0
+  IL_001f: bne.un.s IL_002c
+  IL_0021: ldarg.0
+  IL_0022: ldfld Monocle.Wiggler Celeste.SpeedrunTimerDisplay::wiggler
+  IL_0027: callvirt System.Void Monocle.Wiggler::Start()
+  IL_002c: ldarg.0
+  IL_002d: ldarg.0
+  IL_002e: ldfld System.Single Celeste.SpeedrunTimerDisplay::CompleteTimer
+  IL_0033: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0038: add
+  IL_0039: stfld System.Single Celeste.SpeedrunTimerDisplay::CompleteTimer
+  IL_003e: ldc.i4.0
+  IL_003f: stloc.1
+  IL_0040: ldloc.0
+  IL_0041: ldfld Celeste.Session Celeste.Level::Session
+  IL_0046: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_004b: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0050: ldc.i4.8
+  IL_0051: beq.s IL_0088
+  IL_0053: ldloc.0
+  IL_0054: ldfld System.Boolean Celeste.Level::TimerHidden
+  IL_0059: brtrue.s IL_0088
+  IL_005b: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0060: ldfld Celeste.SpeedrunType Celeste.Settings::SpeedrunClock
+  IL_0065: ldc.i4.1
+  IL_0066: bne.un.s IL_0079
+  IL_0068: ldarg.0
+  IL_0069: ldfld System.Single Celeste.SpeedrunTimerDisplay::CompleteTimer
+  IL_006e: ldc.r4 3
+  IL_0073: bge.un.s IL_0088
+  IL_0075: ldc.i4.1
+  IL_0076: stloc.1
+  IL_0077: br.s IL_0088
+  IL_0079: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_007e: ldfld Celeste.SpeedrunType Celeste.Settings::SpeedrunClock
+  IL_0083: ldc.i4.2
+  IL_0084: bne.un.s IL_0088
+  IL_0086: ldc.i4.1
+  IL_0087: stloc.1
+  IL_0088: ldarg.0
+  IL_0089: ldarg.0
+  IL_008a: ldfld System.Single Celeste.SpeedrunTimerDisplay::DrawLerp
+  IL_008f: ldloc.1
++ IL_0000: call System.Boolean Celeste.Mod.SpeedrunTool.RoomTimer.RoomTimerManager::IsShowTimer(System.Boolean) @ Celeste.Mod.SpeedrunTool.RoomTimer.RoomTimerManager::SpeedrunTimerDisplayOnUpdate
+  IL_0090: brtrue.s IL_0095
+  IL_0092: ldc.i4.0
+  IL_0093: br.s IL_0096
+  IL_0095: ldc.i4.1
+  IL_0096: conv.r4
+  IL_0097: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_009c: ldc.r4 4
+  IL_00a1: mul
+  IL_00a2: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00a7: stfld System.Single Celeste.SpeedrunTimerDisplay::DrawLerp
+  IL_00ac: ldarg.0
+  IL_00ad: call System.Void Monocle.Entity::Update()
+  IL_00b2: ret

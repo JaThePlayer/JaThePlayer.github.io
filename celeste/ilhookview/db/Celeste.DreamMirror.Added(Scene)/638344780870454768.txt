@@ -1,0 +1,145 @@
+IL Diff: System.Void Celeste.DreamMirror::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0013: ldflda Celeste.PlayerInventory Celeste.Session::Inventory
+  IL_0018: ldfld System.Boolean Celeste.PlayerInventory::DreamDash
+  IL_001d: stfld System.Boolean Celeste.DreamMirror::smashed
+  IL_0022: ldarg.0
+  IL_0023: ldfld System.Boolean Celeste.DreamMirror::smashed
+  IL_0028: brfalse.s IL_0048
+  IL_002a: ldarg.0
+  IL_002b: ldfld Monocle.Sprite Celeste.DreamMirror::breakingGlass
+  IL_0030: ldstr "broken"
+  IL_0035: ldc.i4.0
+  IL_0036: ldc.i4.0
+  IL_0037: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_003c: ldarg.0
+  IL_003d: ldc.i4.1
+  IL_003e: stfld System.Boolean Celeste.DreamMirror::smashEnded
+  IL_0043: br IL_00ef
+  IL_0048: ldarg.0
+  IL_0049: newobj System.Void Monocle.Entity::.ctor()
+  IL_004e: stfld Monocle.Entity Celeste.DreamMirror::reflection
+  IL_0053: ldarg.0
+  IL_0054: ldc.i4.2
+  IL_0055: newobj System.Void Celeste.PlayerSprite::.ctor(Celeste.PlayerSpriteMode)
+  IL_005a: stfld Celeste.PlayerSprite Celeste.DreamMirror::reflectionSprite
+  IL_005f: ldarg.0
+  IL_0060: ldarg.0
+  IL_0061: ldfld Celeste.PlayerSprite Celeste.DreamMirror::reflectionSprite
+  IL_0066: newobj System.Void Celeste.PlayerHair::.ctor(Celeste.PlayerSprite)
+  IL_006b: stfld Celeste.PlayerHair Celeste.DreamMirror::reflectionHair
+  IL_0070: ldarg.0
+  IL_0071: ldfld Celeste.PlayerHair Celeste.DreamMirror::reflectionHair
+  IL_0076: ldsfld Microsoft.Xna.Framework.Color Celeste.BadelineOldsite::HairColor
+  IL_007b: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_0080: ldarg.0
+  IL_0081: ldfld Celeste.PlayerHair Celeste.DreamMirror::reflectionHair
+  IL_0086: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_008b: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Border
+  IL_0090: ldarg.0
+  IL_0091: ldfld Monocle.Entity Celeste.DreamMirror::reflection
+  IL_0096: ldarg.0
+  IL_0097: ldfld Celeste.PlayerHair Celeste.DreamMirror::reflectionHair
+  IL_009c: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld Monocle.Entity Celeste.DreamMirror::reflection
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld Celeste.PlayerSprite Celeste.DreamMirror::reflectionSprite
+  IL_00ad: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b2: ldarg.0
+  IL_00b3: ldfld Celeste.PlayerHair Celeste.DreamMirror::reflectionHair
+  IL_00b8: callvirt System.Void Celeste.PlayerHair::Start()
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Celeste.PlayerSprite Celeste.DreamMirror::reflectionSprite
+  IL_00c3: ldarg.0
+  IL_00c4: ldftn System.Void Celeste.DreamMirror::<Added>b__22_0(System.String)
+  IL_00ca: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_00cf: stfld System.Action`1<System.String> Monocle.Sprite::OnFrameChange
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.0
+  IL_00d6: ldarg.0
+  IL_00d7: callvirt System.Collections.IEnumerator Celeste.DreamMirror::InteractRoutine()
+  IL_00dc: ldc.i4.1
+  IL_00dd: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_00e2: dup
+  IL_00e3: stloc.1
+  IL_00e4: stfld Monocle.Coroutine Celeste.DreamMirror::smashCoroutine
+  IL_00e9: ldloc.1
+  IL_00ea: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00f5: newobj System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_00fa: stloc.0
+  IL_00fb: ldloc.0
+  IL_00fc: ldc.i4 9000
+  IL_0101: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0106: ldloc.0
+  IL_0107: ldarg.0
+  IL_0108: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_010d: ldstr "objects/mirror/frame"
+  IL_0112: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0117: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_011c: dup
+  IL_011d: stloc.2
+  IL_011e: stfld Monocle.Image Celeste.DreamMirror::frame
+  IL_0123: ldloc.2
+  IL_0124: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0129: ldarg.0
+  IL_012a: ldfld Monocle.Image Celeste.DreamMirror::frame
+  IL_012f: ldc.r4 0.5
+  IL_0134: ldc.r4 1
+  IL_0139: callvirt Monocle.Image Monocle.Image::JustifyOrigin(System.Single,System.Single)
+  IL_013e: pop
+  IL_013f: ldarg.0
+  IL_0140: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0145: ldloc.0
+  IL_0146: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_014b: ldarg.0
+  IL_014c: ldarg.0
+  IL_014d: ldarg.0
+  IL_014e: ldfld Monocle.Image Celeste.DreamMirror::frame
+  IL_0153: callvirt System.Single Monocle.Image::get_Width()
+  IL_0158: conv.i4
+  IL_0159: ldc.i4.s 16
+  IL_015b: sub
+  IL_015c: conv.r4
+  IL_015d: ldarg.0
+  IL_015e: ldfld Monocle.Image Celeste.DreamMirror::frame
+  IL_0163: callvirt System.Single Monocle.Image::get_Height()
+  IL_0168: conv.i4
+  IL_0169: ldc.i4.s 32
+  IL_016b: add
+  IL_016c: conv.r4
+  IL_016d: ldarg.0
+  IL_016e: ldfld Monocle.Image Celeste.DreamMirror::frame
+  IL_0173: callvirt System.Single Monocle.Image::get_Width()
+  IL_0178: conv.i4
+  IL_0179: neg
+  IL_017a: ldc.i4.2
+  IL_017b: div
+  IL_017c: ldc.i4.8
+  IL_017d: add
+  IL_017e: conv.r4
+  IL_017f: ldarg.0
+  IL_0180: ldfld Monocle.Image Celeste.DreamMirror::frame
+  IL_0185: callvirt System.Single Monocle.Image::get_Height()
+  IL_018a: conv.i4
+  IL_018b: neg
+  IL_018c: ldc.i4.s 32
+  IL_018e: sub
+  IL_018f: conv.r4
+  IL_0190: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0195: dup
+  IL_0196: stloc.3
+  IL_0197: stfld Monocle.Hitbox Celeste.DreamMirror::hitbox
+  IL_019c: ldloc.3
+  IL_019d: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::FixDreamMirrorDesync(Celeste.DreamMirror) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_01a2: ret

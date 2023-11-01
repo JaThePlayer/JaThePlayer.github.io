@@ -1,0 +1,46 @@
+IL Diff: System.Void Celeste.Mod.ChronoHelper.Entities.DarkLightning::Update()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0007: brfalse.s IL_0021
+  IL_0009: ldarg.0
+  IL_000a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000f: ldc.r4 0.25
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.DarkLightning::toggleOffset
+  IL_001a: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_001f: br.s IL_0022
+  IL_0021: ldc.i4.0
+  IL_0022: stloc.0
+  IL_0023: ldloc.0
+  IL_0024: brfalse.s IL_002f
+  IL_0026: nop
+  IL_0027: ldarg.0
+  IL_0028: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.DarkLightning::ToggleCheck()
+  IL_002d: nop
+  IL_002e: nop
+  IL_002f: ldarg.0
+  IL_0030: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0035: brtrue.s IL_004f
+  IL_0037: ldarg.0
+  IL_0038: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_003d: ldc.r4 0.05
+  IL_0042: ldarg.0
+  IL_0043: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.DarkLightning::toggleOffset
+  IL_0048: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_004d: br.s IL_0050
+  IL_004f: ldc.i4.0
+  IL_0050: stloc.1
+  IL_0051: ldloc.1
+  IL_0052: brfalse.s IL_005d
+  IL_0054: nop
+  IL_0055: ldarg.0
+  IL_0056: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.DarkLightning::ToggleCheck()
+  IL_005b: nop
+  IL_005c: nop
+  IL_005d: ldarg.0
+  IL_005e: call System.Void Monocle.Entity::Update()
+  IL_0063: nop
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition::PatchHazardUpdate(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0064: ret

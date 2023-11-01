@@ -1,0 +1,116 @@
+IL Diff: System.Void Celeste.PlaybackBillboard::Awake(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Awake(Monocle.Scene)
+  IL_0007: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_000c: ldstr "scenery/tvSlices"
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard::modAwake
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard::modAwake
++ IL_0000: ldc.i4 7370598 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard::modAwake
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard::modAwake
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard/<>c::<modAwake>b__4_0(System.String,Celeste.PlaybackBillboard)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.PlaybackBillboard>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableBillboard::modAwake
+  IL_0011: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0016: stloc.0
+  IL_0017: ldarg.0
+  IL_0018: ldloc.0
+  IL_0019: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_001e: ldc.i4.8
+  IL_001f: div
+  IL_0020: ldloc.0
+  IL_0021: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_0026: ldc.i4.8
+  IL_0027: div
+  IL_0028: newobj System.Void Monocle.MTexture[0...,0...]::.ctor(System.Int32,System.Int32)
+  IL_002d: stfld Monocle.MTexture[0...,0...] Celeste.PlaybackBillboard::tiles
+  IL_0032: ldc.i4.0
+  IL_0033: stloc.1
+  IL_0034: br.s IL_006d
+  IL_0036: ldc.i4.0
+  IL_0037: stloc.2
+  IL_0038: br.s IL_005e
+  IL_003a: ldarg.0
+  IL_003b: ldfld Monocle.MTexture[0...,0...] Celeste.PlaybackBillboard::tiles
+  IL_0040: ldloc.1
+  IL_0041: ldloc.2
+  IL_0042: ldloc.0
+  IL_0043: ldloc.1
+  IL_0044: ldc.i4.8
+  IL_0045: mul
+  IL_0046: ldloc.2
+  IL_0047: ldc.i4.8
+  IL_0048: mul
+  IL_0049: ldc.i4.8
+  IL_004a: ldc.i4.8
+  IL_004b: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0050: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(Microsoft.Xna.Framework.Rectangle)
+  IL_0055: call System.Void Monocle.MTexture[0...,0...]::Set(System.Int32,System.Int32,Monocle.MTexture)
+  IL_005a: ldloc.2
+  IL_005b: ldc.i4.1
+  IL_005c: add
+  IL_005d: stloc.2
+  IL_005e: ldloc.2
+  IL_005f: ldloc.0
+  IL_0060: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_0065: ldc.i4.8
+  IL_0066: div
+  IL_0067: blt.s IL_003a
+  IL_0069: ldloc.1
+  IL_006a: ldc.i4.1
+  IL_006b: add
+  IL_006c: stloc.1
+  IL_006d: ldloc.1
+  IL_006e: ldloc.0
+  IL_006f: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_0074: ldc.i4.8
+  IL_0075: div
+  IL_0076: blt.s IL_0036
+  IL_0078: ldarg.0
+  IL_0079: call System.Single Monocle.Entity::get_Width()
+  IL_007e: ldc.r4 8
+  IL_0083: div
+  IL_0084: conv.i4
+  IL_0085: stloc.3
+  IL_0086: ldarg.0
+  IL_0087: call System.Single Monocle.Entity::get_Height()
+  IL_008c: ldc.r4 8
+  IL_0091: div
+  IL_0092: conv.i4
+  IL_0093: stloc.s V_4
+  IL_0095: ldc.i4.m1
+  IL_0096: stloc.s V_5
+  IL_0098: br.s IL_00b3
+  IL_009a: ldarg.0
+  IL_009b: ldloc.s V_5
+  IL_009d: ldc.i4.m1
+  IL_009e: callvirt System.Void Celeste.PlaybackBillboard::AutoTile(System.Int32,System.Int32)
+  IL_00a3: ldarg.0
+  IL_00a4: ldloc.s V_5
+  IL_00a6: ldloc.s V_4
+  IL_00a8: callvirt System.Void Celeste.PlaybackBillboard::AutoTile(System.Int32,System.Int32)
+  IL_00ad: ldloc.s V_5
+  IL_00af: ldc.i4.1
+  IL_00b0: add
+  IL_00b1: stloc.s V_5
+  IL_00b3: ldloc.s V_5
+  IL_00b5: ldloc.3
+  IL_00b6: ble.s IL_009a
+  IL_00b8: ldc.i4.0
+  IL_00b9: stloc.s V_6
+  IL_00bb: br.s IL_00d5
+  IL_00bd: ldarg.0
+  IL_00be: ldc.i4.m1
+  IL_00bf: ldloc.s V_6
+  IL_00c1: callvirt System.Void Celeste.PlaybackBillboard::AutoTile(System.Int32,System.Int32)
+  IL_00c6: ldarg.0
+  IL_00c7: ldloc.3
+  IL_00c8: ldloc.s V_6
+  IL_00ca: callvirt System.Void Celeste.PlaybackBillboard::AutoTile(System.Int32,System.Int32)
+  IL_00cf: ldloc.s V_6
+  IL_00d1: ldc.i4.1
+  IL_00d2: add
+  IL_00d3: stloc.s V_6
+  IL_00d5: ldloc.s V_6
+  IL_00d7: ldloc.s V_4
+  IL_00d9: blt.s IL_00bd
+  IL_00db: ret

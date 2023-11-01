@@ -1,0 +1,230 @@
+IL Diff: System.Void VivHelper.Entities.CustomSpinner::Update()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.String VivHelper.Entities.CustomSpinner::flagToggle
+  IL_0007: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_000c: brtrue.s IL_002e
+  IL_000e: ldarg.0
+  IL_000f: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0014: ldfld Celeste.Session Celeste.Level::Session
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.String VivHelper.Entities.CustomSpinner::flagToggle
+  IL_001f: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_0024: ldarg.0
+  IL_0025: ldfld System.Boolean VivHelper.Entities.CustomSpinner::flagToggleInvert
+  IL_002a: ceq
+  IL_002c: br.s IL_002f
+  IL_002e: ldc.i4.0
+  IL_002f: stloc.0
+  IL_0030: ldloc.0
+  IL_0031: brfalse.s IL_004a
+  IL_0033: nop
+  IL_0034: ldarg.0
+  IL_0035: ldarg.0
+  IL_0036: ldc.i4.0
+  IL_0037: dup
+  IL_0038: stloc.1
+  IL_0039: stfld System.Boolean Monocle.Entity::Collidable
+  IL_003e: ldloc.1
+  IL_003f: stfld System.Boolean Monocle.Entity::Visible
+  IL_0044: nop
+  IL_0045: br IL_01fa
+  IL_004a: ldarg.0
+  IL_004b: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0050: ldc.i4.0
+  IL_0051: ceq
+  IL_0053: stloc.2
+  IL_0054: ldloc.2
+  IL_0055: brfalse.s IL_00b4
+  IL_0057: nop
+  IL_0058: ldarg.0
+  IL_0059: ldc.i4.0
+  IL_005a: stfld System.Boolean Monocle.Entity::Collidable
+  IL_005f: ldarg.0
+  IL_0060: callvirt System.Boolean VivHelper.Entities.CustomSpinner::InView()
+  IL_0065: stloc.3
+  IL_0066: ldloc.3
+  IL_0067: brfalse.s IL_00ae
+  IL_0069: nop
+  IL_006a: ldarg.0
+  IL_006b: ldc.i4.1
+  IL_006c: stfld System.Boolean Monocle.Entity::Visible
+  IL_0071: ldarg.0
+  IL_0072: ldfld System.Boolean VivHelper.Entities.CustomSpinner::expanded
+  IL_0077: ldc.i4.0
+  IL_0078: ceq
+  IL_007a: stloc.s V_4
+  IL_007c: ldloc.s V_4
+  IL_007e: brfalse.s IL_0089
+  IL_0080: nop
+  IL_0081: ldarg.0
+  IL_0082: callvirt System.Void VivHelper.Entities.CustomSpinner::CreateSprites()
+  IL_0087: nop
+  IL_0088: nop
+  IL_0089: ldarg.0
+  IL_008a: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_008f: ldc.i4.1
+  IL_0090: beq.s IL_009d
+  IL_0092: ldarg.0
+  IL_0093: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_0098: ldc.i4.2
+  IL_0099: ceq
+  IL_009b: br.s IL_009e
+  IL_009d: ldc.i4.1
+  IL_009e: stloc.s V_5
+  IL_00a0: ldloc.s V_5
+  IL_00a2: brfalse.s IL_00ad
+  IL_00a4: nop
+  IL_00a5: ldarg.0
+  IL_00a6: callvirt System.Void VivHelper.Entities.CustomSpinner::UpdateHue()
+  IL_00ab: nop
+  IL_00ac: nop
+  IL_00ad: nop
+  IL_00ae: nop
+  IL_00af: br IL_01fa
+  IL_00b4: nop
+  IL_00b5: ldarg.0
+  IL_00b6: call System.Void Monocle.Entity::Update()
+  IL_00bb: nop
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_00c2: ldc.i4.1
+  IL_00c3: beq.s IL_00e9
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_00cb: ldc.i4.2
+  IL_00cc: bne.un.s IL_00e6
+  IL_00ce: ldarg.0
+  IL_00cf: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d4: ldc.r4 0.08
+  IL_00d9: ldarg.0
+  IL_00da: ldfld System.Single VivHelper.Entities.CustomSpinner::offset
+  IL_00df: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_00e4: br.s IL_00e7
+  IL_00e6: ldc.i4.0
+  IL_00e7: br.s IL_00ea
+  IL_00e9: ldc.i4.1
+  IL_00ea: stloc.s V_6
+  IL_00ec: ldloc.s V_6
+  IL_00ee: brfalse.s IL_00f9
+  IL_00f0: nop
+  IL_00f1: ldarg.0
+  IL_00f2: callvirt System.Void VivHelper.Entities.CustomSpinner::UpdateHue()
+  IL_00f7: nop
+  IL_00f8: nop
+  IL_00f9: ldarg.0
+  IL_00fa: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00ff: ldc.r4 0.25
+  IL_0104: ldarg.0
+  IL_0105: ldfld System.Single VivHelper.Entities.CustomSpinner::offset
+  IL_010a: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_010f: brfalse.s IL_011c
+  IL_0111: ldarg.0
+  IL_0112: callvirt System.Boolean VivHelper.Entities.CustomSpinner::InView()
+  IL_0117: ldc.i4.0
+  IL_0118: ceq
+  IL_011a: br.s IL_011d
+  IL_011c: ldc.i4.0
+  IL_011d: stloc.s V_7
+  IL_011f: ldloc.s V_7
+  IL_0121: brfalse.s IL_012c
+  IL_0123: nop
+  IL_0124: ldarg.0
+  IL_0125: ldc.i4.0
+  IL_0126: stfld System.Boolean Monocle.Entity::Visible
+  IL_012b: nop
+  IL_012c: ldarg.0
+  IL_012d: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0132: brfalse.s IL_014c
+  IL_0134: ldarg.0
+  IL_0135: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_013a: ldc.r4 0.05
+  IL_013f: ldarg.0
+  IL_0140: ldfld System.Single VivHelper.Entities.CustomSpinner::offset
+  IL_0145: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_014a: br.s IL_014d
+  IL_014c: ldc.i4.0
+  IL_014d: stloc.s V_8
+  IL_014f: ldloc.s V_8
+  IL_0151: brfalse.s IL_01b1
+  IL_0153: nop
+  IL_0154: ldarg.0
+  IL_0155: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_015a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_015f: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0164: stloc.s V_9
+  IL_0166: ldloc.s V_9
+  IL_0168: ldnull
+  IL_0169: cgt.un
+  IL_016b: stloc.s V_10
+  IL_016d: ldloc.s V_10
+  IL_016f: brfalse.s IL_01b0
+  IL_0171: nop
+  IL_0172: ldarg.0
+  IL_0173: ldloc.s V_9
+  IL_0175: callvirt System.Single Monocle.Entity::get_X()
+  IL_017a: ldarg.0
+  IL_017b: call System.Single Monocle.Entity::get_X()
+  IL_0180: sub
+  IL_0181: call System.Single System.Math::Abs(System.Single)
+  IL_0186: ldc.r4 128
+  IL_018b: bge.un.s IL_01a9
+  IL_018d: ldloc.s V_9
+  IL_018f: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0194: ldarg.0
+  IL_0195: call System.Single Monocle.Entity::get_Y()
+  IL_019a: sub
+  IL_019b: call System.Single System.Math::Abs(System.Single)
+  IL_01a0: ldc.r4 128
+  IL_01a5: clt
+  IL_01a7: br.s IL_01aa
+  IL_01a9: ldc.i4.0
+  IL_01aa: stfld System.Boolean Monocle.Entity::Collidable
+  IL_01af: nop
+  IL_01b0: nop
+  IL_01b1: ldarg.0
+  IL_01b2: ldfld System.Boolean Monocle.Entity::Visible
+  IL_01b7: brfalse.s IL_01e8
+  IL_01b9: ldarg.0
+  IL_01ba: ldfld System.String VivHelper.Entities.CustomSpinner::shatterFlag
+  IL_01bf: ldstr ""
+  IL_01c4: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_01c9: brfalse.s IL_01e8
+  IL_01cb: ldarg.0
+  IL_01cc: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01d1: isinst Celeste.Level
+  IL_01d6: ldfld Celeste.Session Celeste.Level::Session
+  IL_01db: ldarg.0
+  IL_01dc: ldfld System.String VivHelper.Entities.CustomSpinner::shatterFlag
+  IL_01e1: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_01e6: br.s IL_01e9
+  IL_01e8: ldc.i4.0
+  IL_01e9: stloc.s V_11
+  IL_01eb: ldloc.s V_11
+  IL_01ed: brfalse.s IL_01f9
+  IL_01ef: nop
+  IL_01f0: ldarg.0
+  IL_01f1: ldc.i4.0
+  IL_01f2: callvirt System.Void VivHelper.Entities.CustomSpinner::Destroy(System.Boolean)
+  IL_01f7: nop
+  IL_01f8: nop
+  IL_01f9: nop
+  IL_01fa: ldarg.0
+  IL_01fb: ldfld Monocle.Entity VivHelper.Entities.CustomSpinner::filler
+  IL_0200: ldnull
+  IL_0201: cgt.un
+  IL_0203: stloc.s V_12
+  IL_0205: ldloc.s V_12
+  IL_0207: brfalse.s IL_021c
+  IL_0209: nop
+  IL_020a: ldarg.0
+  IL_020b: ldfld Monocle.Entity VivHelper.Entities.CustomSpinner::filler
+  IL_0210: ldarg.0
+  IL_0211: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0216: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_021b: nop
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition::GetCameraZoom(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition::PatchHazardUpdate(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_021c: ret

@@ -1,0 +1,78 @@
+IL Diff: System.Single Celeste.Mod.ChronoHelper.Entities.ResetZoneRenderer/Edge::GetWaveAt(System.Single,System.Single,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedWavedBlock() @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ldc.r4 0 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
+  IL_0000: nop
+  IL_0001: ldarg.2
+  IL_0002: ldc.r4 1
+  IL_0007: ble.s IL_0018
+  IL_0009: ldarg.2
+  IL_000a: ldarg.3
+  IL_000b: ldc.r4 1
+  IL_0010: sub
+  IL_0011: clt.un
+  IL_0013: ldc.i4.0
+  IL_0014: ceq
+  IL_0016: br.s IL_0019
+  IL_0018: ldc.i4.1
+  IL_0019: stloc.2
+  IL_001a: ldloc.2
+  IL_001b: brfalse.s IL_0029
+  IL_001d: nop
+  IL_001e: ldc.r4 0
+  IL_0023: stloc.3
+  IL_0024: br IL_00a7
+  IL_0029: ldarg.0
+  IL_002a: ldfld Celeste.SeekerBarrier Celeste.Mod.ChronoHelper.Entities.ResetZoneRenderer/Edge::Parent
+  IL_002f: ldfld System.Single Celeste.SeekerBarrier::Solidify
+  IL_0034: ldc.r4 1
+  IL_0039: clt.un
+  IL_003b: ldc.i4.0
+  IL_003c: ceq
+  IL_003e: stloc.s V_4
+  IL_0040: ldloc.s V_4
+  IL_0042: brfalse.s IL_004d
+  IL_0044: nop
+  IL_0045: ldc.r4 0
+  IL_004a: stloc.3
+  IL_004b: br.s IL_00a7
+  IL_004d: ldarg.1
+  IL_004e: ldarg.2
+  IL_004f: ldc.r4 0.25
+  IL_0054: mul
+  IL_0055: add
+  IL_0056: stloc.0
+  IL_0057: ldloc.0
+  IL_0058: conv.r8
+  IL_0059: call System.Double System.Math::Sin(System.Double)
+  IL_005e: ldc.r8 2
+  IL_0067: mul
+  IL_0068: ldloc.0
+  IL_0069: ldc.r4 0.25
+  IL_006e: mul
+  IL_006f: conv.r8
+  IL_0070: call System.Double System.Math::Sin(System.Double)
+  IL_0075: add
+  IL_0076: conv.r4
+  IL_0077: stloc.1
+  IL_0078: ldc.r4 1
+  IL_007d: ldloc.1
+  IL_007e: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0083: ldarg.2
+  IL_0084: ldarg.3
+  IL_0085: div
+  IL_0086: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_008b: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0090: mul
+  IL_0091: add
+  IL_0092: ldc.r4 1
+  IL_0097: ldarg.0
+  IL_0098: ldfld Celeste.SeekerBarrier Celeste.Mod.ChronoHelper.Entities.ResetZoneRenderer/Edge::Parent
+  IL_009d: ldfld System.Single Celeste.SeekerBarrier::Solidify
+  IL_00a2: sub
+  IL_00a3: mul
+  IL_00a4: stloc.3
+  IL_00a5: br.s IL_00a7
+  IL_00a7: ldloc.3
+  IL_00a8: ret

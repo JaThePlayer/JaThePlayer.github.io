@@ -1,0 +1,91 @@
+IL Diff: System.Boolean vitmod.FlagCrystal::TempleGate_TheoIsNearby(On.Celeste.TempleGate+orig_TheoIsNearby,Celeste.TempleGate)
+  IL_0000: nop
+  IL_0001: ldarg.1
+  IL_0002: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0007: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_000c: callvirt T Monocle.Tracker::GetEntity<Celeste.TheoCrystal>()
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
++ IL_0000: ldc.i4 13744525 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
+  |-> retrieves Celeste.TheoCrystal ExtendedVariants.Variants.TheoCrystalsEverywhere/<>c::<addExtendedVariantTheoCrystalToCollideCheck>b__14_0(Celeste.TheoCrystal)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.TheoCrystal,Celeste.TheoCrystal>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::addExtendedVariantTheoCrystalToCollideCheck
+  IL_0011: ldnull
+  IL_0012: cgt.un
+  IL_0014: stloc.1
+  IL_0015: ldloc.1
+  IL_0016: brfalse.s IL_0026
+  IL_0018: nop
+  IL_0019: ldarg.0
+  IL_001a: ldarg.1
+  IL_001b: callvirt System.Boolean On.Celeste.TempleGate/orig_TheoIsNearby::Invoke(Celeste.TempleGate)
+  IL_0020: stloc.2
+  IL_0021: br IL_00d4
+  IL_0026: ldc.i4.0
+  IL_0027: stloc.0
+  IL_0028: nop
+  IL_0029: ldarg.1
+  IL_002a: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_002f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0034: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<vitmod.FlagCrystal>()
+  IL_0039: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_003e: stloc.3
+  IL_003f: br IL_00b0
+  IL_0044: ldloca.s V_3
+  IL_0046: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_004b: castclass vitmod.FlagCrystal
+  IL_0050: stloc.s V_4
+  IL_0052: nop
+  IL_0053: ldloc.s V_4
+  IL_0055: ldfld System.Boolean vitmod.FlagCrystal::isTheo
+  IL_005a: stloc.s V_5
+  IL_005c: ldloc.s V_5
+  IL_005e: brfalse.s IL_00af
+  IL_0060: nop
+  IL_0061: ldc.i4.1
+  IL_0062: stloc.0
+  IL_0063: ldloc.s V_4
+  IL_0065: callvirt System.Single Monocle.Entity::get_X()
+  IL_006a: ldarg.1
+  IL_006b: callvirt System.Single Monocle.Entity::get_X()
+  IL_0070: ldc.r4 10
+  IL_0075: add
+  IL_0076: bgt.s IL_00a2
+  IL_0078: ldarg.1
+  IL_0079: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TempleGate::holdingCheckFrom
+  IL_007e: ldloc.s V_4
+  IL_0080: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0085: call System.Single Microsoft.Xna.Framework.Vector2::DistanceSquared(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_008a: ldarg.1
+  IL_008b: ldfld System.Boolean Celeste.TempleGate::open
+  IL_0090: brtrue.s IL_0099
+  IL_0092: ldc.r4 4096
+  IL_0097: br.s IL_009e
+  IL_0099: ldc.r4 6400
+  IL_009e: clt
+  IL_00a0: br.s IL_00a3
+  IL_00a2: ldc.i4.1
+  IL_00a3: stloc.s V_6
+  IL_00a5: ldloc.s V_6
+  IL_00a7: brfalse.s IL_00ae
+  IL_00a9: nop
+  IL_00aa: ldc.i4.1
+  IL_00ab: stloc.2
+  IL_00ac: leave.s IL_00d4
+  IL_00ae: nop
+  IL_00af: nop
+  IL_00b0: ldloca.s V_3
+  IL_00b2: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00b7: brtrue IL_0044
+  IL_00bc: leave.s IL_00cd
+  IL_00be: ldloca.s V_3
+  IL_00c0: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00c6: callvirt System.Void System.IDisposable::Dispose()
+  IL_00cb: nop
+  IL_00cc: endfinally
+  IL_00cd: ldloc.0
+  IL_00ce: ldc.i4.0
+  IL_00cf: ceq
+  IL_00d1: stloc.2
+  IL_00d2: br.s IL_00d4
+  IL_00d4: ldloc.2
+  IL_00d5: ret

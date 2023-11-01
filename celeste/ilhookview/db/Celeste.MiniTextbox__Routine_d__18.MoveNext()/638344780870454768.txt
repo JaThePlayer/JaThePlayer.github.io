@@ -1,0 +1,295 @@
+IL Diff: System.Boolean Celeste.MiniTextbox/<Routine>d__18::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.MiniTextbox Celeste.MiniTextbox/<Routine>d__18::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0032,IL_00b6,IL_00d9,IL_016d,IL_0295,IL_033e,IL_035a
+  IL_0030: ldc.i4.0
+  IL_0031: ret
+  IL_0032: ldarg.0
+  IL_0033: ldc.i4.m1
+  IL_0034: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0039: ldloc.1
+  IL_003a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_003f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0044: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.MiniTextbox>()
+  IL_0049: stloc.2
+  IL_004a: ldloc.2
+  IL_004b: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0050: stloc.s V_4
+  IL_0052: br.s IL_007b
+  IL_0054: ldloca.s V_4
+  IL_0056: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_005b: castclass Celeste.MiniTextbox
+  IL_0060: stloc.s V_5
+  IL_0062: ldloc.s V_5
+  IL_0064: ldloc.1
+  IL_0065: beq.s IL_007b
+  IL_0067: ldloc.s V_5
+  IL_0069: ldloc.s V_5
+  IL_006b: callvirt System.Collections.IEnumerator Celeste.MiniTextbox::Close()
+  IL_0070: ldc.i4.1
+  IL_0071: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0076: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_007b: ldloca.s V_4
+  IL_007d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0082: brtrue.s IL_0054
+  IL_0084: leave.s IL_0094
+  IL_0086: ldloca.s V_4
+  IL_0088: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_008e: callvirt System.Void System.IDisposable::Dispose()
+  IL_0093: endfinally
+  IL_0094: ldloc.2
+  IL_0095: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_009a: ldc.i4.0
+  IL_009b: ble.s IL_00e0
+  IL_009d: ldarg.0
+  IL_009e: ldc.r4 0.3
+  IL_00a3: box System.Single
+  IL_00a8: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_00ad: ldarg.0
+  IL_00ae: ldc.i4.1
+  IL_00af: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_00b4: ldc.i4.1
+  IL_00b5: ret
+  IL_00b6: ldarg.0
+  IL_00b7: ldc.i4.m1
+  IL_00b8: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_00bd: br.s IL_00e0
+  IL_00bf: ldloc.1
+  IL_00c0: ldfld System.Boolean Celeste.MiniTextbox::closing
+  IL_00c5: brfalse.s IL_00c9
+  IL_00c7: ldc.i4.0
+  IL_00c8: ret
+  IL_00c9: ldarg.0
+  IL_00ca: ldnull
+  IL_00cb: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_00d0: ldarg.0
+  IL_00d1: ldc.i4.2
+  IL_00d2: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_00d7: ldc.i4.1
+  IL_00d8: ret
+  IL_00d9: ldarg.0
+  IL_00da: ldc.i4.m1
+  IL_00db: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_00e0: ldloc.1
+  IL_00e1: ldloc.1
+  IL_00e2: ldfld System.Single Celeste.MiniTextbox::ease
+  IL_00e7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00ec: ldc.r4 4
+  IL_00f1: mul
+  IL_00f2: add
+  IL_00f3: dup
+  IL_00f4: stloc.s V_6
+  IL_00f6: stfld System.Single Celeste.MiniTextbox::ease
+  IL_00fb: ldloc.s V_6
+  IL_00fd: ldc.r4 1
+  IL_0102: blt.s IL_00bf
+  IL_0104: ldloc.1
+  IL_0105: ldc.r4 1
+  IL_010a: stfld System.Single Celeste.MiniTextbox::ease
+  IL_010f: ldloc.1
+  IL_0110: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_0115: brfalse IL_0222
+  IL_011a: ldarg.0
+  IL_011b: ldstr "begin_"
+  IL_0120: ldloc.1
+  IL_0121: ldfld Celeste.FancyText/Portrait Celeste.MiniTextbox::portraitData
+  IL_0126: ldfld System.String Celeste.FancyText/Portrait::Animation
+  IL_012b: call System.String System.String::Concat(System.String,System.String)
+  IL_0130: stfld System.String Celeste.MiniTextbox/<Routine>d__18::<beginAnim>5__2
+  IL_0135: ldloc.1
+  IL_0136: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_013b: ldarg.0
+  IL_013c: ldfld System.String Celeste.MiniTextbox/<Routine>d__18::<beginAnim>5__2
+  IL_0141: callvirt System.Boolean Monocle.Sprite::Has(System.String)
+  IL_0146: brfalse.s IL_0199
+  IL_0148: ldloc.1
+  IL_0149: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_014e: ldarg.0
+  IL_014f: ldfld System.String Celeste.MiniTextbox/<Routine>d__18::<beginAnim>5__2
+  IL_0154: ldc.i4.0
+  IL_0155: ldc.i4.0
+  IL_0156: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_015b: br.s IL_0174
+  IL_015d: ldarg.0
+  IL_015e: ldnull
+  IL_015f: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_0164: ldarg.0
+  IL_0165: ldc.i4.3
+  IL_0166: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_016b: ldc.i4.1
+  IL_016c: ret
+  IL_016d: ldarg.0
+  IL_016e: ldc.i4.m1
+  IL_016f: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0174: ldloc.1
+  IL_0175: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_017a: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_017f: ldarg.0
+  IL_0180: ldfld System.String Celeste.MiniTextbox/<Routine>d__18::<beginAnim>5__2
+  IL_0185: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_018a: brfalse.s IL_0199
+  IL_018c: ldloc.1
+  IL_018d: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_0192: callvirt System.Boolean Monocle.Sprite::get_Animating()
+  IL_0197: brtrue.s IL_015d
+  IL_0199: ldloc.1
+  IL_019a: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_019f: ldstr "talk_"
+  IL_01a4: ldloc.1
+  IL_01a5: ldfld Celeste.FancyText/Portrait Celeste.MiniTextbox::portraitData
+  IL_01aa: ldfld System.String Celeste.FancyText/Portrait::Animation
+  IL_01af: call System.String System.String::Concat(System.String,System.String)
+  IL_01b4: ldc.i4.0
+  IL_01b5: ldc.i4.0
+  IL_01b6: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_01bb: ldloc.1
+  IL_01bc: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_01c1: ldloc.1
+  IL_01c2: ldfld Celeste.FancyText/Portrait Celeste.MiniTextbox::portraitData
+  IL_01c7: ldfld System.String Celeste.FancyText/Portrait::SfxEvent
+  IL_01cc: ldnull
+  IL_01cd: ldc.r4 0
+  IL_01d2: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_01d7: stfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_01dc: ldloc.1
+  IL_01dd: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_01e2: ldstr "dialogue_portrait"
+  IL_01e7: ldloc.1
+  IL_01e8: ldfld Celeste.FancyText/Portrait Celeste.MiniTextbox::portraitData
+  IL_01ed: ldfld System.Int32 Celeste.FancyText/Portrait::SfxExpression
+  IL_01f2: conv.r4
+  IL_01f3: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_01f8: pop
+  IL_01f9: ldloc.1
+  IL_01fa: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_01ff: ldstr "dialogue_end"
+  IL_0204: ldc.r4 0
+  IL_0209: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_020e: pop
+  IL_020f: ldloc.1
+  IL_0210: ldloc.1
+  IL_0211: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_0216: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_021b: ldarg.0
+  IL_021c: ldnull
+  IL_021d: stfld System.String Celeste.MiniTextbox/<Routine>d__18::<beginAnim>5__2
+  IL_0222: ldc.r4 0
+  IL_0227: stloc.3
+  IL_0228: br.s IL_02a2
+  IL_022a: ldloc.1
+  IL_022b: ldfld Celeste.FancyText/Text Celeste.MiniTextbox::text
+  IL_0230: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0235: ldloc.1
+  IL_0236: ldfld System.Int32 Celeste.MiniTextbox::index
+  IL_023b: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_0240: isinst Celeste.FancyText/Char
+  IL_0245: brfalse.s IL_026a
+  IL_0247: ldloc.3
+  IL_0248: ldloc.1
+  IL_0249: ldfld Celeste.FancyText/Text Celeste.MiniTextbox::text
+  IL_024e: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0253: ldloc.1
+  IL_0254: ldfld System.Int32 Celeste.MiniTextbox::index
+  IL_0259: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_025e: isinst Celeste.FancyText/Char
+  IL_0263: ldfld System.Single Celeste.FancyText/Char::Delay
+  IL_0268: add
+  IL_0269: stloc.3
+  IL_026a: ldloc.1
+  IL_026b: ldloc.1
+  IL_026c: ldfld System.Int32 Celeste.MiniTextbox::index
+  IL_0271: ldc.i4.1
+  IL_0272: add
+  IL_0273: stfld System.Int32 Celeste.MiniTextbox::index
+  IL_0278: ldloc.3
+  IL_0279: ldc.r4 0.016
+  IL_027e: ble.un.s IL_02a2
+  IL_0280: ldarg.0
+  IL_0281: ldloc.3
+  IL_0282: box System.Single
+  IL_0287: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_028c: ldarg.0
+  IL_028d: ldc.i4.4
+  IL_028e: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0293: ldc.i4.1
+  IL_0294: ret
+  IL_0295: ldarg.0
+  IL_0296: ldc.i4.m1
+  IL_0297: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_029c: ldc.r4 0
+  IL_02a1: stloc.3
+  IL_02a2: ldloc.1
+  IL_02a3: ldfld System.Int32 Celeste.MiniTextbox::index
+  IL_02a8: ldloc.1
+  IL_02a9: ldfld Celeste.FancyText/Text Celeste.MiniTextbox::text
+  IL_02ae: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_02b3: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Count()
+  IL_02b8: blt IL_022a
+  IL_02bd: ldloc.1
+  IL_02be: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_02c3: brfalse.s IL_02e7
+  IL_02c5: ldloc.1
+  IL_02c6: ldfld Monocle.Sprite Celeste.MiniTextbox::portrait
+  IL_02cb: ldstr "idle_"
+  IL_02d0: ldloc.1
+  IL_02d1: ldfld Celeste.FancyText/Portrait Celeste.MiniTextbox::portraitData
+  IL_02d6: ldfld System.String Celeste.FancyText/Portrait::Animation
+  IL_02db: call System.String System.String::Concat(System.String,System.String)
+  IL_02e0: ldc.i4.0
+  IL_02e1: ldc.i4.0
+  IL_02e2: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_02e7: ldloc.1
+  IL_02e8: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_02ed: brfalse.s IL_031b
+  IL_02ef: ldloc.1
+  IL_02f0: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_02f5: ldstr "dialogue_portrait"
+  IL_02fa: ldc.r4 0
+  IL_02ff: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0304: pop
+  IL_0305: ldloc.1
+  IL_0306: ldfld Celeste.SoundSource Celeste.MiniTextbox::talkerSfx
+  IL_030b: ldstr "dialogue_end"
+  IL_0310: ldc.r4 1
+  IL_0315: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_031a: pop
+  IL_031b: ldsfld FMOD.Studio.EventInstance Celeste.Level::DialogSnapshot
+  IL_0320: call System.Void Celeste.Audio::EndSnapshot(FMOD.Studio.EventInstance)
+  IL_0325: ldarg.0
+  IL_0326: ldc.r4 3
++ IL_0000: ldarg.0 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_0000: ldfld Celeste.MiniTextbox Celeste.MiniTextbox/<Routine>d__18::<>4__this @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_0000: ldc.i4 12849228 @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
+  |-> retrieves System.Single Celeste.Mod.SpeedrunTool.Message.NonFrozenMiniTextbox/<>c::<QuicklyClose>b__4_2(System.Single,Celeste.MiniTextbox)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.MiniTextbox>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SpeedrunTool.Utils.HookHelper+<>c__DisplayClass2_0::<ILHook>b__0
+  IL_032b: box System.Single
+  IL_0330: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_0335: ldarg.0
+  IL_0336: ldc.i4.5
+  IL_0337: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_033c: ldc.i4.1
+  IL_033d: ret
+  IL_033e: ldarg.0
+  IL_033f: ldc.i4.m1
+  IL_0340: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0345: ldarg.0
+  IL_0346: ldloc.1
+  IL_0347: callvirt System.Collections.IEnumerator Celeste.MiniTextbox::Close()
+  IL_034c: stfld System.Object Celeste.MiniTextbox/<Routine>d__18::<>2__current
+  IL_0351: ldarg.0
+  IL_0352: ldc.i4.6
+  IL_0353: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0358: ldc.i4.1
+  IL_0359: ret
+  IL_035a: ldarg.0
+  IL_035b: ldc.i4.m1
+  IL_035c: stfld System.Int32 Celeste.MiniTextbox/<Routine>d__18::<>1__state
+  IL_0361: ldc.i4.0
+  IL_0362: ret

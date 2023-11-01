@@ -1,0 +1,56 @@
+IL Diff: System.Boolean Celeste.Player::GetChasePosition(System.Single,System.Single,Celeste.Player+ChaserState&)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0006: brtrue.s IL_006d
+  IL_0008: ldc.i4.0
+  IL_0009: stloc.0
+  IL_000a: ldarg.0
+  IL_000b: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_0010: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Player/ChaserState>::GetEnumerator()
+  IL_0015: stloc.1
+  IL_0016: br.s IL_0054
+  IL_0018: ldloca.s V_1
+  IL_001a: call T System.Collections.Generic.List`1/Enumerator<Celeste.Player/ChaserState>::get_Current()
+  IL_001f: stloc.2
+  IL_0020: ldarg.1
+  IL_0021: ldloc.2
+  IL_0022: ldfld System.Single Celeste.Player/ChaserState::TimeStamp
+  IL_0027: sub
+  IL_0028: stloc.3
+  IL_0029: ldloc.3
+  IL_002a: ldarg.2
+  IL_002b: bgt.un.s IL_0052
+  IL_002d: ldloc.0
+  IL_002e: brtrue.s IL_003a
+  IL_0030: ldarg.2
+  IL_0031: ldloc.3
+  IL_0032: sub
+  IL_0033: ldc.r4 0.02
+  IL_0038: bge.un.s IL_0046
+  IL_003a: ldarg.3
+  IL_003b: ldloc.2
+  IL_003c: stobj Celeste.Player/ChaserState
+  IL_0041: ldc.i4.1
+  IL_0042: stloc.s V_4
+  IL_0044: leave.s IL_0076
+  IL_0046: ldarg.3
+  IL_0047: initobj Celeste.Player/ChaserState
+  IL_004d: ldc.i4.0
+  IL_004e: stloc.s V_4
+  IL_0050: leave.s IL_0076
+  IL_0052: ldc.i4.1
+  IL_0053: stloc.0
+  IL_0054: ldloca.s V_1
+  IL_0056: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Player/ChaserState>::MoveNext()
+  IL_005b: brtrue.s IL_0018
+  IL_005d: leave.s IL_006d
+  IL_005f: ldloca.s V_1
+  IL_0061: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Player/ChaserState>
+  IL_0067: callvirt System.Void System.IDisposable::Dispose()
+  IL_006c: endfinally
+  IL_006d: ldarg.3
+  IL_006e: initobj Celeste.Player/ChaserState
+  IL_0074: ldc.i4.0
+  IL_0075: ret
+  IL_0076: ldloc.s V_4
+  IL_0078: ret

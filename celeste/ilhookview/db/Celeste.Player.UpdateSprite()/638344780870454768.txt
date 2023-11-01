@@ -1,0 +1,27 @@
+IL Diff: System.Void Celeste.Player::UpdateSprite()
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.Player::orig_UpdateSprite()
+  IL_0006: ldarg.0
+  IL_0007: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_000c: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0011: ldc.i4.s 15
+  IL_0013: beq.s IL_0024
+  IL_0015: ldarg.0
+  IL_0016: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_001b: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0020: ldc.i4.s 19
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetFeatherState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_0022: bne.un.s IL_004d
+  IL_0024: ldarg.0
+  IL_0025: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_002a: ldarg.0
+  IL_002b: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0030: ldfld System.Single Monocle.Sprite::Rate
+  IL_0035: ldc.r4 0
+  IL_003a: blt.s IL_0043
+  IL_003c: ldc.r4 1
+  IL_0041: br.s IL_0048
+  IL_0043: ldc.r4 -1
+  IL_0048: stfld System.Single Monocle.Sprite::Rate
+  IL_004d: ret

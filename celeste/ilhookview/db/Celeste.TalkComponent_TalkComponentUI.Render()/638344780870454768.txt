@@ -1,0 +1,202 @@
+IL Diff: System.Void Celeste.TalkComponent/TalkComponentUI::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedHud() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: stloc.0
+  IL_000c: ldloc.0
+  IL_000d: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
+  IL_0012: brfalse.s IL_0015
+  IL_0014: ret
+  IL_0015: ldarg.0
+  IL_0016: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::slide
+  IL_001b: ldc.r4 0
+  IL_0020: ble.un IL_0275
+  IL_0025: ldarg.0
+  IL_0026: ldfld Celeste.TalkComponent Celeste.TalkComponent/TalkComponentUI::Handler
+  IL_002b: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0030: brfalse IL_0275
+  IL_0035: ldloc.0
+  IL_0036: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_003b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0040: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_0045: stloc.1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.TalkComponent Celeste.TalkComponent/TalkComponentUI::Handler
+  IL_004c: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0051: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0056: ldarg.0
+  IL_0057: ldfld Celeste.TalkComponent Celeste.TalkComponent/TalkComponentUI::Handler
+  IL_005c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TalkComponent::DrawAt
+  IL_0061: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0066: ldloc.1
+  IL_0067: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Module.AvBdaySpeechBubbleFixup::onTalkComponentUIRender
++ IL_0000: ldc.i4 9885425 @ Celeste.Mod.MaxHelpingHand.Module.AvBdaySpeechBubbleFixup::onTalkComponentUIRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Module.AvBdaySpeechBubbleFixup::onTalkComponentUIRender
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Module.AvBdaySpeechBubbleFixup/<>c::<onTalkComponentUIRender>b__3_1(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Module.AvBdaySpeechBubbleFixup::onTalkComponentUIRender
+  IL_006c: stloc.2
+  IL_006d: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0072: brfalse.s IL_0098
+  IL_0074: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0079: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_007e: ldfld System.Boolean Celeste.Assists::MirrorMode
+  IL_0083: brfalse.s IL_0098
+  IL_0085: ldloca.s V_2
+  IL_0087: ldc.r4 320
+  IL_008c: ldloc.2
+  IL_008d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0092: sub
+  IL_0093: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0098: ldloca.s V_2
+  IL_009a: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_009f: dup
+  IL_00a0: ldind.r4
+  IL_00a1: ldc.r4 6
+  IL_00a6: mul
+  IL_00a7: stind.r4
+  IL_00a8: ldloca.s V_2
+  IL_00aa: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00af: dup
+  IL_00b0: ldind.r4
+  IL_00b1: ldc.r4 6
+  IL_00b6: mul
+  IL_00b7: stind.r4
+  IL_00b8: ldloca.s V_2
+  IL_00ba: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00bf: dup
+  IL_00c0: ldind.r4
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::timer
+  IL_00c7: ldc.r4 4
+  IL_00cc: mul
+  IL_00cd: conv.r8
+  IL_00ce: call System.Double System.Math::Sin(System.Double)
+  IL_00d3: conv.r4
+  IL_00d4: ldc.r4 12
+  IL_00d9: mul
+  IL_00da: ldc.r4 64
+  IL_00df: ldc.r4 1
+  IL_00e4: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::slide
+  IL_00ef: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00f4: sub
+  IL_00f5: mul
+  IL_00f6: add
+  IL_00f7: add
+  IL_00f8: stind.r4
+  IL_00f9: ldarg.0
+  IL_00fa: callvirt System.Boolean Celeste.TalkComponent/TalkComponentUI::get_Highlighted()
+  IL_00ff: brfalse.s IL_011b
+  IL_0101: ldc.r4 1
+  IL_0106: ldarg.0
+  IL_0107: ldfld Monocle.Wiggler Celeste.TalkComponent/TalkComponentUI::wiggler
+  IL_010c: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_0111: ldc.r4 0.5
+  IL_0116: mul
+  IL_0117: sub
+  IL_0118: stloc.3
+  IL_0119: br.s IL_0133
+  IL_011b: ldc.r4 1
+  IL_0120: ldarg.0
+  IL_0121: ldfld Monocle.Wiggler Celeste.TalkComponent/TalkComponentUI::wiggler
+  IL_0126: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_012b: ldc.r4 0.5
+  IL_0130: mul
+  IL_0131: add
+  IL_0132: stloc.3
+  IL_0133: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_0138: ldarg.0
+  IL_0139: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::slide
+  IL_013e: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0143: ldarg.0
+  IL_0144: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::alpha
+  IL_0149: mul
+  IL_014a: stloc.s V_4
+  IL_014c: ldarg.0
+  IL_014d: ldfld Microsoft.Xna.Framework.Color Celeste.TalkComponent/TalkComponentUI::lineColor
+  IL_0152: ldloc.s V_4
+  IL_0154: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0159: stloc.s V_5
+  IL_015b: ldarg.0
+  IL_015c: callvirt System.Boolean Celeste.TalkComponent/TalkComponentUI::get_Highlighted()
+  IL_0161: brfalse.s IL_0198
+  IL_0163: ldarg.0
+  IL_0164: ldfld Celeste.TalkComponent Celeste.TalkComponent/TalkComponentUI::Handler
+  IL_0169: ldfld Celeste.TalkComponent/HoverDisplay Celeste.TalkComponent::HoverUI
+  IL_016e: ldfld Monocle.MTexture Celeste.TalkComponent/HoverDisplay::Texture
+  IL_0173: ldloc.2
+  IL_0174: ldc.r4 0.5
+  IL_0179: ldc.r4 1
+  IL_017e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0183: ldloc.s V_5
+  IL_0185: ldarg.0
+  IL_0186: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::alpha
+  IL_018b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0190: ldloc.3
+  IL_0191: callvirt System.Void Monocle.MTexture::DrawJustified(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0196: br.s IL_01ca
+  IL_0198: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_019d: ldstr "hover/idle"
+  IL_01a2: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_01a7: ldloc.2
+  IL_01a8: ldc.r4 0.5
+  IL_01ad: ldc.r4 1
+  IL_01b2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01b7: ldloc.s V_5
+  IL_01b9: ldarg.0
+  IL_01ba: ldfld System.Single Celeste.TalkComponent/TalkComponentUI::alpha
+  IL_01bf: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_01c4: ldloc.3
+  IL_01c5: callvirt System.Void Monocle.MTexture::DrawJustified(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_01ca: ldarg.0
+  IL_01cb: callvirt System.Boolean Celeste.TalkComponent/TalkComponentUI::get_Highlighted()
+  IL_01d0: brfalse IL_0275
+  IL_01d5: ldloc.2
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld Celeste.TalkComponent Celeste.TalkComponent/TalkComponentUI::Handler
+  IL_01dc: ldfld Celeste.TalkComponent/HoverDisplay Celeste.TalkComponent::HoverUI
+  IL_01e1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TalkComponent/HoverDisplay::InputPosition
+  IL_01e6: ldloc.3
+  IL_01e7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01ec: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01f1: stloc.s V_6
+  IL_01f3: ldc.i4.0
+  IL_01f4: call System.Boolean Celeste.Input::GuiInputController(Celeste.Input/PrefixMode)
+  IL_01f9: brfalse.s IL_022a
+  IL_01fb: ldsfld Monocle.VirtualButton Celeste.Input::Talk
+  IL_0200: ldc.i4.0
+  IL_0201: ldstr "controls/keyboard/oemquestion"
+  IL_0206: call Monocle.MTexture Celeste.Input::GuiButton(Monocle.VirtualButton,Celeste.Input/PrefixMode,System.String)
+  IL_020b: ldloc.s V_6
+  IL_020d: ldc.r4 0.5
+  IL_0212: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single)
+  IL_0217: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_021c: ldloc.s V_4
+  IL_021e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0223: ldloc.3
+  IL_0224: callvirt System.Void Monocle.MTexture::DrawJustified(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0229: ret
+  IL_022a: ldsfld Monocle.VirtualButton Celeste.Input::Talk
+  IL_022f: call Microsoft.Xna.Framework.Input.Keys Celeste.Input::FirstKey(Monocle.VirtualButton)
+  IL_0234: stloc.s V_7
+  IL_0236: ldloca.s V_7
+  IL_0238: constrained. Microsoft.Xna.Framework.Input.Keys
+  IL_023e: callvirt System.String System.Object::ToString()
+  IL_0243: callvirt System.String System.String::ToUpper()
+  IL_0248: ldloc.s V_6
+  IL_024a: ldc.r4 0.5
+  IL_024f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single)
+  IL_0254: ldloc.3
+  IL_0255: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single)
+  IL_025a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_025f: ldloc.s V_4
+  IL_0261: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0266: ldc.r4 2
+  IL_026b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0270: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0275: ret

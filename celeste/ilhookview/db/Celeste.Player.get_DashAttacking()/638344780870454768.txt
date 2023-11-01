@@ -1,0 +1,15 @@
+IL Diff: System.Boolean Celeste.Player::get_DashAttacking()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Single Celeste.Player::dashAttackTimer
+  IL_0006: ldc.r4 0
+  IL_000b: bgt.s IL_001c
+  IL_000d: ldarg.0
+  IL_000e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0013: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0018: ldc.i4.5
++ IL_0000: ldarg.0 @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashState
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.Entities.Boosters.GenericCustomBooster::modRedDashState
+  IL_0019: ceq
+  IL_001b: ret
+  IL_001c: ldc.i4.1
+  IL_001d: ret

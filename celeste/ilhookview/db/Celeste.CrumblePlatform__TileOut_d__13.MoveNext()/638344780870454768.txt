@@ -1,0 +1,128 @@
+IL Diff: System.Boolean Celeste.CrumblePlatform/<TileOut>d__13::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_001b,IL_004c,IL_00ad
+  IL_0019: ldc.i4.0
+  IL_001a: ret
+  IL_001b: ldarg.0
+  IL_001c: ldc.i4.m1
+  IL_001d: stfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_0022: ldarg.0
+  IL_0023: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_0028: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Gray()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldc.i4 61452535 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform/<>c::<onCrumblePlatformTileOut>b__32_0(Microsoft.Xna.Framework.Color,Monocle.Image)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Monocle.Image>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
+  IL_002d: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0032: ldarg.0
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::delay
+  IL_0039: box System.Single
+  IL_003e: stfld System.Object Celeste.CrumblePlatform/<TileOut>d__13::<>2__current
+  IL_0043: ldarg.0
+  IL_0044: ldc.i4.1
+  IL_0045: stfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_004a: ldc.i4.1
+  IL_004b: ret
+  IL_004c: ldarg.0
+  IL_004d: ldc.i4.m1
+  IL_004e: stfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_0053: ldarg.0
+  IL_0054: ldarg.0
+  IL_0055: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_005a: callvirt System.Single Monocle.GraphicsComponent::get_X()
+  IL_005f: ldc.r4 7
+  IL_0064: mul
+  IL_0065: ldc.r4 3
+  IL_006a: rem
+  IL_006b: ldc.r4 1
+  IL_0070: add
+  IL_0071: ldc.r4 12
+  IL_0076: mul
+  IL_0077: stfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<distance>5__2
+  IL_007c: ldarg.0
+  IL_007d: ldarg.0
+  IL_007e: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_0083: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0088: stfld Microsoft.Xna.Framework.Vector2 Celeste.CrumblePlatform/<TileOut>d__13::<from>5__3
+  IL_008d: ldarg.0
+  IL_008e: ldc.r4 0
+  IL_0093: stfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_0098: br IL_014f
+  IL_009d: ldarg.0
+  IL_009e: ldnull
+  IL_009f: stfld System.Object Celeste.CrumblePlatform/<TileOut>d__13::<>2__current
+  IL_00a4: ldarg.0
+  IL_00a5: ldc.i4.2
+  IL_00a6: stfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_00ab: ldc.i4.1
+  IL_00ac: ret
+  IL_00ad: ldarg.0
+  IL_00ae: ldc.i4.m1
+  IL_00af: stfld System.Int32 Celeste.CrumblePlatform/<TileOut>d__13::<>1__state
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CrumblePlatform/<TileOut>d__13::<from>5__3
+  IL_00c0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00c5: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_00d0: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00d5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00da: ldarg.0
+  IL_00db: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<distance>5__2
+  IL_00e0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00e5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ea: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_00f5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Gray()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: ldc.i4 11599411 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform/<>c::<onCrumblePlatformTileOut>b__32_0(Microsoft.Xna.Framework.Color,Monocle.Image)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Monocle.Image>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformTileOut
+  IL_00fa: ldc.r4 1
+  IL_00ff: ldarg.0
+  IL_0100: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_0105: sub
+  IL_0106: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_010b: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0110: ldarg.0
+  IL_0111: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_0116: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_011b: ldc.r4 1
+  IL_0120: ldarg.0
+  IL_0121: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_0126: ldc.r4 0.5
+  IL_012b: mul
+  IL_012c: sub
+  IL_012d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0132: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0137: ldarg.0
+  IL_0138: ldarg.0
+  IL_0139: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_013e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0143: ldc.r4 0.4
+  IL_0148: div
+  IL_0149: add
+  IL_014a: stfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_014f: ldarg.0
+  IL_0150: ldfld System.Single Celeste.CrumblePlatform/<TileOut>d__13::<time>5__4
+  IL_0155: ldc.r4 1
+  IL_015a: blt IL_009d
+  IL_015f: ldarg.0
+  IL_0160: ldfld Monocle.Image Celeste.CrumblePlatform/<TileOut>d__13::img
+  IL_0165: ldc.i4.0
+  IL_0166: stfld System.Boolean Monocle.Component::Visible
+  IL_016b: ldc.i4.0
+  IL_016c: ret

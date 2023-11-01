@@ -1,0 +1,341 @@
+IL Diff: System.Void Celeste.Mod.VortexHelper.Entities.BowlPuffer::DoEntityCustomInteraction()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0007: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_000c: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0011: stloc.0
+  IL_0012: nop
+  IL_0013: ldarg.0
+  IL_0014: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0019: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_001e: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.TouchSwitch>()
+  IL_0023: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0028: stloc.1
+  IL_0029: br.s IL_004a
+  IL_002b: ldloca.s V_1
+  IL_002d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0032: castclass Celeste.TouchSwitch
+  IL_0037: stloc.2
+  IL_0038: ldarg.0
+  IL_0039: ldloc.2
+  IL_003a: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_003f: stloc.3
+  IL_0040: ldloc.3
+  IL_0041: brfalse.s IL_004a
+  IL_0043: ldloc.2
+  IL_0044: callvirt System.Void Celeste.TouchSwitch::TurnOn()
+  IL_0049: nop
+  IL_004a: ldloca.s V_1
+  IL_004c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0051: brtrue.s IL_002b
+  IL_0053: leave.s IL_0064
+  IL_0055: ldloca.s V_1
+  IL_0057: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_005d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0062: nop
+  IL_0063: endfinally
+  IL_0064: nop
+  IL_0065: ldarg.0
+  IL_0066: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_006b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0070: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.FloatingDebris>()
+  IL_0075: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_007a: stloc.s V_4
+  IL_007c: br.s IL_00a8
+  IL_007e: ldloca.s V_4
+  IL_0080: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0085: castclass Celeste.FloatingDebris
+  IL_008a: stloc.s V_5
+  IL_008c: ldarg.0
+  IL_008d: ldloc.s V_5
+  IL_008f: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_0094: stloc.s V_6
+  IL_0096: ldloc.s V_6
+  IL_0098: brfalse.s IL_00a8
+  IL_009a: ldloc.s V_5
+  IL_009c: ldarg.0
+  IL_009d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00a2: callvirt System.Void Celeste.FloatingDebris::OnExplode(Microsoft.Xna.Framework.Vector2)
+  IL_00a7: nop
+  IL_00a8: ldloca.s V_4
+  IL_00aa: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00af: brtrue.s IL_007e
+  IL_00b1: leave.s IL_00c2
+  IL_00b3: ldloca.s V_4
+  IL_00b5: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00bb: callvirt System.Void System.IDisposable::Dispose()
+  IL_00c0: nop
+  IL_00c1: endfinally
+  IL_00c2: nop
+  IL_00c3: ldarg.0
+  IL_00c4: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.Actor>()
+  IL_00c9: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_00ce: stloc.s V_7
+  IL_00d0: br IL_01b4
+  IL_00d5: ldloca.s V_7
+  IL_00d7: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_00dc: castclass Celeste.Actor
+  IL_00e1: stloc.s V_8
+  IL_00e3: nop
+  IL_00e4: ldloc.s V_8
+  IL_00e6: stloc.s V_14
+  IL_00e8: ldloc.s V_14
+  IL_00ea: stloc.s V_13
+  IL_00ec: ldloc.s V_13
+  IL_00ee: isinst Celeste.Player
+  IL_00f3: stloc.s V_9
+  IL_00f5: ldloc.s V_9
+  IL_00f7: brtrue.s IL_0128
+  IL_00f9: ldloc.s V_13
+  IL_00fb: isinst Celeste.TheoCrystal
+  IL_0100: stloc.s V_10
+  IL_0102: ldloc.s V_10
+  IL_0104: brtrue.s IL_013f
+  IL_0106: ldloc.s V_13
+  IL_0108: isinst Celeste.Puffer
+  IL_010d: stloc.s V_11
+  IL_010f: ldloc.s V_11
+  IL_0111: brtrue.s IL_0172
+  IL_0113: ldloc.s V_13
+  IL_0115: isinst Celeste.Mod.VortexHelper.Entities.BowlPuffer
+  IL_011a: stloc.s V_12
+  IL_011c: ldloc.s V_12
+  IL_011e: brtrue IL_0192
+  IL_0123: br IL_01b3
+  IL_0128: br.s IL_012a
+  IL_012a: ldloc.s V_9
+  IL_012c: ldarg.0
+  IL_012d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0132: ldc.i4.0
+  IL_0133: ldc.i4.1
+  IL_0134: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::ExplodeLaunch(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 59414151 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
+  |-> retrieves System.Void ExtendedVariants.Variants.ExplodeLaunchSpeed::correctExplodeLaunchSpeed()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
+  IL_0139: pop
+  IL_013a: br IL_01b3
+  IL_013f: br.s IL_0141
+  IL_0141: ldarg.0
+  IL_0142: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0147: ldarg.0
+  IL_0148: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_014d: ldloc.s V_10
+  IL_014f: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0154: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0159: ldc.i4.0
+  IL_015a: ceq
+  IL_015c: stloc.s V_15
+  IL_015e: ldloc.s V_15
+  IL_0160: brfalse.s IL_0170
+  IL_0162: ldloc.s V_10
+  IL_0164: ldarg.0
+  IL_0165: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_016a: callvirt System.Void Celeste.TheoCrystal::ExplodeLaunch(Microsoft.Xna.Framework.Vector2)
+  IL_016f: nop
+  IL_0170: br.s IL_01b3
+  IL_0172: br.s IL_0174
+  IL_0174: ldsfld System.Reflection.MethodInfo Celeste.Mod.VortexHelper.VortexHelperModule::Puffer_Explode
+  IL_0179: ldloc.s V_11
+  IL_017b: ldnull
+  IL_017c: callvirt System.Object System.Reflection.MethodBase::Invoke(System.Object,System.Object[])
+  IL_0181: pop
+  IL_0182: ldsfld System.Reflection.MethodInfo Celeste.Mod.VortexHelper.VortexHelperModule::Puffer_GotoGone
+  IL_0187: ldloc.s V_11
+  IL_0189: ldnull
+  IL_018a: callvirt System.Object System.Reflection.MethodBase::Invoke(System.Object,System.Object[])
+  IL_018f: pop
+  IL_0190: br.s IL_01b3
+  IL_0192: br.s IL_0194
+  IL_0194: ldloc.s V_12
+  IL_0196: ldloc.s V_12
+  IL_0198: ldfld System.Boolean Celeste.Mod.VortexHelper.Entities.BowlPuffer::exploded
+  IL_019d: brtrue.s IL_01ab
+  IL_019f: ldloc.s V_12
+  IL_01a1: ldfld Celeste.Mod.VortexHelper.Entities.BowlPuffer/States Celeste.Mod.VortexHelper.Entities.BowlPuffer::state
+  IL_01a6: ldc.i4.0
+  IL_01a7: cgt.un
+  IL_01a9: br.s IL_01ac
+  IL_01ab: ldc.i4.0
+  IL_01ac: stfld System.Boolean Celeste.Mod.VortexHelper.Entities.BowlPuffer::chainExplode
+  IL_01b1: br.s IL_01b3
+  IL_01b3: nop
+  IL_01b4: ldloca.s V_7
+  IL_01b6: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01bb: brtrue IL_00d5
+  IL_01c0: leave.s IL_01d1
+  IL_01c2: ldloca.s V_7
+  IL_01c4: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01ca: callvirt System.Void System.IDisposable::Dispose()
+  IL_01cf: nop
+  IL_01d0: endfinally
+  IL_01d1: nop
+  IL_01d2: ldarg.0
+  IL_01d3: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.Solid>()
+  IL_01d8: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_01dd: stloc.s V_16
+  IL_01df: br IL_039b
+  IL_01e4: ldloca.s V_16
+  IL_01e6: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_01eb: castclass Celeste.Solid
+  IL_01f0: stloc.s V_17
+  IL_01f2: nop
+  IL_01f3: ldloc.s V_17
+  IL_01f5: stloc.s V_27
+  IL_01f7: ldloc.s V_27
+  IL_01f9: stloc.s V_26
+  IL_01fb: ldloc.s V_26
+  IL_01fd: isinst Celeste.TempleCrackedBlock
+  IL_0202: stloc.s V_18
+  IL_0204: ldloc.s V_18
+  IL_0206: brtrue.s IL_027a
+  IL_0208: ldloc.s V_26
+  IL_020a: isinst Celeste.Mod.VortexHelper.Entities.ColorSwitch
+  IL_020f: stloc.s V_19
+  IL_0211: ldloc.s V_19
+  IL_0213: brtrue.s IL_028f
+  IL_0215: ldloc.s V_26
+  IL_0217: isinst Celeste.DashBlock
+  IL_021c: stloc.s V_20
+  IL_021e: ldloc.s V_20
+  IL_0220: brtrue IL_02b5
+  IL_0225: ldloc.s V_26
+  IL_0227: isinst Celeste.FallingBlock
+  IL_022c: stloc.s V_21
+  IL_022e: ldloc.s V_21
+  IL_0230: brtrue IL_02e3
+  IL_0235: ldloc.s V_26
+  IL_0237: isinst Celeste.MoveBlock
+  IL_023c: stloc.s V_22
+  IL_023e: ldloc.s V_22
+  IL_0240: brtrue IL_02f2
+  IL_0245: ldloc.s V_26
+  IL_0247: isinst Celeste.CrushBlock
+  IL_024c: stloc.s V_23
+  IL_024e: ldloc.s V_23
+  IL_0250: brtrue IL_0302
+  IL_0255: ldloc.s V_26
+  IL_0257: isinst Celeste.Mod.VortexHelper.Entities.BubbleWrapBlock
+  IL_025c: stloc.s V_24
+  IL_025e: ldloc.s V_24
+  IL_0260: brtrue IL_0338
+  IL_0265: ldloc.s V_26
+  IL_0267: isinst Celeste.LightningBreakerBox
+  IL_026c: stloc.s V_25
+  IL_026e: ldloc.s V_25
+  IL_0270: brtrue IL_0344
+  IL_0275: br IL_0399
+  IL_027a: br.s IL_027c
+  IL_027c: ldloc.s V_18
+  IL_027e: ldarg.0
+  IL_027f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0284: callvirt System.Void Celeste.TempleCrackedBlock::Break(Microsoft.Xna.Framework.Vector2)
+  IL_0289: nop
+  IL_028a: br IL_0399
+  IL_028f: br.s IL_0291
+  IL_0291: ldloc.s V_19
+  IL_0293: ldloc.s V_17
+  IL_0295: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_029a: ldarg.0
+  IL_029b: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_02a0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02a5: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::FourWayNormal(Microsoft.Xna.Framework.Vector2)
+  IL_02aa: callvirt System.Void Celeste.Mod.VortexHelper.Entities.ColorSwitch::Switch(Microsoft.Xna.Framework.Vector2)
+  IL_02af: nop
+  IL_02b0: br IL_0399
+  IL_02b5: br.s IL_02b7
+  IL_02b7: ldloc.s V_20
+  IL_02b9: ldarg.0
+  IL_02ba: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_02bf: ldloc.s V_17
+  IL_02c1: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_02c6: ldarg.0
+  IL_02c7: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_02cc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02d1: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::FourWayNormal(Microsoft.Xna.Framework.Vector2)
+  IL_02d6: ldc.i4.1
+  IL_02d7: ldc.i4.1
+  IL_02d8: callvirt System.Void Celeste.DashBlock::Break(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_02dd: nop
+  IL_02de: br IL_0399
+  IL_02e3: br.s IL_02e5
+  IL_02e5: ldloc.s V_21
+  IL_02e7: ldc.i4.1
+  IL_02e8: stfld System.Boolean Celeste.FallingBlock::Triggered
+  IL_02ed: br IL_0399
+  IL_02f2: br.s IL_02f4
+  IL_02f4: ldloc.s V_22
+  IL_02f6: ldnull
+  IL_02f7: callvirt System.Void Celeste.Platform::OnStaticMoverTrigger(Celeste.StaticMover)
+  IL_02fc: nop
+  IL_02fd: br IL_0399
+  IL_0302: br.s IL_0304
+  IL_0304: ldsfld System.Reflection.MethodInfo Celeste.Mod.VortexHelper.VortexHelperModule::CrushBlock_OnDashed
+  IL_0309: ldloc.s V_23
+  IL_030b: ldc.i4.2
+  IL_030c: newarr System.Object
+  IL_0311: dup
+  IL_0312: ldc.i4.1
+  IL_0313: ldloc.s V_23
+  IL_0315: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_031a: ldarg.0
+  IL_031b: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0320: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0325: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::FourWayNormal(Microsoft.Xna.Framework.Vector2)
+  IL_032a: box Microsoft.Xna.Framework.Vector2
+  IL_032f: stelem.ref
+  IL_0330: callvirt System.Object System.Reflection.MethodBase::Invoke(System.Object,System.Object[])
+  IL_0335: pop
+  IL_0336: br.s IL_0399
+  IL_0338: br.s IL_033a
+  IL_033a: ldloc.s V_24
+  IL_033c: callvirt System.Void Celeste.Mod.VortexHelper.Entities.BubbleWrapBlock::Break()
+  IL_0341: nop
+  IL_0342: br.s IL_0399
+  IL_0344: br.s IL_0346
+  IL_0346: ldloc.0
+  IL_0347: ldnull
+  IL_0348: cgt.un
+  IL_034a: stloc.s V_28
+  IL_034c: ldloc.s V_28
+  IL_034e: brfalse.s IL_0397
+  IL_0350: nop
+  IL_0351: ldloc.0
+  IL_0352: ldfld System.Single Celeste.Player::Stamina
+  IL_0357: stloc.s V_29
+  IL_0359: ldloc.0
+  IL_035a: ldfld System.Int32 Celeste.Player::Dashes
+  IL_035f: stloc.s V_30
+  IL_0361: ldloc.s V_25
+  IL_0363: ldfld Celeste.DashCollision Celeste.Platform::OnDashCollide
+  IL_0368: ldloc.0
+  IL_0369: ldloc.s V_25
+  IL_036b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0370: ldarg.0
+  IL_0371: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0376: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_037b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::FourWayNormal(Microsoft.Xna.Framework.Vector2)
+  IL_0380: callvirt Celeste.DashCollisionResults Celeste.DashCollision::Invoke(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0385: pop
+  IL_0386: ldloc.0
+  IL_0387: ldloc.s V_30
+  IL_0389: stfld System.Int32 Celeste.Player::Dashes
+  IL_038e: ldloc.0
+  IL_038f: ldloc.s V_29
+  IL_0391: stfld System.Single Celeste.Player::Stamina
+  IL_0396: nop
+  IL_0397: br.s IL_0399
+  IL_0399: nop
+  IL_039a: nop
+  IL_039b: ldloca.s V_16
+  IL_039d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_03a2: brtrue IL_01e4
+  IL_03a7: leave.s IL_03b8
+  IL_03a9: ldloca.s V_16
+  IL_03ab: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_03b1: callvirt System.Void System.IDisposable::Dispose()
+  IL_03b6: nop
+  IL_03b7: endfinally
+  IL_03b8: ret

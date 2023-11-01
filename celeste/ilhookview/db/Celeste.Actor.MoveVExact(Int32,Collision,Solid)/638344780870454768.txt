@@ -1,0 +1,132 @@
+IL Diff: System.Boolean Celeste.Actor::MoveVExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0006: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_000b: ldarg.1
+  IL_000c: conv.r4
+  IL_000d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0012: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0017: stloc.0
+  IL_0018: ldarg.1
+  IL_0019: call System.Int32 System.Math::Sign(System.Int32)
+  IL_001e: stloc.1
+  IL_001f: ldc.i4.0
+  IL_0020: stloc.2
+  IL_0021: br IL_0158
+  IL_0026: ldarg.0
+  IL_0027: ldarg.0
+  IL_0028: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_002d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0032: ldloc.1
+  IL_0033: conv.r4
+  IL_0034: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0039: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_003e: call T Monocle.Entity::CollideFirst<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0043: stloc.3
+  IL_0044: ldloc.3
+  IL_0045: brfalse.s IL_00aa
+  IL_0047: ldarg.0
+  IL_0048: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Actor::movementCounter
+  IL_004d: ldc.r4 0
+  IL_0052: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0057: ldarg.2
+  IL_0058: brfalse.s IL_00a8
+  IL_005a: ldarg.2
+  IL_005b: ldloca.s V_4
+  IL_005d: initobj Celeste.CollisionData
+  IL_0063: ldloca.s V_4
+  IL_0065: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_006a: ldloc.1
+  IL_006b: conv.r4
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0071: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Direction
+  IL_0076: ldloca.s V_4
+  IL_0078: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_007d: ldloc.2
+  IL_007e: conv.r4
+  IL_007f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0084: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Moved
+  IL_0089: ldloca.s V_4
+  IL_008b: ldloc.0
+  IL_008c: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::TargetPosition
+  IL_0091: ldloca.s V_4
+  IL_0093: ldloc.3
+  IL_0094: stfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_0099: ldloca.s V_4
+  IL_009b: ldarg.3
+  IL_009c: stfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_00a1: ldloc.s V_4
+  IL_00a3: callvirt System.Void Celeste.Collision::Invoke(Celeste.CollisionData)
+  IL_00a8: ldc.i4.1
+  IL_00a9: ret
+  IL_00aa: ldarg.1
+  IL_00ab: ldc.i4.0
+  IL_00ac: ble IL_0140
+  IL_00b1: ldarg.0
+  IL_00b2: ldfld System.Boolean Celeste.Actor::IgnoreJumpThrus
+  IL_00b7: brtrue IL_0140
+  IL_00bc: ldarg.0
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00c8: ldloc.1
+  IL_00c9: conv.r4
+  IL_00ca: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00cf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d4: call T Monocle.Entity::CollideFirstOutside<Celeste.JumpThru>(Microsoft.Xna.Framework.Vector2)
+  IL_00d9: stloc.3
+  IL_00da: ldloc.3
+  IL_00db: brfalse.s IL_0140
+  IL_00dd: ldarg.0
+  IL_00de: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Actor::movementCounter
+  IL_00e3: ldc.r4 0
+  IL_00e8: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ed: ldarg.2
+  IL_00ee: brfalse.s IL_013e
+  IL_00f0: ldarg.2
+  IL_00f1: ldloca.s V_4
+  IL_00f3: initobj Celeste.CollisionData
+  IL_00f9: ldloca.s V_4
+  IL_00fb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0100: ldloc.1
+  IL_0101: conv.r4
+  IL_0102: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0107: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Direction
+  IL_010c: ldloca.s V_4
+  IL_010e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0113: ldloc.2
+  IL_0114: conv.r4
+  IL_0115: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_011a: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Moved
+  IL_011f: ldloca.s V_4
+  IL_0121: ldloc.0
+  IL_0122: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::TargetPosition
+  IL_0127: ldloca.s V_4
+  IL_0129: ldloc.3
+  IL_012a: stfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_012f: ldloca.s V_4
+  IL_0131: ldarg.3
+  IL_0132: stfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0137: ldloc.s V_4
+  IL_0139: callvirt System.Void Celeste.Collision::Invoke(Celeste.CollisionData)
+  IL_013e: ldc.i4.1
+  IL_013f: ret
+  IL_0140: ldloc.2
+  IL_0141: ldloc.1
+  IL_0142: add
+  IL_0143: stloc.2
+  IL_0144: ldarg.1
+  IL_0145: ldloc.1
+  IL_0146: sub
+  IL_0147: starg.s moveV
+  IL_0149: ldarg.0
+  IL_014a: ldarg.0
+  IL_014b: call System.Single Monocle.Entity::get_Y()
+  IL_0150: ldloc.1
+  IL_0151: conv.r4
+  IL_0152: add
+  IL_0153: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_0158: ldarg.1
+  IL_0159: brtrue IL_0026
+  IL_015e: ldc.i4.0
+  IL_015f: ret

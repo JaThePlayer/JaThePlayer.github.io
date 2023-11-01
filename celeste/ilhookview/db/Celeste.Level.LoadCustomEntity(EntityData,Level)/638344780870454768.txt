@@ -1,0 +1,545 @@
+IL Diff: System.Boolean Celeste.Level::LoadCustomEntity(Celeste.EntityData,Celeste.Level)
+  IL_0000: ldarg.1
+  IL_0001: ldfld Celeste.Session Celeste.Level::Session
+  IL_0006: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
+  IL_000b: stloc.0
+  IL_000c: ldloca.s V_1
+  IL_000e: ldloc.0
+  IL_000f: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0014: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0019: conv.r4
+  IL_001a: ldloc.0
+  IL_001b: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0020: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0025: conv.r4
+  IL_0026: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_002b: ldarg.1
+  IL_002c: ldloc.0
+  IL_002d: ldloc.1
+  IL_002e: ldarg.0
+  IL_002f: call System.Boolean Celeste.Mod.Everest/Events/Level::LoadEntity(Celeste.Level,Celeste.LevelData,Microsoft.Xna.Framework.Vector2,Celeste.EntityData)
+  IL_0034: brfalse.s IL_0038
+  IL_0036: ldc.i4.1
+  IL_0037: ret
+  IL_0038: ldsfld System.Collections.Generic.Dictionary`2<System.String,Celeste.Level/EntityLoader> Celeste.Level::EntityLoaders
+  IL_003d: ldarg.0
+  IL_003e: ldfld System.String Celeste.EntityData::Name
+  IL_0043: ldloca.s V_2
+  IL_0045: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,Celeste.Level/EntityLoader>::TryGetValue(TKey,TValue&)
+  IL_004a: brfalse.s IL_0063
+  IL_004c: ldloc.2
+  IL_004d: ldarg.1
+  IL_004e: ldloc.0
+  IL_004f: ldloc.1
+  IL_0050: ldarg.0
+  IL_0051: callvirt Monocle.Entity Celeste.Level/EntityLoader::Invoke(Celeste.Level,Celeste.LevelData,Microsoft.Xna.Framework.Vector2,Celeste.EntityData)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0056: stloc.3
+  IL_0057: ldloc.3
+  IL_0058: brfalse.s IL_0063
+  IL_005a: ldarg.1
+  IL_005b: ldloc.3
+  IL_005c: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0061: ldc.i4.1
+  IL_0062: ret
+  IL_0063: ldarg.0
+  IL_0064: ldfld System.String Celeste.EntityData::Name
+  IL_0069: ldstr "everest/spaceController"
+  IL_006e: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0073: brfalse.s IL_0082
+  IL_0075: ldarg.1
+  IL_0076: newobj System.Void Celeste.SpaceController::.ctor()
+  IL_007b: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0080: ldc.i4.1
+  IL_0081: ret
+  IL_0082: ldarg.0
+  IL_0083: ldfld System.String Celeste.EntityData::Name
+  IL_0088: ldstr "spinner"
+  IL_008d: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0092: brfalse IL_0190
+  IL_0097: ldarg.1
+  IL_0098: ldfld Celeste.Session Celeste.Level::Session
+  IL_009d: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00a2: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00a7: ldc.i4.3
+  IL_00a8: beq.s IL_00e2
+  IL_00aa: ldarg.1
+  IL_00ab: ldfld Celeste.Session Celeste.Level::Session
+  IL_00b0: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00b5: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00ba: ldc.i4.7
+  IL_00bb: bne.un.s IL_00d4
+  IL_00bd: ldarg.1
+  IL_00be: ldfld Celeste.Session Celeste.Level::Session
+  IL_00c3: ldfld System.String Celeste.Session::Level
+  IL_00c8: ldstr "d-"
+  IL_00cd: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_00d2: brtrue.s IL_00e2
+  IL_00d4: ldarg.0
+  IL_00d5: ldstr "dust"
+  IL_00da: ldc.i4.0
+  IL_00db: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_00e0: brfalse.s IL_00f1
+  IL_00e2: ldarg.1
+  IL_00e3: ldarg.0
+  IL_00e4: ldloc.1
+  IL_00e5: newobj System.Void Celeste.DustStaticSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_00ea: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00ef: ldc.i4.1
+  IL_00f0: ret
+  IL_00f1: ldc.i4.0
+  IL_00f2: stloc.s V_4
+  IL_00f4: ldarg.1
+  IL_00f5: ldfld Celeste.Session Celeste.Level::Session
+  IL_00fa: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00ff: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0104: ldc.i4.5
+  IL_0105: bne.un.s IL_010f
+  IL_0107: ldc.i4.1
+  IL_0108: stloc.s V_4
+  IL_010a: br IL_017f
+  IL_010f: ldarg.1
+  IL_0110: ldfld Celeste.Session Celeste.Level::Session
+  IL_0115: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_011a: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_011f: ldc.i4.6
+  IL_0120: bne.un.s IL_0127
+  IL_0122: ldc.i4.2
+  IL_0123: stloc.s V_4
+  IL_0125: br.s IL_017f
+  IL_0127: ldarg.1
+  IL_0128: ldfld Celeste.Session Celeste.Level::Session
+  IL_012d: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0132: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0137: ldc.i4.s 10
+  IL_0139: bne.un.s IL_0140
+  IL_013b: ldc.i4.3
+  IL_013c: stloc.s V_4
+  IL_013e: br.s IL_017f
+  IL_0140: ldstr "core"
+  IL_0145: ldarg.0
+  IL_0146: ldstr "color"
+  IL_014b: ldstr ""
+  IL_0150: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0155: ldc.i4.3
+  IL_0156: callvirt System.Boolean System.String::Equals(System.String,System.StringComparison)
+  IL_015b: brfalse.s IL_0162
+  IL_015d: ldc.i4.m1
+  IL_015e: stloc.s V_4
+  IL_0160: br.s IL_017f
+  IL_0162: ldarg.0
+  IL_0163: ldstr "color"
+  IL_0168: ldstr ""
+  IL_016d: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0172: ldc.i4.1
+  IL_0173: ldloca.s V_4
+  IL_0175: call System.Boolean System.Enum::TryParse<Celeste.CrystalColor>(System.String,System.Boolean,TEnum&)
+  IL_017a: brtrue.s IL_017f
+  IL_017c: ldc.i4.0
+  IL_017d: stloc.s V_4
+  IL_017f: ldarg.1
+  IL_0180: ldarg.0
+  IL_0181: ldloc.1
+  IL_0182: ldloc.s V_4
+  IL_0184: newobj System.Void Celeste.CrystalStaticSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2,Celeste.CrystalColor)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0189: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_018e: ldc.i4.1
+  IL_018f: ret
+  IL_0190: ldarg.0
+  IL_0191: ldfld System.String Celeste.EntityData::Name
+  IL_0196: ldstr "trackSpinner"
+  IL_019b: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01a0: brfalse IL_023f
+  IL_01a5: ldarg.1
+  IL_01a6: ldfld Celeste.Session Celeste.Level::Session
+  IL_01ab: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_01b0: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_01b5: ldc.i4.s 10
+  IL_01b7: beq.s IL_01c7
+  IL_01b9: ldarg.0
+  IL_01ba: ldstr "star"
+  IL_01bf: ldc.i4.0
+  IL_01c0: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_01c5: brfalse.s IL_01d6
+  IL_01c7: ldarg.1
+  IL_01c8: ldarg.0
+  IL_01c9: ldloc.1
+  IL_01ca: newobj System.Void Celeste.StarTrackSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_01cf: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01d4: ldc.i4.1
+  IL_01d5: ret
+  IL_01d6: ldarg.1
+  IL_01d7: ldfld Celeste.Session Celeste.Level::Session
+  IL_01dc: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_01e1: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_01e6: ldc.i4.3
+  IL_01e7: beq.s IL_0221
+  IL_01e9: ldarg.1
+  IL_01ea: ldfld Celeste.Session Celeste.Level::Session
+  IL_01ef: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_01f4: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_01f9: ldc.i4.7
+  IL_01fa: bne.un.s IL_0213
+  IL_01fc: ldarg.1
+  IL_01fd: ldfld Celeste.Session Celeste.Level::Session
+  IL_0202: ldfld System.String Celeste.Session::Level
+  IL_0207: ldstr "d-"
+  IL_020c: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_0211: brtrue.s IL_0221
+  IL_0213: ldarg.0
+  IL_0214: ldstr "dust"
+  IL_0219: ldc.i4.0
+  IL_021a: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_021f: brfalse.s IL_0230
+  IL_0221: ldarg.1
+  IL_0222: ldarg.0
+  IL_0223: ldloc.1
+  IL_0224: newobj System.Void Celeste.DustTrackSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0229: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_022e: ldc.i4.1
+  IL_022f: ret
+  IL_0230: ldarg.1
+  IL_0231: ldarg.0
+  IL_0232: ldloc.1
+  IL_0233: newobj System.Void Celeste.BladeTrackSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0238: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_023d: ldc.i4.1
+  IL_023e: ret
+  IL_023f: ldarg.0
+  IL_0240: ldfld System.String Celeste.EntityData::Name
+  IL_0245: ldstr "rotateSpinner"
+  IL_024a: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_024f: brfalse IL_02ee
+  IL_0254: ldarg.1
+  IL_0255: ldfld Celeste.Session Celeste.Level::Session
+  IL_025a: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_025f: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0264: ldc.i4.s 10
+  IL_0266: beq.s IL_0276
+  IL_0268: ldarg.0
+  IL_0269: ldstr "star"
+  IL_026e: ldc.i4.0
+  IL_026f: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0274: brfalse.s IL_0285
+  IL_0276: ldarg.1
+  IL_0277: ldarg.0
+  IL_0278: ldloc.1
+  IL_0279: newobj System.Void Celeste.StarRotateSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_027e: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0283: ldc.i4.1
+  IL_0284: ret
+  IL_0285: ldarg.1
+  IL_0286: ldfld Celeste.Session Celeste.Level::Session
+  IL_028b: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0290: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0295: ldc.i4.3
+  IL_0296: beq.s IL_02d0
+  IL_0298: ldarg.1
+  IL_0299: ldfld Celeste.Session Celeste.Level::Session
+  IL_029e: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_02a3: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_02a8: ldc.i4.7
+  IL_02a9: bne.un.s IL_02c2
+  IL_02ab: ldarg.1
+  IL_02ac: ldfld Celeste.Session Celeste.Level::Session
+  IL_02b1: ldfld System.String Celeste.Session::Level
+  IL_02b6: ldstr "d-"
+  IL_02bb: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_02c0: brtrue.s IL_02d0
+  IL_02c2: ldarg.0
+  IL_02c3: ldstr "dust"
+  IL_02c8: ldc.i4.0
+  IL_02c9: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_02ce: brfalse.s IL_02df
+  IL_02d0: ldarg.1
+  IL_02d1: ldarg.0
+  IL_02d2: ldloc.1
+  IL_02d3: newobj System.Void Celeste.DustRotateSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_02d8: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_02dd: ldc.i4.1
+  IL_02de: ret
+  IL_02df: ldarg.1
+  IL_02e0: ldarg.0
+  IL_02e1: ldloc.1
+  IL_02e2: newobj System.Void Celeste.BladeRotateSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_02e7: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_02ec: ldc.i4.1
+  IL_02ed: ret
+  IL_02ee: ldarg.0
+  IL_02ef: ldfld System.String Celeste.EntityData::Name
+  IL_02f4: ldstr "checkpoint"
+  IL_02f9: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_02fe: brfalse.s IL_032f
+  IL_0300: ldarg.0
+  IL_0301: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0306: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_030b: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0310: brfalse.s IL_032f
+  IL_0312: ldarg.0
+  IL_0313: ldstr "allowOrigin"
+  IL_0318: ldc.i4.0
+  IL_0319: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_031e: brtrue.s IL_032f
+  IL_0320: ldarg.1
+  IL_0321: ldarg.0
+  IL_0322: ldloc.1
+  IL_0323: newobj System.Void Celeste.Checkpoint::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0328: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_032d: ldc.i4.1
+  IL_032e: ret
+  IL_032f: ldarg.0
+  IL_0330: ldfld System.String Celeste.EntityData::Name
+  IL_0335: ldstr "cloud"
+  IL_033a: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_033f: brfalse.s IL_037e
+  IL_0341: ldarg.0
+  IL_0342: ldloc.1
+  IL_0343: newobj System.Void Celeste.Cloud::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0348: isinst Celeste.Cloud
+  IL_034d: stloc.s V_5
+  IL_034f: ldarg.0
+  IL_0350: ldstr "small"
+  IL_0355: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_035a: brfalse.s IL_0374
+  IL_035c: ldloc.s V_5
+  IL_035e: ldarg.0
+  IL_035f: ldstr "small"
+  IL_0364: ldc.i4.0
+  IL_0365: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_036a: newobj System.Void System.Nullable`1<System.Boolean>::.ctor(T)
+  IL_036f: stfld System.Nullable`1<System.Boolean> Celeste.Cloud::Small
+  IL_0374: ldarg.1
+  IL_0375: ldloc.s V_5
+  IL_0377: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_037c: ldc.i4.1
+  IL_037d: ret
+  IL_037e: ldarg.0
+  IL_037f: ldfld System.String Celeste.EntityData::Name
+  IL_0384: ldstr "cobweb"
+  IL_0389: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_038e: brfalse IL_0407
+  IL_0393: ldarg.0
+  IL_0394: ldloc.1
+  IL_0395: newobj System.Void Celeste.Cobweb::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_039a: isinst Celeste.Cobweb
+  IL_039f: stloc.s V_6
+  IL_03a1: ldarg.0
+  IL_03a2: ldstr "color"
+  IL_03a7: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_03ac: brfalse.s IL_03fd
+  IL_03ae: ldloc.s V_6
+  IL_03b0: ldarg.0
+  IL_03b1: ldstr "color"
+  IL_03b6: ldstr ""
+  IL_03bb: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_03c0: dup
+  IL_03c1: brtrue.s IL_03c7
+  IL_03c3: pop
+  IL_03c4: ldnull
+  IL_03c5: br.s IL_03f8
+  IL_03c7: ldc.i4.s 44
+  IL_03c9: ldc.i4.0
+  IL_03ca: callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)
+  IL_03cf: ldsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__36_0
+  IL_03d4: dup
+  IL_03d5: brtrue.s IL_03ee
+  IL_03d7: pop
+  IL_03d8: ldsfld Celeste.Level/<>c Celeste.Level/<>c::<>9
+  IL_03dd: ldftn Microsoft.Xna.Framework.Color Celeste.Level/<>c::<LoadCustomEntity>b__36_0(System.String)
+  IL_03e3: newobj System.Void System.Func`2<System.String,Microsoft.Xna.Framework.Color>::.ctor(System.Object,System.IntPtr)
+  IL_03e8: dup
+  IL_03e9: stsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__36_0
+  IL_03ee: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.String,Microsoft.Xna.Framework.Color>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
+  IL_03f3: call TSource[] System.Linq.Enumerable::ToArray<Microsoft.Xna.Framework.Color>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_03f8: stfld Microsoft.Xna.Framework.Color[] Celeste.Cobweb::OverrideColors
+  IL_03fd: ldarg.1
+  IL_03fe: ldloc.s V_6
+  IL_0400: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0405: ldc.i4.1
+  IL_0406: ret
+  IL_0407: ldarg.0
+  IL_0408: ldfld System.String Celeste.EntityData::Name
+  IL_040d: ldstr "movingPlatform"
+  IL_0412: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0417: brfalse.s IL_0455
+  IL_0419: ldarg.0
+  IL_041a: ldloc.1
+  IL_041b: newobj System.Void Celeste.MovingPlatform::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_0420: isinst Celeste.MovingPlatform
+  IL_0425: stloc.s V_7
+  IL_0427: ldarg.0
+  IL_0428: ldstr "texture"
+  IL_042d: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_0432: brfalse.s IL_044b
+  IL_0434: ldloc.s V_7
+  IL_0436: ldarg.0
+  IL_0437: ldstr "texture"
+  IL_043c: ldstr ""
+  IL_0441: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0446: stfld System.String Celeste.MovingPlatform::OverrideTexture
+  IL_044b: ldarg.1
+  IL_044c: ldloc.s V_7
+  IL_044e: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0453: ldc.i4.1
+  IL_0454: ret
+  IL_0455: ldarg.0
+  IL_0456: ldfld System.String Celeste.EntityData::Name
+  IL_045b: ldstr "sinkingPlatform"
+  IL_0460: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0465: brfalse.s IL_04a3
+  IL_0467: ldarg.0
+  IL_0468: ldloc.1
+  IL_0469: newobj System.Void Celeste.SinkingPlatform::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_046e: isinst Celeste.SinkingPlatform
+  IL_0473: stloc.s V_8
+  IL_0475: ldarg.0
+  IL_0476: ldstr "texture"
+  IL_047b: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_0480: brfalse.s IL_0499
+  IL_0482: ldloc.s V_8
+  IL_0484: ldarg.0
+  IL_0485: ldstr "texture"
+  IL_048a: ldstr ""
+  IL_048f: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0494: stfld System.String Celeste.SinkingPlatform::OverrideTexture
+  IL_0499: ldarg.1
+  IL_049a: ldloc.s V_8
+  IL_049c: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_04a1: ldc.i4.1
+  IL_04a2: ret
+  IL_04a3: ldarg.0
+  IL_04a4: ldfld System.String Celeste.EntityData::Name
+  IL_04a9: ldstr "crumbleBlock"
+  IL_04ae: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_04b3: brfalse.s IL_04f1
+  IL_04b5: ldarg.0
+  IL_04b6: ldloc.1
+  IL_04b7: newobj System.Void Celeste.CrumblePlatform::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_04bc: isinst Celeste.CrumblePlatform
+  IL_04c1: stloc.s V_9
+  IL_04c3: ldarg.0
+  IL_04c4: ldstr "texture"
+  IL_04c9: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_04ce: brfalse.s IL_04e7
+  IL_04d0: ldloc.s V_9
+  IL_04d2: ldarg.0
+  IL_04d3: ldstr "texture"
+  IL_04d8: ldstr ""
+  IL_04dd: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_04e2: stfld System.String Celeste.CrumblePlatform::OverrideTexture
+  IL_04e7: ldarg.1
+  IL_04e8: ldloc.s V_9
+  IL_04ea: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_04ef: ldc.i4.1
+  IL_04f0: ret
+  IL_04f1: ldarg.0
+  IL_04f2: ldfld System.String Celeste.EntityData::Name
+  IL_04f7: ldstr "wire"
+  IL_04fc: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0501: brfalse.s IL_053f
+  IL_0503: ldarg.0
+  IL_0504: ldloc.1
+  IL_0505: newobj System.Void Celeste.Wire::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::CacheEntityData(Monocle.Entity,Celeste.EntityData) @ TAS.EverestInterop.EntityDataHelper::ModLoadCustomEntity
+  IL_050a: stloc.s V_10
+  IL_050c: ldarg.0
+  IL_050d: ldstr "color"
+  IL_0512: callvirt System.Boolean Celeste.EntityData::Has(System.String)
+  IL_0517: brfalse.s IL_0535
+  IL_0519: ldloc.s V_10
+  IL_051b: ldarg.0
+  IL_051c: ldstr "color"
+  IL_0521: ldloca.s V_11
+  IL_0523: initobj Microsoft.Xna.Framework.Color
+  IL_0529: ldloc.s V_11
+  IL_052b: callvirt Microsoft.Xna.Framework.Color Celeste.EntityData::HexColor(System.String,Microsoft.Xna.Framework.Color)
+  IL_0530: stfld Microsoft.Xna.Framework.Color Celeste.Wire::Color
+  IL_0535: ldarg.1
+  IL_0536: ldloc.s V_10
+  IL_0538: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_053d: ldc.i4.1
+  IL_053e: ret
+  IL_053f: ldsfld System.Collections.Generic.HashSet`1<System.String> Celeste.Level::_LoadStrings
+  IL_0544: ldarg.0
+  IL_0545: ldfld System.String Celeste.EntityData::Name
+  IL_054a: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Contains(T)
+  IL_054f: brtrue.s IL_05bd
+  IL_0551: ldc.i4.3
+  IL_0552: ldstr "LoadLevel"
+  IL_0557: ldloca.s V_12
+  IL_0559: ldc.i4.s 41
+  IL_055b: ldc.i4.3
+  IL_055c: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor(System.Int32,System.Int32)
+  IL_0561: ldloca.s V_12
+  IL_0563: ldstr "Failed loading entity "
+  IL_0568: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_056d: ldloca.s V_12
+  IL_056f: ldarg.0
+  IL_0570: ldfld System.String Celeste.EntityData::Name
+  IL_0575: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
+  IL_057a: ldloca.s V_12
+  IL_057c: ldstr ". Room: "
+  IL_0581: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_0586: ldloca.s V_12
+  IL_0588: ldarg.0
+  IL_0589: ldfld Celeste.LevelData Celeste.EntityData::Level
+  IL_058e: ldfld System.String Celeste.LevelData::Name
+  IL_0593: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
+  IL_0598: ldloca.s V_12
+  IL_059a: ldstr " Position: "
+  IL_059f: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_05a4: ldloca.s V_12
+  IL_05a6: ldarg.0
+  IL_05a7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_05ac: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<Microsoft.Xna.Framework.Vector2>(T)
+  IL_05b1: ldloca.s V_12
+  IL_05b3: call System.String System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear()
+  IL_05b8: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
+  IL_05bd: ldc.i4.0
+  IL_05be: ret

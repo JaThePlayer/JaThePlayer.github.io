@@ -1,0 +1,181 @@
+IL Diff: System.Void Celeste.Mod.UI.CriticalErrorHandler::Update()
++ IL_0000: ldc.i4 2450 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldc.i4 51361868 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  |-> retrieves System.Void TAS.EverestInterop.CriticalErrorHandlerFixer/<>c::<Load>b__3_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.IOverlayHandler
+  IL_000b: stloc.0
+  IL_000c: ldloc.0
+  IL_000d: brfalse.s IL_0028
+  IL_000f: ldloc.0
+  IL_0010: callvirt Celeste.Overlay Celeste.IOverlayHandler::get_Overlay()
+  IL_0015: ldarg.0
+  IL_0016: beq.s IL_0028
+  IL_0018: ldloc.0
+  IL_0019: callvirt Celeste.Overlay Celeste.IOverlayHandler::get_Overlay()
+  IL_001e: brfalse.s IL_0021
+  IL_0020: ret
+  IL_0021: ldloc.0
+  IL_0022: ldarg.0
+  IL_0023: callvirt System.Void Celeste.IOverlayHandler::set_Overlay(Celeste.Overlay)
+  IL_0028: ldarg.0
+  IL_0029: callvirt System.Boolean Celeste.Mod.UI.CriticalErrorHandler::get_UsePlayerSprite()
+  IL_002e: brfalse IL_0225
+  IL_0033: ldarg.0
+  IL_0034: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_0039: brfalse IL_0225
+  IL_003e: ldarg.0
+  IL_003f: ldfld Celeste.PlayerHair Celeste.Mod.UI.CriticalErrorHandler::playerHair
+  IL_0044: brfalse IL_0225
+  IL_0049: ldarg.0
+  IL_004a: ldfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::playerShouldTeabag
+  IL_004f: brfalse IL_0100
+  IL_0054: ldarg.0
+  IL_0055: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_005a: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_005f: ldstr "rollGetUp"
+  IL_0064: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0069: brfalse IL_019d
+  IL_006e: ldarg.0
+  IL_006f: ldarg.0
+  IL_0070: ldfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_0075: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_007a: sub
+  IL_007b: stfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_0080: ldarg.0
+  IL_0081: ldfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_0086: ldc.r4 0
+  IL_008b: bgt.un.s IL_00da
+  IL_008d: ldarg.0
+  IL_008e: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_0093: ldarg.0
+  IL_0094: ldfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::isCrouched
+  IL_0099: brtrue.s IL_00ac
+  IL_009b: ldc.r4 1.4
+  IL_00a0: ldc.r4 0.6
+  IL_00a5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00aa: br.s IL_00bb
+  IL_00ac: ldc.r4 0.8
+  IL_00b1: ldc.r4 1.2
+  IL_00b6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00bb: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00c0: ldarg.0
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::isCrouched
+  IL_00c7: ldc.i4.0
+  IL_00c8: ceq
+  IL_00ca: stfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::isCrouched
+  IL_00cf: ldarg.0
+  IL_00d0: ldc.r4 0.12
+  IL_00d5: stfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_00da: ldarg.0
+  IL_00db: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_00e0: ldarg.0
+  IL_00e1: ldfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::isCrouched
+  IL_00e6: brtrue.s IL_00ef
+  IL_00e8: ldstr "idle"
+  IL_00ed: br.s IL_00f4
+  IL_00ef: ldstr "duck"
+  IL_00f4: ldc.i4.0
+  IL_00f5: ldc.i4.0
+  IL_00f6: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00fb: br IL_019d
+  IL_0100: ldarg.0
+  IL_0101: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_0106: callvirt System.String Monocle.Sprite::get_LastAnimationID()
+  IL_010b: ldstr "roll"
+  IL_0110: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0115: brfalse.s IL_0129
+  IL_0117: ldarg.0
+  IL_0118: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_011d: ldstr "roll"
+  IL_0122: ldc.i4.0
+  IL_0123: ldc.i4.0
+  IL_0124: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0129: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveX
+  IL_012e: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0133: brtrue.s IL_014d
+  IL_0135: ldsfld Monocle.VirtualButton Celeste.Input::MenuLeft
+  IL_013a: callvirt System.Boolean Monocle.VirtualButton::get_Check()
+  IL_013f: brtrue.s IL_014d
+  IL_0141: ldsfld Monocle.VirtualButton Celeste.Input::MenuRight
+  IL_0146: callvirt System.Boolean Monocle.VirtualButton::get_Check()
+  IL_014b: brfalse.s IL_0161
+  IL_014d: ldarg.0
+  IL_014e: ldarg.0
+  IL_014f: ldfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_0154: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0159: add
+  IL_015a: stfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_015f: br.s IL_016c
+  IL_0161: ldarg.0
+  IL_0162: ldc.r4 0
+  IL_0167: stfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_016c: ldarg.0
+  IL_016d: ldfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_0172: ldc.r4 5
+  IL_0177: blt.un.s IL_019d
+  IL_0179: ldarg.0
+  IL_017a: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_017f: ldstr "rollGetUp"
+  IL_0184: ldc.i4.0
+  IL_0185: ldc.i4.0
+  IL_0186: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_018b: ldarg.0
+  IL_018c: ldc.i4.1
+  IL_018d: stfld System.Boolean Celeste.Mod.UI.CriticalErrorHandler::playerShouldTeabag
+  IL_0192: ldarg.0
+  IL_0193: ldc.r4 0
+  IL_0198: stfld System.Single Celeste.Mod.UI.CriticalErrorHandler::crouchTimer
+  IL_019d: ldarg.0
+  IL_019e: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_01a3: callvirt System.Void Monocle.Component::Update()
+  IL_01a8: ldarg.0
+  IL_01a9: ldfld Celeste.PlayerHair Celeste.Mod.UI.CriticalErrorHandler::playerHair
+  IL_01ae: callvirt System.Void Monocle.Component::Update()
+  IL_01b3: ldarg.0
+  IL_01b4: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_01b9: brfalse.s IL_0225
+  IL_01bb: ldarg.0
+  IL_01bc: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_01c1: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01c6: ldarg.0
+  IL_01c7: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_01cc: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01d1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01d6: ldc.r4 1
+  IL_01db: ldc.r4 1.75
+  IL_01e0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01e5: mul
+  IL_01e6: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_01eb: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01f0: ldarg.0
+  IL_01f1: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_01f6: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01fb: ldarg.0
+  IL_01fc: ldfld Celeste.PlayerSprite Celeste.Mod.UI.CriticalErrorHandler::playerSprite
+  IL_0201: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0206: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020b: ldc.r4 1
+  IL_0210: ldc.r4 1.75
+  IL_0215: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_021a: mul
+  IL_021b: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0220: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0225: ldarg.0
+  IL_0226: ldfld System.Single Celeste.Overlay::Fade
+  IL_022b: ldc.r4 1
+  IL_0230: bne.un.s IL_0243
+  IL_0232: ldarg.0
+  IL_0233: ldfld Celeste.TextMenu Celeste.Mod.UI.CriticalErrorHandler::optMenu
+  IL_0238: dup
+  IL_0239: brtrue.s IL_023e
+  IL_023b: pop
+  IL_023c: br.s IL_0243
+  IL_023e: callvirt System.Void Monocle.Entity::Update()
+  IL_0243: ldarg.0
+  IL_0244: call System.Void Monocle.Entity::Update()
+  IL_0249: ret

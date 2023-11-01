@@ -1,0 +1,96 @@
+IL Diff: System.Void Celeste.DustGraphic::.ctor(System.Boolean,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldc.r4 1
+  IL_0006: stfld System.Single Celeste.DustGraphic::Scale
+  IL_000b: ldarg.0
+  IL_000c: newobj System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::.ctor()
+  IL_0011: stfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_0016: ldarg.0
+  IL_0017: newobj System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::.ctor()
+  IL_001c: stfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::LeftNodes
+  IL_0021: ldarg.0
+  IL_0022: newobj System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::.ctor()
+  IL_0027: stfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::RightNodes
+  IL_002c: ldarg.0
+  IL_002d: newobj System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::.ctor()
+  IL_0032: stfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::TopNodes
+  IL_0037: ldarg.0
+  IL_0038: newobj System.Void System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::.ctor()
+  IL_003d: stfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::BottomNodes
+  IL_0042: ldarg.0
+  IL_0043: ldc.i4.1
+  IL_0044: stfld System.Int32 Celeste.DustGraphic::EyeFlip
+  IL_0049: ldarg.0
+  IL_004a: ldc.i4.1
+  IL_004b: stfld System.Boolean Celeste.DustGraphic::leftEyeVisible
+  IL_0050: ldarg.0
+  IL_0051: ldc.i4.1
+  IL_0052: stfld System.Boolean Celeste.DustGraphic::rightEyeVisible
+  IL_0057: ldarg.0
+  IL_0058: ldc.i4.1
+  IL_0059: ldc.i4.1
+  IL_005a: call System.Void Monocle.Component::.ctor(System.Boolean,System.Boolean)
+  IL_005f: ldarg.0
+  IL_0060: ldarg.1
+  IL_0061: stfld System.Boolean Celeste.DustGraphic::ignoreSolids
+  IL_0066: ldarg.0
+  IL_0067: ldarg.2
+  IL_0068: stfld System.Boolean Celeste.DustGraphic::autoControlEyes
+  IL_006d: ldarg.0
+  IL_006e: ldarg.3
+  IL_006f: stfld System.Boolean Celeste.DustGraphic::autoExpandDust
+  IL_0074: ldarg.0
+  IL_0075: ldsfld System.Random Monocle.Calc::Random
+  IL_007a: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_007f: ldstr "danger/dustcreature/center"
+  IL_0084: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0089: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_008e: stfld Monocle.MTexture Celeste.DustGraphic::center
+  IL_0093: ldarg.0
+  IL_0094: ldsfld System.Random Monocle.Calc::Random
+  IL_0099: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_009e: ldc.r4 4
+  IL_00a3: mul
+  IL_00a4: stfld System.Single Celeste.DustGraphic::offset
+  IL_00a9: ldarg.0
+  IL_00aa: ldsfld System.Random Monocle.Calc::Random
+  IL_00af: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_00b4: stfld System.Single Celeste.DustGraphic::timer
+  IL_00b9: ldarg.0
+  IL_00ba: ldarg.0
+  IL_00bb: ldsfld System.Random Monocle.Calc::Random
+  IL_00c0: ldc.r4 6.2831855
+  IL_00c5: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_00ca: ldc.r4 1
+  IL_00cf: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_00d4: dup
+  IL_00d5: stloc.0
+  IL_00d6: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::EyeDirection
+  IL_00db: ldloc.0
+  IL_00dc: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::EyeTargetDirection
+  IL_00e1: ldarg.0
+  IL_00e2: ldsfld System.Random Monocle.Calc::Random
+  IL_00e7: ldc.i4 128
+  IL_00ec: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_00f1: stfld System.Int32 Celeste.DustGraphic::eyeTextureIndex
+  IL_00f6: ldarg.0
+  IL_00f7: ldc.i4.1
+  IL_00f8: stfld System.Boolean Celeste.DustGraphic::eyesExist
+  IL_00fd: ldarg.2
+  IL_00fe: brfalse.s IL_012a
+  IL_0100: ldarg.0
+  IL_0101: ldsfld System.Random Monocle.Calc::Random
+  IL_0106: ldc.r4 0.5
+  IL_010b: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_0110: stfld System.Boolean Celeste.DustGraphic::eyesExist
+  IL_0115: ldarg.0
+  IL_0116: ldsfld System.Random Monocle.Calc::Random
+  IL_011b: ldc.r4 0.3
+  IL_0120: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_0125: stfld System.Boolean Celeste.DustGraphic::eyesFollowPlayer
+  IL_012a: ldarg.0
+  IL_012b: ldsfld System.Random Monocle.Calc::Random
+  IL_0130: callvirt System.Int32 System.Random::Next()
+  IL_0135: stfld System.Int32 Celeste.DustGraphic::randomSeed
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_013a: ret

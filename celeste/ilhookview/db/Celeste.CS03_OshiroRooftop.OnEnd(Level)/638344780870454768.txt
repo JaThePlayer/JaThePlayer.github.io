@@ -1,0 +1,120 @@
+IL Diff: System.Void Celeste.CS03_OshiroRooftop::OnEnd(Celeste.Level)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldc.r4 0
+  IL_0007: dup
+  IL_0008: stloc.0
+  IL_0009: stfld System.Single Celeste.CS03_OshiroRooftop::anxietyFlicker
+  IL_000e: ldloc.0
+  IL_000f: dup
+  IL_0010: stloc.0
+  IL_0011: stfld System.Single Celeste.CS03_OshiroRooftop::anxiety
+  IL_0016: ldloc.0
+  IL_0017: call System.Void Celeste.Distort::set_Anxiety(System.Single)
+  IL_001c: ldarg.0
+  IL_001d: ldfld Celeste.BadelineDummy Celeste.CS03_OshiroRooftop::evil
+  IL_0022: brfalse.s IL_0030
+  IL_0024: ldarg.1
+  IL_0025: ldarg.0
+  IL_0026: ldfld Celeste.BadelineDummy Celeste.CS03_OshiroRooftop::evil
+  IL_002b: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_0030: ldarg.0
+  IL_0031: ldarg.0
+  IL_0032: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0037: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_003c: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0041: stfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_004c: brfalse IL_00e6
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_0057: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_005c: ldc.i4.0
+  IL_005d: stfld System.Boolean Monocle.StateMachine::Locked
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_0068: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_006d: ldc.i4.0
+  IL_006e: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0073: ldarg.0
+  IL_0074: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_0079: ldarg.1
+  IL_007a: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_007f: stloc.1
+  IL_0080: ldloca.s V_1
+  IL_0082: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0087: conv.r4
+  IL_0088: ldc.r4 170
+  IL_008d: add
+  IL_008e: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_0093: ldarg.0
+  IL_0094: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_0099: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_009e: ldc.r4 0
+  IL_00a3: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a8: br.s IL_00c3
+  IL_00aa: ldarg.0
+  IL_00ab: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_00b0: dup
+  IL_00b1: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00b6: stloc.0
+  IL_00b7: ldloc.0
+  IL_00b8: ldc.r4 1
+  IL_00bd: sub
+  IL_00be: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_00c3: ldarg.0
+  IL_00c4: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_00c9: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_00ce: brtrue.s IL_00aa
+  IL_00d0: ldarg.1
+  IL_00d1: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00d6: ldarg.0
+  IL_00d7: ldfld Celeste.Player Celeste.CS03_OshiroRooftop::player
+  IL_00dc: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::get_CameraTarget()
+  IL_00e1: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_00e6: ldarg.0
+  IL_00e7: ldfld System.Boolean Celeste.CutsceneEntity::WasSkipped
+  IL_00ec: brfalse.s IL_00f4
+  IL_00ee: ldarg.0
+  IL_00ef: callvirt System.Void Celeste.CS03_OshiroRooftop::SetChaseMusic()
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld Celeste.NPC Celeste.CS03_OshiroRooftop::oshiro
+  IL_00fa: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_00ff: ldarg.0
+  IL_0100: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0105: ldarg.0
+  IL_0106: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CS03_OshiroRooftop::bossSpawnPosition
+  IL_010b: ldc.i4.1
+  IL_010c: newobj System.Void Celeste.AngryOshiro::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0111: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0116: ldarg.1
+  IL_0117: ldfld Celeste.Session Celeste.Level::Session
+  IL_011c: ldarg.1
+  IL_011d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0122: stloc.1
+  IL_0123: ldloca.s V_1
+  IL_0125: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_012a: conv.r4
+  IL_012b: ldc.r4 170
+  IL_0130: add
+  IL_0131: ldarg.1
+  IL_0132: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0137: stloc.1
+  IL_0138: ldloca.s V_1
+  IL_013a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_013f: ldc.i4 160
+  IL_0144: add
+  IL_0145: conv.r4
+  IL_0146: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_014b: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0150: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_0155: ldarg.1
+  IL_0156: ldfld Celeste.Session Celeste.Level::Session
+  IL_015b: ldstr "oshiro_resort_roof"
+  IL_0160: ldc.i4.1
+  IL_0161: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0166: ret

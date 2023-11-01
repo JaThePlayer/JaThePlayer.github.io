@@ -1,0 +1,204 @@
+IL Diff: System.Boolean Celeste.LevelEnter/<Routine>d__5::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.LevelEnter Celeste.LevelEnter/<Routine>d__5::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0032,IL_0107,IL_015d,IL_01d7,IL_01f7,IL_0218,IL_0238
+  IL_0030: ldc.i4.0
+  IL_0031: ret
+  IL_0032: ldarg.0
+  IL_0033: ldc.i4.m1
+  IL_0034: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0039: ldarg.0
+  IL_003a: ldc.i4.m1
+  IL_003b: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<area>5__2
+  IL_0040: ldloc.1
+  IL_0041: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_0046: ldfld System.Boolean Celeste.Session::StartedFromBeginning
+  IL_004b: brfalse IL_00e5
+  IL_0050: ldloc.1
+  IL_0051: ldfld System.Boolean Celeste.LevelEnter::fromSaveData
+  IL_0056: brtrue IL_00e5
+  IL_005b: ldloc.1
+  IL_005c: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_0061: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0066: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_006b: brtrue IL_00e5
+  IL_0070: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0075: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_007a: ldloc.1
+  IL_007b: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_0080: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0085: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_008a: callvirt T System.Collections.Generic.List`1<Celeste.AreaStats>::get_Item(System.Int32)
+  IL_008f: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
+  IL_0094: ldc.i4.0
+  IL_0095: ldelem.ref
+  IL_0096: ldfld System.Boolean Celeste.AreaModeStats::Completed
+  IL_009b: brfalse.s IL_00a9
+  IL_009d: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00a2: ldfld System.Boolean Celeste.SaveData::DebugMode
+  IL_00a7: brfalse.s IL_00e5
+  IL_00a9: ldloc.1
+  IL_00aa: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_00af: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00b4: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00b9: ldc.i4.1
+  IL_00ba: blt.s IL_00e5
+  IL_00bc: ldloc.1
+  IL_00bd: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_00c2: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00c7: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00cc: ldc.i4.6
+  IL_00cd: bgt.s IL_00e5
+  IL_00cf: ldarg.0
+  IL_00d0: ldloc.1
+  IL_00d1: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_00d6: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00db: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00e0: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<area>5__2
+  IL_00e5: ldarg.0
+  IL_00e6: ldfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<area>5__2
+  IL_00eb: ldc.i4.0
+  IL_00ec: blt.s IL_0164
+  IL_00ee: ldarg.0
+  IL_00ef: ldc.r4 1
+  IL_00f4: box System.Single
+  IL_00f9: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_00fe: ldarg.0
+  IL_00ff: ldc.i4.1
+  IL_0100: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0105: ldc.i4.1
+  IL_0106: ret
+  IL_0107: ldarg.0
+  IL_0108: ldc.i4.m1
+  IL_0109: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_010e: ldloc.1
+  IL_010f: ldloc.1
+  IL_0110: ldstr "postcard_area_"
+  IL_0115: ldarg.0
+  IL_0116: ldfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<area>5__2
+  IL_011b: box System.Int32
+  IL_0120: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0125: ldnull
+  IL_0126: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_012b: ldarg.0
+  IL_012c: ldfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<area>5__2
+  IL_0131: newobj System.Void Celeste.Postcard::.ctor(System.String,System.Int32)
+  IL_0136: dup
+  IL_0137: stloc.2
+  IL_0138: stfld Celeste.Postcard Celeste.LevelEnter::postcard
+  IL_013d: ldloc.2
+  IL_013e: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0143: ldarg.0
+  IL_0144: ldloc.1
+  IL_0145: ldfld Celeste.Postcard Celeste.LevelEnter::postcard
+  IL_014a: callvirt System.Collections.IEnumerator Celeste.Postcard::DisplayRoutine()
+  IL_014f: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_0154: ldarg.0
+  IL_0155: ldc.i4.2
+  IL_0156: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_015b: ldc.i4.1
+  IL_015c: ret
+  IL_015d: ldarg.0
+  IL_015e: ldc.i4.m1
+  IL_015f: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0164: ldloc.1
+  IL_0165: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_016a: ldfld System.Boolean Celeste.Session::StartedFromBeginning
+  IL_016f: brfalse IL_0246
+  IL_0174: ldloc.1
+  IL_0175: ldfld System.Boolean Celeste.LevelEnter::fromSaveData
+  IL_017a: brtrue IL_0246
+  IL_017f: ldloc.1
+  IL_0180: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_0185: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_018a: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_018f: ldc.i4.1
+  IL_0190: bne.un IL_0246
+  IL_0195: ldarg.0
+  IL_0196: ldloc.1
+  IL_0197: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_019c: newobj System.Void Celeste.LevelEnter/BSideTitle::.ctor(Celeste.Session)
+  IL_01a1: stfld Celeste.LevelEnter/BSideTitle Celeste.LevelEnter/<Routine>d__5::<title>5__3
++ IL_0000: ldarg.0 @ Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::IL_LevelEnter_Routine
++ IL_0000: ldfld Celeste.LevelEnter Celeste.LevelEnter/<Routine>d__5::<>4__this @ Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::IL_LevelEnter_Routine
++ IL_0000: call System.Void Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::AddBSideSkip(Celeste.LevelEnter) @ Celeste.Mod.SSMQoLMod.Modifications.SkipControllerHooks::IL_LevelEnter_Routine
+  IL_01a6: ldloc.1
+  IL_01a7: ldarg.0
+  IL_01a8: ldfld Celeste.LevelEnter/BSideTitle Celeste.LevelEnter/<Routine>d__5::<title>5__3
+  IL_01ad: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01b2: ldstr "event:/ui/main/bside_intro_text"
+  IL_01b7: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_01bc: pop
+  IL_01bd: ldarg.0
+  IL_01be: ldarg.0
+  IL_01bf: ldfld Celeste.LevelEnter/BSideTitle Celeste.LevelEnter/<Routine>d__5::<title>5__3
+  IL_01c4: callvirt System.Collections.IEnumerator Celeste.LevelEnter/BSideTitle::EaseIn()
+  IL_01c9: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_01ce: ldarg.0
+  IL_01cf: ldc.i4.3
+  IL_01d0: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_01d5: ldc.i4.1
+  IL_01d6: ret
+  IL_01d7: ldarg.0
+  IL_01d8: ldc.i4.m1
+  IL_01d9: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_01de: ldarg.0
+  IL_01df: ldc.r4 0.25
+  IL_01e4: box System.Single
+  IL_01e9: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_01ee: ldarg.0
+  IL_01ef: ldc.i4.4
+  IL_01f0: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_01f5: ldc.i4.1
+  IL_01f6: ret
+  IL_01f7: ldarg.0
+  IL_01f8: ldc.i4.m1
+  IL_01f9: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_01fe: ldarg.0
+  IL_01ff: ldarg.0
+  IL_0200: ldfld Celeste.LevelEnter/BSideTitle Celeste.LevelEnter/<Routine>d__5::<title>5__3
+  IL_0205: callvirt System.Collections.IEnumerator Celeste.LevelEnter/BSideTitle::EaseOut()
+  IL_020a: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_020f: ldarg.0
+  IL_0210: ldc.i4.5
+  IL_0211: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0216: ldc.i4.1
+  IL_0217: ret
+  IL_0218: ldarg.0
+  IL_0219: ldc.i4.m1
+  IL_021a: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_021f: ldarg.0
+  IL_0220: ldc.r4 0.25
+  IL_0225: box System.Single
+  IL_022a: stfld System.Object Celeste.LevelEnter/<Routine>d__5::<>2__current
+  IL_022f: ldarg.0
+  IL_0230: ldc.i4.6
+  IL_0231: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_0236: ldc.i4.1
+  IL_0237: ret
+  IL_0238: ldarg.0
+  IL_0239: ldc.i4.m1
+  IL_023a: stfld System.Int32 Celeste.LevelEnter/<Routine>d__5::<>1__state
+  IL_023f: ldarg.0
+  IL_0240: ldnull
+  IL_0241: stfld Celeste.LevelEnter/BSideTitle Celeste.LevelEnter/<Routine>d__5::<title>5__3
+  IL_0246: ldloc.1
+  IL_0247: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_024c: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0251: call Celeste.AreaData Celeste.AreaData::Get(Celeste.AreaKey)
+  IL_0256: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleBaseColor
+  IL_025b: call System.Void Celeste.Input::SetLightbarColor(Microsoft.Xna.Framework.Color)
+  IL_0260: ldloc.1
+  IL_0261: ldfld Celeste.Session Celeste.LevelEnter::session
+  IL_0266: ldloca.s V_3
+  IL_0268: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_026e: ldloc.3
+  IL_026f: newobj System.Void Celeste.LevelLoader::.ctor(Celeste.Session,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_0274: call System.Void Monocle.Engine::set_Scene(Monocle.Scene)
+  IL_0279: ldc.i4.0
+  IL_027a: ret

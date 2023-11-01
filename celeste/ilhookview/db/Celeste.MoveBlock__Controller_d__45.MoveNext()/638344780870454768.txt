@@ -1,0 +1,738 @@
+IL Diff: System.Boolean Celeste.MoveBlock/<Controller>d__45::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.MoveBlock Celeste.MoveBlock/<Controller>d__45::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_003a,IL_0061,IL_00ba,IL_04e1,IL_056a,IL_066c,IL_06b7,IL_0764,IL_07bd
+  IL_0038: ldc.i4.0
+  IL_0039: ret
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.m1
+  IL_003c: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0041: ldloc.1
+  IL_0042: ldc.i4.0
+  IL_0043: stfld System.Boolean Celeste.MoveBlock::triggered
+  IL_0048: ldloc.1
+  IL_0049: ldc.i4.0
+  IL_004a: stfld Celeste.MoveBlock/MovementState Celeste.MoveBlock::state
+  IL_004f: br.s IL_0068
+  IL_0051: ldarg.0
+  IL_0052: ldnull
+  IL_0053: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_0058: ldarg.0
+  IL_0059: ldc.i4.1
+  IL_005a: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_005f: ldc.i4.1
+  IL_0060: ret
+  IL_0061: ldarg.0
+  IL_0062: ldc.i4.m1
+  IL_0063: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0068: ldloc.1
+  IL_0069: ldfld System.Boolean Celeste.MoveBlock::triggered
+  IL_006e: brtrue.s IL_0078
+  IL_0070: ldloc.1
+  IL_0071: callvirt System.Boolean Celeste.Solid::HasPlayerRider()
+  IL_0076: brfalse.s IL_0051
+  IL_0078: ldstr "event:/game/04_cliffside/arrowblock_activate"
+  IL_007d: ldloc.1
+  IL_007e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0083: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0088: pop
+  IL_0089: ldloc.1
+  IL_008a: ldc.i4.1
+  IL_008b: stfld Celeste.MoveBlock/MovementState Celeste.MoveBlock::state
+  IL_0090: ldloc.1
+  IL_0091: ldc.r4 0.2
+  IL_0096: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_009b: ldloc.1
+  IL_009c: callvirt System.Void Celeste.MoveBlock::ActivateParticles()
+  IL_00a1: ldarg.0
+  IL_00a2: ldc.r4 0.2
+  IL_00a7: box System.Single
+  IL_00ac: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_00b1: ldarg.0
+  IL_00b2: ldc.i4.2
+  IL_00b3: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_00b8: ldc.i4.1
+  IL_00b9: ret
+  IL_00ba: ldarg.0
+  IL_00bb: ldc.i4.m1
+  IL_00bc: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_00c1: ldloc.1
+  IL_00c2: ldloc.1
+  IL_00c3: ldfld System.Boolean Celeste.MoveBlock::fast
+  IL_00c8: brtrue.s IL_00d1
+  IL_00ca: ldc.r4 60
+  IL_00cf: br.s IL_00d6
+  IL_00d1: ldc.r4 75
+  IL_00d6: stfld System.Single Celeste.MoveBlock::targetSpeed
+  IL_00db: ldloc.1
+  IL_00dc: ldfld Celeste.SoundSource Celeste.MoveBlock::moveSfx
+  IL_00e1: ldstr "event:/game/04_cliffside/arrowblock_move"
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.Entities.MoveBlockRedirect::MoveBlock_Controller
++ IL_0000: ldstr "event:/CommunalHelperEvents/game/redirectMoveBlock/arrowblock_move" @ Celeste.Mod.CommunalHelper.Entities.MoveBlockRedirect::MoveBlock_Controller
+  IL_00e6: ldnull
+  IL_00e7: ldc.r4 0
+  IL_00ec: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00f1: pop
+  IL_00f2: ldloc.1
+  IL_00f3: ldfld Celeste.SoundSource Celeste.MoveBlock::moveSfx
+  IL_00f8: ldstr "arrow_stop"
+  IL_00fd: ldc.r4 0
+  IL_0102: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0107: pop
+  IL_0108: ldloc.1
+  IL_0109: ldc.i4.0
+  IL_010a: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_010f: ldarg.0
+  IL_0110: ldc.r4 0.15
+  IL_0115: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashTimer>5__2
+  IL_011a: ldarg.0
+  IL_011b: ldc.r4 0.1
+  IL_0120: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashResetTimer>5__3
+  IL_0125: ldarg.0
+  IL_0126: ldc.r4 0.2
+  IL_012b: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_0130: ldloc.1
+  IL_0131: ldfld System.Boolean Celeste.MoveBlock::canSteer
+  IL_0136: brfalse IL_0206
+  IL_013b: ldloc.1
+  IL_013c: ldloc.1
+  IL_013d: ldfld System.Single Celeste.MoveBlock::homeAngle
+  IL_0142: stfld System.Single Celeste.MoveBlock::targetAngle
+  IL_0147: ldloc.1
+  IL_0148: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_014d: ldc.i4.1
+  IL_014e: beq.s IL_0158
+  IL_0150: ldloc.1
+  IL_0151: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_0156: brtrue.s IL_0161
+  IL_0158: ldloc.1
+  IL_0159: callvirt System.Boolean Celeste.Solid::HasPlayerOnTop()
+  IL_015e: stloc.2
+  IL_015f: br.s IL_0168
+  IL_0161: ldloc.1
+  IL_0162: callvirt System.Boolean Celeste.Solid::HasPlayerClimbing()
+  IL_0167: stloc.2
+  IL_0168: ldloc.2
+  IL_0169: brfalse.s IL_018a
+  IL_016b: ldarg.0
+  IL_016c: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_0171: ldc.r4 0
+  IL_0176: ble.un.s IL_018a
+  IL_0178: ldarg.0
+  IL_0179: ldarg.0
+  IL_017a: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_017f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0184: sub
+  IL_0185: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_018a: ldloc.2
+  IL_018b: brfalse.s IL_01fb
+  IL_018d: ldarg.0
+  IL_018e: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_0193: ldc.r4 0
+  IL_0198: bgt.un.s IL_0206
+  IL_019a: ldloc.1
+  IL_019b: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_01a0: ldc.i4.1
+  IL_01a1: beq.s IL_01ab
+  IL_01a3: ldloc.1
+  IL_01a4: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_01a9: brtrue.s IL_01d3
+  IL_01ab: ldloc.1
+  IL_01ac: ldloc.1
+  IL_01ad: ldfld System.Single Celeste.MoveBlock::homeAngle
+  IL_01b2: ldc.r4 0.7853982
+  IL_01b7: ldloc.1
+  IL_01b8: ldfld System.Int32 Celeste.MoveBlock::angleSteerSign
+  IL_01bd: conv.r4
+  IL_01be: mul
+  IL_01bf: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveY
+  IL_01c4: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_01c9: conv.r4
+  IL_01ca: mul
+  IL_01cb: add
+  IL_01cc: stfld System.Single Celeste.MoveBlock::targetAngle
+  IL_01d1: br.s IL_0206
+  IL_01d3: ldloc.1
+  IL_01d4: ldloc.1
+  IL_01d5: ldfld System.Single Celeste.MoveBlock::homeAngle
+  IL_01da: ldc.r4 0.7853982
+  IL_01df: ldloc.1
+  IL_01e0: ldfld System.Int32 Celeste.MoveBlock::angleSteerSign
+  IL_01e5: conv.r4
+  IL_01e6: mul
+  IL_01e7: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveX
+  IL_01ec: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_01f1: conv.r4
+  IL_01f2: mul
+  IL_01f3: add
+  IL_01f4: stfld System.Single Celeste.MoveBlock::targetAngle
+  IL_01f9: br.s IL_0206
+  IL_01fb: ldarg.0
+  IL_01fc: ldc.r4 0.2
+  IL_0201: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<noSteerTimer>5__4
+  IL_0206: ldloc.1
+  IL_0207: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_020c: ldc.r4 0.02
+  IL_0211: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0216: brfalse.s IL_021e
+  IL_0218: ldloc.1
+  IL_0219: callvirt System.Void Celeste.MoveBlock::MoveParticles()
+  IL_021e: ldloc.1
+  IL_021f: ldloc.1
+  IL_0220: ldfld System.Single Celeste.MoveBlock::speed
+  IL_0225: ldloc.1
+  IL_0226: ldfld System.Single Celeste.MoveBlock::targetSpeed
+  IL_022b: ldc.r4 300
+  IL_0230: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0235: mul
+  IL_0236: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_023b: stfld System.Single Celeste.MoveBlock::speed
+  IL_0240: ldloc.1
+  IL_0241: ldloc.1
+  IL_0242: ldfld System.Single Celeste.MoveBlock::angle
+  IL_0247: ldloc.1
+  IL_0248: ldfld System.Single Celeste.MoveBlock::targetAngle
+  IL_024d: ldc.r4 50.265484
+  IL_0252: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0257: mul
+  IL_0258: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_025d: stfld System.Single Celeste.MoveBlock::angle
+  IL_0262: ldloc.1
+  IL_0263: ldfld System.Single Celeste.MoveBlock::angle
+  IL_0268: ldloc.1
+  IL_0269: ldfld System.Single Celeste.MoveBlock::speed
+  IL_026e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0273: stloc.3
+  IL_0274: ldloc.3
+  IL_0275: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_027a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_027f: stloc.s V_4
+  IL_0281: ldc.i4.0
+  IL_0282: stloc.s V_5
+  IL_0284: ldloc.1
+  IL_0285: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_028a: ldc.i4.1
+  IL_028b: beq.s IL_0298
+  IL_028d: ldloc.1
+  IL_028e: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_0293: brtrue IL_0334
+  IL_0298: ldloc.1
+  IL_0299: ldloc.s V_4
+  IL_029b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::XComp(Microsoft.Xna.Framework.Vector2)
+  IL_02a0: callvirt System.Boolean Celeste.MoveBlock::MoveCheck(Microsoft.Xna.Framework.Vector2)
+  IL_02a5: stloc.s V_5
+  IL_02a7: ldloc.1
+  IL_02a8: ldloc.1
+  IL_02a9: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02ae: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_02b3: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_02b8: stfld Celeste.Player Celeste.MoveBlock::noSquish
+  IL_02bd: ldloc.1
+  IL_02be: ldloc.s V_4
+  IL_02c0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02c5: ldc.i4.0
+  IL_02c6: ldnull
+  IL_02c7: callvirt System.Boolean Celeste.Platform::MoveVCollideSolids(System.Single,System.Boolean,System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>)
+  IL_02cc: pop
+  IL_02cd: ldloc.1
+  IL_02ce: ldnull
+  IL_02cf: stfld Celeste.Player Celeste.MoveBlock::noSquish
+  IL_02d4: ldloc.1
+  IL_02d5: ldloc.3
+  IL_02d6: stfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_02db: ldloc.1
+  IL_02dc: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02e1: ldc.r4 0.03
+  IL_02e6: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_02eb: brfalse IL_03ee
+  IL_02f0: ldloc.s V_4
+  IL_02f2: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02f7: ldc.r4 0
+  IL_02fc: ble.un.s IL_030e
+  IL_02fe: ldloc.1
+  IL_02ff: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0304: callvirt System.Void Celeste.MoveBlock::ScrapeParticles(Microsoft.Xna.Framework.Vector2)
+  IL_0309: br IL_03ee
+  IL_030e: ldloc.s V_4
+  IL_0310: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0315: ldc.r4 0
+  IL_031a: bge.un IL_03ee
+  IL_031f: ldloc.1
+  IL_0320: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0325: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_032a: callvirt System.Void Celeste.MoveBlock::ScrapeParticles(Microsoft.Xna.Framework.Vector2)
+  IL_032f: br IL_03ee
+  IL_0334: ldloc.1
+  IL_0335: ldloc.s V_4
+  IL_0337: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::YComp(Microsoft.Xna.Framework.Vector2)
+  IL_033c: callvirt System.Boolean Celeste.MoveBlock::MoveCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0341: stloc.s V_5
+  IL_0343: ldloc.1
+  IL_0344: ldloc.1
+  IL_0345: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_034a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_034f: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0354: stfld Celeste.Player Celeste.MoveBlock::noSquish
+  IL_0359: ldloc.1
+  IL_035a: ldloc.s V_4
+  IL_035c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0361: ldc.i4.0
+  IL_0362: ldnull
+  IL_0363: callvirt System.Boolean Celeste.Platform::MoveHCollideSolids(System.Single,System.Boolean,System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>)
+  IL_0368: pop
+  IL_0369: ldloc.1
+  IL_036a: ldnull
+  IL_036b: stfld Celeste.Player Celeste.MoveBlock::noSquish
+  IL_0370: ldloc.1
+  IL_0371: ldloc.3
+  IL_0372: stfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_0377: ldloc.1
+  IL_0378: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_037d: ldc.r4 0.03
+  IL_0382: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0387: brfalse.s IL_03c2
+  IL_0389: ldloc.s V_4
+  IL_038b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0390: ldc.r4 0
+  IL_0395: ble.un.s IL_03a4
+  IL_0397: ldloc.1
+  IL_0398: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_039d: callvirt System.Void Celeste.MoveBlock::ScrapeParticles(Microsoft.Xna.Framework.Vector2)
+  IL_03a2: br.s IL_03c2
+  IL_03a4: ldloc.s V_4
+  IL_03a6: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_03ab: ldc.r4 0
+  IL_03b0: bge.un.s IL_03c2
+  IL_03b2: ldloc.1
+  IL_03b3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_03b8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_03bd: callvirt System.Void Celeste.MoveBlock::ScrapeParticles(Microsoft.Xna.Framework.Vector2)
+  IL_03c2: ldloc.1
+  IL_03c3: ldfld Celeste.MoveBlock/Directions Celeste.MoveBlock::direction
+  IL_03c8: ldc.i4.3
+  IL_03c9: bne.un.s IL_03ee
+  IL_03cb: ldloc.1
+  IL_03cc: callvirt System.Single Monocle.Entity::get_Top()
+  IL_03d1: ldloc.1
+  IL_03d2: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_03d7: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_03dc: stloc.s V_7
+  IL_03de: ldloca.s V_7
+  IL_03e0: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_03e5: ldc.i4.s 32
+  IL_03e7: add
+  IL_03e8: conv.r4
+  IL_03e9: ble.un.s IL_03ee
+  IL_03eb: ldc.i4.1
+  IL_03ec: stloc.s V_5
+  IL_03ee: ldloc.s V_5
+  IL_03f0: brfalse.s IL_0437
+  IL_03f2: ldloc.1
+  IL_03f3: ldfld Celeste.SoundSource Celeste.MoveBlock::moveSfx
+  IL_03f8: ldstr "arrow_stop"
+  IL_03fd: ldc.r4 1
+  IL_0402: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0407: pop
+  IL_0408: ldarg.0
+  IL_0409: ldc.r4 0.1
+  IL_040e: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashResetTimer>5__3
+  IL_0413: ldarg.0
+  IL_0414: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashTimer>5__2
+  IL_0419: ldc.r4 0
+  IL_041e: ble.un IL_04ed
+  IL_0423: ldarg.0
+  IL_0424: ldarg.0
+  IL_0425: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashTimer>5__2
+  IL_042a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_042f: sub
+  IL_0430: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashTimer>5__2
+  IL_0435: br.s IL_0479
+  IL_0437: ldloc.1
+  IL_0438: ldfld Celeste.SoundSource Celeste.MoveBlock::moveSfx
+  IL_043d: ldstr "arrow_stop"
+  IL_0442: ldc.r4 0
+  IL_0447: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_044c: pop
+  IL_044d: ldarg.0
+  IL_044e: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashResetTimer>5__3
+  IL_0453: ldc.r4 0
+  IL_0458: ble.un.s IL_046e
+  IL_045a: ldarg.0
+  IL_045b: ldarg.0
+  IL_045c: ldfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashResetTimer>5__3
+  IL_0461: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0466: sub
+  IL_0467: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashResetTimer>5__3
+  IL_046c: br.s IL_0479
+  IL_046e: ldarg.0
+  IL_046f: ldc.r4 0.15
+  IL_0474: stfld System.Single Celeste.MoveBlock/<Controller>d__45::<crashTimer>5__2
+  IL_0479: ldloc.1
+  IL_047a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_047f: isinst Celeste.Level
+  IL_0484: stloc.s V_6
+  IL_0486: ldloc.1
+  IL_0487: callvirt System.Single Monocle.Entity::get_Left()
+  IL_048c: ldloc.s V_6
+  IL_048e: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0493: stloc.s V_7
+  IL_0495: ldloca.s V_7
+  IL_0497: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_049c: conv.r4
+  IL_049d: blt.s IL_04ed
+  IL_049f: ldloc.1
+  IL_04a0: callvirt System.Single Monocle.Entity::get_Top()
+  IL_04a5: ldloc.s V_6
+  IL_04a7: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_04ac: stloc.s V_7
+  IL_04ae: ldloca.s V_7
+  IL_04b0: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_04b5: conv.r4
+  IL_04b6: blt.s IL_04ed
+  IL_04b8: ldloc.1
+  IL_04b9: callvirt System.Single Monocle.Entity::get_Right()
+  IL_04be: ldloc.s V_6
+  IL_04c0: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_04c5: stloc.s V_7
+  IL_04c7: ldloca.s V_7
+  IL_04c9: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_04ce: conv.r4
+  IL_04cf: bgt.s IL_04ed
+  IL_04d1: ldarg.0
+  IL_04d2: ldnull
+  IL_04d3: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_04d8: ldarg.0
+  IL_04d9: ldc.i4.3
+  IL_04da: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_04df: ldc.i4.1
+  IL_04e0: ret
+  IL_04e1: ldarg.0
+  IL_04e2: ldc.i4.m1
+  IL_04e3: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_04e8: br IL_0130
+  IL_04ed: ldstr "event:/game/04_cliffside/arrowblock_break"
+  IL_04f2: ldloc.1
+  IL_04f3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_04f8: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_04fd: pop
+  IL_04fe: ldloc.1
+  IL_04ff: ldfld Celeste.SoundSource Celeste.MoveBlock::moveSfx
+  IL_0504: ldc.i4.1
+  IL_0505: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_050a: pop
+  IL_050b: ldloc.1
+  IL_050c: ldc.i4.2
+  IL_050d: stfld Celeste.MoveBlock/MovementState Celeste.MoveBlock::state
+  IL_0512: ldloc.1
+  IL_0513: ldloc.1
+  IL_0514: ldc.r4 0
+  IL_0519: dup
+  IL_051a: stloc.s V_8
+  IL_051c: stfld System.Single Celeste.MoveBlock::targetSpeed
+  IL_0521: ldloc.s V_8
+  IL_0523: stfld System.Single Celeste.MoveBlock::speed
+  IL_0528: ldloc.1
+  IL_0529: ldloc.1
+  IL_052a: ldloc.1
+  IL_052b: ldfld System.Single Celeste.MoveBlock::homeAngle
+  IL_0530: dup
+  IL_0531: stloc.s V_8
+  IL_0533: stfld System.Single Celeste.MoveBlock::targetAngle
+  IL_0538: ldloc.s V_8
+  IL_053a: stfld System.Single Celeste.MoveBlock::angle
+  IL_053f: ldloc.1
+  IL_0540: ldc.r4 0.2
+  IL_0545: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_054a: ldloc.1
+  IL_054b: ldc.i4.1
+  IL_054c: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_0551: ldarg.0
+  IL_0552: ldc.r4 0.2
+  IL_0557: box System.Single
+  IL_055c: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_0561: ldarg.0
+  IL_0562: ldc.i4.4
+  IL_0563: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0568: ldc.i4.1
+  IL_0569: ret
+  IL_056a: ldarg.0
+  IL_056b: ldc.i4.m1
+  IL_056c: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0571: ldloc.1
+  IL_0572: callvirt System.Void Celeste.MoveBlock::BreakParticles()
+  IL_0577: ldarg.0
+  IL_0578: newobj System.Void System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::.ctor()
+  IL_057d: stfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_0582: ldc.i4.0
+  IL_0583: stloc.s V_9
+  IL_0585: br IL_060a
+  IL_058a: ldc.i4.0
+  IL_058b: stloc.s V_10
+  IL_058d: br.s IL_05f9
+  IL_058f: ldloca.s V_11
+  IL_0591: ldloc.s V_9
+  IL_0593: conv.r4
+  IL_0594: ldc.r4 4
+  IL_0599: add
+  IL_059a: ldloc.s V_10
+  IL_059c: conv.r4
+  IL_059d: ldc.r4 4
+  IL_05a2: add
+  IL_05a3: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_05a8: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_05ad: callvirt T Monocle.Pooler::Create<Celeste.MoveBlock/Debris>()
+  IL_05b2: ldloc.1
+  IL_05b3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_05b8: ldloc.s V_11
+  IL_05ba: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05bf: ldloc.1
+  IL_05c0: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_05c5: ldloc.1
+  IL_05c6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.MoveBlock::startPosition
+  IL_05cb: ldloc.s V_11
+  IL_05cd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05d2: callvirt Celeste.MoveBlock/Debris Celeste.MoveBlock/Debris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05d7: stloc.s V_12
+  IL_05d9: ldarg.0
+  IL_05da: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_05df: ldloc.s V_12
+  IL_05e1: callvirt System.Void System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::Add(T)
+  IL_05e6: ldloc.1
+  IL_05e7: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_05ec: ldloc.s V_12
+  IL_05ee: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_05f3: ldloc.s V_10
+  IL_05f5: ldc.i4.8
+  IL_05f6: add
+  IL_05f7: stloc.s V_10
+  IL_05f9: ldloc.s V_10
+  IL_05fb: conv.r4
+  IL_05fc: ldloc.1
+  IL_05fd: callvirt System.Single Monocle.Entity::get_Height()
+  IL_0602: blt.s IL_058f
+  IL_0604: ldloc.s V_9
+  IL_0606: ldc.i4.8
+  IL_0607: add
+  IL_0608: stloc.s V_9
+  IL_060a: ldloc.s V_9
+  IL_060c: conv.r4
+  IL_060d: ldloc.1
+  IL_060e: callvirt System.Single Monocle.Entity::get_Width()
+  IL_0613: blt IL_058a
+  IL_0618: ldloc.1
+  IL_0619: ldloc.1
+  IL_061a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.MoveBlock::startPosition
+  IL_061f: ldloc.1
+  IL_0620: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0625: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_062a: ldloc.1
+  IL_062b: callvirt System.Void Celeste.Platform::DisableStaticMovers()
+  IL_0630: callvirt System.Void Celeste.Platform::MoveStaticMovers(Microsoft.Xna.Framework.Vector2)
+  IL_0635: ldloc.1
+  IL_0636: ldloc.1
+  IL_0637: ldfld Microsoft.Xna.Framework.Vector2 Celeste.MoveBlock::startPosition
+  IL_063c: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0641: ldloc.1
+  IL_0642: ldloc.1
+  IL_0643: ldc.i4.0
+  IL_0644: dup
+  IL_0645: stloc.s V_13
+  IL_0647: stfld System.Boolean Monocle.Entity::Collidable
+  IL_064c: ldloc.s V_13
+  IL_064e: stfld System.Boolean Monocle.Entity::Visible
+  IL_0653: ldarg.0
+  IL_0654: ldc.r4 2.2
+  IL_0659: box System.Single
+  IL_065e: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_0663: ldarg.0
+  IL_0664: ldc.i4.5
+  IL_0665: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_066a: ldc.i4.1
+  IL_066b: ret
+  IL_066c: ldarg.0
+  IL_066d: ldc.i4.m1
+  IL_066e: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0673: ldarg.0
+  IL_0674: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_0679: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::GetEnumerator()
+  IL_067e: stloc.s V_15
+  IL_0680: br.s IL_068e
+  IL_0682: ldloca.s V_15
+  IL_0684: call T System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::get_Current()
+  IL_0689: callvirt System.Void Celeste.MoveBlock/Debris::StopMoving()
+  IL_068e: ldloca.s V_15
+  IL_0690: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::MoveNext()
+  IL_0695: brtrue.s IL_0682
+  IL_0697: leave.s IL_06be
+  IL_0699: ldloca.s V_15
+  IL_069b: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>
+  IL_06a1: callvirt System.Void System.IDisposable::Dispose()
+  IL_06a6: endfinally
+  IL_06a7: ldarg.0
+  IL_06a8: ldnull
+  IL_06a9: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_06ae: ldarg.0
+  IL_06af: ldc.i4.6
+  IL_06b0: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_06b5: ldc.i4.1
+  IL_06b6: ret
+  IL_06b7: ldarg.0
+  IL_06b8: ldc.i4.m1
+  IL_06b9: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_06be: ldloc.1
+  IL_06bf: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Actor>()
+  IL_06c4: brtrue.s IL_06a7
+  IL_06c6: ldloc.1
+  IL_06c7: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_06cc: brtrue.s IL_06a7
+  IL_06ce: ldloc.1
+  IL_06cf: ldc.i4.1
+  IL_06d0: stfld System.Boolean Monocle.Entity::Collidable
+  IL_06d5: ldstr "event:/game/04_cliffside/arrowblock_reform_begin"
+  IL_06da: ldarg.0
+  IL_06db: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_06e0: ldc.i4.0
+  IL_06e1: callvirt T System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::get_Item(System.Int32)
+  IL_06e6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_06eb: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_06f0: stloc.s V_14
+  IL_06f2: ldloc.1
+  IL_06f3: ldarg.0
+  IL_06f4: ldloc.1
+  IL_06f5: ldloc.s V_14
+  IL_06f7: ldarg.0
+  IL_06f8: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_06fd: callvirt System.Collections.IEnumerator Celeste.MoveBlock::SoundFollowsDebrisCenter(FMOD.Studio.EventInstance,System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>)
+  IL_0702: ldc.i4.1
+  IL_0703: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0708: dup
+  IL_0709: stloc.s V_16
+  IL_070b: stfld Monocle.Coroutine Celeste.MoveBlock/<Controller>d__45::<routine>5__6
+  IL_0710: ldloc.s V_16
+  IL_0712: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0717: ldarg.0
+  IL_0718: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_071d: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::GetEnumerator()
+  IL_0722: stloc.s V_15
+  IL_0724: br.s IL_0732
+  IL_0726: ldloca.s V_15
+  IL_0728: call T System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::get_Current()
+  IL_072d: callvirt System.Void Celeste.MoveBlock/Debris::StartShaking()
+  IL_0732: ldloca.s V_15
+  IL_0734: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::MoveNext()
+  IL_0739: brtrue.s IL_0726
+  IL_073b: leave.s IL_074b
+  IL_073d: ldloca.s V_15
+  IL_073f: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>
+  IL_0745: callvirt System.Void System.IDisposable::Dispose()
+  IL_074a: endfinally
+  IL_074b: ldarg.0
+  IL_074c: ldc.r4 0.2
+  IL_0751: box System.Single
+  IL_0756: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_075b: ldarg.0
+  IL_075c: ldc.i4.7
+  IL_075d: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_0762: ldc.i4.1
+  IL_0763: ret
+  IL_0764: ldarg.0
+  IL_0765: ldc.i4.m1
+  IL_0766: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_076b: ldarg.0
+  IL_076c: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_0771: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::GetEnumerator()
+  IL_0776: stloc.s V_15
+  IL_0778: br.s IL_078b
+  IL_077a: ldloca.s V_15
+  IL_077c: call T System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::get_Current()
+  IL_0781: ldc.r4 0.65
+  IL_0786: callvirt System.Void Celeste.MoveBlock/Debris::ReturnHome(System.Single)
+  IL_078b: ldloca.s V_15
+  IL_078d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::MoveNext()
+  IL_0792: brtrue.s IL_077a
+  IL_0794: leave.s IL_07a4
+  IL_0796: ldloca.s V_15
+  IL_0798: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>
+  IL_079e: callvirt System.Void System.IDisposable::Dispose()
+  IL_07a3: endfinally
+  IL_07a4: ldarg.0
+  IL_07a5: ldc.r4 0.6
+  IL_07aa: box System.Single
+  IL_07af: stfld System.Object Celeste.MoveBlock/<Controller>d__45::<>2__current
+  IL_07b4: ldarg.0
+  IL_07b5: ldc.i4.8
+  IL_07b6: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_07bb: ldc.i4.1
+  IL_07bc: ret
+  IL_07bd: ldarg.0
+  IL_07be: ldc.i4.m1
+  IL_07bf: stfld System.Int32 Celeste.MoveBlock/<Controller>d__45::<>1__state
+  IL_07c4: ldarg.0
+  IL_07c5: ldfld Monocle.Coroutine Celeste.MoveBlock/<Controller>d__45::<routine>5__6
+  IL_07ca: callvirt System.Void Monocle.Component::RemoveSelf()
+  IL_07cf: ldarg.0
+  IL_07d0: ldfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_07d5: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.MoveBlock/Debris>::GetEnumerator()
+  IL_07da: stloc.s V_15
+  IL_07dc: br.s IL_07ea
+  IL_07de: ldloca.s V_15
+  IL_07e0: call T System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::get_Current()
+  IL_07e5: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_07ea: ldloca.s V_15
+  IL_07ec: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>::MoveNext()
+  IL_07f1: brtrue.s IL_07de
+  IL_07f3: leave.s IL_0803
+  IL_07f5: ldloca.s V_15
+  IL_07f7: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.MoveBlock/Debris>
+  IL_07fd: callvirt System.Void System.IDisposable::Dispose()
+  IL_0802: endfinally
+  IL_0803: ldarg.0
+  IL_0804: ldnull
+  IL_0805: stfld Monocle.Coroutine Celeste.MoveBlock/<Controller>d__45::<routine>5__6
+  IL_080a: ldstr "event:/game/04_cliffside/arrowblock_reappear"
+  IL_080f: ldloc.1
+  IL_0810: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0815: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_081a: pop
+  IL_081b: ldloc.1
+  IL_081c: ldc.i4.1
+  IL_081d: stfld System.Boolean Monocle.Entity::Visible
+  IL_0822: ldloc.1
+  IL_0823: callvirt System.Void Celeste.Platform::EnableStaticMovers()
+  IL_0828: ldloc.1
+  IL_0829: ldloc.1
+  IL_082a: ldc.r4 0
+  IL_082f: dup
+  IL_0830: stloc.s V_8
+  IL_0832: stfld System.Single Celeste.MoveBlock::targetSpeed
+  IL_0837: ldloc.s V_8
+  IL_0839: stfld System.Single Celeste.MoveBlock::speed
+  IL_083e: ldloc.1
+  IL_083f: ldloc.1
+  IL_0840: ldloc.1
+  IL_0841: ldfld System.Single Celeste.MoveBlock::homeAngle
+  IL_0846: dup
+  IL_0847: stloc.s V_8
+  IL_0849: stfld System.Single Celeste.MoveBlock::targetAngle
+  IL_084e: ldloc.s V_8
+  IL_0850: stfld System.Single Celeste.MoveBlock::angle
+  IL_0855: ldloc.1
+  IL_0856: ldnull
+  IL_0857: stfld Celeste.Player Celeste.MoveBlock::noSquish
+  IL_085c: ldloc.1
+  IL_085d: ldsfld Microsoft.Xna.Framework.Color Celeste.MoveBlock::idleBgFill
+  IL_0862: stfld Microsoft.Xna.Framework.Color Celeste.MoveBlock::fillColor
+  IL_0867: ldloc.1
+  IL_0868: callvirt System.Void Celeste.MoveBlock::UpdateColors()
+  IL_086d: ldloc.1
+  IL_086e: ldc.r4 1
+  IL_0873: stfld System.Single Celeste.MoveBlock::flash
+  IL_0878: ldarg.0
+  IL_0879: ldnull
+  IL_087a: stfld System.Collections.Generic.List`1<Celeste.MoveBlock/Debris> Celeste.MoveBlock/<Controller>d__45::<debris>5__5
+  IL_087f: br IL_0041

@@ -1,0 +1,56 @@
+IL Diff: System.Void Celeste.CliffsideWindFlag::Update()
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: callvirt System.Single Celeste.CliffsideWindFlag::get_wind()
+  IL_000c: ldc.r4 0
+  IL_0011: beq.s IL_0033
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001a: isinst Celeste.Level
+  IL_001f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_0024: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0029: call System.Int32 System.Math::Sign(System.Single)
+  IL_002e: stfld System.Int32 Celeste.CliffsideWindFlag::sign
+  IL_0033: ldarg.0
+  IL_0034: ldarg.0
+  IL_0035: ldfld System.Single Celeste.CliffsideWindFlag::sine
+  IL_003a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_003f: ldc.r4 4
+  IL_0044: ldarg.0
+  IL_0045: callvirt System.Single Celeste.CliffsideWindFlag::get_wind()
+  IL_004a: ldc.r4 4
+  IL_004f: mul
+  IL_0050: add
+  IL_0051: mul
+  IL_0052: ldc.r4 0.8
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Single Celeste.CliffsideWindFlag::random
+  IL_005d: ldc.r4 0.2
+  IL_0062: mul
+  IL_0063: add
+  IL_0064: mul
+  IL_0065: add
+  IL_0066: stfld System.Single Celeste.CliffsideWindFlag::sine
+  IL_006b: ldc.i4.0
+  IL_006c: stloc.0
+  IL_006d: br.s IL_007b
+  IL_006f: ldarg.0
+  IL_0070: ldloc.0
+  IL_0071: ldc.i4.0
+  IL_0072: callvirt System.Void Celeste.CliffsideWindFlag::SetFlagSegmentPosition(System.Int32,System.Boolean)
+  IL_0077: ldloc.0
+  IL_0078: ldc.i4.1
+  IL_0079: add
+  IL_007a: stloc.0
+  IL_007b: ldloc.0
+  IL_007c: ldarg.0
+  IL_007d: ldfld Celeste.CliffsideWindFlag/Segment[] Celeste.CliffsideWindFlag::segments
+  IL_0082: ldlen
+  IL_0083: conv.i4
+  IL_0084: blt.s IL_006f
+  IL_0086: ret

@@ -1,0 +1,118 @@
+IL Diff: System.Void Celeste.Player::Bounce(System.Single)
++ IL_0000: ldc.i4 2583 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 31125365 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils/<>c::<Initialize>b__12_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0006: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_000b: ldc.i4.4
+  IL_000c: bne.un.s IL_0028
+  IL_000e: ldarg.0
+  IL_000f: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0014: brfalse.s IL_0028
+  IL_0016: ldarg.0
+  IL_0017: ldfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_001c: callvirt System.Void Celeste.Booster::PlayerReleased()
+  IL_0021: ldarg.0
+  IL_0022: ldnull
+  IL_0023: stfld Celeste.Booster Celeste.Player::CurrentBooster
+  IL_0028: ldarg.0
+  IL_0029: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_002e: stloc.0
+  IL_002f: ldarg.0
+  IL_0030: ldarg.0
+  IL_0031: ldfld Monocle.Hitbox Celeste.Player::normalHitbox
+  IL_0036: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_003b: ldarg.0
+  IL_003c: ldarg.1
+  IL_003d: ldarg.0
++ IL_0000: call System.Boolean Celeste.Mod.GravityHelper.GravityHelperModule::get_ShouldInvertPlayer() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
++ IL_0000: brfalse.s IL_003e @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
++ IL_0000: call System.Single Monocle.Entity::get_Top() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
++ IL_0000: br.s IL_0043 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
+  IL_003e: call System.Single Monocle.Entity::get_Bottom()
+  IL_0043: sub
+  IL_0044: conv.i4
++ IL_0000: ldc.i4 2584 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
++ IL_0000: ldc.i4 38126603 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
+  |-> retrieves System.Int32 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertIntDelegate>b__24_0(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_Bounce
+  IL_0045: ldnull
+  IL_0046: ldnull
+  IL_0047: call System.Boolean Celeste.Actor::MoveVExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_004c: pop
+  IL_004d: ldarg.0
+  IL_004e: callvirt Celeste.PlayerInventory Celeste.Player::get_Inventory()
+  IL_0053: ldfld System.Boolean Celeste.PlayerInventory::NoRefills
++ IL_0000: ldc.i4 2462 @ ExtendedVariants.Variants.DontRefillDashOnGround::patchNoRefills
++ IL_0000: ldc.i4 53619319 @ ExtendedVariants.Variants.DontRefillDashOnGround::patchNoRefills
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DontRefillDashOnGround::patchNoRefills
+  |-> retrieves System.Boolean ExtendedVariants.Variants.DontRefillDashOnGround::areRefillsOnGroundDisabled(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DontRefillDashOnGround::patchNoRefills
+  IL_0058: brtrue.s IL_0061
+  IL_005a: ldarg.0
+  IL_005b: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_0060: pop
+  IL_0061: ldarg.0
+  IL_0062: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_0067: ldarg.0
+  IL_0068: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_006d: ldc.i4.0
+  IL_006e: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0073: ldarg.0
+  IL_0074: ldc.r4 0
+  IL_0079: stfld System.Single Celeste.Player::jumpGraceTimer
+  IL_007e: ldarg.0
+  IL_007f: ldc.r4 0.2
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: ldc.i4 62119332 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpDuration::<modVarJumpTimer>b__6_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  IL_0084: stfld System.Single Celeste.Player::varJumpTimer
+  IL_0089: ldarg.0
+  IL_008a: ldc.i4.1
+  IL_008b: stfld System.Boolean Celeste.Player::AutoJump
+  IL_0090: ldarg.0
+  IL_0091: ldc.r4 0.1
+  IL_0096: stfld System.Single Celeste.Player::AutoJumpTimer
+  IL_009b: ldarg.0
+  IL_009c: ldc.r4 0
+  IL_00a1: stfld System.Single Celeste.Player::dashAttackTimer
+  IL_00a6: ldarg.0
+  IL_00a7: ldc.r4 0
+  IL_00ac: stfld System.Single Celeste.Player::gliderBoostTimer
+  IL_00b1: ldarg.0
+  IL_00b2: ldc.r4 1.2
+  IL_00b7: stfld System.Single Celeste.Player::wallSlideTimer
+  IL_00bc: ldarg.0
+  IL_00bd: ldc.r4 0
+  IL_00c2: stfld System.Single Celeste.Player::wallBoostTimer
+  IL_00c7: ldarg.0
+  IL_00c8: ldarg.0
+  IL_00c9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00ce: ldc.r4 -140
+  IL_00d3: dup
+  IL_00d4: stloc.1
+  IL_00d5: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00da: ldloc.1
+  IL_00db: stfld System.Single Celeste.Player::varJumpSpeed
+  IL_00e0: ldarg.0
+  IL_00e1: ldc.i4.0
+  IL_00e2: stfld System.Boolean Celeste.Player::launched
+  IL_00e7: ldc.i4.0
+  IL_00e8: ldc.i4.1
+  IL_00e9: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_00ee: ldarg.0
+  IL_00ef: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00f4: ldc.r4 0.6
+  IL_00f9: ldc.r4 1.4
+  IL_00fe: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0103: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0108: ldarg.0
+  IL_0109: ldloc.0
+  IL_010a: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_010f: ret

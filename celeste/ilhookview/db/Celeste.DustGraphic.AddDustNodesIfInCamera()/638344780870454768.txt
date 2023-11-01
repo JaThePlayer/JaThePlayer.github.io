@@ -1,0 +1,400 @@
+IL Diff: System.Void Celeste.DustGraphic::AddDustNodesIfInCamera()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_0006: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Count()
+  IL_000b: ldc.i4.0
+  IL_000c: bgt.s IL_0027
+  IL_000e: ldarg.0
+  IL_000f: callvirt System.Boolean Celeste.DustGraphic::get_InView()
+  IL_0014: brfalse.s IL_0027
+  IL_0016: ldsfld System.Int32 Celeste.DustEdges::DustGraphicEstabledCounter
+  IL_001b: ldc.i4.s 25
+  IL_001d: bgt.s IL_0027
+  IL_001f: ldarg.0
+  IL_0020: callvirt System.Boolean Celeste.DustGraphic::get_Estableshed()
+  IL_0025: brfalse.s IL_0028
+  IL_0027: ret
+  IL_0028: ldarg.0
+  IL_0029: ldfld System.Int32 Celeste.DustGraphic::randomSeed
+  IL_002e: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_0033: ldarg.0
+  IL_0034: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0039: callvirt System.Single Monocle.Entity::get_X()
+  IL_003e: conv.i4
+  IL_003f: stloc.0
+  IL_0040: ldarg.0
+  IL_0041: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0046: callvirt System.Single Monocle.Entity::get_Y()
+  IL_004b: conv.i4
+  IL_004c: stloc.1
+  IL_004d: ldc.r4 1
+  IL_0052: ldc.r4 1
+  IL_0057: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_005c: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0061: stloc.2
+  IL_0062: ldarg.0
+  IL_0063: ldloc.2
+  IL_0064: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0069: neg
+  IL_006a: ldloc.2
+  IL_006b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0070: neg
+  IL_0071: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0076: ldarg.0
+  IL_0077: ldfld System.Boolean Celeste.DustGraphic::ignoreSolids
+  IL_007c: brtrue.s IL_00a0
+  IL_007e: ldarg.0
+  IL_007f: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0084: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0089: ldloc.0
+  IL_008a: ldc.i4.8
+  IL_008b: sub
+  IL_008c: ldloc.1
+  IL_008d: ldc.i4.8
+  IL_008e: sub
+  IL_008f: ldc.i4.8
+  IL_0090: ldc.i4.8
+  IL_0091: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0096: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_009b: ldc.i4.0
+  IL_009c: ceq
+  IL_009e: br.s IL_00a1
+  IL_00a0: ldc.i4.1
+  IL_00a1: callvirt System.Void Celeste.DustGraphic::AddNode(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_00a6: ldarg.0
+  IL_00a7: ldloc.2
+  IL_00a8: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ad: ldloc.2
+  IL_00ae: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b3: neg
+  IL_00b4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld System.Boolean Celeste.DustGraphic::ignoreSolids
+  IL_00bf: brtrue.s IL_00e1
+  IL_00c1: ldarg.0
+  IL_00c2: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00c7: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00cc: ldloc.0
+  IL_00cd: ldloc.1
+  IL_00ce: ldc.i4.8
+  IL_00cf: sub
+  IL_00d0: ldc.i4.8
+  IL_00d1: ldc.i4.8
+  IL_00d2: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00d7: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_00dc: ldc.i4.0
+  IL_00dd: ceq
+  IL_00df: br.s IL_00e2
+  IL_00e1: ldc.i4.1
+  IL_00e2: callvirt System.Void Celeste.DustGraphic::AddNode(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_00e7: ldarg.0
+  IL_00e8: ldloc.2
+  IL_00e9: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ee: neg
+  IL_00ef: ldloc.2
+  IL_00f0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00f5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00fa: ldarg.0
+  IL_00fb: ldfld System.Boolean Celeste.DustGraphic::ignoreSolids
+  IL_0100: brtrue.s IL_0122
+  IL_0102: ldarg.0
+  IL_0103: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0108: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_010d: ldloc.0
+  IL_010e: ldc.i4.8
+  IL_010f: sub
+  IL_0110: ldloc.1
+  IL_0111: ldc.i4.8
+  IL_0112: ldc.i4.8
+  IL_0113: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0118: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_011d: ldc.i4.0
+  IL_011e: ceq
+  IL_0120: br.s IL_0123
+  IL_0122: ldc.i4.1
+  IL_0123: callvirt System.Void Celeste.DustGraphic::AddNode(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_0128: ldarg.0
+  IL_0129: ldloc.2
+  IL_012a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_012f: ldloc.2
+  IL_0130: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0135: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_013a: ldarg.0
+  IL_013b: ldfld System.Boolean Celeste.DustGraphic::ignoreSolids
+  IL_0140: brtrue.s IL_0160
+  IL_0142: ldarg.0
+  IL_0143: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0148: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_014d: ldloc.0
+  IL_014e: ldloc.1
+  IL_014f: ldc.i4.8
+  IL_0150: ldc.i4.8
+  IL_0151: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0156: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Rectangle)
+  IL_015b: ldc.i4.0
+  IL_015c: ceq
+  IL_015e: br.s IL_0161
+  IL_0160: ldc.i4.1
+  IL_0161: callvirt System.Void Celeste.DustGraphic::AddNode(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_0166: ldarg.0
+  IL_0167: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_016c: ldc.i4.0
+  IL_016d: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0172: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0177: brtrue.s IL_018c
+  IL_0179: ldarg.0
+  IL_017a: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_017f: ldc.i4.2
+  IL_0180: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0185: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_018a: brfalse.s IL_01a0
+  IL_018c: ldarg.0
+  IL_018d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::Position
+  IL_0192: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0197: dup
+  IL_0198: ldind.r4
+  IL_0199: ldc.r4 1
+  IL_019e: sub
+  IL_019f: stind.r4
+  IL_01a0: ldarg.0
+  IL_01a1: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_01a6: ldc.i4.1
+  IL_01a7: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_01ac: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_01b1: brtrue.s IL_01c6
+  IL_01b3: ldarg.0
+  IL_01b4: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_01b9: ldc.i4.3
+  IL_01ba: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_01bf: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_01c4: brfalse.s IL_01da
+  IL_01c6: ldarg.0
+  IL_01c7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::Position
+  IL_01cc: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01d1: dup
+  IL_01d2: ldind.r4
+  IL_01d3: ldc.r4 1
+  IL_01d8: add
+  IL_01d9: stind.r4
+  IL_01da: ldarg.0
+  IL_01db: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_01e0: ldc.i4.0
+  IL_01e1: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_01e6: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_01eb: brtrue.s IL_0200
+  IL_01ed: ldarg.0
+  IL_01ee: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_01f3: ldc.i4.1
+  IL_01f4: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_01f9: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_01fe: brfalse.s IL_0214
+  IL_0200: ldarg.0
+  IL_0201: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::Position
+  IL_0206: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020b: dup
+  IL_020c: ldind.r4
+  IL_020d: ldc.r4 1
+  IL_0212: sub
+  IL_0213: stind.r4
+  IL_0214: ldarg.0
+  IL_0215: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_021a: ldc.i4.2
+  IL_021b: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0220: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0225: brtrue.s IL_023a
+  IL_0227: ldarg.0
+  IL_0228: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_022d: ldc.i4.3
+  IL_022e: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0233: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0238: brfalse.s IL_024e
+  IL_023a: ldarg.0
+  IL_023b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::Position
+  IL_0240: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0245: dup
+  IL_0246: ldind.r4
+  IL_0247: ldc.r4 1
+  IL_024c: add
+  IL_024d: stind.r4
+  IL_024e: ldc.i4.0
+  IL_024f: stloc.3
+  IL_0250: ldarg.0
+  IL_0251: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_0256: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::GetEnumerator()
+  IL_025b: stloc.s V_4
+  IL_025d: br.s IL_0271
+  IL_025f: ldloca.s V_4
+  IL_0261: call T System.Collections.Generic.List`1/Enumerator<Celeste.DustGraphic/Node>::get_Current()
+  IL_0266: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_026b: brfalse.s IL_0271
+  IL_026d: ldloc.3
+  IL_026e: ldc.i4.1
+  IL_026f: add
+  IL_0270: stloc.3
+  IL_0271: ldloca.s V_4
+  IL_0273: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.DustGraphic/Node>::MoveNext()
+  IL_0278: brtrue.s IL_025f
+  IL_027a: leave.s IL_028a
+  IL_027c: ldloca.s V_4
+  IL_027e: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.DustGraphic/Node>
+  IL_0284: callvirt System.Void System.IDisposable::Dispose()
+  IL_0289: endfinally
+  IL_028a: ldarg.0
+  IL_028b: ldloc.3
+  IL_028c: ldc.i4.4
+  IL_028d: clt
+  IL_028f: stfld System.Boolean Celeste.DustGraphic::eyesMoveByRotation
+  IL_0294: ldarg.0
+  IL_0295: ldfld System.Boolean Celeste.DustGraphic::autoControlEyes
+  IL_029a: brfalse IL_03f1
+  IL_029f: ldarg.0
+  IL_02a0: ldfld System.Boolean Celeste.DustGraphic::eyesExist
+  IL_02a5: brfalse IL_03f1
+  IL_02aa: ldarg.0
+  IL_02ab: ldfld System.Boolean Celeste.DustGraphic::eyesMoveByRotation
+  IL_02b0: brfalse IL_03f1
+  IL_02b5: ldarg.0
+  IL_02b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_02bb: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_02c0: ldarg.0
+  IL_02c1: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_02c6: ldc.i4.0
+  IL_02c7: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_02cc: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_02d1: brfalse.s IL_02f8
+  IL_02d3: ldarg.0
+  IL_02d4: ldarg.0
+  IL_02d5: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_02da: ldc.r4 -1
+  IL_02df: ldc.r4 -1
+  IL_02e4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02e9: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_02ee: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02f3: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_02f8: ldarg.0
+  IL_02f9: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_02fe: ldc.i4.1
+  IL_02ff: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0304: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0309: brfalse.s IL_0330
+  IL_030b: ldarg.0
+  IL_030c: ldarg.0
+  IL_030d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_0312: ldc.r4 1
+  IL_0317: ldc.r4 -1
+  IL_031c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0321: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0326: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_032b: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_0330: ldarg.0
+  IL_0331: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_0336: ldc.i4.2
+  IL_0337: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_033c: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0341: brfalse.s IL_0368
+  IL_0343: ldarg.0
+  IL_0344: ldarg.0
+  IL_0345: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_034a: ldc.r4 -1
+  IL_034f: ldc.r4 1
+  IL_0354: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0359: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_035e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0363: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_0368: ldarg.0
+  IL_0369: ldfld System.Collections.Generic.List`1<Celeste.DustGraphic/Node> Celeste.DustGraphic::nodes
+  IL_036e: ldc.i4.3
+  IL_036f: callvirt T System.Collections.Generic.List`1<Celeste.DustGraphic/Node>::get_Item(System.Int32)
+  IL_0374: ldfld System.Boolean Celeste.DustGraphic/Node::Enabled
+  IL_0379: brfalse.s IL_03a0
+  IL_037b: ldarg.0
+  IL_037c: ldarg.0
+  IL_037d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_0382: ldc.r4 1
+  IL_0387: ldc.r4 1
+  IL_038c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0391: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0396: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_039b: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03a0: ldloc.3
+  IL_03a1: ldc.i4.0
+  IL_03a2: ble.s IL_03da
+  IL_03a4: ldarg.0
+  IL_03a5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03aa: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_03af: ldc.r4 0
+  IL_03b4: ble.un.s IL_03da
+  IL_03b6: ldarg.0
+  IL_03b7: ldarg.0
+  IL_03b8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03bd: ldloc.3
+  IL_03be: conv.r4
+  IL_03bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03c4: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03c9: ldarg.0
+  IL_03ca: ldarg.0
+  IL_03cb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03d0: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_03d5: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03da: ldarg.0
+  IL_03db: ldarg.0
+  IL_03dc: ldarg.0
+  IL_03dd: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::eyeLookRange
+  IL_03e2: dup
+  IL_03e3: stloc.s V_5
+  IL_03e5: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::EyeDirection
+  IL_03ea: ldloc.s V_5
+  IL_03ec: stfld Microsoft.Xna.Framework.Vector2 Celeste.DustGraphic::EyeTargetDirection
+  IL_03f1: ldarg.0
+  IL_03f2: ldfld System.Boolean Celeste.DustGraphic::eyesExist
+  IL_03f7: brfalse.s IL_0463
+  IL_03f9: ldarg.0
+  IL_03fa: ldarg.0
+  IL_03fb: callvirt System.Collections.IEnumerator Celeste.DustGraphic::BlinkRoutine()
+  IL_0400: ldc.i4.1
+  IL_0401: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0406: stfld Monocle.Coroutine Celeste.DustGraphic::blink
+  IL_040b: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0410: ldarg.0
+  IL_0411: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_0416: call Celeste.DustStyles/DustStyle Celeste.DustStyles::Get(Monocle.Scene)
+  IL_041b: ldfld System.String Celeste.DustStyles/DustStyle::EyeTextures
++ IL_0000: ldarg.0 @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddDustNodesIfInCamera
++ IL_0000: call System.String FrostHelper.Entities.CustomDustGraphic::GetEyesTexture(System.String,Celeste.DustGraphic) @ FrostHelper.Entities.CustomDustGraphic::DustGraphic_AddDustNodesIfInCamera
+  IL_0420: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0425: stloc.s V_6
+  IL_0427: ldarg.0
+  IL_0428: ldloc.s V_6
+  IL_042a: ldarg.0
+  IL_042b: ldfld System.Int32 Celeste.DustGraphic::eyeTextureIndex
+  IL_0430: ldloc.s V_6
+  IL_0432: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_0437: rem
+  IL_0438: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_043d: stfld Monocle.MTexture Celeste.DustGraphic::eyeTexture
+  IL_0442: ldarg.0
+  IL_0443: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0448: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_044d: ldarg.0
+  IL_044e: ldarg.0
+  IL_044f: newobj System.Void Celeste.DustGraphic/Eyeballs::.ctor(Celeste.DustGraphic)
+  IL_0454: dup
+  IL_0455: stloc.s V_7
+  IL_0457: stfld Celeste.DustGraphic/Eyeballs Celeste.DustGraphic::eyes
+  IL_045c: ldloc.s V_7
+  IL_045e: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0463: ldsfld System.Int32 Celeste.DustEdges::DustGraphicEstabledCounter
+  IL_0468: ldc.i4.1
+  IL_0469: add
+  IL_046a: stsfld System.Int32 Celeste.DustEdges::DustGraphicEstabledCounter
+  IL_046f: ldarg.0
+  IL_0470: ldc.i4.1
+  IL_0471: callvirt System.Void Celeste.DustGraphic::set_Estableshed(System.Boolean)
+  IL_0476: ldarg.0
+  IL_0477: ldfld System.Action Celeste.DustGraphic::OnEstablish
+  IL_047c: brfalse.s IL_0489
+  IL_047e: ldarg.0
+  IL_047f: ldfld System.Action Celeste.DustGraphic::OnEstablish
+  IL_0484: callvirt System.Void System.Action::Invoke()
+  IL_0489: call System.Void Monocle.Calc::PopRandom()
+  IL_048e: ret

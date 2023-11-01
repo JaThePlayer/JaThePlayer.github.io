@@ -1,0 +1,33 @@
+IL Diff: System.Void Celeste.Key::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.1
+  IL_0008: isinst Celeste.Level
+  IL_000d: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0012: stloc.0
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: ldloc.0
+  IL_0016: ldsfld Monocle.ParticleType Celeste.Key::P_Shimmer
+  IL_001b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0020: ldc.r4 6
+  IL_0025: ldc.r4 6
+  IL_002a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_002f: ldc.i4.1
+  IL_0030: ldc.r4 0.1
+  IL_0035: newobj System.Void Monocle.ParticleEmitter::.ctor(Monocle.ParticleSystem,Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Int32,System.Single)
+  IL_003a: dup
+  IL_003b: stloc.1
+  IL_003c: stfld Monocle.ParticleEmitter Celeste.Key::shimmerParticles
+  IL_0041: ldloc.1
++ IL_0000: pop @ FrostHelper.TemporaryKey::Key_Added
++ IL_0000: call System.Boolean FrostHelper.TemporaryKey::ShouldSpawnParticles(Celeste.Key) @ FrostHelper.TemporaryKey::Key_Added
++ IL_0000: brfalse IL_0052 @ FrostHelper.TemporaryKey::Key_Added
++ IL_0000: ldarg.0 @ FrostHelper.TemporaryKey::Key_Added
++ IL_0000: ldloc.1 @ FrostHelper.TemporaryKey::Key_Added
+  IL_0042: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0047: ldarg.0
+  IL_0048: ldfld Monocle.ParticleEmitter Celeste.Key::shimmerParticles
+  IL_004d: callvirt System.Void Monocle.ParticleEmitter::SimulateCycle()
+  IL_0052: ret

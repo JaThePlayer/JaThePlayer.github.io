@@ -1,0 +1,47 @@
+IL Diff: System.Void Celeste.Player::UpdateChaserStates()
+  IL_0000: br.s IL_000e
+  IL_0002: ldarg.0
+  IL_0003: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_0008: ldc.i4.0
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: ldc.i4 2451 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: ldc.i4 3404566 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
+  |-> retrieves System.Int32 Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_UpdateChaserStates>b__50_2(System.Int32,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
+  IL_0009: callvirt System.Void System.Collections.Generic.List`1<Celeste.Player/ChaserState>::RemoveAt(System.Int32)
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_0014: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.Player/ChaserState>::get_Count()
+  IL_0019: ldc.i4.0
+  IL_001a: ble.s IL_0040
+  IL_001c: ldarg.0
+  IL_001d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0022: ldfld System.Single Monocle.Scene::TimeActive
+  IL_0027: ldarg.0
+  IL_0028: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_002d: ldc.i4.0
+  IL_002e: callvirt T System.Collections.Generic.List`1<Celeste.Player/ChaserState>::get_Item(System.Int32)
+  IL_0033: ldfld System.Single Celeste.Player/ChaserState::TimeStamp
+  IL_0038: sub
+- IL_0039: ldc.r4 4 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modUpdateChaserStates
++ IL_0000: ldc.i4 31525202 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modUpdateChaserStates
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BadelineChasersEverywhere::modUpdateChaserStates
+  |-> retrieves System.Single ExtendedVariants.Variants.BadelineChasersEverywhere::determineHistoryAmountToKeep()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.BadelineChasersEverywhere::modUpdateChaserStates
+  IL_003e: bgt.s IL_0002
+  IL_0040: ldarg.0
+  IL_0041: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserState> Celeste.Player::ChaserStates
+  IL_0046: ldarg.0
+  IL_0047: newobj System.Void Celeste.Player/ChaserState::.ctor(Celeste.Player)
++ IL_0000: ldc.i4 2463 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: ldc.i4 7334459 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
+  |-> retrieves Celeste.Player+ChaserState Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_UpdateChaserStates>b__50_4(Celeste.Player+ChaserState)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.Player/ChaserState,Celeste.Player/ChaserState>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_UpdateChaserStates
+  IL_004c: callvirt System.Void System.Collections.Generic.List`1<Celeste.Player/ChaserState>::Add(T)
+  IL_0051: ldarg.0
+  IL_0052: ldfld System.Collections.Generic.List`1<Celeste.Player/ChaserStateSound> Celeste.Player::activeSounds
+  IL_0057: callvirt System.Void System.Collections.Generic.List`1<Celeste.Player/ChaserStateSound>::Clear()
+  IL_005c: ret

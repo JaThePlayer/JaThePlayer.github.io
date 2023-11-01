@@ -1,0 +1,86 @@
+IL Diff: System.Void Celeste.LightningRenderer::Track(Celeste.Lightning)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Celeste.Lightning> Celeste.LightningRenderer::list
+  IL_0006: ldarg.1
+  IL_0007: callvirt System.Void System.Collections.Generic.List`1<Celeste.Lightning>::Add(T)
+  IL_000c: ldarg.0
+  IL_000d: ldfld Monocle.VirtualMap`1<System.Boolean> Celeste.LightningRenderer::tiles
+  IL_0012: brtrue.s IL_004c
+  IL_0014: ldarg.0
+  IL_0015: ldarg.0
+  IL_0016: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001b: isinst Celeste.Level
+  IL_0020: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_TileBounds()
+  IL_0025: stfld Microsoft.Xna.Framework.Rectangle Celeste.LightningRenderer::levelTileBounds
+  IL_002a: ldarg.0
+  IL_002b: ldarg.0
+  IL_002c: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LightningRenderer::levelTileBounds
+  IL_0031: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width
+  IL_0036: ldarg.0
+  IL_0037: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LightningRenderer::levelTileBounds
+  IL_003c: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
++ IL_0000: ldc.i4 32 @ Celeste.Mod.Randomizer.RandoModule::TrackExtraSpace
++ IL_0000: add @ Celeste.Mod.Randomizer.RandoModule::TrackExtraSpace
+  IL_0041: ldc.i4.0
+  IL_0042: newobj System.Void Monocle.VirtualMap`1<System.Boolean>::.ctor(System.Int32,System.Int32,T)
+  IL_0047: stfld Monocle.VirtualMap`1<System.Boolean> Celeste.LightningRenderer::tiles
+  IL_004c: ldarg.1
+  IL_004d: callvirt System.Single Monocle.Entity::get_X()
+  IL_0052: conv.i4
+  IL_0053: ldc.i4.8
+  IL_0054: div
+  IL_0055: stloc.0
+  IL_0056: br.s IL_00a5
+  IL_0058: ldarg.1
+  IL_0059: callvirt System.Single Monocle.Entity::get_Y()
+  IL_005e: conv.i4
+  IL_005f: ldc.i4.8
+  IL_0060: div
+  IL_0061: stloc.1
+  IL_0062: br.s IL_008e
+  IL_0064: ldarg.0
+  IL_0065: ldfld Monocle.VirtualMap`1<System.Boolean> Celeste.LightningRenderer::tiles
+  IL_006a: ldloc.0
+  IL_006b: ldarg.0
+  IL_006c: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LightningRenderer::levelTileBounds
+  IL_0071: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::X
+  IL_0076: sub
+  IL_0077: ldloc.1
+  IL_0078: ldarg.0
+  IL_0079: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LightningRenderer::levelTileBounds
+  IL_007e: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_0083: sub
+  IL_0084: ldc.i4.1
+  IL_0085: callvirt System.Void Monocle.VirtualMap`1<System.Boolean>::set_Item(System.Int32,System.Int32,T)
+  IL_008a: ldloc.1
+  IL_008b: ldc.i4.1
+  IL_008c: add
+  IL_008d: stloc.1
+  IL_008e: ldloc.1
+  IL_008f: ldarg.1
+  IL_0090: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0095: conv.i4
+  IL_0096: ldarg.1
+  IL_0097: ldfld System.Int32 Celeste.Lightning::VisualHeight
+  IL_009c: add
+  IL_009d: ldc.i4.8
+  IL_009e: div
+  IL_009f: blt.s IL_0064
+  IL_00a1: ldloc.0
+  IL_00a2: ldc.i4.1
+  IL_00a3: add
+  IL_00a4: stloc.0
+  IL_00a5: ldloc.0
+  IL_00a6: ldarg.1
+  IL_00a7: callvirt System.Single Monocle.Entity::get_X()
+  IL_00ac: conv.i4
+  IL_00ad: ldarg.1
+  IL_00ae: ldfld System.Int32 Celeste.Lightning::VisualWidth
+  IL_00b3: add
+  IL_00b4: ldc.i4.8
+  IL_00b5: div
+  IL_00b6: blt.s IL_0058
+  IL_00b8: ldarg.0
+  IL_00b9: ldc.i4.1
+  IL_00ba: stfld System.Boolean Celeste.LightningRenderer::dirty
+  IL_00bf: ret

@@ -1,0 +1,25 @@
+IL Diff: System.Void Celeste.PlayerCollider::DebugRender(Monocle.Camera)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Collider Celeste.PlayerCollider::Collider
+  IL_0006: brfalse.s IL_0042
+  IL_0008: ldarg.0
+  IL_0009: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_000e: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0013: stloc.0
+  IL_0014: ldarg.0
+  IL_0015: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_001a: ldarg.0
+  IL_001b: ldfld Monocle.Collider Celeste.PlayerCollider::Collider
+  IL_0020: callvirt System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0025: ldarg.0
+  IL_0026: ldfld Monocle.Collider Celeste.PlayerCollider::Collider
+  IL_002b: ldarg.1
+  IL_002c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_HotPink()
++ IL_0000: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxOptimized::PlayerColliderOnDebugRender
++ IL_0000: call Microsoft.Xna.Framework.Color TAS.EverestInterop.Hitboxes.HitboxOptimized::OptimizePlayerColliderHitbox(Microsoft.Xna.Framework.Color,Monocle.Component) @ TAS.EverestInterop.Hitboxes.HitboxOptimized::PlayerColliderOnDebugRender
+  IL_0031: callvirt System.Void Monocle.Collider::Render(Monocle.Camera,Microsoft.Xna.Framework.Color)
+  IL_0036: ldarg.0
+  IL_0037: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_003c: ldloc.0
+  IL_003d: callvirt System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0042: ret

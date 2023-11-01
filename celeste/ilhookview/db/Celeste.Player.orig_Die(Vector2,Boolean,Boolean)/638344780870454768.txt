@@ -1,0 +1,179 @@
+IL Diff: Celeste.PlayerDeadBody Celeste.Player::orig_Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0000: newobj System.Void Celeste.Player/<>c__DisplayClass344_0::.ctor()
+  IL_0005: stloc.0
+  IL_0006: ldloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Level Celeste.Player::level
+  IL_000d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0012: stfld Celeste.Session Celeste.Player/<>c__DisplayClass344_0::session
+  IL_0017: ldarg.2
+  IL_0018: brtrue.s IL_002b
+  IL_001a: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_001f: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0024: ldfld System.Boolean Celeste.Assists::Invincible
+  IL_0029: br.s IL_002c
+  IL_002b: ldc.i4.0
+  IL_002c: stloc.1
+  IL_002d: ldarg.0
+  IL_002e: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0033: brtrue IL_0210
+  IL_0038: ldloc.1
+  IL_0039: brtrue IL_0210
+  IL_003e: ldarg.0
+  IL_003f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0044: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0049: ldc.i4.s 18
+  IL_004b: beq IL_0210
+  IL_0050: newobj System.Void Celeste.Player/<>c__DisplayClass344_1::.ctor()
+  IL_0055: stloc.2
+  IL_0056: ldloc.2
+  IL_0057: ldloc.0
+  IL_0058: stfld Celeste.Player/<>c__DisplayClass344_0 Celeste.Player/<>c__DisplayClass344_1::CS$<>8__locals1
+  IL_005d: ldarg.0
+  IL_005e: ldarg.0
+  IL_005f: ldfld Celeste.SoundSource Celeste.Player::wallSlideSfx
+  IL_0064: callvirt System.Void Celeste.Player::Stop(Celeste.SoundSource)
++ IL_0000: call System.Void FrostHelper.ChangeDashSpeedOnce::Reset() @ FrostHelper.ChangeDashSpeedOnce::DiePatch
+  IL_0069: ldarg.3
+  IL_006a: brfalse.s IL_00b6
+  IL_006c: ldloc.2
+  IL_006d: ldfld Celeste.Player/<>c__DisplayClass344_0 Celeste.Player/<>c__DisplayClass344_1::CS$<>8__locals1
+  IL_0072: ldfld Celeste.Session Celeste.Player/<>c__DisplayClass344_0::session
+  IL_0077: dup
+  IL_0078: ldfld System.Int32 Celeste.Session::Deaths
+  IL_007d: ldc.i4.1
+  IL_007e: add
+  IL_007f: stfld System.Int32 Celeste.Session::Deaths
+  IL_0084: ldloc.2
+  IL_0085: ldfld Celeste.Player/<>c__DisplayClass344_0 Celeste.Player/<>c__DisplayClass344_1::CS$<>8__locals1
+  IL_008a: ldfld Celeste.Session Celeste.Player/<>c__DisplayClass344_0::session
+  IL_008f: dup
+  IL_0090: ldfld System.Int32 Celeste.Session::DeathsInCurrentLevel
+  IL_0095: ldc.i4.1
+  IL_0096: add
+  IL_0097: stfld System.Int32 Celeste.Session::DeathsInCurrentLevel
+  IL_009c: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00a1: ldloc.2
+  IL_00a2: ldfld Celeste.Player/<>c__DisplayClass344_0 Celeste.Player/<>c__DisplayClass344_1::CS$<>8__locals1
+  IL_00a7: ldfld Celeste.Session Celeste.Player/<>c__DisplayClass344_0::session
+  IL_00ac: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_00b1: callvirt System.Void Celeste.SaveData::AddDeath(Celeste.AreaKey)
+  IL_00b6: ldloc.2
+  IL_00b7: ldnull
+  IL_00b8: stfld Celeste.Strawberry Celeste.Player/<>c__DisplayClass344_1::goldenStrawb
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_00c3: ldfld System.Collections.Generic.List`1<Celeste.Follower> Celeste.Leader::Followers
+  IL_00c8: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Follower>::GetEnumerator()
+  IL_00cd: stloc.s V_5
+  IL_00cf: br.s IL_0120
+  IL_00d1: ldloca.s V_5
+  IL_00d3: call T System.Collections.Generic.List`1/Enumerator<Celeste.Follower>::get_Current()
+  IL_00d8: stloc.s V_6
+  IL_00da: ldloc.s V_6
+  IL_00dc: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_00e1: isinst Celeste.Strawberry
+  IL_00e6: brfalse.s IL_0120
+  IL_00e8: ldloc.s V_6
+  IL_00ea: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_00ef: isinst Celeste.Strawberry
+  IL_00f4: callvirt System.Boolean Celeste.Strawberry::get_Golden()
+  IL_00f9: brfalse.s IL_0120
+  IL_00fb: ldloc.s V_6
+  IL_00fd: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0102: isinst Celeste.Strawberry
+  IL_0107: callvirt System.Boolean Celeste.Strawberry::get_Winged()
+  IL_010c: brtrue.s IL_0120
+  IL_010e: ldloc.2
+  IL_010f: ldloc.s V_6
+  IL_0111: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0116: isinst Celeste.Strawberry
+  IL_011b: stfld Celeste.Strawberry Celeste.Player/<>c__DisplayClass344_1::goldenStrawb
+  IL_0120: ldloca.s V_5
+  IL_0122: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Follower>::MoveNext()
+  IL_0127: brtrue.s IL_00d1
+  IL_0129: leave.s IL_0139
+  IL_012b: ldloca.s V_5
+  IL_012d: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Follower>
+  IL_0133: callvirt System.Void System.IDisposable::Dispose()
+  IL_0138: endfinally
+  IL_0139: ldarg.0
+  IL_013a: ldc.i4.1
+  IL_013b: callvirt System.Void Celeste.Player::set_Dead(System.Boolean)
+  IL_0140: ldarg.0
+  IL_0141: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0146: callvirt System.Void Celeste.Leader::LoseFollowers()
+  IL_014b: ldarg.0
+  IL_014c: ldc.i4 -1000000
+  IL_0151: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0156: ldarg.0
+  IL_0157: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_015c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0161: ldarg.0
+  IL_0162: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0167: ldc.i4.1
+  IL_0168: stfld System.Boolean Monocle.StateMachine::Locked
+  IL_016d: ldarg.0
+  IL_016e: ldc.i4.0
+  IL_016f: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0174: ldarg.0
+  IL_0175: callvirt System.Void Celeste.Player::Drop()
+  IL_017a: ldarg.0
+  IL_017b: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_0180: brfalse.s IL_018d
+  IL_0182: ldarg.0
+  IL_0183: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_0188: callvirt System.Void Celeste.Booster::PlayerDied()
+  IL_018d: ldarg.0
+  IL_018e: ldfld Celeste.Level Celeste.Player::level
+  IL_0193: ldc.i4.0
+  IL_0194: stfld System.Boolean Celeste.Level::InCutscene
+  IL_0199: ldarg.0
+  IL_019a: ldfld Celeste.Level Celeste.Player::level
+  IL_019f: ldc.r4 0.3
+  IL_01a4: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_01a9: ldc.i4.0
+  IL_01aa: ldc.i4.1
+  IL_01ab: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_01b0: ldarg.0
+  IL_01b1: ldarg.1
+  IL_01b2: newobj System.Void Celeste.PlayerDeadBody::.ctor(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_01b7: stloc.3
+  IL_01b8: ldloc.2
+  IL_01b9: ldfld Celeste.Strawberry Celeste.Player/<>c__DisplayClass344_1::goldenStrawb
+  IL_01be: brfalse.s IL_01d9
++ IL_0000: ldc.i4 2450 @ GoldenTrainer.GoldenTrainerModule::RespawnInRoomWithBerry
++ IL_0000: ldc.i4 3248419 @ GoldenTrainer.GoldenTrainerModule::RespawnInRoomWithBerry
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ GoldenTrainer.GoldenTrainerModule::RespawnInRoomWithBerry
+  |-> retrieves System.Boolean GoldenTrainer.GoldenTrainerModule/<>c::<RespawnInRoomWithBerry>b__34_2()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ GoldenTrainer.GoldenTrainerModule::RespawnInRoomWithBerry
++ IL_0000: brtrue IL_01d9 @ GoldenTrainer.GoldenTrainerModule::RespawnInRoomWithBerry
+  IL_01c0: ldloc.3
+  IL_01c1: ldc.i4.1
+  IL_01c2: stfld System.Boolean Celeste.PlayerDeadBody::HasGolden
+  IL_01c7: ldloc.3
+  IL_01c8: ldloc.2
+  IL_01c9: ldftn System.Void Celeste.Player/<>c__DisplayClass344_1::<Die>b__0()
+  IL_01cf: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_01d4: stfld System.Action Celeste.PlayerDeadBody::DeathAction
+  IL_01d9: ldarg.0
+  IL_01da: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01df: ldloc.3
+  IL_01e0: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01e5: ldarg.0
+  IL_01e6: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01eb: ldarg.0
+  IL_01ec: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_01f1: ldarg.0
+  IL_01f2: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01f7: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_01fc: callvirt T Monocle.Tracker::GetEntity<Celeste.Lookout>()
+  IL_0201: stloc.s V_4
+  IL_0203: ldloc.s V_4
+  IL_0205: brfalse.s IL_020e
+  IL_0207: ldloc.s V_4
+  IL_0209: callvirt System.Void Celeste.Lookout::StopInteracting()
+  IL_020e: ldloc.3
+  IL_020f: ret
+  IL_0210: ldnull
+  IL_0211: ret

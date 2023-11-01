@@ -1,0 +1,89 @@
+IL Diff: System.Void Celeste.FireBall::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: callvirt Celeste.Session/CoreModes Celeste.Level::get_CoreMode()
+  IL_0013: ldc.i4.2
+  IL_0014: beq.s IL_001e
+  IL_0016: ldarg.0
+  IL_0017: ldfld System.Boolean Celeste.FireBall::notCoreMode
+  IL_001c: br.s IL_001f
+  IL_001e: ldc.i4.1
+  IL_001f: stfld System.Boolean Celeste.FireBall::iceMode
+  IL_0024: ldarg.0
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_002b: brtrue.s IL_0030
+  IL_002d: ldc.i4.1
+  IL_002e: br.s IL_0031
+  IL_0030: ldc.i4.0
+  IL_0031: conv.r4
+  IL_0032: stfld System.Single Celeste.FireBall::speedMult
+  IL_0037: ldarg.0
+  IL_0038: ldfld Monocle.Sprite Celeste.FireBall::sprite
+  IL_003d: ldarg.0
+  IL_003e: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_0043: brtrue.s IL_004c
+  IL_0045: ldstr "hot"
+  IL_004a: br.s IL_0051
+  IL_004c: ldstr "ice"
+  IL_0051: ldc.i4.0
+  IL_0052: ldc.i4.1
+  IL_0053: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0058: ldarg.0
+  IL_0059: ldfld System.Int32 Celeste.FireBall::index
+  IL_005e: brtrue.s IL_00a0
+  IL_0060: ldc.i4.1
+  IL_0061: stloc.0
+  IL_0062: br.s IL_0097
+  IL_0064: ldarg.0
+  IL_0065: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_006a: ldarg.0
+  IL_006b: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FireBall::nodes
+  IL_0070: ldarg.0
+  IL_0071: ldfld System.Int32 Celeste.FireBall::amount
+  IL_0076: ldloc.0
+  IL_0077: ldarg.0
+  IL_0078: ldfld System.Single Celeste.FireBall::offset
+  IL_007d: ldarg.0
+  IL_007e: ldfld System.Single Celeste.FireBall::mult
+  IL_0083: ldarg.0
+  IL_0084: ldfld System.Boolean Celeste.FireBall::notCoreMode
+  IL_0089: newobj System.Void Celeste.FireBall::.ctor(Microsoft.Xna.Framework.Vector2[],System.Int32,System.Int32,System.Single,System.Single,System.Boolean)
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_008e: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0093: ldloc.0
+  IL_0094: ldc.i4.1
+  IL_0095: add
+  IL_0096: stloc.0
+  IL_0097: ldloc.0
+  IL_0098: ldarg.0
+  IL_0099: ldfld System.Int32 Celeste.FireBall::amount
+  IL_009e: blt.s IL_0064
+  IL_00a0: ldarg.0
+  IL_00a1: ldfld Celeste.SoundSource Celeste.FireBall::trackSfx
+  IL_00a6: brfalse.s IL_00cd
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld System.Boolean Celeste.FireBall::iceMode
+  IL_00ae: brtrue.s IL_00cd
+  IL_00b0: ldarg.0
+  IL_00b1: callvirt System.Void Celeste.FireBall::PositionTrackSfx()
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Celeste.SoundSource Celeste.FireBall::trackSfx
+  IL_00bc: ldstr "event:/env/local/09_core/fireballs_idle"
+  IL_00c1: ldnull
+  IL_00c2: ldc.r4 0
+  IL_00c7: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00cc: pop
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 52120904 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.MovingEntityTrack/<>c::<Initialize>b__2_0(Celeste.FireBall)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.FireBall>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_00cd: ret

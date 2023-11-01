@@ -1,0 +1,351 @@
+IL Diff: System.Int32 Celeste.Player::StarFlyUpdate()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.BloomPoint Celeste.Player::starFlyBloom
+  IL_0006: ldarg.0
+  IL_0007: ldfld Celeste.BloomPoint Celeste.Player::starFlyBloom
+  IL_000c: ldfld System.Single Celeste.BloomPoint::Alpha
+  IL_0011: ldc.r4 0.7
+  IL_0016: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_001b: ldc.r4 2
+  IL_0020: mul
+  IL_0021: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0026: stfld System.Single Celeste.BloomPoint::Alpha
+  IL_002b: ldc.i4.3
+  IL_002c: ldc.i4.0
+  IL_002d: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0032: ldarg.0
+  IL_0033: ldfld System.Boolean Celeste.Player::starFlyTransforming
+  IL_0038: brfalse.s IL_0060
+  IL_003a: ldarg.0
+  IL_003b: ldarg.0
+  IL_003c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0041: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0046: ldc.r4 1000
+  IL_004b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0050: mul
+  IL_0051: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0056: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_005b: br IL_03e5
+  IL_0060: ldsfld Monocle.VirtualJoystick Celeste.Input::Feather
+  IL_0065: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_006a: stloc.0
+  IL_006b: ldc.i4.0
+  IL_006c: stloc.1
+  IL_006d: ldloc.0
+  IL_006e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0073: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0078: brfalse.s IL_0083
+  IL_007a: ldc.i4.1
+  IL_007b: stloc.1
+  IL_007c: ldarg.0
+  IL_007d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::starFlyLastDir
+  IL_0082: stloc.0
+  IL_0083: ldarg.0
+  IL_0084: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0089: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_008e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0093: stloc.2
+  IL_0094: ldloc.2
+  IL_0095: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_009a: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_009f: brfalse.s IL_00a5
+  IL_00a1: ldloc.0
+  IL_00a2: stloc.2
+  IL_00a3: br.s IL_00bd
+  IL_00a5: ldloc.2
+  IL_00a6: ldloc.0
+  IL_00a7: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_00ac: ldc.r4 5.5850534
+  IL_00b1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00b6: mul
+  IL_00b7: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::RotateTowards(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_00bc: stloc.2
+  IL_00bd: ldarg.0
+  IL_00be: ldloc.2
+  IL_00bf: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::starFlyLastDir
+  IL_00c4: ldloc.1
+  IL_00c5: brfalse.s IL_00da
+  IL_00c7: ldarg.0
+  IL_00c8: ldc.r4 0
+  IL_00cd: stfld System.Single Celeste.Player::starFlySpeedLerp
+  IL_00d2: ldc.r4 91
+  IL_00d7: stloc.3
+  IL_00d8: br.s IL_013f
+  IL_00da: ldloc.2
+  IL_00db: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00e0: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00e5: brfalse.s IL_012e
+  IL_00e7: ldloc.2
+  IL_00e8: ldloc.0
+  IL_00e9: call System.Single Microsoft.Xna.Framework.Vector2::Dot(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ee: ldc.r4 0.45
+  IL_00f3: blt.un.s IL_012e
+  IL_00f5: ldarg.0
+  IL_00f6: ldarg.0
+  IL_00f7: ldfld System.Single Celeste.Player::starFlySpeedLerp
+  IL_00fc: ldc.r4 1
+  IL_0101: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0106: ldc.r4 1
+  IL_010b: div
+  IL_010c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0111: stfld System.Single Celeste.Player::starFlySpeedLerp
+  IL_0116: ldc.r4 140
+  IL_011b: ldc.r4 190
+  IL_0120: ldarg.0
+  IL_0121: ldfld System.Single Celeste.Player::starFlySpeedLerp
+  IL_0126: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_012b: stloc.3
+  IL_012c: br.s IL_013f
+  IL_012e: ldarg.0
+  IL_012f: ldc.r4 0
+  IL_0134: stfld System.Single Celeste.Player::starFlySpeedLerp
+  IL_0139: ldc.r4 140
+  IL_013e: stloc.3
+  IL_013f: ldarg.0
+  IL_0140: ldfld Celeste.SoundSource Celeste.Player::starFlyLoopSfx
+  IL_0145: ldstr "feather_speed"
+  IL_014a: ldloc.1
+  IL_014b: brtrue.s IL_0150
+  IL_014d: ldc.i4.1
+  IL_014e: br.s IL_0151
+  IL_0150: ldc.i4.0
+  IL_0151: conv.r4
+  IL_0152: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_0157: pop
+  IL_0158: ldarg.0
+  IL_0159: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_015e: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0163: stloc.s V_4
+  IL_0165: ldloc.s V_4
+  IL_0167: ldloc.3
+  IL_0168: ldc.r4 1000
+  IL_016d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0172: mul
+  IL_0173: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0178: stloc.s V_4
+  IL_017a: ldarg.0
+  IL_017b: ldloc.2
+  IL_017c: ldloc.s V_4
+  IL_017e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0183: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0188: ldarg.0
+  IL_0189: ldfld Celeste.Level Celeste.Player::level
+  IL_018e: ldc.r4 0.02
+  IL_0193: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0198: brfalse.s IL_01d5
+  IL_019a: ldarg.0
+  IL_019b: ldfld Celeste.Level Celeste.Player::level
+  IL_01a0: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_01a5: ldsfld Monocle.ParticleType Celeste.FlyFeather::P_Flying
+  IL_01aa: ldc.i4.1
+  IL_01ab: ldarg.0
+  IL_01ac: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_01b1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_01b6: ldc.r4 2
+  IL_01bb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01c0: ldarg.0
+  IL_01c1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01c6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldc.i4 2583 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_StarFlyUpdate
++ IL_0000: ldc.i4 47097356 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_StarFlyUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_StarFlyUpdate
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_StarFlyUpdate
+  IL_01cb: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_01d0: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01d5: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_01da: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_01df: brfalse.s IL_0218
+  IL_01e1: ldarg.0
+  IL_01e2: ldc.i4.3
+  IL_01e3: call System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_01e8: brfalse.s IL_01f4
+  IL_01ea: ldarg.0
+  IL_01eb: ldc.i4.1
+  IL_01ec: ldc.i4.1
+  IL_01ed: callvirt System.Void Celeste.Player::Jump(System.Boolean,System.Boolean)
+  IL_01f2: ldc.i4.0
+  IL_01f3: ret
+  IL_01f4: ldarg.0
+  IL_01f5: ldc.i4.m1
+  IL_01f6: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_01fb: brfalse.s IL_0206
+  IL_01fd: ldarg.0
+  IL_01fe: ldc.i4.1
+  IL_01ff: callvirt System.Void Celeste.Player::WallJump(System.Int32)
+  IL_0204: ldc.i4.0
+  IL_0205: ret
+  IL_0206: ldarg.0
+  IL_0207: ldc.i4.1
+  IL_0208: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_020d: brfalse.s IL_0218
+  IL_020f: ldarg.0
+  IL_0210: ldc.i4.m1
+  IL_0211: callvirt System.Void Celeste.Player::WallJump(System.Int32)
+  IL_0216: ldc.i4.0
+  IL_0217: ret
+  IL_0218: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_0000: ldc.i4 2462 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 18015536 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_021d: brfalse IL_029e
+  IL_0222: ldc.i4.0
+  IL_0223: stloc.s V_5
+  IL_0225: ldc.i4.0
+  IL_0226: stloc.s V_6
+  IL_0228: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveX
+  IL_022d: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0232: ldc.i4.m1
+  IL_0233: beq.s IL_024e
+  IL_0235: ldarg.0
+  IL_0236: ldc.i4.1
+  IL_0237: ldc.i4.0
+  IL_0238: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_023d: brfalse.s IL_024e
+  IL_023f: ldarg.0
+  IL_0240: ldc.i4.1
+  IL_0241: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0246: ldc.i4.1
+  IL_0247: stloc.s V_6
+  IL_0249: ldc.i4.1
+  IL_024a: stloc.s V_5
+  IL_024c: br.s IL_0272
+  IL_024e: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveX
+  IL_0253: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0258: ldc.i4.1
+  IL_0259: beq.s IL_0272
+  IL_025b: ldarg.0
+  IL_025c: ldc.i4.m1
+  IL_025d: ldc.i4.0
+  IL_025e: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_0263: brfalse.s IL_0272
+  IL_0265: ldarg.0
+  IL_0266: ldc.i4.m1
+  IL_0267: stfld Celeste.Facings Celeste.Player::Facing
+  IL_026c: ldc.i4.m1
+  IL_026d: stloc.s V_6
+  IL_026f: ldc.i4.1
+  IL_0270: stloc.s V_5
+  IL_0272: ldloc.s V_5
+  IL_0274: brfalse.s IL_029e
+  IL_0276: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_027b: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0280: ldfld System.Boolean Celeste.Assists::NoGrabbing
+  IL_0285: brfalse.s IL_029c
+  IL_0287: ldarg.0
+  IL_0288: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_028d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0292: ldarg.0
+  IL_0293: ldloc.s V_6
+  IL_0295: callvirt System.Void Celeste.Player::ClimbTrigger(System.Int32)
+  IL_029a: ldc.i4.0
+  IL_029b: ret
+  IL_029c: ldc.i4.1
+  IL_029d: ret
+  IL_029e: ldarg.0
+  IL_029f: callvirt System.Boolean Celeste.Player::get_CanDash()
+  IL_02a4: brfalse.s IL_02ad
+  IL_02a6: ldarg.0
+  IL_02a7: callvirt System.Int32 Celeste.Player::StartDash()
+  IL_02ac: ret
+  IL_02ad: ldarg.0
+  IL_02ae: ldarg.0
+  IL_02af: ldfld System.Single Celeste.Player::starFlyTimer
+  IL_02b4: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02b9: sub
+  IL_02ba: stfld System.Single Celeste.Player::starFlyTimer
+  IL_02bf: ldarg.0
+  IL_02c0: ldfld System.Single Celeste.Player::starFlyTimer
+  IL_02c5: ldc.r4 0
+  IL_02ca: bgt.un IL_038b
+  IL_02cf: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveY
+  IL_02d4: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_02d9: ldc.i4.m1
+  IL_02da: bne.un.s IL_02ec
+  IL_02dc: ldarg.0
+  IL_02dd: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_02e2: ldc.r4 -100
+  IL_02e7: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02ec: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveY
+  IL_02f1: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_02f6: ldc.i4.1
+  IL_02f7: bge.s IL_0327
+  IL_02f9: ldarg.0
+  IL_02fa: ldarg.0
+  IL_02fb: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0300: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0305: stfld System.Single Celeste.Player::varJumpSpeed
+  IL_030a: ldarg.0
+  IL_030b: ldc.i4.1
+  IL_030c: stfld System.Boolean Celeste.Player::AutoJump
+  IL_0311: ldarg.0
+  IL_0312: ldc.r4 0
+  IL_0317: stfld System.Single Celeste.Player::AutoJumpTimer
+  IL_031c: ldarg.0
+  IL_031d: ldc.r4 0.2
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: ldc.i4 45592459 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpDuration::<modVarJumpTimer>b__6_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  IL_0322: stfld System.Single Celeste.Player::varJumpTimer
+  IL_0327: ldarg.0
+  IL_0328: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_032d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0332: ldc.r4 0
+  IL_0337: ble.un.s IL_0349
+  IL_0339: ldarg.0
+  IL_033a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_033f: ldc.r4 0
+  IL_0344: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0349: ldarg.0
+  IL_034a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_034f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0354: call System.Single System.Math::Abs(System.Single)
+  IL_0359: ldc.r4 140
+  IL_035e: ble.un.s IL_0382
+  IL_0360: ldarg.0
+  IL_0361: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0366: ldc.r4 140
+  IL_036b: ldarg.0
+  IL_036c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0371: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0376: call System.Int32 System.Math::Sign(System.Single)
+  IL_037b: conv.r4
+  IL_037c: mul
+  IL_037d: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0382: ldc.i4.1
+  IL_0383: ldc.i4.1
+  IL_0384: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0389: ldc.i4.0
+  IL_038a: ret
+  IL_038b: ldarg.0
+  IL_038c: ldfld System.Single Celeste.Player::starFlyTimer
+  IL_0391: ldc.r4 0.5
+  IL_0396: bge.un.s IL_03e5
+  IL_0398: ldarg.0
+  IL_0399: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_039e: ldc.r4 0.05
+  IL_03a3: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_03a8: brfalse.s IL_03e5
+  IL_03aa: ldarg.0
+  IL_03ab: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_03b0: ldfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_03b5: ldarg.0
+  IL_03b6: ldfld Microsoft.Xna.Framework.Color Celeste.Player::starFlyColor
+  IL_03bb: call System.Boolean Microsoft.Xna.Framework.Color::op_Equality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
+  IL_03c0: brfalse.s IL_03d4
+  IL_03c2: ldarg.0
+  IL_03c3: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_03c8: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::NormalHairColor
+  IL_03cd: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_03d2: br.s IL_03e5
+  IL_03d4: ldarg.0
+  IL_03d5: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_03da: ldarg.0
+  IL_03db: ldfld Microsoft.Xna.Framework.Color Celeste.Player::starFlyColor
+  IL_03e0: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_03e5: ldc.i4.s 19
+  IL_03e7: ret

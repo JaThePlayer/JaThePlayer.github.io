@@ -1,0 +1,81 @@
+IL Diff: System.Boolean Celeste.CrushBlock::MoveVCheck(System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld Celeste.Level Celeste.CrushBlock::level
+  IL_0007: ldarg.1
+  IL_0008: ldc.i4.1
+  IL_0009: ldnull
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Entities.KevinBarrier::modKevinMoveCheck
++ IL_0000: ldc.i4 5510142 @ Celeste.Mod.MaxHelpingHand.Entities.KevinBarrier::modKevinMoveCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.KevinBarrier::modKevinMoveCheck
+  |-> retrieves System.Action`3[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null],[Celeste.Platform, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.MaxHelpingHand.Entities.KevinBarrier/<>c::<modKevinMoveCheck>b__12_2(System.Action`3[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null],[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null],[Celeste.Platform, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>,System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Entities.KevinBarrier::modKevinMoveCheck
+  IL_000a: ldc.i4.0
+  IL_000b: call System.Boolean Celeste.Platform::MoveVCollideSolidsAndBounds(Celeste.Level,System.Single,System.Boolean,System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>,System.Boolean)
+  IL_0010: brfalse IL_0092
+  IL_0015: ldarg.1
+  IL_0016: ldc.r4 0
+  IL_001b: bge.un.s IL_003b
+  IL_001d: ldarg.0
+  IL_001e: call System.Single Monocle.Entity::get_Top()
+  IL_0023: ldarg.0
+  IL_0024: ldfld Celeste.Level Celeste.CrushBlock::level
+  IL_0029: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_002e: stloc.0
+  IL_002f: ldloca.s V_0
+  IL_0031: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0036: conv.r4
+  IL_0037: bgt.un.s IL_003b
+  IL_0039: ldc.i4.1
+  IL_003a: ret
+  IL_003b: ldc.i4.1
+  IL_003c: stloc.1
+  IL_003d: br.s IL_008c
+  IL_003f: ldc.i4.1
+  IL_0040: stloc.2
+  IL_0041: br.s IL_0084
+  IL_0043: ldloca.s V_3
+  IL_0045: ldloc.1
+  IL_0046: ldloc.2
+  IL_0047: mul
+  IL_0048: conv.r4
+  IL_0049: ldarg.1
+  IL_004a: call System.Int32 System.Math::Sign(System.Single)
+  IL_004f: conv.r4
+  IL_0050: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0055: ldarg.0
+  IL_0056: ldarg.0
+  IL_0057: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_005c: ldloc.3
+  IL_005d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0062: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0067: brtrue.s IL_0080
+  IL_0069: ldarg.0
+  IL_006a: ldloc.1
+  IL_006b: ldloc.2
+  IL_006c: mul
+  IL_006d: callvirt System.Void Celeste.Platform::MoveHExact(System.Int32)
+  IL_0072: ldarg.0
+  IL_0073: ldarg.1
+  IL_0074: call System.Int32 System.Math::Sign(System.Single)
+  IL_0079: callvirt System.Void Celeste.Platform::MoveVExact(System.Int32)
+  IL_007e: ldc.i4.0
+  IL_007f: ret
+  IL_0080: ldloc.2
+  IL_0081: ldc.i4.2
+  IL_0082: sub
+  IL_0083: stloc.2
+  IL_0084: ldloc.2
+  IL_0085: ldc.i4.m1
+  IL_0086: bge.s IL_0043
+  IL_0088: ldloc.1
+  IL_0089: ldc.i4.1
+  IL_008a: add
+  IL_008b: stloc.1
+  IL_008c: ldloc.1
+  IL_008d: ldc.i4.4
+  IL_008e: ble.s IL_003f
+  IL_0090: ldc.i4.1
+  IL_0091: ret
+  IL_0092: ldc.i4.0
+  IL_0093: ret

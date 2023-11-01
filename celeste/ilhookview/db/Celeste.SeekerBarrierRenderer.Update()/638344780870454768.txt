@@ -1,0 +1,12 @@
+IL Diff: System.Void Celeste.SeekerBarrierRenderer::Update()
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.SeekerBarrierRenderer::dirty
+  IL_0006: brfalse.s IL_000e
+  IL_0008: ldarg.0
+  IL_0009: callvirt System.Void Celeste.SeekerBarrierRenderer::RebuildEdges()
+  IL_000e: ldarg.0
+  IL_000f: callvirt System.Void Celeste.SeekerBarrierRenderer::UpdateEdges()
+  IL_0014: ret

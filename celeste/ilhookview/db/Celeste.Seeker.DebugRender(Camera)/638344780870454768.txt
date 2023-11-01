@@ -1,0 +1,30 @@
+IL Diff: System.Void Celeste.Seeker::DebugRender(Monocle.Camera)
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: ldfld Monocle.Hitbox Celeste.Seeker::attackHitbox
+  IL_000e: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0013: ldarg.0
+  IL_0014: ldfld Monocle.Hitbox Celeste.Seeker::attackHitbox
+  IL_0019: ldarg.1
+  IL_001a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
++ IL_0000: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxOptimized::SeekerOnDebugRender
++ IL_0000: call Microsoft.Xna.Framework.Color TAS.EverestInterop.Hitboxes.HitboxOptimized::OptimizeSeekerHitbox1(Microsoft.Xna.Framework.Color,Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxOptimized::SeekerOnDebugRender
+  IL_001f: callvirt System.Void Monocle.Collider::Render(Monocle.Camera,Microsoft.Xna.Framework.Color)
+  IL_0024: ldarg.0
+  IL_0025: ldarg.0
+  IL_0026: ldfld Monocle.Hitbox Celeste.Seeker::bounceHitbox
+  IL_002b: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0030: ldarg.0
+  IL_0031: ldfld Monocle.Hitbox Celeste.Seeker::bounceHitbox
+  IL_0036: ldarg.1
+  IL_0037: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Aqua()
++ IL_0000: ldarg.0 @ TAS.EverestInterop.Hitboxes.HitboxOptimized::SeekerOnDebugRender
++ IL_0000: call Microsoft.Xna.Framework.Color TAS.EverestInterop.Hitboxes.HitboxOptimized::OptimizeSeekerHitbox2(Microsoft.Xna.Framework.Color,Monocle.Entity) @ TAS.EverestInterop.Hitboxes.HitboxOptimized::SeekerOnDebugRender
+  IL_003c: callvirt System.Void Monocle.Collider::Render(Monocle.Camera,Microsoft.Xna.Framework.Color)
+  IL_0041: ldarg.0
+  IL_0042: ldloc.0
+  IL_0043: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0048: ret

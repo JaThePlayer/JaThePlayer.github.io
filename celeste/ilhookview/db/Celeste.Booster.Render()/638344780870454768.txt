@@ -1,0 +1,45 @@
+IL Diff: System.Void Celeste.Booster::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0006: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0012: ldloc.0
+  IL_0013: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_0018: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_001d: ldarg.0
+  IL_001e: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0023: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0028: ldstr "pop"
+  IL_002d: call System.Boolean System.String::op_Inequality(System.String,System.String)
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster::BoosterRenderHook
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster::BoosterRenderHook
++ IL_0000: ldc.i4 9994225 @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster::BoosterRenderHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster::BoosterRenderHook
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster/<>c::<BoosterRenderHook>b__32_0(System.Boolean,Celeste.Booster)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Booster>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.WormholeBooster::BoosterRenderHook
+  IL_0032: brfalse.s IL_004d
+  IL_0034: ldarg.0
+  IL_0035: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_003a: ldfld System.Boolean Monocle.Component::Visible
+  IL_003f: brfalse.s IL_004d
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
++ IL_0000: ldc.i4 38032839 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
+  |-> retrieves System.Boolean Celeste.Mod.GravityHelper.Hooks.BoosterHooks/<>c::<Booster_Render>b__6_7(Celeste.Booster)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Booster>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
++ IL_0000: brfalse.s IL_0041 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
++ IL_0000: br.s IL_004d @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
++ IL_0041: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Render
+  IL_0042: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0047: ldc.i4.1
+  IL_0048: callvirt System.Void Monocle.GraphicsComponent::DrawOutline(System.Int32)
+  IL_004d: ldarg.0
+  IL_004e: call System.Void Monocle.Entity::Render()
+  IL_0053: ldarg.0
+  IL_0054: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0059: ldloc.0
+  IL_005a: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_005f: ret

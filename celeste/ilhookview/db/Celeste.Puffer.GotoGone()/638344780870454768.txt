@@ -1,0 +1,102 @@
+IL Diff: System.Void Celeste.Puffer::GotoGone()
+  IL_0000: ldarg.0
++ IL_0000: call System.Void FrostHelper.DirectionalPuffer::removeSelfIfNoRespawn(Celeste.Puffer) @ FrostHelper.DirectionalPuffer::Puffer_GotoGone
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::Puffer_GotoGone
+  IL_0001: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0006: ldarg.0
+  IL_0007: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_000c: ldarg.0
+  IL_000d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0012: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0017: ldc.r4 0.5
+  IL_001c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0021: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0026: stloc.0
+  IL_0027: ldarg.0
+  IL_0028: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_002d: ldarg.0
+  IL_002e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0033: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0038: stloc.1
+  IL_0039: ldloca.s V_1
+  IL_003b: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_0040: ldc.r4 100
+  IL_0045: ble.un IL_0112
+  IL_004a: ldarg.0
+  IL_004b: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0050: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0055: ldarg.0
+  IL_0056: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_005b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0060: sub
+  IL_0061: call System.Single System.Math::Abs(System.Single)
+  IL_0066: ldarg.0
+  IL_0067: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_006c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0071: ldarg.0
+  IL_0072: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_0077: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_007c: sub
+  IL_007d: call System.Single System.Math::Abs(System.Single)
+  IL_0082: ble.un.s IL_00cc
+  IL_0084: ldarg.0
+  IL_0085: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_008a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_008f: ldarg.0
+  IL_0090: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_0095: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_009a: ble.un.s IL_00b4
+  IL_009c: ldloc.0
+  IL_009d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00a2: ldc.r4 -24
+  IL_00a7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ac: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00b1: stloc.0
+  IL_00b2: br.s IL_0112
+  IL_00b4: ldloc.0
+  IL_00b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00ba: ldc.r4 24
+  IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00c4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c9: stloc.0
+  IL_00ca: br.s IL_0112
+  IL_00cc: ldarg.0
+  IL_00cd: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00d2: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00d7: ldarg.0
+  IL_00d8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_00dd: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00e2: ble.un.s IL_00fc
+  IL_00e4: ldloc.0
+  IL_00e5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00ea: ldc.r4 -24
+  IL_00ef: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00f4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f9: stloc.0
+  IL_00fa: br.s IL_0112
+  IL_00fc: ldloc.0
+  IL_00fd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0102: ldc.r4 24
+  IL_0107: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_010c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0111: stloc.0
+  IL_0112: ldarg.0
+  IL_0113: ldarg.0
+  IL_0114: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0119: ldarg.0
+  IL_011a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::startPosition
+  IL_011f: ldloc.0
+  IL_0120: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0125: stfld Monocle.SimpleCurve Celeste.Puffer::returnCurve
+  IL_012a: ldarg.0
+  IL_012b: ldc.i4.0
+  IL_012c: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0131: ldarg.0
+  IL_0132: ldc.r4 2.5
+  IL_0137: stfld System.Single Celeste.Puffer::goneTimer
+  IL_0000: ldarg.0
++ IL_0000: call System.Void FrostHelper.DirectionalPuffer::setRespawnTime(Celeste.Puffer) @ FrostHelper.DirectionalPuffer::Puffer_GotoGone
++ IL_013c: ldarg.0 @ FrostHelper.DirectionalPuffer::Puffer_GotoGone
+  IL_013d: ldc.i4.2
+  IL_013e: stfld Celeste.Puffer/States Celeste.Puffer::state
+  IL_0143: ret

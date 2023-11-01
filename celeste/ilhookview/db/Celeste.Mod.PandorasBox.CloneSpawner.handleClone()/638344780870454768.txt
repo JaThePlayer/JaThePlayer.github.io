@@ -1,0 +1,63 @@
+IL Diff: System.Void Celeste.Mod.PandorasBox.CloneSpawner::handleClone()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0007: isinst Celeste.Level
+  IL_000c: stloc.0
+  IL_000d: ldarg.0
+  IL_000e: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0013: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0018: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Player>()
+  IL_001d: stloc.1
+  IL_001e: ldarg.0
+  IL_001f: ldfld System.Boolean Celeste.Mod.PandorasBox.CloneSpawner::active
+  IL_0024: stloc.2
+  IL_0025: ldloc.2
+  IL_0026: brfalse.s IL_0060
+  IL_0028: nop
+  IL_0029: ldarg.0
+  IL_002a: ldfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
+  IL_002f: ldnull
+  IL_0030: ceq
+  IL_0032: stloc.3
+  IL_0033: ldloc.3
+  IL_0034: brfalse.s IL_005d
+  IL_0036: nop
+  IL_0037: ldarg.0
+  IL_0038: ldloc.0
+  IL_0039: ldarg.0
+  IL_003a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_003f: ldarg.0
+  IL_0040: ldfld System.String Celeste.Mod.PandorasBox.CloneSpawner::visualMode
+  IL_0045: call Celeste.Player Celeste.Mod.PandorasBox.PlayerCloneHelper::CreatePlayer(Celeste.Level,Microsoft.Xna.Framework.Vector2,System.String)
+  IL_004a: stfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
+  IL_004f: ldloc.0
+  IL_0050: ldarg.0
+  IL_0051: ldfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0056: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_005b: nop
+  IL_005c: nop
+  IL_005d: nop
+  IL_005e: br.s IL_0086
+  IL_0060: nop
+  IL_0061: ldarg.0
+  IL_0062: ldfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
+  IL_0067: ldnull
+  IL_0068: cgt.un
+  IL_006a: stloc.s V_4
+  IL_006c: ldloc.s V_4
+  IL_006e: brfalse.s IL_0085
+  IL_0070: nop
+  IL_0071: ldarg.0
+  IL_0072: ldfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
+  IL_0077: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_007c: nop
+  IL_007d: ldarg.0
+  IL_007e: ldnull
+  IL_007f: stfld Celeste.Player Celeste.Mod.PandorasBox.CloneSpawner::Clone
+  IL_0084: nop
+  IL_0085: nop
+  IL_0086: ret

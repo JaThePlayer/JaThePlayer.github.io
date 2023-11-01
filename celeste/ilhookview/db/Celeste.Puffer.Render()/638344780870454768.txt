@@ -1,0 +1,377 @@
+IL Diff: System.Void Celeste.Puffer::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_0006: ldarg.0
+  IL_0007: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::scale
+  IL_000c: ldc.r4 1
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.Wiggler Celeste.Puffer::inflateWiggler
+  IL_0017: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_001c: ldc.r4 0.4
+  IL_0021: mul
+  IL_0022: add
+  IL_0023: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0028: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_002d: ldarg.0
+  IL_002e: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_0033: dup
+  IL_0034: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0039: ldarg.0
+  IL_003a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::facing
+  IL_003f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0044: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0049: ldc.i4.0
+  IL_004a: stloc.0
+  IL_004b: ldarg.0
+  IL_004c: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_0051: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0056: ldstr "hidden"
+  IL_005b: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0060: brfalse.s IL_0094
+  IL_0062: ldarg.0
+  IL_0063: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_0068: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_006d: ldstr "explode"
+  IL_0072: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0077: brfalse.s IL_0094
+  IL_0079: ldarg.0
+  IL_007a: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_007f: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0084: ldstr "recover"
+  IL_0089: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_008e: brfalse.s IL_0094
+  IL_0090: ldc.i4.1
+  IL_0091: stloc.0
+  IL_0092: br.s IL_00e4
+  IL_0094: ldarg.0
+  IL_0095: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_009a: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_009f: ldstr "explode"
+  IL_00a4: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00a9: brfalse.s IL_00bd
+  IL_00ab: ldarg.0
+  IL_00ac: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_00b1: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_00b6: ldc.i4.1
+  IL_00b7: bgt.s IL_00bd
+  IL_00b9: ldc.i4.1
+  IL_00ba: stloc.0
+  IL_00bb: br.s IL_00e4
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_00c3: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_00c8: ldstr "recover"
+  IL_00cd: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00d2: brfalse.s IL_00e4
+  IL_00d4: ldarg.0
+  IL_00d5: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_00da: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_00df: ldc.i4.4
+  IL_00e0: blt.s IL_00e4
+  IL_00e2: ldc.i4.1
+  IL_00e3: stloc.0
+  IL_00e4: ldloc.0
+  IL_00e5: brfalse.s IL_00f2
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_00ed: callvirt System.Void Monocle.GraphicsComponent::DrawSimpleOutline()
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld System.Single Celeste.Puffer::playerAliveFade
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00fe: ldarg.0
+  IL_00ff: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastPlayerPos
+  IL_0104: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0109: stloc.2
+  IL_010a: ldloca.s V_2
+  IL_010c: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0111: ldc.r4 128
+  IL_0116: ldc.r4 96
+  IL_011b: ldc.r4 0
+  IL_0120: ldc.r4 1
+  IL_0125: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_012a: mul
+  IL_012b: stloc.1
+  IL_012c: ldloc.1
+  IL_012d: ldc.r4 0
+  IL_0132: ble.un IL_0361
+  IL_0137: ldarg.0
+  IL_0138: ldfld Celeste.Puffer/States Celeste.Puffer::state
+  IL_013d: ldc.i4.2
+  IL_013e: beq IL_0361
+  IL_0143: ldc.i4.0
+  IL_0144: stloc.s V_4
+  IL_0146: ldarg.0
+  IL_0147: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastPlayerPos
+  IL_014c: stloc.s V_5
+  IL_014e: ldloc.s V_5
+  IL_0150: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0155: ldarg.0
+  IL_0156: call System.Single Monocle.Entity::get_Y()
+  IL_015b: bge.un.s IL_019b
+  IL_015d: ldloca.s V_5
+  IL_015f: ldarg.0
+  IL_0160: call System.Single Monocle.Entity::get_Y()
+  IL_0165: ldloc.s V_5
+  IL_0167: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_016c: ldarg.0
+  IL_016d: call System.Single Monocle.Entity::get_Y()
+  IL_0172: sub
+  IL_0173: ldc.r4 0.5
+  IL_0178: mul
+  IL_0179: sub
+  IL_017a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_017f: ldloca.s V_5
+  IL_0181: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0186: dup
+  IL_0187: ldind.r4
+  IL_0188: ldloc.s V_5
+  IL_018a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_018f: ldarg.0
+  IL_0190: call System.Single Monocle.Entity::get_X()
+  IL_0195: sub
+  IL_0196: add
+  IL_0197: stind.r4
+  IL_0198: ldc.i4.1
+  IL_0199: stloc.s V_4
+  IL_019b: ldloc.s V_5
+  IL_019d: ldarg.0
+  IL_019e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01a8: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_01ad: stloc.3
+  IL_01ae: ldc.i4.0
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call System.Int32 FrostHelper.DirectionalPuffer::getRenderStartIndex(System.Int32,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_01af: stloc.s V_6
+  IL_01b1: br IL_0358
+  IL_01b6: ldarg.0
+  IL_01b7: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01bc: ldfld System.Single Monocle.Scene::TimeActive
+  IL_01c1: ldc.r4 0.5
+  IL_01c6: mul
+  IL_01c7: conv.r8
+  IL_01c8: call System.Double System.Math::Sin(System.Double)
+  IL_01cd: conv.r4
+  IL_01ce: ldc.r4 0.02
+  IL_01d3: mul
+  IL_01d4: stloc.s V_7
+  IL_01d6: ldloc.s V_6
+  IL_01d8: conv.r4
+  IL_01d9: ldc.r4 28
+  IL_01de: div
+  IL_01df: ldloc.s V_7
+  IL_01e1: add
+  IL_01e2: ldc.r4 0
+  IL_01e7: ldc.r4 1
+  IL_01ec: ldc.r4 -0.10471976
+  IL_01f1: ldc.r4 3.2463126
+  IL_01f6: call System.Single Monocle.Calc::Map(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_01fb: stloc.s V_8
+  IL_01fd: ldloc.s V_8
+  IL_01ff: ldarg.0
+  IL_0200: ldfld Monocle.Wiggler Celeste.Puffer::bounceWiggler
+  IL_0205: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_020a: ldc.r4 20
+  IL_020f: mul
+  IL_0210: ldc.r4 0.017453292
+  IL_0215: mul
+  IL_0216: add
+  IL_0217: stloc.s V_8
+  IL_0219: ldloc.s V_8
+  IL_021b: ldc.r4 1
+  IL_0220: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0225: stloc.s V_9
+  IL_0227: ldarg.0
+  IL_0228: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_022d: ldloc.s V_9
+  IL_022f: ldc.r4 32
+  IL_0234: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0239: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_023e: stloc.s V_10
+  IL_0240: ldloc.s V_8
+  IL_0242: ldloc.3
+  IL_0243: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_0248: ldc.r4 1.5707964
+  IL_024d: ldc.r4 0.17453292
+  IL_0252: ldc.r4 0
+  IL_0257: ldc.r4 1
+  IL_025c: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0261: stloc.s V_11
+  IL_0263: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_0268: ldloc.s V_11
+  IL_026a: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_026f: ldc.r4 0.8
+  IL_0274: mul
+  IL_0275: ldloc.1
+  IL_0276: mul
+  IL_0277: stloc.s V_11
+  IL_0279: ldloc.s V_11
+  IL_027b: ldc.r4 0
+  IL_0280: ble.un IL_0352
+  IL_0285: ldloc.s V_6
+  IL_0287: brfalse.s IL_028f
+  IL_0289: ldloc.s V_6
+  IL_028b: ldc.i4.s 27
+  IL_028d: bne.un.s IL_02ba
+  IL_028f: ldloc.s V_10
+  IL_0291: ldloc.s V_10
+  IL_0293: ldloc.s V_9
+  IL_0295: ldc.r4 10
+  IL_029a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_029f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02a4: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.DirectionalPuffer::GetExplosionRangeIndicatorColor(Microsoft.Xna.Framework.Color,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_02a9: ldloc.s V_11
+  IL_02ab: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02b0: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_02b5: br IL_0352
+  IL_02ba: ldloc.s V_9
+  IL_02bc: ldarg.0
+  IL_02bd: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02c2: ldfld System.Single Monocle.Scene::TimeActive
+  IL_02c7: ldc.r4 2
+  IL_02cc: mul
+  IL_02cd: ldloc.s V_6
+  IL_02cf: conv.r4
+  IL_02d0: ldc.r4 0.6
+  IL_02d5: mul
+  IL_02d6: add
+  IL_02d7: conv.r8
+  IL_02d8: call System.Double System.Math::Sin(System.Double)
+  IL_02dd: conv.r4
+  IL_02de: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02e3: stloc.s V_12
+  IL_02e5: ldloc.s V_6
+  IL_02e7: ldc.i4.2
+  IL_02e8: rem
+  IL_02e9: brtrue.s IL_02f9
+  IL_02eb: ldloc.s V_12
+  IL_02ed: ldc.r4 -1
+  IL_02f2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02f7: stloc.s V_12
+  IL_02f9: ldloc.s V_10
+  IL_02fb: ldloc.s V_12
+  IL_02fd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0302: stloc.s V_10
+  IL_0304: ldloc.s V_4
+  IL_0306: brtrue.s IL_033f
+  IL_0308: ldloc.s V_8
+  IL_030a: ldloc.3
+  IL_030b: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_0310: ldc.r4 0.17453292
+  IL_0315: bgt.un.s IL_033f
+  IL_0317: ldloc.s V_10
+  IL_0319: ldloc.s V_10
+  IL_031b: ldloc.s V_9
+  IL_031d: ldc.r4 3
+  IL_0322: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0327: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_032c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.DirectionalPuffer::GetExplosionRangeIndicatorColor(Microsoft.Xna.Framework.Color,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_0331: ldloc.s V_11
+  IL_0333: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0338: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_033d: br.s IL_0352
+  IL_033f: ldloc.s V_10
+  IL_0341: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.DirectionalPuffer::GetExplosionRangeIndicatorColor(Microsoft.Xna.Framework.Color,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_0346: ldloc.s V_11
+  IL_0348: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_034d: call System.Void Monocle.Draw::Point(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0352: ldloc.s V_6
+  IL_0354: ldc.i4.1
+  IL_0355: add
+  IL_0356: stloc.s V_6
+  IL_0358: ldloc.s V_6
++ IL_0000: call System.Int32 TAS.EverestInterop.Hitboxes.HitboxOptimized::HidePufferWhiteLine(System.Int32) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_035a: ldc.i4.s 28
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call System.Int32 FrostHelper.DirectionalPuffer::getRenderEndIndex(System.Int32,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_035c: blt IL_01b6
+  IL_0361: ldarg.0
+  IL_0362: call System.Void Monocle.Entity::Render()
+  IL_0367: ldarg.0
+  IL_0368: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_036d: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0372: ldstr "alerted"
+  IL_0377: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_037c: brfalse IL_0465
+  IL_0381: ldarg.0
+  IL_0382: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0387: ldc.r4 3
+  IL_038c: ldarg.0
+  IL_038d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::facing
+  IL_0392: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0397: ldc.r4 0
+  IL_039c: blt.s IL_03a2
+  IL_039e: ldc.i4.s -4
+  IL_03a0: br.s IL_03a4
+  IL_03a2: ldc.i4.s -5
+  IL_03a4: conv.r4
+  IL_03a5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03aa: ldarg.0
+  IL_03ab: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_03b0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_03b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03ba: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03bf: ldarg.0
+  IL_03c0: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastPlayerPos
+  IL_03c5: ldc.r4 0
+  IL_03ca: ldc.r4 -4
+  IL_03cf: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03d4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03d9: stloc.s V_13
+  IL_03db: dup
+  IL_03dc: ldloc.s V_13
+  IL_03de: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03e3: ldarg.0
+  IL_03e4: ldfld System.Single Celeste.Puffer::eyeSpin
+  IL_03e9: ldc.r4 6.2831855
+  IL_03ee: mul
+  IL_03ef: ldc.r4 2
+  IL_03f4: mul
+  IL_03f5: add
+  IL_03f6: ldc.r4 1
+  IL_03fb: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0400: stloc.s V_14
+  IL_0402: ldloc.s V_14
+  IL_0404: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0409: conv.r8
+  IL_040a: call System.Double System.Math::Round(System.Double)
+  IL_040f: conv.r4
+  IL_0410: ldloc.s V_14
+  IL_0412: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0417: ldc.r4 -1
+  IL_041c: ldc.r4 1
+  IL_0421: ldc.r4 -1
+  IL_0426: ldc.r4 2
+  IL_042b: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0430: conv.r8
+  IL_0431: call System.Double System.Math::Round(System.Double)
+  IL_0436: conv.r4
+  IL_0437: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_043c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0441: stloc.s V_15
+  IL_0443: ldloc.s V_15
+  IL_0445: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_044a: ldloc.s V_15
+  IL_044c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0451: ldc.r4 1
+  IL_0456: ldc.r4 1
+  IL_045b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
++ IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::IL_Render
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.DirectionalPuffer::GetEyeColor(Microsoft.Xna.Framework.Color,Celeste.Puffer) @ FrostHelper.DirectionalPuffer::IL_Render
+  IL_0460: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0465: ldarg.0
+  IL_0466: ldfld Monocle.Sprite Celeste.Puffer::sprite
+  IL_046b: dup
+  IL_046c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0471: ldarg.0
+  IL_0472: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::facing
+  IL_0477: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_047c: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0481: ret

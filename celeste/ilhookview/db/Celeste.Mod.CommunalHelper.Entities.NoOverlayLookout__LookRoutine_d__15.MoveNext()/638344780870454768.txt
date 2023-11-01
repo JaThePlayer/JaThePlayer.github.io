@@ -1,0 +1,1698 @@
+IL Diff: System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_002f,IL_0031,IL_0036,IL_003b,IL_0040,IL_0045,IL_004a,IL_004f
+  IL_002d: br.s IL_0054
+  IL_002f: br.s IL_0056
+  IL_0031: br IL_0101
+  IL_0036: br IL_0232
+  IL_003b: br IL_10ac
+  IL_0040: br IL_11d3
+  IL_0045: br IL_1279
+  IL_004a: br IL_13d2
+  IL_004f: br IL_14ac
+  IL_0054: ldc.i4.0
+  IL_0055: ret
+  IL_0056: ldarg.0
+  IL_0057: ldc.i4.m1
+  IL_0058: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_005d: nop
+  IL_005e: ldarg.0
+  IL_005f: ldarg.0
+  IL_0060: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0065: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_006a: stfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_006f: ldarg.0
+  IL_0070: ldarg.0
+  IL_0071: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0076: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_007b: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0080: callvirt T Monocle.EntityList::FindFirst<Celeste.SandwichLava>()
+  IL_0085: stfld Celeste.SandwichLava Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<sandwichLava>5__2
+  IL_008a: ldarg.0
+  IL_008b: ldfld Celeste.SandwichLava Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<sandwichLava>5__2
+  IL_0090: ldnull
+  IL_0091: cgt.un
+  IL_0093: stloc.1
+  IL_0094: ldloc.1
+  IL_0095: brfalse.s IL_00a3
+  IL_0097: ldarg.0
+  IL_0098: ldfld Celeste.SandwichLava Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<sandwichLava>5__2
+  IL_009d: ldc.i4.1
+  IL_009e: stfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_00a3: ldarg.0
+  IL_00a4: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_00a9: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00ae: ldnull
+  IL_00af: cgt.un
+  IL_00b1: stloc.2
+  IL_00b2: ldloc.2
+  IL_00b3: brfalse.s IL_00c1
+  IL_00b5: ldarg.0
+  IL_00b6: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_00bb: callvirt System.Void Celeste.Player::Drop()
+  IL_00c0: nop
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_00c7: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00cc: ldc.i4.s 11
+  IL_00ce: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_00d3: nop
+  IL_00d4: ldarg.0
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_00db: ldarg.0
+  IL_00dc: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_00e1: callvirt System.Single Monocle.Entity::get_X()
+  IL_00e6: conv.i4
+  IL_00e7: ldc.i4.0
+  IL_00e8: ldc.r4 1
+  IL_00ed: ldc.i4.1
+  IL_00ee: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_00f3: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_00f8: ldarg.0
+  IL_00f9: ldc.i4.1
+  IL_00fa: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_00ff: ldc.i4.1
+  IL_0100: ret
+  IL_0101: ldarg.0
+  IL_0102: ldc.i4.m1
+  IL_0103: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_0108: ldarg.0
+  IL_0109: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_010e: callvirt System.Single Monocle.Entity::get_X()
+  IL_0113: ldarg.0
+  IL_0114: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0119: callvirt System.Single Monocle.Entity::get_X()
+  IL_011e: sub
+  IL_011f: call System.Single System.Math::Abs(System.Single)
+  IL_0124: ldc.r4 4
+  IL_0129: bgt.s IL_0149
+  IL_012b: ldarg.0
+  IL_012c: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0131: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0136: brtrue.s IL_0149
+  IL_0138: ldarg.0
+  IL_0139: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_013e: ldc.i4.1
+  IL_013f: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_0144: ldc.i4.0
+  IL_0145: ceq
+  IL_0147: br.s IL_014a
+  IL_0149: ldc.i4.1
+  IL_014a: stloc.3
+  IL_014b: ldloc.3
+  IL_014c: brfalse.s IL_0177
+  IL_014e: nop
+  IL_014f: ldarg.0
+  IL_0150: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0155: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_015a: ldc.i4.0
+  IL_015b: ceq
+  IL_015d: stloc.s V_4
+  IL_015f: ldloc.s V_4
+  IL_0161: brfalse.s IL_0175
+  IL_0163: ldarg.0
+  IL_0164: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0169: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_016e: ldc.i4.0
+  IL_016f: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0174: nop
+  IL_0175: ldc.i4.0
+  IL_0176: ret
+  IL_0177: ldstr "event:/game/general/lookout_use"
+  IL_017c: ldarg.0
+  IL_017d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0182: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0187: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_018c: pop
+  IL_018d: ldarg.0
+  IL_018e: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0193: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0198: ldc.i4.1
+  IL_0199: ceq
+  IL_019b: stloc.s V_5
+  IL_019d: ldloc.s V_5
+  IL_019f: brfalse.s IL_01cb
+  IL_01a1: ldarg.0
+  IL_01a2: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_01a7: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_01ac: ldarg.0
+  IL_01ad: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_01b2: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_01b7: ldstr "lookRight"
+  IL_01bc: call System.String System.String::Concat(System.String,System.String)
+  IL_01c1: ldc.i4.0
+  IL_01c2: ldc.i4.0
+  IL_01c3: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_01c8: nop
+  IL_01c9: br.s IL_01f3
+  IL_01cb: ldarg.0
+  IL_01cc: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_01d1: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_01dc: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_01e1: ldstr "lookLeft"
+  IL_01e6: call System.String System.String::Concat(System.String,System.String)
+  IL_01eb: ldc.i4.0
+  IL_01ec: ldc.i4.0
+  IL_01ed: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_01f2: nop
+  IL_01f3: ldarg.0
+  IL_01f4: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_01f9: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01fe: ldarg.0
+  IL_01ff: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_0204: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_0209: ldc.i4.0
+  IL_020a: dup
+  IL_020b: stloc.s V_6
+  IL_020d: stfld System.Boolean Monocle.Component::Visible
+  IL_0212: ldloc.s V_6
+  IL_0214: stfld System.Boolean Monocle.Component::Visible
+  IL_0219: ldarg.0
+  IL_021a: ldc.r4 0.2
+  IL_021f: box System.Single
+  IL_0224: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_0229: ldarg.0
+  IL_022a: ldc.i4.2
+  IL_022b: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_0230: ldc.i4.1
+  IL_0231: ret
+  IL_0232: ldarg.0
+  IL_0233: ldc.i4.m1
+  IL_0234: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_0239: ldarg.0
+  IL_023a: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_023f: ldc.r4 0
+  IL_0244: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0249: ldarg.0
+  IL_024a: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_024f: ldc.i4.0
+  IL_0250: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0255: ldstr "event:/ui/game/lookout_on"
+  IL_025a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_025f: pop
+  IL_0260: ldarg.0
+  IL_0261: ldc.r4 800
+  IL_0266: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<accel>5__3
+  IL_026b: ldarg.0
+  IL_026c: ldc.r4 240
+  IL_0271: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<maxSpeed>5__4
+  IL_0276: ldarg.0
+  IL_0277: ldarg.0
+  IL_0278: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_027d: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0282: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0287: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_028c: ldarg.0
+  IL_028d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0292: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0297: ldarg.0
+  IL_0298: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_029d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lastDir>5__7
+  IL_02a2: ldarg.0
+  IL_02a3: ldarg.0
+  IL_02a4: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_02a9: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_02ae: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_02b3: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStart>5__8
+  IL_02b8: ldarg.0
+  IL_02b9: ldarg.0
+  IL_02ba: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStart>5__8
+  IL_02bf: ldc.r4 160
+  IL_02c4: ldc.r4 90
+  IL_02c9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02ce: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02d3: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStartCenter>5__9
+  IL_02d8: br IL_10c0
+  IL_02dd: nop
+  IL_02de: ldarg.0
+  IL_02df: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_02e4: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_02e9: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_02ee: ldarg.0
+  IL_02ef: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_02f4: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::onlyY
+  IL_02f9: stloc.s V_7
+  IL_02fb: ldloc.s V_7
+  IL_02fd: brfalse.s IL_030f
+  IL_02ff: ldarg.0
+  IL_0300: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0305: ldc.r4 0
+  IL_030a: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_030f: ldarg.0
+  IL_0310: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0315: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_031a: call System.Int32 System.Math::Sign(System.Single)
+  IL_031f: ldarg.0
+  IL_0320: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lastDir>5__7
+  IL_0325: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_032a: call System.Int32 System.Math::Sign(System.Single)
+  IL_032f: bne.un.s IL_0358
+  IL_0331: ldarg.0
+  IL_0332: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0337: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_033c: call System.Int32 System.Math::Sign(System.Single)
+  IL_0341: ldarg.0
+  IL_0342: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lastDir>5__7
+  IL_0347: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_034c: call System.Int32 System.Math::Sign(System.Single)
+  IL_0351: ceq
+  IL_0353: ldc.i4.0
+  IL_0354: ceq
+  IL_0356: br.s IL_0359
+  IL_0358: ldc.i4.1
+  IL_0359: stloc.s V_8
+  IL_035b: ldloc.s V_8
+  IL_035d: brfalse.s IL_0375
+  IL_035f: ldstr "event:/game/general/lookout_move"
+  IL_0364: ldarg.0
+  IL_0365: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_036a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_036f: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0374: pop
+  IL_0375: ldarg.0
+  IL_0376: ldarg.0
+  IL_0377: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_037c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lastDir>5__7
+  IL_0381: ldarg.0
+  IL_0382: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0387: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_038c: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0391: stloc.s V_10
+  IL_0393: ldloc.s V_10
+  IL_0395: ldstr "lookLeft"
+  IL_039a: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_039f: brtrue.s IL_03b2
+  IL_03a1: ldloc.s V_10
+  IL_03a3: ldstr "lookRight"
+  IL_03a8: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_03ad: ldc.i4.0
+  IL_03ae: ceq
+  IL_03b0: br.s IL_03b3
+  IL_03b2: ldc.i4.0
+  IL_03b3: stloc.s V_9
+  IL_03b5: ldloc.s V_9
+  IL_03b7: brfalse IL_0623
+  IL_03bc: nop
+  IL_03bd: ldarg.0
+  IL_03be: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_03c3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_03c8: ldc.r4 0
+  IL_03cd: ceq
+  IL_03cf: stloc.s V_11
+  IL_03d1: ldloc.s V_11
+  IL_03d3: brfalse IL_048b
+  IL_03d8: nop
+  IL_03d9: ldarg.0
+  IL_03da: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_03df: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03e4: ldc.r4 0
+  IL_03e9: ceq
+  IL_03eb: stloc.s V_12
+  IL_03ed: ldloc.s V_12
+  IL_03ef: brfalse.s IL_041b
+  IL_03f1: ldarg.0
+  IL_03f2: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_03f7: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_03fc: ldarg.0
+  IL_03fd: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0402: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_0407: ldstr "looking"
+  IL_040c: call System.String System.String::Concat(System.String,System.String)
+  IL_0411: ldc.i4.0
+  IL_0412: ldc.i4.0
+  IL_0413: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0418: nop
+  IL_0419: br.s IL_0485
+  IL_041b: ldarg.0
+  IL_041c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0421: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0426: ldc.r4 0
+  IL_042b: cgt
+  IL_042d: stloc.s V_13
+  IL_042f: ldloc.s V_13
+  IL_0431: brfalse.s IL_045d
+  IL_0433: ldarg.0
+  IL_0434: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0439: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_043e: ldarg.0
+  IL_043f: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0444: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_0449: ldstr "lookingDown"
+  IL_044e: call System.String System.String::Concat(System.String,System.String)
+  IL_0453: ldc.i4.0
+  IL_0454: ldc.i4.0
+  IL_0455: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_045a: nop
+  IL_045b: br.s IL_0485
+  IL_045d: ldarg.0
+  IL_045e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0463: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_0468: ldarg.0
+  IL_0469: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_046e: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_0473: ldstr "lookingUp"
+  IL_0478: call System.String System.String::Concat(System.String,System.String)
+  IL_047d: ldc.i4.0
+  IL_047e: ldc.i4.0
+  IL_047f: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0484: nop
+  IL_0485: nop
+  IL_0486: br IL_0622
+  IL_048b: ldarg.0
+  IL_048c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0491: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0496: ldc.r4 0
+  IL_049b: cgt
+  IL_049d: stloc.s V_14
+  IL_049f: ldloc.s V_14
+  IL_04a1: brfalse IL_0559
+  IL_04a6: nop
+  IL_04a7: ldarg.0
+  IL_04a8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_04ad: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_04b2: ldc.r4 0
+  IL_04b7: ceq
+  IL_04b9: stloc.s V_15
+  IL_04bb: ldloc.s V_15
+  IL_04bd: brfalse.s IL_04e9
+  IL_04bf: ldarg.0
+  IL_04c0: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_04c5: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_04ca: ldarg.0
+  IL_04cb: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_04d0: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_04d5: ldstr "lookingRight"
+  IL_04da: call System.String System.String::Concat(System.String,System.String)
+  IL_04df: ldc.i4.0
+  IL_04e0: ldc.i4.0
+  IL_04e1: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_04e6: nop
+  IL_04e7: br.s IL_0553
+  IL_04e9: ldarg.0
+  IL_04ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_04ef: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_04f4: ldc.r4 0
+  IL_04f9: cgt
+  IL_04fb: stloc.s V_16
+  IL_04fd: ldloc.s V_16
+  IL_04ff: brfalse.s IL_052b
+  IL_0501: ldarg.0
+  IL_0502: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0507: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_050c: ldarg.0
+  IL_050d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0512: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_0517: ldstr "lookingDownRight"
+  IL_051c: call System.String System.String::Concat(System.String,System.String)
+  IL_0521: ldc.i4.0
+  IL_0522: ldc.i4.0
+  IL_0523: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0528: nop
+  IL_0529: br.s IL_0553
+  IL_052b: ldarg.0
+  IL_052c: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0531: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_0536: ldarg.0
+  IL_0537: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_053c: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_0541: ldstr "lookingUpRight"
+  IL_0546: call System.String System.String::Concat(System.String,System.String)
+  IL_054b: ldc.i4.0
+  IL_054c: ldc.i4.0
+  IL_054d: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0552: nop
+  IL_0553: nop
+  IL_0554: br IL_0622
+  IL_0559: ldarg.0
+  IL_055a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_055f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0564: ldc.r4 0
+  IL_0569: clt
+  IL_056b: stloc.s V_17
+  IL_056d: ldloc.s V_17
+  IL_056f: brfalse IL_0622
+  IL_0574: nop
+  IL_0575: ldarg.0
+  IL_0576: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_057b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0580: ldc.r4 0
+  IL_0585: ceq
+  IL_0587: stloc.s V_18
+  IL_0589: ldloc.s V_18
+  IL_058b: brfalse.s IL_05b7
+  IL_058d: ldarg.0
+  IL_058e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0593: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_0598: ldarg.0
+  IL_0599: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_059e: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_05a3: ldstr "lookingLeft"
+  IL_05a8: call System.String System.String::Concat(System.String,System.String)
+  IL_05ad: ldc.i4.0
+  IL_05ae: ldc.i4.0
+  IL_05af: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_05b4: nop
+  IL_05b5: br.s IL_0621
+  IL_05b7: ldarg.0
+  IL_05b8: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_05bd: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_05c2: ldc.r4 0
+  IL_05c7: cgt
+  IL_05c9: stloc.s V_19
+  IL_05cb: ldloc.s V_19
+  IL_05cd: brfalse.s IL_05f9
+  IL_05cf: ldarg.0
+  IL_05d0: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_05d5: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_05da: ldarg.0
+  IL_05db: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_05e0: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_05e5: ldstr "lookingDownLeft"
+  IL_05ea: call System.String System.String::Concat(System.String,System.String)
+  IL_05ef: ldc.i4.0
+  IL_05f0: ldc.i4.0
+  IL_05f1: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_05f6: nop
+  IL_05f7: br.s IL_0621
+  IL_05f9: ldarg.0
+  IL_05fa: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_05ff: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_0604: ldarg.0
+  IL_0605: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_060a: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_060f: ldstr "lookingUpLeft"
+  IL_0614: call System.String System.String::Concat(System.String,System.String)
+  IL_0619: ldc.i4.0
+  IL_061a: ldc.i4.0
+  IL_061b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0620: nop
+  IL_0621: nop
+  IL_0622: nop
+  IL_0623: ldarg.0
+  IL_0624: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0629: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_062e: ldnull
+  IL_062f: ceq
+  IL_0631: stloc.s V_20
+  IL_0633: ldloc.s V_20
+  IL_0635: brfalse IL_0b1c
+  IL_063a: nop
+  IL_063b: ldarg.0
+  IL_063c: ldarg.0
+  IL_063d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0642: ldarg.0
+  IL_0643: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<accel>5__3
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_0648: ldarg.0
+  IL_0649: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_064e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(System.Single,Microsoft.Xna.Framework.Vector2)
+  IL_0653: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0658: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_065d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0662: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0667: ldarg.0
+  IL_0668: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_066d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0672: ldc.r4 0
+  IL_0677: ceq
+  IL_0679: stloc.s V_21
+  IL_067b: ldloc.s V_21
+  IL_067d: brfalse.s IL_06b1
+  IL_067f: ldarg.0
+  IL_0680: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0685: ldarg.0
+  IL_0686: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_068b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0690: ldc.r4 0
+  IL_0695: ldarg.0
+  IL_0696: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<accel>5__3
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_069b: ldc.r4 2
+  IL_06a0: mul
+  IL_06a1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_06a6: mul
+  IL_06a7: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_06ac: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_06b1: ldarg.0
+  IL_06b2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_06b7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_06bc: ldc.r4 0
+  IL_06c1: ceq
+  IL_06c3: stloc.s V_22
+  IL_06c5: ldloc.s V_22
+  IL_06c7: brfalse.s IL_06fb
+  IL_06c9: ldarg.0
+  IL_06ca: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_06cf: ldarg.0
+  IL_06d0: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_06d5: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_06da: ldc.r4 0
+  IL_06df: ldarg.0
+  IL_06e0: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<accel>5__3
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_06e5: ldc.r4 2
+  IL_06ea: mul
+  IL_06eb: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_06f0: mul
+  IL_06f1: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_06f6: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_06fb: ldarg.0
+  IL_06fc: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0701: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0706: ldarg.0
+  IL_0707: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<maxSpeed>5__4
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_070c: cgt
+  IL_070e: stloc.s V_23
+  IL_0710: ldloc.s V_23
+  IL_0712: brfalse.s IL_072b
+  IL_0714: ldarg.0
+  IL_0715: ldarg.0
+  IL_0716: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_071b: ldarg.0
+  IL_071c: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<maxSpeed>5__4
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_0721: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0726: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_072b: ldarg.0
+  IL_072c: ldarg.0
+  IL_072d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0732: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0737: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_073c: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.LookoutBlocker>()
+  IL_0741: stfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lookoutBlockers>5__12
+  IL_0746: ldarg.0
+  IL_0747: ldarg.0
+  IL_0748: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_074d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<vector>5__13
+  IL_0752: ldarg.0
+  IL_0753: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0758: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_075d: dup
+  IL_075e: ldind.r4
+  IL_075f: ldarg.0
+  IL_0760: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0765: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_076a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_076f: mul
+  IL_0770: add
+  IL_0771: stind.r4
+  IL_0772: ldarg.0
+  IL_0773: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0778: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_077d: ldarg.0
+  IL_077e: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0783: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0788: stloc.s V_25
+  IL_078a: ldloca.s V_25
+  IL_078c: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0791: conv.r4
+  IL_0792: blt.s IL_07be
+  IL_0794: ldarg.0
+  IL_0795: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_079a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_079f: ldc.r4 320
+  IL_07a4: add
+  IL_07a5: ldarg.0
+  IL_07a6: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_07ab: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_07b0: stloc.s V_25
+  IL_07b2: ldloca.s V_25
+  IL_07b4: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_07b9: conv.r4
+  IL_07ba: cgt
+  IL_07bc: br.s IL_07bf
+  IL_07be: ldc.i4.1
+  IL_07bf: stloc.s V_24
+  IL_07c1: ldloc.s V_24
+  IL_07c3: brfalse.s IL_07d5
+  IL_07c5: ldarg.0
+  IL_07c6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_07cb: ldc.r4 0
+  IL_07d0: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07d5: ldarg.0
+  IL_07d6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_07db: ldarg.0
+  IL_07dc: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_07e1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07e6: ldarg.0
+  IL_07e7: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_07ec: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_07f1: stloc.s V_25
+  IL_07f3: ldloca.s V_25
+  IL_07f5: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_07fa: conv.r4
+  IL_07fb: ldarg.0
+  IL_07fc: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0801: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0806: stloc.s V_25
+  IL_0808: ldloca.s V_25
+  IL_080a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_080f: ldc.i4 320
+  IL_0814: sub
+  IL_0815: conv.r4
+  IL_0816: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_081b: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0820: nop
+  IL_0821: ldarg.0
+  IL_0822: ldarg.0
+  IL_0823: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lookoutBlockers>5__12
+  IL_0828: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_082d: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__14
+  IL_0832: br IL_08ee
+  IL_0837: ldarg.0
+  IL_0838: ldarg.0
+  IL_0839: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__14
+  IL_083e: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0843: stfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_0848: nop
+  IL_0849: ldarg.0
+  IL_084a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_084f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0854: ldc.r4 320
+  IL_0859: add
+  IL_085a: ldarg.0
+  IL_085b: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_0860: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0865: ble.un.s IL_08b7
+  IL_0867: ldarg.0
+  IL_0868: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_086d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0872: ldc.r4 180
+  IL_0877: add
+  IL_0878: ldarg.0
+  IL_0879: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_087e: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0883: ble.un.s IL_08b7
+  IL_0885: ldarg.0
+  IL_0886: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_088b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0890: ldarg.0
+  IL_0891: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_0896: callvirt System.Single Monocle.Entity::get_Right()
+  IL_089b: bge.un.s IL_08b7
+  IL_089d: ldarg.0
+  IL_089e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_08a3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_08a8: ldarg.0
+  IL_08a9: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_08ae: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_08b3: clt
+  IL_08b5: br.s IL_08b8
+  IL_08b7: ldc.i4.0
+  IL_08b8: stloc.s V_26
+  IL_08ba: ldloc.s V_26
+  IL_08bc: brfalse.s IL_08e6
+  IL_08be: nop
+  IL_08bf: ldarg.0
+  IL_08c0: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_08c5: ldarg.0
+  IL_08c6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<vector>5__13
+  IL_08cb: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_08d0: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_08d5: ldarg.0
+  IL_08d6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_08db: ldc.r4 0
+  IL_08e0: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_08e5: nop
+  IL_08e6: nop
+  IL_08e7: ldarg.0
+  IL_08e8: ldnull
+  IL_08e9: stfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item>5__15
+  IL_08ee: ldarg.0
+  IL_08ef: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__14
+  IL_08f4: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_08f9: brtrue IL_0837
+  IL_08fe: leave.s IL_0913
+  IL_0900: ldarg.0
+  IL_0901: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__14
+  IL_0906: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_090c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0911: nop
+  IL_0912: endfinally
+  IL_0913: ldarg.0
+  IL_0914: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__14
+  IL_0919: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_091f: ldarg.0
+  IL_0920: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0925: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_092a: dup
+  IL_092b: ldind.r4
+  IL_092c: ldarg.0
+  IL_092d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0932: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0937: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_093c: mul
+  IL_093d: add
+  IL_093e: stind.r4
+  IL_093f: ldarg.0
+  IL_0940: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0945: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_094a: ldarg.0
+  IL_094b: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0950: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0955: stloc.s V_25
+  IL_0957: ldloca.s V_25
+  IL_0959: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_095e: conv.r4
+  IL_095f: blt.s IL_098b
+  IL_0961: ldarg.0
+  IL_0962: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0967: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_096c: ldc.r4 180
+  IL_0971: add
+  IL_0972: ldarg.0
+  IL_0973: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0978: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_097d: stloc.s V_25
+  IL_097f: ldloca.s V_25
+  IL_0981: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0986: conv.r4
+  IL_0987: cgt
+  IL_0989: br.s IL_098c
+  IL_098b: ldc.i4.1
+  IL_098c: stloc.s V_27
+  IL_098e: ldloc.s V_27
+  IL_0990: brfalse.s IL_09a2
+  IL_0992: ldarg.0
+  IL_0993: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0998: ldc.r4 0
+  IL_099d: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09a2: ldarg.0
+  IL_09a3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_09a8: ldarg.0
+  IL_09a9: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_09ae: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09b3: ldarg.0
+  IL_09b4: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_09b9: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_09be: stloc.s V_25
+  IL_09c0: ldloca.s V_25
+  IL_09c2: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_09c7: conv.r4
+  IL_09c8: ldarg.0
+  IL_09c9: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_09ce: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_09d3: stloc.s V_25
+  IL_09d5: ldloca.s V_25
+  IL_09d7: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_09dc: ldc.i4 180
+  IL_09e1: sub
+  IL_09e2: conv.r4
+  IL_09e3: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_09e8: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09ed: nop
+  IL_09ee: ldarg.0
+  IL_09ef: ldarg.0
+  IL_09f0: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lookoutBlockers>5__12
+  IL_09f5: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_09fa: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__16
+  IL_09ff: br IL_0abb
+  IL_0a04: ldarg.0
+  IL_0a05: ldarg.0
+  IL_0a06: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__16
+  IL_0a0b: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0a10: stfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0a15: nop
+  IL_0a16: ldarg.0
+  IL_0a17: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0a1c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0a21: ldc.r4 320
+  IL_0a26: add
+  IL_0a27: ldarg.0
+  IL_0a28: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0a2d: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0a32: ble.un.s IL_0a84
+  IL_0a34: ldarg.0
+  IL_0a35: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0a3a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a3f: ldc.r4 180
+  IL_0a44: add
+  IL_0a45: ldarg.0
+  IL_0a46: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0a4b: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0a50: ble.un.s IL_0a84
+  IL_0a52: ldarg.0
+  IL_0a53: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0a58: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0a5d: ldarg.0
+  IL_0a5e: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0a63: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0a68: bge.un.s IL_0a84
+  IL_0a6a: ldarg.0
+  IL_0a6b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0a70: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a75: ldarg.0
+  IL_0a76: ldfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0a7b: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0a80: clt
+  IL_0a82: br.s IL_0a85
+  IL_0a84: ldc.i4.0
+  IL_0a85: stloc.s V_28
+  IL_0a87: ldloc.s V_28
+  IL_0a89: brfalse.s IL_0ab3
+  IL_0a8b: nop
+  IL_0a8c: ldarg.0
+  IL_0a8d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0a92: ldarg.0
+  IL_0a93: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<vector>5__13
+  IL_0a98: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a9d: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0aa2: ldarg.0
+  IL_0aa3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<speed>5__6
+  IL_0aa8: ldc.r4 0
+  IL_0aad: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0ab2: nop
+  IL_0ab3: nop
+  IL_0ab4: ldarg.0
+  IL_0ab5: ldnull
+  IL_0ab6: stfld Monocle.Entity Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<item2>5__17
+  IL_0abb: ldarg.0
+  IL_0abc: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__16
+  IL_0ac1: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0ac6: brtrue IL_0a04
+  IL_0acb: leave.s IL_0ae0
+  IL_0acd: ldarg.0
+  IL_0ace: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__16
+  IL_0ad3: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0ad9: callvirt System.Void System.IDisposable::Dispose()
+  IL_0ade: nop
+  IL_0adf: endfinally
+  IL_0ae0: ldarg.0
+  IL_0ae1: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>s__16
+  IL_0ae6: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0aec: ldarg.0
+  IL_0aed: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0af2: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0af7: ldarg.0
+  IL_0af8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<cam>5__5
+  IL_0afd: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0b02: nop
+  IL_0b03: nop
+  IL_0b04: ldarg.0
+  IL_0b05: ldnull
+  IL_0b06: stfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<lookoutBlockers>5__12
+  IL_0b0b: ldarg.0
+  IL_0b0c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<vector>5__13
+  IL_0b11: initobj Microsoft.Xna.Framework.Vector2
+  IL_0b17: br IL_109c
+  IL_0b1c: nop
+  IL_0b1d: ldarg.0
+  IL_0b1e: ldarg.0
+  IL_0b1f: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b24: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0b29: ldc.i4.0
+  IL_0b2a: ble.s IL_0b4b
+  IL_0b2c: ldarg.0
+  IL_0b2d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b32: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0b37: ldarg.0
+  IL_0b38: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b3d: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0b42: ldc.i4.1
+  IL_0b43: sub
+  IL_0b44: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0b49: br.s IL_0b51
+  IL_0b4b: ldarg.0
+  IL_0b4c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStartCenter>5__9
+  IL_0b51: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0b56: ldarg.0
+  IL_0b57: ldarg.0
+  IL_0b58: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b5d: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0b62: ldarg.0
+  IL_0b63: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b68: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0b6d: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0b72: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0b77: ldarg.0
+  IL_0b78: ldarg.0
+  IL_0b79: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0b7e: ldarg.0
+  IL_0b7f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0b84: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0b89: stloc.s V_29
+  IL_0b8b: ldloca.s V_29
+  IL_0b8d: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0b92: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<d>5__20
+  IL_0b97: ldarg.0
+  IL_0b98: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0b9d: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0ba2: ldc.r4 0.25
+  IL_0ba7: bge.un.s IL_0bb9
+  IL_0ba9: ldarg.0
+  IL_0baa: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0baf: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0bb4: ldc.i4.0
+  IL_0bb5: cgt
+  IL_0bb7: br.s IL_0bba
+  IL_0bb9: ldc.i4.0
+  IL_0bba: stloc.s V_30
+  IL_0bbc: ldloc.s V_30
+  IL_0bbe: brfalse IL_0ca9
+  IL_0bc3: nop
+  IL_0bc4: ldarg.0
+  IL_0bc5: ldarg.0
+  IL_0bc6: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0bcb: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0bd0: ldc.i4.1
+  IL_0bd1: ble.s IL_0bf2
+  IL_0bd3: ldarg.0
+  IL_0bd4: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0bd9: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0bde: ldarg.0
+  IL_0bdf: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0be4: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0be9: ldc.i4.2
+  IL_0bea: sub
+  IL_0beb: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0bf0: br.s IL_0bf8
+  IL_0bf2: ldarg.0
+  IL_0bf3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStartCenter>5__9
+  IL_0bf8: ldarg.0
+  IL_0bf9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0bfe: ldc.r4 0.75
+  IL_0c03: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0c08: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__23
+  IL_0c0d: ldarg.0
+  IL_0c0e: ldarg.0
+  IL_0c0f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0c14: ldarg.0
+  IL_0c15: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0c1a: ldc.r4 0.25
+  IL_0c1f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0c24: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__24
+  IL_0c29: ldarg.0
+  IL_0c2a: ldarg.0
+  IL_0c2b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__23
+  IL_0c30: ldarg.0
+  IL_0c31: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__24
+  IL_0c36: ldarg.0
+  IL_0c37: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0c3c: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0c41: stfld Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__25
+  IL_0c46: ldarg.0
+  IL_0c47: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0c4c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0c51: ldarg.0
+  IL_0c52: ldflda Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__25
+  IL_0c57: ldc.r4 0.5
+  IL_0c5c: ldarg.0
+  IL_0c5d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0c62: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0c67: ldc.r4 0.25
+  IL_0c6c: div
+  IL_0c6d: ldc.r4 0.5
+  IL_0c72: mul
+  IL_0c73: add
+  IL_0c74: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_0c79: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0c7e: nop
+  IL_0c7f: nop
+  IL_0c80: ldarg.0
+  IL_0c81: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__23
+  IL_0c86: initobj Microsoft.Xna.Framework.Vector2
+  IL_0c8c: ldarg.0
+  IL_0c8d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__24
+  IL_0c92: initobj Microsoft.Xna.Framework.Vector2
+  IL_0c98: ldarg.0
+  IL_0c99: ldflda Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__25
+  IL_0c9e: initobj Monocle.SimpleCurve
+  IL_0ca4: br IL_0df8
+  IL_0ca9: ldarg.0
+  IL_0caa: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0caf: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0cb4: ldc.r4 0.75
+  IL_0cb9: ble.un.s IL_0cdc
+  IL_0cbb: ldarg.0
+  IL_0cbc: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0cc1: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0cc6: ldarg.0
+  IL_0cc7: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0ccc: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0cd1: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0cd6: ldc.i4.1
+  IL_0cd7: sub
+  IL_0cd8: clt
+  IL_0cda: br.s IL_0cdd
+  IL_0cdc: ldc.i4.0
+  IL_0cdd: stloc.s V_31
+  IL_0cdf: ldloc.s V_31
+  IL_0ce1: brfalse IL_0dcb
+  IL_0ce6: nop
+  IL_0ce7: ldarg.0
+  IL_0ce8: ldarg.0
+  IL_0ce9: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0cee: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0cf3: ldarg.0
+  IL_0cf4: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0cf9: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0cfe: ldc.i4.1
+  IL_0cff: add
+  IL_0d00: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0d05: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<nodeVec>5__26
+  IL_0d0a: ldarg.0
+  IL_0d0b: ldarg.0
+  IL_0d0c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0d11: ldarg.0
+  IL_0d12: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0d17: ldc.r4 0.75
+  IL_0d1c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0d21: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__27
+  IL_0d26: ldarg.0
+  IL_0d27: ldarg.0
+  IL_0d28: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0d2d: ldarg.0
+  IL_0d2e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<nodeVec>5__26
+  IL_0d33: ldc.r4 0.25
+  IL_0d38: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0d3d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__28
+  IL_0d42: ldarg.0
+  IL_0d43: ldarg.0
+  IL_0d44: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__27
+  IL_0d49: ldarg.0
+  IL_0d4a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__28
+  IL_0d4f: ldarg.0
+  IL_0d50: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0d55: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0d5a: stfld Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__29
+  IL_0d5f: ldarg.0
+  IL_0d60: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0d65: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0d6a: ldarg.0
+  IL_0d6b: ldflda Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__29
+  IL_0d70: ldarg.0
+  IL_0d71: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0d76: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0d7b: ldc.r4 0.75
+  IL_0d80: sub
+  IL_0d81: ldc.r4 0.25
+  IL_0d86: div
+  IL_0d87: ldc.r4 0.5
+  IL_0d8c: mul
+  IL_0d8d: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_0d92: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0d97: nop
+  IL_0d98: nop
+  IL_0d99: ldarg.0
+  IL_0d9a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<nodeVec>5__26
+  IL_0d9f: initobj Microsoft.Xna.Framework.Vector2
+  IL_0da5: ldarg.0
+  IL_0da6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<begin>5__27
+  IL_0dab: initobj Microsoft.Xna.Framework.Vector2
+  IL_0db1: ldarg.0
+  IL_0db2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<end>5__28
+  IL_0db7: initobj Microsoft.Xna.Framework.Vector2
+  IL_0dbd: ldarg.0
+  IL_0dbe: ldflda Monocle.SimpleCurve Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<simpleCurve>5__29
+  IL_0dc3: initobj Monocle.SimpleCurve
+  IL_0dc9: br.s IL_0df8
+  IL_0dcb: ldarg.0
+  IL_0dcc: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0dd1: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0dd6: ldarg.0
+  IL_0dd7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_0ddc: ldarg.0
+  IL_0ddd: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_0de2: ldarg.0
+  IL_0de3: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0de8: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0ded: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0df2: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0df7: nop
+  IL_0df8: ldarg.0
+  IL_0df9: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_0dfe: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0e03: dup
+  IL_0e04: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0e09: ldc.r4 -160
+  IL_0e0e: ldc.r4 -90
+  IL_0e13: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0e18: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0e1d: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0e22: nop
+  IL_0e23: ldarg.0
+  IL_0e24: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e29: ldarg.0
+  IL_0e2a: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e2f: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0e34: ldarg.0
+  IL_0e35: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_0e3a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0e3f: ldarg.0
+  IL_0e40: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<maxSpeed>5__4
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_CommunalHelper_NoOverlayLookout_LookRoutine
+  IL_0e45: ldarg.0
+  IL_0e46: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<d>5__20
+  IL_0e4b: div
+  IL_0e4c: mul
+  IL_0e4d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0e52: mul
+  IL_0e53: sub
+  IL_0e54: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0e59: ldarg.0
+  IL_0e5a: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e5f: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0e64: ldc.r4 0
+  IL_0e69: clt
+  IL_0e6b: stloc.s V_32
+  IL_0e6d: ldloc.s V_32
+  IL_0e6f: brfalse.s IL_0eca
+  IL_0e71: nop
+  IL_0e72: ldarg.0
+  IL_0e73: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e78: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0e7d: ldc.i4.0
+  IL_0e7e: cgt
+  IL_0e80: stloc.s V_33
+  IL_0e82: ldloc.s V_33
+  IL_0e84: brfalse.s IL_0eb2
+  IL_0e86: nop
+  IL_0e87: ldarg.0
+  IL_0e88: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e8d: ldarg.0
+  IL_0e8e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0e93: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0e98: ldc.i4.1
+  IL_0e99: sub
+  IL_0e9a: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0e9f: ldarg.0
+  IL_0ea0: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0ea5: ldc.r4 1
+  IL_0eaa: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0eaf: nop
+  IL_0eb0: br.s IL_0ec4
+  IL_0eb2: nop
+  IL_0eb3: ldarg.0
+  IL_0eb4: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0eb9: ldc.r4 0
+  IL_0ebe: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0ec3: nop
+  IL_0ec4: nop
+  IL_0ec5: br IL_0f61
+  IL_0eca: ldarg.0
+  IL_0ecb: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0ed0: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0ed5: ldc.r4 1
+  IL_0eda: cgt
+  IL_0edc: stloc.s V_34
+  IL_0ede: ldloc.s V_34
+  IL_0ee0: brfalse IL_0f61
+  IL_0ee5: nop
+  IL_0ee6: ldarg.0
+  IL_0ee7: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0eec: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0ef1: ldarg.0
+  IL_0ef2: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0ef7: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0efc: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0f01: ldc.i4.1
+  IL_0f02: sub
+  IL_0f03: clt
+  IL_0f05: stloc.s V_35
+  IL_0f07: ldloc.s V_35
+  IL_0f09: brfalse.s IL_0f37
+  IL_0f0b: nop
+  IL_0f0c: ldarg.0
+  IL_0f0d: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f12: ldarg.0
+  IL_0f13: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f18: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0f1d: ldc.i4.1
+  IL_0f1e: add
+  IL_0f1f: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0f24: ldarg.0
+  IL_0f25: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f2a: ldc.r4 0
+  IL_0f2f: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0f34: nop
+  IL_0f35: br.s IL_0f60
+  IL_0f37: nop
+  IL_0f38: ldarg.0
+  IL_0f39: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f3e: ldc.r4 1
+  IL_0f43: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_0f48: ldarg.0
+  IL_0f49: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f4e: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::summit
+  IL_0f53: stloc.s V_36
+  IL_0f55: ldloc.s V_36
+  IL_0f57: brfalse.s IL_0f5f
+  IL_0f59: nop
+  IL_0f5a: br IL_1107
+  IL_0f5f: nop
+  IL_0f60: nop
+  IL_0f61: ldarg.0
+  IL_0f62: ldc.r4 0
+  IL_0f67: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num2>5__21
+  IL_0f6c: ldarg.0
+  IL_0f6d: ldc.r4 0
+  IL_0f72: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num3>5__22
+  IL_0f77: ldarg.0
+  IL_0f78: ldc.i4.0
+  IL_0f79: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_0f7e: br IL_1062
+  IL_0f83: nop
+  IL_0f84: ldarg.0
+  IL_0f85: ldarg.0
+  IL_0f86: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_0f8b: brfalse.s IL_0fa7
+  IL_0f8d: ldarg.0
+  IL_0f8e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0f93: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0f98: ldarg.0
+  IL_0f99: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_0f9e: ldc.i4.1
+  IL_0f9f: sub
+  IL_0fa0: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0fa5: br.s IL_0fad
+  IL_0fa7: ldarg.0
+  IL_0fa8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStartCenter>5__9
+  IL_0fad: ldarg.0
+  IL_0fae: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0fb3: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_0fb8: ldarg.0
+  IL_0fb9: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_0fbe: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0fc3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0fc8: stloc.s V_29
+  IL_0fca: ldloca.s V_29
+  IL_0fcc: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0fd1: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num4>5__31
+  IL_0fd6: ldarg.0
+  IL_0fd7: ldarg.0
+  IL_0fd8: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num3>5__22
+  IL_0fdd: ldarg.0
+  IL_0fde: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num4>5__31
+  IL_0fe3: add
+  IL_0fe4: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num3>5__22
+  IL_0fe9: ldarg.0
+  IL_0fea: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_0fef: ldarg.0
+  IL_0ff0: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_0ff5: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_0ffa: clt
+  IL_0ffc: stloc.s V_37
+  IL_0ffe: ldloc.s V_37
+  IL_1000: brfalse.s IL_1017
+  IL_1002: ldarg.0
+  IL_1003: ldarg.0
+  IL_1004: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num2>5__21
+  IL_1009: ldarg.0
+  IL_100a: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num4>5__31
+  IL_100f: add
+  IL_1010: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num2>5__21
+  IL_1015: br.s IL_104f
+  IL_1017: ldarg.0
+  IL_1018: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_101d: ldarg.0
+  IL_101e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1023: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_1028: ceq
+  IL_102a: stloc.s V_38
+  IL_102c: ldloc.s V_38
+  IL_102e: brfalse.s IL_104f
+  IL_1030: ldarg.0
+  IL_1031: ldarg.0
+  IL_1032: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num2>5__21
+  IL_1037: ldarg.0
+  IL_1038: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num4>5__31
+  IL_103d: ldarg.0
+  IL_103e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1043: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_1048: mul
+  IL_1049: add
+  IL_104a: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<num2>5__21
+  IL_104f: nop
+  IL_1050: ldarg.0
+  IL_1051: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_1056: stloc.s V_39
+  IL_1058: ldarg.0
+  IL_1059: ldloc.s V_39
+  IL_105b: ldc.i4.1
+  IL_105c: add
+  IL_105d: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_1062: ldarg.0
+  IL_1063: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<i>5__30
+  IL_1068: ldarg.0
+  IL_1069: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_106e: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_1073: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1078: clt
+  IL_107a: stloc.s V_40
+  IL_107c: ldloc.s V_40
+  IL_107e: brtrue IL_0f83
+  IL_1083: nop
+  IL_1084: ldarg.0
+  IL_1085: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<from>5__18
+  IL_108a: initobj Microsoft.Xna.Framework.Vector2
+  IL_1090: ldarg.0
+  IL_1091: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<to>5__19
+  IL_1096: initobj Microsoft.Xna.Framework.Vector2
+  IL_109c: ldarg.0
+  IL_109d: ldnull
+  IL_109e: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_10a3: ldarg.0
+  IL_10a4: ldc.i4.3
+  IL_10a5: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_10aa: ldc.i4.1
+  IL_10ab: ret
+  IL_10ac: ldarg.0
+  IL_10ad: ldc.i4.m1
+  IL_10ae: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_10b3: nop
+  IL_10b4: ldarg.0
+  IL_10b5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<value>5__11
+  IL_10ba: initobj Microsoft.Xna.Framework.Vector2
+  IL_10c0: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_10c5: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_10ca: brtrue.s IL_10fd
+  IL_10cc: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_10d1: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_10d6: brtrue.s IL_10fd
+  IL_10d8: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_10dd: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_10e2: brtrue.s IL_10fd
+  IL_10e4: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_10e9: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_10ee: brtrue.s IL_10fd
+  IL_10f0: ldarg.0
+  IL_10f1: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_10f6: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::interacting
+  IL_10fb: br.s IL_10fe
+  IL_10fd: ldc.i4.0
+  IL_10fe: stloc.s V_41
+  IL_1100: ldloc.s V_41
+  IL_1102: brtrue IL_02dd
+  IL_1107: ldarg.0
+  IL_1108: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_110d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_1112: ldarg.0
+  IL_1113: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_1118: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_111d: ldc.i4.1
+  IL_111e: dup
+  IL_111f: stloc.s V_6
+  IL_1121: stfld System.Boolean Monocle.Component::Visible
+  IL_1126: ldloc.s V_6
+  IL_1128: stfld System.Boolean Monocle.Component::Visible
+  IL_112d: ldarg.0
+  IL_112e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1133: ldfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::sprite
+  IL_1138: ldarg.0
+  IL_1139: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_113e: ldfld System.String Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::animPrefix
+  IL_1143: ldstr "idle"
+  IL_1148: call System.String System.String::Concat(System.String,System.String)
+  IL_114d: ldc.i4.0
+  IL_114e: ldc.i4.0
+  IL_114f: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_1154: nop
+  IL_1155: ldstr "event:/ui/game/lookout_off"
+  IL_115a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_115f: pop
+  IL_1160: ldarg.0
+  IL_1161: ldarg.0
+  IL_1162: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1167: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::summit
+  IL_116c: brfalse.s IL_11a4
+  IL_116e: ldarg.0
+  IL_116f: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1174: ldfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::node
+  IL_1179: ldarg.0
+  IL_117a: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_117f: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodes
+  IL_1184: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1189: ldc.i4.1
+  IL_118a: sub
+  IL_118b: blt.s IL_11a4
+  IL_118d: ldarg.0
+  IL_118e: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1193: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::nodePercent
+  IL_1198: ldc.r4 0.95
+  IL_119d: clt.un
+  IL_119f: ldc.i4.0
+  IL_11a0: ceq
+  IL_11a2: br.s IL_11a5
+  IL_11a4: ldc.i4.0
+  IL_11a5: stfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<atSummitTop>5__10
+  IL_11aa: ldarg.0
+  IL_11ab: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<atSummitTop>5__10
+  IL_11b0: stloc.s V_42
+  IL_11b2: ldloc.s V_42
+  IL_11b4: brfalse IL_12d0
+  IL_11b9: nop
+  IL_11ba: ldarg.0
+  IL_11bb: ldc.r4 0.5
+  IL_11c0: box System.Single
+  IL_11c5: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_11ca: ldarg.0
+  IL_11cb: ldc.i4.4
+  IL_11cc: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_11d1: ldc.i4.1
+  IL_11d2: ret
+  IL_11d3: ldarg.0
+  IL_11d4: ldc.i4.m1
+  IL_11d5: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_11da: ldarg.0
+  IL_11db: ldc.r4 3
+  IL_11e0: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<duration>5__32
+  IL_11e5: ldarg.0
+  IL_11e6: ldc.r4 0
+  IL_11eb: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__33
+  IL_11f0: ldarg.0
+  IL_11f1: ldarg.0
+  IL_11f2: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_11f7: ldc.r4 160
+  IL_11fc: ldc.r4 90
+  IL_1201: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_1206: ldc.r4 2
+  IL_120b: ldarg.0
+  IL_120c: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<duration>5__32
+  IL_1211: callvirt System.Collections.IEnumerator Celeste.Level::ZoomTo(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_1216: ldc.i4.1
+  IL_1217: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_121c: stfld Monocle.Coroutine Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<component>5__34
+  IL_1221: ldarg.0
+  IL_1222: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1227: ldarg.0
+  IL_1228: ldfld Monocle.Coroutine Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<component>5__34
+  IL_122d: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_1232: nop
+  IL_1233: br.s IL_1281
+  IL_1235: nop
+  IL_1236: ldarg.0
+  IL_1237: ldarg.0
+  IL_1238: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__33
+  IL_123d: ldc.r4 1
+  IL_1242: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_1247: ldarg.0
+  IL_1248: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<duration>5__32
+  IL_124d: div
+  IL_124e: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_1253: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__33
+  IL_1258: ldstr "escape"
+  IL_125d: ldarg.0
+  IL_125e: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__33
+  IL_1263: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_1268: nop
+  IL_1269: ldarg.0
+  IL_126a: ldnull
+  IL_126b: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_1270: ldarg.0
+  IL_1271: ldc.i4.5
+  IL_1272: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_1277: ldc.i4.1
+  IL_1278: ret
+  IL_1279: ldarg.0
+  IL_127a: ldc.i4.m1
+  IL_127b: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_1280: nop
+  IL_1281: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_1286: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_128b: brtrue.s IL_12be
+  IL_128d: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_1292: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1297: brtrue.s IL_12be
+  IL_1299: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_129e: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_12a3: brtrue.s IL_12be
+  IL_12a5: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_12aa: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_12af: brtrue.s IL_12be
+  IL_12b1: ldarg.0
+  IL_12b2: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_12b7: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::interacting
+  IL_12bc: br.s IL_12bf
+  IL_12be: ldc.i4.0
+  IL_12bf: stloc.s V_43
+  IL_12c1: ldloc.s V_43
+  IL_12c3: brtrue IL_1235
+  IL_12c8: nop
+  IL_12c9: ldarg.0
+  IL_12ca: ldnull
+  IL_12cb: stfld Monocle.Coroutine Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<component>5__34
+  IL_12d0: ldarg.0
+  IL_12d1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStart>5__8
+  IL_12d6: ldarg.0
+  IL_12d7: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_12dc: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_12e1: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_12e6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_12eb: stloc.s V_29
+  IL_12ed: ldloca.s V_29
+  IL_12ef: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_12f4: ldc.r4 600
+  IL_12f9: cgt
+  IL_12fb: stloc.s V_44
+  IL_12fd: ldloc.s V_44
+  IL_12ff: brfalse IL_1461
+  IL_1304: nop
+  IL_1305: ldarg.0
+  IL_1306: ldarg.0
+  IL_1307: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_130c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1311: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_1316: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<was>5__35
+  IL_131b: ldarg.0
+  IL_131c: ldarg.0
+  IL_131d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<was>5__35
+  IL_1322: ldarg.0
+  IL_1323: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStart>5__8
+  IL_1328: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_132d: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_1332: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<direction>5__36
+  IL_1337: ldarg.0
+  IL_1338: ldarg.0
+  IL_1339: ldfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<atSummitTop>5__10
+  IL_133e: brtrue.s IL_1347
+  IL_1340: ldc.r4 0.5
+  IL_1345: br.s IL_134c
+  IL_1347: ldc.r4 1
+  IL_134c: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__37
+  IL_1351: ldarg.0
+  IL_1352: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_1357: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_135c: ldc.i4.0
+  IL_135d: ldnull
+  IL_135e: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_1363: ldarg.0
+  IL_1364: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__37
+  IL_1369: stfld System.Single Celeste.ScreenWipe::Duration
+  IL_136e: ldarg.0
+  IL_136f: ldc.r4 0
+  IL_1374: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<t>5__38
+  IL_1379: br.s IL_13f3
+  IL_137b: nop
+  IL_137c: ldarg.0
+  IL_137d: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_1382: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1387: ldarg.0
+  IL_1388: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<was>5__35
+  IL_138d: ldarg.0
+  IL_138e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<direction>5__36
+  IL_1393: ldc.r4 0
+  IL_1398: ldc.r4 64
+  IL_139d: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_13a2: ldarg.0
+  IL_13a3: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<t>5__38
+  IL_13a8: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_13ad: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_13b2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_13b7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_13bc: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_13c1: nop
+  IL_13c2: ldarg.0
+  IL_13c3: ldnull
+  IL_13c4: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_13c9: ldarg.0
+  IL_13ca: ldc.i4.6
+  IL_13cb: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_13d0: ldc.i4.1
+  IL_13d1: ret
+  IL_13d2: ldarg.0
+  IL_13d3: ldc.i4.m1
+  IL_13d4: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_13d9: nop
+  IL_13da: ldarg.0
+  IL_13db: ldarg.0
+  IL_13dc: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<t>5__38
+  IL_13e1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_13e6: ldarg.0
+  IL_13e7: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<approach>5__37
+  IL_13ec: div
+  IL_13ed: add
+  IL_13ee: stfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<t>5__38
+  IL_13f3: ldarg.0
+  IL_13f4: ldfld System.Single Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<t>5__38
+  IL_13f9: ldc.r4 1
+  IL_13fe: clt
+  IL_1400: stloc.s V_45
+  IL_1402: ldloc.s V_45
+  IL_1404: brtrue IL_137b
+  IL_1409: ldarg.0
+  IL_140a: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_140f: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1414: ldarg.0
+  IL_1415: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<camStart>5__8
+  IL_141a: ldarg.0
+  IL_141b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<direction>5__36
+  IL_1420: ldc.r4 32
+  IL_1425: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_142a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_142f: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1434: nop
+  IL_1435: ldarg.0
+  IL_1436: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_143b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_1440: ldc.i4.1
+  IL_1441: ldnull
+  IL_1442: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_1447: pop
+  IL_1448: nop
+  IL_1449: ldarg.0
+  IL_144a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<was>5__35
+  IL_144f: initobj Microsoft.Xna.Framework.Vector2
+  IL_1455: ldarg.0
+  IL_1456: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<direction>5__36
+  IL_145b: initobj Microsoft.Xna.Framework.Vector2
+  IL_1461: ldstr "escape"
+  IL_1466: ldc.r4 0
+  IL_146b: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_1470: nop
+  IL_1471: ldarg.0
+  IL_1472: ldfld Celeste.Level Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<level>5__1
+  IL_1477: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_147c: ldc.r4 1
+  IL_1481: callvirt System.Void Celeste.Level::ZoomSnap(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1486: nop
+  IL_1487: ldarg.0
+  IL_1488: ldfld Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>4__this
+  IL_148d: ldc.i4.0
+  IL_148e: stfld System.Boolean Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout::interacting
+  IL_1493: ldarg.0
+  IL_1494: ldc.r4 0.1
+  IL_1499: box System.Single
+  IL_149e: stfld System.Object Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>2__current
+  IL_14a3: ldarg.0
+  IL_14a4: ldc.i4.7
+  IL_14a5: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_14aa: ldc.i4.1
+  IL_14ab: ret
+  IL_14ac: ldarg.0
+  IL_14ad: ldc.i4.m1
+  IL_14ae: stfld System.Int32 Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::<>1__state
+  IL_14b3: ldarg.0
+  IL_14b4: ldfld Celeste.Player Celeste.Mod.CommunalHelper.Entities.NoOverlayLookout/<LookRoutine>d__15::player
+  IL_14b9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_14be: ldc.i4.0
+  IL_14bf: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_14c4: nop
+  IL_14c5: ldc.i4.0
+  IL_14c6: ret

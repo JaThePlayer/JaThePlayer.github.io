@@ -1,0 +1,917 @@
+IL Diff: System.Void Celeste.LevelData::orig_ctor(Celeste.BinaryPacker+Element)
+  IL_0000: ldarg.0
+  IL_0001: ldstr ""
+  IL_0006: stfld System.String Celeste.LevelData::Solids
+  IL_000b: ldarg.0
+  IL_000c: ldstr ""
+  IL_0011: stfld System.String Celeste.LevelData::Bg
+  IL_0016: ldarg.0
+  IL_0017: ldstr ""
+  IL_001c: stfld System.String Celeste.LevelData::FgTiles
+  IL_0021: ldarg.0
+  IL_0022: ldstr ""
+  IL_0027: stfld System.String Celeste.LevelData::BgTiles
+  IL_002c: ldarg.0
+  IL_002d: ldstr ""
+  IL_0032: stfld System.String Celeste.LevelData::ObjTiles
+  IL_0037: ldarg.0
+  IL_0038: ldstr ""
+  IL_003d: stfld System.String Celeste.LevelData::Music
+  IL_0042: ldarg.0
+  IL_0043: ldstr ""
+  IL_0048: stfld System.String Celeste.LevelData::AltMusic
+  IL_004d: ldarg.0
+  IL_004e: ldstr ""
+  IL_0053: stfld System.String Celeste.LevelData::Ambience
+  IL_0058: ldarg.0
+  IL_0059: ldc.i4.4
+  IL_005a: newarr System.Single
+  IL_005f: stfld System.Single[] Celeste.LevelData::MusicLayers
+  IL_0064: ldarg.0
+  IL_0065: ldc.i4.m1
+  IL_0066: stfld System.Int32 Celeste.LevelData::MusicProgress
+  IL_006b: ldarg.0
+  IL_006c: ldc.i4.m1
+  IL_006d: stfld System.Int32 Celeste.LevelData::AmbienceProgress
+  IL_0072: ldarg.0
+  IL_0073: call System.Void System.Object::.ctor()
+  IL_0078: ldarg.0
+  IL_0079: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_007e: initobj Microsoft.Xna.Framework.Rectangle
+  IL_0084: ldarg.1
+  IL_0085: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_008a: callvirt System.Collections.Generic.Dictionary`2/Enumerator<TKey,TValue> System.Collections.Generic.Dictionary`2<System.String,System.Object>::GetEnumerator()
+  IL_008f: stloc.0
+  IL_0090: br IL_0744
+  IL_0095: ldloca.s V_0
+  IL_0097: call System.Collections.Generic.KeyValuePair`2<TKey,TValue> System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Object>::get_Current()
+  IL_009c: stloc.1
+  IL_009d: ldloca.s V_1
+  IL_009f: call TKey System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Key()
+  IL_00a4: stloc.2
+  IL_00a5: ldloc.2
+  IL_00a6: call System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
+  IL_00ab: stloc.3
+  IL_00ac: ldloc.3
+  IL_00ad: ldc.i4 -1925595674
+  IL_00b2: bgt.un IL_0167
+  IL_00b7: ldloc.3
+  IL_00b8: ldc.i4 894689925
+  IL_00bd: bgt.un.s IL_0113
+  IL_00bf: ldloc.3
+  IL_00c0: ldc.i4 450916041
+  IL_00c5: bgt.un.s IL_00ed
+  IL_00c7: ldloc.3
+  IL_00c8: ldc.i4 400583184
+  IL_00cd: beq IL_0364
+  IL_00d2: ldloc.3
+  IL_00d3: ldc.i4 434138422
+  IL_00d8: beq IL_038e
+  IL_00dd: ldloc.3
+  IL_00de: ldc.i4 450916041
+  IL_00e3: beq IL_0379
+  IL_00e8: br IL_0744
+  IL_00ed: ldloc.3
+  IL_00ee: ldc.i4 484471279
+  IL_00f3: beq IL_03a3
+  IL_00f8: ldloc.3
+  IL_00f9: ldc.i4 785355184
+  IL_00fe: beq IL_03f7
+  IL_0103: ldloc.3
+  IL_0104: ldc.i4 894689925
+  IL_0109: beq IL_0325
+  IL_010e: br IL_0744
+  IL_0113: ldloc.3
+  IL_0114: ldc.i4 1832650111
+  IL_0119: bgt.un.s IL_0141
+  IL_011b: ldloc.3
+  IL_011c: ldc.i4 1670160576
+  IL_0121: beq IL_034f
+  IL_0126: ldloc.3
+  IL_0127: ldc.i4 1686938195
+  IL_012c: beq IL_033a
+  IL_0131: ldloc.3
+  IL_0132: ldc.i4 1832650111
+  IL_0137: beq IL_03b8
+  IL_013c: br IL_0744
+  IL_0141: ldloc.3
+  IL_0142: ldc.i4 -2092363608
+  IL_0147: beq IL_0310
+  IL_014c: ldloc.3
+  IL_014d: ldc.i4 -1958883961
+  IL_0152: beq IL_02e6
+  IL_0157: ldloc.3
+  IL_0158: ldc.i4 -1925595674
+  IL_015d: beq IL_0229
+  IL_0162: br IL_0744
+  IL_0167: ldloc.3
+  IL_0168: ldc.i4 -1363432115
+  IL_016d: bgt.un.s IL_01c3
+  IL_016f: ldloc.3
+  IL_0170: ldc.i4 -1786286561
+  IL_0175: bgt.un.s IL_019d
+  IL_0177: ldloc.3
+  IL_0178: ldc.i4 -1879907792
+  IL_017d: beq IL_02bc
+  IL_0182: ldloc.3
+  IL_0183: ldc.i4 -1879318242
+  IL_0188: beq IL_03cd
+  IL_018d: ldloc.3
+  IL_018e: ldc.i4 -1786286561
+  IL_0193: beq IL_0268
+  IL_0198: br IL_0744
+  IL_019d: ldloc.3
+  IL_019e: ldc.i4 -1617145900
+  IL_01a3: beq IL_02a7
+  IL_01a8: ldloc.3
+  IL_01a9: ldc.i4 -1460077448
+  IL_01ae: beq IL_040c
+  IL_01b3: ldloc.3
+  IL_01b4: ldc.i4 -1363432115
+  IL_01b9: beq IL_02d1
+  IL_01be: br IL_0744
+  IL_01c3: ldloc.3
+  IL_01c4: ldc.i4 -435409838
+  IL_01c9: bgt.un.s IL_01f1
+  IL_01cb: ldloc.3
+  IL_01cc: ldc.i4 -708986046
+  IL_01d1: beq IL_027d
+  IL_01d6: ldloc.3
+  IL_01d7: ldc.i4 -562599611
+  IL_01dc: beq IL_02fb
+  IL_01e1: ldloc.3
+  IL_01e2: ldc.i4 -435409838
+  IL_01e7: beq IL_0292
+  IL_01ec: br IL_0744
+  IL_01f1: ldloc.3
+  IL_01f2: ldc.i4 -156083180
+  IL_01f7: bgt.un.s IL_0214
+  IL_01f9: ldloc.3
+  IL_01fa: ldc.i4 -292398099
+  IL_01ff: beq IL_03e2
+  IL_0204: ldloc.3
+  IL_0205: ldc.i4 -156083180
+  IL_020a: beq IL_0421
+  IL_020f: br IL_0744
+  IL_0214: ldloc.3
+  IL_0215: ldc.i4 -66302220
+  IL_021a: beq.s IL_0253
+  IL_021c: ldloc.3
+  IL_021d: ldc.i4 -49524601
+  IL_0222: beq.s IL_023e
+  IL_0224: br IL_0744
+  IL_0229: ldloc.2
+  IL_022a: ldstr "name"
+  IL_022f: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0234: brtrue IL_0436
+  IL_0239: br IL_0744
+  IL_023e: ldloc.2
+  IL_023f: ldstr "x"
+  IL_0244: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0249: brtrue IL_0453
+  IL_024e: br IL_0744
+  IL_0253: ldloc.2
+  IL_0254: ldstr "y"
+  IL_0259: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_025e: brtrue IL_046f
+  IL_0263: br IL_0744
+  IL_0268: ldloc.2
+  IL_0269: ldstr "width"
+  IL_026e: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0273: brtrue IL_048b
+  IL_0278: br IL_0744
+  IL_027d: ldloc.2
+  IL_027e: ldstr "height"
+  IL_0283: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0288: brtrue IL_04a7
+  IL_028d: br IL_0744
+  IL_0292: ldloc.2
+  IL_0293: ldstr "c"
+  IL_0298: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_029d: brtrue IL_04e8
+  IL_02a2: br IL_0744
+  IL_02a7: ldloc.2
+  IL_02a8: ldstr "music"
+  IL_02ad: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_02b2: brtrue IL_04ff
+  IL_02b7: br IL_0744
+  IL_02bc: ldloc.2
+  IL_02bd: ldstr "alt_music"
+  IL_02c2: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_02c7: brtrue IL_0516
+  IL_02cc: br IL_0744
+  IL_02d1: ldloc.2
+  IL_02d2: ldstr "ambience"
+  IL_02d7: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_02dc: brtrue IL_052d
+  IL_02e1: br IL_0744
+  IL_02e6: ldloc.2
+  IL_02e7: ldstr "windPattern"
+  IL_02ec: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_02f1: brtrue IL_0544
+  IL_02f6: br IL_0744
+  IL_02fb: ldloc.2
+  IL_02fc: ldstr "dark"
+  IL_0301: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0306: brtrue IL_056f
+  IL_030b: br IL_0744
+  IL_0310: ldloc.2
+  IL_0311: ldstr "underwater"
+  IL_0316: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_031b: brtrue IL_0586
+  IL_0320: br IL_0744
+  IL_0325: ldloc.2
+  IL_0326: ldstr "space"
+  IL_032b: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0330: brtrue IL_059d
+  IL_0335: br IL_0744
+  IL_033a: ldloc.2
+  IL_033b: ldstr "cameraOffsetX"
+  IL_0340: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0345: brtrue IL_05b4
+  IL_034a: br IL_0744
+  IL_034f: ldloc.2
+  IL_0350: ldstr "cameraOffsetY"
+  IL_0355: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_035a: brtrue IL_05d5
+  IL_035f: br IL_0744
+  IL_0364: ldloc.2
+  IL_0365: ldstr "musicLayer1"
+  IL_036a: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_036f: brtrue IL_05f6
+  IL_0374: br IL_0744
+  IL_0379: ldloc.2
+  IL_037a: ldstr "musicLayer2"
+  IL_037f: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0384: brtrue IL_061d
+  IL_0389: br IL_0744
+  IL_038e: ldloc.2
+  IL_038f: ldstr "musicLayer3"
+  IL_0394: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0399: brtrue IL_0644
+  IL_039e: br IL_0744
+  IL_03a3: ldloc.2
+  IL_03a4: ldstr "musicLayer4"
+  IL_03a9: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_03ae: brtrue IL_066b
+  IL_03b3: br IL_0744
+  IL_03b8: ldloc.2
+  IL_03b9: ldstr "musicProgress"
+  IL_03be: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_03c3: brtrue IL_0692
+  IL_03c8: br IL_0744
+  IL_03cd: ldloc.2
+  IL_03ce: ldstr "ambienceProgress"
+  IL_03d3: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_03d8: brtrue IL_06c7
+  IL_03dd: br IL_0744
+  IL_03e2: ldloc.2
+  IL_03e3: ldstr "whisper"
+  IL_03e8: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_03ed: brtrue IL_06f6
+  IL_03f2: br IL_0744
+  IL_03f7: ldloc.2
+  IL_03f8: ldstr "disableDownTransition"
+  IL_03fd: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0402: brtrue IL_070a
+  IL_0407: br IL_0744
+  IL_040c: ldloc.2
+  IL_040d: ldstr "delayAltMusicFade"
+  IL_0412: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0417: brtrue IL_071e
+  IL_041c: br IL_0744
+  IL_0421: ldloc.2
+  IL_0422: ldstr "enforceDashNumber"
+  IL_0427: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_042c: brtrue IL_0732
+  IL_0431: br IL_0744
+  IL_0436: ldarg.0
+  IL_0437: ldloca.s V_1
+  IL_0439: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_043e: callvirt System.String System.Object::ToString()
+  IL_0443: ldc.i4.4
+  IL_0444: callvirt System.String System.String::Substring(System.Int32)
+  IL_0449: stfld System.String Celeste.LevelData::Name
+  IL_044e: br IL_0744
+  IL_0453: ldarg.0
+  IL_0454: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0459: ldloca.s V_1
+  IL_045b: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0460: unbox.any System.Int32
+  IL_0465: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::X
+  IL_046a: br IL_0744
+  IL_046f: ldarg.0
+  IL_0470: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0475: ldloca.s V_1
+  IL_0477: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_047c: unbox.any System.Int32
+  IL_0481: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_0486: br IL_0744
+  IL_048b: ldarg.0
+  IL_048c: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0491: ldloca.s V_1
+  IL_0493: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0498: unbox.any System.Int32
+  IL_049d: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width
+  IL_04a2: br IL_0744
+  IL_04a7: ldarg.0
+  IL_04a8: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_04ad: ldloca.s V_1
+  IL_04af: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_04b4: unbox.any System.Int32
+  IL_04b9: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_04be: ldarg.0
+  IL_04bf: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_04c4: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_04c9: ldc.i4 184
+  IL_04ce: bne.un IL_0744
+  IL_04d3: ldarg.0
+  IL_04d4: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_04d9: ldc.i4 180
+  IL_04de: stfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_04e3: br IL_0744
+  IL_04e8: ldarg.0
+  IL_04e9: ldloca.s V_1
+  IL_04eb: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_04f0: unbox.any System.Int32
+  IL_04f5: stfld System.Int32 Celeste.LevelData::EditorColorIndex
+  IL_04fa: br IL_0744
+  IL_04ff: ldarg.0
+  IL_0500: ldloca.s V_1
+  IL_0502: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0507: castclass System.String
+  IL_050c: stfld System.String Celeste.LevelData::Music
+  IL_0511: br IL_0744
+  IL_0516: ldarg.0
+  IL_0517: ldloca.s V_1
+  IL_0519: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_051e: castclass System.String
+  IL_0523: stfld System.String Celeste.LevelData::AltMusic
+  IL_0528: br IL_0744
+  IL_052d: ldarg.0
+  IL_052e: ldloca.s V_1
+  IL_0530: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0535: castclass System.String
+  IL_053a: stfld System.String Celeste.LevelData::Ambience
+  IL_053f: br IL_0744
+  IL_0544: ldarg.0
+  IL_0545: ldtoken Celeste.WindController/Patterns
+  IL_054a: call System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+  IL_054f: ldloca.s V_1
+  IL_0551: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0556: castclass System.String
+  IL_055b: call System.Object System.Enum::Parse(System.Type,System.String)
+  IL_0560: unbox.any Celeste.WindController/Patterns
+  IL_0565: stfld Celeste.WindController/Patterns Celeste.LevelData::WindPattern
+  IL_056a: br IL_0744
+  IL_056f: ldarg.0
+  IL_0570: ldloca.s V_1
+  IL_0572: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0577: unbox.any System.Boolean
+  IL_057c: stfld System.Boolean Celeste.LevelData::Dark
+  IL_0581: br IL_0744
+  IL_0586: ldarg.0
+  IL_0587: ldloca.s V_1
+  IL_0589: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_058e: unbox.any System.Boolean
+  IL_0593: stfld System.Boolean Celeste.LevelData::Underwater
+  IL_0598: br IL_0744
+  IL_059d: ldarg.0
+  IL_059e: ldloca.s V_1
+  IL_05a0: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_05a5: unbox.any System.Boolean
+  IL_05aa: stfld System.Boolean Celeste.LevelData::Space
+  IL_05af: br IL_0744
+  IL_05b4: ldarg.0
+  IL_05b5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LevelData::CameraOffset
+  IL_05ba: ldloca.s V_1
+  IL_05bc: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_05c1: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_05c6: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_05cb: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_05d0: br IL_0744
+  IL_05d5: ldarg.0
+  IL_05d6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LevelData::CameraOffset
+  IL_05db: ldloca.s V_1
+  IL_05dd: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_05e2: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_05e7: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_05ec: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_05f1: br IL_0744
+  IL_05f6: ldarg.0
+  IL_05f7: ldfld System.Single[] Celeste.LevelData::MusicLayers
+  IL_05fc: ldc.i4.0
+  IL_05fd: ldloca.s V_1
+  IL_05ff: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0604: unbox.any System.Boolean
+  IL_0609: brtrue.s IL_0612
+  IL_060b: ldc.r4 0
+  IL_0610: br.s IL_0617
+  IL_0612: ldc.r4 1
+  IL_0617: stelem.r4
+  IL_0618: br IL_0744
+  IL_061d: ldarg.0
+  IL_061e: ldfld System.Single[] Celeste.LevelData::MusicLayers
+  IL_0623: ldc.i4.1
+  IL_0624: ldloca.s V_1
+  IL_0626: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_062b: unbox.any System.Boolean
+  IL_0630: brtrue.s IL_0639
+  IL_0632: ldc.r4 0
+  IL_0637: br.s IL_063e
+  IL_0639: ldc.r4 1
+  IL_063e: stelem.r4
+  IL_063f: br IL_0744
+  IL_0644: ldarg.0
+  IL_0645: ldfld System.Single[] Celeste.LevelData::MusicLayers
+  IL_064a: ldc.i4.2
+  IL_064b: ldloca.s V_1
+  IL_064d: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0652: unbox.any System.Boolean
+  IL_0657: brtrue.s IL_0660
+  IL_0659: ldc.r4 0
+  IL_065e: br.s IL_0665
+  IL_0660: ldc.r4 1
+  IL_0665: stelem.r4
+  IL_0666: br IL_0744
+  IL_066b: ldarg.0
+  IL_066c: ldfld System.Single[] Celeste.LevelData::MusicLayers
+  IL_0671: ldc.i4.3
+  IL_0672: ldloca.s V_1
+  IL_0674: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0679: unbox.any System.Boolean
+  IL_067e: brtrue.s IL_0687
+  IL_0680: ldc.r4 0
+  IL_0685: br.s IL_068c
+  IL_0687: ldc.r4 1
+  IL_068c: stelem.r4
+  IL_068d: br IL_0744
+  IL_0692: ldloca.s V_1
+  IL_0694: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0699: callvirt System.String System.Object::ToString()
+  IL_069e: stloc.s V_4
+  IL_06a0: ldloc.s V_4
+  IL_06a2: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_06a7: brtrue.s IL_06bb
+  IL_06a9: ldloc.s V_4
+  IL_06ab: ldarg.0
+  IL_06ac: ldflda System.Int32 Celeste.LevelData::MusicProgress
+  IL_06b1: call System.Boolean System.Int32::TryParse(System.String,System.Int32&)
+  IL_06b6: brtrue IL_0744
+  IL_06bb: ldarg.0
+  IL_06bc: ldc.i4.m1
+  IL_06bd: stfld System.Int32 Celeste.LevelData::MusicProgress
+  IL_06c2: br IL_0744
+  IL_06c7: ldloca.s V_1
+  IL_06c9: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_06ce: callvirt System.String System.Object::ToString()
+  IL_06d3: stloc.s V_5
+  IL_06d5: ldloc.s V_5
+  IL_06d7: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_06dc: brtrue.s IL_06ed
+  IL_06de: ldloc.s V_5
+  IL_06e0: ldarg.0
+  IL_06e1: ldflda System.Int32 Celeste.LevelData::AmbienceProgress
+  IL_06e6: call System.Boolean System.Int32::TryParse(System.String,System.Int32&)
+  IL_06eb: brtrue.s IL_0744
+  IL_06ed: ldarg.0
+  IL_06ee: ldc.i4.m1
+  IL_06ef: stfld System.Int32 Celeste.LevelData::AmbienceProgress
+  IL_06f4: br.s IL_0744
+  IL_06f6: ldarg.0
+  IL_06f7: ldloca.s V_1
+  IL_06f9: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_06fe: unbox.any System.Boolean
+  IL_0703: stfld System.Boolean Celeste.LevelData::MusicWhispers
+  IL_0708: br.s IL_0744
+  IL_070a: ldarg.0
+  IL_070b: ldloca.s V_1
+  IL_070d: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0712: unbox.any System.Boolean
+  IL_0717: stfld System.Boolean Celeste.LevelData::DisableDownTransition
+  IL_071c: br.s IL_0744
+  IL_071e: ldarg.0
+  IL_071f: ldloca.s V_1
+  IL_0721: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_0726: unbox.any System.Boolean
+  IL_072b: stfld System.Boolean Celeste.LevelData::DelayAltMusic
+  IL_0730: br.s IL_0744
+  IL_0732: ldarg.0
+  IL_0733: ldloca.s V_1
+  IL_0735: call TValue System.Collections.Generic.KeyValuePair`2<System.String,System.Object>::get_Value()
+  IL_073a: unbox.any System.Int32
+  IL_073f: stfld System.Int32 Celeste.LevelData::EnforceDashNumber
+  IL_0744: ldloca.s V_0
+  IL_0746: call System.Boolean System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Object>::MoveNext()
+  IL_074b: brtrue IL_0095
+  IL_0750: leave.s IL_0760
+  IL_0752: ldloca.s V_0
+  IL_0754: constrained. System.Collections.Generic.Dictionary`2/Enumerator<System.String,System.Object>
+  IL_075a: callvirt System.Void System.IDisposable::Dispose()
+  IL_075f: endfinally
+  IL_0760: ldarg.0
+  IL_0761: newobj System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::.ctor()
+  IL_0766: stfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.LevelData::Spawns
+  IL_076b: ldarg.0
+  IL_076c: newobj System.Void System.Collections.Generic.List`1<Celeste.EntityData>::.ctor()
+  IL_0771: stfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Entities
+  IL_0776: ldarg.0
+  IL_0777: newobj System.Void System.Collections.Generic.List`1<Celeste.EntityData>::.ctor()
+  IL_077c: stfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Triggers
+  IL_0781: ldarg.0
+  IL_0782: newobj System.Void System.Collections.Generic.List`1<Celeste.DecalData>::.ctor()
+  IL_0787: stfld System.Collections.Generic.List`1<Celeste.DecalData> Celeste.LevelData::BgDecals
+  IL_078c: ldarg.0
+  IL_078d: newobj System.Void System.Collections.Generic.List`1<Celeste.DecalData>::.ctor()
+  IL_0792: stfld System.Collections.Generic.List`1<Celeste.DecalData> Celeste.LevelData::FgDecals
+  IL_0797: ldarg.1
+  IL_0798: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_079d: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.BinaryPacker/Element>::GetEnumerator()
+  IL_07a2: stloc.s V_6
+  IL_07a4: br IL_0d04
+  IL_07a9: ldloca.s V_6
+  IL_07ab: call T System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::get_Current()
+  IL_07b0: stloc.s V_7
+  IL_07b2: ldloc.s V_7
+  IL_07b4: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_07b9: ldstr "entities"
+  IL_07be: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_07c3: brfalse IL_0943
+  IL_07c8: ldloc.s V_7
+  IL_07ca: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_07cf: brfalse IL_0d04
+  IL_07d4: ldloc.s V_7
+  IL_07d6: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_07db: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.BinaryPacker/Element>::GetEnumerator()
+  IL_07e0: stloc.s V_8
+  IL_07e2: br IL_0924
+  IL_07e7: ldloca.s V_8
+  IL_07e9: call T System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::get_Current()
+  IL_07ee: stloc.s V_9
+  IL_07f0: ldloc.s V_9
+  IL_07f2: ldfld System.String Celeste.BinaryPacker/Element::Name
++ IL_0000: dup @ VivHelper.Entities.SpawnPointHooks::LevelData_ctor
+  IL_07f7: ldstr "player"
+  IL_07fc: call System.Boolean System.String::op_Equality(System.String,System.String)
++ IL_0000: ldc.i4 2450 @ VivHelper.Entities.SpawnPointHooks::LevelData_ctor
++ IL_0000: ldc.i4 36345926 @ VivHelper.Entities.SpawnPointHooks::LevelData_ctor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.SpawnPointHooks::LevelData_ctor
+  |-> retrieves System.Boolean VivHelper.Entities.SpawnPointHooks/<>c::<LevelData_ctor>b__17_1(System.String,System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.String,System.Boolean>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.SpawnPointHooks::LevelData_ctor
+  IL_0801: brfalse.s IL_087e
+  IL_0803: ldarg.0
+  IL_0804: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.LevelData::Spawns
+  IL_0809: ldarg.0
+  IL_080a: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_080f: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::X
+  IL_0814: conv.r4
+  IL_0815: ldloc.s V_9
+  IL_0817: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_081c: ldstr "x"
+  IL_0821: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0826: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_082b: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0830: add
+  IL_0831: ldarg.0
+  IL_0832: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
+  IL_0837: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_083c: conv.r4
+  IL_083d: ldloc.s V_9
+  IL_083f: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0844: ldstr "y"
+  IL_0849: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_084e: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0853: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0858: add
+  IL_0859: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_085e: stloc V_13
+  IL_0862: ldarg.0
+  IL_0863: ldloc V_9
+  IL_0867: ldloc V_13
+  IL_086b: callvirt System.Void Celeste.LevelData::CheckForDefaultSpawn(Celeste.BinaryPacker/Element,Microsoft.Xna.Framework.Vector2)
+  IL_0870: ldloc V_13
+  IL_0874: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Add(T)
+  IL_0879: br IL_08fe
+  IL_087e: ldloc.s V_9
+  IL_0880: nop
+  IL_0881: nop
+  IL_0882: call System.Boolean Celeste.Mod.StrawberryRegistry::TrackableContains(Celeste.BinaryPacker/Element)
+  IL_0887: brtrue.s IL_089c
+  IL_0889: ldloc.s V_9
+  IL_088b: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0890: ldstr "snowberry"
+  IL_0895: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_089a: brfalse.s IL_08ac
+  IL_089c: ldarg.0
+  IL_089d: ldarg.0
+  IL_089e: ldfld System.Int32 Celeste.LevelData::Strawberries
+  IL_08a3: ldc.i4.1
+  IL_08a4: add
+  IL_08a5: stfld System.Int32 Celeste.LevelData::Strawberries
+  IL_08aa: br.s IL_08fe
+  IL_08ac: ldloc.s V_9
+  IL_08ae: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_08b3: ldstr "shard"
+  IL_08b8: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_08bd: brfalse.s IL_08c8
+  IL_08bf: ldarg.0
+  IL_08c0: ldc.i4.1
+  IL_08c1: stfld System.Boolean Celeste.LevelData::HasGem
+  IL_08c6: br.s IL_08fe
+  IL_08c8: ldloc.s V_9
+  IL_08ca: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_08cf: ldstr "blackGem"
+  IL_08d4: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_08d9: brfalse.s IL_08e4
+  IL_08db: ldarg.0
+  IL_08dc: ldc.i4.1
+  IL_08dd: stfld System.Boolean Celeste.LevelData::HasHeartGem
+  IL_08e2: br.s IL_08fe
+  IL_08e4: ldloc.s V_9
+  IL_08e6: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_08eb: ldstr "checkpoint"
+  IL_08f0: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_08f5: brfalse.s IL_08fe
+  IL_08f7: ldarg.0
+  IL_08f8: ldc.i4.1
+  IL_08f9: stfld System.Boolean Celeste.LevelData::HasCheckpoint
+  IL_08fe: ldloc.s V_9
+  IL_0900: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0905: ldstr "player"
+  IL_090a: callvirt System.Boolean System.String::Equals(System.String)
+  IL_090f: brtrue.s IL_0924
+  IL_0911: ldarg.0
+  IL_0912: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Entities
+  IL_0917: ldarg.0
+  IL_0918: ldloc.s V_9
+  IL_091a: callvirt Celeste.EntityData Celeste.LevelData::CreateEntityData(Celeste.BinaryPacker/Element)
+  IL_091f: callvirt System.Void System.Collections.Generic.List`1<Celeste.EntityData>::Add(T)
+  IL_0924: ldloca.s V_8
+  IL_0926: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::MoveNext()
+  IL_092b: brtrue IL_07e7
+  IL_0930: leave IL_0d04
+  IL_0935: ldloca.s V_8
+  IL_0937: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>
+  IL_093d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0942: endfinally
+  IL_0943: ldloc.s V_7
+  IL_0945: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_094a: ldstr "triggers"
+  IL_094f: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0954: brfalse.s IL_09aa
+  IL_0956: ldloc.s V_7
+  IL_0958: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_095d: brfalse IL_0d04
+  IL_0962: ldloc.s V_7
+  IL_0964: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_0969: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.BinaryPacker/Element>::GetEnumerator()
+  IL_096e: stloc.s V_8
+  IL_0970: br.s IL_098e
+  IL_0972: ldloca.s V_8
+  IL_0974: call T System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::get_Current()
+  IL_0979: stloc.s V_10
+  IL_097b: ldarg.0
+  IL_097c: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Triggers
+  IL_0981: ldarg.0
+  IL_0982: ldloc.s V_10
+  IL_0984: callvirt Celeste.EntityData Celeste.LevelData::CreateEntityData(Celeste.BinaryPacker/Element)
+  IL_0989: callvirt System.Void System.Collections.Generic.List`1<Celeste.EntityData>::Add(T)
+  IL_098e: ldloca.s V_8
+  IL_0990: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::MoveNext()
+  IL_0995: brtrue.s IL_0972
+  IL_0997: leave IL_0d04
+  IL_099c: ldloca.s V_8
+  IL_099e: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>
+  IL_09a4: callvirt System.Void System.IDisposable::Dispose()
+  IL_09a9: endfinally
+  IL_09aa: ldloc.s V_7
+  IL_09ac: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_09b1: ldstr "bgdecals"
+  IL_09b6: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_09bb: brfalse IL_0ae7
+  IL_09c0: ldloc.s V_7
+  IL_09c2: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_09c7: brfalse IL_0d04
+  IL_09cc: ldloc.s V_7
+  IL_09ce: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_09d3: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.BinaryPacker/Element>::GetEnumerator()
+  IL_09d8: stloc.s V_8
+  IL_09da: br IL_0ac8
+  IL_09df: ldloca.s V_8
+  IL_09e1: call T System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::get_Current()
+  IL_09e6: stloc.s V_11
+  IL_09e8: ldarg.0
+  IL_09e9: ldfld System.Collections.Generic.List`1<Celeste.DecalData> Celeste.LevelData::BgDecals
+  IL_09ee: newobj System.Void Celeste.DecalData::.ctor()
+  IL_09f3: dup
+  IL_09f4: ldloc.s V_11
+  IL_09f6: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_09fb: ldstr "x"
+  IL_0a00: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0a05: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0a0a: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0a0f: ldloc.s V_11
+  IL_0a11: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0a16: ldstr "y"
+  IL_0a1b: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0a20: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0a25: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0a2a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0a2f: stfld Microsoft.Xna.Framework.Vector2 Celeste.DecalData::Position
+  IL_0a34: dup
+  IL_0a35: ldloc.s V_11
+  IL_0a37: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0a3c: ldstr "scaleX"
+  IL_0a41: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0a46: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0a4b: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0a50: ldloc.s V_11
+  IL_0a52: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0a57: ldstr "scaleY"
+  IL_0a5c: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0a61: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0a66: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0a6b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0a70: stfld Microsoft.Xna.Framework.Vector2 Celeste.DecalData::Scale
+  IL_0a75: dup
+  IL_0a76: ldloc.s V_11
+  IL_0a78: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0a7d: ldstr "texture"
+  IL_0a82: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0a87: castclass System.String
+  IL_0a8c: stfld System.String Celeste.DecalData::Texture
+  IL_0a91: dup
+  IL_0a92: ldloc V_11
+  IL_0a96: ldstr "rotation"
+  IL_0a9b: ldc.r4 0
+  IL_0aa0: callvirt System.Single Celeste.BinaryPacker/Element::AttrFloat(System.String,System.Single)
+  IL_0aa5: stfld System.Single Celeste.DecalData::Rotation
+  IL_0aaa: dup
+  IL_0aab: ldloc V_11
+  IL_0aaf: ldstr "color"
+  IL_0ab4: ldstr ""
+  IL_0ab9: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0abe: stfld System.String Celeste.DecalData::ColorHex
+  IL_0ac3: callvirt System.Void System.Collections.Generic.List`1<Celeste.DecalData>::Add(T)
+  IL_0ac8: ldloca.s V_8
+  IL_0aca: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::MoveNext()
+  IL_0acf: brtrue IL_09df
+  IL_0ad4: leave IL_0d04
+  IL_0ad9: ldloca.s V_8
+  IL_0adb: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>
+  IL_0ae1: callvirt System.Void System.IDisposable::Dispose()
+  IL_0ae6: endfinally
+  IL_0ae7: ldloc.s V_7
+  IL_0ae9: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0aee: ldstr "fgdecals"
+  IL_0af3: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0af8: brfalse IL_0c24
+  IL_0afd: ldloc.s V_7
+  IL_0aff: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_0b04: brfalse IL_0d04
+  IL_0b09: ldloc.s V_7
+  IL_0b0b: ldfld System.Collections.Generic.List`1<Celeste.BinaryPacker/Element> Celeste.BinaryPacker/Element::Children
+  IL_0b10: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.BinaryPacker/Element>::GetEnumerator()
+  IL_0b15: stloc.s V_8
+  IL_0b17: br IL_0c05
+  IL_0b1c: ldloca.s V_8
+  IL_0b1e: call T System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::get_Current()
+  IL_0b23: stloc.s V_12
+  IL_0b25: ldarg.0
+  IL_0b26: ldfld System.Collections.Generic.List`1<Celeste.DecalData> Celeste.LevelData::FgDecals
+  IL_0b2b: newobj System.Void Celeste.DecalData::.ctor()
+  IL_0b30: dup
+  IL_0b31: ldloc.s V_12
+  IL_0b33: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0b38: ldstr "x"
+  IL_0b3d: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0b42: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0b47: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0b4c: ldloc.s V_12
+  IL_0b4e: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0b53: ldstr "y"
+  IL_0b58: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0b5d: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0b62: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0b67: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0b6c: stfld Microsoft.Xna.Framework.Vector2 Celeste.DecalData::Position
+  IL_0b71: dup
+  IL_0b72: ldloc.s V_12
+  IL_0b74: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0b79: ldstr "scaleX"
+  IL_0b7e: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0b83: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0b88: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0b8d: ldloc.s V_12
+  IL_0b8f: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0b94: ldstr "scaleY"
+  IL_0b99: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0b9e: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_0ba3: call System.Single System.Convert::ToSingle(System.Object,System.IFormatProvider)
+  IL_0ba8: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0bad: stfld Microsoft.Xna.Framework.Vector2 Celeste.DecalData::Scale
+  IL_0bb2: dup
+  IL_0bb3: ldloc.s V_12
+  IL_0bb5: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.BinaryPacker/Element::Attributes
+  IL_0bba: ldstr "texture"
+  IL_0bbf: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.Object>::get_Item(TKey)
+  IL_0bc4: castclass System.String
+  IL_0bc9: stfld System.String Celeste.DecalData::Texture
+  IL_0bce: dup
+  IL_0bcf: ldloc V_12
+  IL_0bd3: ldstr "rotation"
+  IL_0bd8: ldc.r4 0
+  IL_0bdd: callvirt System.Single Celeste.BinaryPacker/Element::AttrFloat(System.String,System.Single)
+  IL_0be2: stfld System.Single Celeste.DecalData::Rotation
+  IL_0be7: dup
+  IL_0be8: ldloc V_12
+  IL_0bec: ldstr "color"
+  IL_0bf1: ldstr ""
+  IL_0bf6: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0bfb: stfld System.String Celeste.DecalData::ColorHex
+  IL_0c00: callvirt System.Void System.Collections.Generic.List`1<Celeste.DecalData>::Add(T)
+  IL_0c05: ldloca.s V_8
+  IL_0c07: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::MoveNext()
+  IL_0c0c: brtrue IL_0b1c
+  IL_0c11: leave IL_0d04
+  IL_0c16: ldloca.s V_8
+  IL_0c18: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>
+  IL_0c1e: callvirt System.Void System.IDisposable::Dispose()
+  IL_0c23: endfinally
+  IL_0c24: ldloc.s V_7
+  IL_0c26: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0c2b: ldstr "solids"
+  IL_0c30: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0c35: brfalse.s IL_0c53
+  IL_0c37: ldarg.0
+  IL_0c38: ldloc.s V_7
+  IL_0c3a: ldstr "innerText"
+  IL_0c3f: ldstr ""
+  IL_0c44: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0c49: stfld System.String Celeste.LevelData::Solids
+  IL_0c4e: br IL_0d04
+  IL_0c53: ldloc.s V_7
+  IL_0c55: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0c5a: ldstr "bg"
+  IL_0c5f: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0c64: brfalse.s IL_0c82
+  IL_0c66: ldarg.0
+  IL_0c67: ldloc.s V_7
+  IL_0c69: ldstr "innerText"
+  IL_0c6e: ldstr ""
+  IL_0c73: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0c78: stfld System.String Celeste.LevelData::Bg
+  IL_0c7d: br IL_0d04
+  IL_0c82: ldloc.s V_7
+  IL_0c84: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0c89: ldstr "fgtiles"
+  IL_0c8e: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0c93: brfalse.s IL_0cae
+  IL_0c95: ldarg.0
+  IL_0c96: ldloc.s V_7
+  IL_0c98: ldstr "innerText"
+  IL_0c9d: ldstr ""
+  IL_0ca2: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0ca7: stfld System.String Celeste.LevelData::FgTiles
+  IL_0cac: br.s IL_0d04
+  IL_0cae: ldloc.s V_7
+  IL_0cb0: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0cb5: ldstr "bgtiles"
+  IL_0cba: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0cbf: brfalse.s IL_0cda
+  IL_0cc1: ldarg.0
+  IL_0cc2: ldloc.s V_7
+  IL_0cc4: ldstr "innerText"
+  IL_0cc9: ldstr ""
+  IL_0cce: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0cd3: stfld System.String Celeste.LevelData::BgTiles
+  IL_0cd8: br.s IL_0d04
+  IL_0cda: ldloc.s V_7
+  IL_0cdc: ldfld System.String Celeste.BinaryPacker/Element::Name
+  IL_0ce1: ldstr "objtiles"
+  IL_0ce6: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0ceb: brfalse.s IL_0d04
+  IL_0ced: ldarg.0
+  IL_0cee: ldloc.s V_7
+  IL_0cf0: ldstr "innerText"
+  IL_0cf5: ldstr ""
+  IL_0cfa: callvirt System.String Celeste.BinaryPacker/Element::Attr(System.String,System.String)
+  IL_0cff: stfld System.String Celeste.LevelData::ObjTiles
+  IL_0d04: ldloca.s V_6
+  IL_0d06: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>::MoveNext()
+  IL_0d0b: brtrue IL_07a9
+  IL_0d10: leave.s IL_0d20
+  IL_0d12: ldloca.s V_6
+  IL_0d14: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.BinaryPacker/Element>
+  IL_0d1a: callvirt System.Void System.IDisposable::Dispose()
+  IL_0d1f: endfinally
+  IL_0d20: ldarg.0
+  IL_0d21: ldarg.0
+  IL_0d22: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.LevelData::Spawns
+  IL_0d27: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0d2c: ldc.i4.0
+  IL_0d2d: cgt
+  IL_0d2f: ldc.i4.0
+  IL_0d30: ceq
+  IL_0d32: stfld System.Boolean Celeste.LevelData::Dummy
+  IL_0d37: ret

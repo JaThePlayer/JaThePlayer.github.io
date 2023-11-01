@@ -1,0 +1,561 @@
+IL Diff: System.Void Celeste.Editor.MapEditor::orig_Render()
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.Editor.MapEditor::UpdateMouse()
+  IL_0006: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_000b: ldc.i4.0
+  IL_000c: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_0011: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointClamp
+  IL_0016: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::None
+  IL_001b: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_0020: ldnull
+  IL_0021: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0026: callvirt Microsoft.Xna.Framework.Matrix Monocle.Camera::get_Matrix()
+  IL_002b: ldsfld Microsoft.Xna.Framework.Matrix Monocle.Engine::ScreenMatrix
+  IL_0030: call Microsoft.Xna.Framework.Matrix Microsoft.Xna.Framework.Matrix::op_Multiply(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)
+  IL_0035: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_003a: ldc.r4 1920
+  IL_003f: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0044: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_0049: div
+  IL_004a: stloc.0
+  IL_004b: ldc.r4 1080
+  IL_0050: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0055: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_005a: div
+  IL_005b: stloc.1
+  IL_005c: ldc.i4.5
+  IL_005d: stloc.2
+  IL_005e: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0063: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0068: ldloc.2
+  IL_0069: conv.r4
+  IL_006a: div
+  IL_006b: ldc.r4 1
+  IL_0070: sub
+  IL_0071: conv.r8
+  IL_0072: call System.Double System.Math::Floor(System.Double)
+  IL_0077: conv.r4
+  IL_0078: ldloc.2
+  IL_0079: conv.r4
+  IL_007a: mul
+  IL_007b: stloc.3
+  IL_007c: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0081: callvirt System.Single Monocle.Camera::get_Top()
+  IL_0086: ldloc.2
+  IL_0087: conv.r4
+  IL_0088: div
+  IL_0089: ldc.r4 1
+  IL_008e: sub
+  IL_008f: conv.r8
+  IL_0090: call System.Double System.Math::Floor(System.Double)
+  IL_0095: conv.r4
+  IL_0096: ldloc.2
+  IL_0097: conv.r4
+  IL_0098: mul
+  IL_0099: stloc.s V_4
+  IL_009b: ldloc.3
+  IL_009c: stloc.s V_5
+  IL_009e: br.s IL_00ce
+  IL_00a0: ldloc.s V_5
+  IL_00a2: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_00a7: callvirt System.Single Monocle.Camera::get_Top()
+  IL_00ac: ldloc.s V_5
+  IL_00ae: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_00b3: callvirt System.Single Monocle.Camera::get_Top()
+  IL_00b8: ldloc.1
+  IL_00b9: add
+  IL_00ba: ldsfld Microsoft.Xna.Framework.Color Celeste.Editor.MapEditor::gridColor
+  IL_00bf: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_00c4: ldloc.s V_5
+  IL_00c6: ldc.r4 5
+  IL_00cb: add
+  IL_00cc: stloc.s V_5
+  IL_00ce: ldloc.s V_5
+  IL_00d0: ldloc.3
+  IL_00d1: ldloc.0
+  IL_00d2: add
+  IL_00d3: ldc.r4 10
+  IL_00d8: add
+  IL_00d9: ble.s IL_00a0
+  IL_00db: ldloc.s V_4
+  IL_00dd: stloc.s V_6
+  IL_00df: br.s IL_010f
+  IL_00e1: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_00e6: callvirt System.Single Monocle.Camera::get_Left()
+  IL_00eb: ldloc.s V_6
+  IL_00ed: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_00f2: callvirt System.Single Monocle.Camera::get_Left()
+  IL_00f7: ldloc.0
+  IL_00f8: add
+  IL_00f9: ldloc.s V_6
+  IL_00fb: ldsfld Microsoft.Xna.Framework.Color Celeste.Editor.MapEditor::gridColor
+  IL_0100: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0105: ldloc.s V_6
+  IL_0107: ldc.r4 5
+  IL_010c: add
+  IL_010d: stloc.s V_6
+  IL_010f: ldloc.s V_6
+  IL_0111: ldloc.s V_4
+  IL_0113: ldloc.1
+  IL_0114: add
+  IL_0115: ldc.r4 10
+  IL_011a: add
+  IL_011b: ble.s IL_00e1
+  IL_011d: ldc.r4 0
+  IL_0122: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0127: callvirt System.Single Monocle.Camera::get_Top()
+  IL_012c: ldc.r4 0
+  IL_0131: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0136: callvirt System.Single Monocle.Camera::get_Top()
+  IL_013b: ldloc.1
+  IL_013c: add
+  IL_013d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_DarkSlateBlue()
+  IL_0142: ldc.r4 1
+  IL_0147: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_014c: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_0151: div
+  IL_0152: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0157: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_015c: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0161: ldc.r4 0
+  IL_0166: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_016b: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0170: ldloc.0
+  IL_0171: add
+  IL_0172: ldc.r4 0
+  IL_0177: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_DarkSlateBlue()
+  IL_017c: ldc.r4 1
+  IL_0181: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0186: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_018b: div
+  IL_018c: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0191: ldarg.0
+  IL_0192: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels
+  IL_0197: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_019c: stloc.s V_7
+  IL_019e: br.s IL_01b7
+  IL_01a0: ldloca.s V_7
+  IL_01a2: call T System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
+  IL_01a7: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_01ac: ldarg.0
+  IL_01ad: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels
+  IL_01b2: callvirt System.Void Celeste.Editor.LevelTemplate::RenderContents(Monocle.Camera,System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>)
+  IL_01b7: ldloca.s V_7
+  IL_01b9: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_01be: brtrue.s IL_01a0
+  IL_01c0: leave.s IL_01d0
+  IL_01c2: ldloca.s V_7
+  IL_01c4: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_01ca: callvirt System.Void System.IDisposable::Dispose()
+  IL_01cf: endfinally
+  IL_01d0: ldarg.0
+  IL_01d1: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels
+  IL_01d6: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_01db: stloc.s V_7
+  IL_01dd: br.s IL_01f0
+  IL_01df: ldloca.s V_7
+  IL_01e1: call T System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
++ IL_0000: dup @ VivHelper.Entities.SpawnPointHooks::MapEditor_Render
++ IL_0000: ldarg.0 @ VivHelper.Entities.SpawnPointHooks::MapEditor_Render
++ IL_0000: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels @ VivHelper.Entities.SpawnPointHooks::MapEditor_Render
++ IL_0000: call System.Void VivHelper.Entities.SpawnPointHooks::PostRenderContents(Celeste.Editor.LevelTemplate,System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>) @ VivHelper.Entities.SpawnPointHooks::MapEditor_Render
+  IL_01e6: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_01eb: callvirt System.Void Celeste.Editor.LevelTemplate::RenderOutline(Monocle.Camera)
+  IL_01f0: ldloca.s V_7
+  IL_01f2: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_01f7: brtrue.s IL_01df
+  IL_01f9: leave.s IL_0209
+  IL_01fb: ldloca.s V_7
+  IL_01fd: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_0203: callvirt System.Void System.IDisposable::Dispose()
+  IL_0208: endfinally
+  IL_0209: ldarg.0
+  IL_020a: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels
+  IL_020f: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_0214: stloc.s V_7
+  IL_0216: br.s IL_0247
+  IL_0218: ldloca.s V_7
+  IL_021a: call T System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
+  IL_021f: stloc.s V_8
+  IL_0221: ldloc.s V_8
+  IL_0223: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0228: ldarg.0
+  IL_0229: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::selection
+  IL_022e: ldloc.s V_8
+  IL_0230: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::Contains(T)
+  IL_0235: ldarg.0
+  IL_0236: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::hovered
+  IL_023b: ldloc.s V_8
+  IL_023d: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::Contains(T)
+  IL_0242: callvirt System.Void Celeste.Editor.LevelTemplate::RenderHighlight(Monocle.Camera,System.Boolean,System.Boolean)
+  IL_0247: ldloca.s V_7
+  IL_0249: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_024e: brtrue.s IL_0218
+  IL_0250: leave.s IL_0260
+  IL_0252: ldloca.s V_7
+  IL_0254: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_025a: callvirt System.Void System.IDisposable::Dispose()
+  IL_025f: endfinally
+  IL_0260: ldarg.0
+  IL_0261: ldfld Celeste.Editor.MapEditor/MouseModes Celeste.Editor.MapEditor::mouseMode
+  IL_0266: brtrue IL_033d
+  IL_026b: ldarg.0
+  IL_026c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_0271: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0276: ldc.r4 12
+  IL_027b: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0280: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_0285: div
+  IL_0286: sub
+  IL_0287: ldarg.0
+  IL_0288: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_028d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0292: ldarg.0
+  IL_0293: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_0298: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_029d: ldc.r4 12
+  IL_02a2: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_02a7: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_02ac: div
+  IL_02ad: add
+  IL_02ae: ldarg.0
+  IL_02af: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_02b4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02b9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Yellow()
+  IL_02be: ldc.r4 3
+  IL_02c3: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_02c8: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_02cd: div
+  IL_02ce: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  IL_02d3: ldarg.0
+  IL_02d4: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_02d9: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02de: ldarg.0
+  IL_02df: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_02e4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02e9: ldc.r4 12
+  IL_02ee: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_02f3: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_02f8: div
+  IL_02f9: sub
+  IL_02fa: ldarg.0
+  IL_02fb: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_0300: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0305: ldarg.0
+  IL_0306: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_030b: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0310: ldc.r4 12
+  IL_0315: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_031a: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_031f: div
+  IL_0320: add
+  IL_0321: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Yellow()
+  IL_0326: ldc.r4 3
+  IL_032b: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0330: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_0335: div
+  IL_0336: call System.Void Monocle.Draw::Line(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color,System.Single)
+  IL_033b: br.s IL_036c
+  IL_033d: ldarg.0
+  IL_033e: ldfld Celeste.Editor.MapEditor/MouseModes Celeste.Editor.MapEditor::mouseMode
+  IL_0343: ldc.i4.2
+  IL_0344: bne.un.s IL_036c
+  IL_0346: ldarg.0
+  IL_0347: ldarg.0
+  IL_0348: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mouseDragStart
+  IL_034d: ldarg.0
+  IL_034e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Editor.MapEditor::mousePosition
+  IL_0353: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Editor.MapEditor::GetMouseRect(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0358: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Lime()
+  IL_035d: ldc.r4 0.25
+  IL_0362: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0367: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  IL_036c: ldsfld System.Single Celeste.Editor.MapEditor::saveFlash
+  IL_0371: ldc.r4 0
+  IL_0376: ble.un.s IL_03ac
+  IL_0378: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_037d: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0382: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0387: callvirt System.Single Monocle.Camera::get_Top()
+  IL_038c: ldloc.0
+  IL_038d: ldloc.1
+  IL_038e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0393: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_0398: ldsfld System.Single Celeste.Editor.MapEditor::saveFlash
+  IL_039d: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_03a2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_03a7: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_03ac: ldarg.0
+  IL_03ad: ldfld System.Single Celeste.Editor.MapEditor::fade
+  IL_03b2: ldc.r4 0
+  IL_03b7: ble.un.s IL_03e2
+  IL_03b9: ldc.r4 0
+  IL_03be: ldc.r4 0
+  IL_03c3: ldc.r4 320
+  IL_03c8: ldc.r4 180
+  IL_03cd: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_03d2: ldarg.0
+  IL_03d3: ldfld System.Single Celeste.Editor.MapEditor::fade
+  IL_03d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_03dd: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_03e2: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_03e7: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_03ec: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_03f1: ldc.i4.0
+  IL_03f2: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_03f7: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::LinearClamp
+  IL_03fc: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::None
+  IL_0401: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_0406: ldnull
+  IL_0407: ldsfld Microsoft.Xna.Framework.Matrix Monocle.Engine::ScreenMatrix
+  IL_040c: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_0411: ldc.r4 0
+  IL_0416: ldc.r4 0
+  IL_041b: ldc.r4 1920
+  IL_0420: ldc.r4 72
+  IL_0425: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_042a: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_042f: ldloca.s V_9
+  IL_0431: ldc.r4 16
+  IL_0436: ldc.r4 4
+  IL_043b: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0440: ldloca.s V_10
+  IL_0442: ldc.r4 1904
+  IL_0447: ldc.r4 4
+  IL_044c: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0451: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_0456: ldc.i4.s 81
+  IL_0458: callvirt System.Boolean Monocle.MInput/KeyboardData::Check(Microsoft.Xna.Framework.Input.Keys)
+  IL_045d: brfalse IL_0592
+  IL_0462: ldc.r4 -10
+  IL_0467: ldc.r4 -10
+  IL_046c: ldc.r4 1940
+  IL_0471: ldc.r4 1100
+  IL_0476: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_047b: ldc.r4 0.25
+  IL_0480: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0485: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_048a: ldarg.0
+  IL_048b: ldfld System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::levels
+  IL_0490: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_0495: stloc.s V_7
+  IL_0497: br IL_0576
+  IL_049c: ldloca.s V_7
+  IL_049e: call T System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
+  IL_04a3: stloc.s V_11
+  IL_04a5: ldc.i4.0
+  IL_04a6: stloc.s V_12
+  IL_04a8: br IL_055a
+  IL_04ad: ldloc.s V_11
+  IL_04af: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Strawberries
+  IL_04b4: ldloc.s V_12
+  IL_04b6: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_04bb: stloc.s V_13
+  IL_04bd: ldloc.s V_11
+  IL_04bf: ldfld System.Collections.Generic.List`1<System.String> Celeste.Editor.LevelTemplate::StrawberryMetadata
+  IL_04c4: ldloc.s V_12
+  IL_04c6: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_04cb: ldloc.s V_11
+  IL_04cd: ldfld System.Int32 Celeste.Editor.LevelTemplate::X
+  IL_04d2: conv.r4
+  IL_04d3: ldloc.s V_13
+  IL_04d5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_04da: add
+  IL_04db: ldloc.s V_11
+  IL_04dd: ldfld System.Int32 Celeste.Editor.LevelTemplate::Y
+  IL_04e2: conv.r4
+  IL_04e3: ldloc.s V_13
+  IL_04e5: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_04ea: add
+  IL_04eb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04f0: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_04f5: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_04fa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04ff: ldsfld Monocle.Camera Celeste.Editor.MapEditor::Camera
+  IL_0504: callvirt System.Single Monocle.Camera::get_Zoom()
+  IL_0509: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_050e: ldc.r4 960
+  IL_0513: ldc.r4 532
+  IL_0518: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_051d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0522: ldc.r4 0.5
+  IL_0527: ldc.r4 1
+  IL_052c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0531: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0536: ldc.r4 1
+  IL_053b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0540: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
+  IL_0545: ldc.r4 2
+  IL_054a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_054f: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0554: ldloc.s V_12
+  IL_0556: ldc.i4.1
+  IL_0557: add
+  IL_0558: stloc.s V_12
+  IL_055a: ldloc.s V_11
+  IL_055c: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Strawberries
+  IL_0561: brfalse.s IL_0576
+  IL_0563: ldloc.s V_12
+  IL_0565: ldloc.s V_11
+  IL_0567: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Strawberries
+  IL_056c: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0571: blt IL_04ad
+  IL_0576: ldloca.s V_7
+  IL_0578: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_057d: brtrue IL_049c
+  IL_0582: leave.s IL_0592
+  IL_0584: ldloca.s V_7
+  IL_0586: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_058c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0591: endfinally
+  IL_0592: ldarg.0
+  IL_0593: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::hovered
+  IL_0598: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::get_Count()
+  IL_059d: brtrue IL_0637
+  IL_05a2: ldarg.0
+  IL_05a3: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::selection
+  IL_05a8: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::get_Count()
+  IL_05ad: ldc.i4.0
+  IL_05ae: ble.s IL_05db
+  IL_05b0: ldarg.0
+  IL_05b1: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::selection
+  IL_05b6: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::get_Count()
+  IL_05bb: box System.Int32
+  IL_05c0: ldstr " levels selected"
+  IL_05c5: call System.String System.String::Concat(System.Object,System.Object)
+  IL_05ca: ldloc.s V_9
+  IL_05cc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
+  IL_05d1: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_05d6: br IL_0763
+  IL_05db: ldarg.0
+  IL_05dc: ldfld Celeste.MapData Celeste.Editor.MapEditor::mapData
+  IL_05e1: ldfld Celeste.AreaData Celeste.MapData::Data
+  IL_05e6: ldfld System.String Celeste.AreaData::Name
+  IL_05eb: ldnull
+  IL_05ec: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_05f1: ldloc.s V_9
+  IL_05f3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Aqua()
+  IL_05f8: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_05fd: ldarg.0
+  IL_05fe: ldfld Celeste.MapData Celeste.Editor.MapEditor::mapData
+  IL_0603: ldflda Celeste.AreaKey Celeste.MapData::Area
+  IL_0608: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_060d: box Celeste.AreaMode
+  IL_0612: ldstr " MODE"
+  IL_0617: call System.String System.String::Concat(System.Object,System.Object)
+  IL_061c: ldloc.s V_10
+  IL_061e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0623: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0628: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
+  IL_062d: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0632: br IL_0763
+  IL_0637: ldarg.0
+  IL_0638: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::hovered
+  IL_063d: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::get_Count()
+  IL_0642: ldc.i4.1
+  IL_0643: bne.un IL_073d
+  IL_0648: ldnull
+  IL_0649: stloc.s V_14
+  IL_064b: ldarg.0
+  IL_064c: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::hovered
+  IL_0651: callvirt System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_0656: stloc.s V_15
+  IL_0658: br.s IL_0665
+  IL_065a: ldloca.s V_15
+  IL_065c: call T System.Collections.Generic.HashSet`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
+  IL_0661: stloc.s V_14
+  IL_0663: leave.s IL_067e
+  IL_0665: ldloca.s V_15
+  IL_0667: call System.Boolean System.Collections.Generic.HashSet`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_066c: brtrue.s IL_065a
+  IL_066e: leave.s IL_067e
+  IL_0670: ldloca.s V_15
+  IL_0672: constrained. System.Collections.Generic.HashSet`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_0678: callvirt System.Void System.IDisposable::Dispose()
+  IL_067d: endfinally
+  IL_067e: ldc.i4.s 11
+  IL_0680: newarr System.Object
+  IL_0685: dup
+  IL_0686: ldc.i4.0
+  IL_0687: ldloc.s V_14
+  IL_0689: ldflda System.Int32 Celeste.Editor.LevelTemplate::ActualWidth
+  IL_068e: call System.String System.Int32::ToString()
+  IL_0693: stelem.ref
+  IL_0694: dup
+  IL_0695: ldc.i4.1
+  IL_0696: ldstr "x"
+  IL_069b: stelem.ref
+  IL_069c: dup
+  IL_069d: ldc.i4.2
+  IL_069e: ldloc.s V_14
+  IL_06a0: ldflda System.Int32 Celeste.Editor.LevelTemplate::ActualHeight
+  IL_06a5: call System.String System.Int32::ToString()
+  IL_06aa: stelem.ref
+  IL_06ab: dup
+  IL_06ac: ldc.i4.3
+  IL_06ad: ldstr "   "
+  IL_06b2: stelem.ref
+  IL_06b3: dup
+  IL_06b4: ldc.i4.4
+  IL_06b5: ldloc.s V_14
+  IL_06b7: ldfld System.Int32 Celeste.Editor.LevelTemplate::X
+  IL_06bc: box System.Int32
+  IL_06c1: stelem.ref
+  IL_06c2: dup
+  IL_06c3: ldc.i4.5
+  IL_06c4: ldstr ","
+  IL_06c9: stelem.ref
+  IL_06ca: dup
+  IL_06cb: ldc.i4.6
+  IL_06cc: ldloc.s V_14
+  IL_06ce: ldfld System.Int32 Celeste.Editor.LevelTemplate::Y
+  IL_06d3: box System.Int32
+  IL_06d8: stelem.ref
+  IL_06d9: dup
+  IL_06da: ldc.i4.7
+  IL_06db: ldstr "   "
+  IL_06e0: stelem.ref
+  IL_06e1: dup
+  IL_06e2: ldc.i4.8
+  IL_06e3: ldloc.s V_14
+  IL_06e5: ldfld System.Int32 Celeste.Editor.LevelTemplate::X
+  IL_06ea: ldc.i4.8
+  IL_06eb: mul
+  IL_06ec: box System.Int32
+  IL_06f1: stelem.ref
+  IL_06f2: dup
+  IL_06f3: ldc.i4.s 9
+  IL_06f5: ldstr ","
+  IL_06fa: stelem.ref
+  IL_06fb: dup
+  IL_06fc: ldc.i4.s 10
+  IL_06fe: ldloc.s V_14
+  IL_0700: ldfld System.Int32 Celeste.Editor.LevelTemplate::Y
+  IL_0705: ldc.i4.8
+  IL_0706: mul
+  IL_0707: box System.Int32
+  IL_070c: stelem.ref
+  IL_070d: call System.String System.String::Concat(System.Object[])
+  IL_0712: ldloc.s V_14
+  IL_0714: ldfld System.String Celeste.Editor.LevelTemplate::Name
+  IL_0719: ldloc.s V_9
+  IL_071b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Yellow()
+  IL_0720: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0725: ldloc.s V_10
+  IL_0727: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_072c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0731: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Green()
+  IL_0736: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_073b: br.s IL_0763
+  IL_073d: ldarg.0
+  IL_073e: ldfld System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate> Celeste.Editor.MapEditor::hovered
+  IL_0743: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.Editor.LevelTemplate>::get_Count()
+  IL_0748: box System.Int32
+  IL_074d: ldstr " levels"
+  IL_0752: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0757: ldloc.s V_9
+  IL_0759: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Yellow()
+  IL_075e: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0763: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0768: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_076d: ret

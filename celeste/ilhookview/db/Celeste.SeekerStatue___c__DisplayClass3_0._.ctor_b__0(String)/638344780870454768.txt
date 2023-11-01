@@ -1,0 +1,28 @@
+IL Diff: System.Void Celeste.SeekerStatue/<>c__DisplayClass3_0::<.ctor>b__0(System.String)
+  IL_0000: ldarg.1
+  IL_0001: ldstr "hatch"
+  IL_0006: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_000b: brfalse.s IL_004b
+  IL_000d: ldarg.0
+  IL_000e: ldfld Celeste.EntityData Celeste.SeekerStatue/<>c__DisplayClass3_0::data
+  IL_0013: ldarg.0
+  IL_0014: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerStatue/<>c__DisplayClass3_0::offset
+  IL_0019: newobj System.Void Celeste.Seeker::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
+  IL_001e: stloc.0
+  IL_001f: ldloc.0
+  IL_0020: ldfld Celeste.VertexLight Celeste.Seeker::Light
+  IL_0025: ldc.r4 0
+  IL_002a: stfld System.Single Celeste.VertexLight::Alpha
+  IL_002f: ldarg.0
+  IL_0030: ldfld Celeste.SeekerStatue Celeste.SeekerStatue/<>c__DisplayClass3_0::<>4__this
+  IL_0035: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_003a: ldloc.0
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldfld Celeste.SeekerStatue Celeste.SeekerStatue/<>c__DisplayClass3_0::<>4__this @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_003b: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.SeekerStatue Celeste.SeekerStatue/<>c__DisplayClass3_0::<>4__this
+  IL_0046: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_004b: ret

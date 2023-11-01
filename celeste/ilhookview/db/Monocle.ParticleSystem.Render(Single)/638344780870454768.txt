@@ -1,0 +1,30 @@
+IL Diff: System.Void Monocle.ParticleSystem::Render(System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedParticle() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Particle[] Monocle.ParticleSystem::particles
+  IL_0006: stloc.0
+  IL_0007: ldc.i4.0
+  IL_0008: stloc.1
+  IL_0009: br.s IL_0027
+  IL_000b: ldloc.0
+  IL_000c: ldloc.1
+  IL_000d: ldelem.any Monocle.Particle
+  IL_0012: stloc.2
+  IL_0013: ldloc.2
+  IL_0014: ldfld System.Boolean Monocle.Particle::Active
+  IL_0019: brfalse.s IL_0023
+  IL_001b: ldloca.s V_2
+  IL_001d: ldarg.1
+  IL_001e: call System.Void Monocle.Particle::Render(System.Single)
+  IL_0023: ldloc.1
+  IL_0024: ldc.i4.1
+  IL_0025: add
+  IL_0026: stloc.1
+  IL_0027: ldloc.1
+  IL_0028: ldloc.0
+  IL_0029: ldlen
+  IL_002a: conv.i4
+  IL_002b: blt.s IL_000b
+  IL_002d: ret

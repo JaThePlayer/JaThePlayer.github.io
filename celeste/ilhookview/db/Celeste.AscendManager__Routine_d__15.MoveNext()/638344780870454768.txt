@@ -1,0 +1,541 @@
+IL Diff: System.Boolean Celeste.AscendManager/<Routine>d__15::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.AscendManager Celeste.AscendManager/<Routine>d__15::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_004a,IL_008f,IL_00d4,IL_0219,IL_0253,IL_0282,IL_02b4,IL_02f9,IL_0312,IL_0349,IL_03a3,IL_0432,IL_05c7
+  IL_0048: ldc.i4.0
+  IL_0049: ret
+  IL_004a: ldarg.0
+  IL_004b: ldc.i4.m1
+  IL_004c: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0051: ldarg.0
+  IL_0052: ldloc.1
+  IL_0053: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0058: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_005d: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0062: stfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0067: br.s IL_0096
+  IL_0069: ldarg.0
+  IL_006a: ldloc.1
+  IL_006b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0070: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0075: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_007a: stfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_007f: ldarg.0
+  IL_0080: ldnull
+  IL_0081: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0086: ldarg.0
+  IL_0087: ldc.i4.1
+  IL_0088: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_008d: ldc.i4.1
+  IL_008e: ret
+  IL_008f: ldarg.0
+  IL_0090: ldc.i4.m1
+  IL_0091: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0096: ldarg.0
+  IL_0097: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_009c: brfalse.s IL_0069
+  IL_009e: ldarg.0
+  IL_009f: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_00a4: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00a9: ldloc.1
+  IL_00aa: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00af: bgt.s IL_0069
+  IL_00b1: ldloc.1
+  IL_00b2: ldfld System.Int32 Celeste.AscendManager::index
+  IL_00b7: ldc.i4.s 9
+  IL_00b9: bne.un.s IL_00db
+  IL_00bb: ldarg.0
+  IL_00bc: ldc.r4 1.6
+  IL_00c1: box System.Single
+  IL_00c6: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_00cb: ldarg.0
+  IL_00cc: ldc.i4.2
+  IL_00cd: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_00d2: ldc.i4.1
+  IL_00d3: ret
+  IL_00d4: ldarg.0
+  IL_00d5: ldc.i4.m1
+  IL_00d6: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_00db: ldloc.1
+  IL_00dc: newobj System.Void Celeste.AscendManager/Streaks::.ctor(Celeste.AscendManager)
+  IL_00e1: stloc.2
+  IL_00e2: ldloc.1
+  IL_00e3: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00e8: ldloc.2
+  IL_00e9: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00ee: ldnull
+  IL_00ef: stloc.3
+  IL_00f0: ldloc.1
+  IL_00f1: ldfld System.Boolean Celeste.AscendManager::Dark
+  IL_00f6: brtrue.s IL_010b
+  IL_00f8: ldloc.1
+  IL_00f9: newobj System.Void Celeste.AscendManager/Clouds::.ctor(Celeste.AscendManager)
+  IL_00fe: stloc.3
+  IL_00ff: ldloc.1
+  IL_0100: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0105: ldloc.3
+  IL_0106: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_010b: ldloc.1
+  IL_010c: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0111: ldfld Celeste.Session Celeste.Level::Session
+  IL_0116: ldstr "beginswap_"
+  IL_011b: ldloc.1
+  IL_011c: ldfld System.Int32 Celeste.AscendManager::index
+  IL_0121: box System.Int32
+  IL_0126: call System.String System.String::Concat(System.Object,System.Object)
+  IL_012b: ldc.i4.1
+  IL_012c: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0131: ldarg.0
+  IL_0132: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0137: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_013c: ldstr "launch"
+  IL_0141: ldc.i4.0
+  IL_0142: ldc.i4.0
+  IL_0143: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0148: ldarg.0
+  IL_0149: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_014e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0153: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0158: ldarg.0
+  IL_0159: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_015e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0163: ldc.i4.s 11
+  IL_0165: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_016a: ldarg.0
+  IL_016b: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0170: ldc.i4.0
+  IL_0171: stfld System.Boolean Celeste.Player::DummyGravity
+  IL_0176: ldarg.0
+  IL_0177: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_017c: ldc.i4.0
+  IL_017d: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_0182: ldloc.1
+  IL_0183: ldfld System.String Celeste.AscendManager::ambience
+  IL_0188: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_018d: brtrue.s IL_01be
+  IL_018f: ldloc.1
+  IL_0190: ldfld System.String Celeste.AscendManager::ambience
+  IL_0195: ldstr "null"
+  IL_019a: ldc.i4.3
+  IL_019b: callvirt System.Boolean System.String::Equals(System.String,System.StringComparison)
+  IL_01a0: brfalse.s IL_01ac
+  IL_01a2: ldnull
+  IL_01a3: ldc.i4.1
+  IL_01a4: call System.Boolean Celeste.Audio::SetAmbience(System.String,System.Boolean)
+  IL_01a9: pop
+  IL_01aa: br.s IL_01be
+  IL_01ac: ldloc.1
+  IL_01ad: ldfld System.String Celeste.AscendManager::ambience
+  IL_01b2: call System.String Celeste.SFX::EventnameByHandle(System.String)
+  IL_01b7: ldc.i4.1
+  IL_01b8: call System.Boolean Celeste.Audio::SetAmbience(System.String,System.Boolean)
+  IL_01bd: pop
+  IL_01be: ldloc.1
+  IL_01bf: ldfld System.Boolean Celeste.AscendManager::introLaunch
+  IL_01c4: brfalse.s IL_0225
+  IL_01c6: ldloc.1
+  IL_01c7: ldc.r4 1
+  IL_01cc: callvirt System.Void Celeste.AscendManager::FadeSnapTo(System.Single)
+  IL_01d1: ldloc.1
+  IL_01d2: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_01d7: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_01dc: ldarg.0
+  IL_01dd: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_01e2: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_01e7: ldc.r4 -160
+  IL_01ec: ldc.r4 -90
+  IL_01f1: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01f6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01fb: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0200: ldarg.0
+  IL_0201: ldc.r4 2.3
+  IL_0206: box System.Single
+  IL_020b: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0210: ldarg.0
+  IL_0211: ldc.i4.3
+  IL_0212: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0217: ldc.i4.1
+  IL_0218: ret
+  IL_0219: ldarg.0
+  IL_021a: ldc.i4.m1
+  IL_021b: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0220: br IL_0350
+  IL_0225: ldarg.0
+  IL_0226: ldloc.1
+  IL_0227: ldc.r4 1
+  IL_022c: ldloc.1
+  IL_022d: ldfld System.Boolean Celeste.AscendManager::Dark
+  IL_0232: brtrue.s IL_023b
+  IL_0234: ldc.r4 0.8
+  IL_0239: br.s IL_0240
+  IL_023b: ldc.r4 2
+  IL_0240: callvirt System.Collections.IEnumerator Celeste.AscendManager::FadeTo(System.Single,System.Single)
+  IL_0245: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_024a: ldarg.0
+  IL_024b: ldc.i4.4
+  IL_024c: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0251: ldc.i4.1
+  IL_0252: ret
+  IL_0253: ldarg.0
+  IL_0254: ldc.i4.m1
+  IL_0255: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_025a: ldloc.1
+  IL_025b: ldfld System.Boolean Celeste.AscendManager::Ch9Ending
+  IL_0260: brfalse.s IL_028b
+  IL_0262: ldloc.1
+  IL_0263: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0268: newobj System.Void Celeste.CS10_FreeBird::.ctor()
+  IL_026d: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0272: ldarg.0
+  IL_0273: ldnull
+  IL_0274: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0279: ldarg.0
+  IL_027a: ldc.i4.5
+  IL_027b: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0280: ldc.i4.1
+  IL_0281: ret
+  IL_0282: ldarg.0
+  IL_0283: ldc.i4.m1
+  IL_0284: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0289: br.s IL_0272
+  IL_028b: ldloc.1
+  IL_028c: ldfld System.String Celeste.AscendManager::cutscene
+  IL_0291: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0296: brtrue IL_032f
+  IL_029b: ldarg.0
+  IL_029c: ldc.r4 0.25
+  IL_02a1: box System.Single
+  IL_02a6: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_02ab: ldarg.0
+  IL_02ac: ldc.i4.6
+  IL_02ad: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_02b2: ldc.i4.1
+  IL_02b3: ret
+  IL_02b4: ldarg.0
+  IL_02b5: ldc.i4.m1
+  IL_02b6: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_02bb: ldarg.0
+  IL_02bc: ldloc.1
+  IL_02bd: ldfld System.Int32 Celeste.AscendManager::index
+  IL_02c2: ldloc.1
+  IL_02c3: ldfld System.String Celeste.AscendManager::cutscene
+  IL_02c8: ldloc.1
+  IL_02c9: ldfld System.Boolean Celeste.AscendManager::Dark
+  IL_02ce: newobj System.Void Celeste.CS07_Ascend::.ctor(System.Int32,System.String,System.Boolean)
+  IL_02d3: stfld Celeste.CS07_Ascend Celeste.AscendManager/<Routine>d__15::<cs>5__3
+  IL_02d8: ldloc.1
+  IL_02d9: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_02de: ldarg.0
+  IL_02df: ldfld Celeste.CS07_Ascend Celeste.AscendManager/<Routine>d__15::<cs>5__3
+  IL_02e4: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_02e9: ldarg.0
+  IL_02ea: ldnull
+  IL_02eb: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_02f0: ldarg.0
+  IL_02f1: ldc.i4.7
+  IL_02f2: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_02f7: ldc.i4.1
+  IL_02f8: ret
+  IL_02f9: ldarg.0
+  IL_02fa: ldc.i4.m1
+  IL_02fb: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0300: br.s IL_0319
+  IL_0302: ldarg.0
+  IL_0303: ldnull
+  IL_0304: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0309: ldarg.0
+  IL_030a: ldc.i4.8
+  IL_030b: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0310: ldc.i4.1
+  IL_0311: ret
+  IL_0312: ldarg.0
+  IL_0313: ldc.i4.m1
+  IL_0314: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0319: ldarg.0
+  IL_031a: ldfld Celeste.CS07_Ascend Celeste.AscendManager/<Routine>d__15::<cs>5__3
+  IL_031f: callvirt System.Boolean Celeste.CutsceneEntity::get_Running()
+  IL_0324: brtrue.s IL_0302
+  IL_0326: ldarg.0
+  IL_0327: ldnull
+  IL_0328: stfld Celeste.CS07_Ascend Celeste.AscendManager/<Routine>d__15::<cs>5__3
+  IL_032d: br.s IL_0350
+  IL_032f: ldarg.0
+  IL_0330: ldc.r4 0.5
+  IL_0335: box System.Single
+  IL_033a: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_033f: ldarg.0
+  IL_0340: ldc.i4.s 9
+  IL_0342: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0347: ldc.i4.1
+  IL_0348: ret
+  IL_0349: ldarg.0
+  IL_034a: ldc.i4.m1
+  IL_034b: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0350: ldloc.1
+  IL_0351: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0356: ldc.i4.0
+  IL_0357: stfld System.Boolean Celeste.Level::CanRetry
+  IL_035c: ldarg.0
+  IL_035d: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0362: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0367: ldstr "launch"
+  IL_036c: ldc.i4.0
+  IL_036d: ldc.i4.0
+  IL_036e: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0373: ldstr "event:/char/madeline/summit_flytonext"
+  IL_0378: ldarg.0
+  IL_0379: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_037e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0383: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0388: pop
+  IL_0389: ldarg.0
+  IL_038a: ldc.r4 0.25
+  IL_038f: box System.Single
+  IL_0394: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0399: ldarg.0
+  IL_039a: ldc.i4.s 10
+  IL_039c: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_03a1: ldc.i4.1
+  IL_03a2: ret
+  IL_03a3: ldarg.0
+  IL_03a4: ldc.i4.m1
+  IL_03a5: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_03aa: ldarg.0
+  IL_03ab: ldarg.0
+  IL_03ac: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_03b1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03b6: stfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::AscendManagerPushRandom() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_03bb: ldarg.0
+  IL_03bc: ldc.r4 0
+  IL_03c1: stfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_03c6: br IL_0451
+  IL_03cb: ldarg.0
+  IL_03cc: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_03d1: ldarg.0
+  IL_03d2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_03d7: ldarg.0
+  IL_03d8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_03dd: ldc.r4 0
+  IL_03e2: ldc.r4 60
+  IL_03e7: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03ec: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03f1: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_03f6: ldarg.0
+  IL_03f7: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_03fc: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0401: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0406: ldsfld System.Random Monocle.Calc::Random
+  IL_040b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::ShakeVector(System.Random)
+  IL_0410: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0415: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_041a: ldc.i4.0
+  IL_041b: ldc.i4.0
+  IL_041c: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0421: ldarg.0
+  IL_0422: ldnull
+  IL_0423: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_0428: ldarg.0
+  IL_0429: ldc.i4.s 11
+  IL_042b: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0430: ldc.i4.1
+  IL_0431: ret
+  IL_0432: ldarg.0
+  IL_0433: ldc.i4.m1
+  IL_0434: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_0439: ldarg.0
+  IL_043a: ldarg.0
+  IL_043b: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0440: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0445: ldc.r4 1
+  IL_044a: div
+  IL_044b: add
+  IL_044c: stfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0451: ldarg.0
+  IL_0452: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0457: ldc.r4 1
+  IL_045c: blt IL_03cb
+  IL_0461: ldarg.0
+  IL_0462: ldloc.1
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::AscendManagerPopRandom() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0463: newobj System.Void Celeste.AscendManager/Fader::.ctor(Celeste.AscendManager)
+  IL_0468: stfld Celeste.AscendManager/Fader Celeste.AscendManager/<Routine>d__15::<fader>5__5
+  IL_046d: ldloc.1
+  IL_046e: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0473: ldarg.0
+  IL_0474: ldfld Celeste.AscendManager/Fader Celeste.AscendManager/<Routine>d__15::<fader>5__5
+  IL_0479: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_047e: ldarg.0
+  IL_047f: ldfld Celeste.AscendManager Celeste.AscendManager/<Routine>d__15::<>4__this
+  IL_0484: call System.Boolean Celeste.AscendManager::ShouldRestorePlayerX()
+  IL_0489: brfalse.s IL_04a1
+  IL_048b: ldarg.0
+  IL_048c: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0491: ldarg.0
+  IL_0492: ldflda Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_0497: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_049c: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_04a1: ldarg.0
+  IL_04a2: ldarg.0
+  IL_04a3: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_04a8: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_04ad: stfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_04b2: ldc.i4.2
+  IL_04b3: ldc.i4.1
+  IL_04b4: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_04b9: ldarg.0
+  IL_04ba: ldc.r4 0
+  IL_04bf: stfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_04c4: br IL_05e6
+  IL_04c9: ldarg.0
+  IL_04ca: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_04cf: callvirt System.Single Monocle.Entity::get_Y()
+  IL_04d4: stloc.s V_4
+  IL_04d6: ldarg.0
+  IL_04d7: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_04dc: ldarg.0
+  IL_04dd: ldfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_04e2: ldarg.0
+  IL_04e3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_04e8: ldc.r4 0
+  IL_04ed: ldc.r4 -160
+  IL_04f2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04f7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04fc: ldsfld Monocle.Ease/Easer Monocle.Ease::SineIn
+  IL_0501: ldarg.0
+  IL_0502: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0507: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_050c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0511: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0516: ldarg.0
+  IL_0517: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_051c: ldc.r4 0
+  IL_0521: beq.s IL_053c
+  IL_0523: ldarg.0
+  IL_0524: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0529: callvirt System.Single Monocle.Entity::get_Y()
+  IL_052e: ldloc.s V_4
+  IL_0530: ldc.r4 16
+  IL_0535: call System.Boolean Monocle.Calc::OnInterval(System.Single,System.Single,System.Single)
+  IL_053a: brfalse.s IL_057a
+  IL_053c: ldloc.1
+  IL_053d: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0542: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_0547: callvirt T Monocle.Pooler::Create<Celeste.SpeedRing>()
+  IL_054c: ldarg.0
+  IL_054d: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0552: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0557: ldc.r4 0
+  IL_055c: ldc.r4 -1
+  IL_0561: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0566: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_056b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0570: callvirt Celeste.SpeedRing Celeste.SpeedRing::Init(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0575: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_057a: ldarg.0
+  IL_057b: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0580: ldc.r4 0.5
+  IL_0585: blt.un.s IL_05a6
+  IL_0587: ldarg.0
+  IL_0588: ldfld Celeste.AscendManager/Fader Celeste.AscendManager/<Routine>d__15::<fader>5__5
+  IL_058d: ldarg.0
+  IL_058e: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_0593: ldc.r4 0.5
+  IL_0598: sub
+  IL_0599: ldc.r4 2
+  IL_059e: mul
+  IL_059f: stfld System.Single Celeste.AscendManager/Fader::Fade
+  IL_05a4: br.s IL_05b6
+  IL_05a6: ldarg.0
+  IL_05a7: ldfld Celeste.AscendManager/Fader Celeste.AscendManager/<Routine>d__15::<fader>5__5
+  IL_05ac: ldc.r4 0
+  IL_05b1: stfld System.Single Celeste.AscendManager/Fader::Fade
+  IL_05b6: ldarg.0
+  IL_05b7: ldnull
+  IL_05b8: stfld System.Object Celeste.AscendManager/<Routine>d__15::<>2__current
+  IL_05bd: ldarg.0
+  IL_05be: ldc.i4.s 12
+  IL_05c0: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_05c5: ldc.i4.1
+  IL_05c6: ret
+  IL_05c7: ldarg.0
+  IL_05c8: ldc.i4.m1
+  IL_05c9: stfld System.Int32 Celeste.AscendManager/<Routine>d__15::<>1__state
+  IL_05ce: ldarg.0
+  IL_05cf: ldarg.0
+  IL_05d0: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_05d5: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_05da: ldc.r4 0.5
+  IL_05df: div
+  IL_05e0: add
+  IL_05e1: stfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_05e6: ldarg.0
+  IL_05e7: ldfld System.Single Celeste.AscendManager/<Routine>d__15::<p>5__6
+  IL_05ec: ldc.r4 1
+  IL_05f1: blt IL_04c9
+  IL_05f6: ldarg.0
+  IL_05f7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.AscendManager/<Routine>d__15::<from>5__4
+  IL_05fc: initobj Microsoft.Xna.Framework.Vector2
+  IL_0602: ldarg.0
+  IL_0603: ldnull
+  IL_0604: stfld Celeste.AscendManager/Fader Celeste.AscendManager/<Routine>d__15::<fader>5__5
+  IL_0609: ldloc.1
+  IL_060a: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_060f: ldc.i4.1
+  IL_0610: stfld System.Boolean Celeste.Level::CanRetry
+  IL_0615: ldloc.1
+  IL_0616: ldc.i4.1
+  IL_0617: stfld System.Boolean Celeste.AscendManager::outTheTop
+  IL_061c: ldarg.0
+  IL_061d: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0622: ldloc.1
+  IL_0623: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0628: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_062d: stloc.s V_5
+  IL_062f: ldloca.s V_5
+  IL_0631: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0636: conv.r4
+  IL_0637: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_063c: ldarg.0
+  IL_063d: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0642: ldarg.0
+  IL_0643: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0648: callvirt System.Single Monocle.Entity::get_X()
+  IL_064d: callvirt System.Void Celeste.Player::SummitLaunch(System.Single)
+  IL_0652: ldarg.0
+  IL_0653: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0658: ldc.i4.1
+  IL_0659: stfld System.Boolean Celeste.Player::DummyGravity
+  IL_065e: ldarg.0
+  IL_065f: ldfld Celeste.Player Celeste.AscendManager/<Routine>d__15::<player>5__2
+  IL_0664: ldc.i4.1
+  IL_0665: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_066a: ldloc.1
+  IL_066b: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0670: ldfld Celeste.Session Celeste.Level::Session
+  IL_0675: ldstr "bgswap_"
+  IL_067a: ldloc.1
+  IL_067b: ldfld System.Int32 Celeste.AscendManager::index
+  IL_0680: box System.Int32
+  IL_0685: call System.String System.String::Concat(System.Object,System.Object)
+  IL_068a: ldc.i4.1
+  IL_068b: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0690: ldloc.1
+  IL_0691: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_0696: ldc.r4 0.05
+  IL_069b: stfld System.Single Celeste.Level::NextTransitionDuration
+  IL_06a0: ldloc.1
+  IL_06a1: ldfld System.Boolean Celeste.AscendManager::introLaunch
+  IL_06a6: brfalse.s IL_06b9
+  IL_06a8: ldloc.1
+  IL_06a9: ldfld Celeste.Level Celeste.AscendManager::level
+  IL_06ae: ldc.i4.m1
+  IL_06af: newobj System.Void Celeste.HeightDisplay::.ctor(System.Int32)
+  IL_06b4: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_06b9: ldc.i4.0
+  IL_06ba: ret

@@ -1,0 +1,49 @@
+IL Diff: System.Void Celeste.FinalBoss::CreateBossSprite()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_0007: ldstr "badeline_boss"
++ IL_0000: ldarg.0 @ Celeste.Mod.FemtoHelper.FemtoModule::ModifyBossSpritesOnCustomFinalBoss
++ IL_0000: call System.String Celeste.Mod.FemtoHelper.FemtoModule::ChangeFBSpriteRef(System.String,Celeste.FinalBoss) @ Celeste.Mod.FemtoHelper.FemtoModule::ModifyBossSpritesOnCustomFinalBoss
+  IL_000c: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0011: dup
+  IL_0012: stloc.0
+  IL_0013: stfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0018: ldloc.0
+  IL_0019: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_001e: ldarg.0
+  IL_001f: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0024: ldarg.0
+  IL_0025: ldftn System.Void Celeste.FinalBoss::<CreateBossSprite>b__34_0(System.String)
+  IL_002b: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_0030: stfld System.Action`1<System.String> Monocle.Sprite::OnFrameChange
+  IL_0035: ldarg.0
+  IL_0036: ldc.i4.m1
+  IL_0037: stfld System.Int32 Celeste.FinalBoss::facing
+  IL_003c: ldarg.0
+  IL_003d: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0042: brfalse.s IL_0066
+  IL_0044: ldarg.0
+  IL_0045: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_004a: ldarg.0
+  IL_004b: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0050: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0055: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_005a: ldarg.0
+  IL_005b: ldarg.0
+  IL_005c: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0061: call System.Void Monocle.Entity::Remove(Monocle.Component)
+  IL_0066: ldarg.0
+  IL_0067: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_006c: brfalse.s IL_007a
+  IL_006e: ldarg.0
+  IL_006f: ldarg.0
+  IL_0070: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0075: call System.Void Monocle.Entity::Remove(Monocle.Component)
+  IL_007a: ldarg.0
+  IL_007b: ldnull
+  IL_007c: stfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0081: ldarg.0
+  IL_0082: ldnull
+  IL_0083: stfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0088: ret

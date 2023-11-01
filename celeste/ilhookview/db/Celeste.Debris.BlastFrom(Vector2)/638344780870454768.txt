@@ -1,0 +1,29 @@
+IL Diff: Celeste.Debris Celeste.Debris::BlastFrom(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg from @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_0000: ldsfld System.Random Monocle.Calc::Random
+  IL_0005: ldc.i4.s 30
+  IL_0007: ldc.i4.s 40
+  IL_0009: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_000e: conv.r4
+  IL_000f: stloc.0
+  IL_0010: ldarg.0
+  IL_0011: ldarg.0
+  IL_0012: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0017: ldarg.1
+  IL_0018: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_001d: ldloc.0
+  IL_001e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0023: stfld Microsoft.Xna.Framework.Vector2 Celeste.Debris::speed
+  IL_0028: ldarg.0
+  IL_0029: ldarg.0
+  IL_002a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Debris::speed
+  IL_002f: ldsfld System.Random Monocle.Calc::Random
+  IL_0034: ldc.r4 -0.2617994
+  IL_0039: ldc.r4 0.2617994
+  IL_003e: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0043: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Rotate(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0048: stfld Microsoft.Xna.Framework.Vector2 Celeste.Debris::speed
+  IL_004d: ldarg.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_004e: ret

@@ -1,0 +1,105 @@
+IL Diff: System.Reflection.MethodInfo[] NLua.Extensions.TypeExtensions::GetExtensionMethods(System.Type,System.String,System.Collections.Generic.IEnumerable`1[[System.Reflection.Assembly, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]])
+  IL_0000: newobj System.Void NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::.ctor()
+  IL_0005: stloc.0
+  IL_0006: ldloc.0
+  IL_0007: ldarg.1
+  IL_0008: stfld System.String NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::name
+  IL_000d: ldloc.0
+  IL_000e: ldarg.0
+  IL_000f: stfld System.Type NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::type
+  IL_0014: newobj System.Void System.Collections.Generic.List`1<System.Type>::.ctor()
+  IL_0019: stloc.1
+  IL_001a: ldloc.1
+  IL_001b: ldloc.0
+  IL_001c: ldfld System.Type NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::type
+  IL_0021: callvirt System.Reflection.Assembly System.Type::get_Assembly()
+  IL_0026: call System.Type[] Celeste.Mod.Extensions::GetTypesSafe(System.Reflection.Assembly)
+  IL_002b: ldsfld System.Func`2<System.Type,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_0
+  IL_0030: dup
+  IL_0031: brtrue.s IL_004a
+  IL_0033: pop
+  IL_0034: ldsfld NLua.Extensions.TypeExtensions/<>c NLua.Extensions.TypeExtensions/<>c::<>9
+  IL_0039: ldftn System.Boolean NLua.Extensions.TypeExtensions/<>c::<GetExtensionMethods>b__11_0(System.Type)
+  IL_003f: newobj System.Void System.Func`2<System.Type,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0044: dup
+  IL_0045: stsfld System.Func`2<System.Type,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_0
+  IL_004a: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_004f: callvirt System.Void System.Collections.Generic.List`1<System.Type>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+  IL_0054: ldarg.2
+  IL_0055: brfalse.s IL_00be
+  IL_0057: ldarg.2
+  IL_0058: callvirt System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.IEnumerable`1<System.Reflection.Assembly>::GetEnumerator()
+  IL_005d: stloc.2
+  IL_005e: br.s IL_00aa
+  IL_0060: ldloc.2
+  IL_0061: callvirt T System.Collections.Generic.IEnumerator`1<System.Reflection.Assembly>::get_Current()
+  IL_0066: stloc.3
+  IL_0067: ldloc.3
+  IL_0068: ldloc.0
+  IL_0069: ldfld System.Type NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::type
+  IL_006e: callvirt System.Reflection.Assembly System.Type::get_Assembly()
+  IL_0073: call System.Boolean System.Reflection.Assembly::op_Equality(System.Reflection.Assembly,System.Reflection.Assembly)
+  IL_0078: brtrue.s IL_00aa
+  IL_007a: ldloc.1
+  IL_007b: ldloc.3
+  IL_007c: call System.Type[] Celeste.Mod.Extensions::GetTypesSafe(System.Reflection.Assembly)
+  IL_0081: ldsfld System.Func`2<System.Type,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_6
+  IL_0086: dup
+  IL_0087: brtrue.s IL_00a0
+  IL_0089: pop
+  IL_008a: ldsfld NLua.Extensions.TypeExtensions/<>c NLua.Extensions.TypeExtensions/<>c::<>9
+  IL_008f: ldftn System.Boolean NLua.Extensions.TypeExtensions/<>c::<GetExtensionMethods>b__11_6(System.Type)
+  IL_0095: newobj System.Void System.Func`2<System.Type,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_009a: dup
+  IL_009b: stsfld System.Func`2<System.Type,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_6
+  IL_00a0: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Type>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_00a5: callvirt System.Void System.Collections.Generic.List`1<System.Type>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+  IL_00aa: ldloc.2
+  IL_00ab: callvirt System.Boolean System.Collections.IEnumerator::MoveNext()
+  IL_00b0: brtrue.s IL_0060
+  IL_00b2: leave.s IL_00be
+  IL_00b4: ldloc.2
+  IL_00b5: brfalse.s IL_00bd
+  IL_00b7: ldloc.2
+  IL_00b8: callvirt System.Void System.IDisposable::Dispose()
+  IL_00bd: endfinally
+  IL_00be: ldloc.1
+  IL_00bf: ldloc.0
+  IL_00c0: ldftn System.Collections.Generic.IEnumerable`1<System.Reflection.MethodInfo> NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::<GetExtensionMethods>b__1(System.Type)
+  IL_00c6: newobj System.Void System.Func`2<System.Type,System.Collections.Generic.IEnumerable`1<System.Reflection.MethodInfo>>::.ctor(System.Object,System.IntPtr)
+  IL_00cb: ldsfld System.Func`3<System.Type,System.Reflection.MethodInfo,<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>> NLua.Extensions.TypeExtensions/<>c::<>9__11_2
+  IL_00d0: dup
+  IL_00d1: brtrue.s IL_00ea
+  IL_00d3: pop
+  IL_00d4: ldsfld NLua.Extensions.TypeExtensions/<>c NLua.Extensions.TypeExtensions/<>c::<>9
+  IL_00d9: ldftn <>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo> NLua.Extensions.TypeExtensions/<>c::<GetExtensionMethods>b__11_2(System.Type,System.Reflection.MethodInfo)
+  IL_00df: newobj System.Void System.Func`3<System.Type,System.Reflection.MethodInfo,<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>>::.ctor(System.Object,System.IntPtr)
+  IL_00e4: dup
+  IL_00e5: stsfld System.Func`3<System.Type,System.Reflection.MethodInfo,<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>> NLua.Extensions.TypeExtensions/<>c::<>9__11_2
+  IL_00ea: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::SelectMany<System.Type,System.Reflection.MethodInfo,<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Collections.Generic.IEnumerable`1<TCollection>>,System.Func`3<TSource,TCollection,TResult>)
+  IL_00ef: ldsfld System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_3
+  IL_00f4: dup
+  IL_00f5: brtrue.s IL_010e
+  IL_00f7: pop
+  IL_00f8: ldsfld NLua.Extensions.TypeExtensions/<>c NLua.Extensions.TypeExtensions/<>c::<>9
+  IL_00fd: ldftn System.Boolean NLua.Extensions.TypeExtensions/<>c::<GetExtensionMethods>b__11_3(<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>)
+  IL_0103: newobj System.Void System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0108: dup
+  IL_0109: stsfld System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Boolean> NLua.Extensions.TypeExtensions/<>c::<>9__11_3
+  IL_010e: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_0113: ldloc.0
+  IL_0114: ldftn System.Boolean NLua.Extensions.TypeExtensions/<>c__DisplayClass11_0::<GetExtensionMethods>b__4(<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>)
+  IL_011a: newobj System.Void System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_011f: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_0124: ldsfld System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Reflection.MethodInfo> NLua.Extensions.TypeExtensions/<>c::<>9__11_5
+  IL_0129: dup
+  IL_012a: brtrue.s IL_0143
+  IL_012c: pop
+  IL_012d: ldsfld NLua.Extensions.TypeExtensions/<>c NLua.Extensions.TypeExtensions/<>c::<>9
+  IL_0132: ldftn System.Reflection.MethodInfo NLua.Extensions.TypeExtensions/<>c::<GetExtensionMethods>b__11_5(<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>)
+  IL_0138: newobj System.Void System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Reflection.MethodInfo>::.ctor(System.Object,System.IntPtr)
+  IL_013d: dup
+  IL_013e: stsfld System.Func`2<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Reflection.MethodInfo> NLua.Extensions.TypeExtensions/<>c::<>9__11_5
+  IL_0143: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<<>f__AnonymousType0`2<System.Type,System.Reflection.MethodInfo>,System.Reflection.MethodInfo>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
+  IL_0148: call TSource[] System.Linq.Enumerable::ToArray<System.Reflection.MethodInfo>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_014d: ret

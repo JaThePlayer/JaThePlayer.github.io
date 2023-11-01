@@ -1,0 +1,147 @@
+IL Diff: Celeste.TextMenu Celeste.Mod.UI.OuiMapList::CreateMenu(System.Boolean,FMOD.Studio.EventInstance)
+  IL_0000: ldarg.0
+  IL_0001: newobj System.Void Celeste.TextMenu::.ctor()
+  IL_0006: stfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_000b: ldarg.0
+  IL_000c: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_0011: ldc.i4.1
+  IL_0012: callvirt System.Void Celeste.TextMenu::set_CompactWidthMode(System.Boolean)
+  IL_0017: ldarg.0
+  IL_0018: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapList::items
+  IL_001d: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Clear()
+  IL_0022: ldarg.0
+  IL_0023: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_0028: ldstr "maplist_title"
+  IL_002d: ldnull
+  IL_002e: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0033: newobj System.Void Celeste.TextMenu/Header::.ctor(System.String)
+  IL_0038: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_003d: pop
+  IL_003e: ldarg.0
+  IL_003f: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_0044: ldstr "maplist_filters"
+  IL_0049: ldnull
+  IL_004a: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_004f: newobj System.Void Celeste.TextMenu/SubHeader::.ctor(System.String)
+  IL_0054: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_0059: pop
+  IL_005a: ldarg.0
+  IL_005b: ldfld System.Collections.Generic.List`1<System.String> Celeste.Mod.UI.OuiMapList::sets
+  IL_0060: callvirt System.Void System.Collections.Generic.List`1<System.String>::Clear()
+  IL_0065: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_006a: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.AreaData>::GetEnumerator()
+  IL_006f: stloc.0
+  IL_0070: br.s IL_00b3
+  IL_0072: ldloca.s V_0
+  IL_0074: call T System.Collections.Generic.List`1/Enumerator<Celeste.AreaData>::get_Current()
+  IL_0079: castclass Celeste.AreaData
+  IL_007e: callvirt System.String Celeste.AreaData::get_LevelSet()
+  IL_0083: stloc.1
+  IL_0084: ldloc.1
+  IL_0085: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_008a: brtrue.s IL_00b3
+  IL_008c: ldloc.1
+  IL_008d: ldstr "Celeste"
+  IL_0092: call System.Boolean System.String::op_Equality(System.String,System.String)
++ IL_0000: ldloc.1 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapListCreateMenu
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapListCreateMenu
++ IL_0000: ldc.i4 65573827 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapListCreateMenu
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapListCreateMenu
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modMapListCreateMenu>b__34_3(System.Boolean,System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,System.String>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapListCreateMenu
+  IL_0097: brtrue.s IL_00b3
+  IL_0099: ldarg.0
+  IL_009a: ldfld System.Collections.Generic.List`1<System.String> Celeste.Mod.UI.OuiMapList::sets
+  IL_009f: ldloc.1
+  IL_00a0: callvirt System.Boolean System.Collections.Generic.List`1<System.String>::Contains(T)
+  IL_00a5: brtrue.s IL_00b3
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld System.Collections.Generic.List`1<System.String> Celeste.Mod.UI.OuiMapList::sets
+  IL_00ad: ldloc.1
+  IL_00ae: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_00b3: ldloca.s V_0
+  IL_00b5: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.AreaData>::MoveNext()
+  IL_00ba: brtrue.s IL_0072
+  IL_00bc: leave.s IL_00cc
+  IL_00be: ldloca.s V_0
+  IL_00c0: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.AreaData>
+  IL_00c6: callvirt System.Void System.IDisposable::Dispose()
+  IL_00cb: endfinally
+  IL_00cc: ldarg.0
+  IL_00cd: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_00d2: ldstr "maplist_type"
+  IL_00d7: ldnull
+  IL_00d8: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_00dd: ldarg.0
+  IL_00de: ldftn System.String Celeste.Mod.UI.OuiMapList::<CreateMenu>b__11_0(System.Int32)
+  IL_00e4: newobj System.Void System.Func`2<System.Int32,System.String>::.ctor(System.Object,System.IntPtr)
+  IL_00e9: ldc.i4.0
+  IL_00ea: ldc.i4.2
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld System.Collections.Generic.List`1<System.String> Celeste.Mod.UI.OuiMapList::sets
+  IL_00f1: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_00f6: add
+  IL_00f7: ldarg.0
+  IL_00f8: ldfld System.Int32 Celeste.Mod.UI.OuiMapList::type
+  IL_00fd: newobj System.Void Celeste.TextMenu/Slider::.ctor(System.String,System.Func`2<System.Int32,System.String>,System.Int32,System.Int32,System.Int32)
+  IL_0102: ldarg.0
+  IL_0103: ldftn System.Void Celeste.Mod.UI.OuiMapList::<CreateMenu>b__11_1(System.Int32)
+  IL_0109: newobj System.Void System.Action`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_010e: callvirt Celeste.TextMenu/Option`1<T> Celeste.TextMenu/Option`1<System.Int32>::Change(System.Action`1<T>)
+  IL_0113: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_0118: pop
+  IL_0119: ldarg.0
+  IL_011a: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_011f: ldstr "maplist_side"
+  IL_0124: ldnull
+  IL_0125: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_012a: ldsfld System.Func`2<System.Int32,System.String> Celeste.Mod.UI.OuiMapList/<>c::<>9__11_2
+  IL_012f: dup
+  IL_0130: brtrue.s IL_0149
+  IL_0132: pop
+  IL_0133: ldsfld Celeste.Mod.UI.OuiMapList/<>c Celeste.Mod.UI.OuiMapList/<>c::<>9
+  IL_0138: ldftn System.String Celeste.Mod.UI.OuiMapList/<>c::<CreateMenu>b__11_2(System.Int32)
+  IL_013e: newobj System.Void System.Func`2<System.Int32,System.String>::.ctor(System.Object,System.IntPtr)
+  IL_0143: dup
+  IL_0144: stsfld System.Func`2<System.Int32,System.String> Celeste.Mod.UI.OuiMapList/<>c::<>9__11_2
+  IL_0149: ldc.i4.0
+  IL_014a: ldtoken Celeste.AreaMode
+  IL_014f: call System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+  IL_0154: call System.Array System.Enum::GetValues(System.Type)
+  IL_0159: callvirt System.Int32 System.Array::get_Length()
+  IL_015e: ldc.i4.1
+  IL_015f: sub
+  IL_0160: ldarg.0
+  IL_0161: ldfld System.Int32 Celeste.Mod.UI.OuiMapList::side
+  IL_0166: newobj System.Void Celeste.TextMenu/Slider::.ctor(System.String,System.Func`2<System.Int32,System.String>,System.Int32,System.Int32,System.Int32)
+  IL_016b: ldarg.0
+  IL_016c: ldftn System.Void Celeste.Mod.UI.OuiMapList::<CreateMenu>b__11_3(System.Int32)
+  IL_0172: newobj System.Void System.Action`1<System.Int32>::.ctor(System.Object,System.IntPtr)
+  IL_0177: callvirt Celeste.TextMenu/Option`1<T> Celeste.TextMenu/Option`1<System.Int32>::Change(System.Action`1<T>)
+  IL_017c: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_0181: pop
+  IL_0182: ldarg.0
+  IL_0183: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_0188: ldstr "maplist_search"
+  IL_018d: ldnull
+  IL_018e: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0193: newobj System.Void Celeste.TextMenu/Button::.ctor(System.String)
+  IL_0198: ldarg.0
+  IL_0199: ldftn System.Void Celeste.Mod.UI.OuiMapList::<CreateMenu>b__11_4()
+  IL_019f: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_01a4: callvirt Celeste.TextMenu/Item Celeste.TextMenu/Item::Pressed(System.Action)
+  IL_01a9: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_01ae: pop
+  IL_01af: ldarg.0
+  IL_01b0: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_01b5: ldstr "maplist_list"
+  IL_01ba: ldnull
+  IL_01bb: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_01c0: newobj System.Void Celeste.TextMenu/SubHeader::.ctor(System.String)
+  IL_01c5: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_01ca: pop
+  IL_01cb: ldarg.0
+  IL_01cc: callvirt System.Void Celeste.Mod.UI.OuiMapList::ReloadItems()
+  IL_01d1: ldarg.0
+  IL_01d2: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapList::menu
+  IL_01d7: ret

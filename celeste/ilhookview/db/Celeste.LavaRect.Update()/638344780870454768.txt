@@ -1,0 +1,190 @@
+IL Diff: System.Void Celeste.LavaRect::Update()
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Single Celeste.LavaRect::timer
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_000d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0012: mul
+  IL_0013: add
+  IL_0014: stfld System.Single Celeste.LavaRect::timer
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_001f: ldc.r4 0
+  IL_0024: beq.s IL_002d
+  IL_0026: ldarg.0
+  IL_0027: ldc.i4.1
+  IL_0028: stfld System.Boolean Celeste.LavaRect::dirty
+  IL_002d: ldc.i4.0
+  IL_002e: stloc.0
+  IL_002f: br IL_017c
+  IL_0034: ldarg.0
+  IL_0035: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_003a: ldloc.0
+  IL_003b: ldelema Celeste.LavaRect/Bubble
+  IL_0040: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect/Bubble::Position
+  IL_0045: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_004a: dup
+  IL_004b: ldind.r4
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Single Celeste.LavaRect::UpdateMultiplier
+  IL_0052: ldarg.0
+  IL_0053: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_0058: ldloc.0
+  IL_0059: ldelema Celeste.LavaRect/Bubble
+  IL_005e: ldfld System.Single Celeste.LavaRect/Bubble::Speed
+  IL_0063: mul
+  IL_0064: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0069: mul
+  IL_006a: sub
+  IL_006b: stind.r4
+  IL_006c: ldarg.0
+  IL_006d: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_0072: ldloc.0
+  IL_0073: ldelema Celeste.LavaRect/Bubble
+  IL_0078: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect/Bubble::Position
+  IL_007d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0082: ldc.r4 2
+  IL_0087: ldarg.0
+  IL_0088: ldarg.0
+  IL_0089: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_008e: ldloc.0
+  IL_008f: ldelema Celeste.LavaRect/Bubble
+  IL_0094: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect/Bubble::Position
+  IL_0099: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_009e: ldarg.0
+  IL_009f: callvirt System.Int32 Celeste.LavaRect::get_SurfaceStep()
+  IL_00a4: conv.r4
+  IL_00a5: div
+  IL_00a6: conv.i4
+  IL_00a7: ldarg.0
+  IL_00a8: callvirt System.Single Celeste.LavaRect::get_Width()
+  IL_00ad: callvirt System.Single Celeste.LavaRect::Wave(System.Int32,System.Single)
+  IL_00b2: sub
+  IL_00b3: bge.un IL_0178
+  IL_00b8: ldarg.0
+  IL_00b9: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_00be: ldloc.0
+  IL_00bf: ldelema Celeste.LavaRect/Bubble
+  IL_00c4: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect/Bubble::Position
+  IL_00c9: ldarg.0
+  IL_00ca: callvirt System.Single Celeste.LavaRect::get_Height()
+  IL_00cf: ldc.r4 1
+  IL_00d4: sub
+  IL_00d5: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00da: ldsfld System.Random Monocle.Calc::Random
+  IL_00df: ldc.r4 0.75
+  IL_00e4: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_00e9: brfalse IL_0178
+  IL_00ee: ldarg.0
+  IL_00ef: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld System.Int32 Celeste.LavaRect::surfaceBubbleIndex
+  IL_00fa: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_00ff: ldarg.0
+  IL_0100: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_0105: ldloc.0
+  IL_0106: ldelema Celeste.LavaRect/Bubble
+  IL_010b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.LavaRect/Bubble::Position
+  IL_0110: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0115: stfld System.Single Celeste.LavaRect/SurfaceBubble::X
+  IL_011a: ldarg.0
+  IL_011b: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_0120: ldarg.0
+  IL_0121: ldfld System.Int32 Celeste.LavaRect::surfaceBubbleIndex
+  IL_0126: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_012b: ldc.r4 0
+  IL_0130: stfld System.Single Celeste.LavaRect/SurfaceBubble::Frame
+  IL_0135: ldarg.0
+  IL_0136: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_013b: ldarg.0
+  IL_013c: ldfld System.Int32 Celeste.LavaRect::surfaceBubbleIndex
+  IL_0141: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_0146: ldsfld System.Random Monocle.Calc::Random
+  IL_014b: ldarg.0
+  IL_014c: ldfld System.Collections.Generic.List`1<System.Collections.Generic.List`1<Monocle.MTexture>> Celeste.LavaRect::surfaceBubbleAnimations
+  IL_0151: callvirt System.Int32 System.Collections.Generic.List`1<System.Collections.Generic.List`1<Monocle.MTexture>>::get_Count()
+  IL_0156: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_015b: conv.u1
+  IL_015c: stfld System.Byte Celeste.LavaRect/SurfaceBubble::Animation
+  IL_0161: ldarg.0
+  IL_0162: ldarg.0
+  IL_0163: ldfld System.Int32 Celeste.LavaRect::surfaceBubbleIndex
+  IL_0168: ldc.i4.1
+  IL_0169: add
+  IL_016a: ldarg.0
+  IL_016b: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_0170: ldlen
+  IL_0171: conv.i4
+  IL_0172: rem
+  IL_0173: stfld System.Int32 Celeste.LavaRect::surfaceBubbleIndex
+  IL_0178: ldloc.0
+  IL_0179: ldc.i4.1
+  IL_017a: add
+  IL_017b: stloc.0
+  IL_017c: ldloc.0
+  IL_017d: ldarg.0
+  IL_017e: ldfld Celeste.LavaRect/Bubble[] Celeste.LavaRect::bubbles
+  IL_0183: ldlen
+  IL_0184: conv.i4
+  IL_0185: blt IL_0034
+  IL_018a: ldc.i4.0
+  IL_018b: stloc.1
+  IL_018c: br IL_0218
+  IL_0191: ldarg.0
+  IL_0192: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_0197: ldloc.1
+  IL_0198: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_019d: ldfld System.Single Celeste.LavaRect/SurfaceBubble::X
+  IL_01a2: ldc.r4 0
+  IL_01a7: blt.un.s IL_0214
+  IL_01a9: ldarg.0
+  IL_01aa: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_01af: ldloc.1
+  IL_01b0: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_01b5: ldflda System.Single Celeste.LavaRect/SurfaceBubble::Frame
+  IL_01ba: dup
+  IL_01bb: ldind.r4
+  IL_01bc: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01c1: ldc.r4 6
+  IL_01c6: mul
+  IL_01c7: add
+  IL_01c8: stind.r4
+  IL_01c9: ldarg.0
+  IL_01ca: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_01cf: ldloc.1
+  IL_01d0: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_01d5: ldfld System.Single Celeste.LavaRect/SurfaceBubble::Frame
+  IL_01da: ldarg.0
+  IL_01db: ldfld System.Collections.Generic.List`1<System.Collections.Generic.List`1<Monocle.MTexture>> Celeste.LavaRect::surfaceBubbleAnimations
+  IL_01e0: ldarg.0
+  IL_01e1: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_01e6: ldloc.1
+  IL_01e7: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_01ec: ldfld System.Byte Celeste.LavaRect/SurfaceBubble::Animation
+  IL_01f1: callvirt T System.Collections.Generic.List`1<System.Collections.Generic.List`1<Monocle.MTexture>>::get_Item(System.Int32)
+  IL_01f6: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_01fb: conv.r4
+  IL_01fc: blt.un.s IL_0214
+  IL_01fe: ldarg.0
+  IL_01ff: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_0204: ldloc.1
+  IL_0205: ldelema Celeste.LavaRect/SurfaceBubble
+  IL_020a: ldc.r4 -1
+  IL_020f: stfld System.Single Celeste.LavaRect/SurfaceBubble::X
+  IL_0214: ldloc.1
+  IL_0215: ldc.i4.1
+  IL_0216: add
+  IL_0217: stloc.1
+  IL_0218: ldloc.1
+  IL_0219: ldarg.0
+  IL_021a: ldfld Celeste.LavaRect/SurfaceBubble[] Celeste.LavaRect::surfaceBubbles
+  IL_021f: ldlen
+  IL_0220: conv.i4
+  IL_0221: blt IL_0191
+  IL_0226: ldarg.0
+  IL_0227: call System.Void Monocle.Component::Update()
+  IL_022c: ret

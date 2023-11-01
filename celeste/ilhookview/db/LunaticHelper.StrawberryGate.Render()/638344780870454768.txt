@@ -1,0 +1,338 @@
+IL Diff: System.Void LunaticHelper.StrawberryGate::Render()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: callvirt System.Boolean LunaticHelper.StrawberryGate::get_Opened()
+  IL_0007: brtrue.s IL_0010
+  IL_0009: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_000e: br.s IL_001f
+  IL_0010: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0015: ldc.r4 0.25
+  IL_001a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_001f: stloc.0
+  IL_0020: ldarg.0
+  IL_0021: callvirt System.Boolean LunaticHelper.StrawberryGate::get_Opened()
+  IL_0026: brtrue.s IL_0042
+  IL_0028: ldarg.0
+  IL_0029: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_002e: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0033: brfalse.s IL_0042
+  IL_0035: ldarg.0
+  IL_0036: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_003b: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0040: br.s IL_0043
+  IL_0042: ldc.i4.0
+  IL_0043: stloc.1
+  IL_0044: ldloc.1
+  IL_0045: stloc.3
+  IL_0046: ldloc.3
+  IL_0047: brfalse.s IL_00a0
+  IL_0049: nop
+  IL_004a: ldloca.s V_4
+  IL_004c: ldarg.0
+  IL_004d: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0052: callvirt System.Single Monocle.Entity::get_X()
+  IL_0057: conv.i4
+  IL_0058: ldarg.0
+  IL_0059: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_005e: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0063: conv.i4
+  IL_0064: ldarg.0
+  IL_0065: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_006a: ldarg.0
+  IL_006b: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_0070: callvirt System.Single Monocle.Entity::get_Height()
+  IL_0075: ldarg.0
+  IL_0076: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_007b: callvirt System.Single Monocle.Entity::get_Height()
+  IL_0080: add
+  IL_0081: conv.i4
+  IL_0082: call System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0087: ldarg.0
+  IL_0088: ldloc.s V_4
+  IL_008a: callvirt System.Void LunaticHelper.StrawberryGate::DrawInterior(Microsoft.Xna.Framework.Rectangle)
+  IL_008f: nop
+  IL_0090: ldarg.0
+  IL_0091: ldloc.s V_4
+  IL_0093: ldloc.0
+  IL_0094: callvirt System.Void LunaticHelper.StrawberryGate::DrawEdges(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  IL_0099: nop
+  IL_009a: nop
+  IL_009b: br IL_0158
+  IL_00a0: nop
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_00a7: ldfld System.Boolean Monocle.Entity::Visible
+  IL_00ac: stloc.s V_5
+  IL_00ae: ldloc.s V_5
+  IL_00b0: stloc.s V_7
+  IL_00b2: ldloc.s V_7
+  IL_00b4: brfalse.s IL_00fc
+  IL_00b6: nop
+  IL_00b7: ldloca.s V_8
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_00bf: callvirt System.Single Monocle.Entity::get_X()
+  IL_00c4: conv.i4
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_00cb: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00d0: conv.i4
+  IL_00d1: ldarg.0
+  IL_00d2: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_00d7: ldarg.0
+  IL_00d8: ldfld Celeste.Solid LunaticHelper.StrawberryGate::TopSolid
+  IL_00dd: callvirt System.Single Monocle.Entity::get_Height()
+  IL_00e2: conv.i4
+  IL_00e3: call System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00e8: ldarg.0
+  IL_00e9: ldloc.s V_8
+  IL_00eb: callvirt System.Void LunaticHelper.StrawberryGate::DrawInterior(Microsoft.Xna.Framework.Rectangle)
+  IL_00f0: nop
+  IL_00f1: ldarg.0
+  IL_00f2: ldloc.s V_8
+  IL_00f4: ldloc.0
+  IL_00f5: callvirt System.Void LunaticHelper.StrawberryGate::DrawEdges(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  IL_00fa: nop
+  IL_00fb: nop
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0102: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0107: stloc.s V_6
+  IL_0109: ldloc.s V_6
+  IL_010b: stloc.s V_9
+  IL_010d: ldloc.s V_9
+  IL_010f: brfalse.s IL_0157
+  IL_0111: nop
+  IL_0112: ldloca.s V_10
+  IL_0114: ldarg.0
+  IL_0115: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_011a: callvirt System.Single Monocle.Entity::get_X()
+  IL_011f: conv.i4
+  IL_0120: ldarg.0
+  IL_0121: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0126: callvirt System.Single Monocle.Entity::get_Y()
+  IL_012b: conv.i4
+  IL_012c: ldarg.0
+  IL_012d: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_0132: ldarg.0
+  IL_0133: ldfld Celeste.Solid LunaticHelper.StrawberryGate::BotSolid
+  IL_0138: callvirt System.Single Monocle.Entity::get_Height()
+  IL_013d: conv.i4
+  IL_013e: call System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0143: ldarg.0
+  IL_0144: ldloc.s V_10
+  IL_0146: callvirt System.Void LunaticHelper.StrawberryGate::DrawInterior(Microsoft.Xna.Framework.Rectangle)
+  IL_014b: nop
+  IL_014c: ldarg.0
+  IL_014d: ldloc.s V_10
+  IL_014f: ldloc.0
+  IL_0150: callvirt System.Void LunaticHelper.StrawberryGate::DrawEdges(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Color)
+  IL_0155: nop
+  IL_0156: nop
+  IL_0157: nop
+  IL_0158: ldarg.0
+  IL_0159: ldfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_015e: ldc.r4 0
+  IL_0163: cgt
+  IL_0165: stloc.2
+  IL_0166: ldloc.2
+  IL_0167: stloc.s V_11
+  IL_0169: ldloc.s V_11
+  IL_016b: brfalse IL_0323
+  IL_0170: nop
+  IL_0171: ldc.r4 15
+  IL_0176: stloc.s V_12
+  IL_0178: ldarg.0
+  IL_0179: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_017e: ldc.i4.8
+  IL_017f: sub
+  IL_0180: conv.r4
+  IL_0181: ldloc.s V_12
+  IL_0183: div
+  IL_0184: conv.i4
+  IL_0185: stloc.s V_13
+  IL_0187: ldarg.0
+  IL_0188: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_018d: conv.r4
+  IL_018e: ldloc.s V_13
+  IL_0190: conv.r4
+  IL_0191: div
+  IL_0192: conv.r8
+  IL_0193: call System.Double System.Math::Ceiling(System.Double)
+  IL_0198: conv.i4
+  IL_0199: stloc.s V_14
+  IL_019b: ldloc.0
+  IL_019c: ldarg.0
+  IL_019d: ldfld System.Single LunaticHelper.StrawberryGate::heartAlpha
+  IL_01a2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_01a7: stloc.s V_15
+  IL_01a9: ldc.i4.0
+  IL_01aa: stloc.s V_16
+  IL_01ac: br IL_0313
+  IL_01b1: nop
+  IL_01b2: ldloc.s V_16
+  IL_01b4: ldc.i4.1
+  IL_01b5: add
+  IL_01b6: ldloc.s V_13
+  IL_01b8: mul
+  IL_01b9: ldarg.0
+  IL_01ba: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_01bf: blt.s IL_01cf
+  IL_01c1: ldarg.0
+  IL_01c2: ldfld System.Int32 LunaticHelper.StrawberryGate::Requires
+  IL_01c7: ldloc.s V_16
+  IL_01c9: ldloc.s V_13
+  IL_01cb: mul
+  IL_01cc: sub
+  IL_01cd: br.s IL_01d1
+  IL_01cf: ldloc.s V_13
+  IL_01d1: stloc.s V_17
+  IL_01d3: ldarg.0
+  IL_01d4: call System.Single Monocle.Entity::get_X()
+  IL_01d9: ldarg.0
+  IL_01da: ldfld System.Int32 LunaticHelper.StrawberryGate::Size
+  IL_01df: conv.r4
+  IL_01e0: ldc.r4 0.5
+  IL_01e5: mul
+  IL_01e6: add
+  IL_01e7: ldarg.0
+  IL_01e8: call System.Single Monocle.Entity::get_Y()
+  IL_01ed: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01f2: ldloc.s V_17
+  IL_01f4: conv.r4
+  IL_01f5: neg
+  IL_01f6: ldc.r4 2
+  IL_01fb: div
+  IL_01fc: ldc.r4 0.5
+  IL_0201: add
+  IL_0202: ldloc.s V_14
+  IL_0204: conv.r4
+  IL_0205: neg
+  IL_0206: ldc.r4 2
+  IL_020b: div
+  IL_020c: ldloc.s V_16
+  IL_020e: conv.r4
+  IL_020f: add
+  IL_0210: ldc.r4 0.5
+  IL_0215: add
+  IL_0216: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_021b: ldloc.s V_12
+  IL_021d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0222: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0227: stloc.s V_18
+  IL_0229: ldarg.0
+  IL_022a: callvirt System.Boolean LunaticHelper.StrawberryGate::get_Opened()
+  IL_022f: stloc.s V_19
+  IL_0231: ldloc.s V_19
+  IL_0233: stloc.s V_20
+  IL_0235: ldloc.s V_20
+  IL_0237: brfalse.s IL_027d
+  IL_0239: nop
+  IL_023a: ldloc.s V_16
+  IL_023c: ldloc.s V_14
+  IL_023e: ldc.i4.2
+  IL_023f: div
+  IL_0240: clt
+  IL_0242: stloc.s V_21
+  IL_0244: ldloc.s V_21
+  IL_0246: stloc.s V_22
+  IL_0248: ldloc.s V_22
+  IL_024a: brfalse.s IL_0265
+  IL_024c: ldloca.s V_18
+  IL_024e: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0253: dup
+  IL_0254: ldind.r4
+  IL_0255: ldarg.0
+  IL_0256: callvirt System.Single LunaticHelper.StrawberryGate::get_openAmount()
+  IL_025b: ldc.r4 10
+  IL_0260: add
+  IL_0261: sub
+  IL_0262: stind.r4
+  IL_0263: br.s IL_027c
+  IL_0265: ldloca.s V_18
+  IL_0267: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_026c: dup
+  IL_026d: ldind.r4
+  IL_026e: ldarg.0
+  IL_026f: callvirt System.Single LunaticHelper.StrawberryGate::get_openAmount()
+  IL_0274: ldc.r4 10
+  IL_0279: add
+  IL_027a: add
+  IL_027b: stind.r4
+  IL_027c: nop
+  IL_027d: ldc.i4.0
+  IL_027e: stloc.s V_23
+  IL_0280: br.s IL_02fd
+  IL_0282: nop
+  IL_0283: ldloc.s V_16
+  IL_0285: ldloc.s V_13
+  IL_0287: mul
+  IL_0288: ldloc.s V_23
+  IL_028a: add
+  IL_028b: stloc.s V_24
+  IL_028d: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_0292: ldarg.0
+  IL_0293: callvirt System.Single LunaticHelper.StrawberryGate::get_Counter()
+  IL_0298: ldloc.s V_24
+  IL_029a: conv.r4
+  IL_029b: ldloc.s V_24
+  IL_029d: conv.r4
+  IL_029e: ldc.r4 1
+  IL_02a3: add
+  IL_02a4: ldc.r4 0
+  IL_02a9: ldc.r4 1
+  IL_02ae: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_02b3: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_02b8: stloc.s V_25
+  IL_02ba: ldarg.0
+  IL_02bb: ldfld System.Collections.Generic.List`1<Monocle.MTexture> LunaticHelper.StrawberryGate::icon
+  IL_02c0: ldloc.s V_25
+  IL_02c2: ldarg.0
+  IL_02c3: ldfld System.Collections.Generic.List`1<Monocle.MTexture> LunaticHelper.StrawberryGate::icon
+  IL_02c8: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_02cd: ldc.i4.1
+  IL_02ce: sub
+  IL_02cf: conv.r4
+  IL_02d0: mul
+  IL_02d1: conv.i4
+  IL_02d2: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_02d7: ldloc.s V_18
+  IL_02d9: ldloc.s V_23
+  IL_02db: conv.r4
+  IL_02dc: ldloc.s V_12
+  IL_02de: mul
+  IL_02df: ldc.r4 0
+  IL_02e4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02e9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::fixForStrawberryGateRender
++ IL_0000: ldc.i4 32572862 @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::fixForStrawberryGateRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::fixForStrawberryGateRender
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate/<>c::<fixForStrawberryGateRender>b__19_2(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Entities.SaveFileStrawberryGate::fixForStrawberryGateRender
+  IL_02ee: ldloc.s V_15
+  IL_02f0: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_02f5: nop
+  IL_02f6: nop
+  IL_02f7: ldloc.s V_23
+  IL_02f9: ldc.i4.1
+  IL_02fa: add
+  IL_02fb: stloc.s V_23
+  IL_02fd: ldloc.s V_23
+  IL_02ff: ldloc.s V_17
+  IL_0301: clt
+  IL_0303: stloc.s V_26
+  IL_0305: ldloc.s V_26
+  IL_0307: brtrue IL_0282
+  IL_030c: nop
+  IL_030d: ldloc.s V_16
+  IL_030f: ldc.i4.1
+  IL_0310: add
+  IL_0311: stloc.s V_16
+  IL_0313: ldloc.s V_16
+  IL_0315: ldloc.s V_14
+  IL_0317: clt
+  IL_0319: stloc.s V_27
+  IL_031b: ldloc.s V_27
+  IL_031d: brtrue IL_01b1
+  IL_0322: nop
+  IL_0323: ret

@@ -1,0 +1,122 @@
+IL Diff: System.Void Celeste.SeekerBarrierRenderer::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrier> Celeste.SeekerBarrierRenderer::list
+  IL_0006: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.SeekerBarrier>::get_Count()
+  IL_000b: ldc.i4.0
+  IL_000c: bgt.s IL_000f
+  IL_000e: ret
+  IL_000f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_0014: ldc.r4 0.15
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0000: call System.Single Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierTransparency(System.Single,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_0019: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_001e: stloc.0
+  IL_001f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_0024: ldc.r4 0.25
+  IL_0029: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_002e: stloc.1
+  IL_002f: ldarg.0
+  IL_0030: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrier> Celeste.SeekerBarrierRenderer::list
+  IL_0035: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SeekerBarrier>::GetEnumerator()
+  IL_003a: stloc.2
+  IL_003b: br.s IL_0059
+  IL_003d: ldloca.s V_2
+  IL_003f: call T System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>::get_Current()
+  IL_0044: stloc.3
+  IL_0045: ldloc.3
+  IL_0046: ldfld System.Boolean Monocle.Entity::Visible
+  IL_004b: brfalse.s IL_0059
+  IL_004d: ldloc.3
+  IL_004e: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0053: ldloc.0
+  IL_0054: call System.Void Monocle.Draw::Rect(Monocle.Collider,Microsoft.Xna.Framework.Color)
+  IL_0059: ldloca.s V_2
+  IL_005b: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>::MoveNext()
+  IL_0060: brtrue.s IL_003d
+  IL_0062: leave.s IL_0072
+  IL_0064: ldloca.s V_2
+  IL_0066: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrier>
+  IL_006c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0071: endfinally
+  IL_0072: ldarg.0
+  IL_0073: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge> Celeste.SeekerBarrierRenderer::edges
+  IL_0078: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge>::get_Count()
+  IL_007d: ldc.i4.0
+  IL_007e: ble IL_0160
+  IL_0083: ldarg.0
+  IL_0084: ldfld System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge> Celeste.SeekerBarrierRenderer::edges
+  IL_0089: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SeekerBarrierRenderer/Edge>::GetEnumerator()
+  IL_008e: stloc.s V_4
+  IL_0090: br IL_0144
+  IL_0095: ldloca.s V_4
+  IL_0097: call T System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>::get_Current()
+  IL_009c: stloc.s V_5
+  IL_009e: ldloc.s V_5
+  IL_00a0: ldfld System.Boolean Celeste.SeekerBarrierRenderer/Edge::Visible
+  IL_00a5: brfalse IL_0144
+  IL_00aa: ldloc.s V_5
+  IL_00ac: ldfld Celeste.SeekerBarrier Celeste.SeekerBarrierRenderer/Edge::Parent
+  IL_00b1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b6: ldloc.s V_5
+  IL_00b8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::A
+  IL_00bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c2: stloc.s V_6
+  IL_00c4: ldloc.s V_5
+  IL_00c6: ldfld Celeste.SeekerBarrier Celeste.SeekerBarrierRenderer/Edge::Parent
+  IL_00cb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00d0: ldloc.s V_5
+  IL_00d2: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::B
+  IL_00d7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00dc: pop
+  IL_00dd: ldloc.1
+  IL_00de: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::GetCurrentBarrierColor(Microsoft.Xna.Framework.Color,Celeste.SeekerBarrierRenderer) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::hookBarrierColor
+  IL_00e3: ldloc.s V_5
+  IL_00e5: ldfld Celeste.SeekerBarrier Celeste.SeekerBarrierRenderer/Edge::Parent
+  IL_00ea: ldfld System.Single Celeste.SeekerBarrier::Flash
+  IL_00ef: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00f4: pop
+  IL_00f5: ldc.i4.0
+  IL_00f6: stloc.s V_7
+  IL_00f8: br.s IL_0138
+  IL_00fa: ldloc.s V_6
+  IL_00fc: ldloc.s V_5
+  IL_00fe: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::Normal
+  IL_0103: ldloc.s V_7
+  IL_0105: conv.r4
+  IL_0106: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_010b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0110: dup
+  IL_0111: ldloc.s V_5
+  IL_0113: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SeekerBarrierRenderer/Edge::Perpendicular
+  IL_0118: ldloc.s V_5
+  IL_011a: ldfld System.Single[] Celeste.SeekerBarrierRenderer/Edge::Wave
+  IL_011f: ldloc.s V_7
+  IL_0121: ldelem.r4
+  IL_0122: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0127: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_012c: ldloc.0
+  IL_012d: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0132: ldloc.s V_7
+  IL_0134: ldc.i4.1
+  IL_0135: add
+  IL_0136: stloc.s V_7
+  IL_0138: ldloc.s V_7
+  IL_013a: conv.r4
+  IL_013b: ldloc.s V_5
+  IL_013d: ldfld System.Single Celeste.SeekerBarrierRenderer/Edge::Length
+  IL_0142: ble.s IL_00fa
+  IL_0144: ldloca.s V_4
+  IL_0146: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>::MoveNext()
+  IL_014b: brtrue IL_0095
+  IL_0150: leave.s IL_0160
+  IL_0152: ldloca.s V_4
+  IL_0154: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SeekerBarrierRenderer/Edge>
+  IL_015a: callvirt System.Void System.IDisposable::Dispose()
+  IL_015f: endfinally
+  IL_0160: ret

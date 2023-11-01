@@ -1,0 +1,131 @@
+IL Diff: System.Void Celeste.HiresSnow::Update(Monocle.Scene)
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Renderer::Update(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.ScreenWipe Celeste.HiresSnow::AttachAlphaTo
+  IL_000d: brfalse.s IL_0020
+  IL_000f: ldarg.0
+  IL_0010: ldarg.0
+  IL_0011: ldfld Celeste.ScreenWipe Celeste.HiresSnow::AttachAlphaTo
+  IL_0016: ldfld System.Single Celeste.ScreenWipe::Percent
+  IL_001b: stfld System.Single Celeste.HiresSnow::Alpha
+  IL_0020: ldc.i4.0
+  IL_0021: stloc.0
+  IL_0022: br IL_0163
+  IL_0027: ldarg.0
+  IL_0028: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_002d: ldloc.0
+  IL_002e: ldelema Celeste.HiresSnow/Particle
+  IL_0033: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_0038: dup
+  IL_0039: ldobj Microsoft.Xna.Framework.Vector2
+  IL_003e: ldarg.0
+  IL_003f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow::Direction
+  IL_0044: ldarg.0
+  IL_0045: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_004a: ldloc.0
+  IL_004b: ldelema Celeste.HiresSnow/Particle
+  IL_0050: ldfld System.Single Celeste.HiresSnow/Particle::Speed
+  IL_0055: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_005a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_005f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0064: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0069: stobj Microsoft.Xna.Framework.Vector2
+  IL_006e: ldarg.0
+  IL_006f: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_0074: ldloc.0
+  IL_0075: ldelema Celeste.HiresSnow/Particle
+  IL_007a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_007f: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0084: dup
+  IL_0085: ldind.r4
+  IL_0086: ldarg.0
+  IL_0087: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_008c: ldloc.0
+  IL_008d: ldelema Celeste.HiresSnow/Particle
+  IL_0092: ldfld System.Single Celeste.HiresSnow/Particle::Sin
+  IL_0097: conv.r8
+  IL_0098: call System.Double System.Math::Sin(System.Double)
+  IL_009d: conv.r4
+  IL_009e: ldc.r4 100
+  IL_00a3: mul
+  IL_00a4: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00a9: mul
+  IL_00aa: add
+  IL_00ab: stind.r4
+  IL_00ac: ldarg.0
+  IL_00ad: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_00b2: ldloc.0
+  IL_00b3: ldelema Celeste.HiresSnow/Particle
+  IL_00b8: ldflda System.Single Celeste.HiresSnow/Particle::Sin
+  IL_00bd: dup
+  IL_00be: ldind.r4
+  IL_00bf: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00c4: add
+  IL_00c5: stind.r4
+  IL_00c6: ldarg.0
+  IL_00c7: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_00cc: ldloc.0
+  IL_00cd: ldelema Celeste.HiresSnow/Particle
+  IL_00d2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_00d7: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00dc: ldc.r4 -128
+  IL_00e1: blt.s IL_0148
+  IL_00e3: ldarg.0
+  IL_00e4: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_00e9: ldloc.0
+  IL_00ea: ldelema Celeste.HiresSnow/Particle
+  IL_00ef: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_00f4: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00f9: call System.Int32 Monocle.Engine::get_Width()
+  IL_00fe: ldc.i4 128
+  IL_0103: add
+  IL_0104: conv.r4
+  IL_0105: bgt.s IL_0148
+  IL_0107: ldarg.0
+  IL_0108: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_010d: ldloc.0
+  IL_010e: ldelema Celeste.HiresSnow/Particle
+  IL_0113: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_0118: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_011d: ldc.r4 -128
+  IL_0122: blt.s IL_0148
+  IL_0124: ldarg.0
+  IL_0125: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_012a: ldloc.0
+  IL_012b: ldelema Celeste.HiresSnow/Particle
+  IL_0130: ldflda Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow/Particle::Position
+  IL_0135: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_013a: call System.Int32 Monocle.Engine::get_Height()
+  IL_013f: ldc.i4 128
+  IL_0144: add
+  IL_0145: conv.r4
+  IL_0146: ble.un.s IL_015f
+  IL_0148: ldarg.0
+  IL_0149: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_014e: ldloc.0
+  IL_014f: ldelema Celeste.HiresSnow/Particle
+  IL_0154: ldarg.0
+  IL_0155: ldfld Microsoft.Xna.Framework.Vector2 Celeste.HiresSnow::Direction
+  IL_015a: call System.Void Celeste.HiresSnow/Particle::Reset(Microsoft.Xna.Framework.Vector2)
+  IL_015f: ldloc.0
+  IL_0160: ldc.i4.1
+  IL_0161: add
+  IL_0162: stloc.0
+  IL_0163: ldloc.0
+  IL_0164: ldarg.0
+  IL_0165: ldfld Celeste.HiresSnow/Particle[] Celeste.HiresSnow::particles
+  IL_016a: ldlen
+  IL_016b: conv.i4
+  IL_016c: blt IL_0027
+  IL_0171: ldarg.0
+  IL_0172: ldarg.0
+  IL_0173: ldfld System.Single Celeste.HiresSnow::timer
+  IL_0178: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_017d: add
+  IL_017e: stfld System.Single Celeste.HiresSnow::timer
+  IL_0183: ret

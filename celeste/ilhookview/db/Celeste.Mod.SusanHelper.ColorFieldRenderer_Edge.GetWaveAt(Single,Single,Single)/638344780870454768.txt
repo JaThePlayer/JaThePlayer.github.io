@@ -1,0 +1,58 @@
+IL Diff: System.Single Celeste.Mod.SusanHelper.ColorFieldRenderer/Edge::GetWaveAt(System.Single,System.Single,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedWavedBlock() @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ldc.r4 0 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
+  IL_0000: nop
+  IL_0001: ldarg.2
+  IL_0002: ldc.r4 1
+  IL_0007: ble.s IL_0018
+  IL_0009: ldarg.2
+  IL_000a: ldarg.3
+  IL_000b: ldc.r4 1
+  IL_0010: sub
+  IL_0011: clt.un
+  IL_0013: ldc.i4.0
+  IL_0014: ceq
+  IL_0016: br.s IL_0019
+  IL_0018: ldc.i4.1
+  IL_0019: stloc.2
+  IL_001a: ldloc.2
+  IL_001b: brfalse.s IL_0026
+  IL_001d: nop
+  IL_001e: ldc.r4 0
+  IL_0023: stloc.3
+  IL_0024: br.s IL_006e
+  IL_0026: ldarg.1
+  IL_0027: ldarg.2
+  IL_0028: ldc.r4 0.25
+  IL_002d: mul
+  IL_002e: add
+  IL_002f: stloc.0
+  IL_0030: ldloc.0
+  IL_0031: conv.r8
+  IL_0032: call System.Double System.Math::Sin(System.Double)
+  IL_0037: ldc.r8 2
+  IL_0040: mul
+  IL_0041: ldloc.0
+  IL_0042: ldc.r4 0.25
+  IL_0047: mul
+  IL_0048: conv.r8
+  IL_0049: call System.Double System.Math::Sin(System.Double)
+  IL_004e: add
+  IL_004f: conv.r4
+  IL_0050: stloc.1
+  IL_0051: ldc.r4 1
+  IL_0056: ldloc.1
+  IL_0057: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_005c: ldarg.2
+  IL_005d: ldarg.3
+  IL_005e: div
+  IL_005f: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_0064: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0069: mul
+  IL_006a: add
+  IL_006b: stloc.3
+  IL_006c: br.s IL_006e
+  IL_006e: ldloc.3
+  IL_006f: ret

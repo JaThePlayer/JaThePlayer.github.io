@@ -1,0 +1,58 @@
+IL Diff: Microsoft.Xna.Framework.Color Celeste.Player::GetTrailColor(System.Boolean)
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldc.i4 20549262 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  |-> retrieves System.Nullable`1[[Celeste.Mod.Procedurline.PlayerHairColorData, Procedurline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.Procedurline.PlayerManager/<>c__DisplayClass11_0::<HairColorAccessModifier>b__1(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: stloc V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  IL_0001: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0006: callvirt Celeste.PlayerSpriteMode Celeste.PlayerSprite::get_Mode()
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.JungleHelper.Entities.EnforceSkinController::patchSpriteModeChecks
++ IL_0000: ldc.i4 15135714 @ Celeste.Mod.JungleHelper.Entities.EnforceSkinController::patchSpriteModeChecks
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.EnforceSkinController::patchSpriteModeChecks
+  |-> retrieves Celeste.PlayerSpriteMode Celeste.Mod.JungleHelper.Entities.EnforceSkinController/<>c::<patchSpriteModeChecks>b__20_0(Celeste.PlayerSpriteMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.PlayerSpriteMode,Celeste.PlayerSpriteMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.JungleHelper.Entities.EnforceSkinController::patchSpriteModeChecks
+  IL_000b: ldc.i4.3
+  IL_000c: bne.un.s IL_001d
+  IL_000e: ldarg.1
+  IL_000f: brtrue.s IL_0017
+  IL_0011: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::UsedBadelineHairColor
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call System.Boolean System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_HasValue() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: brfalse.s IL_0016 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call T System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_Value() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.PlayerHairColorData::BadelineUsedColor @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  IL_0016: ret
+  IL_0017: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::NormalBadelineHairColor
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call System.Boolean System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_HasValue() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: brfalse.s IL_001c @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call T System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_Value() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.PlayerHairColorData::BadelineNormalColor @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  IL_001c: ret
+  IL_001d: ldarg.1
+  IL_001e: brtrue.s IL_0026
+  IL_0020: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::UsedHairColor
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call System.Boolean System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_HasValue() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: brfalse.s IL_0025 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call T System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_Value() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.PlayerHairColorData::UsedColor @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  IL_0025: ret
+  IL_0026: ldsfld Microsoft.Xna.Framework.Color Celeste.Player::NormalHairColor
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call System.Boolean System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_HasValue() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: brfalse.s IL_002b @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldloca V_0 @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: call T System.Nullable`1<Celeste.Mod.Procedurline.PlayerHairColorData>::get_Value() @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.PlayerHairColorData::NormalColor @ Celeste.Mod.Procedurline.PlayerManager::HairColorAccessModifier
+  IL_002b: ret

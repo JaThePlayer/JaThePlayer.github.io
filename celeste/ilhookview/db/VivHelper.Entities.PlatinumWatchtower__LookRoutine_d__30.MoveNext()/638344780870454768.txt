@@ -1,0 +1,2224 @@
+IL Diff: System.Boolean VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_004b,IL_004d,IL_0052,IL_0057,IL_005c,IL_0061,IL_0066,IL_006b,IL_0070,IL_0075,IL_007a,IL_007f,IL_0084,IL_0089,IL_008e
+  IL_0049: br.s IL_0093
+  IL_004b: br.s IL_0095
+  IL_004d: br IL_0144
+  IL_0052: br IL_027b
+  IL_0057: br IL_03d0
+  IL_005c: br IL_0520
+  IL_0061: br IL_0590
+  IL_0066: br IL_05bb
+  IL_006b: br IL_0667
+  IL_0070: br IL_06bb
+  IL_0075: br IL_1560
+  IL_007a: br IL_1655
+  IL_007f: br IL_171b
+  IL_0084: br IL_17c2
+  IL_0089: br IL_191c
+  IL_008e: br IL_1ab0
+  IL_0093: ldc.i4.0
+  IL_0094: ret
+  IL_0095: ldarg.0
+  IL_0096: ldc.i4.m1
+  IL_0097: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_009c: nop
+  IL_009d: ldarg.0
+  IL_009e: ldarg.0
+  IL_009f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_00a4: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00a9: stfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_00ae: ldarg.0
+  IL_00af: ldarg.0
+  IL_00b0: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_00b5: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00ba: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_00bf: callvirt T Monocle.EntityList::FindFirst<Celeste.SandwichLava>()
+  IL_00c4: stfld Celeste.SandwichLava VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<sandwichLava>5__2
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Celeste.SandwichLava VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<sandwichLava>5__2
+  IL_00cf: ldnull
+  IL_00d0: cgt.un
+  IL_00d2: stloc.1
+  IL_00d3: ldloc.1
+  IL_00d4: brfalse.s IL_00e4
+  IL_00d6: nop
+  IL_00d7: ldarg.0
+  IL_00d8: ldfld Celeste.SandwichLava VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<sandwichLava>5__2
+  IL_00dd: ldc.i4.1
+  IL_00de: stfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_00e3: nop
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_00ea: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00ef: ldnull
+  IL_00f0: cgt.un
+  IL_00f2: stloc.2
+  IL_00f3: ldloc.2
+  IL_00f4: brfalse.s IL_0104
+  IL_00f6: nop
+  IL_00f7: ldarg.0
+  IL_00f8: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_00fd: callvirt System.Void Celeste.Player::Drop()
+  IL_0102: nop
+  IL_0103: nop
+  IL_0104: ldarg.0
+  IL_0105: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_010a: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_010f: ldc.i4.s 11
+  IL_0111: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0116: nop
+  IL_0117: ldarg.0
+  IL_0118: ldarg.0
+  IL_0119: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_011e: ldarg.0
+  IL_011f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0124: callvirt System.Single Monocle.Entity::get_X()
+  IL_0129: conv.i4
+  IL_012a: ldc.i4.0
+  IL_012b: ldc.r4 1
+  IL_0130: ldc.i4.1
+  IL_0131: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_0136: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_013b: ldarg.0
+  IL_013c: ldc.i4.1
+  IL_013d: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0142: ldc.i4.1
+  IL_0143: ret
+  IL_0144: ldarg.0
+  IL_0145: ldc.i4.m1
+  IL_0146: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_014b: ldarg.0
+  IL_014c: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0151: callvirt System.Single Monocle.Entity::get_X()
+  IL_0156: ldarg.0
+  IL_0157: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_015c: callvirt System.Single Monocle.Entity::get_X()
+  IL_0161: sub
+  IL_0162: call System.Single System.Math::Abs(System.Single)
+  IL_0167: ldc.r4 4
+  IL_016c: bgt.s IL_018c
+  IL_016e: ldarg.0
+  IL_016f: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_0174: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0179: brtrue.s IL_018c
+  IL_017b: ldarg.0
+  IL_017c: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_0181: ldc.i4.1
+  IL_0182: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_0187: ldc.i4.0
+  IL_0188: ceq
+  IL_018a: br.s IL_018d
+  IL_018c: ldc.i4.1
+  IL_018d: stloc.3
+  IL_018e: ldloc.3
+  IL_018f: brfalse.s IL_01bc
+  IL_0191: nop
+  IL_0192: ldarg.0
+  IL_0193: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_0198: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_019d: ldc.i4.0
+  IL_019e: ceq
+  IL_01a0: stloc.s V_4
+  IL_01a2: ldloc.s V_4
+  IL_01a4: brfalse.s IL_01ba
+  IL_01a6: nop
+  IL_01a7: ldarg.0
+  IL_01a8: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_01ad: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_01b2: ldc.i4.0
+  IL_01b3: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_01b8: nop
+  IL_01b9: nop
+  IL_01ba: ldc.i4.0
+  IL_01bb: ret
+  IL_01bc: ldstr "event:/game/general/lookout_use"
+  IL_01c1: ldarg.0
+  IL_01c2: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_01c7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01cc: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_01d1: pop
+  IL_01d2: ldarg.0
+  IL_01d3: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_01d8: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_01dd: ldc.i4.1
+  IL_01de: ceq
+  IL_01e0: stloc.s V_5
+  IL_01e2: ldloc.s V_5
+  IL_01e4: brfalse.s IL_0212
+  IL_01e6: nop
+  IL_01e7: ldarg.0
+  IL_01e8: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_01ed: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_01f2: ldarg.0
+  IL_01f3: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_01f8: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_01fd: ldstr "lookRight"
+  IL_0202: call System.String System.String::Concat(System.String,System.String)
+  IL_0207: ldc.i4.0
+  IL_0208: ldc.i4.0
+  IL_0209: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_020e: nop
+  IL_020f: nop
+  IL_0210: br.s IL_023c
+  IL_0212: nop
+  IL_0213: ldarg.0
+  IL_0214: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0219: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_021e: ldarg.0
+  IL_021f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0224: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_0229: ldstr "lookLeft"
+  IL_022e: call System.String System.String::Concat(System.String,System.String)
+  IL_0233: ldc.i4.0
+  IL_0234: ldc.i4.0
+  IL_0235: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_023a: nop
+  IL_023b: nop
+  IL_023c: ldarg.0
+  IL_023d: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_0242: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0247: ldarg.0
+  IL_0248: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_024d: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_0252: ldc.i4.0
+  IL_0253: dup
+  IL_0254: stloc.s V_6
+  IL_0256: stfld System.Boolean Monocle.Component::Visible
+  IL_025b: ldloc.s V_6
+  IL_025d: stfld System.Boolean Monocle.Component::Visible
+  IL_0262: ldarg.0
+  IL_0263: ldc.r4 0.2
+  IL_0268: box System.Single
+  IL_026d: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_0272: ldarg.0
+  IL_0273: ldc.i4.2
+  IL_0274: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0279: ldc.i4.1
+  IL_027a: ret
+  IL_027b: ldarg.0
+  IL_027c: ldc.i4.m1
+  IL_027d: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0282: ldarg.0
+  IL_0283: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0288: newobj System.Void VivHelper.Entities.Watchtowers.Hud::.ctor()
+  IL_028d: stfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_0292: ldarg.0
+  IL_0293: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0298: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_029d: newobj System.Void System.Collections.Generic.List`1<Monocle.MTexture>::.ctor()
+  IL_02a2: stfld System.Collections.Generic.List`1<Monocle.MTexture> VivHelper.Entities.Watchtowers.Hud::hints
+  IL_02a7: ldarg.0
+  IL_02a8: ldc.i4.0
+  IL_02a9: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<a>5__10
+  IL_02ae: br.s IL_02f9
+  IL_02b0: nop
+  IL_02b1: ldarg.0
+  IL_02b2: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_02b7: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_02bc: ldfld System.Collections.Generic.List`1<Monocle.MTexture> VivHelper.Entities.Watchtowers.Hud::hints
+  IL_02c1: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_02c6: ldarg.0
+  IL_02c7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_02cc: ldfld System.String VivHelper.Entities.PlatinumWatchtower::hintIconPath
+  IL_02d1: ldstr "00"
+  IL_02d6: call System.String System.String::Concat(System.String,System.String)
+  IL_02db: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_02e0: callvirt System.Void System.Collections.Generic.List`1<Monocle.MTexture>::Add(T)
+  IL_02e5: nop
+  IL_02e6: nop
+  IL_02e7: ldarg.0
+  IL_02e8: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<a>5__10
+  IL_02ed: stloc.s V_7
+  IL_02ef: ldarg.0
+  IL_02f0: ldloc.s V_7
+  IL_02f2: ldc.i4.1
+  IL_02f3: add
+  IL_02f4: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<a>5__10
+  IL_02f9: ldarg.0
+  IL_02fa: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<a>5__10
+  IL_02ff: ldarg.0
+  IL_0300: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0305: ldfld VivHelper.Entities.PlatinumWatchtower/Hint[] VivHelper.Entities.PlatinumWatchtower::hints
+  IL_030a: ldlen
+  IL_030b: conv.i4
+  IL_030c: clt
+  IL_030e: stloc.s V_8
+  IL_0310: ldloc.s V_8
+  IL_0312: brtrue.s IL_02b0
+  IL_0314: ldarg.0
+  IL_0315: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_031a: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_031f: ldarg.0
+  IL_0320: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0325: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_032a: ldnull
+  IL_032b: cgt.un
+  IL_032d: stfld System.Boolean VivHelper.Entities.Watchtowers.Hud::TrackMode
+  IL_0332: ldarg.0
+  IL_0333: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0338: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_033d: ldarg.0
+  IL_033e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0343: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::onlyY
+  IL_0348: stfld System.Boolean VivHelper.Entities.Watchtowers.Hud::OnlyY
+  IL_034d: ldarg.0
+  IL_034e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0353: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0358: ldarg.0
+  IL_0359: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_035e: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_0363: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0368: nop
+  IL_0369: ldarg.0
+  IL_036a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_036f: ldc.r4 0
+  IL_0374: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_0379: ldarg.0
+  IL_037a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_037f: ldc.i4.0
+  IL_0380: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_0385: ldstr "event:/ui/game/lookout_on"
+  IL_038a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_038f: pop
+  IL_0390: br.s IL_03d8
+  IL_0392: nop
+  IL_0393: ldarg.0
+  IL_0394: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0399: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_039e: ldarg.0
+  IL_039f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_03a4: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_03a9: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_03ae: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_03b3: ldc.r4 16
+  IL_03b8: mul
+  IL_03b9: conv.i4
+  IL_03ba: conv.r4
+  IL_03bb: stfld System.Single Celeste.Level::ScreenPadding
+  IL_03c0: ldarg.0
+  IL_03c1: ldnull
+  IL_03c2: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_03c7: ldarg.0
+  IL_03c8: ldc.i4.3
+  IL_03c9: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_03ce: ldc.i4.1
+  IL_03cf: ret
+  IL_03d0: ldarg.0
+  IL_03d1: ldc.i4.m1
+  IL_03d2: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_03d7: nop
+  IL_03d8: ldarg.0
+  IL_03d9: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_03de: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_03e3: ldarg.0
+  IL_03e4: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_03e9: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_03ee: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_03f3: ldc.r4 1
+  IL_03f8: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03fd: ldc.r4 3
+  IL_0402: mul
+  IL_0403: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0408: dup
+  IL_0409: stloc.s V_10
+  IL_040b: stfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_0410: ldloc.s V_10
+  IL_0412: ldc.r4 1
+  IL_0417: clt
+  IL_0419: stloc.s V_9
+  IL_041b: ldloc.s V_9
+  IL_041d: brtrue IL_0392
+  IL_0422: ldarg.0
+  IL_0423: ldarg.0
+  IL_0424: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0429: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_042e: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0433: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0438: ldarg.0
+  IL_0439: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_043e: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0443: ldarg.0
+  IL_0444: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0449: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<lastDir>5__5
+  IL_044e: ldarg.0
+  IL_044f: ldarg.0
+  IL_0450: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0455: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_045a: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_045f: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStart>5__6
+  IL_0464: ldarg.0
+  IL_0465: ldarg.0
+  IL_0466: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStart>5__6
+  IL_046b: ldc.r4 160
+  IL_0470: ldc.r4 90
+  IL_0475: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_047a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_047f: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStartCenter>5__7
+  IL_0484: ldarg.0
+  IL_0485: ldc.i4.0
+  IL_0486: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_048b: ldarg.0
+  IL_048c: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0491: ldfld System.String VivHelper.Entities.PlatinumWatchtower::flagWhenInHud
+  IL_0496: ldstr ""
+  IL_049b: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_04a0: stloc.s V_11
+  IL_04a2: ldloc.s V_11
+  IL_04a4: brfalse.s IL_04da
+  IL_04a6: ldarg.0
+  IL_04a7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_04ac: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_04b1: isinst Celeste.Level
+  IL_04b6: ldfld Celeste.Session Celeste.Level::Session
+  IL_04bb: ldarg.0
+  IL_04bc: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_04c1: ldfld System.String VivHelper.Entities.PlatinumWatchtower::flagWhenInHud
+  IL_04c6: ldarg.0
+  IL_04c7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_04cc: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::invertFlag
+  IL_04d1: ldc.i4.0
+  IL_04d2: ceq
+  IL_04d4: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_04d9: nop
+  IL_04da: ldarg.0
+  IL_04db: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_04e0: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::startWith0
+  IL_04e5: brfalse.s IL_04f8
+  IL_04e7: ldarg.0
+  IL_04e8: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_04ed: ldfld VivHelper.Entities.PlatinumWatchtower/Hint[] VivHelper.Entities.PlatinumWatchtower::hints
+  IL_04f2: ldlen
+  IL_04f3: ldc.i4.0
+  IL_04f4: cgt.un
+  IL_04f6: br.s IL_04f9
+  IL_04f8: ldc.i4.0
+  IL_04f9: stloc.s V_12
+  IL_04fb: ldloc.s V_12
+  IL_04fd: brfalse.s IL_053a
+  IL_04ff: nop
+  IL_0500: ldarg.0
+  IL_0501: ldarg.0
+  IL_0502: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0507: ldarg.0
+  IL_0508: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_050d: callvirt System.Collections.IEnumerator VivHelper.Entities.PlatinumWatchtower::RunHint(System.Int32)
+  IL_0512: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_0517: ldarg.0
+  IL_0518: ldc.i4.4
+  IL_0519: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_051e: ldc.i4.1
+  IL_051f: ret
+  IL_0520: ldarg.0
+  IL_0521: ldc.i4.m1
+  IL_0522: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0527: ldarg.0
+  IL_0528: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_052d: stloc.s V_7
+  IL_052f: ldarg.0
+  IL_0530: ldloc.s V_7
+  IL_0532: ldc.i4.1
+  IL_0533: add
+  IL_0534: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_0539: nop
+  IL_053a: br IL_1574
+  IL_053f: nop
+  IL_0540: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_0545: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_ReceiveLookoutHint()
+  IL_054a: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_054f: brfalse.s IL_0568
+  IL_0551: ldarg.0
+  IL_0552: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0557: ldfld VivHelper.Entities.PlatinumWatchtower/Hint[] VivHelper.Entities.PlatinumWatchtower::hints
+  IL_055c: ldlen
+  IL_055d: conv.i4
+  IL_055e: ldarg.0
+  IL_055f: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_0564: cgt
+  IL_0566: br.s IL_0569
+  IL_0568: ldc.i4.0
+  IL_0569: stloc.s V_13
+  IL_056b: ldloc.s V_13
+  IL_056d: brfalse.s IL_05d8
+  IL_056f: nop
+  IL_0570: ldarg.0
+  IL_0571: ldarg.0
+  IL_0572: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0577: ldarg.0
+  IL_0578: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_057d: callvirt System.Collections.IEnumerator VivHelper.Entities.PlatinumWatchtower::RunHint(System.Int32)
+  IL_0582: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_0587: ldarg.0
+  IL_0588: ldc.i4.5
+  IL_0589: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_058e: ldc.i4.1
+  IL_058f: ret
+  IL_0590: ldarg.0
+  IL_0591: ldc.i4.m1
+  IL_0592: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0597: ldarg.0
+  IL_0598: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_059d: stloc.s V_7
+  IL_059f: ldarg.0
+  IL_05a0: ldloc.s V_7
+  IL_05a2: ldc.i4.1
+  IL_05a3: add
+  IL_05a4: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<hintNum>5__8
+  IL_05a9: br.s IL_05c2
+  IL_05ab: ldarg.0
+  IL_05ac: ldnull
+  IL_05ad: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_05b2: ldarg.0
+  IL_05b3: ldc.i4.6
+  IL_05b4: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_05b9: ldc.i4.1
+  IL_05ba: ret
+  IL_05bb: ldarg.0
+  IL_05bc: ldc.i4.m1
+  IL_05bd: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_05c2: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_05c7: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_ReceiveLookoutHint()
+  IL_05cc: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_05d1: stloc.s V_14
+  IL_05d3: ldloc.s V_14
+  IL_05d5: brtrue.s IL_05ab
+  IL_05d7: nop
+  IL_05d8: ldarg.0
+  IL_05d9: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_05de: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_05e3: ldnull
+  IL_05e4: cgt.un
+  IL_05e6: stloc.s V_15
+  IL_05e8: ldloc.s V_15
+  IL_05ea: brfalse IL_06fc
+  IL_05ef: nop
+  IL_05f0: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_05f5: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_05fa: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_05ff: stloc.s V_16
+  IL_0601: ldloc.s V_16
+  IL_0603: brfalse.s IL_061e
+  IL_0605: ldarg.0
+  IL_0606: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_060b: ldarg.0
+  IL_060c: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0611: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::toggle
+  IL_0616: ldc.i4.0
+  IL_0617: ceq
+  IL_0619: stfld System.Boolean VivHelper.Entities.PlatinumWatchtower::toggle
+  IL_061e: ldarg.0
+  IL_061f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0624: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::toggle
+  IL_0629: ldarg.0
+  IL_062a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_062f: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::prev
+  IL_0634: ceq
+  IL_0636: ldc.i4.0
+  IL_0637: ceq
+  IL_0639: stloc.s V_17
+  IL_063b: ldloc.s V_17
+  IL_063d: brfalse IL_06fb
+  IL_0642: nop
+  IL_0643: ldarg.0
+  IL_0644: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0649: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::toggle
+  IL_064e: stloc.s V_18
+  IL_0650: ldloc.s V_18
+  IL_0652: brfalse.s IL_06a8
+  IL_0654: nop
+  IL_0655: br.s IL_066e
+  IL_0657: ldarg.0
+  IL_0658: ldnull
+  IL_0659: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_065e: ldarg.0
+  IL_065f: ldc.i4.7
+  IL_0660: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_0665: ldc.i4.1
+  IL_0666: ret
+  IL_0667: ldarg.0
+  IL_0668: ldc.i4.m1
+  IL_0669: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_066e: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_0673: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_0678: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_067d: stloc.s V_19
+  IL_067f: ldloc.s V_19
+  IL_0681: brtrue.s IL_0657
+  IL_0683: ldarg.0
+  IL_0684: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0689: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_068e: ldc.i4.1
+  IL_068f: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_0694: ldarg.0
+  IL_0695: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_069a: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_069f: callvirt System.Void VivHelper.Entities.CustomPlayerPlayback::Restart()
+  IL_06a4: nop
+  IL_06a5: nop
+  IL_06a6: br.s IL_06fa
+  IL_06a8: nop
+  IL_06a9: br.s IL_06c2
+  IL_06ab: ldarg.0
+  IL_06ac: ldnull
+  IL_06ad: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_06b2: ldarg.0
+  IL_06b3: ldc.i4.8
+  IL_06b4: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_06b9: ldc.i4.1
+  IL_06ba: ret
+  IL_06bb: ldarg.0
+  IL_06bc: ldc.i4.m1
+  IL_06bd: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_06c2: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_06c7: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_06cc: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_06d1: stloc.s V_20
+  IL_06d3: ldloc.s V_20
+  IL_06d5: brtrue.s IL_06ab
+  IL_06d7: ldarg.0
+  IL_06d8: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_06dd: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_06e2: ldc.i4.0
+  IL_06e3: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_06e8: ldarg.0
+  IL_06e9: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_06ee: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_06f3: ldc.i4.0
+  IL_06f4: stfld System.Boolean Monocle.Entity::Visible
+  IL_06f9: nop
+  IL_06fa: nop
+  IL_06fb: nop
+  IL_06fc: ldarg.0
+  IL_06fd: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0702: ldarg.0
+  IL_0703: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0708: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::toggle
+  IL_070d: stfld System.Boolean VivHelper.Entities.PlatinumWatchtower::prev
+  IL_0712: ldarg.0
+  IL_0713: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_0718: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_071d: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0722: ldarg.0
+  IL_0723: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0728: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::onlyY
+  IL_072d: stloc.s V_21
+  IL_072f: ldloc.s V_21
+  IL_0731: brfalse.s IL_0745
+  IL_0733: nop
+  IL_0734: ldarg.0
+  IL_0735: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_073a: ldc.r4 0
+  IL_073f: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0744: nop
+  IL_0745: ldarg.0
+  IL_0746: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_074b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0750: call System.Int32 System.Math::Sign(System.Single)
+  IL_0755: ldarg.0
+  IL_0756: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<lastDir>5__5
+  IL_075b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0760: call System.Int32 System.Math::Sign(System.Single)
+  IL_0765: bne.un.s IL_078e
+  IL_0767: ldarg.0
+  IL_0768: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_076d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0772: call System.Int32 System.Math::Sign(System.Single)
+  IL_0777: ldarg.0
+  IL_0778: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<lastDir>5__5
+  IL_077d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0782: call System.Int32 System.Math::Sign(System.Single)
+  IL_0787: ceq
+  IL_0789: ldc.i4.0
+  IL_078a: ceq
+  IL_078c: br.s IL_078f
+  IL_078e: ldc.i4.1
+  IL_078f: stloc.s V_22
+  IL_0791: ldloc.s V_22
+  IL_0793: brfalse.s IL_07ad
+  IL_0795: nop
+  IL_0796: ldstr "event:/game/general/lookout_move"
+  IL_079b: ldarg.0
+  IL_079c: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_07a1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_07a6: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_07ab: pop
+  IL_07ac: nop
+  IL_07ad: ldarg.0
+  IL_07ae: ldarg.0
+  IL_07af: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_07b4: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<lastDir>5__5
+  IL_07b9: ldarg.0
+  IL_07ba: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_07bf: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_07c4: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_07c9: ldstr "lookLeft"
+  IL_07ce: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_07d3: brfalse.s IL_07f1
+  IL_07d5: ldarg.0
+  IL_07d6: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_07db: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_07e0: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_07e5: ldstr "lookRight"
+  IL_07ea: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_07ef: br.s IL_07f2
+  IL_07f1: ldc.i4.0
+  IL_07f2: stloc.s V_23
+  IL_07f4: ldloc.s V_23
+  IL_07f6: brfalse IL_0a74
+  IL_07fb: nop
+  IL_07fc: ldarg.0
+  IL_07fd: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0802: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0807: ldc.r4 0
+  IL_080c: ceq
+  IL_080e: stloc.s V_24
+  IL_0810: ldloc.s V_24
+  IL_0812: brfalse IL_08d0
+  IL_0817: nop
+  IL_0818: ldarg.0
+  IL_0819: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_081e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0823: ldc.r4 0
+  IL_0828: ceq
+  IL_082a: stloc.s V_25
+  IL_082c: ldloc.s V_25
+  IL_082e: brfalse.s IL_085c
+  IL_0830: nop
+  IL_0831: ldarg.0
+  IL_0832: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0837: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_083c: ldarg.0
+  IL_083d: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0842: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_0847: ldstr "looking"
+  IL_084c: call System.String System.String::Concat(System.String,System.String)
+  IL_0851: ldc.i4.0
+  IL_0852: ldc.i4.0
+  IL_0853: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0858: nop
+  IL_0859: nop
+  IL_085a: br.s IL_08ca
+  IL_085c: ldarg.0
+  IL_085d: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0862: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0867: ldc.r4 0
+  IL_086c: cgt
+  IL_086e: stloc.s V_26
+  IL_0870: ldloc.s V_26
+  IL_0872: brfalse.s IL_08a0
+  IL_0874: nop
+  IL_0875: ldarg.0
+  IL_0876: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_087b: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0880: ldarg.0
+  IL_0881: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0886: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_088b: ldstr "lookingDown"
+  IL_0890: call System.String System.String::Concat(System.String,System.String)
+  IL_0895: ldc.i4.0
+  IL_0896: ldc.i4.0
+  IL_0897: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_089c: nop
+  IL_089d: nop
+  IL_089e: br.s IL_08ca
+  IL_08a0: nop
+  IL_08a1: ldarg.0
+  IL_08a2: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_08a7: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_08ac: ldarg.0
+  IL_08ad: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_08b2: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_08b7: ldstr "lookingUp"
+  IL_08bc: call System.String System.String::Concat(System.String,System.String)
+  IL_08c1: ldc.i4.0
+  IL_08c2: ldc.i4.0
+  IL_08c3: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_08c8: nop
+  IL_08c9: nop
+  IL_08ca: nop
+  IL_08cb: br IL_0a73
+  IL_08d0: ldarg.0
+  IL_08d1: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_08d6: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_08db: ldc.r4 0
+  IL_08e0: cgt
+  IL_08e2: stloc.s V_27
+  IL_08e4: ldloc.s V_27
+  IL_08e6: brfalse IL_09a4
+  IL_08eb: nop
+  IL_08ec: ldarg.0
+  IL_08ed: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_08f2: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_08f7: ldc.r4 0
+  IL_08fc: ceq
+  IL_08fe: stloc.s V_28
+  IL_0900: ldloc.s V_28
+  IL_0902: brfalse.s IL_0930
+  IL_0904: nop
+  IL_0905: ldarg.0
+  IL_0906: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_090b: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0910: ldarg.0
+  IL_0911: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0916: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_091b: ldstr "lookingRight"
+  IL_0920: call System.String System.String::Concat(System.String,System.String)
+  IL_0925: ldc.i4.0
+  IL_0926: ldc.i4.0
+  IL_0927: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_092c: nop
+  IL_092d: nop
+  IL_092e: br.s IL_099e
+  IL_0930: ldarg.0
+  IL_0931: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0936: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_093b: ldc.r4 0
+  IL_0940: cgt
+  IL_0942: stloc.s V_29
+  IL_0944: ldloc.s V_29
+  IL_0946: brfalse.s IL_0974
+  IL_0948: nop
+  IL_0949: ldarg.0
+  IL_094a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_094f: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0954: ldarg.0
+  IL_0955: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_095a: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_095f: ldstr "lookingDownRight"
+  IL_0964: call System.String System.String::Concat(System.String,System.String)
+  IL_0969: ldc.i4.0
+  IL_096a: ldc.i4.0
+  IL_096b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0970: nop
+  IL_0971: nop
+  IL_0972: br.s IL_099e
+  IL_0974: nop
+  IL_0975: ldarg.0
+  IL_0976: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_097b: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0980: ldarg.0
+  IL_0981: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0986: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_098b: ldstr "lookingUpRight"
+  IL_0990: call System.String System.String::Concat(System.String,System.String)
+  IL_0995: ldc.i4.0
+  IL_0996: ldc.i4.0
+  IL_0997: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_099c: nop
+  IL_099d: nop
+  IL_099e: nop
+  IL_099f: br IL_0a73
+  IL_09a4: ldarg.0
+  IL_09a5: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_09aa: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09af: ldc.r4 0
+  IL_09b4: clt
+  IL_09b6: stloc.s V_30
+  IL_09b8: ldloc.s V_30
+  IL_09ba: brfalse IL_0a73
+  IL_09bf: nop
+  IL_09c0: ldarg.0
+  IL_09c1: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_09c6: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09cb: ldc.r4 0
+  IL_09d0: ceq
+  IL_09d2: stloc.s V_31
+  IL_09d4: ldloc.s V_31
+  IL_09d6: brfalse.s IL_0a04
+  IL_09d8: nop
+  IL_09d9: ldarg.0
+  IL_09da: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_09df: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_09e4: ldarg.0
+  IL_09e5: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_09ea: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_09ef: ldstr "lookingLeft"
+  IL_09f4: call System.String System.String::Concat(System.String,System.String)
+  IL_09f9: ldc.i4.0
+  IL_09fa: ldc.i4.0
+  IL_09fb: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0a00: nop
+  IL_0a01: nop
+  IL_0a02: br.s IL_0a72
+  IL_0a04: ldarg.0
+  IL_0a05: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0a0a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a0f: ldc.r4 0
+  IL_0a14: cgt
+  IL_0a16: stloc.s V_32
+  IL_0a18: ldloc.s V_32
+  IL_0a1a: brfalse.s IL_0a48
+  IL_0a1c: nop
+  IL_0a1d: ldarg.0
+  IL_0a1e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a23: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0a28: ldarg.0
+  IL_0a29: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a2e: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_0a33: ldstr "lookingDownLeft"
+  IL_0a38: call System.String System.String::Concat(System.String,System.String)
+  IL_0a3d: ldc.i4.0
+  IL_0a3e: ldc.i4.0
+  IL_0a3f: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0a44: nop
+  IL_0a45: nop
+  IL_0a46: br.s IL_0a72
+  IL_0a48: nop
+  IL_0a49: ldarg.0
+  IL_0a4a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a4f: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_0a54: ldarg.0
+  IL_0a55: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a5a: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_0a5f: ldstr "lookingUpLeft"
+  IL_0a64: call System.String System.String::Concat(System.String,System.String)
+  IL_0a69: ldc.i4.0
+  IL_0a6a: ldc.i4.0
+  IL_0a6b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0a70: nop
+  IL_0a71: nop
+  IL_0a72: nop
+  IL_0a73: nop
+  IL_0a74: ldarg.0
+  IL_0a75: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a7a: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_0a7f: ldnull
+  IL_0a80: ceq
+  IL_0a82: stloc.s V_33
+  IL_0a84: ldloc.s V_33
+  IL_0a86: brfalse IL_0f90
+  IL_0a8b: nop
+  IL_0a8c: ldarg.0
+  IL_0a8d: ldarg.0
+  IL_0a8e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0a93: ldarg.0
+  IL_0a94: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0a99: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_0a9e: ldarg.0
+  IL_0a9f: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0aa4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(System.Single,Microsoft.Xna.Framework.Vector2)
+  IL_0aa9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0aae: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0ab3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0ab8: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0abd: ldarg.0
+  IL_0abe: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0ac3: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0ac8: ldc.r4 0
+  IL_0acd: ceq
+  IL_0acf: stloc.s V_34
+  IL_0ad1: ldloc.s V_34
+  IL_0ad3: brfalse.s IL_0b0e
+  IL_0ad5: nop
+  IL_0ad6: ldarg.0
+  IL_0ad7: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0adc: ldarg.0
+  IL_0add: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0ae2: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0ae7: ldc.r4 0
+  IL_0aec: ldarg.0
+  IL_0aed: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0af2: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_0af7: ldc.r4 2
+  IL_0afc: mul
+  IL_0afd: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0b02: mul
+  IL_0b03: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0b08: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0b0d: nop
+  IL_0b0e: ldarg.0
+  IL_0b0f: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_0b14: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0b19: ldc.r4 0
+  IL_0b1e: ceq
+  IL_0b20: stloc.s V_35
+  IL_0b22: ldloc.s V_35
+  IL_0b24: brfalse.s IL_0b5f
+  IL_0b26: nop
+  IL_0b27: ldarg.0
+  IL_0b28: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0b2d: ldarg.0
+  IL_0b2e: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0b33: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0b38: ldc.r4 0
+  IL_0b3d: ldarg.0
+  IL_0b3e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0b43: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_0b48: ldc.r4 2
+  IL_0b4d: mul
+  IL_0b4e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0b53: mul
+  IL_0b54: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0b59: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0b5e: nop
+  IL_0b5f: ldarg.0
+  IL_0b60: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0b65: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0b6a: ldarg.0
+  IL_0b6b: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0b70: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::maxSpd
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_0b75: cgt
+  IL_0b77: stloc.s V_36
+  IL_0b79: ldloc.s V_36
+  IL_0b7b: brfalse.s IL_0b9b
+  IL_0b7d: nop
+  IL_0b7e: ldarg.0
+  IL_0b7f: ldarg.0
+  IL_0b80: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0b85: ldarg.0
+  IL_0b86: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0b8b: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::maxSpd
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_0b90: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0b95: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0b9a: nop
+  IL_0b9b: ldarg.0
+  IL_0b9c: ldarg.0
+  IL_0b9d: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0ba2: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector>5__12
+  IL_0ba7: ldarg.0
+  IL_0ba8: ldarg.0
+  IL_0ba9: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0bae: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0bb3: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0bb8: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.LookoutBlocker>()
+  IL_0bbd: stfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<entities>5__13
+  IL_0bc2: ldarg.0
+  IL_0bc3: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0bc8: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0bcd: dup
+  IL_0bce: ldind.r4
+  IL_0bcf: ldarg.0
+  IL_0bd0: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0bd5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0bda: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0bdf: mul
+  IL_0be0: add
+  IL_0be1: stind.r4
+  IL_0be2: ldarg.0
+  IL_0be3: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0be8: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0bed: ldarg.0
+  IL_0bee: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0bf3: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0bf8: stloc.s V_38
+  IL_0bfa: ldloca.s V_38
+  IL_0bfc: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0c01: conv.r4
+  IL_0c02: blt.s IL_0c2e
+  IL_0c04: ldarg.0
+  IL_0c05: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0c0a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c0f: ldc.r4 320
+  IL_0c14: add
+  IL_0c15: ldarg.0
+  IL_0c16: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0c1b: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0c20: stloc.s V_38
+  IL_0c22: ldloca.s V_38
+  IL_0c24: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0c29: conv.r4
+  IL_0c2a: cgt
+  IL_0c2c: br.s IL_0c2f
+  IL_0c2e: ldc.i4.1
+  IL_0c2f: stloc.s V_37
+  IL_0c31: ldloc.s V_37
+  IL_0c33: brfalse.s IL_0c47
+  IL_0c35: nop
+  IL_0c36: ldarg.0
+  IL_0c37: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0c3c: ldc.r4 0
+  IL_0c41: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c46: nop
+  IL_0c47: ldarg.0
+  IL_0c48: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0c4d: ldarg.0
+  IL_0c4e: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0c53: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c58: ldarg.0
+  IL_0c59: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0c5e: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0c63: stloc.s V_38
+  IL_0c65: ldloca.s V_38
+  IL_0c67: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0c6c: conv.r4
+  IL_0c6d: ldarg.0
+  IL_0c6e: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0c73: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0c78: stloc.s V_38
+  IL_0c7a: ldloca.s V_38
+  IL_0c7c: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0c81: ldc.i4 320
+  IL_0c86: sub
+  IL_0c87: conv.r4
+  IL_0c88: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0c8d: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c92: nop
+  IL_0c93: ldarg.0
+  IL_0c94: ldarg.0
+  IL_0c95: ldfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<entities>5__13
+  IL_0c9a: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0c9f: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__14
+  IL_0ca4: br IL_0d60
+  IL_0ca9: ldarg.0
+  IL_0caa: ldarg.0
+  IL_0cab: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__14
+  IL_0cb0: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0cb5: stfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0cba: nop
+  IL_0cbb: ldarg.0
+  IL_0cbc: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0cc1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0cc6: ldc.r4 320
+  IL_0ccb: add
+  IL_0ccc: ldarg.0
+  IL_0ccd: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0cd2: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0cd7: ble.un.s IL_0d29
+  IL_0cd9: ldarg.0
+  IL_0cda: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0cdf: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0ce4: ldc.r4 180
+  IL_0ce9: add
+  IL_0cea: ldarg.0
+  IL_0ceb: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0cf0: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0cf5: ble.un.s IL_0d29
+  IL_0cf7: ldarg.0
+  IL_0cf8: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0cfd: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0d02: ldarg.0
+  IL_0d03: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0d08: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0d0d: bge.un.s IL_0d29
+  IL_0d0f: ldarg.0
+  IL_0d10: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0d15: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0d1a: ldarg.0
+  IL_0d1b: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0d20: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0d25: clt
+  IL_0d27: br.s IL_0d2a
+  IL_0d29: ldc.i4.0
+  IL_0d2a: stloc.s V_39
+  IL_0d2c: ldloc.s V_39
+  IL_0d2e: brfalse.s IL_0d58
+  IL_0d30: nop
+  IL_0d31: ldarg.0
+  IL_0d32: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0d37: ldarg.0
+  IL_0d38: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector>5__12
+  IL_0d3d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0d42: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0d47: ldarg.0
+  IL_0d48: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0d4d: ldc.r4 0
+  IL_0d52: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0d57: nop
+  IL_0d58: nop
+  IL_0d59: ldarg.0
+  IL_0d5a: ldnull
+  IL_0d5b: stfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item>5__15
+  IL_0d60: ldarg.0
+  IL_0d61: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__14
+  IL_0d66: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0d6b: brtrue IL_0ca9
+  IL_0d70: leave.s IL_0d85
+  IL_0d72: ldarg.0
+  IL_0d73: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__14
+  IL_0d78: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0d7e: callvirt System.Void System.IDisposable::Dispose()
+  IL_0d83: nop
+  IL_0d84: endfinally
+  IL_0d85: ldarg.0
+  IL_0d86: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__14
+  IL_0d8b: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0d91: ldarg.0
+  IL_0d92: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0d97: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0d9c: dup
+  IL_0d9d: ldind.r4
+  IL_0d9e: ldarg.0
+  IL_0d9f: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0da4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0da9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0dae: mul
+  IL_0daf: add
+  IL_0db0: stind.r4
+  IL_0db1: ldarg.0
+  IL_0db2: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0db7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0dbc: ldarg.0
+  IL_0dbd: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0dc2: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0dc7: stloc.s V_38
+  IL_0dc9: ldloca.s V_38
+  IL_0dcb: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0dd0: conv.r4
+  IL_0dd1: blt.s IL_0dfd
+  IL_0dd3: ldarg.0
+  IL_0dd4: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0dd9: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0dde: ldc.r4 180
+  IL_0de3: add
+  IL_0de4: ldarg.0
+  IL_0de5: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0dea: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0def: stloc.s V_38
+  IL_0df1: ldloca.s V_38
+  IL_0df3: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0df8: conv.r4
+  IL_0df9: cgt
+  IL_0dfb: br.s IL_0dfe
+  IL_0dfd: ldc.i4.1
+  IL_0dfe: stloc.s V_40
+  IL_0e00: ldloc.s V_40
+  IL_0e02: brfalse.s IL_0e16
+  IL_0e04: nop
+  IL_0e05: ldarg.0
+  IL_0e06: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0e0b: ldc.r4 0
+  IL_0e10: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0e15: nop
+  IL_0e16: ldarg.0
+  IL_0e17: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0e1c: ldarg.0
+  IL_0e1d: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0e22: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0e27: ldarg.0
+  IL_0e28: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0e2d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0e32: stloc.s V_38
+  IL_0e34: ldloca.s V_38
+  IL_0e36: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0e3b: conv.r4
+  IL_0e3c: ldarg.0
+  IL_0e3d: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0e42: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0e47: stloc.s V_38
+  IL_0e49: ldloca.s V_38
+  IL_0e4b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0e50: ldc.i4 180
+  IL_0e55: sub
+  IL_0e56: conv.r4
+  IL_0e57: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0e5c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0e61: nop
+  IL_0e62: ldarg.0
+  IL_0e63: ldarg.0
+  IL_0e64: ldfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<entities>5__13
+  IL_0e69: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0e6e: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__16
+  IL_0e73: br IL_0f2f
+  IL_0e78: ldarg.0
+  IL_0e79: ldarg.0
+  IL_0e7a: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__16
+  IL_0e7f: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0e84: stfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0e89: nop
+  IL_0e8a: ldarg.0
+  IL_0e8b: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0e90: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0e95: ldc.r4 320
+  IL_0e9a: add
+  IL_0e9b: ldarg.0
+  IL_0e9c: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0ea1: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0ea6: ble.un.s IL_0ef8
+  IL_0ea8: ldarg.0
+  IL_0ea9: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0eae: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0eb3: ldc.r4 180
+  IL_0eb8: add
+  IL_0eb9: ldarg.0
+  IL_0eba: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0ebf: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0ec4: ble.un.s IL_0ef8
+  IL_0ec6: ldarg.0
+  IL_0ec7: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0ecc: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0ed1: ldarg.0
+  IL_0ed2: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0ed7: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0edc: bge.un.s IL_0ef8
+  IL_0ede: ldarg.0
+  IL_0edf: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0ee4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0ee9: ldarg.0
+  IL_0eea: ldfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0eef: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0ef4: clt
+  IL_0ef6: br.s IL_0ef9
+  IL_0ef8: ldc.i4.0
+  IL_0ef9: stloc.s V_41
+  IL_0efb: ldloc.s V_41
+  IL_0efd: brfalse.s IL_0f27
+  IL_0eff: nop
+  IL_0f00: ldarg.0
+  IL_0f01: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0f06: ldarg.0
+  IL_0f07: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector>5__12
+  IL_0f0c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0f11: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0f16: ldarg.0
+  IL_0f17: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<speed>5__4
+  IL_0f1c: ldc.r4 0
+  IL_0f21: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0f26: nop
+  IL_0f27: nop
+  IL_0f28: ldarg.0
+  IL_0f29: ldnull
+  IL_0f2a: stfld Monocle.Entity VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<item2>5__17
+  IL_0f2f: ldarg.0
+  IL_0f30: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__16
+  IL_0f35: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0f3a: brtrue IL_0e78
+  IL_0f3f: leave.s IL_0f54
+  IL_0f41: ldarg.0
+  IL_0f42: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__16
+  IL_0f47: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0f4d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0f52: nop
+  IL_0f53: endfinally
+  IL_0f54: ldarg.0
+  IL_0f55: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>s__16
+  IL_0f5a: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0f60: ldarg.0
+  IL_0f61: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_0f66: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0f6b: ldarg.0
+  IL_0f6c: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<cam>5__3
+  IL_0f71: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0f76: nop
+  IL_0f77: nop
+  IL_0f78: ldarg.0
+  IL_0f79: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector>5__12
+  IL_0f7e: initobj Microsoft.Xna.Framework.Vector2
+  IL_0f84: ldarg.0
+  IL_0f85: ldnull
+  IL_0f86: stfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<entities>5__13
+  IL_0f8b: br IL_154f
+  IL_0f90: nop
+  IL_0f91: ldarg.0
+  IL_0f92: ldarg.0
+  IL_0f93: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0f98: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_0f9d: ldc.i4.0
+  IL_0f9e: ble.s IL_0fbf
+  IL_0fa0: ldarg.0
+  IL_0fa1: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0fa6: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_0fab: ldarg.0
+  IL_0fac: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0fb1: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_0fb6: ldc.i4.1
+  IL_0fb7: sub
+  IL_0fb8: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0fbd: br.s IL_0fc5
+  IL_0fbf: ldarg.0
+  IL_0fc0: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStartCenter>5__7
+  IL_0fc5: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_0fca: ldarg.0
+  IL_0fcb: ldarg.0
+  IL_0fcc: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0fd1: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_0fd6: ldarg.0
+  IL_0fd7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_0fdc: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_0fe1: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0fe6: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_0feb: ldarg.0
+  IL_0fec: ldarg.0
+  IL_0fed: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_0ff2: ldarg.0
+  IL_0ff3: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_0ff8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0ffd: stloc.s V_42
+  IL_0fff: ldloca.s V_42
+  IL_1001: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_1006: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num>5__20
+  IL_100b: ldarg.0
+  IL_100c: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_1011: ldarg.0
+  IL_1012: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_1017: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_101c: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_1021: pop
+  IL_1022: ldarg.0
+  IL_1023: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1028: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_102d: ldc.r4 0.25
+  IL_1032: bge.un.s IL_1044
+  IL_1034: ldarg.0
+  IL_1035: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_103a: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_103f: ldc.i4.0
+  IL_1040: cgt
+  IL_1042: br.s IL_1045
+  IL_1044: ldc.i4.0
+  IL_1045: stloc.s V_43
+  IL_1047: ldloc.s V_43
+  IL_1049: brfalse IL_1134
+  IL_104e: nop
+  IL_104f: ldarg.0
+  IL_1050: ldarg.0
+  IL_1051: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1056: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_105b: ldc.i4.1
+  IL_105c: ble.s IL_107d
+  IL_105e: ldarg.0
+  IL_105f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1064: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_1069: ldarg.0
+  IL_106a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_106f: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_1074: ldc.i4.2
+  IL_1075: sub
+  IL_1076: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_107b: br.s IL_1083
+  IL_107d: ldarg.0
+  IL_107e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStartCenter>5__7
+  IL_1083: ldarg.0
+  IL_1084: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_1089: ldc.r4 0.75
+  IL_108e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1093: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin>5__23
+  IL_1098: ldarg.0
+  IL_1099: ldarg.0
+  IL_109a: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_109f: ldarg.0
+  IL_10a0: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_10a5: ldc.r4 0.25
+  IL_10aa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_10af: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end>5__24
+  IL_10b4: ldarg.0
+  IL_10b5: ldarg.0
+  IL_10b6: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin>5__23
+  IL_10bb: ldarg.0
+  IL_10bc: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end>5__24
+  IL_10c1: ldarg.0
+  IL_10c2: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_10c7: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_10cc: stfld Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve>5__25
+  IL_10d1: ldarg.0
+  IL_10d2: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_10d7: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_10dc: ldarg.0
+  IL_10dd: ldflda Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve>5__25
+  IL_10e2: ldc.r4 0.5
+  IL_10e7: ldarg.0
+  IL_10e8: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_10ed: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_10f2: ldc.r4 0.25
+  IL_10f7: div
+  IL_10f8: ldc.r4 0.5
+  IL_10fd: mul
+  IL_10fe: add
+  IL_10ff: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_1104: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1109: nop
+  IL_110a: nop
+  IL_110b: ldarg.0
+  IL_110c: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin>5__23
+  IL_1111: initobj Microsoft.Xna.Framework.Vector2
+  IL_1117: ldarg.0
+  IL_1118: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end>5__24
+  IL_111d: initobj Microsoft.Xna.Framework.Vector2
+  IL_1123: ldarg.0
+  IL_1124: ldflda Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve>5__25
+  IL_1129: initobj Monocle.SimpleCurve
+  IL_112f: br IL_1285
+  IL_1134: ldarg.0
+  IL_1135: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_113a: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_113f: ldc.r4 0.75
+  IL_1144: ble.un.s IL_1167
+  IL_1146: ldarg.0
+  IL_1147: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_114c: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_1151: ldarg.0
+  IL_1152: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1157: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_115c: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1161: ldc.i4.1
+  IL_1162: sub
+  IL_1163: clt
+  IL_1165: br.s IL_1168
+  IL_1167: ldc.i4.0
+  IL_1168: stloc.s V_44
+  IL_116a: ldloc.s V_44
+  IL_116c: brfalse IL_1256
+  IL_1171: nop
+  IL_1172: ldarg.0
+  IL_1173: ldarg.0
+  IL_1174: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1179: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_117e: ldarg.0
+  IL_117f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1184: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_1189: ldc.i4.1
+  IL_118a: add
+  IL_118b: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_1190: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value2>5__26
+  IL_1195: ldarg.0
+  IL_1196: ldarg.0
+  IL_1197: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_119c: ldarg.0
+  IL_119d: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_11a2: ldc.r4 0.75
+  IL_11a7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_11ac: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin2>5__27
+  IL_11b1: ldarg.0
+  IL_11b2: ldarg.0
+  IL_11b3: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_11b8: ldarg.0
+  IL_11b9: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value2>5__26
+  IL_11be: ldc.r4 0.25
+  IL_11c3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_11c8: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end2>5__28
+  IL_11cd: ldarg.0
+  IL_11ce: ldarg.0
+  IL_11cf: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin2>5__27
+  IL_11d4: ldarg.0
+  IL_11d5: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end2>5__28
+  IL_11da: ldarg.0
+  IL_11db: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_11e0: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_11e5: stfld Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve2>5__29
+  IL_11ea: ldarg.0
+  IL_11eb: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_11f0: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_11f5: ldarg.0
+  IL_11f6: ldflda Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve2>5__29
+  IL_11fb: ldarg.0
+  IL_11fc: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1201: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_1206: ldc.r4 0.75
+  IL_120b: sub
+  IL_120c: ldc.r4 0.25
+  IL_1211: div
+  IL_1212: ldc.r4 0.5
+  IL_1217: mul
+  IL_1218: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_121d: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1222: nop
+  IL_1223: nop
+  IL_1224: ldarg.0
+  IL_1225: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value2>5__26
+  IL_122a: initobj Microsoft.Xna.Framework.Vector2
+  IL_1230: ldarg.0
+  IL_1231: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<begin2>5__27
+  IL_1236: initobj Microsoft.Xna.Framework.Vector2
+  IL_123c: ldarg.0
+  IL_123d: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<end2>5__28
+  IL_1242: initobj Microsoft.Xna.Framework.Vector2
+  IL_1248: ldarg.0
+  IL_1249: ldflda Monocle.SimpleCurve VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<simpleCurve2>5__29
+  IL_124e: initobj Monocle.SimpleCurve
+  IL_1254: br.s IL_1285
+  IL_1256: nop
+  IL_1257: ldarg.0
+  IL_1258: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_125d: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1262: ldarg.0
+  IL_1263: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_1268: ldarg.0
+  IL_1269: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_126e: ldarg.0
+  IL_126f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1274: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_1279: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_127e: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1283: nop
+  IL_1284: nop
+  IL_1285: ldarg.0
+  IL_1286: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_128b: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1290: dup
+  IL_1291: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_1296: ldc.r4 -160
+  IL_129b: ldc.r4 -90
+  IL_12a0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_12a5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_12aa: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_12af: nop
+  IL_12b0: ldarg.0
+  IL_12b1: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_12b6: ldarg.0
+  IL_12b7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_12bc: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_12c1: ldarg.0
+  IL_12c2: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_12c7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_12cc: ldarg.0
+  IL_12cd: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_12d2: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::maxSpd
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_PlatinumWatchtower_LookRoutine
+  IL_12d7: ldarg.0
+  IL_12d8: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num>5__20
+  IL_12dd: div
+  IL_12de: mul
+  IL_12df: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_12e4: mul
+  IL_12e5: sub
+  IL_12e6: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_12eb: ldarg.0
+  IL_12ec: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_12f1: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_12f6: ldc.r4 0
+  IL_12fb: clt
+  IL_12fd: stloc.s V_45
+  IL_12ff: ldloc.s V_45
+  IL_1301: brfalse.s IL_135c
+  IL_1303: nop
+  IL_1304: ldarg.0
+  IL_1305: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_130a: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_130f: ldc.i4.0
+  IL_1310: cgt
+  IL_1312: stloc.s V_46
+  IL_1314: ldloc.s V_46
+  IL_1316: brfalse.s IL_1344
+  IL_1318: nop
+  IL_1319: ldarg.0
+  IL_131a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_131f: ldarg.0
+  IL_1320: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1325: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_132a: ldc.i4.1
+  IL_132b: sub
+  IL_132c: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_1331: ldarg.0
+  IL_1332: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1337: ldc.r4 1
+  IL_133c: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_1341: nop
+  IL_1342: br.s IL_1356
+  IL_1344: nop
+  IL_1345: ldarg.0
+  IL_1346: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_134b: ldc.r4 0
+  IL_1350: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_1355: nop
+  IL_1356: nop
+  IL_1357: br IL_13f3
+  IL_135c: ldarg.0
+  IL_135d: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1362: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_1367: ldc.r4 1
+  IL_136c: cgt
+  IL_136e: stloc.s V_47
+  IL_1370: ldloc.s V_47
+  IL_1372: brfalse IL_13f3
+  IL_1377: nop
+  IL_1378: ldarg.0
+  IL_1379: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_137e: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_1383: ldarg.0
+  IL_1384: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1389: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_138e: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1393: ldc.i4.1
+  IL_1394: sub
+  IL_1395: clt
+  IL_1397: stloc.s V_48
+  IL_1399: ldloc.s V_48
+  IL_139b: brfalse.s IL_13c9
+  IL_139d: nop
+  IL_139e: ldarg.0
+  IL_139f: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_13a4: ldarg.0
+  IL_13a5: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_13aa: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_13af: ldc.i4.1
+  IL_13b0: add
+  IL_13b1: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_13b6: ldarg.0
+  IL_13b7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_13bc: ldc.r4 0
+  IL_13c1: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_13c6: nop
+  IL_13c7: br.s IL_13f2
+  IL_13c9: nop
+  IL_13ca: ldarg.0
+  IL_13cb: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_13d0: ldc.r4 1
+  IL_13d5: stfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_13da: ldarg.0
+  IL_13db: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_13e0: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::summit
+  IL_13e5: stloc.s V_49
+  IL_13e7: ldloc.s V_49
+  IL_13e9: brfalse.s IL_13f1
+  IL_13eb: nop
+  IL_13ec: br IL_15bb
+  IL_13f1: nop
+  IL_13f2: nop
+  IL_13f3: ldarg.0
+  IL_13f4: ldc.r4 0
+  IL_13f9: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_13fe: ldarg.0
+  IL_13ff: ldc.r4 0
+  IL_1404: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num3>5__22
+  IL_1409: ldarg.0
+  IL_140a: ldc.i4.0
+  IL_140b: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_1410: br IL_14f8
+  IL_1415: nop
+  IL_1416: ldarg.0
+  IL_1417: ldarg.0
+  IL_1418: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_141d: brfalse.s IL_1439
+  IL_141f: ldarg.0
+  IL_1420: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1425: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_142a: ldarg.0
+  IL_142b: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_1430: ldc.i4.1
+  IL_1431: sub
+  IL_1432: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_1437: br.s IL_143f
+  IL_1439: ldarg.0
+  IL_143a: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStartCenter>5__7
+  IL_143f: ldarg.0
+  IL_1440: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1445: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_144a: ldarg.0
+  IL_144b: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_1450: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_1455: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_145a: stloc.s V_42
+  IL_145c: ldloca.s V_42
+  IL_145e: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_1463: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num4>5__31
+  IL_1468: ldarg.0
+  IL_1469: ldarg.0
+  IL_146a: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num3>5__22
+  IL_146f: ldarg.0
+  IL_1470: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num4>5__31
+  IL_1475: add
+  IL_1476: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num3>5__22
+  IL_147b: ldarg.0
+  IL_147c: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_1481: ldarg.0
+  IL_1482: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1487: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_148c: clt
+  IL_148e: stloc.s V_50
+  IL_1490: ldloc.s V_50
+  IL_1492: brfalse.s IL_14ab
+  IL_1494: nop
+  IL_1495: ldarg.0
+  IL_1496: ldarg.0
+  IL_1497: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_149c: ldarg.0
+  IL_149d: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num4>5__31
+  IL_14a2: add
+  IL_14a3: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_14a8: nop
+  IL_14a9: br.s IL_14e5
+  IL_14ab: ldarg.0
+  IL_14ac: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_14b1: ldarg.0
+  IL_14b2: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_14b7: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_14bc: ceq
+  IL_14be: stloc.s V_51
+  IL_14c0: ldloc.s V_51
+  IL_14c2: brfalse.s IL_14e5
+  IL_14c4: nop
+  IL_14c5: ldarg.0
+  IL_14c6: ldarg.0
+  IL_14c7: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_14cc: ldarg.0
+  IL_14cd: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num4>5__31
+  IL_14d2: ldarg.0
+  IL_14d3: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_14d8: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_14dd: mul
+  IL_14de: add
+  IL_14df: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_14e4: nop
+  IL_14e5: nop
+  IL_14e6: ldarg.0
+  IL_14e7: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_14ec: stloc.s V_7
+  IL_14ee: ldarg.0
+  IL_14ef: ldloc.s V_7
+  IL_14f1: ldc.i4.1
+  IL_14f2: add
+  IL_14f3: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_14f8: ldarg.0
+  IL_14f9: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<i>5__30
+  IL_14fe: ldarg.0
+  IL_14ff: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1504: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_1509: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_150e: clt
+  IL_1510: stloc.s V_52
+  IL_1512: ldloc.s V_52
+  IL_1514: brtrue IL_1415
+  IL_1519: ldarg.0
+  IL_151a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_151f: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_1524: ldarg.0
+  IL_1525: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num2>5__21
+  IL_152a: ldarg.0
+  IL_152b: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<num3>5__22
+  IL_1530: div
+  IL_1531: stfld System.Single VivHelper.Entities.Watchtowers.Hud::TrackPercent
+  IL_1536: nop
+  IL_1537: ldarg.0
+  IL_1538: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector2>5__18
+  IL_153d: initobj Microsoft.Xna.Framework.Vector2
+  IL_1543: ldarg.0
+  IL_1544: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<vector3>5__19
+  IL_1549: initobj Microsoft.Xna.Framework.Vector2
+  IL_154f: ldarg.0
+  IL_1550: ldnull
+  IL_1551: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_1556: ldarg.0
+  IL_1557: ldc.i4.s 9
+  IL_1559: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_155e: ldc.i4.1
+  IL_155f: ret
+  IL_1560: ldarg.0
+  IL_1561: ldc.i4.m1
+  IL_1562: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1567: nop
+  IL_1568: ldarg.0
+  IL_1569: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<value>5__11
+  IL_156e: initobj Microsoft.Xna.Framework.Vector2
+  IL_1574: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_1579: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_157e: brtrue.s IL_15b1
+  IL_1580: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_1585: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_158a: brtrue.s IL_15b1
+  IL_158c: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_1591: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1596: brtrue.s IL_15b1
+  IL_1598: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_159d: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_15a2: brtrue.s IL_15b1
+  IL_15a4: ldarg.0
+  IL_15a5: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_15aa: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::interacting
+  IL_15af: br.s IL_15b2
+  IL_15b1: ldc.i4.0
+  IL_15b2: stloc.s V_53
+  IL_15b4: ldloc.s V_53
+  IL_15b6: brtrue IL_053f
+  IL_15bb: ldarg.0
+  IL_15bc: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_15c1: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_15c6: ldarg.0
+  IL_15c7: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_15cc: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_15d1: ldc.i4.1
+  IL_15d2: dup
+  IL_15d3: stloc.s V_6
+  IL_15d5: stfld System.Boolean Monocle.Component::Visible
+  IL_15da: ldloc.s V_6
+  IL_15dc: stfld System.Boolean Monocle.Component::Visible
+  IL_15e1: ldarg.0
+  IL_15e2: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_15e7: ldfld Monocle.Sprite VivHelper.Entities.PlatinumWatchtower::sprite
+  IL_15ec: ldarg.0
+  IL_15ed: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_15f2: ldfld System.String VivHelper.Entities.PlatinumWatchtower::animPrefix
+  IL_15f7: ldstr "idle"
+  IL_15fc: call System.String System.String::Concat(System.String,System.String)
+  IL_1601: ldc.i4.0
+  IL_1602: ldc.i4.0
+  IL_1603: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_1608: nop
+  IL_1609: ldstr "event:/ui/game/lookout_off"
+  IL_160e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_1613: pop
+  IL_1614: br.s IL_165d
+  IL_1616: nop
+  IL_1617: ldarg.0
+  IL_1618: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_161d: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_1622: ldarg.0
+  IL_1623: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1628: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_162d: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_1632: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_1637: ldc.r4 16
+  IL_163c: mul
+  IL_163d: conv.i4
+  IL_163e: conv.r4
+  IL_163f: stfld System.Single Celeste.Level::ScreenPadding
+  IL_1644: ldarg.0
+  IL_1645: ldnull
+  IL_1646: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_164b: ldarg.0
+  IL_164c: ldc.i4.s 10
+  IL_164e: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1653: ldc.i4.1
+  IL_1654: ret
+  IL_1655: ldarg.0
+  IL_1656: ldc.i4.m1
+  IL_1657: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_165c: nop
+  IL_165d: ldarg.0
+  IL_165e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1663: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_1668: ldarg.0
+  IL_1669: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_166e: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_1673: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_1678: ldc.r4 0
+  IL_167d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_1682: ldc.r4 3
+  IL_1687: mul
+  IL_1688: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_168d: dup
+  IL_168e: stloc.s V_10
+  IL_1690: stfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_1695: ldloc.s V_10
+  IL_1697: ldc.r4 0
+  IL_169c: cgt
+  IL_169e: stloc.s V_54
+  IL_16a0: ldloc.s V_54
+  IL_16a2: brtrue IL_1616
+  IL_16a7: ldarg.0
+  IL_16a8: ldarg.0
+  IL_16a9: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_16ae: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::summit
+  IL_16b3: brfalse.s IL_16eb
+  IL_16b5: ldarg.0
+  IL_16b6: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_16bb: ldfld System.Int32 VivHelper.Entities.PlatinumWatchtower::node
+  IL_16c0: ldarg.0
+  IL_16c1: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_16c6: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.PlatinumWatchtower::nodes
+  IL_16cb: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_16d0: ldc.i4.1
+  IL_16d1: sub
+  IL_16d2: blt.s IL_16eb
+  IL_16d4: ldarg.0
+  IL_16d5: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_16da: ldfld System.Single VivHelper.Entities.PlatinumWatchtower::nodePercent
+  IL_16df: ldc.r4 0.95
+  IL_16e4: clt.un
+  IL_16e6: ldc.i4.0
+  IL_16e7: ceq
+  IL_16e9: br.s IL_16ec
+  IL_16eb: ldc.i4.0
+  IL_16ec: stfld System.Boolean VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<atSummitTop>5__9
+  IL_16f1: ldarg.0
+  IL_16f2: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<atSummitTop>5__9
+  IL_16f7: stloc.s V_55
+  IL_16f9: ldloc.s V_55
+  IL_16fb: brfalse IL_1819
+  IL_1700: nop
+  IL_1701: ldarg.0
+  IL_1702: ldc.r4 0.5
+  IL_1707: box System.Single
+  IL_170c: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_1711: ldarg.0
+  IL_1712: ldc.i4.s 11
+  IL_1714: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1719: ldc.i4.1
+  IL_171a: ret
+  IL_171b: ldarg.0
+  IL_171c: ldc.i4.m1
+  IL_171d: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1722: ldarg.0
+  IL_1723: ldc.r4 3
+  IL_1728: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__32
+  IL_172d: ldarg.0
+  IL_172e: ldc.r4 0
+  IL_1733: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__33
+  IL_1738: ldarg.0
+  IL_1739: ldarg.0
+  IL_173a: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_173f: ldc.r4 160
+  IL_1744: ldc.r4 90
+  IL_1749: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_174e: ldc.r4 2
+  IL_1753: ldarg.0
+  IL_1754: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__32
+  IL_1759: callvirt System.Collections.IEnumerator Celeste.Level::ZoomTo(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_175e: ldc.i4.1
+  IL_175f: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_1764: stfld Monocle.Coroutine VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<component>5__34
+  IL_1769: ldarg.0
+  IL_176a: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_176f: ldarg.0
+  IL_1770: ldfld Monocle.Coroutine VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<component>5__34
+  IL_1775: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_177a: nop
+  IL_177b: br.s IL_17ca
+  IL_177d: nop
+  IL_177e: ldarg.0
+  IL_177f: ldarg.0
+  IL_1780: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__33
+  IL_1785: ldc.r4 1
+  IL_178a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_178f: ldarg.0
+  IL_1790: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__32
+  IL_1795: div
+  IL_1796: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_179b: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__33
+  IL_17a0: ldstr "escape"
+  IL_17a5: ldarg.0
+  IL_17a6: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__33
+  IL_17ab: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_17b0: nop
+  IL_17b1: ldarg.0
+  IL_17b2: ldnull
+  IL_17b3: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_17b8: ldarg.0
+  IL_17b9: ldc.i4.s 12
+  IL_17bb: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_17c0: ldc.i4.1
+  IL_17c1: ret
+  IL_17c2: ldarg.0
+  IL_17c3: ldc.i4.m1
+  IL_17c4: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_17c9: nop
+  IL_17ca: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_17cf: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_17d4: brtrue.s IL_1807
+  IL_17d6: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_17db: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_17e0: brtrue.s IL_1807
+  IL_17e2: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_17e7: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_17ec: brtrue.s IL_1807
+  IL_17ee: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_17f3: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_17f8: brtrue.s IL_1807
+  IL_17fa: ldarg.0
+  IL_17fb: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1800: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::interacting
+  IL_1805: br.s IL_1808
+  IL_1807: ldc.i4.0
+  IL_1808: stloc.s V_56
+  IL_180a: ldloc.s V_56
+  IL_180c: brtrue IL_177d
+  IL_1811: nop
+  IL_1812: ldarg.0
+  IL_1813: ldnull
+  IL_1814: stfld Monocle.Coroutine VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<component>5__34
+  IL_1819: ldarg.0
+  IL_181a: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStart>5__6
+  IL_181f: ldarg.0
+  IL_1820: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_1825: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_182a: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_182f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1834: stloc.s V_42
+  IL_1836: ldloca.s V_42
+  IL_1838: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_183d: ldc.r4 600
+  IL_1842: cgt
+  IL_1844: stloc.s V_57
+  IL_1846: ldloc.s V_57
+  IL_1848: brfalse IL_19ab
+  IL_184d: nop
+  IL_184e: ldarg.0
+  IL_184f: ldarg.0
+  IL_1850: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_1855: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_185a: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_185f: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<was>5__35
+  IL_1864: ldarg.0
+  IL_1865: ldarg.0
+  IL_1866: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<was>5__35
+  IL_186b: ldarg.0
+  IL_186c: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStart>5__6
+  IL_1871: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1876: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_187b: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<direction>5__36
+  IL_1880: ldarg.0
+  IL_1881: ldarg.0
+  IL_1882: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<atSummitTop>5__9
+  IL_1887: brtrue.s IL_1890
+  IL_1889: ldc.r4 0.5
+  IL_188e: br.s IL_1895
+  IL_1890: ldc.r4 1
+  IL_1895: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__37
+  IL_189a: ldarg.0
+  IL_189b: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_18a0: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_18a5: ldc.i4.0
+  IL_18a6: ldnull
+  IL_18a7: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_18ac: ldarg.0
+  IL_18ad: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__37
+  IL_18b2: stfld System.Single Celeste.ScreenWipe::Duration
+  IL_18b7: ldarg.0
+  IL_18b8: ldc.r4 0
+  IL_18bd: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__38
+  IL_18c2: br.s IL_193d
+  IL_18c4: nop
+  IL_18c5: ldarg.0
+  IL_18c6: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_18cb: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_18d0: ldarg.0
+  IL_18d1: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<was>5__35
+  IL_18d6: ldarg.0
+  IL_18d7: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<direction>5__36
+  IL_18dc: ldc.r4 0
+  IL_18e1: ldc.r4 64
+  IL_18e6: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_18eb: ldarg.0
+  IL_18ec: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__38
+  IL_18f1: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_18f6: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_18fb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1900: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1905: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_190a: nop
+  IL_190b: ldarg.0
+  IL_190c: ldnull
+  IL_190d: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_1912: ldarg.0
+  IL_1913: ldc.i4.s 13
+  IL_1915: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_191a: ldc.i4.1
+  IL_191b: ret
+  IL_191c: ldarg.0
+  IL_191d: ldc.i4.m1
+  IL_191e: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1923: nop
+  IL_1924: ldarg.0
+  IL_1925: ldarg.0
+  IL_1926: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__38
+  IL_192b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_1930: ldarg.0
+  IL_1931: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<approach2>5__37
+  IL_1936: div
+  IL_1937: add
+  IL_1938: stfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__38
+  IL_193d: ldarg.0
+  IL_193e: ldfld System.Single VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<duration2>5__38
+  IL_1943: ldc.r4 1
+  IL_1948: clt
+  IL_194a: stloc.s V_58
+  IL_194c: ldloc.s V_58
+  IL_194e: brtrue IL_18c4
+  IL_1953: ldarg.0
+  IL_1954: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_1959: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_195e: ldarg.0
+  IL_195f: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<camStart>5__6
+  IL_1964: ldarg.0
+  IL_1965: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<direction>5__36
+  IL_196a: ldc.r4 32
+  IL_196f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1974: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1979: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_197e: nop
+  IL_197f: ldarg.0
+  IL_1980: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1985: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_198a: ldc.i4.1
+  IL_198b: ldnull
+  IL_198c: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_1991: pop
+  IL_1992: nop
+  IL_1993: ldarg.0
+  IL_1994: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<was>5__35
+  IL_1999: initobj Microsoft.Xna.Framework.Vector2
+  IL_199f: ldarg.0
+  IL_19a0: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<direction>5__36
+  IL_19a5: initobj Microsoft.Xna.Framework.Vector2
+  IL_19ab: ldarg.0
+  IL_19ac: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_19b1: ldfld System.String VivHelper.Entities.PlatinumWatchtower::flagWhenInHud
+  IL_19b6: ldstr ""
+  IL_19bb: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_19c0: stloc.s V_59
+  IL_19c2: ldloc.s V_59
+  IL_19c4: brfalse.s IL_19f7
+  IL_19c6: ldarg.0
+  IL_19c7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_19cc: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_19d1: isinst Celeste.Level
+  IL_19d6: ldfld Celeste.Session Celeste.Level::Session
+  IL_19db: ldarg.0
+  IL_19dc: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_19e1: ldfld System.String VivHelper.Entities.PlatinumWatchtower::flagWhenInHud
+  IL_19e6: ldarg.0
+  IL_19e7: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_19ec: ldfld System.Boolean VivHelper.Entities.PlatinumWatchtower::invertFlag
+  IL_19f1: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_19f6: nop
+  IL_19f7: ldstr "escape"
+  IL_19fc: ldc.r4 0
+  IL_1a01: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_1a06: nop
+  IL_1a07: ldarg.0
+  IL_1a08: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_1a0d: ldc.r4 0
+  IL_1a12: stfld System.Single Celeste.Level::ScreenPadding
+  IL_1a17: ldarg.0
+  IL_1a18: ldfld Celeste.Level VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<level>5__1
+  IL_1a1d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_1a22: ldc.r4 1
+  IL_1a27: callvirt System.Void Celeste.Level::ZoomSnap(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1a2c: nop
+  IL_1a2d: ldarg.0
+  IL_1a2e: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a33: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_1a38: ldnull
+  IL_1a39: cgt.un
+  IL_1a3b: stloc.s V_60
+  IL_1a3d: ldloc.s V_60
+  IL_1a3f: brfalse.s IL_1a65
+  IL_1a41: nop
+  IL_1a42: ldarg.0
+  IL_1a43: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a48: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_1a4d: callvirt System.Void VivHelper.Entities.CustomPlayerPlayback::Restart()
+  IL_1a52: nop
+  IL_1a53: ldarg.0
+  IL_1a54: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a59: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.PlatinumWatchtower::cpp
+  IL_1a5e: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_1a63: nop
+  IL_1a64: nop
+  IL_1a65: ldarg.0
+  IL_1a66: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a6b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_1a70: ldarg.0
+  IL_1a71: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a76: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.PlatinumWatchtower::hud
+  IL_1a7b: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_1a80: nop
+  IL_1a81: ldarg.0
+  IL_1a82: ldfld VivHelper.Entities.PlatinumWatchtower VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>4__this
+  IL_1a87: ldc.i4.0
+  IL_1a88: stfld System.Boolean VivHelper.Entities.PlatinumWatchtower::interacting
+  IL_1a8d: ldarg.0
+  IL_1a8e: ldfld Celeste.Player VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::player
+  IL_1a93: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_1a98: ldc.i4.0
+  IL_1a99: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_1a9e: nop
+  IL_1a9f: ldarg.0
+  IL_1aa0: ldnull
+  IL_1aa1: stfld System.Object VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>2__current
+  IL_1aa6: ldarg.0
+  IL_1aa7: ldc.i4.s 14
+  IL_1aa9: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1aae: ldc.i4.1
+  IL_1aaf: ret
+  IL_1ab0: ldarg.0
+  IL_1ab1: ldc.i4.m1
+  IL_1ab2: stfld System.Int32 VivHelper.Entities.PlatinumWatchtower/<LookRoutine>d__30::<>1__state
+  IL_1ab7: ldc.i4.0
+  IL_1ab8: ret

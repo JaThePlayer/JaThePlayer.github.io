@@ -1,0 +1,232 @@
+IL Diff: System.Void FrostHelper.CustomSpinner::CreateSprites()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean FrostHelper.CustomSpinner::expanded
+  IL_0006: brtrue IL_028c
+  IL_000b: ldarg.0
+  IL_000c: callvirt System.Void FrostHelper.CustomSpinner::UnregisterFromRenderers()
+  IL_0011: ldarg.0
+  IL_0012: callvirt System.Void FrostHelper.CustomSpinner::RegisterToRenderers()
+  IL_0017: ldarg.0
+  IL_0018: ldfld System.Int32 FrostHelper.CustomSpinner::randomSeed
+  IL_001d: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_0022: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0027: ldarg.0
+  IL_0028: ldfld System.String FrostHelper.CustomSpinner::FGDirectory
+  IL_002d: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0032: stloc.0
+  IL_0033: ldsfld System.Random Monocle.Calc::Random
+  IL_0038: ldloc.0
+  IL_0039: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_003e: stloc.1
+  IL_003f: ldarg.0
+  IL_0040: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0045: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_004a: call System.Collections.Generic.List`1<Monocle.Entity> FrostHelper.Extensions::SafeGetEntities<FrostHelper.CustomSpinner>(Monocle.Tracker)
+  IL_004f: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0054: stloc.s V_7
+  IL_0056: br IL_00e5
+  IL_005b: ldloca.s V_7
+  IL_005d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0062: castclass FrostHelper.CustomSpinner
+  IL_0067: stloc.s V_8
+  IL_0069: ldloc.s V_8
+  IL_006b: ldfld System.Int32 FrostHelper.CustomSpinner::ID
+  IL_0070: ldarg.0
+  IL_0071: ldfld System.Int32 FrostHelper.CustomSpinner::ID
+  IL_0076: ble.s IL_00e5
+  IL_0078: ldloc.s V_8
+  IL_007a: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_007f: ldarg.0
+  IL_0080: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_0085: bne.un.s IL_00e5
+  IL_0087: ldloc.s V_8
+  IL_0089: ldfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
+  IL_008e: ldarg.0
+  IL_008f: ldfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
+  IL_0094: bne.un.s IL_00e5
+  IL_0096: ldloc.s V_8
+  IL_0098: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_009d: ldarg.0
+  IL_009e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a8: stloc.s V_9
+  IL_00aa: ldloca.s V_9
+  IL_00ac: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_00b1: ldc.r4 576
+  IL_00b6: bge.un.s IL_00e5
+  IL_00b8: ldarg.0
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00bf: ldloc.s V_8
+  IL_00c1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00cb: ldc.r4 2
+  IL_00d0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00db: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00e0: callvirt System.Void FrostHelper.CustomSpinner::AddSprite(Microsoft.Xna.Framework.Vector2)
+  IL_00e5: ldloca.s V_7
+  IL_00e7: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00ec: brtrue IL_005b
+  IL_00f1: leave.s IL_0101
+  IL_00f3: ldloca.s V_7
+  IL_00f5: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00fb: callvirt System.Void System.IDisposable::Dispose()
+  IL_0100: endfinally
+  IL_0101: ldc.i4.0
+  IL_0102: stloc.2
+  IL_0103: ldc.i4.0
+  IL_0104: stloc.3
+  IL_0105: ldc.i4.0
+  IL_0106: stloc.s V_4
+  IL_0108: ldc.i4.0
+  IL_0109: stloc.s V_5
+  IL_010b: ldc.i4.0
+  IL_010c: stloc.s V_6
+  IL_010e: ldarg.0
+  IL_010f: ldfld System.Boolean FrostHelper.CustomSpinner::SingleFGImage
+  IL_0114: brfalse.s IL_011d
+  IL_0116: ldc.i4.4
+  IL_0117: stloc.2
+  IL_0118: br IL_01cc
+  IL_011d: ldarg.0
+  IL_011e: ldarg.0
+  IL_011f: call System.Single Monocle.Entity::get_X()
+  IL_0124: ldc.r4 4
+  IL_0129: sub
+  IL_012a: ldarg.0
+  IL_012b: call System.Single Monocle.Entity::get_Y()
+  IL_0130: ldc.r4 4
+  IL_0135: sub
+  IL_0136: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_013b: callvirt System.Boolean FrostHelper.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0140: brtrue.s IL_0148
+  IL_0142: ldc.i4.1
+  IL_0143: stloc.3
+  IL_0144: ldloc.2
+  IL_0145: ldc.i4.1
+  IL_0146: add
+  IL_0147: stloc.2
+  IL_0148: ldarg.0
+  IL_0149: ldarg.0
+  IL_014a: call System.Single Monocle.Entity::get_X()
+  IL_014f: ldc.r4 4
+  IL_0154: add
+  IL_0155: ldarg.0
+  IL_0156: call System.Single Monocle.Entity::get_Y()
+  IL_015b: ldc.r4 4
+  IL_0160: sub
+  IL_0161: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0166: callvirt System.Boolean FrostHelper.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_016b: brtrue.s IL_0174
+  IL_016d: ldc.i4.1
+  IL_016e: stloc.s V_4
+  IL_0170: ldloc.2
+  IL_0171: ldc.i4.1
+  IL_0172: add
+  IL_0173: stloc.2
+  IL_0174: ldarg.0
+  IL_0175: ldarg.0
+  IL_0176: call System.Single Monocle.Entity::get_X()
+  IL_017b: ldc.r4 4
+  IL_0180: add
+  IL_0181: ldarg.0
+  IL_0182: call System.Single Monocle.Entity::get_Y()
+  IL_0187: ldc.r4 4
+  IL_018c: add
+  IL_018d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0192: callvirt System.Boolean FrostHelper.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0197: brtrue.s IL_01a0
+  IL_0199: ldc.i4.1
+  IL_019a: stloc.s V_5
+  IL_019c: ldloc.2
+  IL_019d: ldc.i4.1
+  IL_019e: add
+  IL_019f: stloc.2
+  IL_01a0: ldarg.0
+  IL_01a1: ldarg.0
+  IL_01a2: call System.Single Monocle.Entity::get_X()
+  IL_01a7: ldc.r4 4
+  IL_01ac: sub
+  IL_01ad: ldarg.0
+  IL_01ae: call System.Single Monocle.Entity::get_Y()
+  IL_01b3: ldc.r4 4
+  IL_01b8: add
+  IL_01b9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01be: callvirt System.Boolean FrostHelper.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_01c3: brtrue.s IL_01cc
+  IL_01c5: ldc.i4.1
+  IL_01c6: stloc.s V_6
+  IL_01c8: ldloc.2
+  IL_01c9: ldc.i4.1
+  IL_01ca: add
+  IL_01cb: stloc.2
+  IL_01cc: ldloc.2
+  IL_01cd: ldc.i4.4
+  IL_01ce: bne.un.s IL_01fc
+  IL_01d0: ldloc.1
+  IL_01d1: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_01d6: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_01db: stloc.s V_10
+  IL_01dd: ldloc.s V_10
+  IL_01df: ldarg.0
+  IL_01e0: ldfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::Tint
+  IL_01e5: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_01ea: ldarg.0
+  IL_01eb: ldloc.s V_10
+  IL_01ed: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01f2: ldloc.s V_10
+  IL_01f4: ldc.i4.0
+  IL_01f5: stfld System.Boolean Monocle.Component::Active
+  IL_01fa: br.s IL_020a
+  IL_01fc: ldarg.0
+  IL_01fd: ldloc.1
+  IL_01fe: ldloc.3
+  IL_01ff: ldloc.s V_4
+  IL_0201: ldloc.s V_5
+  IL_0203: ldloc.s V_6
+  IL_0205: callvirt System.Void FrostHelper.CustomSpinner::AddCornerImages(Monocle.MTexture,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  IL_020a: ldarg.0
+  IL_020b: ldfld System.Boolean FrostHelper.CustomSpinner::HasDeco
+  IL_0210: brfalse.s IL_0280
+  IL_0212: ldarg.0
+  IL_0213: ldfld Monocle.Entity FrostHelper.CustomSpinner::deco
+  IL_0218: brtrue.s IL_022b
+  IL_021a: ldarg.0
+  IL_021b: ldarg.0
+  IL_021c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0221: newobj System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0226: stfld Monocle.Entity FrostHelper.CustomSpinner::deco
+  IL_022b: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0230: ldarg.0
+  IL_0231: ldfld System.String FrostHelper.CustomSpinner::FGDirectory
+  IL_0236: ldstr "Deco"
+  IL_023b: call System.String System.String::Concat(System.String,System.String)
+  IL_0240: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0245: ldloc.0
+  IL_0246: ldloc.1
+  IL_0247: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::IndexOf(T)
+  IL_024c: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_0251: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0256: dup
+  IL_0257: ldarg.0
+  IL_0258: ldfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::Tint
+  IL_025d: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0262: dup
+  IL_0263: ldc.i4.0
+  IL_0264: stfld System.Boolean Monocle.Component::Active
+  IL_0269: stloc.s V_11
+  IL_026b: ldloc.s V_11
+  IL_026d: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0272: pop
+  IL_0273: ldarg.0
+  IL_0274: ldfld Monocle.Entity FrostHelper.CustomSpinner::deco
+  IL_0279: ldloc.s V_11
+  IL_027b: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0280: ldarg.0
+  IL_0281: ldc.i4.1
+  IL_0282: stfld System.Boolean FrostHelper.CustomSpinner::expanded
+  IL_0287: call System.Void Monocle.Calc::PopRandom()
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_028c: ret

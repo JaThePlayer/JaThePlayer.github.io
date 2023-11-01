@@ -1,0 +1,218 @@
+IL Diff: System.Void Celeste.Mod.EmoteMod.EmoteWheelModule::Player_Update(On.Celeste.Player+orig_Update,Celeste.Player)
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: callvirt System.Void On.Celeste.Player/orig_Update::Invoke(Celeste.Player)
+  IL_0008: nop
+  IL_0009: ldarg.1
+  IL_000a: stloc.0
+  IL_000b: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0010: isinst Celeste.Level
+  IL_0015: stloc.1
+  IL_0016: ldloc.1
+  IL_0017: ldnull
+  IL_0018: cgt.un
+  IL_001a: ldc.i4.0
+  IL_001b: ceq
+  IL_001d: stloc.2
+  IL_001e: ldloc.2
+  IL_001f: brfalse.s IL_0026
+  IL_0021: br IL_022f
+  IL_0026: ldloc.0
+  IL_0027: brfalse.s IL_0037
+  IL_0029: ldloc.0
+  IL_002a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_002f: ldloc.1
+  IL_0030: ceq
+  IL_0032: ldc.i4.0
+  IL_0033: ceq
+  IL_0035: br.s IL_0038
+  IL_0037: ldc.i4.1
+  IL_0038: stloc.3
+  IL_0039: ldloc.3
+  IL_003a: brfalse.s IL_0048
+  IL_003c: ldloc.1
+  IL_003d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0042: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0047: stloc.0
+  IL_0048: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_004d: brfalse.s IL_0061
+  IL_004f: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_0054: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0059: ldloc.1
+  IL_005a: ceq
+  IL_005c: ldc.i4.0
+  IL_005d: ceq
+  IL_005f: br.s IL_0062
+  IL_0061: ldc.i4.0
+  IL_0062: stloc.s V_4
+  IL_0064: ldloc.s V_4
+  IL_0066: brfalse.s IL_007b
+  IL_0068: nop
+  IL_0069: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_006e: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0073: nop
+  IL_0074: ldnull
+  IL_0075: stsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_007a: nop
+  IL_007b: ldloc.0
+  IL_007c: ldnull
+  IL_007d: ceq
+  IL_007f: stloc.s V_5
+  IL_0081: ldloc.s V_5
+  IL_0083: brfalse.s IL_008a
+  IL_0085: br IL_022f
+  IL_008a: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_008f: ldnull
+  IL_0090: ceq
+  IL_0092: stloc.s V_6
+  IL_0094: ldloc.s V_6
+  IL_0096: brfalse.s IL_00ab
+  IL_0098: ldloc.1
+  IL_0099: ldloc.0
+  IL_009a: newobj System.Void Celeste.Mod.EmoteMod.EmoteWheel::.ctor(Monocle.Entity)
+  IL_009f: dup
+  IL_00a0: stsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_00a5: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00aa: nop
+  IL_00ab: ldsfld Monocle.VirtualJoystick Celeste.Mod.EmoteMod.EmoteWheelModule::JoystickEmoteWheel
+  IL_00b0: ldnull
+  IL_00b1: ceq
+  IL_00b3: stloc.s V_7
+  IL_00b5: ldloc.s V_7
+  IL_00b7: brfalse.s IL_00be
+  IL_00b9: br IL_022f
+  IL_00be: ldloc.1
+  IL_00bf: ldfld System.Boolean Monocle.Scene::Paused
+  IL_00c4: brtrue.s IL_00dc
+  IL_00c6: ldloc.0
+  IL_00c7: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_00cc: brtrue.s IL_00dc
+  IL_00ce: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_00d3: ldc.r4 0.05
+  IL_00d8: cgt
+  IL_00da: br.s IL_00dd
+  IL_00dc: ldc.i4.0
+  IL_00dd: stloc.s V_8
+  IL_00df: ldloc.s V_8
+  IL_00e1: brfalse IL_020b
+  IL_00e6: nop
+  IL_00e7: call Celeste.Mod.EmoteMod.EmoteSettings Celeste.Mod.EmoteMod.EmoteModMain::get_Settings()
+  IL_00ec: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.EmoteMod.EmoteSettings::get_EmoteWheelBinding()
++ IL_0000: dup @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_00f1: callvirt System.Collections.Generic.List`1<Microsoft.Xna.Framework.Input.Buttons> Celeste.Mod.ButtonBinding::get_Buttons()
+  IL_00f6: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Input.Buttons>::get_Count()
++ IL_0000: call System.Int32 TAS.EverestInterop.DesyncFixer::IsEmoteWheelBindingPressed(Celeste.Mod.ButtonBinding,System.Int32) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_00fb: brfalse.s IL_0120
+  IL_00fd: call Monocle.MInput/GamePadData[] Monocle.MInput::get_GamePads()
+  IL_0102: ldc.i4.0
+  IL_0103: ldelem.ref
+  IL_0104: call Celeste.Mod.EmoteMod.EmoteSettings Celeste.Mod.EmoteMod.EmoteModMain::get_Settings()
+  IL_0109: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.EmoteMod.EmoteSettings::get_EmoteWheelBinding()
+  IL_010e: callvirt System.Collections.Generic.List`1<Microsoft.Xna.Framework.Input.Buttons> Celeste.Mod.ButtonBinding::get_Buttons()
+  IL_0113: ldc.i4.0
+  IL_0114: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Input.Buttons>::get_Item(System.Int32)
+  IL_0119: callvirt System.Boolean Monocle.MInput/GamePadData::Pressed(Microsoft.Xna.Framework.Input.Buttons)
+  IL_011e: br.s IL_0121
+  IL_0120: ldc.i4.0
+  IL_0121: stloc.s V_11
+  IL_0123: ldloc.s V_11
+  IL_0125: brfalse.s IL_0136
+  IL_0127: nop
+  IL_0128: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_012d: ldc.i4.0
+  IL_012e: ceq
+  IL_0130: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_0135: nop
+  IL_0136: ldsfld Monocle.VirtualJoystick Celeste.Mod.EmoteMod.EmoteWheelModule::JoystickEmoteWheel
+  IL_013b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_0140: stloc.s V_12
+  IL_0142: ldloca.s V_12
+  IL_0144: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_0149: ldc.r4 0.36
+  IL_014e: clt.un
+  IL_0150: ldc.i4.0
+  IL_0151: ceq
+  IL_0153: stloc.s V_9
+  IL_0155: ldloc.s V_9
+  IL_0157: brfalse.s IL_0167
+  IL_0159: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_015e: brtrue.s IL_0167
+  IL_0160: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_0165: br.s IL_0168
+  IL_0167: ldc.i4.0
+  IL_0168: stloc.s V_13
+  IL_016a: ldloc.s V_13
+  IL_016c: brfalse.s IL_0174
+  IL_016e: ldc.i4.1
+  IL_016f: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_0174: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_0179: call Celeste.Mod.EmoteMod.EmoteSettings Celeste.Mod.EmoteMod.EmoteModMain::get_Settings()
+  IL_017e: callvirt System.Boolean Celeste.Mod.EmoteMod.EmoteSettings::get_EmoteWheel()
+  IL_0183: ldloc.s V_9
+  IL_0185: and
+  IL_0186: brtrue.s IL_01a0
+  IL_0188: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_018d: brfalse.s IL_0196
+  IL_018f: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_0194: brfalse.s IL_01a0
+  IL_0196: ldsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_019b: ldloc.s V_9
+  IL_019d: and
+  IL_019e: br.s IL_01a1
+  IL_01a0: ldc.i4.1
+  IL_01a1: stfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheel::Shown
+  IL_01a6: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_01ab: ldfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheel::Shown
+  IL_01b0: ldc.i4.0
+  IL_01b1: ceq
+  IL_01b3: stloc.s V_14
+  IL_01b5: ldloc.s V_14
+  IL_01b7: brfalse.s IL_01c7
+  IL_01b9: nop
+  IL_01ba: ldc.i4.0
+  IL_01bb: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_01c0: ldc.i4.0
+  IL_01c1: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_01c6: nop
+  IL_01c7: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_01cc: ldfld System.Int32 Celeste.Mod.EmoteMod.EmoteWheel::Selected
+  IL_01d1: stloc.s V_10
+  IL_01d3: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_01d8: ldfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheel::Shown
+  IL_01dd: brfalse.s IL_01f0
+  IL_01df: ldloc.s V_10
+  IL_01e1: ldc.i4.m1
+  IL_01e2: beq.s IL_01f0
+  IL_01e4: ldsfld Monocle.VirtualButton Celeste.Mod.EmoteMod.EmoteWheelModule::ButtonEmoteSend
+  IL_01e9: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_01ee: br.s IL_01f1
+  IL_01f0: ldc.i4.0
+  IL_01f1: stloc.s V_15
+  IL_01f3: ldloc.s V_15
+  IL_01f5: brfalse.s IL_0208
+  IL_01f7: nop
+  IL_01f8: ldloc.s V_10
+  IL_01fa: ldloc.0
+  IL_01fb: call System.Void Celeste.Mod.EmoteMod.EmoteWheelModule::Send(System.Int32,Celeste.Player)
+  IL_0200: nop
+  IL_0201: ldc.i4.1
+  IL_0202: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_0207: nop
+  IL_0208: nop
+  IL_0209: br.s IL_022f
+  IL_020b: nop
+  IL_020c: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_0211: ldc.i4.0
+  IL_0212: stfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheel::Shown
+  IL_0217: ldsfld Celeste.Mod.EmoteMod.EmoteWheel Celeste.Mod.EmoteMod.EmoteWheelModule::Wheel
+  IL_021c: ldc.i4.m1
+  IL_021d: stfld System.Int32 Celeste.Mod.EmoteMod.EmoteWheel::Selected
+  IL_0222: ldc.i4.0
+  IL_0223: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::activatedWithButton
+  IL_0228: ldc.i4.0
+  IL_0229: stsfld System.Boolean Celeste.Mod.EmoteMod.EmoteWheelModule::joystickMoved
+  IL_022e: nop
+  IL_022f: nop
+  IL_0230: br.s IL_0232
+  IL_0232: ret

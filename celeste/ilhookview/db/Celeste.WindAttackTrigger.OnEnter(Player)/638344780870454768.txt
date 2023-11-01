@@ -1,0 +1,19 @@
+IL Diff: System.Void Celeste.WindAttackTrigger::OnEnter(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnEnter(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000d: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0012: callvirt T Monocle.EntityList::FindFirst<Celeste.Snowball>()
+  IL_0017: brtrue.s IL_0029
+  IL_0019: ldarg.0
+  IL_001a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001f: newobj System.Void Celeste.Snowball::.ctor()
++ IL_0000: dup @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: ldarg.0 @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
++ IL_0000: call System.Void TAS.EverestInterop.EntityDataHelper::SetCustomEntityData(Monocle.Entity,Monocle.Entity) @ TAS.EverestInterop.EntityDataHelper::ModSpawnEntity
+  IL_0024: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0029: ldarg.0
+  IL_002a: call System.Void Monocle.Entity::RemoveSelf()
+  IL_002f: ret

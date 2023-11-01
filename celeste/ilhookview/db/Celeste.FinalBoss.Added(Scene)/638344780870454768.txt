@@ -1,0 +1,170 @@
+IL Diff: System.Void Celeste.FinalBoss::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: stfld Celeste.Level Celeste.FinalBoss::level
+  IL_0013: ldarg.0
+  IL_0014: ldfld System.Int32 Celeste.FinalBoss::patternIndex
+  IL_0019: brtrue IL_00a8
+  IL_001e: ldarg.0
+  IL_001f: ldc.i4.2
+  IL_0020: newobj System.Void Celeste.PlayerSprite::.ctor(Celeste.PlayerSpriteMode)
+  IL_0025: stfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_002a: ldarg.0
+  IL_002b: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0030: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0035: ldc.r4 -1
+  IL_003a: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_003f: ldarg.0
+  IL_0040: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0045: ldstr "laugh"
+  IL_004a: ldc.i4.0
+  IL_004b: ldc.i4.0
+  IL_004c: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0051: ldarg.0
+  IL_0052: ldarg.0
+  IL_0053: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0058: newobj System.Void Celeste.PlayerHair::.ctor(Celeste.PlayerSprite)
+  IL_005d: stfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0068: ldsfld Microsoft.Xna.Framework.Color Celeste.BadelineOldsite::HairColor
+  IL_006d: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_0072: ldarg.0
+  IL_0073: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0078: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_007d: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Border
+  IL_0082: ldarg.0
+  IL_0083: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0088: ldc.i4.m1
+  IL_0089: stfld Celeste.Facings Celeste.PlayerHair::Facing
+  IL_008e: ldarg.0
+  IL_008f: ldarg.0
+  IL_0090: ldfld Celeste.PlayerHair Celeste.FinalBoss::normalHair
+  IL_0095: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_009a: ldarg.0
+  IL_009b: ldarg.0
+  IL_009c: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_00a1: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00a6: br.s IL_00ae
+  IL_00a8: ldarg.0
+  IL_00a9: callvirt System.Void Celeste.FinalBoss::CreateBossSprite()
+  IL_00ae: ldarg.0
+  IL_00af: ldarg.0
+  IL_00b0: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_00b5: ldfld Celeste.BackdropRenderer Celeste.Level::Background
+  IL_00ba: callvirt T Celeste.BackdropRenderer::Get<Celeste.FinalBossStarfield>()
+  IL_00bf: stfld Celeste.FinalBossStarfield Celeste.FinalBoss::bossBg
+  IL_00c4: ldarg.0
+  IL_00c5: ldfld System.Int32 Celeste.FinalBoss::patternIndex
+  IL_00ca: brtrue IL_0199
+  IL_00cf: ldarg.0
+  IL_00d0: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_00d5: ldfld Celeste.Session Celeste.Level::Session
+  IL_00da: ldstr "boss_intro"
+  IL_00df: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_00e4: brtrue IL_0199
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_00ef: ldfld Celeste.Session Celeste.Level::Session
+  IL_00f4: ldfld System.String Celeste.Session::Level
+  IL_00f9: ldstr "boss-00"
+  IL_00fe: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0103: brfalse IL_0199
+  IL_0108: ldarg.0
+  IL_0109: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_010e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0113: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0118: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_011d: ldstr "event:/music/lvl2/phone_loop"
+  IL_0122: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_0127: ldarg.0
+  IL_0128: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_012d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0132: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0137: ldc.i4.0
+  IL_0138: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_013d: ldarg.0
+  IL_013e: ldfld Celeste.FinalBossStarfield Celeste.FinalBoss::bossBg
+  IL_0143: brfalse.s IL_0155
+  IL_0145: ldarg.0
+  IL_0146: ldfld Celeste.FinalBossStarfield Celeste.FinalBoss::bossBg
+  IL_014b: ldc.r4 0
+  IL_0150: stfld System.Single Celeste.FinalBossStarfield::Alpha
+  IL_0155: ldarg.0
+  IL_0156: ldc.i4.1
+  IL_0157: stfld System.Boolean Celeste.FinalBoss::Sitting
+  IL_015c: ldarg.0
+  IL_015d: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0162: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0167: dup
+  IL_0168: ldind.r4
+  IL_0169: ldc.r4 16
+  IL_016e: add
+  IL_016f: stind.r4
+  IL_0170: ldarg.0
+  IL_0171: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0176: ldstr "pretendDead"
+  IL_017b: ldc.i4.0
+  IL_017c: ldc.i4.0
+  IL_017d: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0182: ldarg.0
+  IL_0183: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_0188: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_018d: ldc.r4 1
+  IL_0192: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0197: br.s IL_0207
+  IL_0199: ldarg.0
+  IL_019a: ldfld System.Int32 Celeste.FinalBoss::patternIndex
+  IL_019f: brtrue.s IL_01e6
+  IL_01a1: ldarg.0
+  IL_01a2: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_01a7: ldfld Celeste.Session Celeste.Level::Session
+  IL_01ac: ldstr "boss_mid"
+  IL_01b1: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_01b6: brtrue.s IL_01e6
+  IL_01b8: ldarg.0
+  IL_01b9: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_01be: ldfld Celeste.Session Celeste.Level::Session
+  IL_01c3: ldfld System.String Celeste.Session::Level
+  IL_01c8: ldstr "boss-14"
+  IL_01cd: callvirt System.Boolean System.String::Equals(System.String)
+  IL_01d2: brfalse.s IL_01e6
+  IL_01d4: ldarg.0
+  IL_01d5: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_01da: newobj System.Void Celeste.CS06_BossMid::.ctor()
+  IL_01df: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_01e4: br.s IL_0207
+  IL_01e6: ldarg.0
+  IL_01e7: ldfld System.Boolean Celeste.FinalBoss::startHit
+  IL_01ec: brfalse.s IL_0207
+  IL_01ee: ldarg.0
+  IL_01ef: ldc.r4 0.5
+  IL_01f4: ldarg.0
+  IL_01f5: ldftn System.Void Celeste.FinalBoss::<Added>b__32_0()
+  IL_01fb: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0200: ldc.i4.1
+  IL_0201: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_0206: pop
+  IL_0207: ldarg.0
+  IL_0208: ldfld Celeste.VertexLight Celeste.FinalBoss::light
+  IL_020d: ldarg.0
+  IL_020e: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0213: brtrue.s IL_021d
+  IL_0215: ldarg.0
+  IL_0216: ldfld Celeste.PlayerSprite Celeste.FinalBoss::NormalSprite
+  IL_021b: br.s IL_0223
+  IL_021d: ldarg.0
+  IL_021e: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0223: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0228: ldc.r4 0
+  IL_022d: ldc.r4 -10
+  IL_0232: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0237: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_023c: callvirt System.Void Celeste.VertexLight::set_Position(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::FixFinalBossDesync(Celeste.FinalBoss) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0241: ret

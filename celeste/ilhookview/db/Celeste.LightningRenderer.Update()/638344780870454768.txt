@@ -1,0 +1,57 @@
+IL Diff: System.Void Celeste.LightningRenderer::Update()
++ IL_0000: call System.Boolean TAS.EverestInterop.FastForwardBoost::IsSkipLightningRendererUpdate() @ TAS.EverestInterop.FastForwardBoost::LightningRendererOnUpdate
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::LightningRendererOnUpdate
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::LightningRendererOnUpdate
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.LightningRenderer::dirty
+  IL_0006: brfalse.s IL_000e
+  IL_0008: ldarg.0
+  IL_0009: callvirt System.Void Celeste.LightningRenderer::RebuildEdges()
+  IL_000e: ldarg.0
+  IL_000f: ldc.i4.0
+  IL_0010: callvirt System.Void Celeste.LightningRenderer::ToggleEdges(System.Boolean)
+  IL_0015: ldarg.0
+  IL_0016: ldfld System.Collections.Generic.List`1<Celeste.Lightning> Celeste.LightningRenderer::list
+  IL_001b: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.Lightning>::get_Count()
+  IL_0020: ldc.i4.0
+  IL_0021: ble IL_00ab
+  IL_0026: ldarg.0
+  IL_0027: ldfld System.Collections.Generic.List`1<Celeste.LightningRenderer/Bolt> Celeste.LightningRenderer::bolts
+  IL_002c: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.LightningRenderer/Bolt>::GetEnumerator()
+  IL_0031: stloc.0
+  IL_0032: br.s IL_0046
+  IL_0034: ldloca.s V_0
+  IL_0036: call T System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>::get_Current()
+  IL_003b: ldarg.0
+  IL_003c: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0041: callvirt System.Void Celeste.LightningRenderer/Bolt::Update(Monocle.Scene)
+  IL_0046: ldloca.s V_0
+  IL_0048: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>::MoveNext()
+  IL_004d: brtrue.s IL_0034
+  IL_004f: leave.s IL_005f
+  IL_0051: ldloca.s V_0
+  IL_0053: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Bolt>
+  IL_0059: callvirt System.Void System.IDisposable::Dispose()
+  IL_005e: endfinally
+  IL_005f: ldarg.0
+  IL_0060: ldfld System.Boolean Celeste.LightningRenderer::UpdateSeeds
+  IL_0065: brfalse.s IL_00ab
+  IL_0067: ldarg.0
+  IL_0068: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_006d: ldc.r4 0.1
+  IL_0072: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0077: brfalse.s IL_0089
+  IL_0079: ldarg.0
+  IL_007a: ldsfld System.Random Monocle.Calc::Random
+  IL_007f: callvirt System.Int32 System.Random::Next()
+  IL_0084: stfld System.UInt32 Celeste.LightningRenderer::edgeSeed
+  IL_0089: ldarg.0
+  IL_008a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_008f: ldc.r4 0.7
+  IL_0094: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0099: brfalse.s IL_00ab
+  IL_009b: ldarg.0
+  IL_009c: ldsfld System.Random Monocle.Calc::Random
+  IL_00a1: callvirt System.Int32 System.Random::Next()
+  IL_00a6: stfld System.UInt32 Celeste.LightningRenderer::leapSeed
+  IL_00ab: ret

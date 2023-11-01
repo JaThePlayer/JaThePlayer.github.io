@@ -1,0 +1,1153 @@
+IL Diff: System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_001b,IL_001d,IL_0022
+  IL_0019: br.s IL_0027
+  IL_001b: br.s IL_0029
+  IL_001d: br IL_0c1e
+  IL_0022: br IL_0c5b
+  IL_0027: ldc.i4.0
+  IL_0028: ret
+  IL_0029: ldarg.0
+  IL_002a: ldc.i4.m1
+  IL_002b: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0030: ldarg.0
+  IL_0031: newobj System.Void Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::.ctor()
+  IL_0036: stfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_003b: nop
+  IL_003c: ldarg.0
+  IL_003d: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0042: ldc.i4.1
+  IL_0043: stfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::glitcherAdded
+  IL_0048: ldarg.0
+  IL_0049: ldarg.0
+  IL_004a: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_004f: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0054: isinst Celeste.Level
+  IL_0059: stfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_005e: ldarg.0
+  IL_005f: ldarg.0
+  IL_0060: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0065: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_006a: ldarg.0
+  IL_006b: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_0070: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_LevelOffset()
+  IL_0075: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_007a: ldc.r4 8
+  IL_007f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0084: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<pos>5__3
+  IL_0089: ldarg.0
+  IL_008a: ldarg.0
+  IL_008b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<pos>5__3
+  IL_0090: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0095: ldarg.0
+  IL_0096: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_009b: callvirt Microsoft.Xna.Framework.Point Celeste.Level::get_LevelSolidOffset()
+  IL_00a0: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_00a5: conv.r4
+  IL_00a6: add
+  IL_00a7: conv.r8
+  IL_00a8: call System.Double System.Math::Round(System.Double)
+  IL_00ad: conv.i4
+  IL_00ae: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_00b3: ldarg.0
+  IL_00b4: ldarg.0
+  IL_00b5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<pos>5__3
+  IL_00ba: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_00c5: callvirt Microsoft.Xna.Framework.Point Celeste.Level::get_LevelSolidOffset()
+  IL_00ca: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_00cf: conv.r4
+  IL_00d0: add
+  IL_00d1: conv.r8
+  IL_00d2: call System.Double System.Math::Round(System.Double)
+  IL_00d7: conv.i4
+  IL_00d8: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_00dd: ldarg.0
+  IL_00de: ldarg.0
+  IL_00df: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_00e4: ldfld System.Single Celeste.Mod.PandorasBox.TileGlitcher::width
+  IL_00e9: ldc.r4 8
+  IL_00ee: div
+  IL_00ef: conv.r8
+  IL_00f0: call System.Double System.Math::Ceiling(System.Double)
+  IL_00f5: conv.i4
+  IL_00f6: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_00fb: ldarg.0
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0102: ldfld System.Single Celeste.Mod.PandorasBox.TileGlitcher::height
+  IL_0107: ldc.r4 8
+  IL_010c: div
+  IL_010d: conv.r8
+  IL_010e: call System.Double System.Math::Ceiling(System.Double)
+  IL_0113: conv.i4
+  IL_0114: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_0119: ldarg.0
+  IL_011a: ldarg.0
+  IL_011b: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0120: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::target
+  IL_0125: ldstr "FG"
+  IL_012a: callvirt System.Boolean System.String::Equals(System.String)
+  IL_012f: brtrue.s IL_0148
+  IL_0131: ldarg.0
+  IL_0132: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0137: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::target
+  IL_013c: ldstr "Both"
+  IL_0141: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0146: br.s IL_0149
+  IL_0148: ldc.i4.1
+  IL_0149: stfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<glitchFg>5__8
+  IL_014e: ldarg.0
+  IL_014f: ldarg.0
+  IL_0150: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0155: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::target
+  IL_015a: ldstr "BG"
+  IL_015f: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0164: brtrue.s IL_017d
+  IL_0166: ldarg.0
+  IL_0167: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_016c: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::target
+  IL_0171: ldstr "Both"
+  IL_0176: callvirt System.Boolean System.String::Equals(System.String)
+  IL_017b: br.s IL_017e
+  IL_017d: ldc.i4.1
+  IL_017e: stfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<glitchBg>5__9
+  IL_0183: call System.Void Celeste.Mod.PandorasBox.TileGlitcher::cacheValidTiles()
+  IL_0188: nop
+  IL_0189: ldarg.0
+  IL_018a: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_018f: ldsfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher::validFgTiles
+  IL_0194: newobj System.Void System.Collections.Generic.List`1<System.Char>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
+  IL_0199: stfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_019e: ldarg.0
+  IL_019f: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_01a4: ldsfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher::validBgTiles
+  IL_01a9: newobj System.Void System.Collections.Generic.List`1<System.Char>::.ctor(System.Collections.Generic.IEnumerable`1<T>)
+  IL_01ae: stfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_01b3: ldarg.0
+  IL_01b4: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_01b9: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::allowAir
+  IL_01be: stloc.1
+  IL_01bf: ldloc.1
+  IL_01c0: brfalse.s IL_01ea
+  IL_01c2: nop
+  IL_01c3: ldarg.0
+  IL_01c4: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_01c9: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_01ce: ldc.i4.s 48
+  IL_01d0: callvirt System.Void System.Collections.Generic.List`1<System.Char>::Add(T)
+  IL_01d5: nop
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_01dc: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_01e1: ldc.i4.s 48
+  IL_01e3: callvirt System.Void System.Collections.Generic.List`1<System.Char>::Add(T)
+  IL_01e8: nop
+  IL_01e9: nop
+  IL_01ea: ldarg.0
+  IL_01eb: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_01f0: ldarg.0
+  IL_01f1: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_01f6: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::customFgTiles
+  IL_01fb: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0200: brtrue.s IL_022a
+  IL_0202: ldarg.0
+  IL_0203: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0208: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::customFgTiles
+  IL_020d: ldarg.0
+  IL_020e: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_0213: ldftn System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::<tileGlitcher>b__0(System.Char)
+  IL_0219: newobj System.Void System.Func`2<System.Char,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_021e: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Char>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_0223: call System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.Char>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_0228: br.s IL_0235
+  IL_022a: ldarg.0
+  IL_022b: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_0230: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_0235: stfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_023a: ldarg.0
+  IL_023b: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_0240: ldarg.0
+  IL_0241: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0246: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::customBgTiles
+  IL_024b: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0250: brtrue.s IL_027a
+  IL_0252: ldarg.0
+  IL_0253: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0258: ldfld System.String Celeste.Mod.PandorasBox.TileGlitcher::customBgTiles
+  IL_025d: ldarg.0
+  IL_025e: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_0263: ldftn System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::<tileGlitcher>b__1(System.Char)
+  IL_0269: newobj System.Void System.Func`2<System.Char,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_026e: call System.Collections.Generic.IEnumerable`1<TSource> System.Linq.Enumerable::Where<System.Char>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_0273: call System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.Char>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_0278: br.s IL_0285
+  IL_027a: ldarg.0
+  IL_027b: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_0280: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_0285: stfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_028a: br IL_0c26
+  IL_028f: nop
+  IL_0290: ldarg.0
+  IL_0291: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<glitchFg>5__8
+  IL_0296: brfalse.s IL_02ad
+  IL_0298: ldarg.0
+  IL_0299: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_029e: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_02a3: callvirt System.Int32 System.Collections.Generic.List`1<System.Char>::get_Count()
+  IL_02a8: ldc.i4.0
+  IL_02a9: cgt
+  IL_02ab: br.s IL_02ae
+  IL_02ad: ldc.i4.0
+  IL_02ae: stloc.2
+  IL_02af: ldloc.2
+  IL_02b0: brfalse IL_078d
+  IL_02b5: nop
+  IL_02b6: ldarg.0
+  IL_02b7: ldarg.0
+  IL_02b8: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_02bd: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Level::SolidsData
+  IL_02c2: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgData>5__10
+  IL_02c7: ldarg.0
+  IL_02c8: ldarg.0
+  IL_02c9: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_02ce: ldfld Celeste.SolidTiles Celeste.Level::SolidTiles
+  IL_02d3: ldfld Monocle.TileGrid Celeste.SolidTiles::Tiles
+  IL_02d8: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_02dd: stfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_02e2: ldarg.0
+  IL_02e3: ldarg.0
+  IL_02e4: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_02e9: ldfld Celeste.SolidTiles Celeste.Level::SolidTiles
+  IL_02ee: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_02f3: castclass Monocle.Grid
+  IL_02f8: ldfld Monocle.VirtualMap`1<System.Boolean> Monocle.Grid::Data
+  IL_02fd: stfld Monocle.VirtualMap`1<System.Boolean> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<collision>5__12
+  IL_0302: ldarg.0
+  IL_0303: ldarg.0
+  IL_0304: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_0309: ldc.i4.2
+  IL_030a: add
+  IL_030b: ldarg.0
+  IL_030c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_0311: ldc.i4.2
+  IL_0312: add
+  IL_0313: ldc.i4.s 48
+  IL_0315: newobj System.Void Monocle.VirtualMap`1<System.Char>::.ctor(System.Int32,System.Int32,T)
+  IL_031a: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_031f: ldarg.0
+  IL_0320: ldarg.0
+  IL_0321: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0326: ldc.i4.1
+  IL_0327: sub
+  IL_0328: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_032d: br IL_04bf
+  IL_0332: nop
+  IL_0333: ldarg.0
+  IL_0334: ldarg.0
+  IL_0335: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_033a: ldc.i4.1
+  IL_033b: sub
+  IL_033c: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0341: br IL_048c
+  IL_0346: nop
+  IL_0347: ldarg.0
+  IL_0348: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_034d: ldc.i4.0
+  IL_034e: ble.s IL_03af
+  IL_0350: ldarg.0
+  IL_0351: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_0356: ldarg.0
+  IL_0357: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_035c: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Columns
+  IL_0361: bge.s IL_03af
+  IL_0363: ldarg.0
+  IL_0364: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0369: ldc.i4.0
+  IL_036a: ble.s IL_03af
+  IL_036c: ldarg.0
+  IL_036d: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0372: ldarg.0
+  IL_0373: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_0378: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Rows
+  IL_037d: bge.s IL_03af
+  IL_037f: ldarg.0
+  IL_0380: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0385: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::transformAir
+  IL_038a: brtrue.s IL_03ac
+  IL_038c: ldarg.0
+  IL_038d: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgData>5__10
+  IL_0392: ldarg.0
+  IL_0393: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_0398: ldarg.0
+  IL_0399: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_039e: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_03a3: ldc.i4.s 48
+  IL_03a5: ceq
+  IL_03a7: ldc.i4.0
+  IL_03a8: ceq
+  IL_03aa: br.s IL_03ad
+  IL_03ac: ldc.i4.1
+  IL_03ad: br.s IL_03b0
+  IL_03af: ldc.i4.0
+  IL_03b0: stloc.3
+  IL_03b1: ldloc.3
+  IL_03b2: brfalse IL_0479
+  IL_03b7: nop
+  IL_03b8: ldarg.0
+  IL_03b9: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_03be: ldarg.0
+  IL_03bf: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_03c4: ldarg.0
+  IL_03c5: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_03ca: sub
+  IL_03cb: ldc.i4.1
+  IL_03cc: add
+  IL_03cd: ldarg.0
+  IL_03ce: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_03d3: ldarg.0
+  IL_03d4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_03d9: sub
+  IL_03da: ldc.i4.1
+  IL_03db: add
+  IL_03dc: ldarg.0
+  IL_03dd: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgData>5__10
+  IL_03e2: ldarg.0
+  IL_03e3: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_03e8: ldarg.0
+  IL_03e9: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_03ee: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_03f3: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_03f8: nop
+  IL_03f9: ldsfld System.Random Monocle.Calc::Random
+  IL_03fe: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_0403: ldarg.0
+  IL_0404: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0409: ldfld System.Single Celeste.Mod.PandorasBox.TileGlitcher::threshold
+  IL_040e: clt
+  IL_0410: stloc.s V_4
+  IL_0412: ldloc.s V_4
+  IL_0414: brfalse.s IL_0478
+  IL_0416: nop
+  IL_0417: ldarg.0
+  IL_0418: ldarg.0
+  IL_0419: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_041e: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_0423: ldsfld System.Random Monocle.Calc::Random
+  IL_0428: ldarg.0
+  IL_0429: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_042e: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validFg
+  IL_0433: callvirt System.Int32 System.Collections.Generic.List`1<System.Char>::get_Count()
+  IL_0438: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_043d: callvirt T System.Collections.Generic.List`1<System.Char>::get_Item(System.Int32)
+  IL_0442: stfld System.Char Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<value>5__17
+  IL_0447: ldarg.0
+  IL_0448: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_044d: ldarg.0
+  IL_044e: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_0453: ldarg.0
+  IL_0454: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0459: sub
+  IL_045a: ldc.i4.1
+  IL_045b: add
+  IL_045c: ldarg.0
+  IL_045d: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0462: ldarg.0
+  IL_0463: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0468: sub
+  IL_0469: ldc.i4.1
+  IL_046a: add
+  IL_046b: ldarg.0
+  IL_046c: ldfld System.Char Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<value>5__17
+  IL_0471: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_0476: nop
+  IL_0477: nop
+  IL_0478: nop
+  IL_0479: nop
+  IL_047a: ldarg.0
+  IL_047b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0480: stloc.s V_5
+  IL_0482: ldarg.0
+  IL_0483: ldloc.s V_5
+  IL_0485: ldc.i4.1
+  IL_0486: add
+  IL_0487: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_048c: ldarg.0
+  IL_048d: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__16
+  IL_0492: ldarg.0
+  IL_0493: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0498: ldarg.0
+  IL_0499: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_049e: add
+  IL_049f: ldc.i4.1
+  IL_04a0: add
+  IL_04a1: clt
+  IL_04a3: stloc.s V_6
+  IL_04a5: ldloc.s V_6
+  IL_04a7: brtrue IL_0346
+  IL_04ac: nop
+  IL_04ad: ldarg.0
+  IL_04ae: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_04b3: stloc.s V_5
+  IL_04b5: ldarg.0
+  IL_04b6: ldloc.s V_5
+  IL_04b8: ldc.i4.1
+  IL_04b9: add
+  IL_04ba: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_04bf: ldarg.0
+  IL_04c0: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__15
+  IL_04c5: ldarg.0
+  IL_04c6: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_04cb: ldarg.0
+  IL_04cc: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_04d1: add
+  IL_04d2: ldc.i4.1
+  IL_04d3: add
+  IL_04d4: clt
+  IL_04d6: stloc.s V_7
+  IL_04d8: ldloc.s V_7
+  IL_04da: brtrue IL_0332
+  IL_04df: ldarg.0
+  IL_04e0: ldsfld Celeste.Autotiler Celeste.GFX::FGAutotiler
+  IL_04e5: ldarg.0
+  IL_04e6: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_04eb: ldc.i4.1
+  IL_04ec: callvirt Celeste.Autotiler/Generated Celeste.Autotiler::GenerateMap(Monocle.VirtualMap`1<System.Char>,System.Boolean)
+  IL_04f1: stfld Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgTiles>5__14
+  IL_04f6: ldarg.0
+  IL_04f7: ldarg.0
+  IL_04f8: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_04fd: ldc.i4.1
+  IL_04fe: sub
+  IL_04ff: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0504: br IL_0744
+  IL_0509: nop
+  IL_050a: ldarg.0
+  IL_050b: ldarg.0
+  IL_050c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0511: ldc.i4.1
+  IL_0512: sub
+  IL_0513: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0518: br IL_0711
+  IL_051d: nop
+  IL_051e: ldarg.0
+  IL_051f: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0524: ldc.i4.0
+  IL_0525: ble.s IL_0558
+  IL_0527: ldarg.0
+  IL_0528: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_052d: ldarg.0
+  IL_052e: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_0533: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Columns
+  IL_0538: bge.s IL_0558
+  IL_053a: ldarg.0
+  IL_053b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0540: ldc.i4.0
+  IL_0541: ble.s IL_0558
+  IL_0543: ldarg.0
+  IL_0544: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0549: ldarg.0
+  IL_054a: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_054f: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Rows
+  IL_0554: clt
+  IL_0556: br.s IL_0559
+  IL_0558: ldc.i4.0
+  IL_0559: stloc.s V_8
+  IL_055b: ldloc.s V_8
+  IL_055d: brfalse IL_06fe
+  IL_0562: nop
+  IL_0563: ldarg.0
+  IL_0564: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0569: ldarg.0
+  IL_056a: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_056f: blt IL_05fd
+  IL_0574: ldarg.0
+  IL_0575: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_057a: ldarg.0
+  IL_057b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0580: ldarg.0
+  IL_0581: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_0586: add
+  IL_0587: bge.s IL_05fd
+  IL_0589: ldarg.0
+  IL_058a: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_058f: ldarg.0
+  IL_0590: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0595: blt.s IL_05fd
+  IL_0597: ldarg.0
+  IL_0598: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_059d: ldarg.0
+  IL_059e: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_05a3: ldarg.0
+  IL_05a4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_05a9: add
+  IL_05aa: bge.s IL_05fd
+  IL_05ac: ldarg.0
+  IL_05ad: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_05b2: ldarg.0
+  IL_05b3: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_05b8: ldarg.0
+  IL_05b9: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_05be: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_05c3: ldarg.0
+  IL_05c4: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgTiles>5__14
+  IL_05c9: ldfld Monocle.TileGrid Celeste.Autotiler/Generated::TileGrid
+  IL_05ce: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_05d3: ldarg.0
+  IL_05d4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_05d9: ldarg.0
+  IL_05da: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_05df: sub
+  IL_05e0: ldc.i4.1
+  IL_05e1: add
+  IL_05e2: ldarg.0
+  IL_05e3: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_05e8: ldarg.0
+  IL_05e9: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_05ee: sub
+  IL_05ef: ldc.i4.1
+  IL_05f0: add
+  IL_05f1: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_05f6: ceq
+  IL_05f8: ldc.i4.0
+  IL_05f9: ceq
+  IL_05fb: br.s IL_05fe
+  IL_05fd: ldc.i4.0
+  IL_05fe: stloc.s V_9
+  IL_0600: ldloc.s V_9
+  IL_0602: brfalse IL_06fd
+  IL_0607: nop
+  IL_0608: ldarg.0
+  IL_0609: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgData>5__10
+  IL_060e: ldarg.0
+  IL_060f: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0614: ldarg.0
+  IL_0615: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_061a: ldarg.0
+  IL_061b: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_0620: ldarg.0
+  IL_0621: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0626: ldarg.0
+  IL_0627: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_062c: sub
+  IL_062d: ldc.i4.1
+  IL_062e: add
+  IL_062f: ldarg.0
+  IL_0630: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0635: ldarg.0
+  IL_0636: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_063b: sub
+  IL_063c: ldc.i4.1
+  IL_063d: add
+  IL_063e: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_0643: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_0648: nop
+  IL_0649: ldarg.0
+  IL_064a: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_064f: ldarg.0
+  IL_0650: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0655: ldarg.0
+  IL_0656: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_065b: ldarg.0
+  IL_065c: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgTiles>5__14
+  IL_0661: ldfld Monocle.TileGrid Celeste.Autotiler/Generated::TileGrid
+  IL_0666: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_066b: ldarg.0
+  IL_066c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0671: ldarg.0
+  IL_0672: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0677: sub
+  IL_0678: ldc.i4.1
+  IL_0679: add
+  IL_067a: ldarg.0
+  IL_067b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0680: ldarg.0
+  IL_0681: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0686: sub
+  IL_0687: ldc.i4.1
+  IL_0688: add
+  IL_0689: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call Monocle.MTexture TAS.EverestInterop.SimplifiedGraphicsFeature::IgnoreNewTileTexture(Monocle.MTexture,Monocle.VirtualMap`1<Monocle.MTexture>,System.Int32,System.Int32) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_068e: callvirt System.Void Monocle.VirtualMap`1<Monocle.MTexture>::set_Item(System.Int32,System.Int32,T)
+  IL_0693: nop
+  IL_0694: ldarg.0
+  IL_0695: ldarg.0
+  IL_0696: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_069b: ldarg.0
+  IL_069c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_06a1: ldarg.0
+  IL_06a2: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_06a7: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_06ac: ldnull
+  IL_06ad: cgt.un
+  IL_06af: stfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newCollision>5__20
+  IL_06b4: ldarg.0
+  IL_06b5: ldfld Monocle.VirtualMap`1<System.Boolean> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<collision>5__12
+  IL_06ba: ldarg.0
+  IL_06bb: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_06c0: ldarg.0
+  IL_06c1: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_06c6: callvirt T Monocle.VirtualMap`1<System.Boolean>::get_Item(System.Int32,System.Int32)
+  IL_06cb: ldarg.0
+  IL_06cc: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newCollision>5__20
+  IL_06d1: ceq
+  IL_06d3: ldc.i4.0
+  IL_06d4: ceq
+  IL_06d6: stloc.s V_10
+  IL_06d8: ldloc.s V_10
+  IL_06da: brfalse.s IL_06fc
+  IL_06dc: nop
+  IL_06dd: ldarg.0
+  IL_06de: ldfld Monocle.VirtualMap`1<System.Boolean> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<collision>5__12
+  IL_06e3: ldarg.0
+  IL_06e4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_06e9: ldarg.0
+  IL_06ea: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_06ef: ldarg.0
+  IL_06f0: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newCollision>5__20
+  IL_06f5: callvirt System.Void Monocle.VirtualMap`1<System.Boolean>::set_Item(System.Int32,System.Int32,T)
+  IL_06fa: nop
+  IL_06fb: nop
+  IL_06fc: nop
+  IL_06fd: nop
+  IL_06fe: nop
+  IL_06ff: ldarg.0
+  IL_0700: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0705: stloc.s V_5
+  IL_0707: ldarg.0
+  IL_0708: ldloc.s V_5
+  IL_070a: ldc.i4.1
+  IL_070b: add
+  IL_070c: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0711: ldarg.0
+  IL_0712: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__19
+  IL_0717: ldarg.0
+  IL_0718: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_071d: ldarg.0
+  IL_071e: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_0723: add
+  IL_0724: ldc.i4.1
+  IL_0725: add
+  IL_0726: clt
+  IL_0728: stloc.s V_11
+  IL_072a: ldloc.s V_11
+  IL_072c: brtrue IL_051d
+  IL_0731: nop
+  IL_0732: ldarg.0
+  IL_0733: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0738: stloc.s V_5
+  IL_073a: ldarg.0
+  IL_073b: ldloc.s V_5
+  IL_073d: ldc.i4.1
+  IL_073e: add
+  IL_073f: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_0744: ldarg.0
+  IL_0745: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__18
+  IL_074a: ldarg.0
+  IL_074b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0750: ldarg.0
+  IL_0751: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_0756: add
+  IL_0757: ldc.i4.1
+  IL_0758: add
+  IL_0759: clt
+  IL_075b: stloc.s V_12
+  IL_075d: ldloc.s V_12
+  IL_075f: brtrue IL_0509
+  IL_0764: nop
+  IL_0765: ldarg.0
+  IL_0766: ldnull
+  IL_0767: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgData>5__10
+  IL_076c: ldarg.0
+  IL_076d: ldnull
+  IL_076e: stfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<fgTexes>5__11
+  IL_0773: ldarg.0
+  IL_0774: ldnull
+  IL_0775: stfld Monocle.VirtualMap`1<System.Boolean> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<collision>5__12
+  IL_077a: ldarg.0
+  IL_077b: ldnull
+  IL_077c: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgData>5__13
+  IL_0781: ldarg.0
+  IL_0782: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newFgTiles>5__14
+  IL_0787: initobj Celeste.Autotiler/Generated
+  IL_078d: ldarg.0
+  IL_078e: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<glitchBg>5__9
+  IL_0793: brfalse.s IL_07aa
+  IL_0795: ldarg.0
+  IL_0796: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_079b: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_07a0: callvirt System.Int32 System.Collections.Generic.List`1<System.Char>::get_Count()
+  IL_07a5: ldc.i4.0
+  IL_07a6: cgt
+  IL_07a8: br.s IL_07ab
+  IL_07aa: ldc.i4.0
+  IL_07ab: stloc.s V_13
+  IL_07ad: ldloc.s V_13
+  IL_07af: brfalse IL_0bff
+  IL_07b4: nop
+  IL_07b5: ldarg.0
+  IL_07b6: ldarg.0
+  IL_07b7: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_07bc: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Level::BgData
+  IL_07c1: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgData>5__21
+  IL_07c6: ldarg.0
+  IL_07c7: ldarg.0
+  IL_07c8: ldfld Celeste.Level Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<level>5__2
+  IL_07cd: ldfld Celeste.BackgroundTiles Celeste.Level::BgTiles
+  IL_07d2: ldfld Monocle.TileGrid Celeste.BackgroundTiles::Tiles
+  IL_07d7: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_07dc: stfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_07e1: ldarg.0
+  IL_07e2: ldarg.0
+  IL_07e3: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_07e8: ldc.i4.2
+  IL_07e9: add
+  IL_07ea: ldarg.0
+  IL_07eb: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_07f0: ldc.i4.2
+  IL_07f1: add
+  IL_07f2: ldc.i4.s 48
+  IL_07f4: newobj System.Void Monocle.VirtualMap`1<System.Char>::.ctor(System.Int32,System.Int32,T)
+  IL_07f9: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_07fe: ldarg.0
+  IL_07ff: ldarg.0
+  IL_0800: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0805: ldc.i4.1
+  IL_0806: sub
+  IL_0807: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_080c: br IL_09a0
+  IL_0811: nop
+  IL_0812: ldarg.0
+  IL_0813: ldarg.0
+  IL_0814: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0819: ldc.i4.1
+  IL_081a: sub
+  IL_081b: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0820: br IL_096d
+  IL_0825: nop
+  IL_0826: ldarg.0
+  IL_0827: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_082c: ldc.i4.0
+  IL_082d: ble.s IL_088e
+  IL_082f: ldarg.0
+  IL_0830: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_0835: ldarg.0
+  IL_0836: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_083b: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Columns
+  IL_0840: bge.s IL_088e
+  IL_0842: ldarg.0
+  IL_0843: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0848: ldc.i4.0
+  IL_0849: ble.s IL_088e
+  IL_084b: ldarg.0
+  IL_084c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0851: ldarg.0
+  IL_0852: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0857: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Rows
+  IL_085c: bge.s IL_088e
+  IL_085e: ldarg.0
+  IL_085f: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0864: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::transformAir
+  IL_0869: brtrue.s IL_088b
+  IL_086b: ldarg.0
+  IL_086c: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgData>5__21
+  IL_0871: ldarg.0
+  IL_0872: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_0877: ldarg.0
+  IL_0878: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_087d: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_0882: ldc.i4.s 48
+  IL_0884: ceq
+  IL_0886: ldc.i4.0
+  IL_0887: ceq
+  IL_0889: br.s IL_088c
+  IL_088b: ldc.i4.1
+  IL_088c: br.s IL_088f
+  IL_088e: ldc.i4.0
+  IL_088f: stloc.s V_14
+  IL_0891: ldloc.s V_14
+  IL_0893: brfalse IL_095a
+  IL_0898: nop
+  IL_0899: ldarg.0
+  IL_089a: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_089f: ldarg.0
+  IL_08a0: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_08a5: ldarg.0
+  IL_08a6: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_08ab: sub
+  IL_08ac: ldc.i4.1
+  IL_08ad: add
+  IL_08ae: ldarg.0
+  IL_08af: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_08b4: ldarg.0
+  IL_08b5: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_08ba: sub
+  IL_08bb: ldc.i4.1
+  IL_08bc: add
+  IL_08bd: ldarg.0
+  IL_08be: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgData>5__21
+  IL_08c3: ldarg.0
+  IL_08c4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_08c9: ldarg.0
+  IL_08ca: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_08cf: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_08d4: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_08d9: nop
+  IL_08da: ldsfld System.Random Monocle.Calc::Random
+  IL_08df: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_08e4: ldarg.0
+  IL_08e5: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_08ea: ldfld System.Single Celeste.Mod.PandorasBox.TileGlitcher::threshold
+  IL_08ef: clt
+  IL_08f1: stloc.s V_15
+  IL_08f3: ldloc.s V_15
+  IL_08f5: brfalse.s IL_0959
+  IL_08f7: nop
+  IL_08f8: ldarg.0
+  IL_08f9: ldarg.0
+  IL_08fa: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_08ff: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_0904: ldsfld System.Random Monocle.Calc::Random
+  IL_0909: ldarg.0
+  IL_090a: ldfld Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>8__1
+  IL_090f: ldfld System.Collections.Generic.List`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<>c__DisplayClass25_0::validBg
+  IL_0914: callvirt System.Int32 System.Collections.Generic.List`1<System.Char>::get_Count()
+  IL_0919: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_091e: callvirt T System.Collections.Generic.List`1<System.Char>::get_Item(System.Int32)
+  IL_0923: stfld System.Char Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<value>5__27
+  IL_0928: ldarg.0
+  IL_0929: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_092e: ldarg.0
+  IL_092f: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_0934: ldarg.0
+  IL_0935: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_093a: sub
+  IL_093b: ldc.i4.1
+  IL_093c: add
+  IL_093d: ldarg.0
+  IL_093e: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0943: ldarg.0
+  IL_0944: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0949: sub
+  IL_094a: ldc.i4.1
+  IL_094b: add
+  IL_094c: ldarg.0
+  IL_094d: ldfld System.Char Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<value>5__27
+  IL_0952: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_0957: nop
+  IL_0958: nop
+  IL_0959: nop
+  IL_095a: nop
+  IL_095b: ldarg.0
+  IL_095c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0961: stloc.s V_5
+  IL_0963: ldarg.0
+  IL_0964: ldloc.s V_5
+  IL_0966: ldc.i4.1
+  IL_0967: add
+  IL_0968: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_096d: ldarg.0
+  IL_096e: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__26
+  IL_0973: ldarg.0
+  IL_0974: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0979: ldarg.0
+  IL_097a: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_097f: add
+  IL_0980: ldc.i4.1
+  IL_0981: add
+  IL_0982: clt
+  IL_0984: stloc.s V_16
+  IL_0986: ldloc.s V_16
+  IL_0988: brtrue IL_0825
+  IL_098d: nop
+  IL_098e: ldarg.0
+  IL_098f: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_0994: stloc.s V_5
+  IL_0996: ldarg.0
+  IL_0997: ldloc.s V_5
+  IL_0999: ldc.i4.1
+  IL_099a: add
+  IL_099b: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_09a0: ldarg.0
+  IL_09a1: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__25
+  IL_09a6: ldarg.0
+  IL_09a7: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_09ac: ldarg.0
+  IL_09ad: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_09b2: add
+  IL_09b3: ldc.i4.1
+  IL_09b4: add
+  IL_09b5: clt
+  IL_09b7: stloc.s V_17
+  IL_09b9: ldloc.s V_17
+  IL_09bb: brtrue IL_0811
+  IL_09c0: ldarg.0
+  IL_09c1: ldsfld Celeste.Autotiler Celeste.GFX::BGAutotiler
+  IL_09c6: ldarg.0
+  IL_09c7: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_09cc: ldc.i4.1
+  IL_09cd: callvirt Celeste.Autotiler/Generated Celeste.Autotiler::GenerateMap(Monocle.VirtualMap`1<System.Char>,System.Boolean)
+  IL_09d2: stfld Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgTiles>5__24
+  IL_09d7: ldarg.0
+  IL_09d8: ldarg.0
+  IL_09d9: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_09de: ldc.i4.1
+  IL_09df: sub
+  IL_09e0: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_09e5: br IL_0bbd
+  IL_09ea: nop
+  IL_09eb: ldarg.0
+  IL_09ec: ldarg.0
+  IL_09ed: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_09f2: ldc.i4.1
+  IL_09f3: sub
+  IL_09f4: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_09f9: br IL_0b8a
+  IL_09fe: nop
+  IL_09ff: ldarg.0
+  IL_0a00: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0a05: ldc.i4.0
+  IL_0a06: ble.s IL_0a39
+  IL_0a08: ldarg.0
+  IL_0a09: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0a0e: ldarg.0
+  IL_0a0f: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0a14: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Columns
+  IL_0a19: bge.s IL_0a39
+  IL_0a1b: ldarg.0
+  IL_0a1c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0a21: ldc.i4.0
+  IL_0a22: ble.s IL_0a39
+  IL_0a24: ldarg.0
+  IL_0a25: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0a2a: ldarg.0
+  IL_0a2b: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0a30: ldfld System.Int32 Monocle.VirtualMap`1<Monocle.MTexture>::Rows
+  IL_0a35: clt
+  IL_0a37: br.s IL_0a3a
+  IL_0a39: ldc.i4.0
+  IL_0a3a: stloc.s V_18
+  IL_0a3c: ldloc.s V_18
+  IL_0a3e: brfalse IL_0b77
+  IL_0a43: nop
+  IL_0a44: ldarg.0
+  IL_0a45: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0a4a: ldarg.0
+  IL_0a4b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0a50: blt IL_0ade
+  IL_0a55: ldarg.0
+  IL_0a56: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0a5b: ldarg.0
+  IL_0a5c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0a61: ldarg.0
+  IL_0a62: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_0a67: add
+  IL_0a68: bge.s IL_0ade
+  IL_0a6a: ldarg.0
+  IL_0a6b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0a70: ldarg.0
+  IL_0a71: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0a76: blt.s IL_0ade
+  IL_0a78: ldarg.0
+  IL_0a79: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0a7e: ldarg.0
+  IL_0a7f: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0a84: ldarg.0
+  IL_0a85: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_0a8a: add
+  IL_0a8b: bge.s IL_0ade
+  IL_0a8d: ldarg.0
+  IL_0a8e: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0a93: ldarg.0
+  IL_0a94: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0a99: ldarg.0
+  IL_0a9a: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0a9f: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_0aa4: ldarg.0
+  IL_0aa5: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgTiles>5__24
+  IL_0aaa: ldfld Monocle.TileGrid Celeste.Autotiler/Generated::TileGrid
+  IL_0aaf: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_0ab4: ldarg.0
+  IL_0ab5: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0aba: ldarg.0
+  IL_0abb: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0ac0: sub
+  IL_0ac1: ldc.i4.1
+  IL_0ac2: add
+  IL_0ac3: ldarg.0
+  IL_0ac4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0ac9: ldarg.0
+  IL_0aca: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0acf: sub
+  IL_0ad0: ldc.i4.1
+  IL_0ad1: add
+  IL_0ad2: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_0ad7: ceq
+  IL_0ad9: ldc.i4.0
+  IL_0ada: ceq
+  IL_0adc: br.s IL_0adf
+  IL_0ade: ldc.i4.0
+  IL_0adf: stloc.s V_19
+  IL_0ae1: ldloc.s V_19
+  IL_0ae3: brfalse IL_0b76
+  IL_0ae8: nop
+  IL_0ae9: ldarg.0
+  IL_0aea: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgData>5__21
+  IL_0aef: ldarg.0
+  IL_0af0: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0af5: ldarg.0
+  IL_0af6: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0afb: ldarg.0
+  IL_0afc: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_0b01: ldarg.0
+  IL_0b02: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0b07: ldarg.0
+  IL_0b08: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0b0d: sub
+  IL_0b0e: ldc.i4.1
+  IL_0b0f: add
+  IL_0b10: ldarg.0
+  IL_0b11: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b16: ldarg.0
+  IL_0b17: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0b1c: sub
+  IL_0b1d: ldc.i4.1
+  IL_0b1e: add
+  IL_0b1f: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_0b24: callvirt System.Void Monocle.VirtualMap`1<System.Char>::set_Item(System.Int32,System.Int32,T)
+  IL_0b29: nop
+  IL_0b2a: ldarg.0
+  IL_0b2b: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0b30: ldarg.0
+  IL_0b31: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0b36: ldarg.0
+  IL_0b37: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b3c: ldarg.0
+  IL_0b3d: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgTiles>5__24
+  IL_0b42: ldfld Monocle.TileGrid Celeste.Autotiler/Generated::TileGrid
+  IL_0b47: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_0b4c: ldarg.0
+  IL_0b4d: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0b52: ldarg.0
+  IL_0b53: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0b58: sub
+  IL_0b59: ldc.i4.1
+  IL_0b5a: add
+  IL_0b5b: ldarg.0
+  IL_0b5c: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b61: ldarg.0
+  IL_0b62: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0b67: sub
+  IL_0b68: ldc.i4.1
+  IL_0b69: add
+  IL_0b6a: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_0b6f: callvirt System.Void Monocle.VirtualMap`1<Monocle.MTexture>::set_Item(System.Int32,System.Int32,T)
+  IL_0b74: nop
+  IL_0b75: nop
+  IL_0b76: nop
+  IL_0b77: nop
+  IL_0b78: ldarg.0
+  IL_0b79: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b7e: stloc.s V_5
+  IL_0b80: ldarg.0
+  IL_0b81: ldloc.s V_5
+  IL_0b83: ldc.i4.1
+  IL_0b84: add
+  IL_0b85: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b8a: ldarg.0
+  IL_0b8b: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<y>5__29
+  IL_0b90: ldarg.0
+  IL_0b91: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<oy>5__5
+  IL_0b96: ldarg.0
+  IL_0b97: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<th>5__7
+  IL_0b9c: add
+  IL_0b9d: ldc.i4.1
+  IL_0b9e: add
+  IL_0b9f: clt
+  IL_0ba1: stloc.s V_20
+  IL_0ba3: ldloc.s V_20
+  IL_0ba5: brtrue IL_09fe
+  IL_0baa: nop
+  IL_0bab: ldarg.0
+  IL_0bac: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0bb1: stloc.s V_5
+  IL_0bb3: ldarg.0
+  IL_0bb4: ldloc.s V_5
+  IL_0bb6: ldc.i4.1
+  IL_0bb7: add
+  IL_0bb8: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0bbd: ldarg.0
+  IL_0bbe: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<x>5__28
+  IL_0bc3: ldarg.0
+  IL_0bc4: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<ox>5__4
+  IL_0bc9: ldarg.0
+  IL_0bca: ldfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<tw>5__6
+  IL_0bcf: add
+  IL_0bd0: ldc.i4.1
+  IL_0bd1: add
+  IL_0bd2: clt
+  IL_0bd4: stloc.s V_21
+  IL_0bd6: ldloc.s V_21
+  IL_0bd8: brtrue IL_09ea
+  IL_0bdd: nop
+  IL_0bde: ldarg.0
+  IL_0bdf: ldnull
+  IL_0be0: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgData>5__21
+  IL_0be5: ldarg.0
+  IL_0be6: ldnull
+  IL_0be7: stfld Monocle.VirtualMap`1<Monocle.MTexture> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<bgTexes>5__22
+  IL_0bec: ldarg.0
+  IL_0bed: ldnull
+  IL_0bee: stfld Monocle.VirtualMap`1<System.Char> Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgData>5__23
+  IL_0bf3: ldarg.0
+  IL_0bf4: ldflda Celeste.Autotiler/Generated Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<newBgTiles>5__24
+  IL_0bf9: initobj Celeste.Autotiler/Generated
+  IL_0bff: ldarg.0
+  IL_0c00: ldarg.0
+  IL_0c01: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0c06: ldfld System.Single Celeste.Mod.PandorasBox.TileGlitcher::rate
+  IL_0c0b: box System.Single
+  IL_0c10: stfld System.Object Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>2__current
+  IL_0c15: ldarg.0
+  IL_0c16: ldc.i4.1
+  IL_0c17: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0c1c: ldc.i4.1
+  IL_0c1d: ret
+  IL_0c1e: ldarg.0
+  IL_0c1f: ldc.i4.m1
+  IL_0c20: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0c25: nop
+  IL_0c26: ldarg.0
+  IL_0c27: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0c2c: ldfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::active
+  IL_0c31: stloc.s V_22
+  IL_0c33: ldloc.s V_22
+  IL_0c35: brtrue IL_028f
+  IL_0c3a: ldarg.0
+  IL_0c3b: ldfld Celeste.Mod.PandorasBox.TileGlitcher Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>4__this
+  IL_0c40: ldc.i4.0
+  IL_0c41: stfld System.Boolean Celeste.Mod.PandorasBox.TileGlitcher::glitcherAdded
+  IL_0c46: ldarg.0
+  IL_0c47: ldc.i4.1
+  IL_0c48: box System.Boolean
+  IL_0c4d: stfld System.Object Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>2__current
+  IL_0c52: ldarg.0
+  IL_0c53: ldc.i4.2
+  IL_0c54: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0c59: ldc.i4.1
+  IL_0c5a: ret
+  IL_0c5b: ldarg.0
+  IL_0c5c: ldc.i4.m1
+  IL_0c5d: stfld System.Int32 Celeste.Mod.PandorasBox.TileGlitcher/<tileGlitcher>d__25::<>1__state
+  IL_0c62: ldc.i4.0
+  IL_0c63: ret

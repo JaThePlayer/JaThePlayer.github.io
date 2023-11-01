@@ -1,0 +1,15 @@
+IL Diff: System.Boolean Celeste.Player::SwimUnderwaterCheck()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0007: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_000c: ldc.r4 -9
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SwimUnderwaterCheck
++ IL_0000: ldc.i4 49337724 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SwimUnderwaterCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SwimUnderwaterCheck
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SwimUnderwaterCheck
+  IL_0011: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0016: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_001b: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Water>(Microsoft.Xna.Framework.Vector2)
+  IL_0020: ret

@@ -1,0 +1,156 @@
+IL Diff: Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::Init(Microsoft.Xna.Framework.Vector2,Celeste.Mod.CommunalHelper.Entities.DreamBlockDummy)
++ IL_0000: ldarg pos @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: ldc.i4.s 49
+  IL_0005: ldc.i4.1
+  IL_0006: call Celeste.Debris Celeste.Debris::orig_Init(Microsoft.Xna.Framework.Vector2,System.Char,System.Boolean)
+  IL_000b: pop
+  IL_000c: ldarg.0
+  IL_000d: ldarg.2
+  IL_000e: dup
+  IL_000f: brtrue.s IL_0018
+  IL_0011: pop
+  IL_0012: ldarg.0
+  IL_0013: newobj System.Void Celeste.Mod.CommunalHelper.Entities.DreamBlockDummy::.ctor(Monocle.Entity)
+  IL_0018: stfld Celeste.Mod.CommunalHelper.Entities.DreamBlockDummy Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::Block
+  IL_001d: ldarg.0
+  IL_001e: ldfld MonoMod.Utils.DynamicData Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::baseData
+  IL_0023: ldstr "image"
+  IL_0028: callvirt T MonoMod.Utils.DynamicData::Get<Monocle.Image>(System.String)
+  IL_002d: stloc.0
+  IL_002e: ldarg.0
+  IL_002f: ldloc.0
+  IL_0030: call System.Void Monocle.Entity::Remove(Monocle.Component)
+  IL_0035: nop
+  IL_0036: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_003b: ldstr "objects/CommunalHelper/dreamMoveBlock/"
+  IL_0040: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_0045: stloc.1
+  IL_0046: ldsfld System.Random Monocle.Calc::Random
+  IL_004b: ldc.r4 0.3
+  IL_0050: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_0055: ldc.r4 0.1
+  IL_005a: add
+  IL_005b: stloc.2
+  IL_005c: ldloc.1
+  IL_005d: ldstr "active"
+  IL_0062: ldstr "debris"
+  IL_0067: ldloc.2
+  IL_0068: callvirt System.Void Monocle.Sprite::AddLoop(System.String,System.String,System.Single)
+  IL_006d: nop
+  IL_006e: ldloc.1
+  IL_006f: ldstr "disabled"
+  IL_0074: ldstr "disabledDebris"
+  IL_0079: ldloc.2
+  IL_007a: callvirt System.Void Monocle.Sprite::AddLoop(System.String,System.String,System.Single)
+  IL_007f: nop
+  IL_0080: ldloc.1
+  IL_0081: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0086: pop
+  IL_0087: ldloc.1
+  IL_0088: ldloc.0
+  IL_0089: ldfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_008e: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0093: ldloc.1
+  IL_0094: ldloc.0
+  IL_0095: ldfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_009a: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_009f: ldloc.1
+  IL_00a0: ldloc.0
+  IL_00a1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00a6: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00ab: ldloc.1
+  IL_00ac: ldloc.0
+  IL_00ad: callvirt System.Boolean Monocle.GraphicsComponent::get_FlipX()
+  IL_00b2: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_00b7: nop
+  IL_00b8: ldloc.1
+  IL_00b9: ldloc.0
+  IL_00ba: callvirt System.Boolean Monocle.GraphicsComponent::get_FlipY()
+  IL_00bf: callvirt System.Void Monocle.GraphicsComponent::set_FlipY(System.Boolean)
+  IL_00c4: nop
+  IL_00c5: ldarg.0
+  IL_00c6: ldloc.1
+  IL_00c7: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00cc: nop
+  IL_00cd: ldloc.1
+  IL_00ce: ldarg.0
+  IL_00cf: ldfld Celeste.Mod.CommunalHelper.Entities.DreamBlockDummy Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::Block
+  IL_00d4: callvirt System.Boolean Celeste.Mod.CommunalHelper.Entities.DreamBlockDummy::get_PlayerHasDreamDash()
+  IL_00d9: brtrue.s IL_00e2
+  IL_00db: ldstr "disabled"
+  IL_00e0: br.s IL_00e7
+  IL_00e2: ldstr "active"
+  IL_00e7: ldc.i4.0
+  IL_00e8: ldc.i4.1
+  IL_00e9: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00ee: nop
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld MonoMod.Utils.DynamicData Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::baseData
+  IL_00f5: ldstr "image"
+  IL_00fa: ldarg.0
+  IL_00fb: ldloc.1
+  IL_00fc: dup
+  IL_00fd: stloc.3
+  IL_00fe: stfld Monocle.Sprite Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::sprite
+  IL_0103: ldloc.3
+  IL_0104: callvirt System.Void MonoMod.Utils.DynamicData::Set(System.String,System.Object)
+  IL_0109: nop
+  IL_010a: ldsfld System.Random Monocle.Calc::Random
+  IL_010f: ldc.i4.4
+  IL_0110: callvirt System.Int32 System.Random::Next(System.Int32)
+  IL_0115: ldc.i4.0
+  IL_0116: ceq
+  IL_0118: stloc.s V_4
+  IL_011a: ldloc.s V_4
+  IL_011c: brfalse.s IL_0199
+  IL_011e: nop
+  IL_011f: ldarg.0
+  IL_0120: ldsfld System.Random Monocle.Calc::Random
+  IL_0125: ldsfld Microsoft.Xna.Framework.Color[] Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::activeParticleColors
+  IL_012a: call T Monocle.Calc::Choose<Microsoft.Xna.Framework.Color>(System.Random,T[])
+  IL_012f: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Color>::.ctor(T)
+  IL_0134: stfld System.Nullable`1<Microsoft.Xna.Framework.Color> Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::activePointColor
+  IL_0139: ldarg.0
+  IL_013a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_LightGray()
+  IL_013f: ldc.r4 0.5
+  IL_0144: ldsfld System.Random Monocle.Calc::Random
+  IL_0149: ldc.i4.0
+  IL_014a: ldc.i4.1
+  IL_014b: ldc.i4.1
+  IL_014c: ldc.i4.2
+  IL_014d: ldc.i4.2
+  IL_014e: ldc.i4.2
+  IL_014f: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T,T,T,T,T)
+  IL_0154: conv.r4
+  IL_0155: ldc.r4 2
+  IL_015a: div
+  IL_015b: ldc.r4 0.5
+  IL_0160: mul
+  IL_0161: add
+  IL_0162: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0167: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Color>::.ctor(T)
+  IL_016c: stfld System.Nullable`1<Microsoft.Xna.Framework.Color> Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::disabledPointColor
+  IL_0171: ldarg.0
+  IL_0172: ldsfld System.Random Monocle.Calc::Random
+  IL_0177: ldc.i4.s -2
+  IL_0179: ldc.i4.2
+  IL_017a: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_017f: conv.r4
+  IL_0180: ldsfld System.Random Monocle.Calc::Random
+  IL_0185: ldc.i4.s -2
+  IL_0187: ldc.i4.2
+  IL_0188: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_018d: conv.r4
+  IL_018e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0193: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.DreamBlockDebris::pointOffset
+  IL_0198: nop
+  IL_0199: ldarg.0
+  IL_019a: stloc.s V_5
+  IL_019c: br.s IL_019e
+  IL_019e: ldloc.s V_5
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass12_0::<SeededRandom>b__0
+  IL_01a0: ret

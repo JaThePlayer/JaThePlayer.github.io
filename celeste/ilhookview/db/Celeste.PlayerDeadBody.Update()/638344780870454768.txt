@@ -1,0 +1,29 @@
+IL Diff: System.Void Celeste.PlayerDeadBody::Update()
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.HideStats.HideStatsModule::playerDeadbodyUpdate
++ IL_0000: ldc.i4 10003760 @ Celeste.Mod.HideStats.HideStatsModule::playerDeadbodyUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.HideStats.HideStatsModule::playerDeadbodyUpdate
+  |-> retrieves System.Void Celeste.Mod.HideStats.HideStatsModule::endIfSetting(Celeste.PlayerDeadBody)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.PlayerDeadBody>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.HideStats.HideStatsModule::playerDeadbodyUpdate
++ IL_0000: ldarg.0 @ Celeste.Mod.HideStats.HideStatsModule::playerDeadbodyUpdate
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_000b: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0010: brfalse.s IL_0020
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Boolean Celeste.PlayerDeadBody::finished
+  IL_0018: brtrue.s IL_0020
+  IL_001a: ldarg.0
+  IL_001b: callvirt System.Void Celeste.PlayerDeadBody::End()
+  IL_0020: ldarg.0
+  IL_0021: ldfld Celeste.PlayerHair Celeste.PlayerDeadBody::hair
+  IL_0026: ldarg.0
+  IL_0027: ldfld Celeste.PlayerSprite Celeste.PlayerDeadBody::sprite
+  IL_002c: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_0031: brfalse.s IL_003b
+  IL_0033: ldarg.0
+  IL_0034: ldfld Microsoft.Xna.Framework.Color Celeste.PlayerDeadBody::initialHairColor
+  IL_0039: br.s IL_0040
+  IL_003b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0040: stfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_0045: ret

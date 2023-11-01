@@ -1,0 +1,85 @@
+IL Diff: System.Void Monocle.MInput::Update()
+  IL_0000: call Monocle.Engine Monocle.Engine::get_Instance()
+  IL_0005: callvirt System.Boolean Microsoft.Xna.Framework.Game::get_IsActive()
+  IL_000a: brfalse IL_00ab
+  IL_000f: ldsfld System.Boolean Monocle.MInput::Active
+  IL_0014: brfalse IL_00ab
+  IL_0019: call Monocle.Commands Monocle.Engine::get_Commands()
+  IL_001e: ldfld System.Boolean Monocle.Commands::Open
+  IL_0023: brfalse.s IL_003b
+  IL_0025: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_002a: callvirt System.Void Monocle.MInput/KeyboardData::UpdateNull()
+  IL_002f: call Monocle.MInput/MouseData Monocle.MInput::get_Mouse()
+  IL_0034: callvirt System.Void Monocle.MInput/MouseData::UpdateNull()
+  IL_0039: br.s IL_004f
+  IL_003b: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_0040: callvirt System.Void Monocle.MInput/KeyboardData::Update()
+  IL_0045: call Monocle.MInput/MouseData Monocle.MInput::get_Mouse()
+  IL_004a: callvirt System.Void Monocle.MInput/MouseData::Update()
+  IL_004f: ldc.i4.0
+  IL_0050: stloc.0
+  IL_0051: ldc.i4.0
+  IL_0052: stloc.1
+  IL_0053: ldc.i4.0
+  IL_0054: stloc.2
+  IL_0055: br.s IL_008d
+  IL_0057: call Monocle.MInput/GamePadData[] Monocle.MInput::get_GamePads()
+  IL_005c: ldloc.2
+  IL_005d: ldelem.ref
+  IL_005e: callvirt System.Void Monocle.MInput/GamePadData::Update()
+  IL_0063: call Monocle.MInput/GamePadData[] Monocle.MInput::get_GamePads()
+  IL_0068: ldloc.2
+  IL_0069: ldelem.ref
+  IL_006a: callvirt System.Boolean Monocle.MInput/GamePadData::HasAnyInput()
+  IL_006f: brfalse.s IL_0079
+  IL_0071: ldc.i4.1
+  IL_0072: stsfld System.Boolean Monocle.MInput::ControllerHasFocus
+  IL_0077: ldc.i4.1
+  IL_0078: stloc.0
+  IL_0079: call Monocle.MInput/GamePadData[] Monocle.MInput::get_GamePads()
+  IL_007e: ldloc.2
+  IL_007f: ldelem.ref
+  IL_0080: ldfld System.Boolean Monocle.MInput/GamePadData::Attached
+  IL_0085: brfalse.s IL_0089
+  IL_0087: ldc.i4.1
+  IL_0088: stloc.1
+  IL_0089: ldloc.2
+  IL_008a: ldc.i4.1
+  IL_008b: add
+  IL_008c: stloc.2
+  IL_008d: ldloc.2
+  IL_008e: ldc.i4.4
+  IL_008f: blt.s IL_0057
+  IL_0091: ldloc.1
+  IL_0092: brfalse.s IL_00a3
+  IL_0094: ldloc.0
+  IL_0095: brtrue.s IL_00d7
+  IL_0097: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_009c: callvirt System.Boolean Monocle.MInput/KeyboardData::HasAnyInput()
+  IL_00a1: brfalse.s IL_00d7
+  IL_00a3: ldc.i4.0
+  IL_00a4: stsfld System.Boolean Monocle.MInput::ControllerHasFocus
+  IL_00a9: br.s IL_00d7
+  IL_00ab: call Monocle.MInput/KeyboardData Monocle.MInput::get_Keyboard()
+  IL_00b0: callvirt System.Void Monocle.MInput/KeyboardData::UpdateNull()
+  IL_00b5: call Monocle.MInput/MouseData Monocle.MInput::get_Mouse()
+  IL_00ba: callvirt System.Void Monocle.MInput/MouseData::UpdateNull()
++ IL_0000: call System.Void TAS.EverestInterop.Core::UpdateGamePads() @ TAS.EverestInterop.Core::MInputOnUpdate
+  IL_00bf: ldc.i4.0
++ IL_0000: ldc.i4.4 @ TAS.EverestInterop.Core::MInputOnUpdate
++ IL_0000: add @ TAS.EverestInterop.Core::MInputOnUpdate
+  IL_00c0: stloc.3
+  IL_00c1: br.s IL_00d3
+  IL_00c3: call Monocle.MInput/GamePadData[] Monocle.MInput::get_GamePads()
+  IL_00c8: ldloc.3
+  IL_00c9: ldelem.ref
+  IL_00ca: callvirt System.Void Monocle.MInput/GamePadData::UpdateNull()
+  IL_00cf: ldloc.3
+  IL_00d0: ldc.i4.1
+  IL_00d1: add
+  IL_00d2: stloc.3
+  IL_00d3: ldloc.3
+  IL_00d4: ldc.i4.4
+  IL_00d5: blt.s IL_00c3
+  IL_00d7: call System.Void Monocle.MInput::UpdateVirtualInputs()
+  IL_00dc: ret

@@ -1,0 +1,595 @@
+IL Diff: System.Void TAS.GameInfo::Update(System.Boolean)
++ IL_0000: call System.Boolean Celeste.Mod.TASHelper.Predictor.Core::InPredictMethod() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
++ IL_0000: ret @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
+  IL_0000: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0005: stloc.0
+  IL_0006: ldloc.0
+  IL_0007: isinst Celeste.Level
+  IL_000c: stloc.1
+  IL_000d: ldloc.1
+  IL_000e: brfalse IL_04a3
+  IL_0013: ldloc.1
+  IL_0014: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0019: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_001e: stloc.2
+  IL_001f: ldloc.2
+  IL_0020: brfalse IL_0400
+  IL_0025: ldloc.2
+  IL_0026: ldloca.s V_4
+  IL_0028: call System.String TAS.GameInfo::GetAdjustedPos(Celeste.Actor,System.String&)
+  IL_002d: stloc.3
+  IL_002e: ldloc.2
+  IL_002f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0034: ldloca.s V_6
+  IL_0036: call System.String TAS.GameInfo::GetAdjustedSpeed(Microsoft.Xna.Framework.Vector2,System.String&)
+  IL_003b: stloc.s V_5
+  IL_003d: ldloc.2
+  IL_003e: ldc.i4.0
+  IL_003f: call TAS.Vector2Double TAS.Utils.Vector2DoubleExtension::GetMoreExactPosition(Celeste.Actor,System.Boolean)
+  IL_0044: ldsfld TAS.Vector2Double TAS.GameInfo::LastPos
+  IL_0049: call TAS.Vector2Double TAS.Vector2Double::op_Subtraction(TAS.Vector2Double,TAS.Vector2Double)
+  IL_004e: stloc.s V_7
+  IL_0050: ldsfld System.Boolean TAS.GameInfo::Frozen
+  IL_0055: ldc.i4.0
+  IL_0056: ceq
+  IL_0058: ldarg.0
+  IL_0059: and
+  IL_005a: brfalse.s IL_0065
+  IL_005c: ldloc.s V_7
+  IL_005e: stsfld TAS.Vector2Double TAS.GameInfo::LastDiff
+  IL_0063: br.s IL_006c
+  IL_0065: ldsfld TAS.Vector2Double TAS.GameInfo::LastDiff
+  IL_006a: stloc.s V_7
+  IL_006c: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_0071: callvirt TAS.Module.SpeedUnit TAS.Module.CelesteTasSettings::get_SpeedUnit()
+  IL_0076: brtrue.s IL_0087
+  IL_0078: ldloc.s V_7
+  IL_007a: call System.Int32 TAS.GameInfo::get_FramesPerRealSecond()
+  IL_007f: conv.r4
+  IL_0080: call TAS.Vector2Double TAS.Vector2Double::op_Multiply(TAS.Vector2Double,System.Single)
+  IL_0085: stloc.s V_7
+  IL_0087: ldloc.s V_7
+  IL_0089: ldloca.s V_9
+  IL_008b: call System.String TAS.GameInfo::GetAdjustedVelocity(TAS.Vector2Double,System.String&)
+  IL_0090: stloc.s V_8
+  IL_0092: ldloc.s V_7
+  IL_0094: ldloca.s V_11
+  IL_0096: call System.String TAS.GameInfo::GetAdjustedPolarVel(TAS.Vector2Double,System.String&)
+  IL_009b: stloc.s V_10
+  IL_009d: ldsfld System.String System.String::Empty
+  IL_00a2: stloc.s V_12
+  IL_00a4: ldsfld System.String System.String::Empty
+  IL_00a9: stloc.s V_13
+  IL_00ab: ldsfld System.Boolean TAS.Manager::Running
+  IL_00b0: brfalse.s IL_00e0
+  IL_00b2: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_00b7: callvirt TAS.Input.InputFrame TAS.Input.InputController::get_Previous()
+  IL_00bc: stloc.s V_14
+  IL_00be: ldloc.s V_14
+  IL_00c0: brfalse.s IL_00e0
+  IL_00c2: ldloc.s V_14
+  IL_00c4: ldc.i4 4096
+  IL_00c9: callvirt System.Boolean TAS.Input.InputFrame::HasActions(StudioCommunication.Actions)
+  IL_00ce: brfalse.s IL_00e0
+  IL_00d0: ldloc.s V_14
+  IL_00d2: callvirt Microsoft.Xna.Framework.Vector2 TAS.Input.InputFrame::get_AngleVector2()
+  IL_00d7: ldloca.s V_13
+  IL_00d9: call System.String TAS.GameInfo::GetAdjustedAnalog(Microsoft.Xna.Framework.Vector2,System.String&)
+  IL_00de: stloc.s V_12
+  IL_00e0: ldloc.2
+  IL_00e1: ldloca.s V_16
+  IL_00e3: call System.String TAS.GameInfo::GetAdjustedRetainedSpeed(Celeste.Player,System.String&)
+  IL_00e8: stloc.s V_15
+  IL_00ea: ldloc.2
+  IL_00eb: ldloca.s V_18
+  IL_00ed: call System.String TAS.GameInfo::GetAdjustedLiftBoost(Celeste.Player,System.String&)
+  IL_00f2: stloc.s V_17
+  IL_00f4: ldstr "Stamina: {0:F2} "
+  IL_00f9: ldloc.2
+  IL_00fa: ldfld System.Single Celeste.Player::Stamina
+  IL_00ff: box System.Single
+  IL_0104: call System.String System.String::Format(System.String,System.Object)
+  IL_0109: ldloc.2
+  IL_010a: ldc.i4.1
+  IL_010b: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_0110: brtrue.s IL_0119
+  IL_0112: ldsfld System.String System.String::Empty
+  IL_0117: br.s IL_011e
+  IL_0119: ldstr "Wall-R "
+  IL_011e: ldloc.2
+  IL_011f: ldc.i4.m1
+  IL_0120: callvirt System.Boolean Celeste.Player::WallJumpCheck(System.Int32)
+  IL_0125: brtrue.s IL_012e
+  IL_0127: ldsfld System.String System.String::Empty
+  IL_012c: br.s IL_0133
+  IL_012e: ldstr "Wall-L "
+  IL_0133: ldloc.2
+  IL_0134: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0139: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_013e: call System.String TAS.PlayerStates::GetStateName(System.Int32)
+  IL_0143: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+  IL_0148: stloc.s V_19
+  IL_014a: ldloc.2
+  IL_014b: ldfld System.Single Celeste.Player::dashCooldownTimer
+  IL_0150: call System.Int32 TAS.GameInfo::ToFloorFrames(System.Single)
+  IL_0155: stloc.s V_20
+  IL_0157: ldloc.1
+  IL_0158: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_015d: callvirt T Monocle.Tracker::GetEntity<Celeste.PlayerSeeker>()
+  IL_0162: stloc.s V_21
+  IL_0164: ldloc.s V_21
+  IL_0166: brfalse IL_020d
+  IL_016b: ldloc.s V_21
+  IL_016d: ldloca.s V_4
+  IL_016f: call System.String TAS.GameInfo::GetAdjustedPos(Celeste.Actor,System.String&)
+  IL_0174: stloc.3
+  IL_0175: ldloc.s V_21
+  IL_0177: ldfld Microsoft.Xna.Framework.Vector2 Celeste.PlayerSeeker::speed
+  IL_017c: ldloca.s V_6
+  IL_017e: call System.String TAS.GameInfo::GetAdjustedSpeed(Microsoft.Xna.Framework.Vector2,System.String&)
+  IL_0183: stloc.s V_5
+  IL_0185: ldloc.s V_21
+  IL_0187: ldc.i4.0
+  IL_0188: call TAS.Vector2Double TAS.Utils.Vector2DoubleExtension::GetMoreExactPosition(Celeste.Actor,System.Boolean)
+  IL_018d: ldsfld TAS.Vector2Double TAS.GameInfo::LastPlayerSeekerPos
+  IL_0192: call TAS.Vector2Double TAS.Vector2Double::op_Subtraction(TAS.Vector2Double,TAS.Vector2Double)
+  IL_0197: stloc.s V_7
+  IL_0199: ldsfld System.Boolean TAS.GameInfo::Frozen
+  IL_019e: ldc.i4.0
+  IL_019f: ceq
+  IL_01a1: ldarg.0
+  IL_01a2: and
+  IL_01a3: brfalse.s IL_01ae
+  IL_01a5: ldloc.s V_7
+  IL_01a7: stsfld TAS.Vector2Double TAS.GameInfo::LastPlayerSeekerDiff
+  IL_01ac: br.s IL_01b5
+  IL_01ae: ldsfld TAS.Vector2Double TAS.GameInfo::LastPlayerSeekerDiff
+  IL_01b3: stloc.s V_7
+  IL_01b5: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_01ba: callvirt TAS.Module.SpeedUnit TAS.Module.CelesteTasSettings::get_SpeedUnit()
+  IL_01bf: brtrue.s IL_01d0
+  IL_01c1: ldloc.s V_7
+  IL_01c3: call System.Int32 TAS.GameInfo::get_FramesPerRealSecond()
+  IL_01c8: conv.r4
+  IL_01c9: call TAS.Vector2Double TAS.Vector2Double::op_Multiply(TAS.Vector2Double,System.Single)
+  IL_01ce: stloc.s V_7
+  IL_01d0: ldloc.s V_7
+  IL_01d2: ldloca.s V_9
+  IL_01d4: call System.String TAS.GameInfo::GetAdjustedVelocity(TAS.Vector2Double,System.String&)
+  IL_01d9: stloc.s V_8
+  IL_01db: ldstr "Chase: {0:F2}, {1:F5}°"
+  IL_01e0: ldloca.s V_7
+  IL_01e2: call System.Double TAS.Vector2Double::Length()
+  IL_01e7: box System.Double
+  IL_01ec: ldloca.s V_7
+  IL_01ee: call System.Double TAS.Vector2Double::Angle()
+  IL_01f3: box System.Double
+  IL_01f8: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_01fd: stloc.s V_10
+  IL_01ff: ldloc.s V_21
+  IL_0201: ldfld System.Single Celeste.PlayerSeeker::dashTimer
+  IL_0206: call System.Int32 TAS.GameInfo::ToCeilingFrames(System.Single)
+  IL_020b: stloc.s V_20
+  IL_020d: ldloc.1
+  IL_020e: ldloc.2
+  IL_020f: call System.String TAS.GameInfo::GetStatuses(Celeste.Level,Celeste.Player)
+  IL_0214: stloc.s V_22
+  IL_0216: ldsfld System.String System.String::Empty
+  IL_021b: stloc.s V_23
+  IL_021d: ldloc.2
+  IL_021e: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_0223: ldfld System.Collections.Generic.List`1<Celeste.Follower> Celeste.Leader::Followers
+  IL_0228: ldsfld System.Predicate`1<Celeste.Follower> TAS.GameInfo/<>c::<>9__35_0
+  IL_022d: dup
+  IL_022e: brtrue.s IL_0247
+  IL_0230: pop
+  IL_0231: ldsfld TAS.GameInfo/<>c TAS.GameInfo/<>c::<>9
+  IL_0236: ldftn System.Boolean TAS.GameInfo/<>c::<Update>b__35_0(Celeste.Follower)
+  IL_023c: newobj System.Void System.Predicate`1<Celeste.Follower>::.ctor(System.Object,System.IntPtr)
+  IL_0241: dup
+  IL_0242: stsfld System.Predicate`1<Celeste.Follower> TAS.GameInfo/<>c::<>9__35_0
+  IL_0247: callvirt T System.Collections.Generic.List`1<Celeste.Follower>::Find(System.Predicate`1<T>)
+  IL_024c: dup
+  IL_024d: brtrue.s IL_0253
+  IL_024f: pop
+  IL_0250: ldnull
+  IL_0251: br.s IL_0258
+  IL_0253: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0258: isinst Celeste.Strawberry
+  IL_025d: stloc.s V_24
+  IL_025f: ldloc.s V_24
+  IL_0261: brfalse IL_02de
+  IL_0266: ldloc.s V_24
+  IL_0268: ldfld System.Single Celeste.Strawberry::collectTimer
+  IL_026d: stloc.s V_25
+  IL_026f: ldloc.s V_25
+  IL_0271: ldc.r4 0.15
+  IL_0276: bgt.un.s IL_02de
+  IL_0278: ldc.r4 0.15
+  IL_027d: ldloc.s V_25
+  IL_027f: sub
+  IL_0280: call System.Int32 TAS.GameInfo::ToCeilingFrames(System.Single)
+  IL_0285: stloc.s V_26
+  IL_0287: ldloc.s V_25
+  IL_0289: ldc.r4 0
+  IL_028e: blt.un.s IL_02ac
+  IL_0290: ldloc.s V_23
+  IL_0292: ldstr "Berry({0}) "
+  IL_0297: ldloc.s V_26
+  IL_0299: box System.Int32
+  IL_029e: call System.String System.String::Format(System.String,System.Object)
+  IL_02a3: call System.String System.String::Concat(System.String,System.String)
+  IL_02a8: stloc.s V_23
+  IL_02aa: br.s IL_02de
+  IL_02ac: ldloc.s V_25
+  IL_02ae: call System.Single System.Math::Abs(System.Single)
+  IL_02b3: call System.Int32 TAS.GameInfo::ToCeilingFrames(System.Single)
+  IL_02b8: stloc.s V_27
+  IL_02ba: ldloc.s V_23
+  IL_02bc: ldstr "Berry({0}+{1}) "
+  IL_02c1: ldloc.s V_26
+  IL_02c3: ldloc.s V_27
+  IL_02c5: sub
+  IL_02c6: box System.Int32
+  IL_02cb: ldloc.s V_27
+  IL_02cd: box System.Int32
+  IL_02d2: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_02d7: call System.String System.String::Concat(System.String,System.String)
+  IL_02dc: stloc.s V_23
+  IL_02de: ldloc.s V_20
+  IL_02e0: ldc.i4.0
+  IL_02e1: ble.s IL_02fd
+  IL_02e3: ldloc.s V_23
+  IL_02e5: ldstr "DashCD({0}) "
+  IL_02ea: ldloc.s V_20
+  IL_02ec: box System.Int32
+  IL_02f1: call System.String System.String::Format(System.String,System.Object)
+  IL_02f6: call System.String System.String::Concat(System.String,System.String)
+  IL_02fb: stloc.s V_23
+  IL_02fd: call System.Int32 TAS.GameInfo::get_FramesPerGameSecond()
+  IL_0302: ldc.i4.s 60
+  IL_0304: bne.un.s IL_031e
+  IL_0306: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_030b: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0310: ldfld System.Boolean Celeste.Assists::SuperDashing
+  IL_0315: brtrue.s IL_031e
+  IL_0317: call System.Boolean TAS.Utils.ExtendedVariantsUtils::get_SuperDashing()
+  IL_031c: brfalse.s IL_0370
+  IL_031e: ldsfld System.Single TAS.GameInfo::DashTime
+  IL_0323: call System.Int32 TAS.GameInfo::ToCeilingFrames(System.Single)
+  IL_0328: ldc.i4.1
+  IL_0329: blt.s IL_0370
+  IL_032b: ldloc.2
+  IL_032c: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0331: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0336: ldc.i4.2
+  IL_0337: bne.un.s IL_0370
+  IL_0339: ldloc.2
+  IL_033a: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_033f: ldfld Monocle.Coroutine Monocle.StateMachine::currentCoroutine
+  IL_0344: ldfld System.Single Monocle.Coroutine::waitTimer
+  IL_0349: stsfld System.Single TAS.GameInfo::DashTime
+  IL_034e: ldloc.s V_23
+  IL_0350: ldstr "Dash({0}) "
+  IL_0355: ldsfld System.Single TAS.GameInfo::DashTime
+  IL_035a: call System.Int32 TAS.GameInfo::ToCeilingFrames(System.Single)
+  IL_035f: box System.Int32
+  IL_0364: call System.String System.String::Format(System.String,System.Object)
+  IL_0369: call System.String System.String::Concat(System.String,System.String)
+  IL_036e: stloc.s V_23
+  IL_0370: ldloc.2
+  IL_0371: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0376: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_037b: ldc.i4.2
+  IL_037c: beq.s IL_0388
+  IL_037e: ldc.r4 0
+  IL_0383: stsfld System.Single TAS.GameInfo::DashTime
+  IL_0388: ldloc.3
+  IL_0389: ldloc.s V_5
+  IL_038b: ldloc.s V_8
+  IL_038d: ldloc.2
+  IL_038e: ldloc.s V_21
+  IL_0390: ldloc.s V_10
+  IL_0392: ldloc.s V_12
+  IL_0394: ldloc.s V_15
+  IL_0396: ldloc.s V_17
+  IL_0398: ldloc.s V_19
+  IL_039a: ldloc.s V_22
+  IL_039c: ldloc.s V_23
+  IL_039e: call System.String TAS.GameInfo::GetStatusWithoutTime(System.String,System.String,System.String,Celeste.Player,Celeste.PlayerSeeker,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  IL_03a3: stsfld System.String TAS.GameInfo::StatusWithoutTime
+  IL_03a8: ldloc.s V_4
+  IL_03aa: ldloc.s V_6
+  IL_03ac: ldloc.s V_9
+  IL_03ae: ldloc.2
+  IL_03af: ldloc.s V_21
+  IL_03b1: ldloc.s V_11
+  IL_03b3: ldloc.s V_13
+  IL_03b5: ldloc.s V_16
+  IL_03b7: ldloc.s V_18
+  IL_03b9: ldloc.s V_19
+  IL_03bb: ldloc.s V_22
+  IL_03bd: ldloc.s V_23
+  IL_03bf: call System.String TAS.GameInfo::GetStatusWithoutTime(System.String,System.String,System.String,Celeste.Player,Celeste.PlayerSeeker,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  IL_03c4: stsfld System.String TAS.GameInfo::ExactStatusWithoutTime
+  IL_03c9: ldsfld System.Single Monocle.Engine::FreezeTimer
+  IL_03ce: ldc.r4 0
+  IL_03d3: bgt.un.s IL_0412
+  IL_03d5: ldloc.2
+  IL_03d6: ldc.i4.0
+  IL_03d7: call TAS.Vector2Double TAS.Utils.Vector2DoubleExtension::GetMoreExactPosition(Celeste.Actor,System.Boolean)
+  IL_03dc: stsfld TAS.Vector2Double TAS.GameInfo::LastPos
+  IL_03e1: ldloc.s V_21
+  IL_03e3: brtrue.s IL_03f1
+  IL_03e5: ldloca.s V_28
+  IL_03e7: initobj TAS.Vector2Double
+  IL_03ed: ldloc.s V_28
+  IL_03ef: br.s IL_03f9
+  IL_03f1: ldloc.s V_21
+  IL_03f3: ldc.i4.0
+  IL_03f4: call TAS.Vector2Double TAS.Utils.Vector2DoubleExtension::GetMoreExactPosition(Celeste.Actor,System.Boolean)
+  IL_03f9: stsfld TAS.Vector2Double TAS.GameInfo::LastPlayerSeekerPos
+  IL_03fe: br.s IL_0412
+  IL_0400: ldloc.1
+  IL_0401: ldfld System.Boolean Celeste.Level::InCutscene
+  IL_0406: brfalse.s IL_0412
+  IL_0408: ldstr "Cutscene"
+  IL_040d: stsfld System.String TAS.GameInfo::StatusWithoutTime
+  IL_0412: ldloc.1
+  IL_0413: ldfld Celeste.Session Celeste.Level::Session
+  IL_0418: ldfld System.String Celeste.Session::Level
+  IL_041d: stsfld System.String TAS.GameInfo::LevelName
+  IL_0422: ldloc.1
+  IL_0423: call System.String TAS.GameInfo::GetChapterTime(Celeste.Level)
+  IL_0428: stsfld System.String TAS.GameInfo::ChapterTime
+  IL_042d: ldc.i4.5
+  IL_042e: newarr System.String
+  IL_0433: dup
+  IL_0434: ldc.i4.0
+  IL_0435: ldsfld System.String TAS.GameInfo::StatusWithoutTime
+  IL_043a: stelem.ref
+  IL_043b: dup
+  IL_043c: ldc.i4.1
+  IL_043d: ldstr "["
+  IL_0442: stelem.ref
+  IL_0443: dup
+  IL_0444: ldc.i4.2
+  IL_0445: ldsfld System.String TAS.GameInfo::LevelName
+  IL_044a: stelem.ref
+  IL_044b: dup
+  IL_044c: ldc.i4.3
+  IL_044d: ldstr "] Timer: "
+  IL_0452: stelem.ref
+  IL_0453: dup
+  IL_0454: ldc.i4.4
+  IL_0455: ldsfld System.String TAS.GameInfo::ChapterTime
+  IL_045a: stelem.ref
+  IL_045b: call System.String System.String::Concat(System.String[])
+  IL_0460: stsfld System.String TAS.GameInfo::Status
+  IL_0465: ldc.i4.5
+  IL_0466: newarr System.String
+  IL_046b: dup
+  IL_046c: ldc.i4.0
+  IL_046d: ldsfld System.String TAS.GameInfo::ExactStatusWithoutTime
+  IL_0472: stelem.ref
+  IL_0473: dup
+  IL_0474: ldc.i4.1
+  IL_0475: ldstr "["
+  IL_047a: stelem.ref
+  IL_047b: dup
+  IL_047c: ldc.i4.2
+  IL_047d: ldsfld System.String TAS.GameInfo::LevelName
+  IL_0482: stelem.ref
+  IL_0483: dup
+  IL_0484: ldc.i4.3
+  IL_0485: ldstr "] Timer: "
+  IL_048a: stelem.ref
+  IL_048b: dup
+  IL_048c: ldc.i4.4
+  IL_048d: ldsfld System.String TAS.GameInfo::ChapterTime
+  IL_0492: stelem.ref
+  IL_0493: call System.String System.String::Concat(System.String[])
+  IL_0498: stsfld System.String TAS.GameInfo::ExactStatus
+  IL_049d: call System.Void TAS.GameInfo::UpdateAdditionInfo()
+  IL_04a2: ret
+  IL_04a3: ldloc.0
+  IL_04a4: isinst Celeste.Pico8.Emulator
+  IL_04a9: stloc.s V_29
+  IL_04ab: ldloc.s V_29
+  IL_04ad: brfalse IL_068b
+  IL_04b2: ldloc.s V_29
+  IL_04b4: ldfld Celeste.Pico8.Classic Celeste.Pico8.Emulator::game
+  IL_04b9: stloc.s V_30
+  IL_04bb: ldloc.s V_30
+  IL_04bd: brfalse IL_068b
+  IL_04c2: newobj System.Void System.Text.StringBuilder::.ctor()
+  IL_04c7: stloc.s V_31
+  IL_04c9: ldloc.s V_29
+  IL_04cb: ldfld Celeste.Pico8.Classic Celeste.Pico8.Emulator::game
+  IL_04d0: ldfld System.Collections.Generic.List`1<Celeste.Pico8.Classic/ClassicObject> Celeste.Pico8.Classic::objects
+  IL_04d5: ldsfld System.Func`2<Celeste.Pico8.Classic/ClassicObject,System.Boolean> TAS.GameInfo/<>c::<>9__35_1
+  IL_04da: dup
+  IL_04db: brtrue.s IL_04f4
+  IL_04dd: pop
+  IL_04de: ldsfld TAS.GameInfo/<>c TAS.GameInfo/<>c::<>9
+  IL_04e3: ldftn System.Boolean TAS.GameInfo/<>c::<Update>b__35_1(Celeste.Pico8.Classic/ClassicObject)
+  IL_04e9: newobj System.Void System.Func`2<Celeste.Pico8.Classic/ClassicObject,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_04ee: dup
+  IL_04ef: stsfld System.Func`2<Celeste.Pico8.Classic/ClassicObject,System.Boolean> TAS.GameInfo/<>c::<>9__35_1
+  IL_04f4: call TSource System.Linq.Enumerable::FirstOrDefault<Celeste.Pico8.Classic/ClassicObject>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_04f9: isinst Celeste.Pico8.Classic/player
+  IL_04fe: stloc.s V_32
+  IL_0500: ldloc.s V_32
+  IL_0502: brfalse.s IL_057e
+  IL_0504: ldloc.s V_31
+  IL_0506: ldstr "Pos:   {0}, {1}"
+  IL_050b: ldloc.s V_32
+  IL_050d: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::x
+  IL_0512: box System.Single
+  IL_0517: ldloc.s V_32
+  IL_0519: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::y
+  IL_051e: box System.Single
+  IL_0523: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_0528: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_052d: pop
+  IL_052e: ldloc.s V_31
+  IL_0530: ldstr "Rem:   "
+  IL_0535: ldloc.s V_32
+  IL_0537: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Pico8.Classic/ClassicObject::rem
+  IL_053c: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_0541: callvirt System.Int32 TAS.Module.CelesteTasSettings::get_PositionDecimals()
+  IL_0546: call System.String TAS.Utils.Vector2Extensions::ToSimpleString(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_054b: call System.String System.String::Concat(System.String,System.String)
+  IL_0550: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_0555: pop
+  IL_0556: ldloc.s V_31
+  IL_0558: ldstr "Speed: "
+  IL_055d: ldloc.s V_32
+  IL_055f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Pico8.Classic/ClassicObject::spd
+  IL_0564: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_0569: callvirt System.Int32 TAS.Module.CelesteTasSettings::get_SpeedDecimals()
+  IL_056e: call System.String TAS.Utils.Vector2Extensions::ToSimpleString(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_0573: call System.String System.String::Concat(System.String,System.String)
+  IL_0578: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_057d: pop
+  IL_057e: ldloc.s V_31
+  IL_0580: ldstr "Seed:  {0}"
+  IL_0585: call System.Int32 TAS.EverestInterop.Pico8Fixer::get_Seed()
+  IL_058a: box System.Int32
+  IL_058f: call System.String System.String::Format(System.String,System.Object)
+  IL_0594: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_0599: pop
+  IL_059a: ldloc.s V_32
+  IL_059c: brfalse.s IL_05c8
+  IL_059e: ldloc.s V_32
+  IL_05a0: ldfld System.Int32 Celeste.Pico8.Classic/player::grace
+  IL_05a5: ldc.i4.1
+  IL_05a6: ble.s IL_05c8
+  IL_05a8: ldloc.s V_31
+  IL_05aa: ldstr "Coyote({0})"
+  IL_05af: ldloc.s V_32
+  IL_05b1: ldfld System.Int32 Celeste.Pico8.Classic/player::grace
+  IL_05b6: ldc.i4.1
+  IL_05b7: sub
+  IL_05b8: box System.Int32
+  IL_05bd: call System.String System.String::Format(System.String,System.Object)
+  IL_05c2: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_05c7: pop
+  IL_05c8: ldstr "[Level{0} X:{1} Y:{2}]"
+  IL_05cd: ldloc.s V_30
+  IL_05cf: callvirt System.Int32 Celeste.Pico8.Classic::level_index()
+  IL_05d4: ldc.i4.1
+  IL_05d5: add
+  IL_05d6: box System.Int32
+  IL_05db: ldloc.s V_30
+  IL_05dd: ldflda Microsoft.Xna.Framework.Point Celeste.Pico8.Classic::room
+  IL_05e2: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_05e7: box System.Int32
+  IL_05ec: ldloc.s V_30
+  IL_05ee: ldflda Microsoft.Xna.Framework.Point Celeste.Pico8.Classic::room
+  IL_05f3: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_05f8: box System.Int32
+  IL_05fd: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+  IL_0602: stsfld System.String TAS.GameInfo::LevelName
+  IL_0607: ldstr "{0}:{1}{2}"
+  IL_060c: ldloc.s V_30
+  IL_060e: ldfld System.Int32 Celeste.Pico8.Classic::minutes
+  IL_0613: box System.Int32
+  IL_0618: ldloc.s V_30
+  IL_061a: ldflda System.Int32 Celeste.Pico8.Classic::seconds
+  IL_061f: call System.String System.Int32::ToString()
+  IL_0624: ldc.i4.2
+  IL_0625: ldc.i4.s 48
+  IL_0627: callvirt System.String System.String::PadLeft(System.Int32,System.Char)
+  IL_062c: call System.Int32 TAS.EverestInterop.Pico8Fixer::get_Frames()
+  IL_0631: conv.r8
+  IL_0632: ldc.r8 30
+  IL_063b: div
+  IL_063c: stloc.s V_33
+  IL_063e: ldloca.s V_33
+  IL_0640: ldstr "F3"
+  IL_0645: call System.String NETCoreifier.FloatFormattingShims::Double_ToString(System.Double&,System.String)
+  IL_064a: ldc.i4.1
+  IL_064b: newarr System.Char
+  IL_0650: dup
+  IL_0651: ldc.i4.0
+  IL_0652: ldc.i4.s 48
+  IL_0654: stelem.i2
+  IL_0655: callvirt System.String System.String::TrimStart(System.Char[])
+  IL_065a: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+  IL_065f: stsfld System.String TAS.GameInfo::ChapterTime
+  IL_0664: ldstr "{0}{1} Timer: {2}"
+  IL_0669: ldloc.s V_31
+  IL_066b: ldsfld System.String TAS.GameInfo::LevelName
+  IL_0670: ldsfld System.String TAS.GameInfo::ChapterTime
+  IL_0675: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+  IL_067a: dup
+  IL_067b: stsfld System.String TAS.GameInfo::ExactStatus
+  IL_0680: stsfld System.String TAS.GameInfo::Status
+  IL_0685: call System.Void TAS.GameInfo::UpdateAdditionInfo()
+  IL_068a: ret
+  IL_068b: ldsfld System.String System.String::Empty
+  IL_0690: stsfld System.String TAS.GameInfo::LevelName
+  IL_0695: ldsfld System.String System.String::Empty
+  IL_069a: stsfld System.String TAS.GameInfo::ChapterTime
+  IL_069f: ldsfld System.String System.String::Empty
+  IL_06a4: stsfld System.String TAS.GameInfo::WatchingInfo
+  IL_06a9: ldsfld System.String System.String::Empty
+  IL_06ae: stsfld System.String TAS.GameInfo::CustomInfo
+  IL_06b3: ldloc.0
+  IL_06b4: isinst Celeste.SummitVignette
+  IL_06b9: stloc.s V_34
+  IL_06bb: ldloc.s V_34
+  IL_06bd: brfalse.s IL_06e1
+  IL_06bf: ldstr "SummitVignette {0}"
+  IL_06c4: ldloc.s V_34
+  IL_06c6: ldfld System.Boolean Celeste.SummitVignette::ready
+  IL_06cb: box System.Boolean
+  IL_06d0: call System.String System.String::Format(System.String,System.Object)
+  IL_06d5: dup
+  IL_06d6: stsfld System.String TAS.GameInfo::ExactStatus
+  IL_06db: stsfld System.String TAS.GameInfo::Status
+  IL_06e0: ret
+  IL_06e1: ldloc.0
+  IL_06e2: isinst Celeste.Overworld
+  IL_06e7: stloc.s V_35
+  IL_06e9: ldloc.s V_35
+  IL_06eb: brfalse.s IL_0748
+  IL_06ed: ldstr ""
+  IL_06f2: stloc.s V_36
+  IL_06f4: ldloc.s V_35
+  IL_06f6: ldfld Celeste.Oui Celeste.Overworld::Current
+  IL_06fb: dup
+  IL_06fc: brtrue.s IL_0706
+  IL_06fe: pop
+  IL_06ff: ldloc.s V_35
+  IL_0701: ldfld Celeste.Oui Celeste.Overworld::Next
+  IL_0706: stloc.s V_37
+  IL_0708: ldloc.s V_37
+  IL_070a: brfalse.s IL_0724
+  IL_070c: ldloc.s V_37
+  IL_070e: callvirt System.Type System.Object::GetType()
+  IL_0713: callvirt System.String System.Reflection.MemberInfo::get_Name()
+  IL_0718: ldstr " "
+  IL_071d: call System.String System.String::Concat(System.String,System.String)
+  IL_0722: stloc.s V_36
+  IL_0724: ldstr "Overworld {0}{1}"
+  IL_0729: ldloc.s V_36
+  IL_072b: ldloc.s V_35
+  IL_072d: ldfld System.Boolean Celeste.Overworld::ShowInputUI
+  IL_0732: box System.Boolean
+  IL_0737: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_073c: dup
+  IL_073d: stsfld System.String TAS.GameInfo::ExactStatus
+  IL_0742: stsfld System.String TAS.GameInfo::Status
+  IL_0747: ret
+  IL_0748: ldloc.0
+  IL_0749: brfalse.s IL_0761
+  IL_074b: ldloc.0
+  IL_074c: callvirt System.Type System.Object::GetType()
+  IL_0751: callvirt System.String System.Reflection.MemberInfo::get_Name()
+  IL_0756: dup
+  IL_0757: stsfld System.String TAS.GameInfo::ExactStatus
+  IL_075c: stsfld System.String TAS.GameInfo::Status
+  IL_0761: ret

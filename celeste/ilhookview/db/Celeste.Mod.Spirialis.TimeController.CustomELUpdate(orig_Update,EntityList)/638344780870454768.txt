@@ -1,0 +1,36 @@
+IL Diff: System.Void Celeste.Mod.Spirialis.TimeController::CustomELUpdate(On.Monocle.EntityList+orig_Update,Monocle.EntityList)
++ IL_0000: call System.Void TAS.EverestInterop.Hitboxes.ActualEntityCollideHitbox::Clear() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0000: nop
+  IL_0001: nop
+  IL_0002: ldsfld System.Reflection.FieldInfo Celeste.Mod.Spirialis.TimeController::entities
+  IL_0007: ldarg.2
+  IL_0008: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_000d: castclass System.Collections.Generic.List`1<Monocle.Entity>
+  IL_0012: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0017: stloc.0
+  IL_0018: br.s IL_003a
+  IL_001a: ldloca.s V_0
+  IL_001c: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0021: stloc.1
+  IL_0022: nop
+  IL_0023: ldarg.0
+  IL_0024: ldloc.1
+  IL_0025: callvirt Monocle.Entity Celeste.Mod.Spirialis.TimeController::FreezeTime(Monocle.Entity)
+  IL_002a: pop
+  IL_002b: ldloc.1
+  IL_002c: callvirt System.Void Monocle.Entity::Update()
+  IL_0031: nop
+  IL_0032: ldarg.0
+  IL_0033: callvirt System.Void Celeste.Mod.Spirialis.TimeController::UnfreezeTime()
+  IL_0038: nop
+  IL_0039: nop
+  IL_003a: ldloca.s V_0
+  IL_003c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0041: brtrue.s IL_001a
+  IL_0043: leave.s IL_0054
+  IL_0045: ldloca.s V_0
+  IL_0047: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_004d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0052: nop
+  IL_0053: endfinally
+  IL_0054: ret

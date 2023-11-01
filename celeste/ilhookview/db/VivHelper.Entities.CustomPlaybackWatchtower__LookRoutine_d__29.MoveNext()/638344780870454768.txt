@@ -1,0 +1,2134 @@
+IL Diff: System.Boolean VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_003f,IL_0041,IL_0046,IL_004b,IL_0050,IL_0055,IL_005a,IL_005f,IL_0064,IL_0069,IL_006e,IL_0073
+  IL_003d: br.s IL_0078
+  IL_003f: br.s IL_007a
+  IL_0041: br IL_0129
+  IL_0046: br IL_0260
+  IL_004b: br IL_032d
+  IL_0050: br IL_052c
+  IL_0055: br IL_0583
+  IL_005a: br IL_142e
+  IL_005f: br IL_155e
+  IL_0064: br IL_1623
+  IL_0069: br IL_16ca
+  IL_006e: br IL_1824
+  IL_0073: br IL_19a5
+  IL_0078: ldc.i4.0
+  IL_0079: ret
+  IL_007a: ldarg.0
+  IL_007b: ldc.i4.m1
+  IL_007c: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0081: nop
+  IL_0082: ldarg.0
+  IL_0083: ldarg.0
+  IL_0084: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0089: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_008e: stfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0093: ldarg.0
+  IL_0094: ldarg.0
+  IL_0095: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_009a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_009f: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_00a4: callvirt T Monocle.EntityList::FindFirst<Celeste.SandwichLava>()
+  IL_00a9: stfld Celeste.SandwichLava VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<sandwichLava>5__2
+  IL_00ae: ldarg.0
+  IL_00af: ldfld Celeste.SandwichLava VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<sandwichLava>5__2
+  IL_00b4: ldnull
+  IL_00b5: cgt.un
+  IL_00b7: stloc.1
+  IL_00b8: ldloc.1
+  IL_00b9: brfalse.s IL_00c9
+  IL_00bb: nop
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld Celeste.SandwichLava VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<sandwichLava>5__2
+  IL_00c2: ldc.i4.1
+  IL_00c3: stfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_00c8: nop
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_00cf: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_00d4: ldnull
+  IL_00d5: cgt.un
+  IL_00d7: stloc.2
+  IL_00d8: ldloc.2
+  IL_00d9: brfalse.s IL_00e9
+  IL_00db: nop
+  IL_00dc: ldarg.0
+  IL_00dd: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_00e2: callvirt System.Void Celeste.Player::Drop()
+  IL_00e7: nop
+  IL_00e8: nop
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_00ef: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00f4: ldc.i4.s 11
+  IL_00f6: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_00fb: nop
+  IL_00fc: ldarg.0
+  IL_00fd: ldarg.0
+  IL_00fe: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0103: ldarg.0
+  IL_0104: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0109: callvirt System.Single Monocle.Entity::get_X()
+  IL_010e: conv.i4
+  IL_010f: ldc.i4.0
+  IL_0110: ldc.r4 1
+  IL_0115: ldc.i4.1
+  IL_0116: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_011b: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_0120: ldarg.0
+  IL_0121: ldc.i4.1
+  IL_0122: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0127: ldc.i4.1
+  IL_0128: ret
+  IL_0129: ldarg.0
+  IL_012a: ldc.i4.m1
+  IL_012b: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0130: ldarg.0
+  IL_0131: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0136: callvirt System.Single Monocle.Entity::get_X()
+  IL_013b: ldarg.0
+  IL_013c: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0141: callvirt System.Single Monocle.Entity::get_X()
+  IL_0146: sub
+  IL_0147: call System.Single System.Math::Abs(System.Single)
+  IL_014c: ldc.r4 4
+  IL_0151: bgt.s IL_0171
+  IL_0153: ldarg.0
+  IL_0154: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0159: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_015e: brtrue.s IL_0171
+  IL_0160: ldarg.0
+  IL_0161: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0166: ldc.i4.1
+  IL_0167: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_016c: ldc.i4.0
+  IL_016d: ceq
+  IL_016f: br.s IL_0172
+  IL_0171: ldc.i4.1
+  IL_0172: stloc.3
+  IL_0173: ldloc.3
+  IL_0174: brfalse.s IL_01a1
+  IL_0176: nop
+  IL_0177: ldarg.0
+  IL_0178: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_017d: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0182: ldc.i4.0
+  IL_0183: ceq
+  IL_0185: stloc.s V_4
+  IL_0187: ldloc.s V_4
+  IL_0189: brfalse.s IL_019f
+  IL_018b: nop
+  IL_018c: ldarg.0
+  IL_018d: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0192: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0197: ldc.i4.0
+  IL_0198: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_019d: nop
+  IL_019e: nop
+  IL_019f: ldc.i4.0
+  IL_01a0: ret
+  IL_01a1: ldstr "event:/game/general/lookout_use"
+  IL_01a6: ldarg.0
+  IL_01a7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_01ac: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01b1: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_01b6: pop
+  IL_01b7: ldarg.0
+  IL_01b8: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_01bd: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_01c2: ldc.i4.1
+  IL_01c3: ceq
+  IL_01c5: stloc.s V_5
+  IL_01c7: ldloc.s V_5
+  IL_01c9: brfalse.s IL_01f7
+  IL_01cb: nop
+  IL_01cc: ldarg.0
+  IL_01cd: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_01d2: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_01d7: ldarg.0
+  IL_01d8: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_01dd: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_01e2: ldstr "lookRight"
+  IL_01e7: call System.String System.String::Concat(System.String,System.String)
+  IL_01ec: ldc.i4.0
+  IL_01ed: ldc.i4.0
+  IL_01ee: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_01f3: nop
+  IL_01f4: nop
+  IL_01f5: br.s IL_0221
+  IL_01f7: nop
+  IL_01f8: ldarg.0
+  IL_01f9: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_01fe: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_0203: ldarg.0
+  IL_0204: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0209: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_020e: ldstr "lookLeft"
+  IL_0213: call System.String System.String::Concat(System.String,System.String)
+  IL_0218: ldc.i4.0
+  IL_0219: ldc.i4.0
+  IL_021a: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_021f: nop
+  IL_0220: nop
+  IL_0221: ldarg.0
+  IL_0222: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0227: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_022c: ldarg.0
+  IL_022d: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_0232: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_0237: ldc.i4.0
+  IL_0238: dup
+  IL_0239: stloc.s V_6
+  IL_023b: stfld System.Boolean Monocle.Component::Visible
+  IL_0240: ldloc.s V_6
+  IL_0242: stfld System.Boolean Monocle.Component::Visible
+  IL_0247: ldarg.0
+  IL_0248: ldc.r4 0.2
+  IL_024d: box System.Single
+  IL_0252: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_0257: ldarg.0
+  IL_0258: ldc.i4.2
+  IL_0259: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_025e: ldc.i4.1
+  IL_025f: ret
+  IL_0260: ldarg.0
+  IL_0261: ldc.i4.m1
+  IL_0262: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0267: ldarg.0
+  IL_0268: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_026d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0272: ldarg.0
+  IL_0273: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0278: newobj System.Void VivHelper.Entities.Watchtowers.Hud::.ctor()
+  IL_027d: dup
+  IL_027e: stloc.s V_7
+  IL_0280: stfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_0285: ldloc.s V_7
+  IL_0287: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_028c: nop
+  IL_028d: ldarg.0
+  IL_028e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0293: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_0298: ldarg.0
+  IL_0299: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_029e: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_02a3: ldnull
+  IL_02a4: cgt.un
+  IL_02a6: stfld System.Boolean VivHelper.Entities.Watchtowers.Hud::TrackMode
+  IL_02ab: ldarg.0
+  IL_02ac: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_02b1: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_02b6: ldarg.0
+  IL_02b7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_02bc: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::onlyY
+  IL_02c1: stfld System.Boolean VivHelper.Entities.Watchtowers.Hud::OnlyY
+  IL_02c6: ldarg.0
+  IL_02c7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_02cc: ldc.r4 0
+  IL_02d1: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_02d6: ldarg.0
+  IL_02d7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_02dc: ldc.i4.0
+  IL_02dd: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_02e2: ldstr "event:/ui/game/lookout_on"
+  IL_02e7: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_02ec: pop
+  IL_02ed: br.s IL_0335
+  IL_02ef: nop
+  IL_02f0: ldarg.0
+  IL_02f1: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_02f6: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_02fb: ldarg.0
+  IL_02fc: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0301: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_0306: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_030b: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0310: ldc.r4 16
+  IL_0315: mul
+  IL_0316: conv.i4
+  IL_0317: conv.r4
+  IL_0318: stfld System.Single Celeste.Level::ScreenPadding
+  IL_031d: ldarg.0
+  IL_031e: ldnull
+  IL_031f: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_0324: ldarg.0
+  IL_0325: ldc.i4.3
+  IL_0326: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_032b: ldc.i4.1
+  IL_032c: ret
+  IL_032d: ldarg.0
+  IL_032e: ldc.i4.m1
+  IL_032f: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0334: nop
+  IL_0335: ldarg.0
+  IL_0336: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_033b: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_0340: ldarg.0
+  IL_0341: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0346: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_034b: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_0350: ldc.r4 1
+  IL_0355: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_035a: ldc.r4 3
+  IL_035f: mul
+  IL_0360: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0365: dup
+  IL_0366: stloc.s V_9
+  IL_0368: stfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_036d: ldloc.s V_9
+  IL_036f: ldc.r4 1
+  IL_0374: clt
+  IL_0376: stloc.s V_8
+  IL_0378: ldloc.s V_8
+  IL_037a: brtrue IL_02ef
+  IL_037f: ldarg.0
+  IL_0380: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0385: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::flagWhenInHud
+  IL_038a: ldstr ""
+  IL_038f: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0394: stloc.s V_10
+  IL_0396: ldloc.s V_10
+  IL_0398: brfalse.s IL_03d0
+  IL_039a: nop
+  IL_039b: ldarg.0
+  IL_039c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_03a1: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_03a6: isinst Celeste.Level
+  IL_03ab: ldfld Celeste.Session Celeste.Level::Session
+  IL_03b0: ldarg.0
+  IL_03b1: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_03b6: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::flagWhenInHud
+  IL_03bb: ldarg.0
+  IL_03bc: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_03c1: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::invertFlag
+  IL_03c6: ldc.i4.0
+  IL_03c7: ceq
+  IL_03c9: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_03ce: nop
+  IL_03cf: nop
+  IL_03d0: ldarg.0
+  IL_03d1: ldarg.0
+  IL_03d2: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_03d7: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_03dc: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_03e1: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_03e6: ldarg.0
+  IL_03e7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_03ec: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_03f1: ldarg.0
+  IL_03f2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_03f7: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<lastDir>5__5
+  IL_03fc: ldarg.0
+  IL_03fd: ldarg.0
+  IL_03fe: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0403: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0408: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_040d: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStart>5__6
+  IL_0412: ldarg.0
+  IL_0413: ldarg.0
+  IL_0414: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStart>5__6
+  IL_0419: ldc.r4 160
+  IL_041e: ldc.r4 90
+  IL_0423: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0428: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_042d: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStartCenter>5__7
+  IL_0432: ldarg.0
+  IL_0433: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0438: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_043d: brfalse.s IL_045c
+  IL_043f: ldarg.0
+  IL_0440: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0445: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::ignoreBind
+  IL_044a: brtrue.s IL_0459
+  IL_044c: ldarg.0
+  IL_044d: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0452: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::instantStart
+  IL_0457: br.s IL_045a
+  IL_0459: ldc.i4.1
+  IL_045a: br.s IL_045d
+  IL_045c: ldc.i4.0
+  IL_045d: stloc.s V_11
+  IL_045f: ldloc.s V_11
+  IL_0461: brfalse.s IL_0487
+  IL_0463: nop
+  IL_0464: ldarg.0
+  IL_0465: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_046a: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_046f: callvirt System.Void VivHelper.Entities.CustomPlayerPlayback::Restart()
+  IL_0474: nop
+  IL_0475: ldarg.0
+  IL_0476: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_047b: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_0480: ldc.i4.1
+  IL_0481: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_0486: nop
+  IL_0487: br IL_1442
+  IL_048c: nop
+  IL_048d: ldarg.0
+  IL_048e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0493: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_0498: brfalse.s IL_04aa
+  IL_049a: ldarg.0
+  IL_049b: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_04a0: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::ignoreBind
+  IL_04a5: ldc.i4.0
+  IL_04a6: ceq
+  IL_04a8: br.s IL_04ab
+  IL_04aa: ldc.i4.0
+  IL_04ab: stloc.s V_12
+  IL_04ad: ldloc.s V_12
+  IL_04af: brfalse IL_05cb
+  IL_04b4: nop
+  IL_04b5: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_04ba: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_04bf: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_04c4: stloc.s V_13
+  IL_04c6: ldloc.s V_13
+  IL_04c8: brfalse.s IL_04e3
+  IL_04ca: ldarg.0
+  IL_04cb: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_04d0: ldarg.0
+  IL_04d1: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_04d6: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::toggle
+  IL_04db: ldc.i4.0
+  IL_04dc: ceq
+  IL_04de: stfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::toggle
+  IL_04e3: ldarg.0
+  IL_04e4: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_04e9: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::toggle
+  IL_04ee: ldarg.0
+  IL_04ef: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_04f4: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::prev
+  IL_04f9: ceq
+  IL_04fb: ldc.i4.0
+  IL_04fc: ceq
+  IL_04fe: stloc.s V_14
+  IL_0500: ldloc.s V_14
+  IL_0502: brfalse IL_05ca
+  IL_0507: nop
+  IL_0508: ldarg.0
+  IL_0509: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_050e: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::toggle
+  IL_0513: stloc.s V_15
+  IL_0515: ldloc.s V_15
+  IL_0517: brfalse.s IL_0570
+  IL_0519: nop
+  IL_051a: br.s IL_0533
+  IL_051c: ldarg.0
+  IL_051d: ldnull
+  IL_051e: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_0523: ldarg.0
+  IL_0524: ldc.i4.4
+  IL_0525: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_052a: ldc.i4.1
+  IL_052b: ret
+  IL_052c: ldarg.0
+  IL_052d: ldc.i4.m1
+  IL_052e: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0533: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_0538: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_053d: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Released()
+  IL_0542: ldc.i4.0
+  IL_0543: ceq
+  IL_0545: stloc.s V_16
+  IL_0547: ldloc.s V_16
+  IL_0549: brtrue.s IL_051c
+  IL_054b: ldarg.0
+  IL_054c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0551: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_0556: callvirt System.Void VivHelper.Entities.CustomPlayerPlayback::Restart()
+  IL_055b: nop
+  IL_055c: ldarg.0
+  IL_055d: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0562: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_0567: ldc.i4.1
+  IL_0568: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_056d: nop
+  IL_056e: br.s IL_05c9
+  IL_0570: nop
+  IL_0571: br.s IL_058a
+  IL_0573: ldarg.0
+  IL_0574: ldnull
+  IL_0575: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_057a: ldarg.0
+  IL_057b: ldc.i4.5
+  IL_057c: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_0581: ldc.i4.1
+  IL_0582: ret
+  IL_0583: ldarg.0
+  IL_0584: ldc.i4.m1
+  IL_0585: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_058a: call VivHelper.VivHelperModuleSettings VivHelper.VivHelperModule::get_Settings()
+  IL_058f: callvirt Celeste.Mod.ButtonBinding VivHelper.VivHelperModuleSettings::get_DisplayPlaybacksInLookout()
+  IL_0594: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Released()
+  IL_0599: ldc.i4.0
+  IL_059a: ceq
+  IL_059c: stloc.s V_17
+  IL_059e: ldloc.s V_17
+  IL_05a0: brtrue.s IL_0573
+  IL_05a2: ldarg.0
+  IL_05a3: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_05a8: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_05ad: ldarg.0
+  IL_05ae: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_05b3: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_05b8: ldc.i4.0
+  IL_05b9: dup
+  IL_05ba: stloc.s V_6
+  IL_05bc: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_05c1: ldloc.s V_6
+  IL_05c3: stfld System.Boolean Monocle.Entity::Visible
+  IL_05c8: nop
+  IL_05c9: nop
+  IL_05ca: nop
+  IL_05cb: ldarg.0
+  IL_05cc: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_05d1: ldarg.0
+  IL_05d2: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_05d7: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::toggle
+  IL_05dc: stfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::prev
+  IL_05e1: ldarg.0
+  IL_05e2: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_05e7: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_05ec: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_05f1: ldarg.0
+  IL_05f2: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_05f7: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::onlyY
+  IL_05fc: stloc.s V_18
+  IL_05fe: ldloc.s V_18
+  IL_0600: brfalse.s IL_0614
+  IL_0602: nop
+  IL_0603: ldarg.0
+  IL_0604: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0609: ldc.r4 0
+  IL_060e: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0613: nop
+  IL_0614: ldarg.0
+  IL_0615: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_061a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_061f: call System.Int32 System.Math::Sign(System.Single)
+  IL_0624: ldarg.0
+  IL_0625: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<lastDir>5__5
+  IL_062a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_062f: call System.Int32 System.Math::Sign(System.Single)
+  IL_0634: bne.un.s IL_065d
+  IL_0636: ldarg.0
+  IL_0637: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_063c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0641: call System.Int32 System.Math::Sign(System.Single)
+  IL_0646: ldarg.0
+  IL_0647: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<lastDir>5__5
+  IL_064c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0651: call System.Int32 System.Math::Sign(System.Single)
+  IL_0656: ceq
+  IL_0658: ldc.i4.0
+  IL_0659: ceq
+  IL_065b: br.s IL_065e
+  IL_065d: ldc.i4.1
+  IL_065e: stloc.s V_19
+  IL_0660: ldloc.s V_19
+  IL_0662: brfalse.s IL_067c
+  IL_0664: nop
+  IL_0665: ldstr "event:/game/general/lookout_move"
+  IL_066a: ldarg.0
+  IL_066b: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0670: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0675: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_067a: pop
+  IL_067b: nop
+  IL_067c: ldarg.0
+  IL_067d: ldarg.0
+  IL_067e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0683: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<lastDir>5__5
+  IL_0688: ldarg.0
+  IL_0689: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_068e: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_0693: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0698: ldstr "lookLeft"
+  IL_069d: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_06a2: brfalse.s IL_06c0
+  IL_06a4: ldarg.0
+  IL_06a5: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_06aa: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_06af: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_06b4: ldstr "lookRight"
+  IL_06b9: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_06be: br.s IL_06c1
+  IL_06c0: ldc.i4.0
+  IL_06c1: stloc.s V_20
+  IL_06c3: ldloc.s V_20
+  IL_06c5: brfalse IL_0943
+  IL_06ca: nop
+  IL_06cb: ldarg.0
+  IL_06cc: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_06d1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_06d6: ldc.r4 0
+  IL_06db: ceq
+  IL_06dd: stloc.s V_21
+  IL_06df: ldloc.s V_21
+  IL_06e1: brfalse IL_079f
+  IL_06e6: nop
+  IL_06e7: ldarg.0
+  IL_06e8: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_06ed: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_06f2: ldc.r4 0
+  IL_06f7: ceq
+  IL_06f9: stloc.s V_22
+  IL_06fb: ldloc.s V_22
+  IL_06fd: brfalse.s IL_072b
+  IL_06ff: nop
+  IL_0700: ldarg.0
+  IL_0701: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0706: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_070b: ldarg.0
+  IL_070c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0711: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_0716: ldstr "looking"
+  IL_071b: call System.String System.String::Concat(System.String,System.String)
+  IL_0720: ldc.i4.0
+  IL_0721: ldc.i4.0
+  IL_0722: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0727: nop
+  IL_0728: nop
+  IL_0729: br.s IL_0799
+  IL_072b: ldarg.0
+  IL_072c: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0731: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0736: ldc.r4 0
+  IL_073b: cgt
+  IL_073d: stloc.s V_23
+  IL_073f: ldloc.s V_23
+  IL_0741: brfalse.s IL_076f
+  IL_0743: nop
+  IL_0744: ldarg.0
+  IL_0745: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_074a: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_074f: ldarg.0
+  IL_0750: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0755: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_075a: ldstr "lookingDown"
+  IL_075f: call System.String System.String::Concat(System.String,System.String)
+  IL_0764: ldc.i4.0
+  IL_0765: ldc.i4.0
+  IL_0766: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_076b: nop
+  IL_076c: nop
+  IL_076d: br.s IL_0799
+  IL_076f: nop
+  IL_0770: ldarg.0
+  IL_0771: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0776: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_077b: ldarg.0
+  IL_077c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0781: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_0786: ldstr "lookingUp"
+  IL_078b: call System.String System.String::Concat(System.String,System.String)
+  IL_0790: ldc.i4.0
+  IL_0791: ldc.i4.0
+  IL_0792: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0797: nop
+  IL_0798: nop
+  IL_0799: nop
+  IL_079a: br IL_0942
+  IL_079f: ldarg.0
+  IL_07a0: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_07a5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07aa: ldc.r4 0
+  IL_07af: cgt
+  IL_07b1: stloc.s V_24
+  IL_07b3: ldloc.s V_24
+  IL_07b5: brfalse IL_0873
+  IL_07ba: nop
+  IL_07bb: ldarg.0
+  IL_07bc: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_07c1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_07c6: ldc.r4 0
+  IL_07cb: ceq
+  IL_07cd: stloc.s V_25
+  IL_07cf: ldloc.s V_25
+  IL_07d1: brfalse.s IL_07ff
+  IL_07d3: nop
+  IL_07d4: ldarg.0
+  IL_07d5: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_07da: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_07df: ldarg.0
+  IL_07e0: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_07e5: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_07ea: ldstr "lookingRight"
+  IL_07ef: call System.String System.String::Concat(System.String,System.String)
+  IL_07f4: ldc.i4.0
+  IL_07f5: ldc.i4.0
+  IL_07f6: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_07fb: nop
+  IL_07fc: nop
+  IL_07fd: br.s IL_086d
+  IL_07ff: ldarg.0
+  IL_0800: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0805: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_080a: ldc.r4 0
+  IL_080f: cgt
+  IL_0811: stloc.s V_26
+  IL_0813: ldloc.s V_26
+  IL_0815: brfalse.s IL_0843
+  IL_0817: nop
+  IL_0818: ldarg.0
+  IL_0819: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_081e: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_0823: ldarg.0
+  IL_0824: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0829: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_082e: ldstr "lookingDownRight"
+  IL_0833: call System.String System.String::Concat(System.String,System.String)
+  IL_0838: ldc.i4.0
+  IL_0839: ldc.i4.0
+  IL_083a: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_083f: nop
+  IL_0840: nop
+  IL_0841: br.s IL_086d
+  IL_0843: nop
+  IL_0844: ldarg.0
+  IL_0845: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_084a: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_084f: ldarg.0
+  IL_0850: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0855: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_085a: ldstr "lookingUpRight"
+  IL_085f: call System.String System.String::Concat(System.String,System.String)
+  IL_0864: ldc.i4.0
+  IL_0865: ldc.i4.0
+  IL_0866: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_086b: nop
+  IL_086c: nop
+  IL_086d: nop
+  IL_086e: br IL_0942
+  IL_0873: ldarg.0
+  IL_0874: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0879: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_087e: ldc.r4 0
+  IL_0883: clt
+  IL_0885: stloc.s V_27
+  IL_0887: ldloc.s V_27
+  IL_0889: brfalse IL_0942
+  IL_088e: nop
+  IL_088f: ldarg.0
+  IL_0890: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0895: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_089a: ldc.r4 0
+  IL_089f: ceq
+  IL_08a1: stloc.s V_28
+  IL_08a3: ldloc.s V_28
+  IL_08a5: brfalse.s IL_08d3
+  IL_08a7: nop
+  IL_08a8: ldarg.0
+  IL_08a9: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_08ae: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_08b3: ldarg.0
+  IL_08b4: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_08b9: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_08be: ldstr "lookingLeft"
+  IL_08c3: call System.String System.String::Concat(System.String,System.String)
+  IL_08c8: ldc.i4.0
+  IL_08c9: ldc.i4.0
+  IL_08ca: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_08cf: nop
+  IL_08d0: nop
+  IL_08d1: br.s IL_0941
+  IL_08d3: ldarg.0
+  IL_08d4: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_08d9: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_08de: ldc.r4 0
+  IL_08e3: cgt
+  IL_08e5: stloc.s V_29
+  IL_08e7: ldloc.s V_29
+  IL_08e9: brfalse.s IL_0917
+  IL_08eb: nop
+  IL_08ec: ldarg.0
+  IL_08ed: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_08f2: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_08f7: ldarg.0
+  IL_08f8: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_08fd: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_0902: ldstr "lookingDownLeft"
+  IL_0907: call System.String System.String::Concat(System.String,System.String)
+  IL_090c: ldc.i4.0
+  IL_090d: ldc.i4.0
+  IL_090e: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0913: nop
+  IL_0914: nop
+  IL_0915: br.s IL_0941
+  IL_0917: nop
+  IL_0918: ldarg.0
+  IL_0919: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_091e: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_0923: ldarg.0
+  IL_0924: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0929: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_092e: ldstr "lookingUpLeft"
+  IL_0933: call System.String System.String::Concat(System.String,System.String)
+  IL_0938: ldc.i4.0
+  IL_0939: ldc.i4.0
+  IL_093a: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_093f: nop
+  IL_0940: nop
+  IL_0941: nop
+  IL_0942: nop
+  IL_0943: ldarg.0
+  IL_0944: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0949: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_094e: ldnull
+  IL_094f: ceq
+  IL_0951: stloc.s V_30
+  IL_0953: ldloc.s V_30
+  IL_0955: brfalse IL_0e5f
+  IL_095a: nop
+  IL_095b: ldarg.0
+  IL_095c: ldarg.0
+  IL_095d: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0962: ldarg.0
+  IL_0963: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0968: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_096d: ldarg.0
+  IL_096e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0973: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(System.Single,Microsoft.Xna.Framework.Vector2)
+  IL_0978: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_097d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0982: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0987: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_098c: ldarg.0
+  IL_098d: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_0992: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0997: ldc.r4 0
+  IL_099c: ceq
+  IL_099e: stloc.s V_31
+  IL_09a0: ldloc.s V_31
+  IL_09a2: brfalse.s IL_09dd
+  IL_09a4: nop
+  IL_09a5: ldarg.0
+  IL_09a6: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_09ab: ldarg.0
+  IL_09ac: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_09b1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09b6: ldc.r4 0
+  IL_09bb: ldarg.0
+  IL_09bc: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_09c1: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_09c6: ldc.r4 2
+  IL_09cb: mul
+  IL_09cc: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_09d1: mul
+  IL_09d2: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_09d7: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_09dc: nop
+  IL_09dd: ldarg.0
+  IL_09de: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_09e3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_09e8: ldc.r4 0
+  IL_09ed: ceq
+  IL_09ef: stloc.s V_32
+  IL_09f1: ldloc.s V_32
+  IL_09f3: brfalse.s IL_0a2e
+  IL_09f5: nop
+  IL_09f6: ldarg.0
+  IL_09f7: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_09fc: ldarg.0
+  IL_09fd: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0a02: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a07: ldc.r4 0
+  IL_0a0c: ldarg.0
+  IL_0a0d: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0a12: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::accel
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_0a17: ldc.r4 2
+  IL_0a1c: mul
+  IL_0a1d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0a22: mul
+  IL_0a23: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0a28: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0a2d: nop
+  IL_0a2e: ldarg.0
+  IL_0a2f: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0a34: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0a39: ldarg.0
+  IL_0a3a: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0a3f: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::maxSpeed
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_0a44: cgt
+  IL_0a46: stloc.s V_33
+  IL_0a48: ldloc.s V_33
+  IL_0a4a: brfalse.s IL_0a6a
+  IL_0a4c: nop
+  IL_0a4d: ldarg.0
+  IL_0a4e: ldarg.0
+  IL_0a4f: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0a54: ldarg.0
+  IL_0a55: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0a5a: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::maxSpeed
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_0a5f: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0a64: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0a69: nop
+  IL_0a6a: ldarg.0
+  IL_0a6b: ldarg.0
+  IL_0a6c: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0a71: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector>5__10
+  IL_0a76: ldarg.0
+  IL_0a77: ldarg.0
+  IL_0a78: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0a7d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0a82: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0a87: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.LookoutBlocker>()
+  IL_0a8c: stfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<entities>5__11
+  IL_0a91: ldarg.0
+  IL_0a92: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0a97: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0a9c: dup
+  IL_0a9d: ldind.r4
+  IL_0a9e: ldarg.0
+  IL_0a9f: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0aa4: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0aa9: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0aae: mul
+  IL_0aaf: add
+  IL_0ab0: stind.r4
+  IL_0ab1: ldarg.0
+  IL_0ab2: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0ab7: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0abc: ldarg.0
+  IL_0abd: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0ac2: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0ac7: stloc.s V_35
+  IL_0ac9: ldloca.s V_35
+  IL_0acb: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0ad0: conv.r4
+  IL_0ad1: blt.s IL_0afd
+  IL_0ad3: ldarg.0
+  IL_0ad4: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0ad9: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0ade: ldc.r4 320
+  IL_0ae3: add
+  IL_0ae4: ldarg.0
+  IL_0ae5: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0aea: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0aef: stloc.s V_35
+  IL_0af1: ldloca.s V_35
+  IL_0af3: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0af8: conv.r4
+  IL_0af9: cgt
+  IL_0afb: br.s IL_0afe
+  IL_0afd: ldc.i4.1
+  IL_0afe: stloc.s V_34
+  IL_0b00: ldloc.s V_34
+  IL_0b02: brfalse.s IL_0b16
+  IL_0b04: nop
+  IL_0b05: ldarg.0
+  IL_0b06: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0b0b: ldc.r4 0
+  IL_0b10: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0b15: nop
+  IL_0b16: ldarg.0
+  IL_0b17: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0b1c: ldarg.0
+  IL_0b1d: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0b22: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0b27: ldarg.0
+  IL_0b28: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0b2d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0b32: stloc.s V_35
+  IL_0b34: ldloca.s V_35
+  IL_0b36: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0b3b: conv.r4
+  IL_0b3c: ldarg.0
+  IL_0b3d: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0b42: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0b47: stloc.s V_35
+  IL_0b49: ldloca.s V_35
+  IL_0b4b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0b50: ldc.i4 320
+  IL_0b55: sub
+  IL_0b56: conv.r4
+  IL_0b57: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0b5c: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0b61: nop
+  IL_0b62: ldarg.0
+  IL_0b63: ldarg.0
+  IL_0b64: ldfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<entities>5__11
+  IL_0b69: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0b6e: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__12
+  IL_0b73: br IL_0c2f
+  IL_0b78: ldarg.0
+  IL_0b79: ldarg.0
+  IL_0b7a: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__12
+  IL_0b7f: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0b84: stfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0b89: nop
+  IL_0b8a: ldarg.0
+  IL_0b8b: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0b90: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0b95: ldc.r4 320
+  IL_0b9a: add
+  IL_0b9b: ldarg.0
+  IL_0b9c: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0ba1: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0ba6: ble.un.s IL_0bf8
+  IL_0ba8: ldarg.0
+  IL_0ba9: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0bae: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0bb3: ldc.r4 180
+  IL_0bb8: add
+  IL_0bb9: ldarg.0
+  IL_0bba: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0bbf: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0bc4: ble.un.s IL_0bf8
+  IL_0bc6: ldarg.0
+  IL_0bc7: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0bcc: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0bd1: ldarg.0
+  IL_0bd2: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0bd7: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0bdc: bge.un.s IL_0bf8
+  IL_0bde: ldarg.0
+  IL_0bdf: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0be4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0be9: ldarg.0
+  IL_0bea: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0bef: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0bf4: clt
+  IL_0bf6: br.s IL_0bf9
+  IL_0bf8: ldc.i4.0
+  IL_0bf9: stloc.s V_36
+  IL_0bfb: ldloc.s V_36
+  IL_0bfd: brfalse.s IL_0c27
+  IL_0bff: nop
+  IL_0c00: ldarg.0
+  IL_0c01: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0c06: ldarg.0
+  IL_0c07: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector>5__10
+  IL_0c0c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c11: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c16: ldarg.0
+  IL_0c17: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0c1c: ldc.r4 0
+  IL_0c21: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0c26: nop
+  IL_0c27: nop
+  IL_0c28: ldarg.0
+  IL_0c29: ldnull
+  IL_0c2a: stfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item>5__13
+  IL_0c2f: ldarg.0
+  IL_0c30: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__12
+  IL_0c35: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0c3a: brtrue IL_0b78
+  IL_0c3f: leave.s IL_0c54
+  IL_0c41: ldarg.0
+  IL_0c42: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__12
+  IL_0c47: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0c4d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0c52: nop
+  IL_0c53: endfinally
+  IL_0c54: ldarg.0
+  IL_0c55: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__12
+  IL_0c5a: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0c60: ldarg.0
+  IL_0c61: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0c66: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0c6b: dup
+  IL_0c6c: ldind.r4
+  IL_0c6d: ldarg.0
+  IL_0c6e: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0c73: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0c78: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0c7d: mul
+  IL_0c7e: add
+  IL_0c7f: stind.r4
+  IL_0c80: ldarg.0
+  IL_0c81: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0c86: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0c8b: ldarg.0
+  IL_0c8c: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0c91: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0c96: stloc.s V_35
+  IL_0c98: ldloca.s V_35
+  IL_0c9a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0c9f: conv.r4
+  IL_0ca0: blt.s IL_0ccc
+  IL_0ca2: ldarg.0
+  IL_0ca3: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0ca8: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0cad: ldc.r4 180
+  IL_0cb2: add
+  IL_0cb3: ldarg.0
+  IL_0cb4: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0cb9: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0cbe: stloc.s V_35
+  IL_0cc0: ldloca.s V_35
+  IL_0cc2: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0cc7: conv.r4
+  IL_0cc8: cgt
+  IL_0cca: br.s IL_0ccd
+  IL_0ccc: ldc.i4.1
+  IL_0ccd: stloc.s V_37
+  IL_0ccf: ldloc.s V_37
+  IL_0cd1: brfalse.s IL_0ce5
+  IL_0cd3: nop
+  IL_0cd4: ldarg.0
+  IL_0cd5: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0cda: ldc.r4 0
+  IL_0cdf: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0ce4: nop
+  IL_0ce5: ldarg.0
+  IL_0ce6: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0ceb: ldarg.0
+  IL_0cec: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0cf1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0cf6: ldarg.0
+  IL_0cf7: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0cfc: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0d01: stloc.s V_35
+  IL_0d03: ldloca.s V_35
+  IL_0d05: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0d0a: conv.r4
+  IL_0d0b: ldarg.0
+  IL_0d0c: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0d11: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0d16: stloc.s V_35
+  IL_0d18: ldloca.s V_35
+  IL_0d1a: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0d1f: ldc.i4 180
+  IL_0d24: sub
+  IL_0d25: conv.r4
+  IL_0d26: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0d2b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0d30: nop
+  IL_0d31: ldarg.0
+  IL_0d32: ldarg.0
+  IL_0d33: ldfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<entities>5__11
+  IL_0d38: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0d3d: stfld System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__14
+  IL_0d42: br IL_0dfe
+  IL_0d47: ldarg.0
+  IL_0d48: ldarg.0
+  IL_0d49: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__14
+  IL_0d4e: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0d53: stfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0d58: nop
+  IL_0d59: ldarg.0
+  IL_0d5a: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0d5f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0d64: ldc.r4 320
+  IL_0d69: add
+  IL_0d6a: ldarg.0
+  IL_0d6b: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0d70: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0d75: ble.un.s IL_0dc7
+  IL_0d77: ldarg.0
+  IL_0d78: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0d7d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0d82: ldc.r4 180
+  IL_0d87: add
+  IL_0d88: ldarg.0
+  IL_0d89: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0d8e: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0d93: ble.un.s IL_0dc7
+  IL_0d95: ldarg.0
+  IL_0d96: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0d9b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0da0: ldarg.0
+  IL_0da1: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0da6: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0dab: bge.un.s IL_0dc7
+  IL_0dad: ldarg.0
+  IL_0dae: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0db3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0db8: ldarg.0
+  IL_0db9: ldfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0dbe: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0dc3: clt
+  IL_0dc5: br.s IL_0dc8
+  IL_0dc7: ldc.i4.0
+  IL_0dc8: stloc.s V_38
+  IL_0dca: ldloc.s V_38
+  IL_0dcc: brfalse.s IL_0df6
+  IL_0dce: nop
+  IL_0dcf: ldarg.0
+  IL_0dd0: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0dd5: ldarg.0
+  IL_0dd6: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector>5__10
+  IL_0ddb: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0de0: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0de5: ldarg.0
+  IL_0de6: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<speed>5__4
+  IL_0deb: ldc.r4 0
+  IL_0df0: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0df5: nop
+  IL_0df6: nop
+  IL_0df7: ldarg.0
+  IL_0df8: ldnull
+  IL_0df9: stfld Monocle.Entity VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<item2>5__15
+  IL_0dfe: ldarg.0
+  IL_0dff: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__14
+  IL_0e04: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0e09: brtrue IL_0d47
+  IL_0e0e: leave.s IL_0e23
+  IL_0e10: ldarg.0
+  IL_0e11: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__14
+  IL_0e16: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0e1c: callvirt System.Void System.IDisposable::Dispose()
+  IL_0e21: nop
+  IL_0e22: endfinally
+  IL_0e23: ldarg.0
+  IL_0e24: ldflda System.Collections.Generic.List`1/Enumerator<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>s__14
+  IL_0e29: initobj System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0e2f: ldarg.0
+  IL_0e30: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0e35: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0e3a: ldarg.0
+  IL_0e3b: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<cam>5__3
+  IL_0e40: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0e45: nop
+  IL_0e46: nop
+  IL_0e47: ldarg.0
+  IL_0e48: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector>5__10
+  IL_0e4d: initobj Microsoft.Xna.Framework.Vector2
+  IL_0e53: ldarg.0
+  IL_0e54: ldnull
+  IL_0e55: stfld System.Collections.Generic.List`1<Monocle.Entity> VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<entities>5__11
+  IL_0e5a: br IL_141e
+  IL_0e5f: nop
+  IL_0e60: ldarg.0
+  IL_0e61: ldarg.0
+  IL_0e62: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0e67: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0e6c: ldc.i4.0
+  IL_0e6d: ble.s IL_0e8e
+  IL_0e6f: ldarg.0
+  IL_0e70: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0e75: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_0e7a: ldarg.0
+  IL_0e7b: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0e80: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0e85: ldc.i4.1
+  IL_0e86: sub
+  IL_0e87: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0e8c: br.s IL_0e94
+  IL_0e8e: ldarg.0
+  IL_0e8f: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStartCenter>5__7
+  IL_0e94: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0e99: ldarg.0
+  IL_0e9a: ldarg.0
+  IL_0e9b: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0ea0: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_0ea5: ldarg.0
+  IL_0ea6: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0eab: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0eb0: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0eb5: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_0eba: ldarg.0
+  IL_0ebb: ldarg.0
+  IL_0ebc: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0ec1: ldarg.0
+  IL_0ec2: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_0ec7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0ecc: stloc.s V_39
+  IL_0ece: ldloca.s V_39
+  IL_0ed0: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0ed5: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num>5__18
+  IL_0eda: ldarg.0
+  IL_0edb: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_0ee0: ldarg.0
+  IL_0ee1: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0ee6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0eeb: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_0ef0: pop
+  IL_0ef1: ldarg.0
+  IL_0ef2: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0ef7: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_0efc: ldc.r4 0.25
+  IL_0f01: bge.un.s IL_0f13
+  IL_0f03: ldarg.0
+  IL_0f04: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0f09: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0f0e: ldc.i4.0
+  IL_0f0f: cgt
+  IL_0f11: br.s IL_0f14
+  IL_0f13: ldc.i4.0
+  IL_0f14: stloc.s V_40
+  IL_0f16: ldloc.s V_40
+  IL_0f18: brfalse IL_1003
+  IL_0f1d: nop
+  IL_0f1e: ldarg.0
+  IL_0f1f: ldarg.0
+  IL_0f20: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0f25: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0f2a: ldc.i4.1
+  IL_0f2b: ble.s IL_0f4c
+  IL_0f2d: ldarg.0
+  IL_0f2e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0f33: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_0f38: ldarg.0
+  IL_0f39: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0f3e: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_0f43: ldc.i4.2
+  IL_0f44: sub
+  IL_0f45: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0f4a: br.s IL_0f52
+  IL_0f4c: ldarg.0
+  IL_0f4d: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStartCenter>5__7
+  IL_0f52: ldarg.0
+  IL_0f53: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0f58: ldc.r4 0.75
+  IL_0f5d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0f62: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin>5__21
+  IL_0f67: ldarg.0
+  IL_0f68: ldarg.0
+  IL_0f69: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0f6e: ldarg.0
+  IL_0f6f: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_0f74: ldc.r4 0.25
+  IL_0f79: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0f7e: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end>5__22
+  IL_0f83: ldarg.0
+  IL_0f84: ldarg.0
+  IL_0f85: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin>5__21
+  IL_0f8a: ldarg.0
+  IL_0f8b: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end>5__22
+  IL_0f90: ldarg.0
+  IL_0f91: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_0f96: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0f9b: stfld Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve>5__23
+  IL_0fa0: ldarg.0
+  IL_0fa1: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_0fa6: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0fab: ldarg.0
+  IL_0fac: ldflda Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve>5__23
+  IL_0fb1: ldc.r4 0.5
+  IL_0fb6: ldarg.0
+  IL_0fb7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_0fbc: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_0fc1: ldc.r4 0.25
+  IL_0fc6: div
+  IL_0fc7: ldc.r4 0.5
+  IL_0fcc: mul
+  IL_0fcd: add
+  IL_0fce: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_0fd3: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0fd8: nop
+  IL_0fd9: nop
+  IL_0fda: ldarg.0
+  IL_0fdb: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin>5__21
+  IL_0fe0: initobj Microsoft.Xna.Framework.Vector2
+  IL_0fe6: ldarg.0
+  IL_0fe7: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end>5__22
+  IL_0fec: initobj Microsoft.Xna.Framework.Vector2
+  IL_0ff2: ldarg.0
+  IL_0ff3: ldflda Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve>5__23
+  IL_0ff8: initobj Monocle.SimpleCurve
+  IL_0ffe: br IL_1154
+  IL_1003: ldarg.0
+  IL_1004: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1009: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_100e: ldc.r4 0.75
+  IL_1013: ble.un.s IL_1036
+  IL_1015: ldarg.0
+  IL_1016: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_101b: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_1020: ldarg.0
+  IL_1021: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1026: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_102b: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1030: ldc.i4.1
+  IL_1031: sub
+  IL_1032: clt
+  IL_1034: br.s IL_1037
+  IL_1036: ldc.i4.0
+  IL_1037: stloc.s V_41
+  IL_1039: ldloc.s V_41
+  IL_103b: brfalse IL_1125
+  IL_1040: nop
+  IL_1041: ldarg.0
+  IL_1042: ldarg.0
+  IL_1043: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1048: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_104d: ldarg.0
+  IL_104e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1053: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_1058: ldc.i4.1
+  IL_1059: add
+  IL_105a: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_105f: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value2>5__24
+  IL_1064: ldarg.0
+  IL_1065: ldarg.0
+  IL_1066: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_106b: ldarg.0
+  IL_106c: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_1071: ldc.r4 0.75
+  IL_1076: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_107b: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin2>5__25
+  IL_1080: ldarg.0
+  IL_1081: ldarg.0
+  IL_1082: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_1087: ldarg.0
+  IL_1088: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value2>5__24
+  IL_108d: ldc.r4 0.25
+  IL_1092: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1097: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end2>5__26
+  IL_109c: ldarg.0
+  IL_109d: ldarg.0
+  IL_109e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin2>5__25
+  IL_10a3: ldarg.0
+  IL_10a4: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end2>5__26
+  IL_10a9: ldarg.0
+  IL_10aa: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_10af: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_10b4: stfld Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve2>5__27
+  IL_10b9: ldarg.0
+  IL_10ba: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_10bf: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_10c4: ldarg.0
+  IL_10c5: ldflda Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve2>5__27
+  IL_10ca: ldarg.0
+  IL_10cb: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_10d0: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_10d5: ldc.r4 0.75
+  IL_10da: sub
+  IL_10db: ldc.r4 0.25
+  IL_10e0: div
+  IL_10e1: ldc.r4 0.5
+  IL_10e6: mul
+  IL_10e7: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_10ec: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_10f1: nop
+  IL_10f2: nop
+  IL_10f3: ldarg.0
+  IL_10f4: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value2>5__24
+  IL_10f9: initobj Microsoft.Xna.Framework.Vector2
+  IL_10ff: ldarg.0
+  IL_1100: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<begin2>5__25
+  IL_1105: initobj Microsoft.Xna.Framework.Vector2
+  IL_110b: ldarg.0
+  IL_110c: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<end2>5__26
+  IL_1111: initobj Microsoft.Xna.Framework.Vector2
+  IL_1117: ldarg.0
+  IL_1118: ldflda Monocle.SimpleCurve VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<simpleCurve2>5__27
+  IL_111d: initobj Monocle.SimpleCurve
+  IL_1123: br.s IL_1154
+  IL_1125: nop
+  IL_1126: ldarg.0
+  IL_1127: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_112c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1131: ldarg.0
+  IL_1132: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_1137: ldarg.0
+  IL_1138: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_113d: ldarg.0
+  IL_113e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1143: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1148: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_114d: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1152: nop
+  IL_1153: nop
+  IL_1154: ldarg.0
+  IL_1155: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_115a: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_115f: dup
+  IL_1160: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_1165: ldc.r4 -160
+  IL_116a: ldc.r4 -90
+  IL_116f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_1174: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1179: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_117e: nop
+  IL_117f: ldarg.0
+  IL_1180: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1185: ldarg.0
+  IL_1186: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_118b: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1190: ldarg.0
+  IL_1191: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_1196: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_119b: ldarg.0
+  IL_119c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_11a1: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::maxSpeed
++ IL_0000: call System.Single Celeste.Mod.SSMQoLMod.Modifications.FastLookout::ModifySpeed(System.Single) @ Celeste.Mod.SSMQoLMod.Modifications.FastLookout::IL_VivHelper_CustomPlaybackWatchtower_LookRoutine
+  IL_11a6: ldarg.0
+  IL_11a7: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num>5__18
+  IL_11ac: div
+  IL_11ad: mul
+  IL_11ae: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_11b3: mul
+  IL_11b4: sub
+  IL_11b5: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_11ba: ldarg.0
+  IL_11bb: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_11c0: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_11c5: ldc.r4 0
+  IL_11ca: clt
+  IL_11cc: stloc.s V_42
+  IL_11ce: ldloc.s V_42
+  IL_11d0: brfalse.s IL_122b
+  IL_11d2: nop
+  IL_11d3: ldarg.0
+  IL_11d4: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_11d9: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_11de: ldc.i4.0
+  IL_11df: cgt
+  IL_11e1: stloc.s V_43
+  IL_11e3: ldloc.s V_43
+  IL_11e5: brfalse.s IL_1213
+  IL_11e7: nop
+  IL_11e8: ldarg.0
+  IL_11e9: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_11ee: ldarg.0
+  IL_11ef: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_11f4: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_11f9: ldc.i4.1
+  IL_11fa: sub
+  IL_11fb: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_1200: ldarg.0
+  IL_1201: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1206: ldc.r4 1
+  IL_120b: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1210: nop
+  IL_1211: br.s IL_1225
+  IL_1213: nop
+  IL_1214: ldarg.0
+  IL_1215: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_121a: ldc.r4 0
+  IL_121f: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1224: nop
+  IL_1225: nop
+  IL_1226: br IL_12c2
+  IL_122b: ldarg.0
+  IL_122c: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1231: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1236: ldc.r4 1
+  IL_123b: cgt
+  IL_123d: stloc.s V_44
+  IL_123f: ldloc.s V_44
+  IL_1241: brfalse IL_12c2
+  IL_1246: nop
+  IL_1247: ldarg.0
+  IL_1248: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_124d: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_1252: ldarg.0
+  IL_1253: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1258: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_125d: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_1262: ldc.i4.1
+  IL_1263: sub
+  IL_1264: clt
+  IL_1266: stloc.s V_45
+  IL_1268: ldloc.s V_45
+  IL_126a: brfalse.s IL_1298
+  IL_126c: nop
+  IL_126d: ldarg.0
+  IL_126e: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1273: ldarg.0
+  IL_1274: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1279: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_127e: ldc.i4.1
+  IL_127f: add
+  IL_1280: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_1285: ldarg.0
+  IL_1286: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_128b: ldc.r4 0
+  IL_1290: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_1295: nop
+  IL_1296: br.s IL_12c1
+  IL_1298: nop
+  IL_1299: ldarg.0
+  IL_129a: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_129f: ldc.r4 1
+  IL_12a4: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_12a9: ldarg.0
+  IL_12aa: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_12af: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::summit
+  IL_12b4: stloc.s V_46
+  IL_12b6: ldloc.s V_46
+  IL_12b8: brfalse.s IL_12c0
+  IL_12ba: nop
+  IL_12bb: br IL_1489
+  IL_12c0: nop
+  IL_12c1: nop
+  IL_12c2: ldarg.0
+  IL_12c3: ldc.r4 0
+  IL_12c8: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_12cd: ldarg.0
+  IL_12ce: ldc.r4 0
+  IL_12d3: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num3>5__20
+  IL_12d8: ldarg.0
+  IL_12d9: ldc.i4.0
+  IL_12da: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_12df: br IL_13c7
+  IL_12e4: nop
+  IL_12e5: ldarg.0
+  IL_12e6: ldarg.0
+  IL_12e7: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_12ec: brfalse.s IL_1308
+  IL_12ee: ldarg.0
+  IL_12ef: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_12f4: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_12f9: ldarg.0
+  IL_12fa: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_12ff: ldc.i4.1
+  IL_1300: sub
+  IL_1301: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_1306: br.s IL_130e
+  IL_1308: ldarg.0
+  IL_1309: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStartCenter>5__7
+  IL_130e: ldarg.0
+  IL_130f: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1314: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_1319: ldarg.0
+  IL_131a: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_131f: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_1324: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1329: stloc.s V_39
+  IL_132b: ldloca.s V_39
+  IL_132d: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_1332: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num4>5__29
+  IL_1337: ldarg.0
+  IL_1338: ldarg.0
+  IL_1339: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num3>5__20
+  IL_133e: ldarg.0
+  IL_133f: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num4>5__29
+  IL_1344: add
+  IL_1345: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num3>5__20
+  IL_134a: ldarg.0
+  IL_134b: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_1350: ldarg.0
+  IL_1351: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1356: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_135b: clt
+  IL_135d: stloc.s V_47
+  IL_135f: ldloc.s V_47
+  IL_1361: brfalse.s IL_137a
+  IL_1363: nop
+  IL_1364: ldarg.0
+  IL_1365: ldarg.0
+  IL_1366: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_136b: ldarg.0
+  IL_136c: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num4>5__29
+  IL_1371: add
+  IL_1372: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_1377: nop
+  IL_1378: br.s IL_13b4
+  IL_137a: ldarg.0
+  IL_137b: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_1380: ldarg.0
+  IL_1381: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1386: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_138b: ceq
+  IL_138d: stloc.s V_48
+  IL_138f: ldloc.s V_48
+  IL_1391: brfalse.s IL_13b4
+  IL_1393: nop
+  IL_1394: ldarg.0
+  IL_1395: ldarg.0
+  IL_1396: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_139b: ldarg.0
+  IL_139c: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num4>5__29
+  IL_13a1: ldarg.0
+  IL_13a2: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_13a7: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_13ac: mul
+  IL_13ad: add
+  IL_13ae: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_13b3: nop
+  IL_13b4: nop
+  IL_13b5: ldarg.0
+  IL_13b6: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_13bb: stloc.s V_49
+  IL_13bd: ldarg.0
+  IL_13be: ldloc.s V_49
+  IL_13c0: ldc.i4.1
+  IL_13c1: add
+  IL_13c2: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_13c7: ldarg.0
+  IL_13c8: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<i>5__28
+  IL_13cd: ldarg.0
+  IL_13ce: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_13d3: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_13d8: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_13dd: clt
+  IL_13df: stloc.s V_50
+  IL_13e1: ldloc.s V_50
+  IL_13e3: brtrue IL_12e4
+  IL_13e8: ldarg.0
+  IL_13e9: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_13ee: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_13f3: ldarg.0
+  IL_13f4: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num2>5__19
+  IL_13f9: ldarg.0
+  IL_13fa: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<num3>5__20
+  IL_13ff: div
+  IL_1400: stfld System.Single VivHelper.Entities.Watchtowers.Hud::TrackPercent
+  IL_1405: nop
+  IL_1406: ldarg.0
+  IL_1407: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector2>5__16
+  IL_140c: initobj Microsoft.Xna.Framework.Vector2
+  IL_1412: ldarg.0
+  IL_1413: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<vector3>5__17
+  IL_1418: initobj Microsoft.Xna.Framework.Vector2
+  IL_141e: ldarg.0
+  IL_141f: ldnull
+  IL_1420: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_1425: ldarg.0
+  IL_1426: ldc.i4.6
+  IL_1427: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_142c: ldc.i4.1
+  IL_142d: ret
+  IL_142e: ldarg.0
+  IL_142f: ldc.i4.m1
+  IL_1430: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_1435: nop
+  IL_1436: ldarg.0
+  IL_1437: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<value>5__9
+  IL_143c: initobj Microsoft.Xna.Framework.Vector2
+  IL_1442: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_1447: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_144c: brtrue.s IL_147f
+  IL_144e: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_1453: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1458: brtrue.s IL_147f
+  IL_145a: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_145f: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1464: brtrue.s IL_147f
+  IL_1466: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_146b: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1470: brtrue.s IL_147f
+  IL_1472: ldarg.0
+  IL_1473: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1478: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::interacting
+  IL_147d: br.s IL_1480
+  IL_147f: ldc.i4.0
+  IL_1480: stloc.s V_51
+  IL_1482: ldloc.s V_51
+  IL_1484: brtrue IL_048c
+  IL_1489: ldarg.0
+  IL_148a: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_148f: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_1494: ldnull
+  IL_1495: cgt.un
+  IL_1497: stloc.s V_52
+  IL_1499: ldloc.s V_52
+  IL_149b: brfalse.s IL_14c5
+  IL_149d: nop
+  IL_149e: ldarg.0
+  IL_149f: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_14a4: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_14a9: ldarg.0
+  IL_14aa: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_14af: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_14b4: ldc.i4.0
+  IL_14b5: dup
+  IL_14b6: stloc.s V_6
+  IL_14b8: stfld System.Boolean VivHelper.Entities.CustomPlayerPlayback::active
+  IL_14bd: ldloc.s V_6
+  IL_14bf: stfld System.Boolean Monocle.Entity::Visible
+  IL_14c4: nop
+  IL_14c5: ldarg.0
+  IL_14c6: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_14cb: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_14d0: ldarg.0
+  IL_14d1: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_14d6: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_14db: ldc.i4.1
+  IL_14dc: dup
+  IL_14dd: stloc.s V_6
+  IL_14df: stfld System.Boolean Monocle.Component::Visible
+  IL_14e4: ldloc.s V_6
+  IL_14e6: stfld System.Boolean Monocle.Component::Visible
+  IL_14eb: ldarg.0
+  IL_14ec: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_14f1: ldfld Monocle.Sprite VivHelper.Entities.CustomPlaybackWatchtower::sprite
+  IL_14f6: ldarg.0
+  IL_14f7: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_14fc: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::animPrefix
+  IL_1501: ldstr "idle"
+  IL_1506: call System.String System.String::Concat(System.String,System.String)
+  IL_150b: ldc.i4.0
+  IL_150c: ldc.i4.0
+  IL_150d: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_1512: nop
+  IL_1513: ldstr "event:/ui/game/lookout_off"
+  IL_1518: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_151d: pop
+  IL_151e: br.s IL_1566
+  IL_1520: nop
+  IL_1521: ldarg.0
+  IL_1522: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_1527: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_152c: ldarg.0
+  IL_152d: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1532: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_1537: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_153c: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_1541: ldc.r4 16
+  IL_1546: mul
+  IL_1547: conv.i4
+  IL_1548: conv.r4
+  IL_1549: stfld System.Single Celeste.Level::ScreenPadding
+  IL_154e: ldarg.0
+  IL_154f: ldnull
+  IL_1550: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_1555: ldarg.0
+  IL_1556: ldc.i4.7
+  IL_1557: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_155c: ldc.i4.1
+  IL_155d: ret
+  IL_155e: ldarg.0
+  IL_155f: ldc.i4.m1
+  IL_1560: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_1565: nop
+  IL_1566: ldarg.0
+  IL_1567: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_156c: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_1571: ldarg.0
+  IL_1572: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1577: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_157c: ldfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_1581: ldc.r4 0
+  IL_1586: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_158b: ldc.r4 3
+  IL_1590: mul
+  IL_1591: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_1596: dup
+  IL_1597: stloc.s V_9
+  IL_1599: stfld System.Single VivHelper.Entities.Watchtowers.Hud::Easer
+  IL_159e: ldloc.s V_9
+  IL_15a0: ldc.r4 0
+  IL_15a5: cgt
+  IL_15a7: stloc.s V_53
+  IL_15a9: ldloc.s V_53
+  IL_15ab: brtrue IL_1520
+  IL_15b0: ldarg.0
+  IL_15b1: ldarg.0
+  IL_15b2: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_15b7: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::summit
+  IL_15bc: brfalse.s IL_15f4
+  IL_15be: ldarg.0
+  IL_15bf: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_15c4: ldfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower::node
+  IL_15c9: ldarg.0
+  IL_15ca: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_15cf: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> VivHelper.Entities.CustomPlaybackWatchtower::nodes
+  IL_15d4: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_15d9: ldc.i4.1
+  IL_15da: sub
+  IL_15db: blt.s IL_15f4
+  IL_15dd: ldarg.0
+  IL_15de: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_15e3: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower::nodePercent
+  IL_15e8: ldc.r4 0.95
+  IL_15ed: clt.un
+  IL_15ef: ldc.i4.0
+  IL_15f0: ceq
+  IL_15f2: br.s IL_15f5
+  IL_15f4: ldc.i4.0
+  IL_15f5: stfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<atSummitTop>5__8
+  IL_15fa: ldarg.0
+  IL_15fb: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<atSummitTop>5__8
+  IL_1600: stloc.s V_54
+  IL_1602: ldloc.s V_54
+  IL_1604: brfalse IL_1721
+  IL_1609: nop
+  IL_160a: ldarg.0
+  IL_160b: ldc.r4 0.5
+  IL_1610: box System.Single
+  IL_1615: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_161a: ldarg.0
+  IL_161b: ldc.i4.8
+  IL_161c: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_1621: ldc.i4.1
+  IL_1622: ret
+  IL_1623: ldarg.0
+  IL_1624: ldc.i4.m1
+  IL_1625: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_162a: ldarg.0
+  IL_162b: ldc.r4 3
+  IL_1630: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__30
+  IL_1635: ldarg.0
+  IL_1636: ldc.r4 0
+  IL_163b: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__31
+  IL_1640: ldarg.0
+  IL_1641: ldarg.0
+  IL_1642: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_1647: ldc.r4 160
+  IL_164c: ldc.r4 90
+  IL_1651: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_1656: ldc.r4 2
+  IL_165b: ldarg.0
+  IL_165c: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__30
+  IL_1661: callvirt System.Collections.IEnumerator Celeste.Level::ZoomTo(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_1666: ldc.i4.1
+  IL_1667: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_166c: stfld Monocle.Coroutine VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<component>5__32
+  IL_1671: ldarg.0
+  IL_1672: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1677: ldarg.0
+  IL_1678: ldfld Monocle.Coroutine VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<component>5__32
+  IL_167d: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_1682: nop
+  IL_1683: br.s IL_16d2
+  IL_1685: nop
+  IL_1686: ldarg.0
+  IL_1687: ldarg.0
+  IL_1688: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__31
+  IL_168d: ldc.r4 1
+  IL_1692: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_1697: ldarg.0
+  IL_1698: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__30
+  IL_169d: div
+  IL_169e: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_16a3: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__31
+  IL_16a8: ldstr "escape"
+  IL_16ad: ldarg.0
+  IL_16ae: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__31
+  IL_16b3: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_16b8: nop
+  IL_16b9: ldarg.0
+  IL_16ba: ldnull
+  IL_16bb: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_16c0: ldarg.0
+  IL_16c1: ldc.i4.s 9
+  IL_16c3: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_16c8: ldc.i4.1
+  IL_16c9: ret
+  IL_16ca: ldarg.0
+  IL_16cb: ldc.i4.m1
+  IL_16cc: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_16d1: nop
+  IL_16d2: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_16d7: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_16dc: brtrue.s IL_170f
+  IL_16de: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_16e3: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_16e8: brtrue.s IL_170f
+  IL_16ea: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_16ef: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_16f4: brtrue.s IL_170f
+  IL_16f6: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_16fb: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_1700: brtrue.s IL_170f
+  IL_1702: ldarg.0
+  IL_1703: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1708: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::interacting
+  IL_170d: br.s IL_1710
+  IL_170f: ldc.i4.0
+  IL_1710: stloc.s V_55
+  IL_1712: ldloc.s V_55
+  IL_1714: brtrue IL_1685
+  IL_1719: nop
+  IL_171a: ldarg.0
+  IL_171b: ldnull
+  IL_171c: stfld Monocle.Coroutine VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<component>5__32
+  IL_1721: ldarg.0
+  IL_1722: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStart>5__6
+  IL_1727: ldarg.0
+  IL_1728: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_172d: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1732: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_1737: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_173c: stloc.s V_39
+  IL_173e: ldloca.s V_39
+  IL_1740: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_1745: ldc.r4 600
+  IL_174a: cgt
+  IL_174c: stloc.s V_56
+  IL_174e: ldloc.s V_56
+  IL_1750: brfalse IL_18b3
+  IL_1755: nop
+  IL_1756: ldarg.0
+  IL_1757: ldarg.0
+  IL_1758: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_175d: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1762: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_1767: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<was>5__33
+  IL_176c: ldarg.0
+  IL_176d: ldarg.0
+  IL_176e: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<was>5__33
+  IL_1773: ldarg.0
+  IL_1774: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStart>5__6
+  IL_1779: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_177e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_1783: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<direction>5__34
+  IL_1788: ldarg.0
+  IL_1789: ldarg.0
+  IL_178a: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<atSummitTop>5__8
+  IL_178f: brtrue.s IL_1798
+  IL_1791: ldc.r4 0.5
+  IL_1796: br.s IL_179d
+  IL_1798: ldc.r4 1
+  IL_179d: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__35
+  IL_17a2: ldarg.0
+  IL_17a3: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_17a8: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_17ad: ldc.i4.0
+  IL_17ae: ldnull
+  IL_17af: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_17b4: ldarg.0
+  IL_17b5: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__35
+  IL_17ba: stfld System.Single Celeste.ScreenWipe::Duration
+  IL_17bf: ldarg.0
+  IL_17c0: ldc.r4 0
+  IL_17c5: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__36
+  IL_17ca: br.s IL_1845
+  IL_17cc: nop
+  IL_17cd: ldarg.0
+  IL_17ce: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_17d3: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_17d8: ldarg.0
+  IL_17d9: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<was>5__33
+  IL_17de: ldarg.0
+  IL_17df: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<direction>5__34
+  IL_17e4: ldc.r4 0
+  IL_17e9: ldc.r4 64
+  IL_17ee: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_17f3: ldarg.0
+  IL_17f4: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__36
+  IL_17f9: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_17fe: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_1803: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1808: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_180d: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1812: nop
+  IL_1813: ldarg.0
+  IL_1814: ldnull
+  IL_1815: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_181a: ldarg.0
+  IL_181b: ldc.i4.s 10
+  IL_181d: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_1822: ldc.i4.1
+  IL_1823: ret
+  IL_1824: ldarg.0
+  IL_1825: ldc.i4.m1
+  IL_1826: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_182b: nop
+  IL_182c: ldarg.0
+  IL_182d: ldarg.0
+  IL_182e: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__36
+  IL_1833: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_1838: ldarg.0
+  IL_1839: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<approach2>5__35
+  IL_183e: div
+  IL_183f: add
+  IL_1840: stfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__36
+  IL_1845: ldarg.0
+  IL_1846: ldfld System.Single VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<duration2>5__36
+  IL_184b: ldc.r4 1
+  IL_1850: clt
+  IL_1852: stloc.s V_57
+  IL_1854: ldloc.s V_57
+  IL_1856: brtrue IL_17cc
+  IL_185b: ldarg.0
+  IL_185c: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_1861: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_1866: ldarg.0
+  IL_1867: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<camStart>5__6
+  IL_186c: ldarg.0
+  IL_186d: ldfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<direction>5__34
+  IL_1872: ldc.r4 32
+  IL_1877: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_187c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_1881: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_1886: nop
+  IL_1887: ldarg.0
+  IL_1888: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_188d: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_1892: ldc.i4.1
+  IL_1893: ldnull
+  IL_1894: newobj System.Void Celeste.FadeWipe::.ctor(Monocle.Scene,System.Boolean,System.Action)
+  IL_1899: pop
+  IL_189a: nop
+  IL_189b: ldarg.0
+  IL_189c: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<was>5__33
+  IL_18a1: initobj Microsoft.Xna.Framework.Vector2
+  IL_18a7: ldarg.0
+  IL_18a8: ldflda Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<direction>5__34
+  IL_18ad: initobj Microsoft.Xna.Framework.Vector2
+  IL_18b3: ldarg.0
+  IL_18b4: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_18b9: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::flagWhenInHud
+  IL_18be: ldstr ""
+  IL_18c3: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_18c8: stloc.s V_58
+  IL_18ca: ldloc.s V_58
+  IL_18cc: brfalse.s IL_18ff
+  IL_18ce: ldarg.0
+  IL_18cf: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_18d4: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_18d9: isinst Celeste.Level
+  IL_18de: ldfld Celeste.Session Celeste.Level::Session
+  IL_18e3: ldarg.0
+  IL_18e4: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_18e9: ldfld System.String VivHelper.Entities.CustomPlaybackWatchtower::flagWhenInHud
+  IL_18ee: ldarg.0
+  IL_18ef: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_18f4: ldfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::invertFlag
+  IL_18f9: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_18fe: nop
+  IL_18ff: ldstr "escape"
+  IL_1904: ldc.r4 0
+  IL_1909: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_190e: nop
+  IL_190f: ldarg.0
+  IL_1910: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_1915: ldc.r4 0
+  IL_191a: stfld System.Single Celeste.Level::ScreenPadding
+  IL_191f: ldarg.0
+  IL_1920: ldfld Celeste.Level VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<level>5__1
+  IL_1925: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_192a: ldc.r4 1
+  IL_192f: callvirt System.Void Celeste.Level::ZoomSnap(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_1934: nop
+  IL_1935: ldarg.0
+  IL_1936: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_193b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_1940: ldarg.0
+  IL_1941: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1946: ldfld VivHelper.Entities.Watchtowers.Hud VivHelper.Entities.CustomPlaybackWatchtower::hud
+  IL_194b: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_1950: nop
+  IL_1951: ldarg.0
+  IL_1952: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_1957: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_195c: ldnull
+  IL_195d: cgt.un
+  IL_195f: stloc.s V_59
+  IL_1961: ldloc.s V_59
+  IL_1963: brfalse.s IL_1976
+  IL_1965: ldarg.0
+  IL_1966: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_196b: ldfld VivHelper.Entities.CustomPlayerPlayback VivHelper.Entities.CustomPlaybackWatchtower::playback
+  IL_1970: ldc.i4.0
+  IL_1971: stfld System.Boolean Monocle.Entity::Visible
+  IL_1976: ldarg.0
+  IL_1977: ldfld VivHelper.Entities.CustomPlaybackWatchtower VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>4__this
+  IL_197c: ldc.i4.0
+  IL_197d: stfld System.Boolean VivHelper.Entities.CustomPlaybackWatchtower::interacting
+  IL_1982: ldarg.0
+  IL_1983: ldfld Celeste.Player VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::player
+  IL_1988: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_198d: ldc.i4.0
+  IL_198e: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_1993: nop
+  IL_1994: ldarg.0
+  IL_1995: ldnull
+  IL_1996: stfld System.Object VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>2__current
+  IL_199b: ldarg.0
+  IL_199c: ldc.i4.s 11
+  IL_199e: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_19a3: ldc.i4.1
+  IL_19a4: ret
+  IL_19a5: ldarg.0
+  IL_19a6: ldc.i4.m1
+  IL_19a7: stfld System.Int32 VivHelper.Entities.CustomPlaybackWatchtower/<LookRoutine>d__29::<>1__state
+  IL_19ac: ldc.i4.0
+  IL_19ad: ret

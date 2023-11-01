@@ -1,0 +1,29 @@
+IL Diff: System.Void Monocle.Engine::RenderCore()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Scene Monocle.Engine::scene
+  IL_0006: brfalse.s IL_0013
+  IL_0008: ldarg.0
+  IL_0009: ldfld Monocle.Scene Monocle.Engine::scene
+  IL_000e: callvirt System.Void Monocle.Scene::BeforeRender()
+  IL_0013: ldarg.0
+  IL_0014: call Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0019: ldnull
+  IL_001a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::SetRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  IL_001f: ldarg.0
+  IL_0020: call Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0025: call Microsoft.Xna.Framework.Graphics.Viewport Monocle.Engine::get_Viewport()
+  IL_002a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::set_Viewport(Microsoft.Xna.Framework.Graphics.Viewport)
+  IL_002f: ldarg.0
+  IL_0030: call Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0035: ldsfld Microsoft.Xna.Framework.Color Monocle.Engine::ClearColor
+  IL_003a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
+  IL_003f: ldarg.0
+  IL_0040: ldfld Monocle.Scene Monocle.Engine::scene
+  IL_0045: brfalse.s IL_005d
+  IL_0047: ldarg.0
+  IL_0048: ldfld Monocle.Scene Monocle.Engine::scene
+  IL_004d: callvirt System.Void Monocle.Scene::Render()
+  IL_0052: ldarg.0
+  IL_0053: ldfld Monocle.Scene Monocle.Engine::scene
+  IL_0058: callvirt System.Void Monocle.Scene::AfterRender()
+  IL_005d: ret

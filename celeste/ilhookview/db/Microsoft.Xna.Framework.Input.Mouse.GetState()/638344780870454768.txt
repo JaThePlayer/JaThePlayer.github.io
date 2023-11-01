@@ -1,0 +1,46 @@
+IL Diff: Microsoft.Xna.Framework.Input.MouseState Microsoft.Xna.Framework.Input.Mouse::GetState()
++ IL_0000: call System.Boolean TAS.Input.Commands.MouseCommand::IsRunningTas() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call Monocle.MInput/MouseData Monocle.MInput::get_Mouse() @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ldfld Microsoft.Xna.Framework.Input.MouseState Monocle.MInput/MouseData::CurrentState @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0000: ldsfld Microsoft.Xna.Framework.FNAPlatform/GetMouseStateFunc Microsoft.Xna.Framework.FNAPlatform::GetMouseState
+  IL_0005: call System.IntPtr Microsoft.Xna.Framework.Input.Mouse::get_WindowHandle()
+  IL_000a: ldloca.s V_0
+  IL_000c: ldloca.s V_1
+  IL_000e: ldloca.s V_2
+  IL_0010: ldloca.s V_3
+  IL_0012: ldloca.s V_4
+  IL_0014: ldloca.s V_5
+  IL_0016: ldloca.s V_6
+  IL_0018: callvirt System.Void Microsoft.Xna.Framework.FNAPlatform/GetMouseStateFunc::Invoke(System.IntPtr,System.Int32&,System.Int32&,Microsoft.Xna.Framework.Input.ButtonState&,Microsoft.Xna.Framework.Input.ButtonState&,Microsoft.Xna.Framework.Input.ButtonState&,Microsoft.Xna.Framework.Input.ButtonState&,Microsoft.Xna.Framework.Input.ButtonState&)
+  IL_001d: ldloc.0
+  IL_001e: conv.r8
+  IL_001f: ldsfld System.Int32 Microsoft.Xna.Framework.Input.Mouse::INTERNAL_BackBufferWidth
+  IL_0024: conv.r8
+  IL_0025: mul
+  IL_0026: ldsfld System.Int32 Microsoft.Xna.Framework.Input.Mouse::INTERNAL_WindowWidth
+  IL_002b: conv.r8
+  IL_002c: div
+  IL_002d: conv.i4
+  IL_002e: stloc.0
+  IL_002f: ldloc.1
+  IL_0030: conv.r8
+  IL_0031: ldsfld System.Int32 Microsoft.Xna.Framework.Input.Mouse::INTERNAL_BackBufferHeight
+  IL_0036: conv.r8
+  IL_0037: mul
+  IL_0038: ldsfld System.Int32 Microsoft.Xna.Framework.Input.Mouse::INTERNAL_WindowHeight
+  IL_003d: conv.r8
+  IL_003e: div
+  IL_003f: conv.i4
+  IL_0040: stloc.1
+  IL_0041: ldloc.0
+  IL_0042: ldloc.1
+  IL_0043: ldsfld System.Int32 Microsoft.Xna.Framework.Input.Mouse::INTERNAL_MouseWheel
+  IL_0048: ldloc.2
+  IL_0049: ldloc.3
+  IL_004a: ldloc.s V_4
+  IL_004c: ldloc.s V_5
+  IL_004e: ldloc.s V_6
+  IL_0050: newobj System.Void Microsoft.Xna.Framework.Input.MouseState::.ctor(System.Int32,System.Int32,System.Int32,Microsoft.Xna.Framework.Input.ButtonState,Microsoft.Xna.Framework.Input.ButtonState,Microsoft.Xna.Framework.Input.ButtonState,Microsoft.Xna.Framework.Input.ButtonState,Microsoft.Xna.Framework.Input.ButtonState)
+  IL_0055: ret

@@ -1,0 +1,240 @@
+IL Diff: System.Void Celeste.TalkComponent::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.TalkComponent/TalkComponentUI Celeste.TalkComponent::UI
+  IL_0006: brtrue.s IL_0027
+  IL_0008: ldarg.0
+  IL_0009: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_000e: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: newobj System.Void Celeste.TalkComponent/TalkComponentUI::.ctor(Celeste.TalkComponent)
+  IL_001a: dup
+  IL_001b: stloc.2
+  IL_001c: stfld Celeste.TalkComponent/TalkComponentUI Celeste.TalkComponent::UI
+  IL_0021: ldloc.2
+  IL_0022: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0027: ldarg.0
+  IL_0028: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_002d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0032: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0037: stloc.0
+  IL_0038: ldarg.0
+  IL_0039: ldfld System.Single Celeste.TalkComponent::disableDelay
+  IL_003e: ldc.r4 0.05
+  IL_0043: bge.un IL_013e
+  IL_0048: ldloc.0
+  IL_0049: brfalse IL_013e
+  IL_004e: ldloc.0
+  IL_004f: ldarg.0
+  IL_0050: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0055: callvirt System.Single Monocle.Entity::get_X()
+  IL_005a: ldarg.0
+  IL_005b: ldflda Microsoft.Xna.Framework.Rectangle Celeste.TalkComponent::Bounds
+  IL_0060: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::X
+  IL_0065: conv.r4
+  IL_0066: add
+  IL_0067: conv.i4
+  IL_0068: ldarg.0
+  IL_0069: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_006e: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0073: ldarg.0
+  IL_0074: ldflda Microsoft.Xna.Framework.Rectangle Celeste.TalkComponent::Bounds
+  IL_0079: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Y
+  IL_007e: conv.r4
+  IL_007f: add
+  IL_0080: conv.i4
+  IL_0081: ldarg.0
+  IL_0082: ldflda Microsoft.Xna.Framework.Rectangle Celeste.TalkComponent::Bounds
+  IL_0087: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width
+  IL_008c: ldarg.0
+  IL_008d: ldflda Microsoft.Xna.Framework.Rectangle Celeste.TalkComponent::Bounds
+  IL_0092: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_0097: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_009c: callvirt System.Boolean Monocle.Entity::CollideRect(Microsoft.Xna.Framework.Rectangle)
+  IL_00a1: brfalse IL_013e
+  IL_00a6: ldloc.0
+  IL_00a7: ldc.i4.1
+  IL_00a8: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
++ IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 2462 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 24276139 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_0(System.Boolean,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  IL_00ad: brfalse IL_013e
+  IL_00b2: ldloc.0
+  IL_00b3: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_00b8: ldarg.0
+  IL_00b9: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00be: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00c3: ldarg.0
+  IL_00c4: ldflda Microsoft.Xna.Framework.Rectangle Celeste.TalkComponent::Bounds
+  IL_00c9: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_00ce: conv.r4
+  IL_00cf: add
+  IL_00d0: ldc.r4 4
+  IL_00d5: add
+  IL_00d6: bge.un.s IL_013e
+  IL_00d8: ldloc.0
+  IL_00d9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00de: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 2583 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 20210277 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_1(System.Boolean,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  IL_00e3: brtrue.s IL_013e
+  IL_00e5: ldarg.0
+  IL_00e6: ldfld System.Boolean Celeste.TalkComponent::PlayerMustBeFacing
+  IL_00eb: brfalse.s IL_012a
+  IL_00ed: ldloc.0
+  IL_00ee: callvirt System.Single Monocle.Entity::get_X()
+  IL_00f3: ldarg.0
+  IL_00f4: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_00f9: callvirt System.Single Monocle.Entity::get_X()
+  IL_00fe: sub
+  IL_00ff: call System.Single System.Math::Abs(System.Single)
+  IL_0104: ldc.r4 16
+  IL_0109: ble.s IL_012a
+  IL_010b: ldloc.0
+  IL_010c: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0111: ldarg.0
+  IL_0112: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0117: callvirt System.Single Monocle.Entity::get_X()
+  IL_011c: ldloc.0
+  IL_011d: callvirt System.Single Monocle.Entity::get_X()
+  IL_0122: sub
+  IL_0123: call System.Int32 System.Math::Sign(System.Single)
+  IL_0128: bne.un.s IL_013e
+  IL_012a: ldsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_012f: brfalse.s IL_013b
+  IL_0131: ldsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_0136: ldarg.0
+  IL_0137: ceq
+  IL_0139: br.s IL_013f
+  IL_013b: ldc.i4.1
+  IL_013c: br.s IL_013f
+  IL_013e: ldc.i4.0
+  IL_013f: stloc.1
++ IL_0000: ldarg this @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldloc V_1 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldarg this @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldfld System.Single Celeste.TalkComponent::disableDelay @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldc.i4 43483758 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
+  |-> retrieves System.Boolean Celeste.Mod.PandorasBox.CloneSpawner/<>c::<TalkComponent_Update>b__36_0(System.Object,System.Boolean,System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Boolean,System.Object,System.Boolean,System.Single>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: stloc V_1 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
+  IL_0140: ldloc.1
+  IL_0141: brfalse.s IL_0157
+  IL_0143: ldarg.0
+  IL_0144: ldarg.0
+  IL_0145: ldfld System.Single Celeste.TalkComponent::hoverTimer
+  IL_014a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_014f: add
+  IL_0150: stfld System.Single Celeste.TalkComponent::hoverTimer
+  IL_0155: br.s IL_016f
+  IL_0157: ldarg.0
+  IL_0158: ldfld Celeste.TalkComponent/TalkComponentUI Celeste.TalkComponent::UI
+  IL_015d: callvirt System.Boolean Celeste.TalkComponent/TalkComponentUI::get_Display()
+  IL_0162: brfalse.s IL_016f
+  IL_0164: ldarg.0
+  IL_0165: ldc.r4 0
+  IL_016a: stfld System.Single Celeste.TalkComponent::hoverTimer
+  IL_016f: ldsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_0174: ldarg.0
+  IL_0175: bne.un.s IL_0182
+  IL_0177: ldloc.1
+  IL_0178: brtrue.s IL_0182
+  IL_017a: ldnull
+  IL_017b: stsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_0180: br.s IL_018b
+  IL_0182: ldloc.1
+  IL_0183: brfalse.s IL_018b
+  IL_0185: ldarg.0
+  IL_0186: stsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_018b: ldloc.1
+  IL_018c: brfalse.s IL_01eb
+  IL_018e: ldarg.0
+  IL_018f: ldfld System.Single Celeste.TalkComponent::cooldown
+  IL_0194: ldc.r4 0
+  IL_0199: bgt.un.s IL_01eb
+  IL_019b: ldloc.0
+  IL_019c: brfalse.s IL_01eb
+  IL_019e: ldloc.0
+  IL_019f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_01a4: call System.Int32 Monocle.StateMachine::op_Implicit(Monocle.StateMachine)
++ IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 2585 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 26419768 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_2(System.Boolean,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  IL_01a9: brtrue.s IL_01eb
+  IL_01ab: ldsfld Monocle.VirtualButton Celeste.Input::Talk
+  IL_01b0: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_01b5: brfalse.s IL_01eb
+  IL_01b7: ldarg.0
+  IL_01b8: ldfld System.Boolean Celeste.TalkComponent::Enabled
+  IL_01bd: brfalse.s IL_01eb
+  IL_01bf: ldarg.0
+  IL_01c0: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_01c5: ldfld System.Boolean Monocle.Scene::Paused
+  IL_01ca: brtrue.s IL_01eb
+  IL_01cc: ldarg.0
+  IL_01cd: ldc.r4 0.1
+  IL_01d2: stfld System.Single Celeste.TalkComponent::cooldown
+  IL_01d7: ldarg.0
+  IL_01d8: ldfld System.Action`1<Celeste.Player> Celeste.TalkComponent::OnTalk
+  IL_01dd: brfalse.s IL_01eb
+  IL_01df: ldarg.0
+  IL_01e0: ldfld System.Action`1<Celeste.Player> Celeste.TalkComponent::OnTalk
+  IL_01e5: ldloc.0
+  IL_01e6: callvirt System.Void System.Action`1<Celeste.Player>::Invoke(T)
+  IL_01eb: ldloc.1
+  IL_01ec: brfalse.s IL_020d
+  IL_01ee: ldloc.0
+  IL_01ef: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_01f4: call System.Int32 Monocle.StateMachine::op_Implicit(Monocle.StateMachine)
++ IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 3165 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 59626443 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_2(System.Boolean,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
+  IL_01f9: brtrue.s IL_020d
+  IL_01fb: ldarg.0
+  IL_01fc: ldarg.0
+  IL_01fd: ldfld System.Single Celeste.TalkComponent::cooldown
+  IL_0202: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0207: sub
+  IL_0208: stfld System.Single Celeste.TalkComponent::cooldown
+  IL_020d: ldarg.0
+  IL_020e: ldfld System.Boolean Celeste.TalkComponent::Enabled
+  IL_0213: brtrue.s IL_0229
+  IL_0215: ldarg.0
+  IL_0216: ldarg.0
+  IL_0217: ldfld System.Single Celeste.TalkComponent::disableDelay
+  IL_021c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0221: add
+  IL_0222: stfld System.Single Celeste.TalkComponent::disableDelay
+  IL_0227: br.s IL_0234
+  IL_0229: ldarg.0
+  IL_022a: ldc.r4 0
+  IL_022f: stfld System.Single Celeste.TalkComponent::disableDelay
+  IL_0234: ldarg.0
+  IL_0235: ldfld Celeste.TalkComponent/TalkComponentUI Celeste.TalkComponent::UI
+  IL_023a: ldloc.1
+  IL_023b: brfalse.s IL_024c
+  IL_023d: ldarg.0
+  IL_023e: ldfld System.Single Celeste.TalkComponent::hoverTimer
+  IL_0243: ldc.r4 0.1
+  IL_0248: cgt
+  IL_024a: br.s IL_024d
+  IL_024c: ldc.i4.0
+  IL_024d: callvirt System.Void Celeste.TalkComponent/TalkComponentUI::set_Highlighted(System.Boolean)
+  IL_0252: ldarg.0
+  IL_0253: call System.Void Monocle.Component::Update()
+  IL_0258: ret

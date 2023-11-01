@@ -1,0 +1,581 @@
+IL Diff: System.Void VivHelper.Entities.CustomSpinner::CreateSprites()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedSpinnerColorNotNull() @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: ldarg.0 @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: call Microsoft.Xna.Framework.Color TAS.EverestInterop.SimplifiedGraphicsFeature::GetSimplifiedSpinnerColor() @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: stfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: ldarg.0 @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: call Microsoft.Xna.Framework.Color TAS.EverestInterop.SimplifiedGraphicsFeature::GetTransparentColor() @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
++ IL_0000: stfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::borderColor @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModVivCustomSpinnerColor
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Boolean VivHelper.Entities.CustomSpinner::expanded
+  IL_0007: ldc.i4.0
+  IL_0008: ceq
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: brfalse IL_060b
+  IL_0011: nop
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Int32 VivHelper.Entities.CustomSpinner::randomSeed
+  IL_0018: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_001d: nop
+  IL_001e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0023: ldarg.0
+  IL_0024: ldfld System.String VivHelper.Entities.CustomSpinner::fgdirectory
+  IL_0029: ldarg.0
+  IL_002a: ldfld System.String VivHelper.Entities.CustomSpinner::subdirectory
+  IL_002f: call System.String System.String::Concat(System.String,System.String)
+  IL_0034: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0039: stloc.1
+  IL_003a: ldsfld System.Random Monocle.Calc::Random
+  IL_003f: ldloc.1
+  IL_0040: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_0045: stloc.2
+  IL_0046: ldarg.0
+  IL_0047: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_004c: ldc.i4.1
+  IL_004d: beq.s IL_005a
+  IL_004f: ldarg.0
+  IL_0050: ldfld VivHelper.Entities.CustomSpinner/Types VivHelper.Entities.CustomSpinner::type
+  IL_0055: ldc.i4.2
+  IL_0056: ceq
+  IL_0058: br.s IL_005b
+  IL_005a: ldc.i4.1
+  IL_005b: stloc.s V_5
+  IL_005d: ldloc.s V_5
+  IL_005f: brfalse.s IL_007a
+  IL_0061: nop
+  IL_0062: ldarg.0
+  IL_0063: ldarg.0
+  IL_0064: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0069: ldarg.0
+  IL_006a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_006f: call Microsoft.Xna.Framework.Color VivHelper.VivHelper::GetHue(Monocle.Scene,Microsoft.Xna.Framework.Vector2)
+  IL_0074: stfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_0079: nop
+  IL_007a: ldarg.0
+  IL_007b: ldfld System.Boolean VivHelper.Entities.CustomSpinner::createConnectors
+  IL_0080: brfalse.s IL_0090
+  IL_0082: ldarg.0
+  IL_0083: isinst VivHelper.Entities.MovingSpinner
+  IL_0088: ldnull
+  IL_0089: cgt.un
+  IL_008b: ldc.i4.0
+  IL_008c: ceq
+  IL_008e: br.s IL_0091
+  IL_0090: ldc.i4.0
+  IL_0091: stloc.s V_6
+  IL_0093: ldloc.s V_6
+  IL_0095: brfalse IL_0200
+  IL_009a: nop
+  IL_009b: nop
+  IL_009c: ldarg.0
+  IL_009d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00a2: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00a7: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<VivHelper.Entities.CustomSpinner>()
+  IL_00ac: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_00b1: stloc.s V_7
+  IL_00b3: br IL_01e2
+  IL_00b8: ldloca.s V_7
+  IL_00ba: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_00bf: castclass VivHelper.Entities.CustomSpinner
+  IL_00c4: stloc.s V_8
+  IL_00c6: nop
+  IL_00c7: ldloc.s V_8
+  IL_00c9: ldfld System.Boolean VivHelper.Entities.CustomSpinner::createConnectors
+  IL_00ce: brfalse.s IL_013a
+  IL_00d0: ldloc.s V_8
+  IL_00d2: ldfld System.Int32 VivHelper.Entities.CustomSpinner::ID
+  IL_00d7: ldarg.0
+  IL_00d8: ldfld System.Int32 VivHelper.Entities.CustomSpinner::ID
+  IL_00dd: ble.s IL_013a
+  IL_00df: ldloc.s V_8
+  IL_00e1: isinst VivHelper.Entities.MovingSpinner
+  IL_00e6: brtrue.s IL_013a
+  IL_00e8: ldloc.s V_8
+  IL_00ea: ldfld System.Boolean VivHelper.Entities.CustomSpinner::AttachToSolid
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld System.Boolean VivHelper.Entities.CustomSpinner::AttachToSolid
+  IL_00f5: bne.un.s IL_013a
+  IL_00f7: ldloc.s V_8
+  IL_00f9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00fe: ldarg.0
+  IL_00ff: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0104: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0109: stloc.s V_10
+  IL_010b: ldloca.s V_10
+  IL_010d: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_0112: ldc.r4 12
+  IL_0117: ldarg.0
+  IL_0118: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_011d: ldloc.s V_8
+  IL_011f: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0124: add
+  IL_0125: mul
+  IL_0126: conv.r8
+  IL_0127: ldc.r8 2
+  IL_0130: call System.Double System.Math::Pow(System.Double,System.Double)
+  IL_0135: conv.r4
+  IL_0136: clt
+  IL_0138: br.s IL_013b
+  IL_013a: ldc.i4.0
+  IL_013b: stloc.s V_9
+  IL_013d: ldloc.s V_9
+  IL_013f: brfalse IL_01e1
+  IL_0144: nop
+  IL_0145: ldloc.s V_8
+  IL_0147: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_014c: ldarg.0
+  IL_014d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0152: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0157: stloc.s V_11
+  IL_0159: ldarg.0
+  IL_015a: ldarg.0
+  IL_015b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0160: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0165: ldloc.s V_11
+  IL_0167: neg
+  IL_0168: ldc.r4 6.3
+  IL_016d: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::RotateTowards(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_0172: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0177: ldloc.s V_8
+  IL_0179: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_017e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0183: ldloc.s V_11
+  IL_0185: ldc.r4 6.3
+  IL_018a: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::RotateTowards(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_018f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0194: ldc.r4 0.5
+  IL_0199: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_019e: ldarg.0
+  IL_019f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01a4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01a9: ldloc.s V_8
+  IL_01ab: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_01b0: ldarg.0
+  IL_01b1: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_01b6: add
+  IL_01b7: ldc.r4 2
+  IL_01bc: div
+  IL_01bd: ldloc.s V_8
+  IL_01bf: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_01c4: ldarg.0
+  IL_01c5: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_01ca: ldc.r4 0.5
+  IL_01cf: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_01d4: ldarg.0
+  IL_01d5: ldfld System.Boolean VivHelper.Entities.CustomSpinner::isSeeded
+  IL_01da: callvirt System.Void VivHelper.Entities.CustomSpinner::AddSprite(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_01df: nop
+  IL_01e0: nop
+  IL_01e1: nop
+  IL_01e2: ldloca.s V_7
+  IL_01e4: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01e9: brtrue IL_00b8
+  IL_01ee: leave.s IL_01ff
+  IL_01f0: ldloca.s V_7
+  IL_01f2: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01f8: callvirt System.Void System.IDisposable::Dispose()
+  IL_01fd: nop
+  IL_01fe: endfinally
+  IL_01ff: nop
+  IL_0200: ldc.i4.0
+  IL_0201: stloc.3
+  IL_0202: ldarg.0
+  IL_0203: ldarg.0
+  IL_0204: call System.Single Monocle.Entity::get_X()
+  IL_0209: ldc.r4 4
+  IL_020e: ldarg.0
+  IL_020f: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0214: mul
+  IL_0215: sub
+  IL_0216: ldarg.0
+  IL_0217: call System.Single Monocle.Entity::get_Y()
+  IL_021c: ldc.r4 4
+  IL_0221: ldarg.0
+  IL_0222: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0227: mul
+  IL_0228: sub
+  IL_0229: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_022e: callvirt System.Boolean VivHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0233: ldc.i4.0
+  IL_0234: ceq
+  IL_0236: stloc.s V_12
+  IL_0238: ldloc.s V_12
+  IL_023a: brfalse.s IL_0242
+  IL_023c: nop
+  IL_023d: ldloc.3
+  IL_023e: ldc.i4.1
+  IL_023f: add
+  IL_0240: stloc.3
+  IL_0241: nop
+  IL_0242: ldarg.0
+  IL_0243: ldarg.0
+  IL_0244: call System.Single Monocle.Entity::get_X()
+  IL_0249: ldc.r4 4
+  IL_024e: ldarg.0
+  IL_024f: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0254: mul
+  IL_0255: add
+  IL_0256: ldarg.0
+  IL_0257: call System.Single Monocle.Entity::get_Y()
+  IL_025c: ldc.r4 4
+  IL_0261: ldarg.0
+  IL_0262: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0267: mul
+  IL_0268: sub
+  IL_0269: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_026e: callvirt System.Boolean VivHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0273: ldc.i4.0
+  IL_0274: ceq
+  IL_0276: stloc.s V_13
+  IL_0278: ldloc.s V_13
+  IL_027a: brfalse.s IL_0282
+  IL_027c: nop
+  IL_027d: ldloc.3
+  IL_027e: ldc.i4.2
+  IL_027f: add
+  IL_0280: stloc.3
+  IL_0281: nop
+  IL_0282: ldarg.0
+  IL_0283: ldarg.0
+  IL_0284: call System.Single Monocle.Entity::get_X()
+  IL_0289: ldc.r4 4
+  IL_028e: ldarg.0
+  IL_028f: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0294: mul
+  IL_0295: sub
+  IL_0296: ldarg.0
+  IL_0297: call System.Single Monocle.Entity::get_Y()
+  IL_029c: ldc.r4 4
+  IL_02a1: ldarg.0
+  IL_02a2: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_02a7: mul
+  IL_02a8: add
+  IL_02a9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02ae: callvirt System.Boolean VivHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_02b3: ldc.i4.0
+  IL_02b4: ceq
+  IL_02b6: stloc.s V_14
+  IL_02b8: ldloc.s V_14
+  IL_02ba: brfalse.s IL_02c2
+  IL_02bc: nop
+  IL_02bd: ldloc.3
+  IL_02be: ldc.i4.4
+  IL_02bf: add
+  IL_02c0: stloc.3
+  IL_02c1: nop
+  IL_02c2: ldarg.0
+  IL_02c3: ldarg.0
+  IL_02c4: call System.Single Monocle.Entity::get_X()
+  IL_02c9: ldc.r4 4
+  IL_02ce: ldarg.0
+  IL_02cf: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_02d4: mul
+  IL_02d5: add
+  IL_02d6: ldarg.0
+  IL_02d7: call System.Single Monocle.Entity::get_Y()
+  IL_02dc: ldc.r4 4
+  IL_02e1: ldarg.0
+  IL_02e2: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_02e7: mul
+  IL_02e8: add
+  IL_02e9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02ee: callvirt System.Boolean VivHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_02f3: ldc.i4.0
+  IL_02f4: ceq
+  IL_02f6: stloc.s V_15
+  IL_02f8: ldloc.s V_15
+  IL_02fa: brfalse.s IL_0302
+  IL_02fc: nop
+  IL_02fd: ldloc.3
+  IL_02fe: ldc.i4.8
+  IL_02ff: add
+  IL_0300: stloc.3
+  IL_0301: nop
+  IL_0302: ldarg.0
+  IL_0303: ldc.i4.1
+  IL_0304: stfld System.Boolean VivHelper.Entities.CustomSpinner::expanded
+  IL_0309: call System.Void Monocle.Calc::PopRandom()
+  IL_030e: nop
+  IL_030f: ldloc.3
+  IL_0310: ldc.i4.s 15
+  IL_0312: ceq
+  IL_0314: stloc.s V_16
+  IL_0316: ldloc.s V_16
+  IL_0318: brfalse.s IL_0364
+  IL_031a: nop
+  IL_031b: ldloc.2
+  IL_031c: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0321: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0326: ldarg.0
+  IL_0327: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_032c: callvirt Monocle.Image Monocle.Image::SetColor(Microsoft.Xna.Framework.Color)
+  IL_0331: stloc.s V_4
+  IL_0333: ldloc.s V_4
+  IL_0335: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_033a: ldarg.0
+  IL_033b: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0340: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0345: ldarg.0
+  IL_0346: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_034b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0350: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0355: ldarg.0
+  IL_0356: ldloc.s V_4
+  IL_0358: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_035d: nop
+  IL_035e: nop
+  IL_035f: br IL_05cb
+  IL_0364: nop
+  IL_0365: ldloc.3
+  IL_0366: ldc.i4.1
+  IL_0367: and
+  IL_0368: ldc.i4.0
+  IL_0369: cgt
+  IL_036b: stloc.s V_17
+  IL_036d: ldloc.s V_17
+  IL_036f: brfalse.s IL_03f0
+  IL_0371: nop
+  IL_0372: ldloc.2
+  IL_0373: ldc.i4.0
+  IL_0374: ldc.i4.0
+  IL_0375: ldc.r4 14
+  IL_037a: ldarg.0
+  IL_037b: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_0380: mul
+  IL_0381: conv.i4
+  IL_0382: ldc.r4 14
+  IL_0387: ldarg.0
+  IL_0388: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_038d: mul
+  IL_038e: conv.i4
+  IL_038f: ldnull
+  IL_0390: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_0395: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_039a: ldc.r4 12
+  IL_039f: ldarg.0
+  IL_03a0: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_03a5: mul
+  IL_03a6: ldc.r4 12
+  IL_03ab: ldarg.0
+  IL_03ac: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_03b1: mul
+  IL_03b2: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_03b7: ldarg.0
+  IL_03b8: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_03bd: callvirt Monocle.Image Monocle.Image::SetColor(Microsoft.Xna.Framework.Color)
+  IL_03c2: stloc.s V_4
+  IL_03c4: ldloc.s V_4
+  IL_03c6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_03cb: ldarg.0
+  IL_03cc: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_03d1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03d6: ldarg.0
+  IL_03d7: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_03dc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03e1: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_03e6: ldarg.0
+  IL_03e7: ldloc.s V_4
+  IL_03e9: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_03ee: nop
+  IL_03ef: nop
+  IL_03f0: ldloc.3
+  IL_03f1: ldc.i4.2
+  IL_03f2: and
+  IL_03f3: ldc.i4.0
+  IL_03f4: cgt
+  IL_03f6: stloc.s V_18
+  IL_03f8: ldloc.s V_18
+  IL_03fa: brfalse IL_048a
+  IL_03ff: nop
+  IL_0400: ldloc.2
+  IL_0401: ldc.r4 10
+  IL_0406: ldarg.0
+  IL_0407: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_040c: mul
+  IL_040d: conv.i4
+  IL_040e: ldc.i4.0
+  IL_040f: ldc.r4 14
+  IL_0414: ldarg.0
+  IL_0415: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_041a: mul
+  IL_041b: conv.i4
+  IL_041c: ldc.r4 14
+  IL_0421: ldarg.0
+  IL_0422: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_0427: mul
+  IL_0428: conv.i4
+  IL_0429: ldnull
+  IL_042a: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_042f: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0434: ldc.r4 2
+  IL_0439: ldarg.0
+  IL_043a: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_043f: mul
+  IL_0440: ldc.r4 12
+  IL_0445: ldarg.0
+  IL_0446: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_044b: mul
+  IL_044c: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_0451: ldarg.0
+  IL_0452: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_0457: callvirt Monocle.Image Monocle.Image::SetColor(Microsoft.Xna.Framework.Color)
+  IL_045c: stloc.s V_4
+  IL_045e: ldloc.s V_4
+  IL_0460: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0465: ldarg.0
+  IL_0466: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_046b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0470: ldarg.0
+  IL_0471: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_0476: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_047b: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0480: ldarg.0
+  IL_0481: ldloc.s V_4
+  IL_0483: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0488: nop
+  IL_0489: nop
+  IL_048a: ldloc.3
+  IL_048b: ldc.i4.8
+  IL_048c: and
+  IL_048d: ldc.i4.0
+  IL_048e: cgt
+  IL_0490: stloc.s V_19
+  IL_0492: ldloc.s V_19
+  IL_0494: brfalse IL_0530
+  IL_0499: nop
+  IL_049a: ldloc.2
+  IL_049b: ldc.r4 10
+  IL_04a0: ldarg.0
+  IL_04a1: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04a6: mul
+  IL_04a7: conv.i4
+  IL_04a8: ldc.r4 10
+  IL_04ad: ldarg.0
+  IL_04ae: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04b3: mul
+  IL_04b4: conv.i4
+  IL_04b5: ldc.r4 14
+  IL_04ba: ldarg.0
+  IL_04bb: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04c0: mul
+  IL_04c1: conv.i4
+  IL_04c2: ldc.r4 14
+  IL_04c7: ldarg.0
+  IL_04c8: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04cd: mul
+  IL_04ce: conv.i4
+  IL_04cf: ldnull
+  IL_04d0: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_04d5: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_04da: ldc.r4 2
+  IL_04df: ldarg.0
+  IL_04e0: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04e5: mul
+  IL_04e6: ldc.r4 2
+  IL_04eb: ldarg.0
+  IL_04ec: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_04f1: mul
+  IL_04f2: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_04f7: ldarg.0
+  IL_04f8: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_04fd: callvirt Monocle.Image Monocle.Image::SetColor(Microsoft.Xna.Framework.Color)
+  IL_0502: stloc.s V_4
+  IL_0504: ldloc.s V_4
+  IL_0506: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_050b: ldarg.0
+  IL_050c: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0511: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0516: ldarg.0
+  IL_0517: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_051c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0521: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0526: ldarg.0
+  IL_0527: ldloc.s V_4
+  IL_0529: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_052e: nop
+  IL_052f: nop
+  IL_0530: ldloc.3
+  IL_0531: ldc.i4.4
+  IL_0532: and
+  IL_0533: ldc.i4.0
+  IL_0534: cgt
+  IL_0536: stloc.s V_20
+  IL_0538: ldloc.s V_20
+  IL_053a: brfalse IL_05ca
+  IL_053f: nop
+  IL_0540: ldloc.2
+  IL_0541: ldc.i4.0
+  IL_0542: ldc.r4 10
+  IL_0547: ldarg.0
+  IL_0548: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_054d: mul
+  IL_054e: conv.i4
+  IL_054f: ldc.r4 14
+  IL_0554: ldarg.0
+  IL_0555: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_055a: mul
+  IL_055b: conv.i4
+  IL_055c: ldc.r4 14
+  IL_0561: ldarg.0
+  IL_0562: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_0567: mul
+  IL_0568: conv.i4
+  IL_0569: ldnull
+  IL_056a: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_056f: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0574: ldc.r4 12
+  IL_0579: ldarg.0
+  IL_057a: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_057f: mul
+  IL_0580: ldc.r4 2
+  IL_0585: ldarg.0
+  IL_0586: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_058b: mul
+  IL_058c: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_0591: ldarg.0
+  IL_0592: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_0597: callvirt Monocle.Image Monocle.Image::SetColor(Microsoft.Xna.Framework.Color)
+  IL_059c: stloc.s V_4
+  IL_059e: ldloc.s V_4
+  IL_05a0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_05a5: ldarg.0
+  IL_05a6: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_05ab: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_05b0: ldarg.0
+  IL_05b1: ldfld System.Single VivHelper.Entities.CustomSpinner::imageScale
+  IL_05b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_05bb: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_05c0: ldarg.0
+  IL_05c1: ldloc.s V_4
+  IL_05c3: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_05c8: nop
+  IL_05c9: nop
+  IL_05ca: nop
+  IL_05cb: ldarg.0
+  IL_05cc: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::borderColor
+  IL_05d1: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_05d6: call System.Boolean Microsoft.Xna.Framework.Color::op_Inequality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
+  IL_05db: stloc.s V_21
+  IL_05dd: ldloc.s V_21
+  IL_05df: brfalse.s IL_060a
+  IL_05e1: ldarg.0
+  IL_05e2: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_05e7: ldarg.0
+  IL_05e8: ldarg.0
+  IL_05e9: ldarg.0
+  IL_05ea: ldfld Monocle.Entity VivHelper.Entities.CustomSpinner::filler
+  IL_05ef: ldarg.0
+  IL_05f0: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::borderColor
+  IL_05f5: newobj System.Void VivHelper.Entities.CustomSpinner/Border::.ctor(Monocle.Entity,Monocle.Entity,Microsoft.Xna.Framework.Color)
+  IL_05fa: dup
+  IL_05fb: stloc.s V_22
+  IL_05fd: stfld VivHelper.Entities.CustomSpinner/Border VivHelper.Entities.CustomSpinner::border
+  IL_0602: ldloc.s V_22
+  IL_0604: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0609: nop
+  IL_060a: nop
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_060b: ret

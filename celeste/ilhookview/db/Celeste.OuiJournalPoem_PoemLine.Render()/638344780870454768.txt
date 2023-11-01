@@ -1,0 +1,94 @@
+IL Diff: System.Void Celeste.OuiJournalPoem/PoemLine::Render()
+  IL_0000: ldc.r4 100
+  IL_0005: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_000a: ldarg.0
+  IL_000b: ldfld System.Single Celeste.OuiJournalPoem/PoemLine::HoveringEase
+  IL_0010: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0015: ldc.r4 20
+  IL_001a: mul
+  IL_001b: add
+  IL_001c: stloc.0
+  IL_001d: ldarg.0
+  IL_001e: ldfld System.Single Celeste.OuiJournalPoem/PoemLine::Index
+  IL_0023: call System.Single Celeste.OuiJournalPoem::GetY(System.Single)
+  IL_0028: stloc.1
+  IL_0029: ldloc.0
+  IL_002a: ldloc.1
+  IL_002b: ldc.r4 22
+  IL_0030: sub
+  IL_0031: ldc.r4 810
+  IL_0036: ldc.r4 44
+  IL_003b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0040: ldc.r4 0.25
+  IL_0045: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_004a: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_004f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0054: ldc.r4 0.6
+  IL_0059: ldarg.0
+  IL_005a: ldfld System.Single Celeste.OuiJournalPoem/PoemLine::HoldingEase
+  IL_005f: ldc.r4 0.4
+  IL_0064: mul
+  IL_0065: add
+  IL_0066: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_006b: stloc.2
+  IL_006c: ldsfld Monocle.Atlas Celeste.MTN::Journal
+  IL_0071: ldarg.0
+  IL_0072: ldfld System.Boolean Celeste.OuiJournalPoem/PoemLine::Remix
+  IL_0077: brtrue.s IL_0080
+  IL_0079: ldstr "heartgem0"
++ IL_0000: ldarg.0 @ AltSidesHelper.AltSidesHelperModule::ModJournalPoemLineRender
++ IL_0000: ldfld System.String Celeste.OuiJournalPoem/PoemLine::Text @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
++ IL_0000: ldc.i4 2462 @ AltSidesHelper.AltSidesHelperModule::ModJournalPoemLineRender
++ IL_0000: ldc.i4 29250235 @ AltSidesHelper.AltSidesHelperModule::ModJournalPoemLineRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ AltSidesHelper.AltSidesHelperModule::ModJournalPoemLineRender
+  |-> retrieves System.String AltSidesHelper.AltSidesHelperModule/<>c::<ModJournalPoemLineRender>b__28_0(System.String,System.Object)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,System.String>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ AltSidesHelper.AltSidesHelperModule::ModJournalPoemLineRender
++ IL_0000: ldarg.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
++ IL_0000: ldc.i4 45239646 @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
+  |-> retrieves System.String AltSidesHelper.AltSidesHelperModule/<>c::<ModJournalPoemLineRender>b__28_0(System.String,System.Object)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,System.Object>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modJournalPoemHeartColors
+  IL_007e: br.s IL_0085
+  IL_0080: ldstr "heartgem1"
+  IL_0085: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_008a: ldloc.0
+  IL_008b: ldc.r4 20
+  IL_0090: add
+  IL_0091: ldloc.1
+  IL_0092: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0097: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_009c: ldloc.2
+  IL_009d: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_00a2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_00a7: ldc.r4 0.7
+  IL_00ac: ldarg.0
+  IL_00ad: ldfld System.Single Celeste.OuiJournalPoem/PoemLine::HoveringEase
+  IL_00b2: ldc.r4 0.3
+  IL_00b7: mul
+  IL_00b8: add
+  IL_00b9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00be: stloc.3
+  IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00c4: ldc.r4 0.5
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld System.Single Celeste.OuiJournalPoem/PoemLine::HoldingEase
+  IL_00cf: ldc.r4 0.1
+  IL_00d4: mul
+  IL_00d5: add
+  IL_00d6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00db: stloc.s V_4
+  IL_00dd: ldarg.0
+  IL_00de: ldfld System.String Celeste.OuiJournalPoem/PoemLine::Text
+  IL_00e3: ldloc.0
+  IL_00e4: ldc.r4 60
+  IL_00e9: add
+  IL_00ea: ldloc.1
+  IL_00eb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f0: ldc.r4 0
+  IL_00f5: ldc.r4 0.5
+  IL_00fa: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00ff: ldloc.s V_4
+  IL_0101: ldloc.3
+  IL_0102: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0107: ret

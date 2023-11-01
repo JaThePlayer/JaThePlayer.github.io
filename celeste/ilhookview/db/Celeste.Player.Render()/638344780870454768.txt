@@ -1,0 +1,248 @@
+IL Diff: System.Void Celeste.Player::Render()
+  IL_0000: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0005: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_000a: ldfld System.Boolean Celeste.Assists::InvisibleMotion
+  IL_000f: brfalse.s IL_0051
+  IL_0011: ldarg.0
+  IL_0012: callvirt System.Boolean Celeste.Player::get_InControl()
+  IL_0017: brfalse.s IL_0051
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.Boolean Celeste.Player::onGround
+  IL_001f: brtrue.s IL_003e
+  IL_0021: ldarg.0
+  IL_0022: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0027: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_002c: ldc.i4.1
+  IL_002d: beq.s IL_003e
+  IL_002f: ldarg.0
+  IL_0030: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0035: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_003a: ldc.i4.3
+  IL_003b: beq.s IL_003e
+  IL_003d: ret
+  IL_003e: ldarg.0
+  IL_003f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0044: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_0049: ldc.r4 800
+  IL_004e: ble.un.s IL_0051
+  IL_0050: ret
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0057: callvirt Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::get_RenderPosition()
+  IL_005c: stloc.0
+  IL_005d: ldarg.0
+  IL_005e: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0063: ldarg.0
+  IL_0064: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0069: callvirt Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::get_RenderPosition()
+  IL_006e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_0073: callvirt System.Void Monocle.GraphicsComponent::set_RenderPosition(Microsoft.Xna.Framework.Vector2)
+  IL_0078: ldarg.0
+  IL_0079: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_007e: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0083: ldc.i4.s 14
+  IL_0085: bne.un.s IL_00b3
+  IL_0087: ldarg.0
+  IL_0088: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_008d: ldarg.0
+  IL_008e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::deadOffset
+  IL_0093: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0098: ldarg.0
+  IL_0099: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_009e: ldfld Microsoft.Xna.Framework.Color Celeste.PlayerHair::Color
+  IL_00a3: ldarg.0
+  IL_00a4: ldfld System.Single Celeste.Player::introEase
+  IL_00a9: call System.Void Celeste.DeathEffect::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00ae: br IL_02aa
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_00b9: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_0000: ldc.i4 2585 @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
++ IL_0000: ldc.i4 41559890 @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
+  |-> retrieves System.Int32 Celeste.Mod.XaphanHelper.Controllers.HeatController/<>c::<modILPlayerRender>b__13_0(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
+  IL_00be: ldc.i4.s 19
+  IL_00c0: beq.s IL_00f4
+  IL_00c2: ldarg.0
+  IL_00c3: callvirt System.Boolean Celeste.Player::get_IsTired()
+  IL_00c8: brfalse.s IL_00e4
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld System.Boolean Celeste.Player::flash
+  IL_00d0: brfalse.s IL_00e4
+  IL_00d2: ldarg.0
+  IL_00d3: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
++ IL_0000: ldc.i4 3165 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 11126946 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_Render
+  |-> retrieves Microsoft.Xna.Framework.Color VivHelper.VivHelperModule/<>c::<Player_Render>b__94_0(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 7429960 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger/<>c::<patchPlayerRender>b__4_1(Microsoft.Xna.Framework.Color,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
+  IL_00dd: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00e2: br.s IL_00f4
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00ea: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: ldc.i4 3167 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 28867416 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_Render
+  |-> retrieves Microsoft.Xna.Framework.Color VivHelper.VivHelperModule/<>c::<Player_Render>b__94_0(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 64955916 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger/<>c::<patchPlayerRender>b__4_3(Microsoft.Xna.Framework.Color,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
+  IL_00ef: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld Celeste.MirrorReflection Celeste.Player::reflection
+  IL_00fa: ldfld System.Boolean Celeste.MirrorReflection::IsRendering
+  IL_00ff: brfalse.s IL_0127
+  IL_0101: ldarg.0
+  IL_0102: ldfld System.Boolean Celeste.Player::FlipInReflection
+  IL_0107: brfalse.s IL_0127
+  IL_0109: ldarg.0
+  IL_010a: ldarg.0
+  IL_010b: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0110: neg
+  IL_0111: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0116: ldarg.0
+  IL_0117: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_011c: ldarg.0
+  IL_011d: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0122: stfld Celeste.Facings Celeste.PlayerHair::Facing
+  IL_0127: ldarg.0
+  IL_0128: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_012d: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0132: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0137: dup
+  IL_0138: ldind.r4
+  IL_0139: ldarg.0
+  IL_013a: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_013f: conv.r4
+  IL_0140: mul
+  IL_0141: stind.r4
+  IL_0142: ldarg.0
+  IL_0143: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_0148: callvirt System.String Monocle.Sprite::get_LastAnimationID()
+  IL_014d: ldstr "idle"
+  IL_0152: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0157: brfalse.s IL_0171
+  IL_0159: ldarg.0
+  IL_015a: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_015f: ldarg.0
+  IL_0160: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0165: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_016a: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_016f: br.s IL_01cd
+  IL_0171: ldarg.0
+  IL_0172: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_0177: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_017c: ldarg.0
+  IL_017d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0182: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0187: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_018c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0191: ldarg.0
+  IL_0192: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_0197: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_019c: ldarg.0
+  IL_019d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01a2: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01a7: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01ac: call System.Single System.Math::Abs(System.Single)
+  IL_01b1: ldarg.0
+  IL_01b2: ldfld Monocle.Sprite Celeste.Player::sweatSprite
+  IL_01b7: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01bc: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01c1: call System.Int32 System.Math::Sign(System.Single)
+  IL_01c6: conv.r4
+  IL_01c7: mul
+  IL_01c8: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01cd: ldarg.0
+  IL_01ce: call System.Void Monocle.Entity::Render()
+  IL_01d3: ldarg.0
+  IL_01d4: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01d9: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_01de: ldstr "startStarFly"
+  IL_01e3: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01e8: brfalse.s IL_025c
+  IL_01ea: ldarg.0
+  IL_01eb: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01f0: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_01f5: conv.r4
+  IL_01f6: ldarg.0
+  IL_01f7: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_01fc: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationTotalFrames()
+  IL_0201: conv.r4
+  IL_0202: div
+  IL_0203: stloc.1
+  IL_0204: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0209: ldstr "characters/player/startStarFlyWhite"
++ IL_0000: ldc.i4 2583 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
++ IL_0000: ldc.i4 41114009 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
+  |-> retrieves System.String SkinModHelper.Module.SkinModHelperModule/<>c::<PlayerRenderIlHook>b__31_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
+  IL_020e: ldarg.0
+  IL_020f: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0214: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_0219: callvirt Monocle.MTexture Monocle.Atlas::GetAtlasSubtexturesAt(System.String,System.Int32)
+  IL_021e: ldarg.0
+  IL_021f: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0224: callvirt Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::get_RenderPosition()
+  IL_0229: ldarg.0
+  IL_022a: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_022f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Origin
+  IL_0234: ldarg.0
+  IL_0235: ldfld Microsoft.Xna.Framework.Color Celeste.Player::starFlyColor
+  IL_023a: ldloc.1
+  IL_023b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0240: ldarg.0
+  IL_0241: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0246: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_024b: ldarg.0
+  IL_024c: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0251: ldfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_0256: ldc.i4.0
+  IL_0257: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects)
+  IL_025c: ldarg.0
+  IL_025d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0262: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0267: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_026c: dup
+  IL_026d: ldind.r4
+  IL_026e: ldarg.0
+  IL_026f: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0274: conv.r4
+  IL_0275: mul
+  IL_0276: stind.r4
+  IL_0277: ldarg.0
+  IL_0278: ldfld Celeste.MirrorReflection Celeste.Player::reflection
+  IL_027d: ldfld System.Boolean Celeste.MirrorReflection::IsRendering
+  IL_0282: brfalse.s IL_02aa
+  IL_0284: ldarg.0
+  IL_0285: ldfld System.Boolean Celeste.Player::FlipInReflection
+  IL_028a: brfalse.s IL_02aa
+  IL_028c: ldarg.0
+  IL_028d: ldarg.0
+  IL_028e: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0293: neg
+  IL_0294: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0299: ldarg.0
+  IL_029a: ldfld Celeste.PlayerHair Celeste.Player::Hair
+  IL_029f: ldarg.0
+  IL_02a0: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_02a5: stfld Celeste.Facings Celeste.PlayerHair::Facing
+  IL_02aa: ldarg.0
+  IL_02ab: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_02b0: ldloc.0
+  IL_02b1: callvirt System.Void Monocle.GraphicsComponent::set_RenderPosition(Microsoft.Xna.Framework.Vector2)
+  IL_02b6: ret

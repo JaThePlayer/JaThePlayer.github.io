@@ -1,0 +1,59 @@
+IL Diff: System.Void Celeste.Puffer::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Puffer/States Celeste.Puffer::state
+  IL_0006: ldc.i4.2
+  IL_0007: beq IL_00b3
+  IL_000c: ldarg.0
+  IL_000d: ldfld System.Single Celeste.Puffer::cantExplodeTimer
+  IL_0012: ldc.r4 0
+  IL_0017: bgt.un IL_00b3
+  IL_001c: ldarg.0
+  IL_001d: ldfld System.Single Celeste.Puffer::cannotHitTimer
+  IL_0022: ldc.r4 0
+  IL_0027: bgt.un IL_00a8
+  IL_002c: ldarg.1
+  IL_002d: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0032: ldarg.0
+  IL_0033: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastSpeedPosition
+  IL_0038: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003d: ldc.r4 3
+  IL_0042: add
+  IL_0043: ble.un.s IL_0053
+  IL_0045: ldarg.0
+  IL_0046: callvirt System.Void Celeste.Puffer::Explode()
+  IL_004b: ldarg.0
+  IL_004c: callvirt System.Void Celeste.Puffer::GotoGone()
+  IL_0051: br.s IL_00a8
+  IL_0053: ldarg.1
+  IL_0054: ldarg.0
+  IL_0055: call System.Single Monocle.Entity::get_Top()
+  IL_005a: callvirt System.Void Celeste.Player::Bounce(System.Single)
+  IL_005f: ldarg.0
+  IL_0060: ldarg.1
+  IL_0061: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0066: callvirt System.Void Celeste.Puffer::GotoHit(Microsoft.Xna.Framework.Vector2)
+  IL_006b: ldarg.0
+  IL_006c: ldarg.0
+  IL_006d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Puffer::anchorPosition
+  IL_0072: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0077: ldnull
+  IL_0078: call System.Void Celeste.Actor::MoveToX(System.Single,Celeste.Collision)
+  IL_007d: ldarg.0
+  IL_007e: ldfld Monocle.SineWave Celeste.Puffer::idleSine
+  IL_0083: callvirt System.Void Monocle.SineWave::Reset()
+  IL_0088: ldarg.0
+  IL_0089: ldarg.0
+  IL_008a: ldarg.0
+  IL_008b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0090: dup
+  IL_0091: stloc.0
+  IL_0092: stfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::lastSinePosition
+  IL_0097: ldloc.0
+  IL_0098: stfld Microsoft.Xna.Framework.Vector2 Celeste.Puffer::anchorPosition
+  IL_009d: ldarg.0
+  IL_009e: ldc.r4 1
+  IL_00a3: stfld System.Single Celeste.Puffer::eyeSpin
+  IL_00a8: ldarg.0
+  IL_00a9: ldc.r4 0.1
+  IL_00ae: stfld System.Single Celeste.Puffer::cannotHitTimer
+  IL_00b3: ret

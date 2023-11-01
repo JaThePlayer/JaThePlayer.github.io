@@ -1,0 +1,107 @@
+IL Diff: System.Boolean Monocle.VirtualTexture::Preload(System.Boolean)
+  IL_0000: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0005: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_LazyLoading()
++ IL_0000: ldarg.0 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::turnOnLazyLoadingSelectively
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::turnOnLazyLoadingSelectively
++ IL_0000: ldc.i4 50624390 @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::turnOnLazyLoadingSelectively
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::turnOnLazyLoadingSelectively
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LazyLoadingHandler/<>c::<turnOnLazyLoadingSelectively>b__15_1(System.Boolean,Monocle.VirtualTexture)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Monocle.VirtualTexture>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LazyLoadingHandler::turnOnLazyLoadingSelectively
+  IL_000a: brtrue.s IL_0011
+  IL_000c: ldarg.1
+  IL_000d: brtrue.s IL_0011
+  IL_000f: ldc.i4.0
+  IL_0010: ret
+  IL_0011: ldarg.0
+  IL_0012: callvirt System.String Monocle.VirtualTexture::get_Path()
+  IL_0017: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_001c: brtrue IL_00c1
+  IL_0021: ldarg.0
+  IL_0022: callvirt System.String Monocle.VirtualTexture::get_Path()
+  IL_0027: call System.String System.IO.Path::GetExtension(System.String)
+  IL_002c: stloc.0
+  IL_002d: ldloc.0
+  IL_002e: ldstr ".data"
+  IL_0033: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0038: brfalse.s IL_0087
+  IL_003a: call System.String Monocle.Engine::get_ContentDirectory()
+  IL_003f: ldarg.0
+  IL_0040: callvirt System.String Monocle.VirtualTexture::get_Path()
+  IL_0045: call System.String System.IO.Path::Combine(System.String,System.String)
+  IL_004a: call System.IO.FileStream System.IO.File::OpenRead(System.String)
+  IL_004f: stloc.1
+  IL_0050: ldloc.1
+  IL_0051: newobj System.Void System.IO.BinaryReader::.ctor(System.IO.Stream)
+  IL_0056: stloc.2
+  IL_0057: ldarg.0
+  IL_0058: ldloc.2
+  IL_0059: callvirt System.Int32 System.IO.BinaryReader::ReadInt32()
+  IL_005e: call System.Void Monocle.VirtualAsset::set_Width(System.Int32)
+  IL_0063: ldarg.0
+  IL_0064: ldloc.2
+  IL_0065: callvirt System.Int32 System.IO.BinaryReader::ReadInt32()
+  IL_006a: call System.Void Monocle.VirtualAsset::set_Height(System.Int32)
+  IL_006f: leave.s IL_0085
+  IL_0071: ldloc.2
+  IL_0072: brfalse.s IL_007a
+  IL_0074: ldloc.2
+  IL_0075: callvirt System.Void System.IDisposable::Dispose()
+  IL_007a: endfinally
+  IL_007b: ldloc.1
+  IL_007c: brfalse.s IL_0084
+  IL_007e: ldloc.1
+  IL_007f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0084: endfinally
+  IL_0085: ldc.i4.1
+  IL_0086: ret
+  IL_0087: ldloc.0
+  IL_0088: ldstr ".png"
+  IL_008d: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0092: brfalse.s IL_00bf
+  IL_0094: call System.String Monocle.Engine::get_ContentDirectory()
+  IL_0099: ldarg.0
+  IL_009a: callvirt System.String Monocle.VirtualTexture::get_Path()
+  IL_009f: call System.String System.IO.Path::Combine(System.String,System.String)
+  IL_00a4: call System.IO.FileStream System.IO.File::OpenRead(System.String)
+  IL_00a9: stloc.3
+  IL_00aa: ldarg.0
+  IL_00ab: ldloc.3
+  IL_00ac: callvirt System.Boolean Monocle.VirtualTexture::PreloadSizeFromPNG(System.IO.Stream)
+  IL_00b1: stloc.s V_4
+  IL_00b3: leave.s IL_0109
+  IL_00b5: ldloc.3
+  IL_00b6: brfalse.s IL_00be
+  IL_00b8: ldloc.3
+  IL_00b9: callvirt System.Void System.IDisposable::Dispose()
+  IL_00be: endfinally
+  IL_00bf: ldc.i4.0
+  IL_00c0: ret
+  IL_00c1: ldarg.0
+  IL_00c2: ldfld Celeste.Mod.ModAsset Monocle.VirtualTexture::Metadata
+  IL_00c7: brfalse.s IL_0107
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Celeste.Mod.ModAsset Monocle.VirtualTexture::Metadata
+  IL_00cf: ldfld System.String Celeste.Mod.ModAsset::Format
+  IL_00d4: ldstr "png"
+  IL_00d9: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00de: brfalse.s IL_0105
+  IL_00e0: ldarg.0
+  IL_00e1: ldfld Celeste.Mod.ModAsset Monocle.VirtualTexture::Metadata
+  IL_00e6: callvirt System.IO.Stream Celeste.Mod.ModAsset::get_Stream()
+  IL_00eb: stloc.s V_5
+  IL_00ed: ldarg.0
+  IL_00ee: ldloc.s V_5
+  IL_00f0: callvirt System.Boolean Monocle.VirtualTexture::PreloadSizeFromPNG(System.IO.Stream)
+  IL_00f5: stloc.s V_4
+  IL_00f7: leave.s IL_0109
+  IL_00f9: ldloc.s V_5
+  IL_00fb: brfalse.s IL_0104
+  IL_00fd: ldloc.s V_5
+  IL_00ff: callvirt System.Void System.IDisposable::Dispose()
+  IL_0104: endfinally
+  IL_0105: ldc.i4.0
+  IL_0106: ret
+  IL_0107: ldc.i4.0
+  IL_0108: ret
+  IL_0109: ldloc.s V_4
+  IL_010b: ret

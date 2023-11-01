@@ -1,0 +1,13 @@
+IL Diff: Celeste.Player Celeste.Solid::GetPlayerOnTop()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0007: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.GravityHelper.Hooks.SolidHooks::Solid_GetPlayerOnTop
++ IL_0000: ldc.i4 30107623 @ Celeste.Mod.GravityHelper.Hooks.SolidHooks::Solid_GetPlayerOnTop
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.SolidHooks::Solid_GetPlayerOnTop
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.SolidHooks::Solid_GetPlayerOnTop
+  IL_000c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0011: call T Monocle.Entity::CollideFirst<Celeste.Player>(Microsoft.Xna.Framework.Vector2)
+  IL_0016: ret

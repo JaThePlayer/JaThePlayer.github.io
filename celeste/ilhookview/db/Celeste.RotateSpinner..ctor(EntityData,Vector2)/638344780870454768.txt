@@ -1,0 +1,26 @@
+IL Diff: System.Void Celeste.RotateSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldarg.2
+  IL_0003: callvirt System.Void Celeste.RotateSpinner::orig_ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
+  IL_0008: ldarg.0
+  IL_0009: ldarg.1
+  IL_000a: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.EntityData::Nodes
+  IL_000f: ldc.i4.0
+  IL_0010: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0015: ldarg.2
+  IL_0016: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_001b: stfld Microsoft.Xna.Framework.Vector2 Celeste.RotateSpinner::startCenter
+  IL_0020: ldarg.0
+  IL_0021: ldarg.1
+  IL_0022: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0027: ldarg.2
+  IL_0028: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_002d: stfld Microsoft.Xna.Framework.Vector2 Celeste.RotateSpinner::startPosition
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 39370156 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.MovingEntityTrack/<>c::<Initialize>b__2_2(Celeste.RotateSpinner)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.RotateSpinner>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0032: ret

@@ -1,0 +1,68 @@
+IL Diff: System.Collections.Generic.List`1[[Monocle.Sprite, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.WallBooster::BuildSprite(System.Boolean)
+  IL_0000: newobj System.Void System.Collections.Generic.List`1<Monocle.Sprite>::.ctor()
+  IL_0005: stloc.0
+  IL_0006: ldc.i4.0
+  IL_0007: stloc.1
+  IL_0008: br IL_0081
+  IL_000d: ldloc.1
+  IL_000e: brtrue.s IL_0018
+  IL_0010: ldstr "WallBoosterTop"
+  IL_0015: stloc.2
+  IL_0016: br.s IL_0033
+  IL_0018: ldloc.1
+  IL_0019: ldc.i4.s 16
+  IL_001b: add
+  IL_001c: conv.r4
+  IL_001d: ldarg.0
+  IL_001e: call System.Single Monocle.Entity::get_Height()
+  IL_0023: ble.un.s IL_002d
+  IL_0025: ldstr "WallBoosterBottom"
+  IL_002a: stloc.2
+  IL_002b: br.s IL_0033
+  IL_002d: ldstr "WallBoosterMid"
+  IL_0032: stloc.2
+  IL_0033: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_0038: ldloc.2
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster::Mod_WallBooster_BuildSprite
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster::Mod_WallBooster_BuildSprite
++ IL_0000: ldc.i4 10383589 @ Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster::Mod_WallBooster_BuildSprite
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster::Mod_WallBooster_BuildSprite
+  |-> retrieves System.String Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster/<>c::<Mod_WallBooster_BuildSprite>b__20_1(System.String,Celeste.WallBooster)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.WallBooster>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.AttachedWallBooster::Mod_WallBooster_BuildSprite
+  IL_0039: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_003e: stloc.3
+  IL_003f: ldarg.1
+  IL_0040: brtrue.s IL_005d
+  IL_0042: ldloc.3
+  IL_0043: ldc.i4.1
+  IL_0044: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_0049: ldloc.3
+  IL_004a: ldc.r4 4
+  IL_004f: ldloc.1
+  IL_0050: conv.r4
+  IL_0051: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0056: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_005b: br.s IL_006f
+  IL_005d: ldloc.3
+  IL_005e: ldc.r4 0
+  IL_0063: ldloc.1
+  IL_0064: conv.r4
+  IL_0065: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_006a: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_006f: ldloc.0
+  IL_0070: ldloc.3
+  IL_0071: callvirt System.Void System.Collections.Generic.List`1<Monocle.Sprite>::Add(T)
+  IL_0076: ldarg.0
+  IL_0077: ldloc.3
+  IL_0078: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_007d: ldloc.1
+  IL_007e: ldc.i4.8
+  IL_007f: add
+  IL_0080: stloc.1
+  IL_0081: ldloc.1
+  IL_0082: conv.r4
+  IL_0083: ldarg.0
+  IL_0084: call System.Single Monocle.Entity::get_Height()
+  IL_0089: blt IL_000d
+  IL_008e: ldloc.0
+  IL_008f: ret

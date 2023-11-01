@@ -1,0 +1,101 @@
+IL Diff: System.Void Celeste.CrystalStaticSpinner::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0006: brtrue.s IL_0046
+  IL_0008: ldarg.0
+  IL_0009: ldc.i4.0
+  IL_000a: stfld System.Boolean Monocle.Entity::Collidable
+  IL_000f: ldarg.0
+  IL_0010: callvirt System.Boolean Celeste.CrystalStaticSpinner::InView()
+  IL_0015: brfalse IL_0101
+  IL_001a: ldarg.0
+  IL_001b: ldc.i4.1
+  IL_001c: stfld System.Boolean Monocle.Entity::Visible
+  IL_0021: ldarg.0
+  IL_0022: ldfld System.Boolean Celeste.CrystalStaticSpinner::expanded
+  IL_0027: brtrue.s IL_002f
+  IL_0029: ldarg.0
+  IL_002a: callvirt System.Void Celeste.CrystalStaticSpinner::CreateSprites()
+  IL_002f: ldarg.0
+  IL_0030: ldfld Celeste.CrystalColor Celeste.CrystalStaticSpinner::color
+  IL_0035: ldc.i4.3
+  IL_0036: bne.un IL_0101
+  IL_003b: ldarg.0
+  IL_003c: callvirt System.Void Celeste.CrystalStaticSpinner::UpdateHue()
+  IL_0041: br IL_0101
+  IL_0046: ldarg.0
+  IL_0047: call System.Void Monocle.Entity::Update()
+  IL_004c: ldarg.0
+  IL_004d: ldfld Celeste.CrystalColor Celeste.CrystalStaticSpinner::color
+  IL_0052: ldc.i4.3
+  IL_0053: bne.un.s IL_0073
+  IL_0055: ldarg.0
+  IL_0056: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_005b: ldc.r4 0.08
+  IL_0060: ldarg.0
+  IL_0061: ldfld System.Single Celeste.CrystalStaticSpinner::offset
+  IL_0066: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_006b: brfalse.s IL_0073
+  IL_006d: ldarg.0
+  IL_006e: callvirt System.Void Celeste.CrystalStaticSpinner::UpdateHue()
+  IL_0073: ldarg.0
+  IL_0074: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0079: ldc.r4 0.25
+  IL_007e: ldarg.0
+  IL_007f: ldfld System.Single Celeste.CrystalStaticSpinner::offset
+  IL_0084: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_0089: brfalse.s IL_009a
+  IL_008b: ldarg.0
+  IL_008c: callvirt System.Boolean Celeste.CrystalStaticSpinner::InView()
+  IL_0091: brtrue.s IL_009a
+  IL_0093: ldarg.0
+  IL_0094: ldc.i4.0
+  IL_0095: stfld System.Boolean Monocle.Entity::Visible
+  IL_009a: ldarg.0
+  IL_009b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00a0: ldc.r4 0.05
+  IL_00a5: ldarg.0
+  IL_00a6: ldfld System.Single Celeste.CrystalStaticSpinner::offset
+  IL_00ab: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_00b0: brfalse.s IL_0101
+  IL_00b2: ldarg.0
+  IL_00b3: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00b8: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00bd: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_00c2: stloc.0
+  IL_00c3: ldloc.0
+  IL_00c4: brfalse.s IL_0101
+  IL_00c6: ldarg.0
+  IL_00c7: ldloc.0
+  IL_00c8: callvirt System.Single Monocle.Entity::get_X()
+  IL_00cd: ldarg.0
+  IL_00ce: call System.Single Monocle.Entity::get_X()
+  IL_00d3: sub
+  IL_00d4: call System.Single System.Math::Abs(System.Single)
+  IL_00d9: ldc.r4 128
+  IL_00de: bge.un.s IL_00fb
+  IL_00e0: ldloc.0
+  IL_00e1: callvirt System.Single Monocle.Entity::get_Y()
+  IL_00e6: ldarg.0
+  IL_00e7: call System.Single Monocle.Entity::get_Y()
+  IL_00ec: sub
+  IL_00ed: call System.Single System.Math::Abs(System.Single)
+  IL_00f2: ldc.r4 128
+  IL_00f7: clt
+  IL_00f9: br.s IL_00fc
+  IL_00fb: ldc.i4.0
+  IL_00fc: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0101: ldarg.0
+  IL_0102: ldfld Monocle.Entity Celeste.CrystalStaticSpinner::filler
+  IL_0107: brfalse.s IL_011a
+  IL_0109: ldarg.0
+  IL_010a: ldfld Monocle.Entity Celeste.CrystalStaticSpinner::filler
+  IL_010f: ldarg.0
+  IL_0110: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0115: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Boolean Celeste.Mod.TASHelper.Gameplay.ActualPosition::IsCassetteSpinner(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: brtrue IL_011a @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition::PatchHazardUpdate(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_011a: ret

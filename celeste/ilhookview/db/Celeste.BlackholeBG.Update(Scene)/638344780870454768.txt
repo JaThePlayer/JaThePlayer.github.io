@@ -1,0 +1,875 @@
+IL Diff: System.Void Celeste.BlackholeBG::Update(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Backdrop::Update(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Boolean Celeste.BlackholeBG::checkedFlag
+  IL_000d: brtrue.s IL_003d
+  IL_000f: ldarg.1
+  IL_0010: isinst Celeste.Level
+  IL_0015: ldfld Celeste.Session Celeste.Level::Session
+  IL_001a: ldstr "blackhole_strength"
+  IL_001f: callvirt System.Int32 Celeste.Session::GetCounter(System.String)
+  IL_0024: stloc.0
+  IL_0025: ldloc.0
+  IL_0026: ldc.i4.0
+  IL_0027: blt.s IL_0036
+  IL_0029: ldarg.0
+  IL_002a: ldarg.1
+  IL_002b: isinst Celeste.Level
+  IL_0030: ldloc.0
+  IL_0031: callvirt System.Void Celeste.BlackholeBG::SnapStrength(Celeste.Level,Celeste.BlackholeBG/Strengths)
+  IL_0036: ldarg.0
+  IL_0037: ldc.i4.1
+  IL_0038: stfld System.Boolean Celeste.BlackholeBG::checkedFlag
+  IL_003d: ldarg.0
+  IL_003e: ldfld System.Boolean Celeste.Backdrop::Visible
+  IL_0043: brfalse IL_0a33
+  IL_0048: ldarg.0
+  IL_0049: ldarg.0
+  IL_004a: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_004f: ldc.r4 1
+  IL_0054: ldarg.0
+  IL_0055: ldfld Celeste.BlackholeBG/Strengths Celeste.BlackholeBG::strength
+  IL_005a: conv.r4
+  IL_005b: add
+  IL_005c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0061: ldc.r4 0.1
+  IL_0066: mul
+  IL_0067: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_006c: stfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_0071: ldarg.1
+  IL_0072: ldc.r4 0.05
+  IL_0077: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_007c: brfalse IL_014e
+  IL_0081: ldc.i4.0
+  IL_0082: stloc.1
+  IL_0083: br IL_0140
+  IL_0088: ldarg.0
+  IL_0089: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsLerp
+  IL_008e: ldloc.1
+  IL_008f: ldarg.0
+  IL_0090: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsMild
+  IL_0095: ldloc.1
+  IL_0096: ldelem.any Microsoft.Xna.Framework.Color
+  IL_009b: ldarg.0
+  IL_009c: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsWild
+  IL_00a1: ldloc.1
+  IL_00a2: ldelem.any Microsoft.Xna.Framework.Color
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_00ad: ldc.r4 1
+  IL_00b2: sub
+  IL_00b3: ldc.r4 3
+  IL_00b8: div
+  IL_00b9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00be: stelem.any Microsoft.Xna.Framework.Color
+  IL_00c3: ldc.i4.0
+  IL_00c4: stloc.2
+  IL_00c5: br.s IL_0137
+  IL_00c7: ldarg.0
+  IL_00c8: ldfld Microsoft.Xna.Framework.Color[0...,0...] Celeste.BlackholeBG::colorsLerpBlack
+  IL_00cd: ldloc.1
+  IL_00ce: ldloc.2
+  IL_00cf: ldarg.0
+  IL_00d0: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsLerp
+  IL_00d5: ldloc.1
+  IL_00d6: ldelem.any Microsoft.Xna.Framework.Color
+  IL_00db: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 34728686 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors/<>c__DisplayClass25_0`1[[Microsoft.Xna.Framework.Color, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]]::<replacerHook>b__0(Microsoft.Xna.Framework.Color,Celeste.BlackholeBG)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.BlackholeBG>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  IL_00e0: ldloc.2
+  IL_00e1: conv.r4
+  IL_00e2: ldc.r4 19
+  IL_00e7: div
+  IL_00e8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00ed: ldarg.0
+  IL_00ee: ldfld System.Single Celeste.Backdrop::FadeAlphaMultiplier
+  IL_00f3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00f8: call System.Void Microsoft.Xna.Framework.Color[0...,0...]::Set(System.Int32,System.Int32,Microsoft.Xna.Framework.Color)
+  IL_00fd: ldarg.0
+  IL_00fe: ldfld Microsoft.Xna.Framework.Color[0...,0...] Celeste.BlackholeBG::colorsLerpTransparent
+  IL_0103: ldloc.1
+  IL_0104: ldloc.2
+  IL_0105: ldarg.0
+  IL_0106: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsLerp
+  IL_010b: ldloc.1
+  IL_010c: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0111: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_0116: ldloc.2
+  IL_0117: conv.r4
+  IL_0118: ldc.r4 19
+  IL_011d: div
+  IL_011e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0123: ldarg.0
+  IL_0124: ldfld System.Single Celeste.Backdrop::FadeAlphaMultiplier
+  IL_0129: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_012e: call System.Void Microsoft.Xna.Framework.Color[0...,0...]::Set(System.Int32,System.Int32,Microsoft.Xna.Framework.Color)
+  IL_0133: ldloc.2
+  IL_0134: ldc.i4.1
+  IL_0135: add
+  IL_0136: stloc.2
+  IL_0137: ldloc.2
+  IL_0138: ldc.i4.s 20
+  IL_013a: blt.s IL_00c7
+  IL_013c: ldloc.1
+  IL_013d: ldc.i4.1
+  IL_013e: add
+  IL_013f: stloc.1
+  IL_0140: ldloc.1
+  IL_0141: ldarg.0
+  IL_0142: ldfld Microsoft.Xna.Framework.Color[] Celeste.BlackholeBG::colorsMild
+  IL_0147: ldlen
+  IL_0148: conv.i4
+  IL_0149: blt IL_0088
+  IL_014e: ldc.r4 1
+  IL_0153: ldarg.0
+  IL_0154: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_0159: ldc.r4 1
+  IL_015e: sub
+  IL_015f: ldc.r4 0.7
+  IL_0164: mul
+  IL_0165: add
+  IL_0166: stloc.3
+  IL_0167: ldarg.0
+  IL_0168: callvirt System.Int32 Celeste.BlackholeBG::get_StreamCount()
+  IL_016d: stloc.s V_4
+  IL_016f: ldc.i4.0
+  IL_0170: stloc.s V_5
+  IL_0172: ldc.i4.0
+  IL_0173: stloc.s V_6
+  IL_0175: br IL_045b
+  IL_017a: ldarg.0
+  IL_017b: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0180: ldloc.s V_6
+  IL_0182: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_0187: ldflda System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_018c: dup
+  IL_018d: ldind.r4
+  IL_018e: ldarg.0
+  IL_018f: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0194: ldloc.s V_6
+  IL_0196: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_019b: ldfld System.Single Celeste.BlackholeBG/StreamParticle::Speed
+  IL_01a0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01a5: mul
+  IL_01a6: ldloc.3
+  IL_01a7: mul
+  IL_01a8: ldarg.0
+  IL_01a9: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_01ae: mul
+  IL_01af: add
+  IL_01b0: stind.r4
+  IL_01b1: ldarg.0
+  IL_01b2: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_01b7: ldloc.s V_6
+  IL_01b9: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_01be: ldfld System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_01c3: ldc.r4 1
+  IL_01c8: blt.un.s IL_0220
+  IL_01ca: ldarg.0
+  IL_01cb: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_01d0: ldc.r4 0
+  IL_01d5: ble.un.s IL_0220
+  IL_01d7: ldarg.0
+  IL_01d8: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_01dd: ldloc.s V_6
+  IL_01df: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_01e4: ldsfld System.Random Monocle.Calc::Random
+  IL_01e9: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_01ee: ldc.r4 6.2831855
+  IL_01f3: mul
+  IL_01f4: ldc.r4 1
+  IL_01f9: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_01fe: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG/StreamParticle::Normal
+  IL_0203: ldarg.0
+  IL_0204: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0209: ldloc.s V_6
+  IL_020b: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_0210: ldflda System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_0215: dup
+  IL_0216: ldind.r4
+  IL_0217: ldc.r4 1
+  IL_021c: sub
+  IL_021d: stind.r4
+  IL_021e: br.s IL_028d
+  IL_0220: ldarg.0
+  IL_0221: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0226: ldloc.s V_6
+  IL_0228: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_022d: ldfld System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_0232: ldc.r4 0
+  IL_0237: bge.un.s IL_028d
+  IL_0239: ldarg.0
+  IL_023a: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_023f: ldc.r4 0
+  IL_0244: bge.un.s IL_028d
+  IL_0246: ldarg.0
+  IL_0247: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_024c: ldloc.s V_6
+  IL_024e: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_0253: ldsfld System.Random Monocle.Calc::Random
+  IL_0258: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_025d: ldc.r4 6.2831855
+  IL_0262: mul
+  IL_0263: ldc.r4 1
+  IL_0268: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_026d: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG/StreamParticle::Normal
+  IL_0272: ldarg.0
+  IL_0273: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0278: ldloc.s V_6
+  IL_027a: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_027f: ldflda System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_0284: dup
+  IL_0285: ldind.r4
+  IL_0286: ldc.r4 1
+  IL_028b: add
+  IL_028c: stind.r4
+  IL_028d: ldarg.0
+  IL_028e: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0293: ldloc.s V_6
+  IL_0295: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_029a: ldfld System.Single Celeste.BlackholeBG/StreamParticle::Percent
+  IL_029f: stloc.s V_7
+  IL_02a1: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_02a6: ldloc.s V_7
+  IL_02a8: ldc.r4 0
+  IL_02ad: ldc.r4 0.8
+  IL_02b2: ldc.r4 0
+  IL_02b7: ldc.r4 1
+  IL_02bc: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_02c1: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_02c6: stloc.s V_8
+  IL_02c8: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_02cd: ldloc.s V_7
+  IL_02cf: ldc.r4 0.2
+  IL_02d4: ldc.r4 1
+  IL_02d9: ldc.r4 0
+  IL_02de: ldc.r4 1
+  IL_02e3: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_02e8: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_02ed: stloc.s V_9
+  IL_02ef: ldarg.0
+  IL_02f0: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_02f5: ldloc.s V_6
+  IL_02f7: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_02fc: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG/StreamParticle::Normal
+  IL_0301: stloc.s V_10
+  IL_0303: ldloc.s V_10
+  IL_0305: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Perpendicular(Microsoft.Xna.Framework.Vector2)
+  IL_030a: stloc.s V_11
+  IL_030c: ldloc.s V_10
+  IL_030e: ldc.r4 16
+  IL_0313: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0318: ldloc.s V_10
+  IL_031a: ldc.r4 1
+  IL_031f: ldloc.s V_8
+  IL_0321: sub
+  IL_0322: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0327: ldc.r4 200
+  IL_032c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0331: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0336: stloc.s V_12
+  IL_0338: ldc.r4 1
+  IL_033d: ldloc.s V_8
+  IL_033f: sub
+  IL_0340: ldc.r4 8
+  IL_0345: mul
+  IL_0346: stloc.s V_13
+  IL_0348: ldarg.0
+  IL_0349: ldfld Microsoft.Xna.Framework.Color[0...,0...] Celeste.BlackholeBG::colorsLerpBlack
+  IL_034e: ldarg.0
+  IL_034f: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0354: ldloc.s V_6
+  IL_0356: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_035b: ldfld System.Int32 Celeste.BlackholeBG/StreamParticle::Color
+  IL_0360: ldloc.s V_8
+  IL_0362: ldc.r4 0.6
+  IL_0367: mul
+  IL_0368: ldc.r4 19
+  IL_036d: mul
+  IL_036e: conv.i4
+  IL_036f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color[0...,0...]::Get(System.Int32,System.Int32)
+  IL_0374: stloc.s V_14
+  IL_0376: ldloc.s V_10
+  IL_0378: ldc.r4 16
+  IL_037d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0382: ldloc.s V_10
+  IL_0384: ldc.r4 1
+  IL_0389: ldloc.s V_9
+  IL_038b: sub
+  IL_038c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0391: ldc.r4 280
+  IL_0396: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_039b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03a0: ldc.r4 1
+  IL_03a5: ldloc.s V_9
+  IL_03a7: sub
+  IL_03a8: ldc.r4 8
+  IL_03ad: mul
+  IL_03ae: stloc.s V_15
+  IL_03b0: ldarg.0
+  IL_03b1: ldfld Microsoft.Xna.Framework.Color[0...,0...] Celeste.BlackholeBG::colorsLerpBlack
+  IL_03b6: ldarg.0
+  IL_03b7: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_03bc: ldloc.s V_6
+  IL_03be: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_03c3: ldfld System.Int32 Celeste.BlackholeBG/StreamParticle::Color
+  IL_03c8: ldloc.s V_9
+  IL_03ca: ldc.r4 0.6
+  IL_03cf: mul
+  IL_03d0: ldc.r4 19
+  IL_03d5: mul
+  IL_03d6: conv.i4
+  IL_03d7: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color[0...,0...]::Get(System.Int32,System.Int32)
+  IL_03dc: stloc.s V_16
+  IL_03de: ldloc.s V_12
+  IL_03e0: ldloc.s V_11
+  IL_03e2: ldloc.s V_13
+  IL_03e4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03e9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03ee: stloc.s V_17
+  IL_03f0: ldloc.s V_12
+  IL_03f2: ldloc.s V_11
+  IL_03f4: ldloc.s V_13
+  IL_03f6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03fb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0400: stloc.s V_18
+  IL_0402: dup
+  IL_0403: ldloc.s V_11
+  IL_0405: ldloc.s V_15
+  IL_0407: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_040c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0411: stloc.s V_19
+  IL_0413: ldloc.s V_11
+  IL_0415: ldloc.s V_15
+  IL_0417: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_041c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0421: stloc.s V_20
+  IL_0423: ldarg.0
+  IL_0424: ldarg.0
+  IL_0425: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[] Celeste.BlackholeBG::streamVerts
+  IL_042a: ldloc.s V_5
+  IL_042c: ldloca.s V_14
+  IL_042e: ldloca.s V_14
+  IL_0430: ldloca.s V_16
+  IL_0432: ldloca.s V_16
+  IL_0434: callvirt System.Void Celeste.BlackholeBG::AssignVertColors(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],System.Int32,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&)
+  IL_0439: ldarg.0
+  IL_043a: ldarg.0
+  IL_043b: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[] Celeste.BlackholeBG::streamVerts
+  IL_0440: ldloc.s V_5
+  IL_0442: ldloca.s V_17
+  IL_0444: ldloca.s V_18
+  IL_0446: ldloca.s V_19
+  IL_0448: ldloca.s V_20
+  IL_044a: callvirt System.Void Celeste.BlackholeBG::AssignVertPosition(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],System.Int32,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&)
+  IL_044f: ldloc.s V_5
+  IL_0451: ldc.i4.6
+  IL_0452: add
+  IL_0453: stloc.s V_5
+  IL_0455: ldloc.s V_6
+  IL_0457: ldc.i4.1
+  IL_0458: add
+  IL_0459: stloc.s V_6
+  IL_045b: ldloc.s V_6
+  IL_045d: ldloc.s V_4
+  IL_045f: blt IL_017a
+  IL_0464: ldarg.0
+  IL_0465: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_046a: ldc.r4 0.25
+  IL_046f: mul
+  IL_0470: stloc.s V_21
+  IL_0472: ldarg.0
+  IL_0473: callvirt System.Int32 Celeste.BlackholeBG::get_ParticleCount()
+  IL_0478: stloc.s V_22
+  IL_047a: ldc.i4.0
+  IL_047b: stloc.s V_23
+  IL_047d: br IL_0589
+  IL_0482: ldarg.0
+  IL_0483: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_0488: ldloc.s V_23
+  IL_048a: ldelema Celeste.BlackholeBG/Particle
+  IL_048f: ldflda System.Single Celeste.BlackholeBG/Particle::Percent
+  IL_0494: dup
+  IL_0495: ldind.r4
+  IL_0496: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_049b: ldloc.s V_21
+  IL_049d: mul
+  IL_049e: ldarg.0
+  IL_049f: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_04a4: mul
+  IL_04a5: add
+  IL_04a6: stind.r4
+  IL_04a7: ldarg.0
+  IL_04a8: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_04ad: ldloc.s V_23
+  IL_04af: ldelema Celeste.BlackholeBG/Particle
+  IL_04b4: ldfld System.Single Celeste.BlackholeBG/Particle::Percent
+  IL_04b9: ldc.r4 1
+  IL_04be: blt.un.s IL_0516
+  IL_04c0: ldarg.0
+  IL_04c1: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_04c6: ldc.r4 0
+  IL_04cb: ble.un.s IL_0516
+  IL_04cd: ldarg.0
+  IL_04ce: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_04d3: ldloc.s V_23
+  IL_04d5: ldelema Celeste.BlackholeBG/Particle
+  IL_04da: ldsfld System.Random Monocle.Calc::Random
+  IL_04df: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_04e4: ldc.r4 6.2831855
+  IL_04e9: mul
+  IL_04ea: ldc.r4 1
+  IL_04ef: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_04f4: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG/Particle::Normal
+  IL_04f9: ldarg.0
+  IL_04fa: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_04ff: ldloc.s V_23
+  IL_0501: ldelema Celeste.BlackholeBG/Particle
+  IL_0506: ldflda System.Single Celeste.BlackholeBG/Particle::Percent
+  IL_050b: dup
+  IL_050c: ldind.r4
+  IL_050d: ldc.r4 1
+  IL_0512: sub
+  IL_0513: stind.r4
+  IL_0514: br.s IL_0583
+  IL_0516: ldarg.0
+  IL_0517: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_051c: ldloc.s V_23
+  IL_051e: ldelema Celeste.BlackholeBG/Particle
+  IL_0523: ldfld System.Single Celeste.BlackholeBG/Particle::Percent
+  IL_0528: ldc.r4 0
+  IL_052d: bge.un.s IL_0583
+  IL_052f: ldarg.0
+  IL_0530: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_0535: ldc.r4 0
+  IL_053a: bge.un.s IL_0583
+  IL_053c: ldarg.0
+  IL_053d: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_0542: ldloc.s V_23
+  IL_0544: ldelema Celeste.BlackholeBG/Particle
+  IL_0549: ldsfld System.Random Monocle.Calc::Random
+  IL_054e: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_0553: ldc.r4 6.2831855
+  IL_0558: mul
+  IL_0559: ldc.r4 1
+  IL_055e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0563: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG/Particle::Normal
+  IL_0568: ldarg.0
+  IL_0569: ldfld Celeste.BlackholeBG/Particle[] Celeste.BlackholeBG::particles
+  IL_056e: ldloc.s V_23
+  IL_0570: ldelema Celeste.BlackholeBG/Particle
+  IL_0575: ldflda System.Single Celeste.BlackholeBG/Particle::Percent
+  IL_057a: dup
+  IL_057b: ldind.r4
+  IL_057c: ldc.r4 1
+  IL_0581: add
+  IL_0582: stind.r4
+  IL_0583: ldloc.s V_23
+  IL_0585: ldc.i4.1
+  IL_0586: add
+  IL_0587: stloc.s V_23
+  IL_0589: ldloc.s V_23
+  IL_058b: ldloc.s V_22
+  IL_058d: blt IL_0482
+  IL_0592: ldc.r4 0.2
+  IL_0597: ldarg.0
+  IL_0598: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_059d: ldc.r4 1
+  IL_05a2: sub
+  IL_05a3: ldc.r4 0.1
+  IL_05a8: mul
+  IL_05a9: add
+  IL_05aa: stloc.s V_24
+  IL_05ac: ldarg.0
+  IL_05ad: callvirt System.Int32 Celeste.BlackholeBG::get_SpiralCount()
+  IL_05b2: stloc.s V_25
+  IL_05b4: ldarg.0
+  IL_05b5: ldfld Microsoft.Xna.Framework.Color Celeste.BlackholeBG::bgColorOuterMild
+  IL_05ba: ldarg.0
+  IL_05bb: ldfld Microsoft.Xna.Framework.Color Celeste.BlackholeBG::bgColorOuterWild
+  IL_05c0: ldarg.0
+  IL_05c1: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_05c6: ldc.r4 1
+  IL_05cb: sub
+  IL_05cc: ldc.r4 3
+  IL_05d1: div
+  IL_05d2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_05d7: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_05dc: ldc.r4 0.1
+  IL_05e1: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_05e6: ldc.r4 0.8
+  IL_05eb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_05f0: stloc.s V_26
+  IL_05f2: ldc.i4.0
+  IL_05f3: stloc.s V_27
+  IL_05f5: ldc.i4.0
+  IL_05f6: stloc.s V_28
+  IL_05f8: br IL_08f4
+  IL_05fd: ldarg.0
+  IL_05fe: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_0603: ldloc.s V_28
+  IL_0605: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_060a: ldflda System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_060f: dup
+  IL_0610: ldind.r4
+  IL_0611: ldarg.0
+  IL_0612: ldfld Celeste.BlackholeBG/StreamParticle[] Celeste.BlackholeBG::streams
+  IL_0617: ldloc.s V_28
+  IL_0619: ldelema Celeste.BlackholeBG/StreamParticle
+  IL_061e: ldfld System.Single Celeste.BlackholeBG/StreamParticle::Speed
+  IL_0623: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0628: mul
+  IL_0629: ldloc.s V_24
+  IL_062b: mul
+  IL_062c: ldarg.0
+  IL_062d: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_0632: mul
+  IL_0633: add
+  IL_0634: stind.r4
+  IL_0635: ldarg.0
+  IL_0636: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_063b: ldloc.s V_28
+  IL_063d: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_0642: ldfld System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_0647: ldc.r4 1
+  IL_064c: blt.un.s IL_0699
+  IL_064e: ldarg.0
+  IL_064f: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_0654: ldc.r4 0
+  IL_0659: ble.un.s IL_0699
+  IL_065b: ldarg.0
+  IL_065c: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_0661: ldloc.s V_28
+  IL_0663: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_0668: ldsfld System.Random Monocle.Calc::Random
+  IL_066d: ldc.r4 6.2831855
+  IL_0672: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_0677: stfld System.Single Celeste.BlackholeBG/SpiralDebris::Offset
+  IL_067c: ldarg.0
+  IL_067d: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_0682: ldloc.s V_28
+  IL_0684: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_0689: ldflda System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_068e: dup
+  IL_068f: ldind.r4
+  IL_0690: ldc.r4 1
+  IL_0695: sub
+  IL_0696: stind.r4
+  IL_0697: br.s IL_06fb
+  IL_0699: ldarg.0
+  IL_069a: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_069f: ldloc.s V_28
+  IL_06a1: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_06a6: ldfld System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_06ab: ldc.r4 0
+  IL_06b0: bge.un.s IL_06fb
+  IL_06b2: ldarg.0
+  IL_06b3: ldfld System.Single Celeste.BlackholeBG::Direction
+  IL_06b8: ldc.r4 0
+  IL_06bd: bge.un.s IL_06fb
+  IL_06bf: ldarg.0
+  IL_06c0: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_06c5: ldloc.s V_28
+  IL_06c7: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_06cc: ldsfld System.Random Monocle.Calc::Random
+  IL_06d1: ldc.r4 6.2831855
+  IL_06d6: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_06db: stfld System.Single Celeste.BlackholeBG/SpiralDebris::Offset
+  IL_06e0: ldarg.0
+  IL_06e1: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_06e6: ldloc.s V_28
+  IL_06e8: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_06ed: ldflda System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_06f2: dup
+  IL_06f3: ldind.r4
+  IL_06f4: ldc.r4 1
+  IL_06f9: add
+  IL_06fa: stind.r4
+  IL_06fb: ldarg.0
+  IL_06fc: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_0701: ldloc.s V_28
+  IL_0703: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_0708: ldfld System.Single Celeste.BlackholeBG/SpiralDebris::Percent
+  IL_070d: ldarg.0
+  IL_070e: ldfld Celeste.BlackholeBG/SpiralDebris[] Celeste.BlackholeBG::spirals
+  IL_0713: ldloc.s V_28
+  IL_0715: ldelema Celeste.BlackholeBG/SpiralDebris
+  IL_071a: ldfld System.Single Celeste.BlackholeBG/SpiralDebris::Offset
+  IL_071f: stloc.s V_29
+  IL_0721: dup
+  IL_0722: ldc.r4 0
+  IL_0727: ldc.r4 0.8
+  IL_072c: ldc.r4 0
+  IL_0731: ldc.r4 1
+  IL_0736: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_073b: stloc.s V_30
+  IL_073d: ldc.r4 0
+  IL_0742: ldc.r4 1
+  IL_0747: ldc.r4 0
+  IL_074c: ldc.r4 1
+  IL_0751: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0756: stloc.s V_31
+  IL_0758: ldc.i4.0
+  IL_0759: stloc.s V_32
+  IL_075b: br IL_08e5
+  IL_0760: ldc.r4 1
+  IL_0765: ldloc.s V_30
+  IL_0767: ldloc.s V_31
+  IL_0769: ldloc.s V_32
+  IL_076b: conv.r4
+  IL_076c: ldc.r4 12
+  IL_0771: div
+  IL_0772: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0777: sub
+  IL_0778: stloc.s V_33
+  IL_077a: ldc.r4 1
+  IL_077f: ldloc.s V_30
+  IL_0781: ldloc.s V_31
+  IL_0783: ldloc.s V_32
+  IL_0785: ldc.i4.1
+  IL_0786: add
+  IL_0787: conv.r4
+  IL_0788: ldc.r4 12
+  IL_078d: div
+  IL_078e: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0793: sub
+  IL_0794: stloc.s V_34
+  IL_0796: ldloc.s V_33
+  IL_0798: ldc.r4 20
+  IL_079d: ldloc.s V_32
+  IL_079f: conv.r4
+  IL_07a0: ldc.r4 0.2
+  IL_07a5: mul
+  IL_07a6: add
+  IL_07a7: mul
+  IL_07a8: ldloc.s V_29
+  IL_07aa: add
+  IL_07ab: ldc.r4 1
+  IL_07b0: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_07b5: stloc.s V_35
+  IL_07b7: ldloc.s V_35
+  IL_07b9: ldloc.s V_33
+  IL_07bb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_07c0: ldc.r4 200
+  IL_07c5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_07ca: ldloc.s V_33
+  IL_07cc: ldc.r4 4
+  IL_07d1: ldarg.0
+  IL_07d2: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_07d7: ldc.r4 4
+  IL_07dc: mul
+  IL_07dd: add
+  IL_07de: mul
+  IL_07df: stloc.s V_36
+  IL_07e1: ldloc.s V_34
+  IL_07e3: ldc.r4 20
+  IL_07e8: ldloc.s V_32
+  IL_07ea: ldc.i4.1
+  IL_07eb: add
+  IL_07ec: conv.r4
+  IL_07ed: ldc.r4 0.2
+  IL_07f2: mul
+  IL_07f3: add
+  IL_07f4: mul
+  IL_07f5: ldloc.s V_29
+  IL_07f7: add
+  IL_07f8: ldc.r4 1
+  IL_07fd: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0802: stloc.s V_37
+  IL_0804: ldloc.s V_37
+  IL_0806: ldloc.s V_34
+  IL_0808: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_080d: ldc.r4 200
+  IL_0812: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0817: stloc.s V_38
+  IL_0819: ldloc.s V_34
+  IL_081b: ldc.r4 4
+  IL_0820: ldarg.0
+  IL_0821: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_0826: ldc.r4 4
+  IL_082b: mul
+  IL_082c: add
+  IL_082d: mul
+  IL_082e: stloc.s V_39
+  IL_0830: ldloc.s V_26
+  IL_0832: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 61560178 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors/<>c__DisplayClass25_0`1[[Microsoft.Xna.Framework.Color, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]]::<replacerHook>b__0(Microsoft.Xna.Framework.Color,Celeste.BlackholeBG)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.BlackholeBG>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  IL_0837: ldc.r4 1
+  IL_083c: ldloc.s V_33
+  IL_083e: sub
+  IL_083f: ldc.r4 0.5
+  IL_0844: mul
+  IL_0845: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_084a: stloc.s V_40
+  IL_084c: ldloc.s V_26
+  IL_084e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 2583 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: ldc.i4 20318551 @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors/<>c__DisplayClass25_0`1[[Microsoft.Xna.Framework.Color, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]]::<replacerHook>b__0(Microsoft.Xna.Framework.Color,Celeste.BlackholeBG)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.BlackholeBG>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.BlackholeCustomColors::modBlackholeUpdate
+  IL_0853: ldc.r4 1
+  IL_0858: ldloc.s V_34
+  IL_085a: sub
+  IL_085b: ldc.r4 0.5
+  IL_0860: mul
+  IL_0861: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0866: stloc.s V_41
+  IL_0868: dup
+  IL_0869: ldloc.s V_35
+  IL_086b: ldloc.s V_36
+  IL_086d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0872: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0877: stloc.s V_42
+  IL_0879: ldloc.s V_38
+  IL_087b: ldloc.s V_37
+  IL_087d: ldloc.s V_39
+  IL_087f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0884: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0889: stloc.s V_43
+  IL_088b: ldloc.s V_38
+  IL_088d: ldloc.s V_37
+  IL_088f: ldloc.s V_39
+  IL_0891: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0896: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_089b: stloc.s V_44
+  IL_089d: ldloc.s V_35
+  IL_089f: ldloc.s V_36
+  IL_08a1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_08a6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_08ab: stloc.s V_45
+  IL_08ad: ldarg.0
+  IL_08ae: ldarg.0
+  IL_08af: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[] Celeste.BlackholeBG::spiralVerts
+  IL_08b4: ldloc.s V_27
+  IL_08b6: ldloca.s V_40
+  IL_08b8: ldloca.s V_41
+  IL_08ba: ldloca.s V_41
+  IL_08bc: ldloca.s V_40
+  IL_08be: callvirt System.Void Celeste.BlackholeBG::AssignVertColors(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],System.Int32,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&,Microsoft.Xna.Framework.Color&)
+  IL_08c3: ldarg.0
+  IL_08c4: ldarg.0
+  IL_08c5: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[] Celeste.BlackholeBG::spiralVerts
+  IL_08ca: ldloc.s V_27
+  IL_08cc: ldloca.s V_42
+  IL_08ce: ldloca.s V_43
+  IL_08d0: ldloca.s V_44
+  IL_08d2: ldloca.s V_45
+  IL_08d4: callvirt System.Void Celeste.BlackholeBG::AssignVertPosition(Microsoft.Xna.Framework.Graphics.VertexPositionColorTexture[],System.Int32,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&,Microsoft.Xna.Framework.Vector2&)
+  IL_08d9: ldloc.s V_27
+  IL_08db: ldc.i4.6
+  IL_08dc: add
+  IL_08dd: stloc.s V_27
+  IL_08df: ldloc.s V_32
+  IL_08e1: ldc.i4.1
+  IL_08e2: add
+  IL_08e3: stloc.s V_32
+  IL_08e5: ldloc.s V_32
+  IL_08e7: ldc.i4.s 12
+  IL_08e9: blt IL_0760
+  IL_08ee: ldloc.s V_28
+  IL_08f0: ldc.i4.1
+  IL_08f1: add
+  IL_08f2: stloc.s V_28
+  IL_08f4: ldloc.s V_28
+  IL_08f6: ldloc.s V_25
+  IL_08f8: blt IL_05fd
+  IL_08fd: ldarg.1
+  IL_08fe: isinst Celeste.Level
+  IL_0903: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_0908: stloc.s V_46
+  IL_090a: ldc.r4 320
+  IL_090f: ldc.r4 180
+  IL_0914: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0919: ldc.r4 2
+  IL_091e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0923: ldloc.s V_46
+  IL_0925: ldc.r4 0.15
+  IL_092a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_092f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0934: ldarg.0
+  IL_0935: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::CenterOffset
+  IL_093a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_093f: stloc.s V_47
+  IL_0941: ldarg.0
+  IL_0942: ldarg.0
+  IL_0943: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::center
+  IL_0948: ldloc.s V_47
+  IL_094a: ldarg.0
+  IL_094b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::center
+  IL_0950: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0955: ldc.r4 1
+  IL_095a: ldc.r8 0.009999999776482582
+  IL_0963: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0968: conv.r8
+  IL_0969: call System.Double System.Math::Pow(System.Double,System.Double)
+  IL_096e: conv.r4
+  IL_096f: sub
+  IL_0970: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0975: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_097a: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::center
+  IL_097f: ldloc.s V_46
+  IL_0981: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0986: ldc.r4 0.25
+  IL_098b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0990: ldarg.0
+  IL_0991: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::OffsetOffset
+  IL_0996: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_099b: stloc.s V_48
+  IL_099d: ldarg.0
+  IL_099e: ldarg.0
+  IL_099f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::offset
+  IL_09a4: ldloc.s V_48
+  IL_09a6: ldarg.0
+  IL_09a7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::offset
+  IL_09ac: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_09b1: ldc.r4 1
+  IL_09b6: ldc.r8 0.009999999776482582
+  IL_09bf: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_09c4: conv.r8
+  IL_09c5: call System.Double System.Math::Pow(System.Double,System.Double)
+  IL_09ca: conv.r4
+  IL_09cb: sub
+  IL_09cc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_09d1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_09d6: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::offset
+  IL_09db: ldarg.1
+  IL_09dc: ldc.r4 0.025
+  IL_09e1: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_09e6: brfalse.s IL_0a14
+  IL_09e8: ldarg.0
+  IL_09e9: ldsfld System.Random Monocle.Calc::Random
+  IL_09ee: ldc.r4 6.2831855
+  IL_09f3: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_09f8: ldc.r4 2
+  IL_09fd: ldarg.0
+  IL_09fe: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_0a03: ldc.r4 1
+  IL_0a08: sub
+  IL_0a09: mul
+  IL_0a0a: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0a0f: stfld Microsoft.Xna.Framework.Vector2 Celeste.BlackholeBG::shake
+  IL_0a14: ldarg.0
+  IL_0a15: ldarg.0
+  IL_0a16: ldfld System.Single Celeste.BlackholeBG::spinTime
+  IL_0a1b: ldc.r4 2
+  IL_0a20: ldarg.0
+  IL_0a21: ldfld System.Single Celeste.BlackholeBG::StrengthMultiplier
+  IL_0a26: add
+  IL_0a27: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0a2c: mul
+  IL_0a2d: add
+  IL_0a2e: stfld System.Single Celeste.BlackholeBG::spinTime
+  IL_0a33: ret

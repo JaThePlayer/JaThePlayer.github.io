@@ -1,0 +1,474 @@
+IL Diff: System.Void Celeste.OuiChapterPanel::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.OuiChapterPanel::initialized
+  IL_0006: brtrue.s IL_0009
+  IL_0008: ret
+  IL_0009: ldarg.0
+  IL_000a: callvirt Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::get_OptionsRenderPosition()
+  IL_000f: stloc.0
+  IL_0010: ldc.i4.0
+  IL_0011: stloc.s V_4
+  IL_0013: br.s IL_0058
+  IL_0015: ldarg.0
+  IL_0016: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_001b: ldloc.s V_4
+  IL_001d: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_0022: callvirt System.Boolean Celeste.OuiChapterPanel/Option::get_OnTopOfUI()
+  IL_0027: brtrue.s IL_0052
+  IL_0029: ldarg.0
+  IL_002a: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_002f: ldloc.s V_4
+  IL_0031: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_0036: ldloc.0
+  IL_0037: ldarg.0
+  IL_0038: callvirt System.Int32 Celeste.OuiChapterPanel::get_option()
+  IL_003d: ldloc.s V_4
+  IL_003f: ceq
+  IL_0041: ldarg.0
+  IL_0042: ldfld Monocle.Wiggler Celeste.OuiChapterPanel::wiggler
+  IL_0047: ldarg.0
+  IL_0048: ldfld Monocle.Wiggler Celeste.OuiChapterPanel::modeAppearWiggler
+  IL_004d: callvirt System.Void Celeste.OuiChapterPanel/Option::Render(Microsoft.Xna.Framework.Vector2,System.Boolean,Monocle.Wiggler,Monocle.Wiggler)
+  IL_0052: ldloc.s V_4
+  IL_0054: ldc.i4.1
+  IL_0055: add
+  IL_0056: stloc.s V_4
+  IL_0058: ldloc.s V_4
+  IL_005a: ldarg.0
+  IL_005b: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_0060: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Count()
+  IL_0065: blt.s IL_0015
+  IL_0067: ldc.i4.0
+  IL_0068: stloc.1
+  IL_0069: ldarg.0
+  IL_006a: ldfld Celeste.AreaStats Celeste.OuiChapterPanel::RealStats
+  IL_006f: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
+  IL_0074: ldarg.0
+  IL_0075: ldflda Celeste.AreaKey Celeste.OuiChapterPanel::Area
+  IL_007a: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_007f: ldelem.ref
+  IL_0080: ldfld System.Boolean Celeste.AreaModeStats::Completed
+  IL_0085: brfalse IL_0123
+  IL_008a: ldarg.0
+  IL_008b: ldflda Celeste.AreaKey Celeste.OuiChapterPanel::Area
+  IL_0090: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_0095: stloc.s V_5
+  IL_0097: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_009c: ldarg.0
+  IL_009d: ldflda Celeste.AreaKey Celeste.OuiChapterPanel::Area
+  IL_00a2: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_00a7: callvirt T System.Collections.Generic.List`1<Celeste.AreaData>::get_Item(System.Int32)
+  IL_00ac: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_00b1: ldloc.s V_5
+  IL_00b3: ldelem.ref
+  IL_00b4: ldfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_00b9: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.MapData::Goldenberries
+  IL_00be: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.EntityData>::GetEnumerator()
+  IL_00c3: stloc.s V_6
+  IL_00c5: br.s IL_010a
+  IL_00c7: ldloca.s V_6
+  IL_00c9: call T System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::get_Current()
+  IL_00ce: stloc.s V_7
+  IL_00d0: ldloca.s V_8
+  IL_00d2: ldloc.s V_7
+  IL_00d4: ldfld Celeste.LevelData Celeste.EntityData::Level
+  IL_00d9: ldfld System.String Celeste.LevelData::Name
+  IL_00de: ldloc.s V_7
+  IL_00e0: ldfld System.Int32 Celeste.EntityData::ID
+  IL_00e5: call System.Void Celeste.EntityID::.ctor(System.String,System.Int32)
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld Celeste.AreaStats Celeste.OuiChapterPanel::RealStats
+  IL_00f0: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
+  IL_00f5: ldloc.s V_5
+  IL_00f7: ldelem.ref
+  IL_00f8: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.AreaModeStats::Strawberries
+  IL_00fd: ldloc.s V_8
+  IL_00ff: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Contains(T)
+  IL_0104: brfalse.s IL_010a
+  IL_0106: ldc.i4.1
+  IL_0107: stloc.1
+  IL_0108: leave.s IL_0123
+  IL_010a: ldloca.s V_6
+  IL_010c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::MoveNext()
+  IL_0111: brtrue.s IL_00c7
+  IL_0113: leave.s IL_0123
+  IL_0115: ldloca.s V_6
+  IL_0117: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>
+  IL_011d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0122: endfinally
+  IL_0123: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_0128: ldloc.1
+  IL_0129: brfalse.s IL_0138
+  IL_012b: ldarg.0
+  IL_012c: ldstr "areaselect/cardtop_golden"
+  IL_0131: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
++ IL_0000: ldc.i4 2583 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 44590828 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_2(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_0136: br.s IL_0143
+  IL_0138: ldarg.0
+  IL_0139: ldstr "areaselect/cardtop"
+  IL_013e: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
+  IL_0143: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0148: stloc.2
+  IL_0149: ldloc.2
+  IL_014a: ldarg.0
+  IL_014b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0150: ldc.r4 0
+  IL_0155: ldc.r4 -32
+  IL_015a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_015f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0164: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2)
+  IL_0169: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_016e: ldloc.1
+  IL_016f: brfalse.s IL_017e
+  IL_0171: ldarg.0
+  IL_0172: ldstr "areaselect/card_golden"
+  IL_0177: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
++ IL_0000: ldc.i4 2585 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 55087335 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_2(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_017c: br.s IL_0189
+  IL_017e: ldarg.0
+  IL_017f: ldstr "areaselect/card"
+  IL_0184: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
+  IL_0189: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_018e: stloc.3
+  IL_018f: ldarg.0
+  IL_0190: ldloc.3
+  IL_0191: ldc.i4.0
+  IL_0192: ldloc.3
+  IL_0193: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_0198: ldarg.0
+  IL_0199: ldfld System.Single Celeste.OuiChapterPanel::height
+  IL_019e: conv.i4
+  IL_019f: sub
+  IL_01a0: ldloc.3
+  IL_01a1: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_01a6: ldarg.0
+  IL_01a7: ldfld System.Single Celeste.OuiChapterPanel::height
+  IL_01ac: conv.i4
+  IL_01ad: ldarg.0
+  IL_01ae: ldfld Monocle.MTexture Celeste.OuiChapterPanel::card
+  IL_01b3: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_01b8: stfld Monocle.MTexture Celeste.OuiChapterPanel::card
+  IL_01bd: ldarg.0
+  IL_01be: ldfld Monocle.MTexture Celeste.OuiChapterPanel::card
+  IL_01c3: ldarg.0
+  IL_01c4: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01c9: ldc.r4 0
+  IL_01ce: ldc.i4.s -32
+  IL_01d0: ldloc.2
+  IL_01d1: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_01d6: add
+  IL_01d7: conv.r4
+  IL_01d8: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01dd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01e2: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2)
+  IL_01e7: ldc.i4.0
+  IL_01e8: stloc.s V_9
+  IL_01ea: br.s IL_022f
+  IL_01ec: ldarg.0
+  IL_01ed: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_01f2: ldloc.s V_9
+  IL_01f4: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_01f9: callvirt System.Boolean Celeste.OuiChapterPanel/Option::get_OnTopOfUI()
+  IL_01fe: brfalse.s IL_0229
+  IL_0200: ldarg.0
+  IL_0201: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_0206: ldloc.s V_9
+  IL_0208: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_020d: ldloc.0
+  IL_020e: ldarg.0
+  IL_020f: callvirt System.Int32 Celeste.OuiChapterPanel::get_option()
+  IL_0214: ldloc.s V_9
+  IL_0216: ceq
+  IL_0218: ldarg.0
+  IL_0219: ldfld Monocle.Wiggler Celeste.OuiChapterPanel::wiggler
+  IL_021e: ldarg.0
+  IL_021f: ldfld Monocle.Wiggler Celeste.OuiChapterPanel::modeAppearWiggler
+  IL_0224: callvirt System.Void Celeste.OuiChapterPanel/Option::Render(Microsoft.Xna.Framework.Vector2,System.Boolean,Monocle.Wiggler,Monocle.Wiggler)
+  IL_0229: ldloc.s V_9
+  IL_022b: ldc.i4.1
+  IL_022c: add
+  IL_022d: stloc.s V_9
+  IL_022f: ldloc.s V_9
+  IL_0231: ldarg.0
+  IL_0232: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_0237: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Count()
+  IL_023c: blt.s IL_01ec
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 3169 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 30801003 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_12(Celeste.OuiChapterPanel)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.OuiChapterPanel>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: brtrue IL_02ad @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_023e: ldarg.0 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_023f: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_0244: ldarg.0
+  IL_0245: callvirt System.Int32 Celeste.OuiChapterPanel::get_option()
+  IL_024a: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_024f: ldfld System.String Celeste.OuiChapterPanel/Option::Label
+  IL_0254: ldloc.0
+  IL_0255: ldc.r4 0
+  IL_025a: ldc.r4 -140
+  IL_025f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0264: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0269: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_026e: ldc.r4 0.5
+  IL_0273: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0278: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_027d: ldc.r4 1
+  IL_0282: ldarg.0
+  IL_0283: ldfld Monocle.Wiggler Celeste.OuiChapterPanel::wiggler
+  IL_0288: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_028d: ldc.r4 0.1
+  IL_0292: mul
+  IL_0293: add
+  IL_0294: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0299: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_029e: ldc.r4 0.8
+  IL_02a3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02a8: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_02ad: ldarg.0
+  IL_02ae: ldfld System.Boolean Celeste.OuiChapterPanel::selectingMode
+  IL_02b3: brfalse IL_034e
+  IL_02b8: ldarg.0
+  IL_02b9: ldfld Celeste.StrawberriesCounter Celeste.OuiChapterPanel::strawberries
+  IL_02be: ldarg.0
+  IL_02bf: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::contentOffset
+  IL_02c4: ldc.r4 0
+  IL_02c9: ldc.r4 170
+  IL_02ce: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02d3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02d8: ldarg.0
+  IL_02d9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::strawberriesOffset
+  IL_02de: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02e3: stfld Microsoft.Xna.Framework.Vector2 Celeste.StrawberriesCounter::Position
+  IL_02e8: ldarg.0
+  IL_02e9: ldfld Celeste.DeathsCounter Celeste.OuiChapterPanel::deaths
+  IL_02ee: ldarg.0
+  IL_02ef: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::contentOffset
+  IL_02f4: ldc.r4 0
+  IL_02f9: ldc.r4 170
+  IL_02fe: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0303: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0308: ldarg.0
+  IL_0309: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::deathsOffset
+  IL_030e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0313: stfld Microsoft.Xna.Framework.Vector2 Celeste.DeathsCounter::Position
+  IL_0000: ldarg.0
++ IL_0000: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::contentOffset @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
++ IL_0000: ldc.i4 3560 @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
++ IL_0000: ldc.i4 39570874 @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
+  |-> retrieves System.Void Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel/<>c::<modOuiChapterPanelRender>b__7_1(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
++ IL_0318: ldarg.0 @ Celeste.Mod.CollabUtils2.UI.SpeedBerryPBInChapterPanel::modOuiChapterPanelRender
+  IL_0319: ldfld Celeste.HeartGemDisplay Celeste.OuiChapterPanel::heart
+  IL_031e: ldarg.0
+  IL_031f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::contentOffset
+  IL_0324: ldc.r4 0
+  IL_0329: ldc.r4 170
+  IL_032e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0333: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0338: ldarg.0
+  IL_0339: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::heartOffset
+  IL_033e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0343: stfld Microsoft.Xna.Framework.Vector2 Celeste.HeartGemDisplay::Position
+  IL_0348: ldarg.0
+  IL_0349: call System.Void Monocle.Entity::Render()
+  IL_034e: ldarg.0
+  IL_034f: ldfld System.Boolean Celeste.OuiChapterPanel::selectingMode
+  IL_0354: brtrue.s IL_03ab
+  IL_0356: ldarg.0
+  IL_0357: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_035c: ldarg.0
+  IL_035d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::contentOffset
+  IL_0362: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0367: ldc.r4 340
+  IL_036c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0371: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0376: stloc.s V_10
+  IL_0378: ldarg.0
+  IL_0379: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_037e: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Count()
+  IL_0383: ldc.i4.1
+  IL_0384: sub
+  IL_0385: stloc.s V_11
+  IL_0387: br.s IL_03a6
+  IL_0389: ldarg.0
+  IL_038a: ldloc.s V_10
+  IL_038c: ldarg.0
+  IL_038d: callvirt System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option> Celeste.OuiChapterPanel::get_options()
+  IL_0392: ldloc.s V_11
+  IL_0394: callvirt T System.Collections.Generic.List`1<Celeste.OuiChapterPanel/Option>::get_Item(System.Int32)
+  IL_0399: ldloc.s V_11
+  IL_039b: callvirt System.Void Celeste.OuiChapterPanel::DrawCheckpoint(Microsoft.Xna.Framework.Vector2,Celeste.OuiChapterPanel/Option,System.Int32)
+  IL_03a0: ldloc.s V_11
+  IL_03a2: ldc.i4.1
+  IL_03a3: sub
+  IL_03a4: stloc.s V_11
+  IL_03a6: ldloc.s V_11
+  IL_03a8: ldc.i4.0
+  IL_03a9: bge.s IL_0389
+  IL_03ab: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_03b0: ldarg.0
+  IL_03b1: ldstr "areaselect/title"
+  IL_03b6: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
+  IL_03bb: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_03c0: ldarg.0
+  IL_03c1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03c6: ldarg.0
+  IL_03c7: ldc.r4 -60
+  IL_03cc: call System.Single Celeste.OuiChapterPanel::_FixTitleLength(System.Single)
+  IL_03d1: ldc.r4 0
+  IL_03d6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03db: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03e0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_03e5: ldarg.0
+  IL_03e6: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_03eb: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleBaseColor
+  IL_03f0: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_03f5: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_03fa: ldarg.0
+  IL_03fb: ldstr "areaselect/accent"
+  IL_0400: call System.String Celeste.OuiChapterPanel::_ModAreaselectTexture(System.String)
+  IL_0405: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_040a: ldarg.0
+  IL_040b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0410: ldarg.0
+  IL_0411: ldc.r4 -60
+  IL_0416: call System.Single Celeste.OuiChapterPanel::_FixTitleLength(System.Single)
+  IL_041b: ldc.r4 0
+  IL_0420: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0425: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_042a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_042f: ldarg.0
+  IL_0430: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_0435: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleAccentColor
+  IL_043a: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_043f: ldarg.0
+  IL_0440: ldfld Celeste.AreaKey Celeste.OuiChapterPanel::Area
+  IL_0445: call Celeste.AreaData Celeste.AreaData::Get(Celeste.AreaKey)
+  IL_044a: ldfld System.String Celeste.AreaData::Name
++ IL_0000: ldarg.0 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 3167 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 46776510 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.String Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_8(System.String,Celeste.OuiChapterPanel)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.OuiChapterPanel>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_044f: ldnull
+  IL_0450: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_0455: stloc.s V_12
+  IL_0457: ldarg.0
+  IL_0458: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_045d: callvirt System.Boolean Celeste.AreaData::get_Interlude_Safe()
++ IL_0000: ldarg.0 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 3165 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 32889163 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_6(System.Boolean,Celeste.OuiChapterPanel)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.OuiChapterPanel>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_0462: brfalse.s IL_04c8
+  IL_0464: ldloc.s V_12
+  IL_0466: ldarg.0
+  IL_0467: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_046c: ldarg.0
+  IL_046d: callvirt Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::get_IconOffset()
+  IL_0472: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0477: ldc.r4 -100
+  IL_047c: ldc.r4 0
+  IL_0481: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0486: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_048b: ldc.r4 1
+  IL_0490: ldc.r4 0.5
+  IL_0495: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_049a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_049f: ldc.r4 1
+  IL_04a4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_04a9: ldarg.0
+  IL_04aa: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_04af: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleTextColor
+  IL_04b4: ldc.r4 0.8
+  IL_04b9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_04be: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_04c3: br IL_058a
+  IL_04c8: ldarg.0
+  IL_04c9: ldfld System.String Celeste.OuiChapterPanel::chapter
+  IL_04ce: ldarg.0
+  IL_04cf: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_04d4: ldarg.0
+  IL_04d5: callvirt Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::get_IconOffset()
+  IL_04da: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04df: ldc.r4 -100
+  IL_04e4: ldc.r4 -2
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 12812816 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.Single Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_04e9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04ee: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04f3: ldc.r4 1
+  IL_04f8: ldc.r4 1
+  IL_04fd: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0502: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0507: ldc.r4 0.6
+  IL_050c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0511: ldarg.0
+  IL_0512: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_0517: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleAccentColor
+  IL_051c: ldc.r4 0.8
+  IL_0521: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0526: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_052b: ldloc.s V_12
+  IL_052d: ldarg.0
+  IL_052e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0533: ldarg.0
+  IL_0534: callvirt Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::get_IconOffset()
+  IL_0539: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_053e: ldc.r4 -100
+  IL_0543: ldc.r4 -18
++ IL_0000: ldc.i4 2462 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: ldc.i4 31205170 @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  |-> retrieves System.Single Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper/<>c::<ModOuiChapterPanelRender>b__40_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.InGameOverworldHelper::ModOuiChapterPanelRender
+  IL_0548: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_054d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0552: ldc.r4 1
+  IL_0557: ldc.r4 0
+  IL_055c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0561: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0566: ldc.r4 1
+  IL_056b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0570: ldarg.0
+  IL_0571: ldfld Celeste.AreaData Celeste.OuiChapterPanel::Data
+  IL_0576: ldfld Microsoft.Xna.Framework.Color Celeste.AreaData::TitleTextColor
+  IL_057b: ldc.r4 0.8
+  IL_0580: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0585: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_058a: ldarg.0
+  IL_058b: ldfld System.Single Celeste.OuiChapterPanel::spotlightAlpha
+  IL_0590: ldc.r4 0
+  IL_0595: ble.un.s IL_05c4
+  IL_0597: call System.Void Celeste.HiresRenderer::EndRender()
+  IL_059c: ldarg.0
+  IL_059d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.OuiChapterPanel::spotlightPosition
+  IL_05a2: ldarg.0
+  IL_05a3: ldfld System.Single Celeste.OuiChapterPanel::spotlightRadius
+  IL_05a8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_05ad: ldarg.0
+  IL_05ae: ldfld System.Single Celeste.OuiChapterPanel::spotlightAlpha
+  IL_05b3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_05b8: call System.Void Celeste.SpotlightWipe::DrawSpotlight(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color)
+  IL_05bd: ldnull
+  IL_05be: ldnull
+  IL_05bf: call System.Void Celeste.HiresRenderer::BeginRender(Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState)
+  IL_05c4: ret

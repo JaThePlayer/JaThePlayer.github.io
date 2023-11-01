@@ -1,0 +1,120 @@
+IL Diff: System.Boolean Celeste.Refill/<RefillRoutine>d__28::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Refill Celeste.Refill/<RefillRoutine>d__28::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0022,IL_0043,IL_00ac
+  IL_0020: ldc.i4.0
+  IL_0021: ret
+  IL_0022: ldarg.0
+  IL_0023: ldc.i4.m1
+  IL_0024: stfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_0029: ldc.r4 0.05
+  IL_002e: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_0033: ldarg.0
+  IL_0034: ldnull
+  IL_0035: stfld System.Object Celeste.Refill/<RefillRoutine>d__28::<>2__current
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.1
+  IL_003c: stfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_0041: ldc.i4.1
+  IL_0042: ret
+  IL_0043: ldarg.0
+  IL_0044: ldc.i4.m1
+  IL_0045: stfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_004a: ldloc.1
+  IL_004b: ldfld Celeste.Level Celeste.Refill::level
+  IL_0050: ldc.r4 0.3
+  IL_0055: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_005a: ldloc.1
+  IL_005b: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_0060: ldloc.1
+  IL_0061: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_0066: ldc.i4.0
+  IL_0067: dup
+  IL_0068: stloc.3
+  IL_0069: stfld System.Boolean Monocle.Component::Visible
+  IL_006e: ldloc.3
+  IL_006f: stfld System.Boolean Monocle.Component::Visible
+  IL_0074: ldloc.1
+  IL_0075: ldfld System.Boolean Celeste.Refill::oneUse
+  IL_007a: brtrue.s IL_0088
+  IL_007c: ldloc.1
+  IL_007d: ldfld Monocle.Image Celeste.Refill::outline
+  IL_0082: ldc.i4.1
+  IL_0083: stfld System.Boolean Monocle.Component::Visible
+  IL_0088: ldloc.1
+  IL_0089: ldc.i4 8999
+  IL_008e: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0093: ldarg.0
+  IL_0094: ldc.r4 0.05
+  IL_0099: box System.Single
+  IL_009e: stfld System.Object Celeste.Refill/<RefillRoutine>d__28::<>2__current
+  IL_00a3: ldarg.0
+  IL_00a4: ldc.i4.2
+  IL_00a5: stfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_00aa: ldc.i4.1
+  IL_00ab: ret
+  IL_00ac: ldarg.0
+  IL_00ad: ldc.i4.m1
+  IL_00ae: stfld System.Int32 Celeste.Refill/<RefillRoutine>d__28::<>1__state
+  IL_0000: ldarg.0
++ IL_0000: ldfld Celeste.Refill Celeste.Refill/<RefillRoutine>d__28::<>4__this @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
+  IL_0000: ldfld Celeste.Player Celeste.Refill/<RefillRoutine>d__28::player
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_0000: ldc.i4 26476495 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DashStateRefill/<>c::<Refill_RefillRoutine>b__22_2(Celeste.Refill,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Celeste.Refill,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_0000: brtrue IL_00f7 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_00b3: ldarg.0 @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
++ IL_00b4: ldfld Celeste.Player Celeste.Refill/<RefillRoutine>d__28::player @ Celeste.Mod.CommunalHelper.DashStates.DashStateRefill::Refill_RefillRoutine
+  IL_00b9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00be: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_00c3: stloc.2
+  IL_00c4: ldloc.1
+  IL_00c5: ldfld Celeste.Level Celeste.Refill::level
+  IL_00ca: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00cf: ldloc.1
+  IL_00d0: ldfld Monocle.ParticleType Celeste.Refill::p_shatter
+  IL_00d5: ldc.i4.5
+  IL_00d6: ldloc.1
+  IL_00d7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00dc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00e1: ldc.r4 4
+  IL_00e6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00eb: ldloc.2
+  IL_00ec: ldc.r4 1.5707964
+  IL_00f1: sub
+  IL_00f2: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00f7: ldloc.1
+  IL_00f8: ldfld Celeste.Level Celeste.Refill::level
+  IL_00fd: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0102: ldloc.1
+  IL_0103: ldfld Monocle.ParticleType Celeste.Refill::p_shatter
+  IL_0108: ldc.i4.5
+  IL_0109: ldloc.1
+  IL_010a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_010f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0114: ldc.r4 4
+  IL_0119: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_011e: ldloc.2
+  IL_011f: ldc.r4 1.5707964
+  IL_0124: add
+  IL_0125: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_012a: ldloc.1
+  IL_012b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0130: ldloc.2
+  IL_0131: call Celeste.SlashFx Celeste.SlashFx::Burst(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0136: pop
+  IL_0137: ldloc.1
+  IL_0138: ldfld System.Boolean Celeste.Refill::oneUse
+  IL_013d: brfalse.s IL_0145
+  IL_013f: ldloc.1
+  IL_0140: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0145: ldc.i4.0
+  IL_0146: ret

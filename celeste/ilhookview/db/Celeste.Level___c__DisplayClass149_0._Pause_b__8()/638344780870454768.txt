@@ -1,0 +1,88 @@
+IL Diff: System.Void Celeste.Level/<>c__DisplayClass149_0::<Pause>b__8()
++ IL_0000: ldc.i4.1 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: stsfld System.Boolean TAS.Input.Commands.SaveAndQuitReenterCommand::justPressedSnQ @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.TextMenu Celeste.Level/<>c__DisplayClass149_0::menu
+  IL_0006: ldc.i4.0
+  IL_0007: stfld System.Boolean Celeste.TextMenu::Focused
+  IL_000c: ldc.r4 1
+  IL_0011: stsfld System.Single Monocle.Engine::TimeRate
+  IL_0016: ldnull
+  IL_0017: ldc.i4.1
+  IL_0018: ldc.i4.1
+  IL_0019: call System.Boolean Celeste.Audio::SetMusic(System.String,System.Boolean,System.Boolean)
+  IL_001e: pop
+  IL_001f: ldstr "bus:/gameplay_sfx"
+  IL_0024: ldc.i4.1
+  IL_0025: call System.Void Celeste.Audio::BusStopAll(System.String,System.Boolean)
+  IL_002a: ldarg.0
+  IL_002b: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_0030: ldfld Celeste.Session Celeste.Level::Session
+  IL_0035: ldc.i4.1
+  IL_0036: stfld System.Boolean Celeste.Session::InArea
+  IL_003b: ldarg.0
+  IL_003c: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_0041: ldfld Celeste.Session Celeste.Level::Session
+  IL_0046: dup
+  IL_0047: ldfld System.Int32 Celeste.Session::Deaths
+  IL_004c: ldc.i4.1
+  IL_004d: add
+  IL_004e: stfld System.Int32 Celeste.Session::Deaths
+  IL_0053: ldarg.0
+  IL_0054: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_0059: ldfld Celeste.Session Celeste.Level::Session
+  IL_005e: dup
+  IL_005f: ldfld System.Int32 Celeste.Session::DeathsInCurrentLevel
+  IL_0064: ldc.i4.1
+  IL_0065: add
+  IL_0066: stfld System.Int32 Celeste.Session::DeathsInCurrentLevel
+  IL_006b: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0070: ldarg.0
+  IL_0071: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_0076: ldfld Celeste.Session Celeste.Level::Session
+  IL_007b: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0080: callvirt System.Void Celeste.SaveData::AddDeath(Celeste.AreaKey)
+  IL_0085: ldarg.0
+  IL_0086: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_008b: ldc.i4.0
+  IL_008c: ldarg.0
+  IL_008d: ldfld System.Action Celeste.Level/<>c__DisplayClass149_0::<>9__9
+  IL_0092: dup
+  IL_0093: brtrue.s IL_00ab
+  IL_0095: pop
+  IL_0096: ldarg.0
+  IL_0097: ldarg.0
+  IL_0098: ldftn System.Void Celeste.Level/<>c__DisplayClass149_0::<Pause>b__9()
+  IL_009e: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_00a3: dup
+  IL_00a4: stloc.0
+  IL_00a5: stfld System.Action Celeste.Level/<>c__DisplayClass149_0::<>9__9
+  IL_00aa: ldloc.0
+  IL_00ab: ldc.i4.1
+  IL_00ac: callvirt System.Void Celeste.Level::DoScreenWipe(System.Boolean,System.Action,System.Boolean)
+  IL_00b1: ldarg.0
+  IL_00b2: ldfld Celeste.Level Celeste.Level/<>c__DisplayClass149_0::<>4__this
+  IL_00b7: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00bc: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.LevelEndingHook>()
+  IL_00c1: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_00c6: stloc.1
+  IL_00c7: br.s IL_00e9
+  IL_00c9: ldloca.s V_1
+  IL_00cb: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_00d0: castclass Celeste.LevelEndingHook
+  IL_00d5: stloc.2
+  IL_00d6: ldloc.2
+  IL_00d7: ldfld System.Action Celeste.LevelEndingHook::OnEnd
+  IL_00dc: brfalse.s IL_00e9
+  IL_00de: ldloc.2
+  IL_00df: ldfld System.Action Celeste.LevelEndingHook::OnEnd
+  IL_00e4: callvirt System.Void System.Action::Invoke()
+  IL_00e9: ldloca.s V_1
+  IL_00eb: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_00f0: brtrue.s IL_00c9
+  IL_00f2: leave.s IL_0102
+  IL_00f4: ldloca.s V_1
+  IL_00f6: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_00fc: callvirt System.Void System.IDisposable::Dispose()
+  IL_0101: endfinally
+  IL_0102: ret

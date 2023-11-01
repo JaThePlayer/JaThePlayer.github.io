@@ -1,0 +1,90 @@
+IL Diff: System.Void Celeste.Decal::Update()
++ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Decal::animated
+  IL_0006: brfalse.s IL_0048
+  IL_0008: ldarg.0
+  IL_0009: ldfld System.Collections.Generic.List`1<Monocle.MTexture> Celeste.Decal::textures
+  IL_000e: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_0013: ldc.i4.1
+  IL_0014: ble.s IL_0048
+  IL_0016: ldarg.0
+  IL_0017: ldarg.0
+  IL_0018: ldfld System.Single Celeste.Decal::frame
+  IL_001d: ldarg.0
+  IL_001e: ldfld System.Single Celeste.Decal::AnimationSpeed
+  IL_0023: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0028: mul
+  IL_0029: add
+  IL_002a: stfld System.Single Celeste.Decal::frame
+  IL_002f: ldarg.0
+  IL_0030: ldarg.0
+  IL_0031: ldfld System.Single Celeste.Decal::frame
+  IL_0036: ldarg.0
+  IL_0037: ldfld System.Collections.Generic.List`1<Monocle.MTexture> Celeste.Decal::textures
+  IL_003c: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_0041: conv.r4
+  IL_0042: rem
+  IL_0043: stfld System.Single Celeste.Decal::frame
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Boolean Celeste.Decal::scaredAnimal
+  IL_004e: brfalse IL_00f8
+  IL_0053: ldarg.0
+  IL_0054: ldfld Monocle.Component Celeste.Decal::image
+  IL_0059: isinst Monocle.Sprite
+  IL_005e: stloc.0
+  IL_005f: ldarg.0
+  IL_0060: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0065: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_006a: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_006f: stloc.1
+  IL_0070: ldloc.1
+  IL_0071: brfalse IL_00f8
+  IL_0076: ldloc.0
+  IL_0077: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_007c: ldstr "idle"
+  IL_0081: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0086: brfalse.s IL_00b8
+  IL_0088: ldloc.1
+  IL_0089: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_008e: ldarg.0
+  IL_008f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0094: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0099: stloc.2
+  IL_009a: ldloca.s V_2
+  IL_009c: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld System.Single Celeste.Decal::hideRange
+  IL_00a7: bge.un.s IL_00b8
+  IL_00a9: ldloc.0
+  IL_00aa: ldstr "hide"
+  IL_00af: ldc.i4.0
+  IL_00b0: ldc.i4.0
+  IL_00b1: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00b6: br.s IL_00f8
+  IL_00b8: ldloc.0
+  IL_00b9: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_00be: ldstr "hidden"
+  IL_00c3: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00c8: brfalse.s IL_00f8
+  IL_00ca: ldloc.1
+  IL_00cb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00d0: ldarg.0
+  IL_00d1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00d6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00db: stloc.2
+  IL_00dc: ldloca.s V_2
+  IL_00de: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_00e3: ldarg.0
+  IL_00e4: ldfld System.Single Celeste.Decal::showRange
+  IL_00e9: ble.un.s IL_00f8
+  IL_00eb: ldloc.0
+  IL_00ec: ldstr "return"
+  IL_00f1: ldc.i4.0
+  IL_00f2: ldc.i4.0
+  IL_00f3: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00f8: ldarg.0
+  IL_00f9: call System.Void Monocle.Entity::Update()
+  IL_00fe: ret

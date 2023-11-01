@@ -1,0 +1,256 @@
+IL Diff: System.Void VivHelper.Entities.AnimatedSpinner::CreateSprites()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Boolean VivHelper.Entities.CustomSpinner::expanded
+  IL_0007: ldc.i4.0
+  IL_0008: ceq
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: brfalse IL_02ff
+  IL_0011: nop
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Int32 VivHelper.Entities.CustomSpinner::randomSeed
+  IL_0018: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_001d: nop
+  IL_001e: ldarg.0
+  IL_001f: ldarg.0
+  IL_0020: ldfld System.String VivHelper.Entities.CustomSpinner::directory
+  IL_0025: ldstr "/"
+  IL_002a: call System.String System.String::Concat(System.String,System.String)
+  IL_002f: stfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_0034: ldarg.0
+  IL_0035: ldfld System.Boolean VivHelper.Entities.CustomSpinner::isSeeded
+  IL_003a: stloc.1
+  IL_003b: ldloc.1
+  IL_003c: brfalse IL_00e6
+  IL_0041: newobj System.Void VivHelper.Entities.AnimatedSpinner/<>c__DisplayClass14_0::.ctor()
+  IL_0046: stloc.2
+  IL_0047: nop
+  IL_0048: ldloc.2
+  IL_0049: ldarg.0
+  IL_004a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004f: isinst Celeste.Level
+  IL_0054: stfld Celeste.Level VivHelper.Entities.AnimatedSpinner/<>c__DisplayClass14_0::l
+  IL_0059: ldarg.0
+  IL_005a: ldfld System.Int32 VivHelper.Entities.CustomSpinner::seed
+  IL_005f: stloc.3
+  IL_0060: ldloc.3
+  IL_0061: ldc.i4.0
+  IL_0062: clt
+  IL_0064: stloc.s V_4
+  IL_0066: ldloc.s V_4
+  IL_0068: brfalse.s IL_00a9
+  IL_006a: nop
+  IL_006b: ldloc.2
+  IL_006c: ldfld Celeste.Level VivHelper.Entities.AnimatedSpinner/<>c__DisplayClass14_0::l
+  IL_0071: ldfld Celeste.Session Celeste.Level::Session
+  IL_0076: callvirt Celeste.MapData Celeste.Session::get_MapData()
+  IL_007b: ldfld System.Collections.Generic.List`1<Celeste.LevelData> Celeste.MapData::Levels
+  IL_0080: ldloc.2
+  IL_0081: ldftn System.Boolean VivHelper.Entities.AnimatedSpinner/<>c__DisplayClass14_0::<CreateSprites>b__0(Celeste.LevelData)
+  IL_0087: newobj System.Void System.Predicate`1<Celeste.LevelData>::.ctor(System.Object,System.IntPtr)
+  IL_008c: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.LevelData>::FindIndex(System.Predicate`1<T>)
+  IL_0091: ldc.i4 977
+  IL_0096: add
+  IL_0097: stloc.3
+  IL_0098: ldloc.3
+  IL_0099: ldloc.3
+  IL_009a: mul
+  IL_009b: ldloc.3
+  IL_009c: mul
+  IL_009d: ldc.i4 30977
+  IL_00a2: call System.Int32 VivHelper.VivHelper::mod(System.Int32,System.Int32)
+  IL_00a7: stloc.3
+  IL_00a8: nop
+  IL_00a9: ldarg.0
+  IL_00aa: ldarg.0
+  IL_00ab: ldfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_00b0: ldarg.0
+  IL_00b1: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b6: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00bb: conv.i4
+  IL_00bc: ldarg.0
+  IL_00bd: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00c2: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00c7: conv.i4
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld System.Int32 VivHelper.Entities.CustomSpinner::seed
+  IL_00ce: ldarg.0
+  IL_00cf: ldfld System.Collections.Generic.List`1<System.String> VivHelper.Entities.AnimatedSpinner::subdirectory
+  IL_00d4: call T VivHelper.Extensions::ConsistentChooser<System.String>(System.Int32,System.Int32,System.Int32,System.Collections.Generic.List`1<T>)
+  IL_00d9: call System.String System.String::Concat(System.String,System.String)
+  IL_00de: stfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_00e3: nop
+  IL_00e4: br.s IL_0107
+  IL_00e6: ldarg.0
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_00ed: ldsfld System.Random Monocle.Calc::Random
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld System.Collections.Generic.List`1<System.String> VivHelper.Entities.AnimatedSpinner::subdirectory
+  IL_00f8: call T Monocle.Calc::Choose<System.String>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_00fd: call System.String System.String::Concat(System.String,System.String)
+  IL_0102: stfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_0107: ldarg.0
+  IL_0108: ldarg.0
+  IL_0109: ldfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_010e: ldstr "/"
+  IL_0113: call System.String System.String::Concat(System.String,System.String)
+  IL_0118: stfld System.String VivHelper.Entities.AnimatedSpinner::path
+  IL_011d: ldarg.0
+  IL_011e: ldarg.0
+  IL_011f: ldflda Monocle.Sprite VivHelper.Entities.AnimatedSpinner::fgSprite
+  IL_0124: ldarg.0
+  IL_0125: ldfld System.Boolean VivHelper.Entities.AnimatedSpinner::killAnim
+  IL_012a: ldstr "fg"
+  IL_012f: callvirt System.Void VivHelper.Entities.AnimatedSpinner::DefineSprite(Monocle.Sprite&,System.Boolean,System.String)
+  IL_0134: nop
+  IL_0135: ldarg.0
+  IL_0136: ldfld Monocle.Sprite VivHelper.Entities.AnimatedSpinner::fgSprite
+  IL_013b: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0140: pop
+  IL_0141: ldarg.0
+  IL_0142: ldarg.0
+  IL_0143: ldfld Monocle.Sprite VivHelper.Entities.AnimatedSpinner::fgSprite
+  IL_0148: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_014d: nop
+  IL_014e: ldarg.0
+  IL_014f: ldfld Monocle.Sprite VivHelper.Entities.AnimatedSpinner::fgSprite
+  IL_0154: ldstr "idle"
+  IL_0159: ldc.i4.0
+  IL_015a: ldc.i4.0
+  IL_015b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0160: nop
+  IL_0161: nop
+  IL_0162: ldarg.0
+  IL_0163: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0168: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_016d: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<VivHelper.Entities.AnimatedSpinner>()
+  IL_0172: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0177: stloc.s V_5
+  IL_0179: br IL_02ab
+  IL_017e: ldloca.s V_5
+  IL_0180: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0185: castclass VivHelper.Entities.AnimatedSpinner
+  IL_018a: stloc.s V_6
+  IL_018c: nop
+  IL_018d: ldloc.s V_6
+  IL_018f: ldfld System.Int32 VivHelper.Entities.CustomSpinner::ID
+  IL_0194: ldarg.0
+  IL_0195: ldfld System.Int32 VivHelper.Entities.CustomSpinner::ID
+  IL_019a: ble.s IL_01ee
+  IL_019c: ldloc.s V_6
+  IL_019e: ldfld System.Boolean VivHelper.Entities.CustomSpinner::AttachToSolid
+  IL_01a3: ldarg.0
+  IL_01a4: ldfld System.Boolean VivHelper.Entities.CustomSpinner::AttachToSolid
+  IL_01a9: bne.un.s IL_01ee
+  IL_01ab: ldloc.s V_6
+  IL_01ad: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01b2: ldarg.0
+  IL_01b3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01b8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01bd: stloc.s V_8
+  IL_01bf: ldloca.s V_8
+  IL_01c1: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_01c6: ldc.r4 12
+  IL_01cb: ldarg.0
+  IL_01cc: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_01d1: ldloc.s V_6
+  IL_01d3: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_01d8: add
+  IL_01d9: mul
+  IL_01da: conv.r8
+  IL_01db: ldc.r8 2
+  IL_01e4: call System.Double System.Math::Pow(System.Double,System.Double)
+  IL_01e9: conv.r4
+  IL_01ea: clt
+  IL_01ec: br.s IL_01ef
+  IL_01ee: ldc.i4.0
+  IL_01ef: stloc.s V_7
+  IL_01f1: ldloc.s V_7
+  IL_01f3: brfalse IL_02aa
+  IL_01f8: nop
+  IL_01f9: ldloc.s V_6
+  IL_01fb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0200: ldarg.0
+  IL_0201: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0206: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_020b: stloc.s V_9
+  IL_020d: ldarg.0
+  IL_020e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0213: ldloc.s V_6
+  IL_0215: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_021a: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_021f: stloc.s V_10
+  IL_0221: ldarg.0
+  IL_0222: ldarg.0
+  IL_0223: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0228: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_022d: ldloc.s V_10
+  IL_022f: ldc.r4 6.3
+  IL_0234: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::RotateTowards(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_0239: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_023e: ldloc.s V_6
+  IL_0240: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0245: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_024a: ldloc.s V_9
+  IL_024c: ldc.r4 6.3
+  IL_0251: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::RotateTowards(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_0256: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_025b: ldc.r4 0.5
+  IL_0260: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0265: ldarg.0
+  IL_0266: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_026b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0270: ldloc.s V_6
+  IL_0272: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_0277: ldarg.0
+  IL_0278: ldfld System.Single VivHelper.Entities.CustomSpinner::scale
+  IL_027d: add
+  IL_027e: ldc.r4 2
+  IL_0283: div
+  IL_0284: ldloc.s V_6
+  IL_0286: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_028b: ldarg.0
+  IL_028c: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::color
+  IL_0291: ldc.r4 0.5
+  IL_0296: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_029b: ldloc.s V_10
+  IL_029d: ldarg.0
+  IL_029e: ldfld System.Boolean VivHelper.Entities.CustomSpinner::isSeeded
+  IL_02a3: callvirt System.Void VivHelper.Entities.AnimatedSpinner::AddSprite(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Single,System.Boolean)
+  IL_02a8: nop
+  IL_02a9: nop
+  IL_02aa: nop
+  IL_02ab: ldloca.s V_5
+  IL_02ad: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_02b2: brtrue IL_017e
+  IL_02b7: leave.s IL_02c8
+  IL_02b9: ldloca.s V_5
+  IL_02bb: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_02c1: callvirt System.Void System.IDisposable::Dispose()
+  IL_02c6: nop
+  IL_02c7: endfinally
+  IL_02c8: ldarg.0
+  IL_02c9: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02ce: ldarg.0
+  IL_02cf: ldarg.0
+  IL_02d0: ldarg.0
+  IL_02d1: ldfld Monocle.Entity VivHelper.Entities.CustomSpinner::filler
+  IL_02d6: ldarg.0
+  IL_02d7: ldfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomSpinner::borderColor
+  IL_02dc: newobj System.Void VivHelper.Entities.AnimatedSpinner/Border::.ctor(Monocle.Entity,Monocle.Entity,Microsoft.Xna.Framework.Color)
+  IL_02e1: dup
+  IL_02e2: stloc.s V_11
+  IL_02e4: stfld VivHelper.Entities.AnimatedSpinner/Border VivHelper.Entities.AnimatedSpinner::border
+  IL_02e9: ldloc.s V_11
+  IL_02eb: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_02f0: nop
+  IL_02f1: ldarg.0
+  IL_02f2: ldc.i4.1
+  IL_02f3: stfld System.Boolean VivHelper.Entities.CustomSpinner::expanded
+  IL_02f8: call System.Void Monocle.Calc::PopRandom()
+  IL_02fd: nop
+  IL_02fe: nop
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_02ff: ret

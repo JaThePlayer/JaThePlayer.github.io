@@ -1,0 +1,36 @@
+IL Diff: System.Void Celeste.BadelineOldsite::Added(Monocle.Scene)
+  IL_0000: ldarg.1
+  IL_0001: isinst Celeste.Level
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: brtrue.s IL_000d
+  IL_000a: ldnull
+  IL_000b: br.s IL_001d
+  IL_000d: ldloc.0
+  IL_000e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0013: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0018: call System.String Celeste.AreaKeyExt::GetLevelSet(Celeste.AreaKey)
+  IL_001d: ldstr "Celeste"
+  IL_0022: call System.Boolean System.String::op_Equality(System.String,System.String)
++ IL_0000: ldarg.1 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteAdded
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteAdded
++ IL_0000: ldc.i4 35563497 @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteAdded
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteAdded
+  |-> retrieves System.Boolean ExtendedVariants.Variants.BadelineChasersEverywhere::modVanillaBehaviorCheckForChasers(System.Boolean,Monocle.Scene)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Monocle.Scene>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.BadelineChasersEverywhere::modBadelineOldsiteAdded
+  IL_0027: brfalse.s IL_0031
+  IL_0029: ldarg.0
+  IL_002a: ldarg.1
+  IL_002b: callvirt System.Void Celeste.BadelineOldsite::orig_Added(Monocle.Scene)
+  IL_0030: ret
+  IL_0031: ldarg.0
+  IL_0032: ldarg.1
+  IL_0033: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0038: ldarg.0
+  IL_0039: ldarg.0
+  IL_003a: ldloc.0
+  IL_003b: callvirt System.Collections.IEnumerator Celeste.BadelineOldsite::StartChasingRoutine(Celeste.Level)
+  IL_0040: ldc.i4.1
+  IL_0041: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0046: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_004b: ret

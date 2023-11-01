@@ -1,0 +1,92 @@
+IL Diff: System.Void Celeste.Player::BeforeUpTransition()
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2585 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
++ IL_0000: ldc.i4 32397374 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
+  |-> retrieves System.Boolean Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_BeforeUpTransition>b__12_1(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
++ IL_0000: brfalse.s IL_0000 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
++ IL_0000: ret @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeUpTransition
+  IL_0001: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0006: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_000b: ldc.i4.5
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: ldc.i4 2462 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: ldc.i4 3379346 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
+  |-> retrieves System.Int32 VivHelper.Entities.Boosters.BoostFunctions/<>c::<TranslateRedDash>b__2_0(System.Int32,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: ldarg.0 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_000c: beq.s IL_001e
+  IL_000e: ldarg.0
+  IL_000f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0014: ldc.r4 0
+  IL_0019: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_001e: ldarg.0
+  IL_001f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0024: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0029: ldc.i4.5
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: ldc.i4 2583 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: ldc.i4 5291635 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
+  |-> retrieves System.Int32 VivHelper.Entities.Boosters.BoostFunctions/<>c::<TranslateRedDash>b__2_0(System.Int32,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: ldarg.0 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_1
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_002a: beq IL_00ad
+  IL_002f: ldarg.0
+  IL_0030: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0035: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_003a: ldc.i4.s 18
+  IL_003c: beq.s IL_00ad
+  IL_003e: ldarg.0
+  IL_003f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0044: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0049: ldc.i4.s 19
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetFeatherState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_004b: beq.s IL_00ad
+  IL_004d: ldarg.0
+  IL_004e: ldarg.0
+  IL_004f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0054: ldc.r4 -105
+  IL_0059: dup
+  IL_005a: stloc.0
+  IL_005b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0060: ldloc.0
+  IL_0061: stfld System.Single Celeste.Player::varJumpSpeed
+  IL_0066: ldarg.0
+  IL_0067: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_006c: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0071: ldc.i4.s 10
+  IL_0073: bne.un.s IL_0084
+  IL_0075: ldarg.0
+  IL_0076: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_007b: ldc.i4.s 13
+  IL_007d: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0082: br.s IL_0090
+  IL_0084: ldarg.0
+  IL_0085: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_008a: ldc.i4.0
+  IL_008b: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0090: ldarg.0
+  IL_0091: ldc.i4.1
+  IL_0092: stfld System.Boolean Celeste.Player::AutoJump
+  IL_0097: ldarg.0
+  IL_0098: ldc.r4 0
+  IL_009d: stfld System.Single Celeste.Player::AutoJumpTimer
+  IL_00a2: ldarg.0
+  IL_00a3: ldc.r4 0.2
++ IL_0000: ldc.i4 2450 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: ldc.i4 24313542 @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  |-> retrieves System.Single ExtendedVariants.Variants.JumpDuration::<modVarJumpTimer>b__6_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpDuration::modVarJumpTimer
+  IL_00a8: stfld System.Single Celeste.Player::varJumpTimer
+  IL_00ad: ldarg.0
+  IL_00ae: ldc.r4 0.2
+  IL_00b3: stfld System.Single Celeste.Player::dashCooldownTimer
+  IL_00b8: ret

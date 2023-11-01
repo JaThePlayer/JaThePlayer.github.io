@@ -1,0 +1,152 @@
+IL Diff: System.Void Celeste.Strawberry::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2,Celeste.EntityID)
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.1
+  IL_0002: stfld System.Boolean Celeste.Strawberry::ReturnHomeWhenLost
+  IL_0007: ldarg.0
+  IL_0008: call System.Void Monocle.Entity::.ctor()
+  IL_000d: ldarg.0
+  IL_000e: ldarg.3
+  IL_000f: stfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_0014: ldarg.0
+  IL_0015: ldarg.0
+  IL_0016: ldarg.1
+  IL_0017: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_001c: ldarg.2
+  IL_001d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0022: dup
+  IL_0023: stloc.0
+  IL_0024: stfld Microsoft.Xna.Framework.Vector2 Celeste.Strawberry::start
+  IL_0029: ldloc.0
+  IL_002a: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_002f: ldarg.0
+  IL_0030: ldarg.1
+  IL_0031: ldstr "winged"
+  IL_0036: ldc.i4.0
+  IL_0037: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_003c: brtrue.s IL_0050
+  IL_003e: ldarg.1
+  IL_003f: ldfld System.String Celeste.EntityData::Name
+  IL_0044: ldstr "memorialTextController"
+  IL_0049: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_004e: br.s IL_0051
+  IL_0050: ldc.i4.1
+  IL_0051: callvirt System.Void Celeste.Strawberry::set_Winged(System.Boolean)
+  IL_0056: ldarg.0
+  IL_0057: ldarg.1
+  IL_0058: ldfld System.String Celeste.EntityData::Name
+  IL_005d: ldstr "memorialTextController"
+  IL_0062: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0067: brtrue.s IL_007b
+  IL_0069: ldarg.1
+  IL_006a: ldfld System.String Celeste.EntityData::Name
+  IL_006f: ldstr "goldenBerry"
+  IL_0074: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0079: br.s IL_007c
+  IL_007b: ldc.i4.1
+  IL_007c: callvirt System.Void Celeste.Strawberry::set_Golden(System.Boolean)
+  IL_0081: ldarg.0
+  IL_0082: ldarg.1
+  IL_0083: ldstr "moon"
+  IL_0088: ldc.i4.0
+  IL_0089: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_008e: callvirt System.Void Celeste.Strawberry::set_Moon(System.Boolean)
+  IL_0093: ldarg.0
+  IL_0094: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0099: ldarg.0
+  IL_009a: ldfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_009f: callvirt System.Boolean Celeste.SaveData::CheckStrawberry(Celeste.EntityID)
+  IL_00a4: stfld System.Boolean Celeste.Strawberry::isGhostBerry
+  IL_00a9: ldarg.0
+  IL_00aa: ldc.i4.s -100
+  IL_00ac: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_00b1: ldarg.0
+  IL_00b2: ldc.r4 14
+  IL_00b7: ldc.r4 14
+  IL_00bc: ldc.r4 -7
+  IL_00c1: ldc.r4 -7
+  IL_00c6: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_00cb: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_00d0: ldarg.0
+  IL_00d1: ldarg.0
+  IL_00d2: ldftn System.Void Celeste.Strawberry::OnPlayer(Celeste.Player)
+  IL_00d8: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_00dd: ldnull
+  IL_00de: ldnull
+  IL_00df: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_00e4: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00e9: ldarg.0
+  IL_00ea: newobj System.Void Celeste.MirrorReflection::.ctor()
+  IL_00ef: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00f4: ldarg.0
+  IL_00f5: ldarg.0
+  IL_00f6: ldarg.0
+  IL_00f7: ldfld Celeste.EntityID Celeste.Strawberry::ID
+  IL_00fc: ldnull
+  IL_00fd: ldarg.0
+  IL_00fe: ldftn System.Void Celeste.Strawberry::OnLoseLeader()
+  IL_0104: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0109: newobj System.Void Celeste.Follower::.ctor(Celeste.EntityID,System.Action,System.Action)
+  IL_010e: dup
+  IL_010f: stloc.1
+  IL_0110: stfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_0115: ldloc.1
+  IL_0116: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_011b: ldarg.0
+  IL_011c: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_0121: ldc.r4 0.3
+  IL_0126: stfld System.Single Celeste.Follower::FollowDelay
+  IL_012b: ldarg.0
+  IL_012c: callvirt System.Boolean Celeste.Strawberry::get_Winged()
+  IL_0131: brfalse.s IL_0152
+  IL_0133: newobj System.Void Celeste.DashListener::.ctor()
+  IL_0138: stloc.2
+  IL_0139: ldloc.2
+  IL_013a: ldarg.0
+  IL_013b: ldftn System.Void Celeste.Strawberry::OnDash(Microsoft.Xna.Framework.Vector2)
+  IL_0141: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_0146: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.DashListener::OnDash
+  IL_014b: ldarg.0
+  IL_014c: ldloc.2
+  IL_014d: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0152: ldarg.1
+  IL_0153: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.EntityData::Nodes
+  IL_0158: brfalse.s IL_01ab
+  IL_015a: ldarg.1
+  IL_015b: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.EntityData::Nodes
+  IL_0160: ldlen
+  IL_0161: brfalse.s IL_01ab
+  IL_0163: ldarg.0
+  IL_0164: newobj System.Void System.Collections.Generic.List`1<Celeste.StrawberrySeed>::.ctor()
+  IL_0169: stfld System.Collections.Generic.List`1<Celeste.StrawberrySeed> Celeste.Strawberry::Seeds
+  IL_016e: ldc.i4.0
+  IL_016f: stloc.3
+  IL_0170: br.s IL_01a0
+  IL_0172: ldarg.0
+  IL_0173: ldfld System.Collections.Generic.List`1<Celeste.StrawberrySeed> Celeste.Strawberry::Seeds
+  IL_0178: ldarg.0
+  IL_0179: ldarg.2
+  IL_017a: ldarg.1
+  IL_017b: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.EntityData::Nodes
+  IL_0180: ldloc.3
+  IL_0181: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0186: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_018b: ldloc.3
+  IL_018c: ldarg.0
+  IL_018d: ldfld System.Boolean Celeste.Strawberry::isGhostBerry
++ IL_0000: ldsfld System.Boolean Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::ReplaceSeeds @ Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::replaceStrawberrySeeds
++ IL_0000: brfalse IL_0192 @ Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::replaceStrawberrySeeds
++ IL_0000: newobj System.Void Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::.ctor(Celeste.Strawberry,Microsoft.Xna.Framework.Vector2,System.Int32,System.Boolean) @ Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::replaceStrawberrySeeds
++ IL_0000: br IL_0197 @ Celeste.Mod.MaxHelpingHand.Entities.NonPoppingStrawberrySeed::replaceStrawberrySeeds
+  IL_0192: newobj System.Void Celeste.StrawberrySeed::.ctor(Celeste.Strawberry,Microsoft.Xna.Framework.Vector2,System.Int32,System.Boolean)
+  IL_0197: callvirt System.Void System.Collections.Generic.List`1<Celeste.StrawberrySeed>::Add(T)
+  IL_019c: ldloc.3
+  IL_019d: ldc.i4.1
+  IL_019e: add
+  IL_019f: stloc.3
+  IL_01a0: ldloc.3
+  IL_01a1: ldarg.1
+  IL_01a2: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.EntityData::Nodes
+  IL_01a7: ldlen
+  IL_01a8: conv.i4
+  IL_01a9: blt.s IL_0172
+  IL_01ab: ret

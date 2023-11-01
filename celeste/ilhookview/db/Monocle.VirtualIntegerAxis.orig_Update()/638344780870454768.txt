@@ -1,0 +1,124 @@
+IL Diff: System.Void Monocle.VirtualIntegerAxis::orig_Update()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0007: stfld System.Int32 Monocle.VirtualIntegerAxis::PreviousValue
+  IL_000c: ldsfld System.Boolean Monocle.MInput::Disabled
+  IL_0011: brtrue IL_014e
+  IL_0016: ldarg.0
+  IL_0017: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::Positive
+  IL_001c: ldarg.0
+  IL_001d: ldfld System.Int32 Monocle.VirtualIntegerAxis::GamepadIndex
+  IL_0022: ldarg.0
+  IL_0023: ldfld System.Single Monocle.VirtualIntegerAxis::Threshold
+  IL_0028: callvirt System.Single Monocle.Binding::Axis(System.Int32,System.Single)
+  IL_002d: ldc.r4 0
+  IL_0032: bgt.s IL_005f
+  IL_0034: ldarg.0
+  IL_0035: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::PositiveAlt
+  IL_003a: brfalse.s IL_005c
+  IL_003c: ldarg.0
+  IL_003d: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::PositiveAlt
+  IL_0042: ldarg.0
+  IL_0043: ldfld System.Int32 Monocle.VirtualIntegerAxis::GamepadIndex
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Single Monocle.VirtualIntegerAxis::Threshold
+  IL_004e: callvirt System.Single Monocle.Binding::Axis(System.Int32,System.Single)
+  IL_0053: ldc.r4 0
+  IL_0058: cgt
+  IL_005a: br.s IL_0060
+  IL_005c: ldc.i4.0
+  IL_005d: br.s IL_0060
+  IL_005f: ldc.i4.1
+  IL_0060: stloc.0
+  IL_0061: ldarg.0
+  IL_0062: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::Negative
+  IL_0067: ldarg.0
+  IL_0068: ldfld System.Int32 Monocle.VirtualIntegerAxis::GamepadIndex
+  IL_006d: ldarg.0
+  IL_006e: ldfld System.Single Monocle.VirtualIntegerAxis::Threshold
+  IL_0073: callvirt System.Single Monocle.Binding::Axis(System.Int32,System.Single)
+  IL_0078: ldc.r4 0
+  IL_007d: bgt.s IL_00aa
+  IL_007f: ldarg.0
+  IL_0080: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::NegativeAlt
+  IL_0085: brfalse.s IL_00a7
+  IL_0087: ldarg.0
+  IL_0088: ldfld Monocle.Binding Monocle.VirtualIntegerAxis::NegativeAlt
+  IL_008d: ldarg.0
+  IL_008e: ldfld System.Int32 Monocle.VirtualIntegerAxis::GamepadIndex
+  IL_0093: ldarg.0
+  IL_0094: ldfld System.Single Monocle.VirtualIntegerAxis::Threshold
+  IL_0099: callvirt System.Single Monocle.Binding::Axis(System.Int32,System.Single)
+  IL_009e: ldc.r4 0
+  IL_00a3: cgt
+  IL_00a5: br.s IL_00ab
+  IL_00a7: ldc.i4.0
+  IL_00a8: br.s IL_00ab
+  IL_00aa: ldc.i4.1
+  IL_00ab: stloc.1
+  IL_00ac: ldloc.0
+  IL_00ad: ldloc.1
+  IL_00ae: and
+  IL_00af: brfalse.s IL_0105
+  IL_00b1: ldarg.0
+  IL_00b2: ldfld Monocle.VirtualInput/OverlapBehaviors Monocle.VirtualIntegerAxis::OverlapBehavior
+  IL_00b7: stloc.2
+  IL_00b8: ldloc.2
+  IL_00b9: switch IL_00cf,IL_00f7,IL_00d8
+  IL_00ca: br IL_0139
+  IL_00cf: ldarg.0
+  IL_00d0: ldc.i4.0
+  IL_00d1: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_00d6: br.s IL_0139
+  IL_00d8: ldarg.0
+  IL_00d9: ldfld System.Boolean Monocle.VirtualIntegerAxis::turned
+  IL_00de: brtrue.s IL_0139
+  IL_00e0: ldarg.0
+  IL_00e1: ldarg.0
+  IL_00e2: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_00e7: ldc.i4.m1
+  IL_00e8: mul
+  IL_00e9: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_00ee: ldarg.0
+  IL_00ef: ldc.i4.1
+  IL_00f0: stfld System.Boolean Monocle.VirtualIntegerAxis::turned
+  IL_00f5: br.s IL_0139
+  IL_00f7: ldarg.0
+  IL_00f8: ldarg.0
+  IL_00f9: ldfld System.Int32 Monocle.VirtualIntegerAxis::PreviousValue
+  IL_00fe: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0103: br.s IL_0139
+  IL_0105: ldloc.0
+  IL_0106: brfalse.s IL_0118
+  IL_0108: ldarg.0
+  IL_0109: ldc.i4.0
+  IL_010a: stfld System.Boolean Monocle.VirtualIntegerAxis::turned
+  IL_010f: ldarg.0
+  IL_0110: ldc.i4.1
+  IL_0111: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0116: br.s IL_0139
+  IL_0118: ldloc.1
+  IL_0119: brfalse.s IL_012b
+  IL_011b: ldarg.0
+  IL_011c: ldc.i4.0
+  IL_011d: stfld System.Boolean Monocle.VirtualIntegerAxis::turned
+  IL_0122: ldarg.0
+  IL_0123: ldc.i4.m1
+  IL_0124: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0129: br.s IL_0139
+  IL_012b: ldarg.0
+  IL_012c: ldc.i4.0
+  IL_012d: stfld System.Boolean Monocle.VirtualIntegerAxis::turned
+  IL_0132: ldarg.0
+  IL_0133: ldc.i4.0
+  IL_0134: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0139: ldarg.0
+  IL_013a: ldfld System.Boolean Monocle.VirtualIntegerAxis::Inverted
+  IL_013f: brfalse.s IL_014e
+  IL_0141: ldarg.0
+  IL_0142: ldarg.0
+  IL_0143: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0148: neg
+  IL_0149: stfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_014e: ret

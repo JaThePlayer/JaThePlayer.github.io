@@ -1,0 +1,76 @@
+IL Diff: System.Single VivHelper.Entities.CrystalBombDetonatorRenderer/Edge::GetWaveAt(System.Single,System.Single,System.Single)
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedWavedBlock() @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ldc.r4 0 @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass11_0::<ReturnZeroMethod>b__0
+  IL_0000: nop
+  IL_0001: ldarg.2
+  IL_0002: ldc.r4 1
+  IL_0007: ble.s IL_0018
+  IL_0009: ldarg.2
+  IL_000a: ldarg.3
+  IL_000b: ldc.r4 1
+  IL_0010: sub
+  IL_0011: clt.un
+  IL_0013: ldc.i4.0
+  IL_0014: ceq
+  IL_0016: br.s IL_0019
+  IL_0018: ldc.i4.1
+  IL_0019: stloc.2
+  IL_001a: ldloc.2
+  IL_001b: brfalse.s IL_0028
+  IL_001d: ldc.r4 0
+  IL_0022: stloc.3
+  IL_0023: br IL_00a5
+  IL_0028: ldarg.0
+  IL_0029: ldfld VivHelper.Entities.CrystalBombDetonator2 VivHelper.Entities.CrystalBombDetonatorRenderer/Edge::Parent
+  IL_002e: ldfld System.Single VivHelper.Entities.CrystalBombDetonator2::Solidify
+  IL_0033: ldc.r4 1
+  IL_0038: clt.un
+  IL_003a: ldc.i4.0
+  IL_003b: ceq
+  IL_003d: stloc.s V_4
+  IL_003f: ldloc.s V_4
+  IL_0041: brfalse.s IL_004b
+  IL_0043: ldc.r4 0
+  IL_0048: stloc.3
+  IL_0049: br.s IL_00a5
+  IL_004b: ldarg.1
+  IL_004c: ldarg.2
+  IL_004d: ldc.r4 0.25
+  IL_0052: mul
+  IL_0053: add
+  IL_0054: stloc.0
+  IL_0055: ldloc.0
+  IL_0056: conv.r8
+  IL_0057: call System.Double System.Math::Sin(System.Double)
+  IL_005c: ldc.r8 2
+  IL_0065: mul
+  IL_0066: ldloc.0
+  IL_0067: ldc.r4 0.25
+  IL_006c: mul
+  IL_006d: conv.r8
+  IL_006e: call System.Double System.Math::Sin(System.Double)
+  IL_0073: add
+  IL_0074: conv.r4
+  IL_0075: stloc.1
+  IL_0076: ldc.r4 1
+  IL_007b: ldloc.1
+  IL_007c: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0081: ldarg.2
+  IL_0082: ldarg.3
+  IL_0083: div
+  IL_0084: call System.Single Monocle.Calc::YoYo(System.Single)
+  IL_0089: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_008e: mul
+  IL_008f: add
+  IL_0090: ldc.r4 1
+  IL_0095: ldarg.0
+  IL_0096: ldfld VivHelper.Entities.CrystalBombDetonator2 VivHelper.Entities.CrystalBombDetonatorRenderer/Edge::Parent
+  IL_009b: ldfld System.Single VivHelper.Entities.CrystalBombDetonator2::Solidify
+  IL_00a0: sub
+  IL_00a1: mul
+  IL_00a2: stloc.3
+  IL_00a3: br.s IL_00a5
+  IL_00a5: ldloc.3
+  IL_00a6: ret

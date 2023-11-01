@@ -1,0 +1,39 @@
+IL Diff: System.Void Celeste.NPC06_Theo_Plateau::Awake(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Awake(Monocle.Scene)
++ IL_0000: call System.Boolean TAS.Input.Commands.ConsoleCommand::FixCh6FirstRoomLoad() @ TAS.Input.Commands.ConsoleCommand::NPC06_Theo_PlateauOnAwake
++ IL_0000: brtrue IL_002a @ TAS.Input.Commands.ConsoleCommand::NPC06_Theo_PlateauOnAwake
++ IL_0000: ldc.i4 2450 @ Celeste.Mod.SpeedrunTool.Other.BetterMapEditor::NPC06_Theo_PlateauOnAwake
++ IL_0000: ldc.i4 22339775 @ Celeste.Mod.SpeedrunTool.Other.BetterMapEditor::NPC06_Theo_PlateauOnAwake
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.BetterMapEditor::NPC06_Theo_PlateauOnAwake
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.BetterMapEditor/<>c__DisplayClass21_0::<NPC06_Theo_PlateauOnAwake>b__2()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.SpeedrunTool.Other.BetterMapEditor::NPC06_Theo_PlateauOnAwake
++ IL_0000: brtrue IL_002a @ Celeste.Mod.SpeedrunTool.Other.BetterMapEditor::NPC06_Theo_PlateauOnAwake
+  IL_0007: ldarg.0
+  IL_0008: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0012: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0017: stloc.0
+  IL_0018: ldarg.0
+  IL_0019: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001e: ldarg.0
+  IL_001f: ldloc.0
+  IL_0020: newobj System.Void Celeste.CS06_Campfire::.ctor(Celeste.NPC,Celeste.Player)
+  IL_0025: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_002a: ldarg.0
+  IL_002b: ldarg.0
+  IL_002c: ldc.r4 0
+  IL_0031: ldc.r4 -6
+  IL_0036: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_003b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0040: ldc.r4 1
+  IL_0045: ldc.i4.s 16
+  IL_0047: ldc.i4.s 48
+  IL_0049: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_004e: dup
+  IL_004f: stloc.1
+  IL_0050: stfld Celeste.VertexLight Celeste.NPC::Light
+  IL_0055: ldloc.1
+  IL_0056: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005b: ret

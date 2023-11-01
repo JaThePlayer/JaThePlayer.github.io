@@ -1,0 +1,103 @@
+IL Diff: System.Void Celeste.CS03_Memo/MemoPage::.ctor()
+  IL_0000: ldarg.0
+  IL_0001: ldc.r4 1
+  IL_0006: stfld System.Single Celeste.CS03_Memo/MemoPage::textDownscale
+  IL_000b: ldarg.0
+  IL_000c: ldc.r4 1
+  IL_0011: stfld System.Single Celeste.CS03_Memo/MemoPage::alpha
+  IL_0016: ldarg.0
+  IL_0017: ldc.r4 1
+  IL_001c: stfld System.Single Celeste.CS03_Memo/MemoPage::scale
+  IL_0021: ldarg.0
+  IL_0022: call System.Void Monocle.Entity::.ctor()
+  IL_0027: ldarg.0
+  IL_0028: ldsfld Monocle.BitTag Celeste.Tags::HUD
+  IL_002d: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0032: call System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_0037: ldarg.0
+  IL_0038: ldstr "Graphics"
+  IL_003d: ldstr "Atlases"
+  IL_0042: ldstr "Memo"
+  IL_0047: call System.String System.IO.Path::Combine(System.String,System.String,System.String)
+  IL_004c: ldc.i4.5
+  IL_004d: call Monocle.Atlas Monocle.Atlas::FromAtlas(System.String,Monocle.Atlas/AtlasDataFormat)
+  IL_0052: stfld Monocle.Atlas Celeste.CS03_Memo/MemoPage::atlas
+  IL_0057: ldarg.0
+  IL_0058: ldarg.0
+  IL_0059: ldfld Monocle.Atlas Celeste.CS03_Memo/MemoPage::atlas
+  IL_005e: ldstr "memo"
+  IL_0063: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0068: stfld Monocle.MTexture Celeste.CS03_Memo/MemoPage::paper
+  IL_006d: ldarg.0
+  IL_006e: ldfld Monocle.Atlas Celeste.CS03_Memo/MemoPage::atlas
+  IL_0073: ldstr "title_"
+  IL_0078: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_007d: ldfld System.String Celeste.Settings::Language
+  IL_0082: call System.String System.String::Concat(System.String,System.String)
+  IL_0087: callvirt System.Boolean Monocle.Atlas::Has(System.String)
+  IL_008c: brfalse.s IL_00b5
+  IL_008e: ldarg.0
+  IL_008f: ldarg.0
+  IL_0090: ldfld Monocle.Atlas Celeste.CS03_Memo/MemoPage::atlas
+  IL_0095: ldstr "title_"
+  IL_009a: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_009f: ldfld System.String Celeste.Settings::Language
+  IL_00a4: call System.String System.String::Concat(System.String,System.String)
+  IL_00a9: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00ae: stfld Monocle.MTexture Celeste.CS03_Memo/MemoPage::title
+  IL_00b3: br.s IL_00cb
+  IL_00b5: ldarg.0
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Monocle.Atlas Celeste.CS03_Memo/MemoPage::atlas
+  IL_00bc: ldstr "title_english"
+  IL_00c1: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00c6: stfld Monocle.MTexture Celeste.CS03_Memo/MemoPage::title
+  IL_00cb: ldarg.0
+  IL_00cc: ldfld Monocle.MTexture Celeste.CS03_Memo/MemoPage::paper
+  IL_00d1: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_00d6: conv.r4
+  IL_00d7: ldc.r4 1.5
+  IL_00dc: mul
+  IL_00dd: ldc.r4 120
+  IL_00e2: sub
+  IL_00e3: stloc.0
+  IL_00e4: ldarg.0
+  IL_00e5: ldstr "CH3_MEMO"
+  IL_00ea: ldnull
+  IL_00eb: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_00f0: ldloc.0
+  IL_00f1: ldc.r4 0.75
+  IL_00f6: div
+  IL_00f7: conv.i4
+  IL_00f8: ldc.i4.m1
+  IL_00f9: ldc.r4 1
+  IL_00fe: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0103: ldc.r4 0.6
+  IL_0108: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_010d: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Color>::.ctor(T)
+  IL_0112: ldnull
+  IL_0113: call Celeste.FancyText/Text Celeste.FancyText::Parse(System.String,System.Int32,System.Int32,System.Single,System.Nullable`1<Microsoft.Xna.Framework.Color>,Celeste.Language)
+  IL_0118: stfld Celeste.FancyText/Text Celeste.CS03_Memo/MemoPage::text
+  IL_011d: ldarg.0
+  IL_011e: ldfld Celeste.FancyText/Text Celeste.CS03_Memo/MemoPage::text
+  IL_0123: callvirt System.Single Celeste.FancyText/Text::WidestLine()
+  IL_0128: ldc.r4 0.75
+  IL_012d: mul
+  IL_012e: stloc.1
+  IL_012f: ldloc.1
+  IL_0130: ldloc.0
+  IL_0131: ble.un.s IL_013c
+  IL_0133: ldarg.0
+  IL_0134: ldloc.0
+  IL_0135: ldloc.1
+  IL_0136: div
+  IL_0137: stfld System.Single Celeste.CS03_Memo/MemoPage::textDownscale
+  IL_013c: ldarg.0
+  IL_013d: ldarg.0
+  IL_013e: ldftn System.Void Celeste.CS03_Memo/MemoPage::BeforeRender()
+  IL_0144: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0149: newobj System.Void Celeste.BeforeRenderHook::.ctor(System.Action)
+  IL_014e: call System.Void Monocle.Entity::Add(Monocle.Component)
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::FixMemoPageCrash(Celeste.CS03_Memo/MemoPage) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0153: ret
