@@ -1,0 +1,187 @@
+IL Diff: System.Void Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<OnEnd>b__0()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_0006: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_000b: brfalse.s IL_005a
+  IL_000d: ldarg.0
+  IL_000e: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_0013: ldfld System.Boolean Celeste.CutsceneEntity::WasSkipped
+  IL_0018: brtrue.s IL_005a
+  IL_001a: ldarg.0
+  IL_001b: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_0020: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_0025: ldsfld Monocle.BitTag Celeste.Tags::Global
+  IL_002a: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_002f: callvirt System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_0034: ldarg.0
+  IL_0035: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_003a: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_003f: ldc.r4 0
+  IL_0044: stfld System.Single Celeste.CS04_MirrorPortal/Fader::Target
+  IL_0049: ldarg.0
+  IL_004a: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_004f: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_0054: ldc.i4.1
+  IL_0055: stfld System.Boolean Celeste.CS04_MirrorPortal/Fader::Ended
+  IL_005a: ldarg.0
+  IL_005b: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_0060: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0065: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_006a: call System.Void Celeste.Leader::StoreStrawberries(Celeste.Leader)
+  IL_006f: ldarg.0
+  IL_0070: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0075: ldarg.0
+  IL_0076: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_007b: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0080: callvirt System.Void Monocle.Scene::Remove(Monocle.Entity)
+  IL_0085: ldarg.0
+  IL_0086: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_008b: callvirt System.Void Celeste.Level::UnloadLevel()
+  IL_0090: ldarg.0
+  IL_0091: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0096: ldfld Celeste.Session Celeste.Level::Session
+  IL_009b: ldc.i4.1
+  IL_009c: stfld System.Boolean Celeste.Session::Dreaming
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00a7: ldfld Celeste.Session Celeste.Level::Session
+  IL_00ac: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Keys
+  IL_00b1: callvirt System.Void System.Collections.Generic.HashSet`1<Celeste.EntityID>::Clear()
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00bc: ldfld Celeste.Session Celeste.Level::Session
+  IL_00c1: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00c6: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
++ IL_0000: ldc.i4 3083 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: ldc.i4 59927979 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  |-> retrieves Celeste.AreaMode Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpMirrorFakeBSide>b__118_0(Celeste.AreaMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.AreaMode,Celeste.AreaMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  IL_00cb: brtrue.s IL_013e
+  IL_00cd: ldarg.0
+  IL_00ce: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00d3: ldfld Celeste.Session Celeste.Level::Session
+  IL_00d8: ldstr "void"
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: ldc.i4 24550309 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  |-> retrieves System.String Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__115_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  IL_00dd: stfld System.String Celeste.Session::Level
+  IL_00e2: ldarg.0
+  IL_00e3: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00e8: ldfld Celeste.Session Celeste.Level::Session
+  IL_00ed: ldarg.0
+  IL_00ee: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00f3: ldarg.0
+  IL_00f4: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_00f9: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_00fe: stloc.0
+  IL_00ff: ldloca.s V_0
+  IL_0101: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0106: conv.r4
+  IL_0107: ldarg.0
+  IL_0108: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_010d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0112: stloc.0
+  IL_0113: ldloca.s V_0
+  IL_0115: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_011a: conv.r4
+  IL_011b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0120: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_0125: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: ldc.i4 13306119 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  |-> retrieves System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__115_1(System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Nullable`1<Microsoft.Xna.Framework.Vector2>,System.Nullable`1<Microsoft.Xna.Framework.Vector2>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  IL_012a: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_012f: ldarg.0
+  IL_0130: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0135: ldc.i4.7
+  IL_0136: ldc.i4.0
+  IL_0137: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_013c: br.s IL_01bc
+  IL_013e: ldarg.0
+  IL_013f: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0144: ldfld Celeste.Session Celeste.Level::Session
+  IL_0149: ldstr "c-00"
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: ldc.i4 42418002 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  |-> retrieves System.String Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__115_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  IL_014e: stfld System.String Celeste.Session::Level
+  IL_0153: ldarg.0
+  IL_0154: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0159: ldfld Celeste.Session Celeste.Level::Session
+  IL_015e: ldarg.0
+  IL_015f: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0164: ldarg.0
+  IL_0165: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_016a: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_016f: stloc.0
+  IL_0170: ldloca.s V_0
+  IL_0172: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0177: conv.r4
+  IL_0178: ldarg.0
+  IL_0179: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_017e: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0183: stloc.0
+  IL_0184: ldloca.s V_0
+  IL_0186: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_018b: conv.r4
+  IL_018c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0191: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_0196: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2961 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: ldc.i4 4053869 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  |-> retrieves System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpTarget>b__115_1(System.Nullable`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Nullable`1<Microsoft.Xna.Framework.Vector2>,System.Nullable`1<Microsoft.Xna.Framework.Vector2>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpTargetMirror
+  IL_019b: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_01a0: ldarg.0
+  IL_01a1: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_01a6: ldc.i4.5
+  IL_01a7: ldc.i4.0
+  IL_01a8: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_01ad: ldstr "fade"
+  IL_01b2: ldc.r4 1
+  IL_01b7: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_01bc: ldarg.0
+  IL_01bd: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_01c2: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_01c7: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_01cc: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_01d1: call System.Void Celeste.Leader::RestoreStrawberries(Celeste.Leader)
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_01dc: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_01e1: dup
+  IL_01e2: callvirt System.Single Monocle.Camera::get_Y()
+  IL_01e7: ldc.r4 8
+  IL_01ec: sub
+  IL_01ed: callvirt System.Void Monocle.Camera::set_Y(System.Single)
+  IL_01f2: ldarg.0
+  IL_01f3: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_01f8: ldfld System.Boolean Celeste.CutsceneEntity::WasSkipped
+  IL_01fd: brtrue.s IL_021c
+  IL_01ff: ldarg.0
+  IL_0200: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0205: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
+  IL_020a: brfalse.s IL_021c
+  IL_020c: ldarg.0
+  IL_020d: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::level
+  IL_0212: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
+  IL_0217: callvirt System.Void Celeste.ScreenWipe::Cancel()
+  IL_021c: ldarg.0
+  IL_021d: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_0222: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_0227: brfalse.s IL_0243
+  IL_0229: ldarg.0
+  IL_022a: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<>c__DisplayClass9_0::<>4__this
+  IL_022f: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_0234: ldsfld Monocle.BitTag Celeste.Tags::Global
+  IL_0239: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_023e: callvirt System.Void Monocle.Entity::RemoveTag(System.Int32)
+  IL_0243: ret

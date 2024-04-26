@@ -1,0 +1,106 @@
+IL Diff: System.Void Celeste.StardustFG::Render(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Single Celeste.StardustFG::fade
+  IL_0006: ldc.r4 0
+  IL_000b: bgt.un.s IL_000e
+  IL_000d: ret
+  IL_000e: ldarg.1
+  IL_000f: isinst Celeste.Level
+  IL_0014: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0019: stloc.0
+  IL_001a: ldc.i4.0
+  IL_001b: stloc.1
+  IL_001c: br IL_0136
+  IL_0021: ldloca.s V_2
+  IL_0023: initobj Microsoft.Xna.Framework.Vector2
+  IL_0029: ldloca.s V_2
+  IL_002b: ldarg.0
+  IL_002c: ldarg.0
+  IL_002d: ldfld Celeste.StardustFG/Particle[] Celeste.StardustFG::particles
+  IL_0032: ldloc.1
+  IL_0033: ldelema Celeste.StardustFG/Particle
+  IL_0038: ldflda Microsoft.Xna.Framework.Vector2 Celeste.StardustFG/Particle::Position
+  IL_003d: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0042: ldloc.0
+  IL_0043: callvirt System.Single Monocle.Camera::get_X()
+  IL_0048: sub
+  IL_0049: ldc.r4 320
+  IL_004e: callvirt System.Single Celeste.StardustFG::mod(System.Single,System.Single)
+  IL_0053: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0058: ldloca.s V_2
+  IL_005a: ldarg.0
+  IL_005b: ldarg.0
+  IL_005c: ldfld Celeste.StardustFG/Particle[] Celeste.StardustFG::particles
+  IL_0061: ldloc.1
+  IL_0062: ldelema Celeste.StardustFG/Particle
+  IL_0067: ldflda Microsoft.Xna.Framework.Vector2 Celeste.StardustFG/Particle::Position
+  IL_006c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0071: ldloc.0
+  IL_0072: callvirt System.Single Monocle.Camera::get_Y()
+  IL_0077: sub
+  IL_0078: ldc.r4 180
+  IL_007d: callvirt System.Single Celeste.StardustFG::mod(System.Single,System.Single)
+  IL_0082: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0087: ldarg.0
+  IL_0088: ldfld Celeste.StardustFG/Particle[] Celeste.StardustFG::particles
+  IL_008d: ldloc.1
+  IL_008e: ldelema Celeste.StardustFG/Particle
+  IL_0093: ldfld System.Single Celeste.StardustFG/Particle::Percent
+  IL_0098: stloc.3
+  IL_0099: ldc.r4 0
+  IL_009e: stloc.s V_4
+  IL_00a0: ldloc.3
+  IL_00a1: ldc.r4 0.7
+  IL_00a6: bge.un.s IL_00c6
+  IL_00a8: ldloc.3
+  IL_00a9: ldc.r4 0
+  IL_00ae: ldc.r4 0.3
+  IL_00b3: ldc.r4 0
+  IL_00b8: ldc.r4 1
+  IL_00bd: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_00c2: stloc.s V_4
+  IL_00c4: br.s IL_00e2
+  IL_00c6: ldloc.3
+  IL_00c7: ldc.r4 0.7
+  IL_00cc: ldc.r4 1
+  IL_00d1: ldc.r4 1
+  IL_00d6: ldc.r4 0
+  IL_00db: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_00e0: stloc.s V_4
+  IL_00e2: ldloc.s V_4
+  IL_00e4: ldarg.0
+  IL_00e5: ldfld System.Single Celeste.Backdrop::FadeAlphaMultiplier
+  IL_00ea: mul
+  IL_00eb: stloc.s V_4
+  IL_00ed: ldloc.2
+  IL_00ee: ldarg.0
+  IL_00ef: ldflda Microsoft.Xna.Framework.Vector2 Celeste.StardustFG::scale
+  IL_00f4: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00f9: ldarg.0
+  IL_00fa: ldflda Microsoft.Xna.Framework.Vector2 Celeste.StardustFG::scale
+  IL_00ff: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0104: ldsfld Microsoft.Xna.Framework.Color[] Celeste.StardustFG::colors
+  IL_0109: ldarg.0
+  IL_010a: ldfld Celeste.StardustFG/Particle[] Celeste.StardustFG::particles
+  IL_010f: ldloc.1
+  IL_0110: ldelema Celeste.StardustFG/Particle
+  IL_0115: ldfld System.Int32 Celeste.StardustFG/Particle::Color
+  IL_011a: ldelem.any Microsoft.Xna.Framework.Color
+  IL_011f: ldarg.0
+  IL_0120: ldfld System.Single Celeste.StardustFG::fade
+  IL_0125: ldloc.s V_4
+  IL_0127: mul
+  IL_0128: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_012d: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0132: ldloc.1
+  IL_0133: ldc.i4.1
+  IL_0134: add
+  IL_0135: stloc.1
+  IL_0136: ldloc.1
+  IL_0137: ldarg.0
+  IL_0138: ldfld Celeste.StardustFG/Particle[] Celeste.StardustFG::particles
+  IL_013d: ldlen
+  IL_013e: conv.i4
++ IL_0000: call System.Int32 Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::ReplaceWindSnowAmount(System.Int32) @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_StardustFG_Render
+  IL_013f: blt IL_0021
+  IL_0144: ret

@@ -1,0 +1,151 @@
+IL Diff: System.Void Monocle.VirtualButton::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.0
+  IL_0002: stfld System.Boolean Monocle.VirtualButton::consumed
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: ldfld System.Single Monocle.VirtualButton::bufferCounter
+  IL_000e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0013: sub
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 2958 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 22596008 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  |-> retrieves System.Single ExtendedVariants.Variants.MultiBuffering::<VirtualButton_Update_il>b__5_1(System.Single,Monocle.VirtualButton)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Monocle.VirtualButton>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  IL_0014: stfld System.Single Monocle.VirtualButton::bufferCounter
+  IL_0019: ldc.i4.0
+  IL_001a: stloc.0
+  IL_001b: ldarg.0
+  IL_001c: ldfld Monocle.Binding Monocle.VirtualButton::Binding
+  IL_0021: ldarg.0
+  IL_0022: ldfld System.Int32 Monocle.VirtualButton::GamepadIndex
+  IL_0027: ldarg.0
+  IL_0028: ldfld System.Single Monocle.VirtualButton::Threshold
+  IL_002d: callvirt System.Boolean Monocle.Binding::Pressed(System.Int32,System.Single)
+  IL_0032: brfalse.s IL_0044
+  IL_0034: ldarg.0
+  IL_0035: ldarg.0
+  IL_0036: ldfld System.Single Monocle.VirtualButton::BufferTime
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldfld System.Single Monocle.VirtualButton::bufferCounter @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 2960 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 18337366 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  |-> retrieves System.Single ExtendedVariants.Variants.MultiBuffering::<VirtualButton_Update_il>b__5_4(System.Single,Monocle.VirtualButton,System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Single,System.Single,Monocle.VirtualButton,System.Single>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  IL_003b: stfld System.Single Monocle.VirtualButton::bufferCounter
+  IL_0040: ldc.i4.1
+  IL_0041: stloc.0
+  IL_0042: br.s IL_005f
+  IL_0044: ldarg.0
+  IL_0045: ldfld Monocle.Binding Monocle.VirtualButton::Binding
+  IL_004a: ldarg.0
+  IL_004b: ldfld System.Int32 Monocle.VirtualButton::GamepadIndex
+  IL_0050: ldarg.0
+  IL_0051: ldfld System.Single Monocle.VirtualButton::Threshold
+  IL_0056: callvirt System.Boolean Monocle.Binding::Check(System.Int32,System.Single)
+  IL_005b: brfalse.s IL_005f
+  IL_005d: ldc.i4.1
+  IL_005e: stloc.0
+  IL_005f: ldarg.0
+  IL_0060: ldfld System.Collections.Generic.List`1<Monocle.VirtualButton/Node> Monocle.VirtualButton::Nodes
+  IL_0065: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.VirtualButton/Node>::GetEnumerator()
+  IL_006a: stloc.1
+  IL_006b: br.s IL_00a5
+  IL_006d: ldloca.s V_1
+  IL_006f: call T System.Collections.Generic.List`1/Enumerator<Monocle.VirtualButton/Node>::get_Current()
+  IL_0074: stloc.2
+  IL_0075: ldloc.2
+  IL_0076: callvirt System.Void Monocle.VirtualInputNode::Update()
+  IL_007b: ldloc.2
+  IL_007c: callvirt System.Boolean Monocle.VirtualButton/Node::get_Pressed()
+  IL_0081: brfalse.s IL_009b
+  IL_0083: ldloc.2
+  IL_0084: callvirt System.Boolean Monocle.VirtualButton/Node::get_Bufferable()
+  IL_0089: brfalse.s IL_0097
+  IL_008b: ldarg.0
+  IL_008c: ldarg.0
+  IL_008d: ldfld System.Single Monocle.VirtualButton::BufferTime
+  IL_0092: stfld System.Single Monocle.VirtualButton::bufferCounter
+  IL_0097: ldc.i4.1
+  IL_0098: stloc.0
+  IL_0099: br.s IL_00a5
+  IL_009b: ldloc.2
+  IL_009c: callvirt System.Boolean Monocle.VirtualButton/Node::get_Check()
+  IL_00a1: brfalse.s IL_00a5
+  IL_00a3: ldc.i4.1
+  IL_00a4: stloc.0
+  IL_00a5: ldloca.s V_1
+  IL_00a7: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.VirtualButton/Node>::MoveNext()
+  IL_00ac: brtrue.s IL_006d
+  IL_00ae: leave.s IL_00be
+  IL_00b0: ldloca.s V_1
+  IL_00b2: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.VirtualButton/Node>
+  IL_00b8: callvirt System.Void System.IDisposable::Dispose()
+  IL_00bd: endfinally
+  IL_00be: ldloc.0
+  IL_00bf: brtrue.s IL_00df
+  IL_00c1: ldarg.0
+  IL_00c2: ldc.i4.0
+  IL_00c3: callvirt System.Void Monocle.VirtualButton::set_Repeating(System.Boolean)
+  IL_00c8: ldarg.0
+  IL_00c9: ldc.r4 0
+  IL_00ce: stfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_00d3: ldarg.0
+  IL_00d4: ldc.r4 0
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
++ IL_0000: ldfld System.Single Monocle.VirtualButton::bufferCounter @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 2956 @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 53303250 @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
+  |-> retrieves System.Single ExtendedVariants.Variants.AlternativeBuffering::<VirtualButton_Update_il>b__5_2(System.Single,System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.AlternativeBuffering::VirtualButton_Update_il
+  IL_00d9: stfld System.Single Monocle.VirtualButton::bufferCounter
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 2962 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 8931717 @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  |-> retrieves System.Void ExtendedVariants.Variants.MultiBuffering::<VirtualButton_Update_il>b__5_6(Monocle.VirtualButton)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Monocle.VirtualButton>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
+  IL_00de: ret
+  IL_00df: ldarg.0
+  IL_00e0: ldfld System.Boolean Monocle.VirtualButton::canRepeat
+  IL_00e5: brtrue.s IL_00e8
+  IL_00e7: ret
+  IL_00e8: ldarg.0
+  IL_00e9: ldc.i4.0
+  IL_00ea: callvirt System.Void Monocle.VirtualButton::set_Repeating(System.Boolean)
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_00f5: ldc.r4 0
+  IL_00fa: bne.un.s IL_0109
+  IL_00fc: ldarg.0
+  IL_00fd: ldarg.0
+  IL_00fe: ldfld System.Single Monocle.VirtualButton::firstRepeatTime
+  IL_0103: stfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_0108: ret
+  IL_0109: ldarg.0
+  IL_010a: ldarg.0
+  IL_010b: ldfld System.Single Monocle.VirtualButton::repeatCounter
+- IL_0110: call System.Single Monocle.Engine::get_DeltaTime() @ ExtendedVariants.Variants.MultiBuffering::VirtualButton_Update_il
++ IL_0000: ldc.i4 2944 @ ExtendedVariants.Variants.GameSpeed::modVirtualButtonUpdate
++ IL_0000: ldc.i4 5922583 @ ExtendedVariants.Variants.GameSpeed::modVirtualButtonUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GameSpeed::modVirtualButtonUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.GameSpeed::getRepeatTimerDeltaTime()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.GameSpeed::modVirtualButtonUpdate
+  IL_0115: sub
+  IL_0116: stfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_011b: ldarg.0
+  IL_011c: ldfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_0121: ldc.r4 0
+  IL_0126: bgt.un.s IL_013b
+  IL_0128: ldarg.0
+  IL_0129: ldc.i4.1
+  IL_012a: callvirt System.Void Monocle.VirtualButton::set_Repeating(System.Boolean)
+  IL_012f: ldarg.0
+  IL_0130: ldarg.0
+  IL_0131: ldfld System.Single Monocle.VirtualButton::multiRepeatTime
+  IL_0136: stfld System.Single Monocle.VirtualButton::repeatCounter
+  IL_013b: ret

@@ -1,0 +1,348 @@
+IL Diff: System.Void VivHelper.Entities.SpawnPointHooks::MapEditor_ctor(On.Celeste.Editor.MapEditor+orig_ctor,Celeste.Editor.MapEditor,Celeste.AreaKey,System.Boolean)
+  IL_0000: nop
+  IL_0001: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: dup
+  IL_000c: brtrue.s IL_0012
+  IL_000e: pop
+  IL_000f: ldnull
+  IL_0010: br.s IL_0017
+  IL_0012: ldfld Celeste.Session Celeste.Level::Session
+  IL_0017: dup
+  IL_0018: brtrue.s IL_002c
+  IL_001a: pop
+  IL_001b: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0020: dup
+  IL_0021: brtrue.s IL_0027
+  IL_0023: pop
+  IL_0024: ldnull
+  IL_0025: br.s IL_002c
+  IL_0027: ldfld Celeste.Session Celeste.SaveData::CurrentSession_Safe
+  IL_002c: stloc.0
+  IL_002d: ldloc.0
+  IL_002e: brtrue.s IL_0033
+  IL_0030: ldc.i4.1
+  IL_0031: br.s IL_003f
+  IL_0033: ldloc.0
+  IL_0034: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_0039: ldarg.2
+  IL_003a: call System.Boolean Celeste.AreaKey::op_Inequality(Celeste.AreaKey,Celeste.AreaKey)
+  IL_003f: stloc.s V_5
+  IL_0041: ldloc.s V_5
+  IL_0043: brfalse.s IL_0047
+  IL_0045: ldnull
+  IL_0046: stloc.0
+  IL_0047: ldarg.0
+  IL_0048: ldarg.1
+  IL_0049: ldarg.2
+  IL_004a: ldarg.3
+  IL_004b: callvirt System.Void On.Celeste.Editor.MapEditor/orig_ctor::Invoke(Celeste.Editor.MapEditor,Celeste.AreaKey,System.Boolean)
+  IL_0050: nop
+  IL_0051: ldsfld System.Reflection.FieldInfo VivHelper.Entities.SpawnPointHooks::MapEditor_mapData
+  IL_0056: ldarg.1
+  IL_0057: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_005c: castclass Celeste.MapData
+  IL_0061: stloc.1
+  IL_0062: ldsfld System.Reflection.FieldInfo VivHelper.Entities.SpawnPointHooks::MapEditor_levels
+  IL_0067: ldarg.1
+  IL_0068: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_006d: castclass System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>
+  IL_0072: stloc.2
+  IL_0073: ldloc.2
+  IL_0074: ldnull
+  IL_0075: ceq
+  IL_0077: stloc.s V_6
+  IL_0079: ldloc.s V_6
+  IL_007b: brfalse.s IL_0093
+  IL_007d: nop
+  IL_007e: ldstr "VivHelper"
+  IL_0083: ldstr "This shouldn't ever happen, uhoh."
+  IL_0088: call System.Void Celeste.Mod.Logger::Log(System.String,System.String)
+  IL_008d: nop
+  IL_008e: br IL_0384
+  IL_0093: newobj System.Void System.Collections.Generic.List`1<Celeste.EntityData>::.ctor()
+  IL_0098: stloc.3
+  IL_0099: newobj System.Void System.Collections.Generic.Dictionary`2<System.String,VivHelper.Entities.InterRoomRespawnData>::.ctor()
+  IL_009e: stloc.s V_4
+  IL_00a0: nop
+  IL_00a1: ldloc.1
+  IL_00a2: ldfld System.Collections.Generic.List`1<Celeste.LevelData> Celeste.MapData::Levels
+  IL_00a7: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.LevelData>::GetEnumerator()
+  IL_00ac: stloc.s V_7
+  IL_00ae: br IL_0367
+  IL_00b3: newobj System.Void VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::.ctor()
+  IL_00b8: stloc.s V_8
+  IL_00ba: ldloc.s V_8
+  IL_00bc: ldloca.s V_7
+  IL_00be: call T System.Collections.Generic.List`1/Enumerator<Celeste.LevelData>::get_Current()
+  IL_00c3: stfld Celeste.LevelData VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::levelData
+  IL_00c8: nop
+  IL_00c9: ldloc.2
+  IL_00ca: ldloc.s V_8
+  IL_00cc: ldftn System.Boolean VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::<MapEditor_ctor>b__0(Celeste.Editor.LevelTemplate)
+  IL_00d2: newobj System.Void System.Func`2<Celeste.Editor.LevelTemplate,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_00d7: call TSource System.Linq.Enumerable::FirstOrDefault<Celeste.Editor.LevelTemplate>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_00dc: stloc.s V_9
+  IL_00de: ldloc.s V_9
+  IL_00e0: ldnull
+  IL_00e1: ceq
+  IL_00e3: stloc.s V_11
+  IL_00e5: ldloc.s V_11
+  IL_00e7: brfalse IL_016f
+  IL_00ec: nop
+  IL_00ed: ldarg.2
+  IL_00ee: call System.String Celeste.AreaKeyExt::GetLevelSet(Celeste.AreaKey)
+  IL_00f3: ldstr "Into The Jungle"
+  IL_00f8: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_00fd: stloc.s V_12
+  IL_00ff: ldloc.s V_12
+  IL_0101: brfalse.s IL_016a
+  IL_0103: nop
+  IL_0104: ldc.i4.0
+  IL_0105: ldstr "VivHelper"
+  IL_010a: ldstr "Comparing to "
+  IL_010f: ldloc.s V_8
+  IL_0111: ldfld Celeste.LevelData VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::levelData
+  IL_0116: ldfld System.String Celeste.LevelData::Name
+  IL_011b: call System.String System.String::Concat(System.String,System.String)
+  IL_0120: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
+  IL_0125: nop
+  IL_0126: nop
+  IL_0127: ldloc.2
+  IL_0128: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::GetEnumerator()
+  IL_012d: stloc.s V_13
+  IL_012f: br.s IL_014f
+  IL_0131: ldloca.s V_13
+  IL_0133: call T System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::get_Current()
+  IL_0138: stloc.s V_14
+  IL_013a: nop
+  IL_013b: ldc.i4.0
+  IL_013c: ldstr "VivHelper"
+  IL_0141: ldloc.s V_14
+  IL_0143: ldfld System.String Celeste.Editor.LevelTemplate::Name
+  IL_0148: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
+  IL_014d: nop
+  IL_014e: nop
+  IL_014f: ldloca.s V_13
+  IL_0151: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>::MoveNext()
+  IL_0156: brtrue.s IL_0131
+  IL_0158: leave.s IL_0169
+  IL_015a: ldloca.s V_13
+  IL_015c: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Editor.LevelTemplate>
+  IL_0162: callvirt System.Void System.IDisposable::Dispose()
+  IL_0167: nop
+  IL_0168: endfinally
+  IL_0169: nop
+  IL_016a: br IL_0367
+  IL_016f: ldloc.s V_8
+  IL_0171: ldfld Celeste.LevelData VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::levelData
+  IL_0176: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Entities
+  IL_017b: ldsfld System.Func`2<Celeste.EntityData,System.Boolean> VivHelper.Entities.SpawnPointHooks/<>c::<>9__12_1
+  IL_0180: dup
+  IL_0181: brtrue.s IL_019a
+  IL_0183: pop
+  IL_0184: ldsfld VivHelper.Entities.SpawnPointHooks/<>c VivHelper.Entities.SpawnPointHooks/<>c::<>9
+  IL_0189: ldftn System.Boolean VivHelper.Entities.SpawnPointHooks/<>c::<MapEditor_ctor>b__12_1(Celeste.EntityData)
+  IL_018f: newobj System.Void System.Func`2<Celeste.EntityData,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0194: dup
+  IL_0195: stsfld System.Func`2<Celeste.EntityData,System.Boolean> VivHelper.Entities.SpawnPointHooks/<>c::<>9__12_1
+  IL_019a: call TSource System.Linq.Enumerable::FirstOrDefault<Celeste.EntityData>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_019f: stloc.s V_10
+  IL_01a1: ldloc.s V_10
+  IL_01a3: ldnull
+  IL_01a4: cgt.un
+  IL_01a6: stloc.s V_15
+  IL_01a8: ldloc.s V_15
+  IL_01aa: brfalse IL_0258
+  IL_01af: nop
+  IL_01b0: ldloc.s V_10
+  IL_01b2: ldstr "Flag"
+  IL_01b7: ldstr ""
+  IL_01bc: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_01c1: stloc.s V_16
+  IL_01c3: ldc.i4.1
+  IL_01c4: stloc.s V_17
+  IL_01c6: ldloc.s V_16
+  IL_01c8: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_01cd: brtrue.s IL_01dd
+  IL_01cf: ldloc.s V_16
+  IL_01d1: ldc.i4.0
+  IL_01d2: callvirt System.Char System.String::get_Chars(System.Int32)
+  IL_01d7: ldc.i4.s 33
+  IL_01d9: ceq
+  IL_01db: br.s IL_01de
+  IL_01dd: ldc.i4.0
+  IL_01de: stloc.s V_18
+  IL_01e0: ldloc.s V_18
+  IL_01e2: brfalse.s IL_01f3
+  IL_01e4: nop
+  IL_01e5: ldc.i4.0
+  IL_01e6: stloc.s V_17
+  IL_01e8: ldloc.s V_16
+  IL_01ea: ldc.i4.1
+  IL_01eb: callvirt System.String System.String::Substring(System.Int32)
+  IL_01f0: stloc.s V_16
+  IL_01f2: nop
+  IL_01f3: ldloc.s V_16
+  IL_01f5: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_01fa: brtrue.s IL_0213
+  IL_01fc: ldloc.0
+  IL_01fd: brfalse.s IL_0213
+  IL_01ff: ldloc.0
+  IL_0200: brtrue.s IL_0205
+  IL_0202: ldc.i4.0
+  IL_0203: br.s IL_0211
+  IL_0205: ldloc.0
+  IL_0206: ldloc.s V_16
+  IL_0208: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_020d: ldloc.s V_17
+  IL_020f: ceq
+  IL_0211: br.s IL_0214
+  IL_0213: ldc.i4.1
+  IL_0214: stloc.s V_19
+  IL_0216: ldloc.s V_19
+  IL_0218: brfalse.s IL_0257
+  IL_021a: nop
+  IL_021b: ldloc.s V_10
+  IL_021d: ldstr "DummyOnly"
+  IL_0222: ldc.i4.0
+  IL_0223: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0228: stloc.s V_20
+  IL_022a: ldloc.s V_20
+  IL_022c: brfalse.s IL_0247
+  IL_022e: nop
+  IL_022f: ldloc.s V_9
+  IL_0231: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Spawns
+  IL_0236: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Clear()
+  IL_023b: nop
+  IL_023c: ldloc.s V_9
+  IL_023e: ldc.i4.1
+  IL_023f: stfld System.Boolean Celeste.Editor.LevelTemplate::Dummy
+  IL_0244: nop
+  IL_0245: br.s IL_0256
+  IL_0247: nop
+  IL_0248: ldloc.2
+  IL_0249: ldloc.s V_9
++ IL_0000: pop @ Celeste.Mod.SaladimHelper.VivHookModule::OnVivHelperCheckHideRoom
++ IL_0000: ldnull @ Celeste.Mod.SaladimHelper.VivHookModule::OnVivHelperCheckHideRoom
+  IL_024b: callvirt System.Boolean System.Collections.Generic.List`1<Celeste.Editor.LevelTemplate>::Remove(T)
+  IL_0250: pop
+  IL_0251: br IL_0367
+  IL_0256: nop
+  IL_0257: nop
+  IL_0258: nop
+  IL_0259: ldloc.s V_8
+  IL_025b: ldfld Celeste.LevelData VivHelper.Entities.SpawnPointHooks/<>c__DisplayClass12_0::levelData
+  IL_0260: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Entities
+  IL_0265: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.EntityData>::GetEnumerator()
+  IL_026a: stloc.s V_21
+  IL_026c: br IL_0349
+  IL_0271: ldloca.s V_21
+  IL_0273: call T System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::get_Current()
+  IL_0278: stloc.s V_22
+  IL_027a: nop
+  IL_027b: ldloc.s V_22
+  IL_027d: ldfld System.String Celeste.EntityData::Name
+  IL_0282: ldstr "VivHelper/Spawnpoint"
+  IL_0287: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_028c: stloc.s V_23
+  IL_028e: ldloc.s V_23
+  IL_0290: brfalse IL_0348
+  IL_0295: nop
+  IL_0296: ldloc.s V_22
+  IL_0298: ldstr "Flag"
+  IL_029d: ldstr ""
+  IL_02a2: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_02a7: stloc.s V_24
+  IL_02a9: ldc.i4.1
+  IL_02aa: stloc.s V_25
+  IL_02ac: ldloc.s V_24
+  IL_02ae: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_02b3: brtrue.s IL_02c3
+  IL_02b5: ldloc.s V_24
+  IL_02b7: ldc.i4.0
+  IL_02b8: callvirt System.Char System.String::get_Chars(System.Int32)
+  IL_02bd: ldc.i4.s 33
+  IL_02bf: ceq
+  IL_02c1: br.s IL_02c4
+  IL_02c3: ldc.i4.0
+  IL_02c4: stloc.s V_26
+  IL_02c6: ldloc.s V_26
+  IL_02c8: brfalse.s IL_02d9
+  IL_02ca: nop
+  IL_02cb: ldc.i4.0
+  IL_02cc: stloc.s V_25
+  IL_02ce: ldloc.s V_24
+  IL_02d0: ldc.i4.1
+  IL_02d1: callvirt System.String System.String::Substring(System.Int32)
+  IL_02d6: stloc.s V_24
+  IL_02d8: nop
+  IL_02d9: ldloc.s V_22
+  IL_02db: ldstr "HideFromDebugMap"
+  IL_02e0: ldc.i4.0
+  IL_02e1: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_02e6: brtrue.s IL_030b
+  IL_02e8: ldloc.s V_24
+  IL_02ea: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_02ef: brtrue.s IL_0308
+  IL_02f1: ldloc.0
+  IL_02f2: brtrue.s IL_02f7
+  IL_02f4: ldc.i4.1
+  IL_02f5: br.s IL_0306
+  IL_02f7: ldloc.0
+  IL_02f8: ldloc.s V_24
+  IL_02fa: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_02ff: ldloc.s V_25
+  IL_0301: ceq
+  IL_0303: ldc.i4.0
+  IL_0304: ceq
+  IL_0306: br.s IL_0309
+  IL_0308: ldc.i4.0
+  IL_0309: br.s IL_030c
+  IL_030b: ldc.i4.1
+  IL_030c: stloc.s V_27
+  IL_030e: ldloc.s V_27
+  IL_0310: brfalse.s IL_0347
+  IL_0312: nop
+  IL_0313: ldloc.s V_9
+  IL_0315: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Spawns
+  IL_031a: ldloc.s V_22
+  IL_031c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0321: callvirt System.Boolean System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Remove(T)
+  IL_0326: pop
+  IL_0327: ldloc.s V_9
+  IL_0329: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Editor.LevelTemplate::Spawns
+  IL_032e: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0333: ldc.i4.0
+  IL_0334: ceq
+  IL_0336: stloc.s V_28
+  IL_0338: ldloc.s V_28
+  IL_033a: brfalse.s IL_0346
+  IL_033c: nop
+  IL_033d: ldloc.s V_9
+  IL_033f: ldc.i4.1
+  IL_0340: stfld System.Boolean Celeste.Editor.LevelTemplate::Dummy
+  IL_0345: nop
+  IL_0346: nop
+  IL_0347: nop
+  IL_0348: nop
+  IL_0349: ldloca.s V_21
+  IL_034b: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::MoveNext()
+  IL_0350: brtrue IL_0271
+  IL_0355: leave.s IL_0366
+  IL_0357: ldloca.s V_21
+  IL_0359: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>
+  IL_035f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0364: nop
+  IL_0365: endfinally
+  IL_0366: nop
+  IL_0367: ldloca.s V_7
+  IL_0369: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.LevelData>::MoveNext()
+  IL_036e: brtrue IL_00b3
+  IL_0373: leave.s IL_0384
+  IL_0375: ldloca.s V_7
+  IL_0377: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.LevelData>
+  IL_037d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0382: nop
+  IL_0383: endfinally
+  IL_0384: ret

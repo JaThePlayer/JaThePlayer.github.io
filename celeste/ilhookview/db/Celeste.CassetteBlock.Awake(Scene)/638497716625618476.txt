@@ -1,0 +1,556 @@
+IL Diff: System.Void Celeste.CassetteBlock::Awake(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Solid::Awake(Monocle.Scene)
+  IL_0007: ldstr "667da5"
+  IL_000c: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0011: stloc.0
+  IL_0012: ldloca.s V_1
+  IL_0014: ldloca.s V_0
+  IL_0016: call System.Byte Microsoft.Xna.Framework.Color::get_R()
+  IL_001b: conv.r4
+  IL_001c: ldc.r4 255
+  IL_0021: div
+  IL_0022: ldarg.0
+  IL_0023: ldflda Microsoft.Xna.Framework.Color Celeste.CassetteBlock::color
+  IL_0028: call System.Byte Microsoft.Xna.Framework.Color::get_R()
+  IL_002d: conv.r4
+  IL_002e: ldc.r4 255
+  IL_0033: div
+  IL_0034: mul
+  IL_0035: ldloca.s V_0
+  IL_0037: call System.Byte Microsoft.Xna.Framework.Color::get_G()
+  IL_003c: conv.r4
+  IL_003d: ldc.r4 255
+  IL_0042: div
+  IL_0043: ldarg.0
+  IL_0044: ldflda Microsoft.Xna.Framework.Color Celeste.CassetteBlock::color
+  IL_0049: call System.Byte Microsoft.Xna.Framework.Color::get_G()
+  IL_004e: conv.r4
+  IL_004f: ldc.r4 255
+  IL_0054: div
+  IL_0055: mul
+  IL_0056: ldloca.s V_0
+  IL_0058: call System.Byte Microsoft.Xna.Framework.Color::get_B()
+  IL_005d: conv.r4
+  IL_005e: ldc.r4 255
+  IL_0063: div
+  IL_0064: ldarg.0
+  IL_0065: ldflda Microsoft.Xna.Framework.Color Celeste.CassetteBlock::color
+  IL_006a: call System.Byte Microsoft.Xna.Framework.Color::get_B()
+  IL_006f: conv.r4
+  IL_0070: ldc.r4 255
+  IL_0075: div
+  IL_0076: mul
+  IL_0077: ldc.r4 1
+  IL_007c: call System.Void Microsoft.Xna.Framework.Color::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0081: ldarg.1
+  IL_0082: ldarg.0
+  IL_0083: ldarg.0
+  IL_0084: ldloc.1
+  IL_0085: newobj System.Void Celeste.CassetteBlock/BoxSide::.ctor(Celeste.CassetteBlock,Microsoft.Xna.Framework.Color)
+  IL_008a: dup
+  IL_008b: stloc.2
+  IL_008c: stfld Celeste.CassetteBlock/BoxSide Celeste.CassetteBlock::side
+  IL_0091: ldloc.2
++ IL_0000: ldarg.0 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_Awake
++ IL_0000: call System.Boolean Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::IsWonky(Monocle.Scene,System.Object,Celeste.CassetteBlock) @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_Awake
++ IL_0000: brtrue IL_0097 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_Awake
++ IL_0000: ldarg.1 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_Awake
++ IL_0000: ldloc.2 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_Awake
+  IL_0092: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0097: ldarg.0
+  IL_0098: ldfld System.Collections.Generic.List`1<Celeste.StaticMover> Celeste.Platform::staticMovers
+  IL_009d: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.StaticMover>::GetEnumerator()
+  IL_00a2: stloc.3
+  IL_00a3: br.s IL_0107
+  IL_00a5: ldloca.s V_3
+  IL_00a7: call T System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>::get_Current()
+  IL_00ac: dup
+  IL_00ad: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_00b2: isinst Celeste.Spikes
+  IL_00b7: stloc.s V_4
+  IL_00b9: ldloc.s V_4
+  IL_00bb: brfalse.s IL_00e7
+  IL_00bd: ldloc.s V_4
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Microsoft.Xna.Framework.Color Celeste.CassetteBlock::color
+  IL_00c5: stfld Microsoft.Xna.Framework.Color Celeste.Spikes::EnabledColor
+  IL_00ca: ldloc.s V_4
+  IL_00cc: ldloc.1
+  IL_00cd: stfld Microsoft.Xna.Framework.Color Celeste.Spikes::DisabledColor
+  IL_00d2: ldloc.s V_4
+  IL_00d4: ldc.i4.1
+  IL_00d5: stfld System.Boolean Celeste.Spikes::VisibleWhenDisabled
+  IL_00da: ldloc.s V_4
+  IL_00dc: ldarg.0
+  IL_00dd: ldfld Microsoft.Xna.Framework.Color Celeste.CassetteBlock::color
+  IL_00e2: callvirt System.Void Celeste.Spikes::SetSpikeColor(Microsoft.Xna.Framework.Color)
+  IL_00e7: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_00ec: isinst Celeste.Spring
+  IL_00f1: stloc.s V_5
+  IL_00f3: ldloc.s V_5
+  IL_00f5: brfalse.s IL_0107
+  IL_00f7: ldloc.s V_5
+  IL_00f9: ldloc.1
+  IL_00fa: stfld Microsoft.Xna.Framework.Color Celeste.Spring::DisabledColor
+  IL_00ff: ldloc.s V_5
+  IL_0101: ldc.i4.1
+  IL_0102: stfld System.Boolean Celeste.Spring::VisibleWhenDisabled
+  IL_0107: ldloca.s V_3
+  IL_0109: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>::MoveNext()
+  IL_010e: brtrue.s IL_00a5
+  IL_0110: leave.s IL_0120
+  IL_0112: ldloca.s V_3
+  IL_0114: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>
+  IL_011a: callvirt System.Void System.IDisposable::Dispose()
+  IL_011f: endfinally
+  IL_0120: ldarg.0
+  IL_0121: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_0126: brtrue IL_02c8
+  IL_012b: ldarg.0
+  IL_012c: ldc.i4.1
+  IL_012d: stfld System.Boolean Celeste.CassetteBlock::groupLeader
+  IL_0132: ldarg.0
+  IL_0133: newobj System.Void System.Collections.Generic.List`1<Celeste.CassetteBlock>::.ctor()
+  IL_0138: stfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_013d: ldarg.0
+  IL_013e: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_0143: ldarg.0
+  IL_0144: callvirt System.Void System.Collections.Generic.List`1<Celeste.CassetteBlock>::Add(T)
+  IL_0149: ldarg.0
+  IL_014a: ldarg.0
+  IL_014b: callvirt System.Void Celeste.CassetteBlock::FindInGroup(Celeste.CassetteBlock)
+  IL_0150: ldc.r4 3.4028235E+38
+  IL_0155: stloc.s V_6
+  IL_0157: ldc.r4 -3.4028235E+38
+  IL_015c: stloc.s V_7
+  IL_015e: ldc.r4 3.4028235E+38
+  IL_0163: stloc.s V_8
+  IL_0165: ldc.r4 -3.4028235E+38
+  IL_016a: stloc.s V_9
+  IL_016c: ldarg.0
+  IL_016d: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_0172: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.CassetteBlock>::GetEnumerator()
+  IL_0177: stloc.s V_10
+  IL_0179: br.s IL_01d4
+  IL_017b: ldloca.s V_10
+  IL_017d: call T System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::get_Current()
+  IL_0182: stloc.s V_11
+  IL_0184: ldloc.s V_11
+  IL_0186: callvirt System.Single Monocle.Entity::get_Left()
+  IL_018b: ldloc.s V_6
+  IL_018d: bge.un.s IL_0198
+  IL_018f: ldloc.s V_11
+  IL_0191: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0196: stloc.s V_6
+  IL_0198: ldloc.s V_11
+  IL_019a: callvirt System.Single Monocle.Entity::get_Right()
+  IL_019f: ldloc.s V_7
+  IL_01a1: ble.un.s IL_01ac
+  IL_01a3: ldloc.s V_11
+  IL_01a5: callvirt System.Single Monocle.Entity::get_Right()
+  IL_01aa: stloc.s V_7
+  IL_01ac: ldloc.s V_11
+  IL_01ae: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_01b3: ldloc.s V_9
+  IL_01b5: ble.un.s IL_01c0
+  IL_01b7: ldloc.s V_11
+  IL_01b9: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_01be: stloc.s V_9
+  IL_01c0: ldloc.s V_11
+  IL_01c2: callvirt System.Single Monocle.Entity::get_Top()
+  IL_01c7: ldloc.s V_8
+  IL_01c9: bge.un.s IL_01d4
+  IL_01cb: ldloc.s V_11
+  IL_01cd: callvirt System.Single Monocle.Entity::get_Top()
+  IL_01d2: stloc.s V_8
+  IL_01d4: ldloca.s V_10
+  IL_01d6: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::MoveNext()
+  IL_01db: brtrue.s IL_017b
+  IL_01dd: leave.s IL_01ed
+  IL_01df: ldloca.s V_10
+  IL_01e1: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>
+  IL_01e7: callvirt System.Void System.IDisposable::Dispose()
+  IL_01ec: endfinally
+  IL_01ed: ldarg.0
+  IL_01ee: ldloc.s V_6
+  IL_01f0: ldloc.s V_7
+  IL_01f2: ldloc.s V_6
+  IL_01f4: sub
+  IL_01f5: ldc.r4 2
+  IL_01fa: div
+  IL_01fb: add
+  IL_01fc: conv.i4
+  IL_01fd: conv.r4
+  IL_01fe: ldloc.s V_9
+  IL_0200: conv.i4
+  IL_0201: conv.r4
+  IL_0202: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0207: stfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::groupOrigin
+  IL_020c: ldarg.0
+  IL_020d: ldloc.s V_7
+  IL_020f: ldloc.s V_6
+  IL_0211: sub
+  IL_0212: ldc.r4 32
+  IL_0217: ldc.r4 96
+  IL_021c: ldc.r4 1
+  IL_0221: ldc.r4 0.2
+  IL_0226: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_022b: ldloc.s V_9
+  IL_022d: ldloc.s V_8
+  IL_022f: sub
+  IL_0230: ldc.r4 32
+  IL_0235: ldc.r4 96
+  IL_023a: ldc.r4 1
+  IL_023f: ldc.r4 0.2
+  IL_0244: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0249: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_024e: stfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::wigglerScaler
+  IL_0253: ldarg.0
+  IL_0254: ldarg.0
+  IL_0255: ldc.r4 0.3
+  IL_025a: ldc.r4 3
+  IL_025f: ldnull
+  IL_0260: ldc.i4.0
+  IL_0261: ldc.i4.0
+  IL_0262: call Monocle.Wiggler Monocle.Wiggler::Create(System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.Boolean)
+  IL_0267: dup
+  IL_0268: stloc.s V_12
+  IL_026a: stfld Monocle.Wiggler Celeste.CassetteBlock::wiggler
+  IL_026f: ldloc.s V_12
+  IL_0271: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0276: ldarg.0
+  IL_0277: ldfld System.Collections.Generic.List`1<Celeste.CassetteBlock> Celeste.CassetteBlock::group
+  IL_027c: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.CassetteBlock>::GetEnumerator()
+  IL_0281: stloc.s V_10
+  IL_0283: br.s IL_02af
+  IL_0285: ldloca.s V_10
+  IL_0287: call T System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::get_Current()
+  IL_028c: dup
+  IL_028d: ldarg.0
+  IL_028e: ldfld Monocle.Wiggler Celeste.CassetteBlock::wiggler
+  IL_0293: stfld Monocle.Wiggler Celeste.CassetteBlock::wiggler
+  IL_0298: dup
+  IL_0299: ldarg.0
+  IL_029a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::wigglerScaler
+  IL_029f: stfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::wigglerScaler
+  IL_02a4: ldarg.0
+  IL_02a5: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::groupOrigin
+  IL_02aa: stfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::groupOrigin
+  IL_02af: ldloca.s V_10
+  IL_02b1: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>::MoveNext()
+  IL_02b6: brtrue.s IL_0285
+  IL_02b8: leave.s IL_02c8
+  IL_02ba: ldloca.s V_10
+  IL_02bc: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.CassetteBlock>
+  IL_02c2: callvirt System.Void System.IDisposable::Dispose()
+  IL_02c7: endfinally
+  IL_02c8: ldarg.0
+  IL_02c9: ldfld System.Collections.Generic.List`1<Celeste.StaticMover> Celeste.Platform::staticMovers
+  IL_02ce: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.StaticMover>::GetEnumerator()
+  IL_02d3: stloc.3
+  IL_02d4: br.s IL_02fa
+  IL_02d6: ldloca.s V_3
+  IL_02d8: call T System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>::get_Current()
+  IL_02dd: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_02e2: isinst Celeste.Spikes
+  IL_02e7: stloc.s V_13
+  IL_02e9: ldloc.s V_13
+  IL_02eb: brfalse.s IL_02fa
+  IL_02ed: ldloc.s V_13
+  IL_02ef: ldarg.0
+  IL_02f0: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CassetteBlock::groupOrigin
+  IL_02f5: callvirt System.Void Celeste.Spikes::SetOrigins(Microsoft.Xna.Framework.Vector2)
+  IL_02fa: ldloca.s V_3
+  IL_02fc: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>::MoveNext()
+  IL_0301: brtrue.s IL_02d6
+  IL_0303: leave.s IL_0313
+  IL_0305: ldloca.s V_3
+  IL_0307: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.StaticMover>
+  IL_030d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0312: endfinally
+  IL_0313: ldarg.0
+  IL_0314: call System.Single Monocle.Entity::get_Left()
+  IL_0319: stloc.s V_14
+  IL_031b: br IL_0570
+  IL_0320: ldarg.0
+  IL_0321: call System.Single Monocle.Entity::get_Top()
+  IL_0326: stloc.s V_15
+  IL_0328: br IL_0559
+  IL_032d: ldarg.0
+  IL_032e: ldloc.s V_14
+  IL_0330: ldc.r4 8
+  IL_0335: sub
+  IL_0336: ldloc.s V_15
+  IL_0338: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_033d: stloc.s V_16
+  IL_033f: ldarg.0
+  IL_0340: ldloc.s V_14
+  IL_0342: ldc.r4 8
+  IL_0347: add
+  IL_0348: ldloc.s V_15
+  IL_034a: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_034f: stloc.s V_17
+  IL_0351: ldarg.0
+  IL_0352: ldloc.s V_14
+  IL_0354: ldloc.s V_15
+  IL_0356: ldc.r4 8
+  IL_035b: sub
+  IL_035c: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_0361: stloc.s V_18
+  IL_0363: ldarg.0
+  IL_0364: ldloc.s V_14
+  IL_0366: ldloc.s V_15
+  IL_0368: ldc.r4 8
+  IL_036d: add
+  IL_036e: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_0373: stloc.s V_19
+  IL_0375: ldloc.s V_16
+  IL_0377: ldloc.s V_17
+  IL_0379: and
+  IL_037a: ldloc.s V_18
+  IL_037c: and
+  IL_037d: ldloc.s V_19
+  IL_037f: and
+  IL_0380: brfalse IL_043a
+  IL_0385: ldarg.0
+  IL_0386: ldloc.s V_14
+  IL_0388: ldc.r4 8
+  IL_038d: add
+  IL_038e: ldloc.s V_15
+  IL_0390: ldc.r4 8
+  IL_0395: sub
+  IL_0396: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_039b: brtrue.s IL_03ae
+  IL_039d: ldarg.0
+  IL_039e: ldloc.s V_14
+  IL_03a0: ldloc.s V_15
+  IL_03a2: ldc.i4.3
+  IL_03a3: ldc.i4.0
+  IL_03a4: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_03a9: br IL_054f
+  IL_03ae: ldarg.0
+  IL_03af: ldloc.s V_14
+  IL_03b1: ldc.r4 8
+  IL_03b6: sub
+  IL_03b7: ldloc.s V_15
+  IL_03b9: ldc.r4 8
+  IL_03be: sub
+  IL_03bf: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_03c4: brtrue.s IL_03d7
+  IL_03c6: ldarg.0
+  IL_03c7: ldloc.s V_14
+  IL_03c9: ldloc.s V_15
+  IL_03cb: ldc.i4.3
+  IL_03cc: ldc.i4.1
+  IL_03cd: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_03d2: br IL_054f
+  IL_03d7: ldarg.0
+  IL_03d8: ldloc.s V_14
+  IL_03da: ldc.r4 8
+  IL_03df: add
+  IL_03e0: ldloc.s V_15
+  IL_03e2: ldc.r4 8
+  IL_03e7: add
+  IL_03e8: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_03ed: brtrue.s IL_0400
+  IL_03ef: ldarg.0
+  IL_03f0: ldloc.s V_14
+  IL_03f2: ldloc.s V_15
+  IL_03f4: ldc.i4.3
+  IL_03f5: ldc.i4.2
+  IL_03f6: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_03fb: br IL_054f
+  IL_0400: ldarg.0
+  IL_0401: ldloc.s V_14
+  IL_0403: ldc.r4 8
+  IL_0408: sub
+  IL_0409: ldloc.s V_15
+  IL_040b: ldc.r4 8
+  IL_0410: add
+  IL_0411: callvirt System.Boolean Celeste.CassetteBlock::CheckForSame(System.Single,System.Single)
+  IL_0416: brtrue.s IL_0429
+  IL_0418: ldarg.0
+  IL_0419: ldloc.s V_14
+  IL_041b: ldloc.s V_15
+  IL_041d: ldc.i4.3
+  IL_041e: ldc.i4.3
+  IL_041f: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_0424: br IL_054f
+  IL_0429: ldarg.0
+  IL_042a: ldloc.s V_14
+  IL_042c: ldloc.s V_15
+  IL_042e: ldc.i4.1
+  IL_042f: ldc.i4.1
+  IL_0430: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_0435: br IL_054f
+  IL_043a: ldloc.s V_16
+  IL_043c: ldloc.s V_17
+  IL_043e: and
+  IL_043f: brfalse.s IL_0448
+  IL_0441: ldloc.s V_18
+  IL_0443: ldc.i4.0
+  IL_0444: ceq
+  IL_0446: br.s IL_0449
+  IL_0448: ldc.i4.0
+  IL_0449: ldloc.s V_19
+  IL_044b: and
+  IL_044c: brfalse.s IL_045f
+  IL_044e: ldarg.0
+  IL_044f: ldloc.s V_14
+  IL_0451: ldloc.s V_15
+  IL_0453: ldc.i4.1
+  IL_0454: ldc.i4.0
+  IL_0455: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_045a: br IL_054f
+  IL_045f: ldloc.s V_16
+  IL_0461: ldloc.s V_17
+  IL_0463: and
+  IL_0464: ldloc.s V_18
+  IL_0466: and
+  IL_0467: brfalse.s IL_047e
+  IL_0469: ldloc.s V_19
+  IL_046b: brtrue.s IL_047e
+  IL_046d: ldarg.0
+  IL_046e: ldloc.s V_14
+  IL_0470: ldloc.s V_15
+  IL_0472: ldc.i4.1
+  IL_0473: ldc.i4.2
+  IL_0474: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_0479: br IL_054f
+  IL_047e: ldloc.s V_16
+  IL_0480: brfalse.s IL_0489
+  IL_0482: ldloc.s V_17
+  IL_0484: ldc.i4.0
+  IL_0485: ceq
+  IL_0487: br.s IL_048a
+  IL_0489: ldc.i4.0
+  IL_048a: ldloc.s V_18
+  IL_048c: and
+  IL_048d: ldloc.s V_19
+  IL_048f: and
+  IL_0490: brfalse.s IL_04a3
+  IL_0492: ldarg.0
+  IL_0493: ldloc.s V_14
+  IL_0495: ldloc.s V_15
+  IL_0497: ldc.i4.2
+  IL_0498: ldc.i4.1
+  IL_0499: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_049e: br IL_054f
+  IL_04a3: ldloc.s V_16
+  IL_04a5: ldc.i4.0
+  IL_04a6: ceq
+  IL_04a8: ldloc.s V_17
+  IL_04aa: and
+  IL_04ab: ldloc.s V_18
+  IL_04ad: and
+  IL_04ae: ldloc.s V_19
+  IL_04b0: and
+  IL_04b1: brfalse.s IL_04c4
+  IL_04b3: ldarg.0
+  IL_04b4: ldloc.s V_14
+  IL_04b6: ldloc.s V_15
+  IL_04b8: ldc.i4.0
+  IL_04b9: ldc.i4.1
+  IL_04ba: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_04bf: br IL_054f
+  IL_04c4: ldloc.s V_16
+  IL_04c6: brfalse.s IL_04d3
+  IL_04c8: ldloc.s V_17
+  IL_04ca: brtrue.s IL_04d3
+  IL_04cc: ldloc.s V_18
+  IL_04ce: ldc.i4.0
+  IL_04cf: ceq
+  IL_04d1: br.s IL_04d4
+  IL_04d3: ldc.i4.0
+  IL_04d4: ldloc.s V_19
+  IL_04d6: and
+  IL_04d7: brfalse.s IL_04ea
+  IL_04d9: ldarg.0
+  IL_04da: ldloc.s V_14
+  IL_04dc: ldloc.s V_15
+  IL_04de: ldc.i4.2
+  IL_04df: ldc.i4.0
+  IL_04e0: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_04e5: br IL_054f
+  IL_04ea: ldloc.s V_16
+  IL_04ec: ldc.i4.0
+  IL_04ed: ceq
+  IL_04ef: ldloc.s V_17
+  IL_04f1: and
+  IL_04f2: brfalse.s IL_04fb
+  IL_04f4: ldloc.s V_18
+  IL_04f6: ldc.i4.0
+  IL_04f7: ceq
+  IL_04f9: br.s IL_04fc
+  IL_04fb: ldc.i4.0
+  IL_04fc: ldloc.s V_19
+  IL_04fe: and
+  IL_04ff: brfalse.s IL_050f
+  IL_0501: ldarg.0
+  IL_0502: ldloc.s V_14
+  IL_0504: ldloc.s V_15
+  IL_0506: ldc.i4.0
+  IL_0507: ldc.i4.0
+  IL_0508: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_050d: br.s IL_054f
+  IL_050f: ldloc.s V_16
+  IL_0511: brfalse.s IL_051a
+  IL_0513: ldloc.s V_17
+  IL_0515: ldc.i4.0
+  IL_0516: ceq
+  IL_0518: br.s IL_051b
+  IL_051a: ldc.i4.0
+  IL_051b: ldloc.s V_18
+  IL_051d: and
+  IL_051e: brfalse.s IL_0532
+  IL_0520: ldloc.s V_19
+  IL_0522: brtrue.s IL_0532
+  IL_0524: ldarg.0
+  IL_0525: ldloc.s V_14
+  IL_0527: ldloc.s V_15
+  IL_0529: ldc.i4.2
+  IL_052a: ldc.i4.2
+  IL_052b: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_0530: br.s IL_054f
+  IL_0532: ldloc.s V_16
+  IL_0534: ldc.i4.0
+  IL_0535: ceq
+  IL_0537: ldloc.s V_17
+  IL_0539: and
+  IL_053a: ldloc.s V_18
+  IL_053c: and
+  IL_053d: brfalse.s IL_054f
+  IL_053f: ldloc.s V_19
+  IL_0541: brtrue.s IL_054f
+  IL_0543: ldarg.0
+  IL_0544: ldloc.s V_14
+  IL_0546: ldloc.s V_15
+  IL_0548: ldc.i4.0
+  IL_0549: ldc.i4.2
+  IL_054a: callvirt System.Void Celeste.CassetteBlock::SetImage(System.Single,System.Single,System.Int32,System.Int32)
+  IL_054f: ldloc.s V_15
+  IL_0551: ldc.r4 8
+  IL_0556: add
+  IL_0557: stloc.s V_15
+  IL_0559: ldloc.s V_15
+  IL_055b: ldarg.0
+  IL_055c: call System.Single Monocle.Entity::get_Bottom()
+  IL_0561: blt IL_032d
+  IL_0566: ldloc.s V_14
+  IL_0568: ldc.r4 8
+  IL_056d: add
+  IL_056e: stloc.s V_14
+  IL_0570: ldloc.s V_14
+  IL_0572: ldarg.0
+  IL_0573: call System.Single Monocle.Entity::get_Right()
+  IL_0578: blt IL_0320
+  IL_057d: ldarg.0
+  IL_057e: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0583: brtrue.s IL_058b
+  IL_0585: ldarg.0
+  IL_0586: call System.Void Celeste.Platform::DisableStaticMovers()
+  IL_058b: ldarg.0
+  IL_058c: callvirt System.Void Celeste.CassetteBlock::UpdateVisualState()
+  IL_0591: ret

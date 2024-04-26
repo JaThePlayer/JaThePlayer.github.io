@@ -1,0 +1,88 @@
+IL Diff: System.Void BrokemiaHelper.PixelRendered.PixelComponent::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedClutteredEntity() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: call System.Void Monocle.Component::Render()
+  IL_0007: nop
+  IL_0008: ldarg.0
+  IL_0009: ldfld Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D> BrokemiaHelper.PixelRendered.PixelComponent::textureChunks
+  IL_000e: ldnull
+  IL_000f: ceq
+  IL_0011: stloc.0
+  IL_0012: ldloc.0
+  IL_0013: brfalse.s IL_001a
+  IL_0015: br IL_00aa
+  IL_001a: ldc.i4.0
+  IL_001b: stloc.1
+  IL_001c: br.s IL_0093
+  IL_001e: nop
+  IL_001f: ldc.i4.0
+  IL_0020: stloc.2
+  IL_0021: br.s IL_007a
+  IL_0023: nop
+  IL_0024: ldarg.0
+  IL_0025: ldfld Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D> BrokemiaHelper.PixelRendered.PixelComponent::textureChunks
+  IL_002a: ldloc.1
+  IL_002b: ldloc.2
+  IL_002c: callvirt T Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D>::get_Item(System.Int32,System.Int32)
+  IL_0031: stloc.3
+  IL_0032: ldloc.3
+  IL_0033: ldnull
+  IL_0034: cgt.un
+  IL_0036: stloc.s V_4
+  IL_0038: ldloc.s V_4
+  IL_003a: brfalse.s IL_0075
+  IL_003c: nop
+  IL_003d: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0042: ldloc.3
+  IL_0043: ldloc.1
+  IL_0044: ldc.i4.1
+  IL_0045: sub
+  IL_0046: ldarg.0
+  IL_0047: ldfld System.Int32 BrokemiaHelper.PixelRendered.PixelComponent::chunkSize
+  IL_004c: mul
+  IL_004d: conv.r4
+  IL_004e: ldloc.2
+  IL_004f: ldc.i4.1
+  IL_0050: sub
+  IL_0051: ldarg.0
+  IL_0052: ldfld System.Int32 BrokemiaHelper.PixelRendered.PixelComponent::chunkSize
+  IL_0057: mul
+  IL_0058: conv.r4
+  IL_0059: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_005e: ldarg.0
+  IL_005f: ldfld Microsoft.Xna.Framework.Vector2 BrokemiaHelper.PixelRendered.PixelComponent::levelOffset
+  IL_0064: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0069: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_006e: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0073: nop
+  IL_0074: nop
+  IL_0075: nop
+  IL_0076: ldloc.2
+  IL_0077: ldc.i4.1
+  IL_0078: add
+  IL_0079: stloc.2
+  IL_007a: ldloc.2
+  IL_007b: ldarg.0
+  IL_007c: ldfld Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D> BrokemiaHelper.PixelRendered.PixelComponent::textureChunks
+  IL_0081: ldfld System.Int32 Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D>::Rows
+  IL_0086: clt
+  IL_0088: stloc.s V_5
+  IL_008a: ldloc.s V_5
+  IL_008c: brtrue.s IL_0023
+  IL_008e: nop
+  IL_008f: ldloc.1
+  IL_0090: ldc.i4.1
+  IL_0091: add
+  IL_0092: stloc.1
+  IL_0093: ldloc.1
+  IL_0094: ldarg.0
+  IL_0095: ldfld Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D> BrokemiaHelper.PixelRendered.PixelComponent::textureChunks
+  IL_009a: ldfld System.Int32 Monocle.VirtualMap`1<Microsoft.Xna.Framework.Graphics.Texture2D>::Columns
+  IL_009f: clt
+  IL_00a1: stloc.s V_6
+  IL_00a3: ldloc.s V_6
+  IL_00a5: brtrue IL_001e
+  IL_00aa: ret

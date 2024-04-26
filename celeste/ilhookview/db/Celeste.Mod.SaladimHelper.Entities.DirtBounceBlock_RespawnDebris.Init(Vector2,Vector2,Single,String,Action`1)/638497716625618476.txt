@@ -1,0 +1,55 @@
+IL Diff: Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock+RespawnDebris Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.String,System.Action`1[[Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock+RespawnDebris, SaladimHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: ldarg from @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0005: ldarg.s rubbleAtlasName
+  IL_0007: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_000c: stloc.0
+  IL_000d: ldsfld System.Random Monocle.Calc::Random
+  IL_0012: ldloc.0
+  IL_0013: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_0018: stloc.1
+  IL_0019: ldarg.0
+  IL_001a: ldfld Monocle.Image Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Sprite
+  IL_001f: brtrue.s IL_0044
+  IL_0021: ldarg.0
+  IL_0022: ldarg.0
+  IL_0023: ldloc.1
+  IL_0024: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0029: dup
+  IL_002a: stloc.2
+  IL_002b: stfld Monocle.Image Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Sprite
+  IL_0030: ldloc.2
+  IL_0031: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0036: ldarg.0
+  IL_0037: ldfld Monocle.Image Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Sprite
+  IL_003c: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0041: pop
+  IL_0042: br.s IL_0050
+  IL_0044: ldarg.0
+  IL_0045: ldfld Monocle.Image Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Sprite
+  IL_004a: ldloc.1
+  IL_004b: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_0050: ldarg.0
+  IL_0051: ldarg.1
+  IL_0052: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0057: ldarg.0
+  IL_0058: ldc.r4 0
+  IL_005d: stfld System.Single Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Percent
+  IL_0062: ldarg.0
+  IL_0063: ldarg.1
+  IL_0064: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::From
+  IL_0069: ldarg.0
+  IL_006a: ldarg.2
+  IL_006b: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::To
+  IL_0070: ldarg.0
+  IL_0071: ldarg.3
+  IL_0072: stfld System.Single Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris::Duration
+  IL_0077: ldarg.s xtraInitAction
+  IL_0079: brfalse.s IL_0083
+  IL_007b: ldarg.s xtraInitAction
+  IL_007d: ldarg.0
+  IL_007e: callvirt System.Void System.Action`1<Celeste.Mod.SaladimHelper.Entities.DirtBounceBlock/RespawnDebris>::Invoke(T)
+  IL_0083: ldarg.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0084: ret

@@ -1,0 +1,49 @@
+IL Diff: System.Void Celeste.ChangeRespawnTrigger::OnEnter(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnEnter(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000d: isinst Celeste.Level
+  IL_0012: ldfld Celeste.Session Celeste.Level::Session
+  IL_0017: stloc.0
+  IL_0018: ldarg.0
+  IL_0019: callvirt System.Boolean Celeste.ChangeRespawnTrigger::SolidCheck()
+  IL_001e: brfalse.s IL_0063
++ IL_0000: ldc.i4 2957 @ ExtendedVariants.ExtendedVariantTriggerManager::modRespawnTriggerOnEnter
++ IL_0000: ldc.i4 19586120 @ ExtendedVariants.ExtendedVariantTriggerManager::modRespawnTriggerOnEnter
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.ExtendedVariantTriggerManager::modRespawnTriggerOnEnter
+  |-> retrieves System.Void ExtendedVariants.ExtendedVariantTriggerManager::commitVariantChanges()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.ExtendedVariantTriggerManager::modRespawnTriggerOnEnter
+  IL_0020: ldloc.0
+  IL_0021: ldflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_0026: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_002b: brfalse.s IL_0045
+  IL_002d: ldloc.0
+  IL_002e: ldflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_0033: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0038: ldarg.0
+  IL_0039: ldfld Microsoft.Xna.Framework.Vector2 Celeste.ChangeRespawnTrigger::Target
+  IL_003e: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0043: brfalse.s IL_0063
+  IL_0045: ldloc.0
+  IL_0046: ldc.i4.1
+  IL_0047: stfld System.Boolean Celeste.Session::HitCheckpoint
+  IL_004c: ldloc.0
+  IL_004d: ldarg.0
+  IL_004e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.ChangeRespawnTrigger::Target
+  IL_0053: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2956 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: ldc.i4 46915478 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  |-> retrieves System.Void ExtendedVariants.Variants.RestoreDashesOnRespawn/<>c::<updateDashCountOnRespawnPointChange>b__6_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  IL_0058: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_005d: ldloc.0
+  IL_005e: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: ldc.i4 27582452 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  IL_0063: ret

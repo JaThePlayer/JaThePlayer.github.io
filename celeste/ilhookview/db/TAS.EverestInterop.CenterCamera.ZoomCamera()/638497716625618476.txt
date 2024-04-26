@@ -1,0 +1,74 @@
+IL Diff: System.Void TAS.EverestInterop.CenterCamera::ZoomCamera()
+  IL_0000: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_0005: callvirt System.Boolean TAS.Module.CelesteTasSettings::get_CenterCamera()
+  IL_000a: brtrue.s IL_000d
+  IL_000c: ret
+  IL_000d: ldsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_0012: ldc.i4.0
+  IL_0013: ble.s IL_0021
+  IL_0015: ldsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_001a: ldc.i4.1
+  IL_001b: sub
+  IL_001c: stsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_0021: ldc.i4.0
+  IL_0022: stloc.0
+  IL_0023: call TAS.EverestInterop.Hotkeys/Hotkey TAS.EverestInterop.Hotkeys::get_FreeCamera()
+  IL_0028: callvirt System.Boolean TAS.EverestInterop.Hotkeys/Hotkey::get_Check()
+  IL_002d: brfalse.s IL_0065
+  IL_002f: call TAS.EverestInterop.Hotkeys/Hotkey TAS.EverestInterop.Hotkeys::get_CameraZoomIn()
+  IL_0034: callvirt System.Boolean TAS.EverestInterop.Hotkeys/Hotkey::get_Check()
+  IL_0039: brfalse.s IL_0045
+  IL_003b: ldsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_0040: ldc.i4.0
+  IL_0041: bgt.s IL_0045
+  IL_0043: ldc.i4.m1
+  IL_0044: stloc.0
+  IL_0045: call TAS.EverestInterop.Hotkeys/Hotkey TAS.EverestInterop.Hotkeys::get_CameraZoomOut()
+  IL_004a: callvirt System.Boolean TAS.EverestInterop.Hotkeys/Hotkey::get_Check()
+  IL_004f: brfalse.s IL_005b
+  IL_0051: ldsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_0056: ldc.i4.0
+  IL_0057: bgt.s IL_005b
+  IL_0059: ldc.i4.1
+  IL_005a: stloc.0
+  IL_005b: ldloc.0
+  IL_005c: brfalse.s IL_0065
+  IL_005e: ldc.i4.s 10
+  IL_0060: stsfld System.Int32 TAS.EverestInterop.CenterCamera::zoomInterval
+  IL_0065: ldloc.0
+  IL_0066: brtrue.s IL_0074
+  IL_0068: call System.Int32 TAS.EverestInterop.MouseButtons::get_Wheel()
++ IL_0000: call System.Int32 Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement::PreventZoomCamera() @ Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement+<>c::<Initialize>b__13_0
++ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement+<>c::<Initialize>b__13_0
+  IL_006d: call System.Int32 System.Math::Sign(System.Int32)
+  IL_0072: neg
+  IL_0073: stloc.0
+  IL_0074: ldsfld System.Single TAS.EverestInterop.CenterCamera::viewportScale
+  IL_0079: ldloc.0
+  IL_007a: conv.r4
+  IL_007b: ldc.r4 0.01
+  IL_0080: mul
+  IL_0081: add
+  IL_0082: ldc.r4 1
+  IL_0087: ble.un.s IL_0094
+  IL_0089: ldloc.0
+  IL_008a: conv.r4
+  IL_008b: ldc.r4 0.2
+  IL_0090: mul
+  IL_0091: stloc.2
+  IL_0092: br.s IL_009d
+  IL_0094: ldloc.0
+  IL_0095: conv.r4
+  IL_0096: ldc.r4 0.1
+  IL_009b: mul
+  IL_009c: stloc.2
+  IL_009d: ldloc.2
+  IL_009e: stloc.1
+  IL_009f: ldsfld System.Single TAS.EverestInterop.CenterCamera::viewportScale
+  IL_00a4: ldloc.1
+  IL_00a5: add
+  IL_00a6: ldc.r4 0.2
+  IL_00ab: ldc.r4 12
+  IL_00b0: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_00b5: stsfld System.Single TAS.EverestInterop.CenterCamera::viewportScale
+  IL_00ba: ret

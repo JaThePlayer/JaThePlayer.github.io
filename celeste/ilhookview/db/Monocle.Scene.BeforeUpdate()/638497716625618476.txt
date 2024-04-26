@@ -1,0 +1,27 @@
+IL Diff: System.Void Monocle.Scene::BeforeUpdate()
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Utils.LevelExtensions::AddEntities() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Monocle.Scene::Paused
+  IL_0006: brtrue.s IL_001a
+  IL_0008: ldarg.0
+  IL_0009: ldarg.0
+  IL_000a: ldfld System.Single Monocle.Scene::TimeActive
+  IL_000f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0014: add
+  IL_0015: stfld System.Single Monocle.Scene::TimeActive
+  IL_001a: ldarg.0
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Single Monocle.Scene::RawTimeActive
+  IL_0021: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_0026: add
+  IL_0027: stfld System.Single Monocle.Scene::RawTimeActive
+  IL_002c: ldarg.0
+  IL_002d: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0032: callvirt System.Void Monocle.EntityList::UpdateLists()
+  IL_0037: ldarg.0
+  IL_0038: callvirt Monocle.TagLists Monocle.Scene::get_TagLists()
+  IL_003d: callvirt System.Void Monocle.TagLists::UpdateLists()
+  IL_0042: ldarg.0
+  IL_0043: callvirt Monocle.RendererList Monocle.Scene::get_RendererList()
+  IL_0048: callvirt System.Void Monocle.RendererList::UpdateLists()
+  IL_004d: ret

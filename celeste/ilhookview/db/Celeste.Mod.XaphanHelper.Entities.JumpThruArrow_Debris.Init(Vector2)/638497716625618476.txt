@@ -1,0 +1,100 @@
+IL Diff: Celeste.Mod.XaphanHelper.Entities.JumpThruArrow+Debris Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::Init(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldc.i4.1
+  IL_0003: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0008: ldarg.0
+  IL_0009: ldarg.1
+  IL_000a: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_000f: ldarg.0
+  IL_0010: ldarg.1
+  IL_0011: ldc.r4 -30
+  IL_0016: ldsfld System.Random Monocle.Calc::Random
+  IL_001b: ldc.r4 60
+  IL_0020: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_0025: add
+  IL_0026: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_002b: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::speed
+  IL_0030: ldarg.0
+  IL_0031: ldstr "particles/shard"
+  IL_0036: stfld System.String Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::directory
+  IL_003b: ldarg.0
+  IL_003c: ldarg.0
+  IL_003d: ldsfld System.Random Monocle.Calc::Random
+  IL_0042: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0047: ldarg.0
+  IL_0048: ldfld System.String Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::directory
+  IL_004d: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0052: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_0057: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_005c: dup
+  IL_005d: stloc.0
+  IL_005e: stfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_0063: ldloc.0
+  IL_0064: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0069: nop
+  IL_006a: ldarg.0
+  IL_006b: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_0070: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0075: pop
+  IL_0076: ldarg.0
+  IL_0077: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_007c: ldsfld System.Random Monocle.Calc::Random
+  IL_0081: ldc.r4 0.5
+  IL_0086: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_008b: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_0090: nop
+  IL_0091: ldarg.0
+  IL_0092: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_0097: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_009c: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00a1: ldarg.0
+  IL_00a2: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_00a7: ldsfld System.Random Monocle.Calc::Random
+  IL_00ac: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_00b1: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_00b6: ldarg.0
+  IL_00b7: ldc.i4.0
+  IL_00b8: stfld System.Boolean Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::shaking
+  IL_00bd: ldarg.0
+  IL_00be: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_00c3: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00c8: ldc.r4 1
+  IL_00cd: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d2: ldarg.0
+  IL_00d3: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::sprite
+  IL_00d8: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00dd: ldc.r4 1
+  IL_00e2: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00e7: ldarg.0
+  IL_00e8: ldc.r4 1
+  IL_00ed: stfld System.Single Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::alpha
+  IL_00f2: ldarg.0
+  IL_00f3: ldsfld System.Random Monocle.Calc::Random
+  IL_00f8: ldc.r4 3.4906585
+  IL_00fd: ldc.r4 10.471975
+  IL_0102: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0107: ldsfld System.Random Monocle.Calc::Random
+  IL_010c: ldc.i4.1
+  IL_010d: ldc.i4.m1
+  IL_010e: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_0113: conv.r4
+  IL_0114: mul
+  IL_0115: stfld System.Single Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::spin
+  IL_011a: ldarg.0
+  IL_011b: ldc.r4 0
+  IL_0120: stfld System.Single Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::fadeLerp
+  IL_0125: ldarg.0
+  IL_0126: ldsfld System.Random Monocle.Calc::Random
+  IL_012b: ldc.r4 0.6
+  IL_0130: ldc.r4 2.6
+  IL_0135: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_013a: stfld System.Single Celeste.Mod.XaphanHelper.Entities.JumpThruArrow/Debris::lifeTimer
+  IL_013f: ldarg.0
+  IL_0140: stloc.1
+  IL_0141: br.s IL_0143
+  IL_0143: ldloc.1
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0144: ret

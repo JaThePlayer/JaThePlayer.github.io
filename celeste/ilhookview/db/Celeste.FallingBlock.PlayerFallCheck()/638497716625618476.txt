@@ -1,0 +1,16 @@
+IL Diff: System.Boolean Celeste.FallingBlock::PlayerFallCheck()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.FallingBlock::climbFall
+  IL_0006: brfalse.s IL_000f
+  IL_0008: ldarg.0
+  IL_0009: call System.Boolean Celeste.Solid::HasPlayerRider()
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
++ IL_0000: call System.Boolean Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::PlayerActivate(Celeste.FallingBlock) @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
++ IL_0000: and @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
+  IL_000e: ret
+  IL_000f: ldarg.0
+  IL_0010: call System.Boolean Celeste.Solid::HasPlayerOnTop()
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
++ IL_0000: call System.Boolean Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::PlayerActivate(Celeste.FallingBlock) @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
++ IL_0000: and @ Celeste.Mod.TeraHelper.Entities.TeraFallingBlock::TeraFallCheck
+  IL_0015: ret

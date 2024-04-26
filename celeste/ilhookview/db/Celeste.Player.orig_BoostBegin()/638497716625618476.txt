@@ -1,0 +1,21 @@
+IL Diff: System.Void Celeste.Player::orig_BoostBegin()
+  IL_0000: ldarg.0
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: ldc.i4 6115223 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.Entities.PatientBooster/<>c::<Player_BoostBegin>b__16_0(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: brfalse IL_0001 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: pop @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: br IL_000d @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
+  IL_0001: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_0006: pop
+  IL_0007: ldarg.0
+  IL_0008: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_000d: ldarg.0
+  IL_000e: callvirt Celeste.Holdable Celeste.Player::get_Holding()
+  IL_0013: brfalse.s IL_001b
+  IL_0015: ldarg.0
+  IL_0016: callvirt System.Void Celeste.Player::Drop()
+  IL_001b: ret

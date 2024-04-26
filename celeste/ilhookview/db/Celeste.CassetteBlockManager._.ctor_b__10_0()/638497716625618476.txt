@@ -1,0 +1,23 @@
+IL Diff: System.Void Celeste.CassetteBlockManager::<.ctor>b__10_0()
+  IL_0000: ldarg.0
++ IL_0000: callvirt Monocle.Scene Monocle.Entity::get_Scene() @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::TransitionListener_OnOutBegin_Closure
++ IL_0000: brtrue IL_0000 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::TransitionListener_OnOutBegin_Closure
++ IL_0000: ret @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::TransitionListener_OnOutBegin_Closure
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::TransitionListener_OnOutBegin_Closure
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: ldfld System.Boolean Celeste.Level::HasCassetteBlocks
+  IL_000b: brtrue.s IL_0014
+  IL_000d: ldarg.0
+  IL_000e: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0013: ret
+  IL_0014: ldarg.0
+  IL_0015: ldarg.0
+  IL_0016: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_001b: ldfld System.Int32 Celeste.Level::CassetteBlockBeats
+  IL_0020: stfld System.Int32 Celeste.CassetteBlockManager::maxBeat
+  IL_0025: ldarg.0
+  IL_0026: ldarg.0
+  IL_0027: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_002c: ldfld System.Single Celeste.Level::CassetteBlockTempo
+  IL_0031: stfld System.Single Celeste.CassetteBlockManager::tempoMult
+  IL_0036: ret

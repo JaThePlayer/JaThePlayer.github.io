@@ -1,0 +1,203 @@
+IL Diff: System.Void TAS.EverestInterop.CenterCamera::CenterTheCamera()
+  IL_0000: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0005: isinst Celeste.Level
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: brfalse.s IL_001a
+  IL_000e: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_0013: callvirt System.Boolean TAS.Module.CelesteTasSettings::get_CenterCamera()
+  IL_0018: brtrue.s IL_001b
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 52026379 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition/<>c::<Initialize>b__9_5()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_001a: ret
+  IL_001b: ldloc.0
+  IL_001c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0021: stloc.1
+  IL_0022: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0027: call Celeste.Player TAS.Utils.SceneExtensions::GetPlayer(Monocle.Scene)
+  IL_002c: stloc.2
+  IL_002d: ldloc.2
+  IL_002e: brfalse.s IL_005a
+  IL_0030: ldsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lockPosition
+  IL_0035: stloc.3
+  IL_0036: ldloca.s V_3
+  IL_0038: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_003d: brtrue.s IL_0047
+  IL_003f: ldloc.2
+  IL_0040: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0045: br.s IL_004e
+  IL_0047: ldloca.s V_3
+  IL_0049: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::GetValueOrDefault()
+  IL_004e: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0053: stsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lastPlayerPosition
+  IL_0058: br.s IL_0098
+  IL_005a: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_005f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0064: callvirt T Monocle.Tracker::GetEntity<Celeste.PlayerDeadBody>()
+  IL_0069: stloc.s V_4
+  IL_006b: ldloc.s V_4
+  IL_006d: brfalse.s IL_0098
+  IL_006f: ldsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lockPosition
+  IL_0074: stloc.3
+  IL_0075: ldloca.s V_3
+  IL_0077: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_007c: brtrue.s IL_0087
+  IL_007e: ldloc.s V_4
+  IL_0080: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0085: br.s IL_008e
+  IL_0087: ldloca.s V_3
+  IL_0089: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::GetValueOrDefault()
+  IL_008e: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0093: stsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lastPlayerPosition
+  IL_0098: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lastPlayerPosition
+  IL_009d: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_00a2: brfalse IL_02af
+  IL_00a7: ldloc.1
+  IL_00a8: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_00ad: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_00b2: stsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::savedCameraPosition
+  IL_00b7: ldloc.0
+  IL_00b8: ldfld System.Single Celeste.Level::Zoom
+  IL_00bd: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_00c2: stsfld System.Nullable`1<System.Single> TAS.EverestInterop.CenterCamera::savedLevelZoom
+  IL_00c7: ldloc.0
+  IL_00c8: ldfld System.Single Celeste.Level::ZoomTarget
+  IL_00cd: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_00d2: stsfld System.Nullable`1<System.Single> TAS.EverestInterop.CenterCamera::savedLevelZoomTarget
+  IL_00d7: ldloc.0
+  IL_00d8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level::ZoomFocusPoint
+  IL_00dd: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_00e2: stsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::savedLevelZoomFocusPoint
+  IL_00e7: ldloc.0
+  IL_00e8: ldfld System.Single Celeste.Level::ScreenPadding
+  IL_00ed: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_00f2: stsfld System.Nullable`1<System.Single> TAS.EverestInterop.CenterCamera::savedLevelScreenPadding
+  IL_00f7: ldloc.1
+  IL_00f8: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lastPlayerPosition
+  IL_00fd: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0102: ldsfld Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.CenterCamera::moveOffset
+  IL_0107: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_010c: ldloc.1
+  IL_010d: ldflda Microsoft.Xna.Framework.Graphics.Viewport Monocle.Camera::Viewport
+  IL_0112: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Width()
+  IL_0117: conv.r4
+  IL_0118: ldc.r4 2
+  IL_011d: div
+  IL_011e: ldloc.1
+  IL_011f: ldflda Microsoft.Xna.Framework.Graphics.Viewport Monocle.Camera::Viewport
+  IL_0124: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Height()
+  IL_0129: conv.r4
+  IL_012a: ldc.r4 2
+  IL_012f: div
+  IL_0130: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0135: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_013a: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_013f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0144: stloc.s V_5
+  IL_0146: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_014b: callvirt System.Boolean TAS.Module.CelesteTasSettings::get_CenterCameraHorizontallyOnly()
+  IL_0150: brfalse.s IL_0189
+  IL_0152: ldloc.1
+  IL_0153: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Camera::position
+  IL_0158: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::savedCameraPosition
+  IL_015d: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0162: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0167: ldsfld Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.CenterCamera::moveOffset
+  IL_016c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0171: stloc.s V_5
+  IL_0173: ldloc.1
+  IL_0174: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Camera::position
+  IL_0179: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_017e: dup
+  IL_017f: ldind.r4
+  IL_0180: ldloc.s V_5
+  IL_0182: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0187: sub
+  IL_0188: stind.r4
+  IL_0189: ldloc.0
+  IL_018a: call System.Single TAS.EverestInterop.CenterCamera::get_LevelZoom()
+  IL_018f: stfld System.Single Celeste.Level::Zoom
+  IL_0194: ldloc.0
+  IL_0195: call System.Single TAS.EverestInterop.CenterCamera::get_LevelZoom()
+  IL_019a: stfld System.Single Celeste.Level::ZoomTarget
+  IL_019f: ldloc.0
+  IL_01a0: ldc.r4 320
+  IL_01a5: ldc.r4 180
+  IL_01aa: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01af: ldc.r4 2
+  IL_01b4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01b9: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level::ZoomFocusPoint
+  IL_01be: call System.Boolean TAS.EverestInterop.CenterCamera::get_LevelZoomOut()
+  IL_01c3: brfalse.s IL_01db
+  IL_01c5: ldloc.0
+  IL_01c6: dup
+  IL_01c7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Level::ZoomFocusPoint
+  IL_01cc: ldsfld Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.CenterCamera::screenOffset
+  IL_01d1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01d6: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level::ZoomFocusPoint
+  IL_01db: ldloc.0
+  IL_01dc: ldc.r4 0
+  IL_01e1: stfld System.Single Celeste.Level::ScreenPadding
+  IL_01e6: ldc.r4 320
+  IL_01eb: ldsfld System.Single TAS.EverestInterop.CenterCamera::viewportScale
+  IL_01f0: mul
+  IL_01f1: conv.r8
+  IL_01f2: call System.Double System.Math::Round(System.Double)
+  IL_01f7: conv.i4
+  IL_01f8: ldc.r4 180
+  IL_01fd: ldsfld System.Single TAS.EverestInterop.CenterCamera::viewportScale
+  IL_0202: mul
+  IL_0203: conv.r8
+  IL_0204: call System.Double System.Math::Round(System.Double)
+  IL_0209: conv.i4
+  IL_020a: newobj System.Void Monocle.Camera::.ctor(System.Int32,System.Int32)
+  IL_020f: call System.Void TAS.EverestInterop.CenterCamera::set_ScreenCamera(Monocle.Camera)
+  IL_0214: call Monocle.Camera TAS.EverestInterop.CenterCamera::get_ScreenCamera()
+  IL_0219: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.CenterCamera::lastPlayerPosition
+  IL_021e: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0223: ldsfld Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.CenterCamera::moveOffset
+  IL_0228: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_022d: call Monocle.Camera TAS.EverestInterop.CenterCamera::get_ScreenCamera()
+  IL_0232: ldflda Microsoft.Xna.Framework.Graphics.Viewport Monocle.Camera::Viewport
+  IL_0237: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Width()
+  IL_023c: conv.r4
+  IL_023d: ldc.r4 2
+  IL_0242: div
+  IL_0243: call Monocle.Camera TAS.EverestInterop.CenterCamera::get_ScreenCamera()
+  IL_0248: ldflda Microsoft.Xna.Framework.Graphics.Viewport Monocle.Camera::Viewport
+  IL_024d: call System.Int32 Microsoft.Xna.Framework.Graphics.Viewport::get_Height()
+  IL_0252: conv.r4
+  IL_0253: ldc.r4 2
+  IL_0258: div
+  IL_0259: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_025e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0263: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0268: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_026d: callvirt System.Boolean TAS.Module.CelesteTasSettings::get_CenterCameraHorizontallyOnly()
+  IL_0272: brfalse.s IL_028e
+  IL_0274: call Monocle.Camera TAS.EverestInterop.CenterCamera::get_ScreenCamera()
+  IL_0279: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Camera::position
+  IL_027e: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0283: dup
+  IL_0284: ldind.r4
+  IL_0285: ldloc.s V_5
+  IL_0287: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_028c: sub
+  IL_028d: stind.r4
+  IL_028e: call System.Boolean TAS.EverestInterop.CenterCamera::get_LevelZoomOut()
+  IL_0293: brfalse.s IL_02af
+  IL_0295: call Monocle.Camera TAS.EverestInterop.CenterCamera::get_ScreenCamera()
+  IL_029a: dup
+  IL_029b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_02a0: ldsfld Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.CenterCamera::screenOffset
+  IL_02a5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02aa: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldc.i4 2956 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 65584231 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition/<>c::<Initialize>b__9_5()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_02af: ret

@@ -1,0 +1,93 @@
+IL Diff: System.Void Celeste.Wire::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedClutteredEntity() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Single Celeste.Wire::sineX
+  IL_000d: ldloc.0
+  IL_000e: ldfld System.Single Celeste.Level::WindSineTimer
+  IL_0013: ldc.r4 2
+  IL_0018: mul
+  IL_0019: add
+  IL_001a: conv.r8
+  IL_001b: call System.Double System.Math::Sin(System.Double)
+  IL_0020: conv.r4
+  IL_0021: ldarg.0
+  IL_0022: ldfld System.Single Celeste.Wire::sineY
+  IL_0027: ldloc.0
+  IL_0028: ldfld System.Single Celeste.Level::WindSineTimer
+  IL_002d: ldc.r4 2.8
+  IL_0032: mul
+  IL_0033: add
+  IL_0034: conv.r8
+  IL_0035: call System.Double System.Math::Sin(System.Double)
+  IL_003a: conv.r4
+  IL_003b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0040: ldc.r4 8
+  IL_0045: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_004a: ldloc.0
+  IL_004b: callvirt System.Single Celeste.Level::get_VisualWind()
++ IL_0000: ldc.i4 2944 @ ExtendedVariants.Variants.WindEverywhere::onWireRender
++ IL_0000: ldc.i4 15613408 @ ExtendedVariants.Variants.WindEverywhere::onWireRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.WindEverywhere::onWireRender
+  |-> retrieves System.Single ExtendedVariants.Variants.WindEverywhere::transformVisualWind(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.WindEverywhere::onWireRender
+  IL_0050: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0055: stloc.1
+  IL_0056: ldarg.0
+  IL_0057: ldflda Monocle.SimpleCurve Celeste.Wire::Curve
+  IL_005c: ldarg.0
+  IL_005d: ldflda Monocle.SimpleCurve Celeste.Wire::Curve
+  IL_0062: ldfld Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::Begin
+  IL_0067: ldarg.0
+  IL_0068: ldflda Monocle.SimpleCurve Celeste.Wire::Curve
+  IL_006d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::End
+  IL_0072: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0077: ldc.r4 2
+  IL_007c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0081: ldc.r4 0
+  IL_0086: ldc.r4 24
+  IL_008b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0090: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0095: ldloc.1
+  IL_0096: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_009b: stfld Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::Control
+  IL_00a0: ldarg.0
+  IL_00a1: call System.Boolean Celeste.Wire::IsVisible()
+  IL_00a6: brtrue.s IL_00a9
+  IL_00a8: ret
+  IL_00a9: ldarg.0
+  IL_00aa: ldflda Monocle.SimpleCurve Celeste.Wire::Curve
+  IL_00af: ldfld Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::Begin
+  IL_00b4: stloc.2
+  IL_00b5: ldc.i4.1
+  IL_00b6: stloc.3
+  IL_00b7: br.s IL_00e7
+  IL_00b9: ldloc.3
+  IL_00ba: conv.r4
+  IL_00bb: ldc.r4 16
+  IL_00c0: div
+  IL_00c1: stloc.s V_4
+  IL_00c3: ldarg.0
+  IL_00c4: ldflda Monocle.SimpleCurve Celeste.Wire::Curve
+  IL_00c9: ldloc.s V_4
+  IL_00cb: call Microsoft.Xna.Framework.Vector2 Monocle.SimpleCurve::GetPoint(System.Single)
+  IL_00d0: stloc.s V_5
+  IL_00d2: ldloc.2
+  IL_00d3: ldloc.s V_5
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Microsoft.Xna.Framework.Color Celeste.Wire::Color
+  IL_00db: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_00e0: ldloc.s V_5
+  IL_00e2: stloc.2
+  IL_00e3: ldloc.3
+  IL_00e4: ldc.i4.1
+  IL_00e5: add
+  IL_00e6: stloc.3
+  IL_00e7: ldloc.3
+  IL_00e8: ldc.i4.s 16
+  IL_00ea: ble.s IL_00b9
+  IL_00ec: ret

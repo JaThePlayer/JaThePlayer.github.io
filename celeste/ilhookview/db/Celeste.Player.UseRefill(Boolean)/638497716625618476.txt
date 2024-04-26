@@ -1,0 +1,41 @@
+IL Diff: System.Boolean Celeste.Player::UseRefill(System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Int32 Celeste.Player::get_MaxDashes()
++ IL_0000: ldc.i4 2944 @ ExtendedVariants.Variants.DashCount::modUseRefill
++ IL_0000: ldc.i4 49524425 @ ExtendedVariants.Variants.DashCount::modUseRefill
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashCount::modUseRefill
+  |-> retrieves System.Int32 ExtendedVariants.Variants.DashCount::determineDashCount(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DashCount::modUseRefill
+  IL_0006: stloc.0
+  IL_0007: ldarg.1
+  IL_0008: brfalse.s IL_000c
+  IL_000a: ldc.i4.2
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: ldfld System.Int32 Celeste.Player::Dashes
+  IL_0012: ldloc.0
+  IL_0013: blt.s IL_0022
++ IL_0000: ldc.i4 2958 @ ExtendedVariants.Variants.JumpCount::modUseRefill
++ IL_0000: ldc.i4 65846507 @ ExtendedVariants.Variants.JumpCount::modUseRefill
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpCount::modUseRefill
+  |-> retrieves System.Boolean ExtendedVariants.Variants.JumpCount::jumpNeedsRefilling()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ ExtendedVariants.Variants.JumpCount::modUseRefill
++ IL_0000: brtrue.s IL_0022 @ ExtendedVariants.Variants.JumpCount::modUseRefill
+  IL_0015: ldarg.0
+  IL_0016: ldfld System.Single Celeste.Player::Stamina
+  IL_001b: ldc.r4 20
+  IL_0020: bge.un.s IL_0031
+  IL_0022: ldarg.0
+  IL_0023: ldloc.0
+  IL_0024: stfld System.Int32 Celeste.Player::Dashes
++ IL_0000: ldc.i4 2957 @ ExtendedVariants.Variants.DashCount::modUseRefill
++ IL_0000: ldc.i4 52055521 @ ExtendedVariants.Variants.DashCount::modUseRefill
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashCount::modUseRefill
+  |-> retrieves System.Void ExtendedVariants.Variants.DashCount::triggerOnDashRefill()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.DashCount::modUseRefill
+  IL_0029: ldarg.0
+  IL_002a: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_002f: ldc.i4.1
+  IL_0030: ret
+  IL_0031: ldc.i4.0
+  IL_0032: ret

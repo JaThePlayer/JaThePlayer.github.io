@@ -1,0 +1,57 @@
+IL Diff: System.Void TAS.EverestInterop.InfoHUD.InfoMouse::MoveInfoHud()
+  IL_0000: ldsfld TAS.EverestInterop.MouseButtons/Button TAS.EverestInterop.MouseButtons::Left
+  IL_0005: callvirt System.Boolean TAS.EverestInterop.MouseButtons/Button::get_Pressed()
+  IL_000a: brfalse.s IL_001b
+  IL_000c: call Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.MouseButtons::get_Position()
+  IL_0011: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0016: stsfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_001b: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_0020: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_0025: brfalse.s IL_0098
+  IL_0027: ldsfld TAS.EverestInterop.MouseButtons/Button TAS.EverestInterop.MouseButtons::Left
+  IL_002c: callvirt System.Boolean TAS.EverestInterop.MouseButtons/Button::get_Check()
+  IL_0031: brtrue.s IL_0098
+  IL_0033: call Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.MouseButtons::get_Position()
+  IL_0038: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_003d: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_0042: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_0047: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_004c: sub
+  IL_004d: conv.i4
+  IL_004e: call System.Int32 System.Math::Abs(System.Int32)
+  IL_0053: conv.r4
+  IL_0054: ldc.r4 0.1
+  IL_0059: bgt.s IL_0083
+  IL_005b: call Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.MouseButtons::get_Position()
+  IL_0060: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0065: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_006a: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_006f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0074: sub
+  IL_0075: conv.i4
+  IL_0076: call System.Int32 System.Math::Abs(System.Int32)
+  IL_007b: conv.r4
+  IL_007c: ldc.r4 0.1
+  IL_0081: ble.un.s IL_008d
+  IL_0083: call TAS.Module.CelesteTasModule TAS.Module.CelesteTasModule::get_Instance()
+  IL_0088: callvirt System.Void Celeste.Mod.EverestModule::SaveSettings()
+  IL_008d: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_0092: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0098: ldsflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> TAS.EverestInterop.InfoHUD.InfoMouse::startDragPosition
+  IL_009d: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_00a2: brfalse.s IL_00d4
+  IL_00a4: ldsfld TAS.EverestInterop.MouseButtons/Button TAS.EverestInterop.MouseButtons::Left
+  IL_00a9: callvirt System.Boolean TAS.EverestInterop.MouseButtons/Button::get_Check()
+  IL_00ae: brfalse.s IL_00d4
++ IL_0000: call System.Boolean Celeste.Mod.GhostModForTas.Replayer.GhostHud::DragAndMoveHud() @ Celeste.Mod.GhostModForTas.Replayer.GhostHud+<>c::<Initialize>b__3_0
++ IL_0000: brfalse IL_00b0 @ Celeste.Mod.GhostModForTas.Replayer.GhostHud+<>c::<Initialize>b__3_0
++ IL_0000: ret @ Celeste.Mod.GhostModForTas.Replayer.GhostHud+<>c::<Initialize>b__3_0
+  IL_00b0: call TAS.Module.CelesteTasSettings TAS.GlobalVariables::get_TasSettings()
+  IL_00b5: dup
+  IL_00b6: callvirt Microsoft.Xna.Framework.Vector2 TAS.Module.CelesteTasSettings::get_InfoPosition()
+  IL_00bb: call Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.MouseButtons::get_Position()
+  IL_00c0: call Microsoft.Xna.Framework.Vector2 TAS.EverestInterop.MouseButtons::get_LastPosition()
+  IL_00c5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00ca: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00cf: callvirt System.Void TAS.Module.CelesteTasSettings::set_InfoPosition(Microsoft.Xna.Framework.Vector2)
+  IL_00d4: ret

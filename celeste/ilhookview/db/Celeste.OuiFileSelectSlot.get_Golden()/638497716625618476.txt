@@ -1,0 +1,24 @@
+IL Diff: System.Boolean Celeste.OuiFileSelectSlot::get_Golden()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.OuiFileSelectSlot::Corrupted
+  IL_0006: brtrue.s IL_0027
+  IL_0008: ldarg.0
+  IL_0009: ldfld System.Boolean Celeste.OuiFileSelectSlot::Exists
+  IL_000e: brfalse.s IL_0027
+  IL_0010: ldarg.0
+  IL_0011: ldfld Celeste.SaveData Celeste.OuiFileSelectSlot::SaveData
+  IL_0016: callvirt System.Int32 Celeste.SaveData::get_TotalStrawberries_Safe()
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_0000: ldc.i4 19490222 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
+  |-> retrieves System.Int32 Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modSelectSlotCollectedStrawberries>b__52_0(System.Int32,Celeste.OuiFileSelectSlot)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.OuiFileSelectSlot>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
++ IL_001b: ldarg.0 @ Celeste.Mod.CollabUtils2.LobbyHelper::modSelectSlotCollectedStrawberries
+  IL_001c: ldfld System.Int32 Celeste.OuiFileSelectSlot::maxStrawberryCountIncludingUntracked
+  IL_0021: clt
+  IL_0023: ldc.i4.0
+  IL_0024: ceq
+  IL_0026: ret
+  IL_0027: ldc.i4.0
+  IL_0028: ret

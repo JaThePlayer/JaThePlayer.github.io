@@ -1,0 +1,102 @@
+IL Diff: System.Void Celeste.Level::Reload()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Level::Completed
+  IL_0006: brtrue IL_012e
+  IL_000b: ldarg.0
+  IL_000c: ldfld Celeste.Session Celeste.Level::Session
+  IL_0011: ldfld System.Boolean Celeste.Session::FirstLevel
+  IL_0016: brfalse.s IL_0072
+  IL_0018: ldarg.0
+  IL_0019: ldfld Celeste.Session Celeste.Level::Session
+  IL_001e: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_0023: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.EntityID>::get_Count()
+  IL_0028: ldc.i4.0
+  IL_0029: bgt.s IL_0072
+  IL_002b: ldarg.0
+  IL_002c: ldfld Celeste.Session Celeste.Level::Session
+  IL_0031: ldfld System.Boolean Celeste.Session::Cassette
+  IL_0036: brtrue.s IL_0072
+  IL_0038: ldarg.0
+  IL_0039: ldfld Celeste.Session Celeste.Level::Session
+  IL_003e: ldfld System.Boolean Celeste.Session::HeartGem
+  IL_0043: brtrue.s IL_0072
+  IL_0045: ldarg.0
+  IL_0046: ldfld Celeste.Session Celeste.Level::Session
+  IL_004b: ldfld System.Boolean Celeste.Session::HitCheckpoint
+  IL_0050: brtrue.s IL_0072
+  IL_0052: ldarg.0
+  IL_0053: ldfld Celeste.Session Celeste.Level::Session
+  IL_0058: ldc.i4.0
+  IL_0059: conv.i8
+  IL_005a: stfld System.Int64 Celeste.Session::Time
+  IL_005f: ldarg.0
+  IL_0060: ldfld Celeste.Session Celeste.Level::Session
+  IL_0065: ldc.i4.0
+  IL_0066: stfld System.Int32 Celeste.Session::Deaths
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::LevelOnReload
++ IL_0000: ldc.i4 928603 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::LevelOnReload
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::LevelOnReload
+  |-> retrieves System.Void Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils/<>c::<LevelOnReload>b__10_3(Celeste.Level)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::LevelOnReload
++ IL_006b: ldarg.0 @ Celeste.Mod.SpeedrunTool.SaveLoad.StateMarkUtils::LevelOnReload
+  IL_006c: ldc.i4.0
+  IL_006d: stfld System.Boolean Celeste.Level::TimerStarted
+  IL_0072: ldarg.0
+  IL_0073: ldfld Celeste.Session Celeste.Level::Session
+  IL_0078: ldarg.0
+  IL_0079: ldfld Celeste.Session Celeste.Level::Session
+  IL_007e: ldfld System.Int32 Celeste.Session::DashesAtLevelStart
+  IL_0083: stfld System.Int32 Celeste.Session::Dashes
+  IL_0088: ldc.r4 0
+  IL_008d: stsfld System.Single Celeste.Glitch::Value
+  IL_0092: ldc.r4 1
+  IL_0097: stsfld System.Single Monocle.Engine::TimeRate
+  IL_009c: ldc.r4 0
+  IL_00a1: call System.Void Celeste.Distort::set_Anxiety(System.Single)
+  IL_00a6: ldc.r4 1
+  IL_00ab: call System.Void Celeste.Distort::set_GameRate(System.Single)
+  IL_00b0: ldstr "fade"
+  IL_00b5: ldc.r4 1
+  IL_00ba: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesBG
+  IL_00c5: callvirt System.Void Monocle.ParticleSystem::Clear()
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_00d0: callvirt System.Void Monocle.ParticleSystem::Clear()
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_00db: callvirt System.Void Monocle.ParticleSystem::Clear()
+  IL_00e0: call System.Void Celeste.TrailManager::Clear()
+  IL_0000: ldarg.0
++ IL_0000: call System.Boolean VivHelper.Entities.SpawnPointHooks::SkipReload(Celeste.Level) @ VivHelper.Entities.SpawnPointHooks::Level_Reload
++ IL_0000: brtrue IL_00fd @ VivHelper.Entities.SpawnPointHooks::Level_Reload
++ IL_00e5: ldarg.0 @ VivHelper.Entities.SpawnPointHooks::Level_Reload
+  IL_00e6: callvirt System.Void Celeste.Level::UnloadLevel()
++ IL_0000: call System.Boolean TAS.EverestInterop.FastForwardBoost::IsIgnoreGcCollect() @ TAS.EverestInterop.FastForwardBoost::IgnoreGcCollect
++ IL_0000: brtrue IL_00f5 @ TAS.EverestInterop.FastForwardBoost::IgnoreGcCollect
+  IL_00eb: call System.Void System.GC::Collect()
+  IL_00f0: call System.Void System.GC::WaitForPendingFinalizers()
+  IL_00f5: ldarg.0
++ IL_0000: call Celeste.Level VivHelper.Entities.SpawnPointHooks::ModifyRoomToRespawnTo(Celeste.Level) @ VivHelper.Entities.SpawnPointHooks::Level_Reload
+  IL_00f6: ldc.i4.1
+  IL_00f7: ldc.i4.0
+  IL_00f8: callvirt System.Void Celeste.Level::LoadLevel(Celeste.Player/IntroTypes,System.Boolean)
+  IL_00fd: ldarg.0
+  IL_00fe: ldfld Celeste.TotalStrawberriesDisplay Celeste.Level::strawberriesDisplay
+  IL_0103: ldc.r4 0
+  IL_0108: stfld System.Single Celeste.TotalStrawberriesDisplay::DrawLerp
+  IL_010d: ldarg.0
+  IL_010e: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0113: callvirt T Monocle.EntityList::FindFirst<Celeste.WindController>()
+  IL_0118: stloc.0
+  IL_0119: ldloc.0
+  IL_011a: brfalse.s IL_0123
+  IL_011c: ldloc.0
+  IL_011d: callvirt System.Void Celeste.WindController::SnapWind()
+  IL_0122: ret
+  IL_0123: ldarg.0
+  IL_0124: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0129: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_012e: ret

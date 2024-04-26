@@ -1,0 +1,333 @@
+IL Diff: System.Int32 Celeste.Player::DreamDashUpdate()
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: stloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: stloc V_5 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: brfalse IL_0000 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: callvirt System.Void Celeste.Mod.Procedurline.CustomDreamBlock::UpdatePlayer(Celeste.Player) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: ldc.i4.0
+  IL_0001: ldc.i4.1
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: brfalse IL_0002 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: br IL_0007 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0002: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0007: ldarg.0
+  IL_0008: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_000d: stloc.0
+  IL_000e: ldarg.0
+  IL_000f: ldarg.0
+  IL_0010: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0015: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_001a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: brfalse IL_001f @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: br IL_0024 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_001f: call System.Void Celeste.Actor::NaiveMove(Microsoft.Xna.Framework.Vector2)
+  IL_0024: ldarg.0
+  IL_0025: ldfld System.Single Celeste.Player::dreamDashCanEndTimer
+  IL_002a: ldc.r4 0
+  IL_002f: ble.un.s IL_0043
+  IL_0031: ldarg.0
+  IL_0032: ldarg.0
+  IL_0033: ldfld System.Single Celeste.Player::dreamDashCanEndTimer
+  IL_0038: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_003d: sub
+  IL_003e: stfld System.Single Celeste.Player::dreamDashCanEndTimer
+  IL_0043: ldarg.0
+  IL_0044: call T Monocle.Entity::CollideFirst<Celeste.DreamBlock>()
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: ldc.i4 66726527 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
+  |-> retrieves Celeste.DreamBlock Celeste.Mod.CommunalHelper.Components.DreamDashCollider/<>c::<Player_DreamDashUpdate>b__17_0(Celeste.DreamBlock,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.DreamBlock,Celeste.DreamBlock,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
+  IL_0049: stloc.1
+  IL_004a: ldloc.1
+  IL_004b: brtrue IL_0214
+  IL_0050: ldarg.0
+  IL_0051: callvirt System.Boolean Celeste.Player::DreamDashedIntoSolid()
+  IL_0056: brfalse.s IL_00b0
+  IL_0058: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_005d: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0062: ldfld System.Boolean Celeste.Assists::Invincible
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: brfalse IL_0067
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: ldarg.0
++ IL_0000: ldloc V_5 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: callvirt System.Int32 Celeste.Mod.Procedurline.CustomDreamBlock::OnCollideSolid(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ret @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0067: brfalse.s IL_009d @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0069: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_006a: ldloc.0
+  IL_006b: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0070: ldarg.0
+  IL_0071: ldarg.0
+  IL_0072: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0077: ldc.r4 -1
+  IL_007c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0081: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0086: ldarg.0
+  IL_0087: ldstr "event:/game/general/assist_dreamblockbounce"
+  IL_008c: ldnull
+  IL_008d: ldc.r4 0
+  IL_0092: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0097: pop
+  IL_0098: br IL_0288
+  IL_009d: ldarg.0
+  IL_009e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00a3: ldc.i4.0
+  IL_00a4: ldc.i4.1
+  IL_00a5: callvirt Celeste.PlayerDeadBody Celeste.Player::Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_00aa: pop
+  IL_00ab: br IL_0288
+  IL_00b0: ldarg.0
+  IL_00b1: ldfld System.Single Celeste.Player::dreamDashCanEndTimer
+  IL_00b6: ldc.r4 0
+  IL_00bb: bgt.un IL_0288
+  IL_00c0: ldc.r4 0.05
+  IL_00c5: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_00ca: ldsfld Monocle.VirtualButton Celeste.Input::Jump
+  IL_00cf: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
++ IL_0000: ldc.i4 2959 @ ExtendedVariants.Variants.JumpCount::preventDreamJumping
++ IL_0000: ldc.i4 41624710 @ ExtendedVariants.Variants.JumpCount::preventDreamJumping
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.JumpCount::preventDreamJumping
+  |-> retrieves System.Boolean ExtendedVariants.Variants.JumpCount::<preventDreamJumping>b__10_2(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.JumpCount::preventDreamJumping
+  IL_00d4: brfalse.s IL_00fc
+  IL_00d6: ldarg.0
+  IL_00d7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00dc: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00e1: ldc.r4 0
+  IL_00e6: beq.s IL_00fc
+  IL_00e8: ldarg.0
+  IL_00e9: ldc.i4.1
+  IL_00ea: stfld System.Boolean Celeste.Player::dreamJump
+  IL_00ef: ldarg.0
+  IL_00f0: ldc.i4.1
+  IL_00f1: ldc.i4.1
+  IL_00f2: callvirt System.Void Celeste.Player::Jump(System.Boolean,System.Boolean)
+  IL_00f7: br IL_0212
+  IL_00fc: ldarg.0
+  IL_00fd: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0102: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0107: ldc.r4 0
+  IL_010c: bge.s IL_0123
+  IL_010e: ldarg.0
+  IL_010f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0114: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0119: ldc.r4 0
+  IL_011e: beq IL_0212
+  IL_0123: ldarg.0
+  IL_0124: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0129: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_012e: ldc.r4 0
+  IL_0133: ble.un.s IL_0164
+  IL_0135: ldarg.0
+  IL_0136: ldarg.0
+  IL_0137: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_013c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0141: ldc.r4 5
+  IL_0146: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_014b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0150: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0155: brfalse.s IL_0164
+  IL_0157: ldarg.0
+  IL_0158: ldc.i4.s -5
+  IL_015a: ldnull
+  IL_015b: ldnull
+  IL_015c: call System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_0161: pop
+  IL_0162: br.s IL_01a2
+  IL_0164: ldarg.0
+  IL_0165: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_016a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_016f: ldc.r4 0
+  IL_0174: bge.un.s IL_01a2
+  IL_0176: ldarg.0
+  IL_0177: ldarg.0
+  IL_0178: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_017d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0182: ldc.r4 5
+  IL_0187: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_018c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0191: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0196: brfalse.s IL_01a2
+  IL_0198: ldarg.0
+  IL_0199: ldc.i4.5
+  IL_019a: ldnull
+  IL_019b: ldnull
+  IL_019c: call System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_01a1: pop
+  IL_01a2: ldarg.0
+  IL_01a3: ldc.i4.m1
+  IL_01a4: ldc.i4.0
+  IL_01a5: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_01aa: stloc.2
+  IL_01ab: ldarg.0
+  IL_01ac: ldc.i4.1
+  IL_01ad: ldc.i4.0
+  IL_01ae: callvirt System.Boolean Celeste.Player::ClimbCheck(System.Int32,System.Int32)
+  IL_01b3: stloc.3
+  IL_01b4: call System.Boolean Celeste.Input::get_GrabCheck()
++ IL_0000: ldc.i4 2961 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 16158346 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_01b9: brfalse.s IL_0212
+  IL_01bb: ldarg.0
+  IL_01bc: ldfld System.Int32 Celeste.Player::moveX
+  IL_01c1: ldc.i4.1
+  IL_01c2: ceq
+  IL_01c4: ldloc.3
+  IL_01c5: and
+  IL_01c6: brtrue.s IL_01d5
+  IL_01c8: ldarg.0
+  IL_01c9: ldfld System.Int32 Celeste.Player::moveX
+  IL_01ce: ldc.i4.m1
+  IL_01cf: ceq
+  IL_01d1: ldloc.2
+  IL_01d2: and
+  IL_01d3: brfalse.s IL_0212
+  IL_01d5: ldarg.0
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld System.Int32 Celeste.Player::moveX
+  IL_01dc: stfld Celeste.Facings Celeste.Player::Facing
+  IL_01e1: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_01e6: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_01eb: ldfld System.Boolean Celeste.Assists::NoGrabbing
+  IL_01f0: brfalse.s IL_0210
+  IL_01f2: ldarg.0
+  IL_01f3: ldarg.0
+  IL_01f4: ldfld System.Int32 Celeste.Player::moveX
+  IL_01f9: callvirt System.Void Celeste.Player::ClimbTrigger(System.Int32)
+  IL_01fe: ldarg.0
+  IL_01ff: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0204: ldc.r4 0
+  IL_0209: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_020e: br.s IL_0212
+  IL_0210: ldc.i4.1
+  IL_0211: ret
+  IL_0212: ldc.i4.0
+  IL_0213: ret
++ IL_0000: ldloc.1 @ Celeste.Mod.TeraHelper.Entities.TeraDreamBlock::TeraDreamUpdate
++ IL_0000: call System.Boolean Celeste.Mod.TeraHelper.Entities.TeraDreamBlock::PlayerActivate(Celeste.DreamBlock) @ Celeste.Mod.TeraHelper.Entities.TeraDreamBlock::TeraDreamUpdate
++ IL_0000: brfalse IL_0058 @ Celeste.Mod.TeraHelper.Entities.TeraDreamBlock::TeraDreamUpdate
+  IL_0214: ldarg.0
+  IL_0215: ldloc.1
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: ldc.i4 36139578 @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
+  |-> retrieves Celeste.DreamBlock Celeste.Mod.CommunalHelper.Components.DreamDashCollider/<>c::<Player_DreamDashUpdate>b__17_2(Celeste.DreamBlock,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.DreamBlock,Celeste.DreamBlock,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Components.DreamDashCollider::Player_DreamDashUpdate
+  IL_0216: stfld Celeste.DreamBlock Celeste.Player::dreamBlock
+  IL_0000: ldarg.0
+- IL_021c: call Monocle.Scene Monocle.Entity::get_Scene() @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0221: ldc.r4 0.1 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0226: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ceq @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: brtrue IL_021b @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: brfalse IL_0000
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: ldarg.0
+- IL_022e: callvirt System.Void Celeste.Player::CreateTrail() @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_0000: ldarg.0
+- IL_0234: ldfld Celeste.Level Celeste.Player::level @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0239: ldc.r4 0.04 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_023e: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: callvirt System.Void Celeste.Mod.Procedurline.CustomDreamBlock::OnExit(Celeste.Player,Celeste.DreamBlock) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: brfalse IL_0000
+  IL_0000: ldarg.0
+- IL_0246: ldfld Celeste.Level Celeste.Player::level @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_024b: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+  IL_0000: ldarg.0
+- IL_0251: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center() @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0256: ldc.r4 0.3 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_025b: ldc.r4 0 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0260: ldc.r4 40 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0265: ldc.r4 1 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_026a: ldnull @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_026b: ldnull @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_026c: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0271: dup @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldfld Celeste.SoundSource Celeste.Player::dreamSfxLoop @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
+  IL_0000: ldarg.0
+  IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock
+- IL_0278: callvirt Monocle.Collider Monocle.Entity::get_Collider() @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_027d: stfld Monocle.Collider Celeste.DisplacementRenderer/Burst::WorldClipCollider @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0282: ldc.i4.2 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0283: stfld System.Int32 Celeste.DisplacementRenderer/Burst::WorldClipPadding @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_0288: ldc.i4.s 9 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
+- IL_028a: ret @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: callvirt System.String Celeste.Mod.Procedurline.CustomDreamBlock::get_TravelSFX() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: call System.Void Celeste.Player::Loop(Celeste.SoundSource,System.String) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: callvirt System.Void Celeste.Mod.Procedurline.CustomDreamBlock::OnEnter(Celeste.Player,Celeste.DreamBlock) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0000: stloc V_4 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_021b: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_021c: call Monocle.Scene Monocle.Entity::get_Scene() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0221: ldc.r4 0.1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0226: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_022b: brfalse.s IL_0233 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_022d: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_022e: callvirt System.Void Celeste.Player::CreateTrail() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0233: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0234: ldfld Celeste.Level Celeste.Player::level @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0239: ldc.r4 0.04 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_023e: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0243: brfalse.s IL_0288 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0245: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0246: ldfld Celeste.Level Celeste.Player::level @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_024b: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0250: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0251: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0256: ldc.r4 0.3 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_025b: ldc.r4 0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0260: ldc.r4 40 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0265: ldc.r4 1 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_026a: ldnull @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_026b: ldnull @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_026c: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer) @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0271: dup @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0272: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0273: ldfld Celeste.DreamBlock Celeste.Player::dreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0278: callvirt Monocle.Collider Monocle.Entity::get_Collider() @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_027d: stfld Monocle.Collider Celeste.DisplacementRenderer/Burst::WorldClipCollider @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0282: ldc.i4.2 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0283: stfld System.Int32 Celeste.DisplacementRenderer/Burst::WorldClipPadding @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_0288: ldc.i4.s 9 @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer
++ IL_028a: ret @ Celeste.Mod.Procedurline.CustomDreamBlock::DreamDashUpdateModifer

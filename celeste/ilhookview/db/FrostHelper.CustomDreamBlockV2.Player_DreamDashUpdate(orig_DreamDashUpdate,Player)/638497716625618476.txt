@@ -1,0 +1,128 @@
+IL Diff: System.Int32 FrostHelper.CustomDreamBlockV2::Player_DreamDashUpdate(On.Celeste.Player+orig_DreamDashUpdate,Celeste.Player)
+  IL_0000: ldarg.1
+  IL_0001: callvirt T Monocle.Entity::CollideFirst<FrostHelper.CustomDreamBlockV2>()
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: brfalse IL_0168
+  IL_000d: ldarg.1
+  IL_000e: call MonoMod.Utils.DynamicData MonoMod.Utils.DynamicData::For(System.Object)
+  IL_0013: stloc.1
+  IL_0014: ldloc.0
+  IL_0015: ldfld System.Boolean FrostHelper.CustomDreamBlockV2::ConserveSpeed
+  IL_001a: brtrue.s IL_0062
+  IL_001c: ldloc.1
+  IL_001d: ldstr "lastDreamSpeed"
+  IL_0022: callvirt T MonoMod.Utils.DynamicData::Get<System.Single>(System.String)
+  IL_0027: ldloc.0
+  IL_0028: ldfld System.Single FrostHelper.CustomDreamBlockV2::DashSpeed
+  IL_002d: beq.s IL_0062
+  IL_002f: ldarg.1
+  IL_0030: ldarg.1
+  IL_0031: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0036: ldloc.0
+  IL_0037: ldfld System.Single FrostHelper.CustomDreamBlockV2::DashSpeed
+  IL_003c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0041: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0046: ldloc.1
+  IL_0047: ldstr "lastDreamSpeed"
+  IL_004c: ldloc.0
+  IL_004d: ldfld System.Single FrostHelper.CustomDreamBlockV2::DashSpeed
+  IL_0052: ldc.r4 1
+  IL_0057: mul
+  IL_0058: box System.Single
+  IL_005d: callvirt System.Void MonoMod.Utils.DynamicData::Set(System.String,System.Object)
+  IL_0062: ldloc.0
+  IL_0063: ldfld System.Boolean FrostHelper.CustomDreamBlockV2::AllowRedirects
+  IL_0068: brfalse IL_0168
+  IL_006d: ldarg.1
+  IL_006e: callvirt System.Boolean Celeste.Player::get_CanDash()
+  IL_0073: brfalse IL_0168
++ IL_0000: ldloc.0 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
+  IL_0000: ldarg.1
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: ldc.i4 19537590 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
+  |-> retrieves System.Boolean Celeste.Mod.SaladimHelper.FrostHookModule/<>c::<OnFrostHelperDreamDashUpdateHook>b__3_2(Monocle.Entity,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Monocle.Entity,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: brfalse IL_0078 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: ldarg.0 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: ldarg.1 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: callvirt System.Int32 On.Celeste.Player/orig_DreamDashUpdate::Invoke(Celeste.Player) @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0000: ret @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
++ IL_0078: ldarg.1 @ Celeste.Mod.SaladimHelper.FrostHookModule::OnFrostHelperDreamDashUpdateHook
+  IL_0079: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_007e: call Microsoft.Xna.Framework.Vector2 Celeste.Input::GetAimVector(Celeste.Facings)
+  IL_0083: stloc.2
+  IL_0084: ldloc.2
+  IL_0085: ldarg.1
+  IL_0086: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_008b: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0090: stloc.3
+  IL_0091: ldloc.3
+  IL_0092: brfalse.s IL_009f
+  IL_0094: ldloc.0
+  IL_0095: ldfld System.Boolean FrostHelper.CustomDreamBlockV2::AllowRedirectsInSameDir
+  IL_009a: brfalse IL_0168
+  IL_009f: ldarg.1
+  IL_00a0: ldloc.2
+  IL_00a1: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00a6: ldarg.1
+  IL_00a7: ldarg.1
+  IL_00a8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00ad: ldarg.1
+  IL_00ae: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00b3: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_00b8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00bd: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00c2: ldarg.1
+  IL_00c3: ldc.i4.0
+  IL_00c4: ldarg.1
+  IL_00c5: ldfld System.Int32 Celeste.Player::Dashes
+  IL_00ca: ldc.i4.1
+  IL_00cb: sub
+  IL_00cc: call System.Int32 System.Math::Max(System.Int32,System.Int32)
+  IL_00d1: stfld System.Int32 Celeste.Player::Dashes
+  IL_00d6: ldstr "event:/char/madeline/dreamblock_enter"
+  IL_00db: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_00e0: pop
+  IL_00e1: ldloc.3
+  IL_00e2: brfalse.s IL_0118
+  IL_00e4: ldarg.1
+  IL_00e5: dup
+  IL_00e6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00eb: ldloc.0
+  IL_00ec: ldfld System.Single FrostHelper.CustomDreamBlockV2::SameDirectionSpeedMultiplier
+  IL_00f1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00f6: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00fb: ldarg.1
+  IL_00fc: dup
+  IL_00fd: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0102: ldloc.0
+  IL_0103: ldfld System.Single FrostHelper.CustomDreamBlockV2::SameDirectionSpeedMultiplier
+  IL_0108: call System.Int32 System.Math::Sign(System.Single)
+  IL_010d: conv.r4
+  IL_010e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0113: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0118: ldarg.1
+  IL_0119: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_011e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0123: ldc.r4 0
+  IL_0128: beq.s IL_0140
+  IL_012a: ldarg.1
+  IL_012b: ldarg.1
+  IL_012c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0131: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0136: call System.Int32 System.Math::Sign(System.Single)
+  IL_013b: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0140: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_0145: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_014a: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_014f: callvirt System.Void Monocle.VirtualButton::ConsumePress()
+  IL_0154: ldsfld Monocle.VirtualButton Celeste.Input::CrouchDash
+  IL_0159: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_015e: ldsfld Monocle.VirtualButton Celeste.Input::CrouchDash
+  IL_0163: callvirt System.Void Monocle.VirtualButton::ConsumePress()
+  IL_0168: ldarg.0
+  IL_0169: ldarg.1
+  IL_016a: callvirt System.Int32 On.Celeste.Player/orig_DreamDashUpdate::Invoke(Celeste.Player)
+  IL_016f: ret

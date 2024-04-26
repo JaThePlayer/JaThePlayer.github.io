@@ -1,0 +1,85 @@
+IL Diff: System.Void VivHelper.Entities.CustomCrystalDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Boolean,Monocle.Image,System.Single)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0008: ldarg.0
+  IL_0009: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_000e: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0013: ldnull
+  IL_0014: cgt.un
+  IL_0016: stloc.0
+  IL_0017: ldloc.0
+  IL_0018: brfalse.s IL_0027
+  IL_001a: ldarg.0
+  IL_001b: ldarg.0
+  IL_001c: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_0021: call System.Void Monocle.Entity::Remove(Monocle.Component)
+  IL_0026: nop
+  IL_0027: ldarg.0
+  IL_0028: ldarg.s i
+  IL_002a: stfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_002f: ldarg.0
+  IL_0030: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_0035: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_003a: pop
+  IL_003b: ldarg.0
+  IL_003c: ldarg.0
+  IL_003d: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_0042: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0047: nop
+  IL_0048: ldarg.0
+  IL_0049: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_004e: ldarg.0
+  IL_004f: ldarg.2
+  IL_0050: dup
+  IL_0051: stloc.1
+  IL_0052: stfld Microsoft.Xna.Framework.Color VivHelper.Entities.CustomCrystalDebris::color
+  IL_0057: ldloc.1
+  IL_0058: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_005d: ldarg.0
+  IL_005e: ldfld Monocle.Image VivHelper.Entities.CustomCrystalDebris::image
+  IL_0063: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0068: ldarg.s scale
+  IL_006a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_006f: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0074: ldarg.0
+  IL_0075: ldc.r4 0
+  IL_007a: stfld System.Single VivHelper.Entities.CustomCrystalDebris::percent
+  IL_007f: ldarg.0
+  IL_0080: ldarg.3
+  IL_0081: brtrue.s IL_0099
+  IL_0083: ldsfld System.Random Monocle.Calc::Random
+  IL_0088: ldc.r4 1
+  IL_008d: ldc.r4 2
+  IL_0092: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0097: br.s IL_00ad
+  IL_0099: ldsfld System.Random Monocle.Calc::Random
+  IL_009e: ldc.r4 0.25
+  IL_00a3: ldc.r4 1
+  IL_00a8: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_00ad: stfld System.Single VivHelper.Entities.CustomCrystalDebris::duration
+  IL_00b2: ldarg.0
+  IL_00b3: ldsfld System.Random Monocle.Calc::Random
+  IL_00b8: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_00bd: ldarg.3
+  IL_00be: brtrue.s IL_00d3
+  IL_00c0: ldsfld System.Random Monocle.Calc::Random
+  IL_00c5: ldc.i4.s 60
+  IL_00c7: ldc.i4 160
+  IL_00cc: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00d1: br.s IL_00e7
+  IL_00d3: ldsfld System.Random Monocle.Calc::Random
+  IL_00d8: ldc.i4 200
+  IL_00dd: ldc.i4 240
+  IL_00e2: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00e7: conv.r4
+  IL_00e8: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_00ed: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.CustomCrystalDebris::speed
+  IL_00f2: ldarg.0
+  IL_00f3: ldarg.3
+  IL_00f4: stfld System.Boolean VivHelper.Entities.CustomCrystalDebris::bossShatter
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_00f9: ret

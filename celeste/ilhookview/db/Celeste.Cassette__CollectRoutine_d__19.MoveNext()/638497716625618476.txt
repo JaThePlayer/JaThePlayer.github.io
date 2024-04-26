@@ -1,0 +1,557 @@
+IL Diff: System.Boolean Celeste.Cassette/<CollectRoutine>d__19::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Cassette Celeste.Cassette/<CollectRoutine>d__19::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_003a,IL_02a6,IL_030c,IL_03e2,IL_0492,IL_04ab,IL_04ed,IL_0577,IL_0678
+  IL_0038: ldc.i4.0
+  IL_0039: ret
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.m1
+  IL_003c: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0041: ldloc.1
+  IL_0042: ldc.i4.1
+  IL_0043: stfld System.Boolean Celeste.Cassette::collecting
+  IL_0048: ldarg.0
+  IL_0049: ldloc.1
+  IL_004a: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004f: isinst Celeste.Level
+  IL_0054: stfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0059: ldarg.0
+  IL_005a: ldloc.1
+  IL_005b: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0060: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0065: callvirt T Monocle.Tracker::GetEntity<Celeste.CassetteBlockManager>()
+  IL_006a: stfld Celeste.CassetteBlockManager Celeste.Cassette/<CollectRoutine>d__19::<cbm>5__3
+  IL_006f: ldarg.0
+  IL_0070: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0075: ldc.i4.1
+  IL_0076: stfld System.Boolean Celeste.Level::PauseLock
+  IL_007b: ldarg.0
+  IL_007c: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0081: ldc.i4.1
+  IL_0082: stfld System.Boolean Celeste.Level::Frozen
+  IL_0087: ldloc.1
+  IL_0088: ldsfld Monocle.BitTag Celeste.Tags::FrozenUpdate
+  IL_008d: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0092: callvirt System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_0097: ldarg.0
+  IL_0098: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_009d: ldfld Celeste.Session Celeste.Level::Session
+  IL_00a2: ldc.i4.1
+  IL_00a3: stfld System.Boolean Celeste.Session::Cassette
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_00ae: ldfld Celeste.Session Celeste.Level::Session
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_00b9: ldloc.1
+  IL_00ba: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Cassette::nodes
+  IL_00bf: ldc.i4.1
+  IL_00c0: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_00c5: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::GetSpawnPoint(Microsoft.Xna.Framework.Vector2)
+  IL_00ca: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
++ IL_0000: ldc.i4 2962 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: ldc.i4 19778721 @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  |-> retrieves System.Void ExtendedVariants.Variants.RestoreDashesOnRespawn/<>c::<updateDashCountOnRespawnPointChange>b__6_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.RestoreDashesOnRespawn::updateDashCountOnRespawnPointChange
+  IL_00cf: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.Session::RespawnPoint
+  IL_00d4: ldarg.0
+  IL_00d5: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_00da: ldfld Celeste.Session Celeste.Level::Session
+  IL_00df: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: ldc.i4 13020344 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
+  IL_00e4: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_00ef: ldfld Celeste.Session Celeste.Level::Session
+  IL_00f4: ldfld Celeste.AreaKey Celeste.Session::Area
+  IL_00f9: callvirt System.Void Celeste.SaveData::RegisterCassette(Celeste.AreaKey)
+  IL_00fe: ldarg.0
+  IL_00ff: ldfld Celeste.CassetteBlockManager Celeste.Cassette/<CollectRoutine>d__19::<cbm>5__3
+  IL_0104: brfalse.s IL_0111
+  IL_0106: ldarg.0
+  IL_0107: ldfld Celeste.CassetteBlockManager Celeste.Cassette/<CollectRoutine>d__19::<cbm>5__3
+  IL_010c: callvirt System.Void Celeste.CassetteBlockManager::StopBlocks()
+  IL_0111: ldloc.1
+  IL_0112: ldc.i4 -1000000
+  IL_0117: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_011c: ldarg.0
+  IL_011d: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0122: ldc.r4 0.3
+  IL_0127: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_012c: ldarg.0
+  IL_012d: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0132: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0137: ldc.i4.0
+  IL_0138: callvirt System.Void Celeste.Level::Flash(Microsoft.Xna.Framework.Color,System.Boolean)
+  IL_013d: ldarg.0
+  IL_013e: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0143: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_0148: callvirt System.Void Celeste.DisplacementRenderer::Clear()
+  IL_014d: ldarg.0
+  IL_014e: ldarg.0
+  IL_014f: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0154: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0159: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_015e: stfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<camWas>5__4
+  IL_0163: ldarg.0
+  IL_0164: ldloc.1
+  IL_0165: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_016a: ldc.r4 160
+  IL_016f: ldc.r4 90
+  IL_0174: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0179: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_017e: ldarg.0
+  IL_017f: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0184: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0189: stloc.2
+  IL_018a: ldloca.s V_2
+  IL_018c: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0191: ldc.i4.s 64
+  IL_0193: sub
+  IL_0194: conv.r4
+  IL_0195: ldarg.0
+  IL_0196: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_019b: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_01a0: stloc.2
+  IL_01a1: ldloca.s V_2
+  IL_01a3: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_01a8: ldc.i4.s 32
+  IL_01aa: sub
+  IL_01ab: conv.r4
+  IL_01ac: ldarg.0
+  IL_01ad: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_01b2: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_01b7: stloc.2
+  IL_01b8: ldloca.s V_2
+  IL_01ba: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_01bf: ldc.i4.s 64
+  IL_01c1: add
+  IL_01c2: ldc.i4 320
+  IL_01c7: sub
+  IL_01c8: conv.r4
+  IL_01c9: ldarg.0
+  IL_01ca: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_01cf: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_01d4: stloc.2
+  IL_01d5: ldloca.s V_2
+  IL_01d7: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_01dc: ldc.i4.s 32
+  IL_01de: add
+  IL_01df: ldc.i4 180
+  IL_01e4: sub
+  IL_01e5: conv.r4
+  IL_01e6: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Clamp(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single)
+  IL_01eb: stfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<camTo>5__5
+  IL_01f0: ldarg.0
+  IL_01f1: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_01f6: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_01fb: ldarg.0
+  IL_01fc: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<camTo>5__5
+  IL_0201: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0206: ldarg.0
+  IL_0207: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_020c: ldloc.1
+  IL_020d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0212: ldarg.0
+  IL_0213: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0218: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_021d: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0222: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0227: ldc.r4 60
+  IL_022c: ldc.r4 60
+  IL_0231: ldc.r4 260
+  IL_0236: ldc.r4 120
+  IL_023b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Clamp(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single)
+  IL_0240: ldc.r4 2
+  IL_0245: callvirt System.Void Celeste.Level::ZoomSnap(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_024a: ldloc.1
+  IL_024b: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_0250: ldstr "spin"
+  IL_0255: ldc.i4.1
+  IL_0256: ldc.i4.0
+  IL_0257: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_025c: ldloc.1
+  IL_025d: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_0262: ldc.r4 2
+  IL_0267: stfld System.Single Monocle.Sprite::Rate
+  IL_026c: ldarg.0
+  IL_026d: ldc.r4 0
+  IL_0272: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0277: br.s IL_02bf
+  IL_0279: ldloc.1
+  IL_027a: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_027f: dup
+  IL_0280: ldfld System.Single Monocle.Sprite::Rate
+  IL_0285: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_028a: ldc.r4 4
+  IL_028f: mul
+  IL_0290: add
+  IL_0291: stfld System.Single Monocle.Sprite::Rate
+  IL_0296: ldarg.0
+  IL_0297: ldnull
+  IL_0298: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_029d: ldarg.0
+  IL_029e: ldc.i4.1
+  IL_029f: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_02a4: ldc.i4.1
+  IL_02a5: ret
+  IL_02a6: ldarg.0
+  IL_02a7: ldc.i4.m1
+  IL_02a8: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_02ad: ldarg.0
+  IL_02ae: ldarg.0
+  IL_02af: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_02b4: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02b9: add
+  IL_02ba: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_02bf: ldarg.0
+  IL_02c0: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_02c5: ldc.r4 1.5
+  IL_02ca: blt.s IL_0279
+  IL_02cc: ldloc.1
+  IL_02cd: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_02d2: ldc.r4 0
+  IL_02d7: stfld System.Single Monocle.Sprite::Rate
+  IL_02dc: ldloc.1
+  IL_02dd: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_02e2: ldc.i4.0
+  IL_02e3: callvirt System.Void Monocle.Sprite::SetAnimationFrame(System.Int32)
+  IL_02e8: ldloc.1
+  IL_02e9: ldfld Monocle.Wiggler Celeste.Cassette::scaleWiggler
+  IL_02ee: callvirt System.Void Monocle.Wiggler::Start()
+  IL_02f3: ldarg.0
+  IL_02f4: ldc.r4 0.25
+  IL_02f9: box System.Single
+  IL_02fe: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_0303: ldarg.0
+  IL_0304: ldc.i4.2
+  IL_0305: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_030a: ldc.i4.1
+  IL_030b: ret
+  IL_030c: ldarg.0
+  IL_030d: ldc.i4.m1
+  IL_030e: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0313: ldarg.0
+  IL_0314: ldloc.1
+  IL_0315: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_031a: stfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<from>5__6
+  IL_031f: ldarg.0
+  IL_0320: ldloc.1
+  IL_0321: callvirt System.Single Monocle.Entity::get_X()
+  IL_0326: ldarg.0
+  IL_0327: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_032c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0331: callvirt System.Single Monocle.Camera::get_Top()
+  IL_0336: ldc.r4 16
+  IL_033b: sub
+  IL_033c: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0341: stfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<to>5__7
+  IL_0346: ldarg.0
+  IL_0347: ldc.r4 0.4
+  IL_034c: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<duration>5__8
+  IL_0351: ldarg.0
+  IL_0352: ldc.r4 0
+  IL_0357: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_035c: br IL_0402
+  IL_0361: ldloc.1
+  IL_0362: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_0367: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_036c: ldc.r4 1
+  IL_0371: ldc.r4 0.1
+  IL_0376: ldarg.0
+  IL_0377: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_037c: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_0381: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0386: ldloc.1
+  IL_0387: ldfld Monocle.Sprite Celeste.Cassette::sprite
+  IL_038c: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0391: ldc.r4 1
+  IL_0396: ldc.r4 3
+  IL_039b: ldarg.0
+  IL_039c: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_03a1: call System.Single Microsoft.Xna.Framework.MathHelper::Lerp(System.Single,System.Single,System.Single)
+  IL_03a6: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_03ab: ldloc.1
+  IL_03ac: ldarg.0
+  IL_03ad: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<from>5__6
+  IL_03b2: ldarg.0
+  IL_03b3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<to>5__7
+  IL_03b8: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_03bd: ldarg.0
+  IL_03be: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_03c3: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_03c8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03cd: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03d2: ldarg.0
+  IL_03d3: ldnull
+  IL_03d4: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_03d9: ldarg.0
+  IL_03da: ldc.i4.3
+  IL_03db: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_03e0: ldc.i4.1
+  IL_03e1: ret
+  IL_03e2: ldarg.0
+  IL_03e3: ldc.i4.m1
+  IL_03e4: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_03e9: ldarg.0
+  IL_03ea: ldarg.0
+  IL_03eb: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_03f0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03f5: ldarg.0
+  IL_03f6: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<duration>5__8
+  IL_03fb: div
+  IL_03fc: add
+  IL_03fd: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0402: ldarg.0
+  IL_0403: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0408: ldc.r4 1
+  IL_040d: blt IL_0361
+  IL_0412: ldloc.1
+  IL_0413: ldc.i4.0
+  IL_0414: stfld System.Boolean Monocle.Entity::Visible
+  IL_0419: ldarg.0
+  IL_041a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<from>5__6
+  IL_041f: initobj Microsoft.Xna.Framework.Vector2
+  IL_0425: ldarg.0
+  IL_0426: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<to>5__7
+  IL_042b: initobj Microsoft.Xna.Framework.Vector2
+  IL_0431: ldloc.1
+  IL_0432: ldstr "event:/game/general/cassette_preview"
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldfld Celeste.Cassette Celeste.Cassette/<CollectRoutine>d__19::<>4__this @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 2956 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 50074237 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  |-> retrieves System.String Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic/<>c__DisplayClass4_0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<modCassetteParam>b__0(System.String,Celeste.Cassette)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Cassette>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  IL_0437: ldstr "remix"
+  IL_0000: ldarg.0
++ IL_0000: ldfld Celeste.Cassette Celeste.Cassette/<CollectRoutine>d__19::<>4__this @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 2958 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 29481409 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  |-> retrieves System.String Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic/<>c__DisplayClass4_0`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<modCassetteParam>b__0(System.String,Celeste.Cassette)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Cassette>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_043c: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  IL_043d: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0442: ldfld Celeste.Session Celeste.Level::Session
+  IL_0447: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_044c: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_0451: conv.r4
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldfld Celeste.Cassette Celeste.Cassette/<CollectRoutine>d__19::<>4__this @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 2960 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: ldc.i4 39183892 @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  |-> retrieves System.Single Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic/<>c__DisplayClass4_0`1[[System.Single, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<modCassetteParam>b__0(System.Single,Celeste.Cassette)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Cassette>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.JungleHelper.Entities.CassetteCustomPreviewMusic::modCollectRoutine
+  IL_0452: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,System.String,System.Single)
+  IL_0457: stfld FMOD.Studio.EventInstance Celeste.Cassette::remixSfx
+  IL_045c: ldarg.0
+  IL_045d: newobj System.Void Celeste.Cassette/UnlockedBSide::.ctor()
+  IL_0462: stfld Celeste.Cassette/UnlockedBSide Celeste.Cassette/<CollectRoutine>d__19::<message>5__10
+  IL_0467: ldloc.1
+  IL_0468: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_046d: ldarg.0
+  IL_046e: ldfld Celeste.Cassette/UnlockedBSide Celeste.Cassette/<CollectRoutine>d__19::<message>5__10
+  IL_0473: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0478: ldarg.0
+  IL_0479: ldarg.0
+  IL_047a: ldfld Celeste.Cassette/UnlockedBSide Celeste.Cassette/<CollectRoutine>d__19::<message>5__10
+  IL_047f: callvirt System.Collections.IEnumerator Celeste.Cassette/UnlockedBSide::EaseIn()
+  IL_0484: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_0489: ldarg.0
+  IL_048a: ldc.i4.4
+  IL_048b: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0490: ldc.i4.1
+  IL_0491: ret
+  IL_0492: ldarg.0
+  IL_0493: ldc.i4.m1
+  IL_0494: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0499: br.s IL_04b2
+  IL_049b: ldarg.0
+  IL_049c: ldnull
+  IL_049d: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_04a2: ldarg.0
+  IL_04a3: ldc.i4.5
+  IL_04a4: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_04a9: ldc.i4.1
+  IL_04aa: ret
+  IL_04ab: ldarg.0
+  IL_04ac: ldc.i4.m1
+  IL_04ad: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_04b2: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_04b7: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_04bc: brfalse.s IL_049b
+  IL_04be: ldloc.1
+  IL_04bf: ldfld FMOD.Studio.EventInstance Celeste.Cassette::remixSfx
+  IL_04c4: ldstr "end"
+  IL_04c9: ldc.r4 1
+  IL_04ce: call System.Void Celeste.Audio::SetParameter(FMOD.Studio.EventInstance,System.String,System.Single)
+  IL_04d3: ldarg.0
+  IL_04d4: ldarg.0
+  IL_04d5: ldfld Celeste.Cassette/UnlockedBSide Celeste.Cassette/<CollectRoutine>d__19::<message>5__10
+  IL_04da: callvirt System.Collections.IEnumerator Celeste.Cassette/UnlockedBSide::EaseOut()
+  IL_04df: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_04e4: ldarg.0
+  IL_04e5: ldc.i4.6
+  IL_04e6: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_04eb: ldc.i4.1
+  IL_04ec: ret
+  IL_04ed: ldarg.0
+  IL_04ee: ldc.i4.m1
+  IL_04ef: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_04f4: ldarg.0
+  IL_04f5: ldnull
+  IL_04f6: stfld Celeste.Cassette/UnlockedBSide Celeste.Cassette/<CollectRoutine>d__19::<message>5__10
+  IL_04fb: ldarg.0
+  IL_04fc: ldc.r4 0.25
+  IL_0501: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<duration>5__8
+  IL_0506: ldloc.1
+  IL_0507: ldarg.0
+  IL_0508: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_050d: ldarg.0
+  IL_050e: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<duration>5__8
+  IL_0513: ldc.r4 0.05
+  IL_0518: sub
+  IL_0519: callvirt System.Collections.IEnumerator Celeste.Level::ZoomBack(System.Single)
+  IL_051e: ldc.i4.1
+  IL_051f: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0524: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0529: ldarg.0
+  IL_052a: ldc.r4 0
+  IL_052f: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0534: br.s IL_0597
+  IL_0536: ldarg.0
+  IL_0537: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_053c: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0541: ldarg.0
+  IL_0542: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<camTo>5__5
+  IL_0547: ldarg.0
+  IL_0548: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Cassette/<CollectRoutine>d__19::<camWas>5__4
+  IL_054d: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0552: ldarg.0
+  IL_0553: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0558: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_055d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0562: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0567: ldarg.0
+  IL_0568: ldnull
+  IL_0569: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_056e: ldarg.0
+  IL_056f: ldc.i4.7
+  IL_0570: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0575: ldc.i4.1
+  IL_0576: ret
+  IL_0577: ldarg.0
+  IL_0578: ldc.i4.m1
+  IL_0579: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_057e: ldarg.0
+  IL_057f: ldarg.0
+  IL_0580: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0585: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_058a: ldarg.0
+  IL_058b: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<duration>5__8
+  IL_0590: div
+  IL_0591: add
+  IL_0592: stfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_0597: ldarg.0
+  IL_0598: ldfld System.Single Celeste.Cassette/<CollectRoutine>d__19::<p>5__9
+  IL_059d: ldc.r4 1
+  IL_05a2: blt.s IL_0536
+  IL_05a4: ldarg.0
+  IL_05a5: ldfld Celeste.Player Celeste.Cassette/<CollectRoutine>d__19::player
+  IL_05aa: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_05af: brtrue.s IL_0616
+  IL_05b1: ldloc.1
+  IL_05b2: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Cassette::nodes
+  IL_05b7: brfalse.s IL_0616
+  IL_05b9: ldloc.1
+  IL_05ba: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Cassette::nodes
+  IL_05bf: ldlen
+  IL_05c0: conv.i4
+  IL_05c1: ldc.i4.2
+  IL_05c2: blt.s IL_0616
+  IL_05c4: ldstr "event:/game/general/cassette_bubblereturn"
+  IL_05c9: ldarg.0
+  IL_05ca: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_05cf: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_05d4: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_05d9: ldc.r4 160
+  IL_05de: ldc.r4 90
+  IL_05e3: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_05e8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_05ed: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_05f2: pop
+  IL_05f3: ldarg.0
+  IL_05f4: ldfld Celeste.Player Celeste.Cassette/<CollectRoutine>d__19::player
+  IL_05f9: ldloc.1
+  IL_05fa: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Cassette::nodes
+  IL_05ff: ldc.i4.1
+  IL_0600: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0605: ldloc.1
+  IL_0606: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.Cassette::nodes
+  IL_060b: ldc.i4.0
+  IL_060c: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0611: callvirt System.Void Celeste.Player::StartCassetteFly(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0616: ldarg.0
+  IL_0617: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_061c: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0621: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.SandwichLava>()
+  IL_0626: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SandwichLava>::GetEnumerator()
+  IL_062b: stloc.3
+  IL_062c: br.s IL_063a
+  IL_062e: ldloca.s V_3
+  IL_0630: call T System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>::get_Current()
+  IL_0635: callvirt System.Void Celeste.SandwichLava::Leave()
+  IL_063a: ldloca.s V_3
+  IL_063c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>::MoveNext()
+  IL_0641: brtrue.s IL_062e
+  IL_0643: leave.s IL_0653
+  IL_0645: ldloca.s V_3
+  IL_0647: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>
+  IL_064d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0652: endfinally
+  IL_0653: ldarg.0
+  IL_0654: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0659: ldc.i4.0
+  IL_065a: stfld System.Boolean Celeste.Level::Frozen
+  IL_065f: ldarg.0
+  IL_0660: ldc.r4 0.25
+  IL_0665: box System.Single
+  IL_066a: stfld System.Object Celeste.Cassette/<CollectRoutine>d__19::<>2__current
+  IL_066f: ldarg.0
+  IL_0670: ldc.i4.8
+  IL_0671: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_0676: ldc.i4.1
+  IL_0677: ret
+  IL_0678: ldarg.0
+  IL_0679: ldc.i4.m1
+  IL_067a: stfld System.Int32 Celeste.Cassette/<CollectRoutine>d__19::<>1__state
+  IL_067f: ldarg.0
+  IL_0680: ldfld Celeste.CassetteBlockManager Celeste.Cassette/<CollectRoutine>d__19::<cbm>5__3
+  IL_0685: brfalse.s IL_0692
+  IL_0687: ldarg.0
+  IL_0688: ldfld Celeste.CassetteBlockManager Celeste.Cassette/<CollectRoutine>d__19::<cbm>5__3
+  IL_068d: callvirt System.Void Celeste.CassetteBlockManager::Finish()
+  IL_0692: ldarg.0
+  IL_0693: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_0698: ldc.i4.0
+  IL_0699: stfld System.Boolean Celeste.Level::PauseLock
+  IL_069e: ldarg.0
+  IL_069f: ldfld Celeste.Level Celeste.Cassette/<CollectRoutine>d__19::<level>5__2
+  IL_06a4: callvirt System.Void Celeste.Level::ResetZoom()
+  IL_06a9: ldloc.1
+  IL_06aa: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_06af: ldc.i4.0
+  IL_06b0: ret

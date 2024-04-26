@@ -1,0 +1,53 @@
+IL Diff: System.Void Celeste.Level::BeforeRender()
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::LevelBeforeRender(Celeste.Level) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore::DelayedActions() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0007: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_000c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level::cameraPreShake
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0017: dup
+  IL_0018: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_001d: ldarg.0
+  IL_001e: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_ShakeVector()
+  IL_0023: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0028: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_002d: ldarg.0
+  IL_002e: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0033: ldarg.0
+  IL_0034: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0039: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_003e: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_0043: callvirt System.Void Monocle.Camera::set_Position(Microsoft.Xna.Framework.Vector2)
+  IL_0048: ldarg.0
+  IL_0049: call Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_004e: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.BeforeRenderHook>()
+  IL_0053: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0058: stloc.0
+  IL_0059: br.s IL_007b
+  IL_005b: ldloca.s V_0
+  IL_005d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0062: castclass Celeste.BeforeRenderHook
+  IL_0067: stloc.1
+  IL_0068: ldloc.1
+  IL_0069: ldfld System.Boolean Monocle.Component::Visible
+  IL_006e: brfalse.s IL_007b
+  IL_0070: ldloc.1
+  IL_0071: ldfld System.Action Celeste.BeforeRenderHook::Callback
+  IL_0076: callvirt System.Void System.Action::Invoke()
+  IL_007b: ldloca.s V_0
+  IL_007d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0082: brtrue.s IL_005b
+  IL_0084: leave.s IL_0094
+  IL_0086: ldloca.s V_0
+  IL_0088: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_008e: callvirt System.Void System.IDisposable::Dispose()
+  IL_0093: endfinally
+  IL_0094: ldarg.0
+  IL_0095: call System.Void Celeste.SpeedRing::DrawToBuffer(Celeste.Level)
+  IL_009a: ldarg.0
+  IL_009b: call System.Void Monocle.Scene::BeforeRender()
+  IL_00a0: ret

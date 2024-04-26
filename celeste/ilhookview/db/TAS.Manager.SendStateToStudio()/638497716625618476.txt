@@ -1,0 +1,68 @@
+IL Diff: System.Void TAS.Manager::SendStateToStudio()
++ IL_0000: call System.Boolean Celeste.Mod.TASHelper.Predictor.PredictorCore::PreventSendStateToStudio() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
++ IL_0000: brfalse IL_0000 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
++ IL_0000: ret @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass12_0::<SkipMethod>b__0
+  IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding()
+  IL_0005: brfalse.s IL_0015
+  IL_0007: call System.UInt64 Monocle.Engine::get_FrameCounter()
+  IL_000c: ldc.i4.s 23
+  IL_000e: conv.i8
+  IL_000f: rem.un
+  IL_0010: ldc.i4.0
+  IL_0011: conv.i8
+  IL_0012: ble.un.s IL_0015
+  IL_0014: ret
+  IL_0015: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_001a: callvirt TAS.Input.InputFrame TAS.Input.InputController::get_Previous()
+  IL_001f: stloc.0
+  IL_0020: ldloca.s V_1
+  IL_0022: ldloc.0
+  IL_0023: brtrue.s IL_0028
+  IL_0025: ldc.i4.m1
+  IL_0026: br.s IL_002e
+  IL_0028: ldloc.0
+  IL_0029: callvirt System.Int32 TAS.Input.InputFrame::get_Line()
+  IL_002e: ldstr "{0}{1}"
+  IL_0033: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_0038: callvirt System.Int32 TAS.Input.InputController::get_CurrentFrameInInput()
+  IL_003d: ldloc.0
+  IL_003e: brtrue.s IL_0043
+  IL_0040: ldc.i4.0
+  IL_0041: br.s IL_0049
+  IL_0043: ldloc.0
+  IL_0044: callvirt System.Int32 TAS.Input.InputFrame::get_FrameOffset()
+  IL_0049: add
+  IL_004a: box System.Int32
+  IL_004f: ldloc.0
+  IL_0050: brtrue.s IL_0055
+  IL_0052: ldnull
+  IL_0053: br.s IL_005b
+  IL_0055: ldloc.0
+  IL_0056: callvirt System.String TAS.Input.InputFrame::get_RepeatString()
+  IL_005b: dup
+  IL_005c: brtrue.s IL_0064
+  IL_005e: pop
+  IL_005f: ldstr ""
+  IL_0064: call System.String System.String::Format(System.String,System.Object,System.Object)
+  IL_0069: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_006e: callvirt System.Int32 TAS.Input.InputController::get_CurrentFrameInTas()
+  IL_0073: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_0078: ldfld System.Collections.Generic.List`1<TAS.Input.InputFrame> TAS.Input.InputController::Inputs
+  IL_007d: callvirt System.Int32 System.Collections.Generic.List`1<TAS.Input.InputFrame>::get_Count()
+  IL_0082: call System.Int32 TAS.Savestates::get_StudioHighlightLine()
+  IL_0087: ldsfld StudioCommunication.States TAS.Manager::States
+  IL_008c: call System.String TAS.GameInfo::get_StudioInfo()
+  IL_0091: ldsfld System.String TAS.GameInfo::LevelName
+  IL_0096: ldsfld System.String TAS.GameInfo::ChapterTime
+  IL_009b: call System.Void StudioCommunication.StudioInfo::.ctor(System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)
+  IL_00a0: call TAS.Communication.StudioCommunicationClient TAS.Communication.StudioCommunicationClient::get_Instance()
+  IL_00a5: dup
+  IL_00a6: brtrue.s IL_00aa
+  IL_00a8: pop
+  IL_00a9: ret
+  IL_00aa: ldloc.1
+  IL_00ab: call System.Boolean TAS.Manager::get_ShouldForceState()
+  IL_00b0: ldc.i4.0
+  IL_00b1: ceq
+  IL_00b3: callvirt System.Void TAS.Communication.StudioCommunicationClient::SendState(StudioCommunication.StudioInfo,System.Boolean)
+  IL_00b8: ret

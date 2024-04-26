@@ -1,0 +1,114 @@
+IL Diff: System.Void FrostHelper.CustomSpinner::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Monocle.Entity::Visible
+  IL_0006: brtrue.s IL_0045
+  IL_0008: ldarg.0
+  IL_0009: ldc.i4.0
+  IL_000a: stfld System.Boolean Monocle.Entity::Collidable
+  IL_000f: ldarg.0
+  IL_0010: callvirt System.Boolean FrostHelper.CustomSpinner::InView()
+  IL_0015: brfalse IL_009b
+  IL_001a: ldarg.0
+  IL_001b: callvirt System.Void FrostHelper.CustomSpinner::RegisterToRenderers()
+  IL_0020: ldarg.0
+  IL_0021: ldc.i4.1
+  IL_0022: stfld System.Boolean Monocle.Entity::Visible
+  IL_0027: ldarg.0
+  IL_0028: ldfld System.Boolean FrostHelper.CustomSpinner::expanded
+  IL_002d: brtrue.s IL_0035
+  IL_002f: ldarg.0
+  IL_0030: callvirt System.Void FrostHelper.CustomSpinner::CreateSprites()
+  IL_0035: ldarg.0
+  IL_0036: ldfld System.Boolean FrostHelper.CustomSpinner::Rainbow
+  IL_003b: brfalse.s IL_009b
+  IL_003d: ldarg.0
+  IL_003e: callvirt System.Void FrostHelper.CustomSpinner::UpdateHue()
+  IL_0043: br.s IL_009b
+  IL_0045: ldarg.0
+  IL_0046: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004b: stloc.0
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Boolean FrostHelper.CustomSpinner::Rainbow
+  IL_0052: brfalse.s IL_006d
+  IL_0054: ldloc.0
+  IL_0055: ldc.r4 0.08
+  IL_005a: ldarg.0
+  IL_005b: ldfld System.Single FrostHelper.CustomSpinner::offset
+  IL_0060: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_0065: brfalse.s IL_006d
+  IL_0067: ldarg.0
+  IL_0068: callvirt System.Void FrostHelper.CustomSpinner::UpdateHue()
+  IL_006d: ldloc.0
+  IL_006e: ldc.r4 0.25
+  IL_0073: ldarg.0
+  IL_0074: ldfld System.Single FrostHelper.CustomSpinner::offset
+  IL_0079: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single,System.Single)
+  IL_007e: brfalse.s IL_0095
+  IL_0080: ldarg.0
+  IL_0081: callvirt System.Boolean FrostHelper.CustomSpinner::InView()
+  IL_0086: brtrue.s IL_0095
+  IL_0088: ldarg.0
+  IL_0089: ldc.i4.0
+  IL_008a: stfld System.Boolean Monocle.Entity::Visible
+  IL_008f: ldarg.0
+  IL_0090: callvirt System.Void FrostHelper.CustomSpinner::UnregisterFromRenderers()
+  IL_0095: ldarg.0
+  IL_0096: callvirt System.Void FrostHelper.CustomSpinner::DoCycle()
+  IL_009b: ldarg.0
+  IL_009c: ldfld System.Boolean FrostHelper.CustomSpinner::MoveWithWind
+  IL_00a1: brfalse IL_0135
+  IL_00a6: ldarg.0
+  IL_00a7: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00ac: isinst Celeste.Level
+  IL_00b1: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_00b6: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00bb: call System.Single System.Math::Abs(System.Single)
+  IL_00c0: ldc.r4 0
+  IL_00c5: ldc.r4 800
+  IL_00ca: ldc.r4 0
+  IL_00cf: ldc.r4 5
+  IL_00d4: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_00d9: stloc.1
+  IL_00da: ldarg.0
+  IL_00db: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00e0: isinst Celeste.Level
+  IL_00e5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_00ea: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ef: ldc.r4 0
+  IL_00f4: bge.un.s IL_0100
+  IL_00f6: ldloc.1
+  IL_00f7: ldloc.1
+  IL_00f8: ldc.r4 2
+  IL_00fd: mul
+  IL_00fe: sub
+  IL_00ff: stloc.1
+  IL_0100: ldloc.1
+  IL_0101: conv.i4
+  IL_0102: stloc.2
+  IL_0103: ldloc.2
+  IL_0104: brfalse.s IL_0135
+  IL_0106: ldarg.0
+  IL_0107: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_010c: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0111: dup
+  IL_0112: ldind.r4
+  IL_0113: ldloc.2
+  IL_0114: conv.r4
+  IL_0115: add
+  IL_0116: stind.r4
+  IL_0117: ldarg.0
+  IL_0118: ldfld System.Boolean FrostHelper.CustomSpinner::HasCollider
+  IL_011d: brfalse.s IL_0135
+  IL_011f: ldarg.0
+  IL_0120: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0125: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Collider::Position
+  IL_012a: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_012f: dup
+  IL_0130: ldind.r4
+  IL_0131: ldloc.2
+  IL_0132: conv.r4
+  IL_0133: add
+  IL_0134: stind.r4
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.ActualPosition::PatchHazardUpdate(Monocle.Entity) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0135: ret

@@ -1,0 +1,19 @@
+IL Diff: System.Void Celeste.Refill::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0000: ldarg.1
++ IL_0000: call System.Void FrostHelper.Entities.BirdRefill::CaptureEntityData(Celeste.Refill,Celeste.EntityData) @ FrostHelper.Entities.BirdRefill::RefillOnctor_EntityData_Vector2
++ IL_0000: ldarg.0 @ FrostHelper.Entities.BirdRefill::RefillOnctor_EntityData_Vector2
++ IL_0001: ldarg.1 @ FrostHelper.Entities.BirdRefill::RefillOnctor_EntityData_Vector2
+  IL_0002: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0007: ldarg.2
+  IL_0008: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_000d: ldarg.1
+  IL_000e: ldstr "twoDash"
+  IL_0013: ldc.i4.0
+  IL_0014: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0019: ldarg.1
+  IL_001a: ldstr "oneUse"
+  IL_001f: ldc.i4.0
+  IL_0020: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0025: callvirt System.Void Celeste.Refill::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_002a: ret

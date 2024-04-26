@@ -1,0 +1,18 @@
+IL Diff: System.Void Celeste.Snowball::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: stfld Celeste.Level Celeste.Snowball::level
+  IL_0013: ldarg.0
+  IL_0014: callvirt System.Void Celeste.Snowball::ResetPosition()
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
++ IL_0000: ldc.i4 2944 @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
++ IL_0000: ldc.i4 21733338 @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
+  |-> retrieves System.Single ExtendedVariants.Variants.SnowballsEverywhere::determineInitialResetTimer()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
++ IL_0000: stfld System.Single Celeste.Snowball::resetTimer @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballAdded
+  IL_0019: ret

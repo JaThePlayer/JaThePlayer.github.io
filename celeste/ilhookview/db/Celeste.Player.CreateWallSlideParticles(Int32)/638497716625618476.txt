@@ -1,0 +1,82 @@
+IL Diff: System.Void Celeste.Player::CreateWallSlideParticles(System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: ldc.r4 0.01
+  IL_000b: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0010: brfalse IL_00b8
+  IL_0015: ldc.i4.m1
+  IL_0016: stloc.0
+  IL_0017: ldarg.0
+  IL_0018: ldarg.0
+  IL_0019: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_001e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0023: ldarg.1
+  IL_0024: conv.r4
+  IL_0025: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_002a: ldc.r4 4
+  IL_002f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0034: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0039: ldarg.0
+  IL_003a: ldfld System.Collections.Generic.List`1<Monocle.Entity> Celeste.Player::temp
+  IL_003f: call System.Collections.Generic.List`1<Monocle.Entity> Monocle.Entity::CollideAll<Celeste.Platform>(Microsoft.Xna.Framework.Vector2,System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_0044: call Celeste.Platform Celeste.SurfaceIndex::GetPlatformByPriority(System.Collections.Generic.List`1<Monocle.Entity>)
+  IL_0049: stloc.1
+  IL_004a: ldloc.1
+  IL_004b: brfalse.s IL_0056
+  IL_004d: ldloc.1
+  IL_004e: ldarg.0
+  IL_004f: ldarg.1
+  IL_0050: callvirt System.Int32 Celeste.Platform::GetWallSoundIndex(Celeste.Player,System.Int32)
+  IL_0055: stloc.0
+  IL_0056: ldarg.0
+  IL_0057: ldloc.0
+  IL_0058: callvirt Monocle.ParticleType Celeste.Player::DustParticleFromSurfaceIndex(System.Int32)
+  IL_005d: stloc.2
+  IL_005e: ldloc.2
+  IL_005f: ldsfld Monocle.ParticleType Celeste.ParticleTypes::Dust
+  IL_0064: beq.s IL_006d
+  IL_0066: ldc.r4 2
+  IL_006b: br.s IL_0072
+  IL_006d: ldc.r4 5
+  IL_0072: stloc.3
+  IL_0073: ldarg.0
+  IL_0074: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0079: stloc.s V_4
+  IL_007b: ldarg.1
+  IL_007c: ldc.i4.1
+  IL_007d: bne.un.s IL_0095
+  IL_007f: ldloc.s V_4
+  IL_0081: ldloc.3
+  IL_0082: ldc.r4 4
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: ldc.i4 49836552 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  IL_0087: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_008c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0091: stloc.s V_4
+  IL_0093: br.s IL_00aa
+  IL_0095: ldloc.s V_4
+  IL_0097: ldloc.3
+  IL_0098: neg
+  IL_0099: ldc.r4 4
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: ldc.i4 10228927 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  IL_009e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a8: stloc.s V_4
+  IL_00aa: ldloc.s V_4
+  IL_00ac: ldc.r4 -1.5707964
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: ldc.i4 23236787 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_CreateWallSlideParticles
+  IL_00b1: ldc.i4.1
+  IL_00b2: ldloc.2
+  IL_00b3: call System.Void Celeste.Dust::Burst(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Monocle.ParticleType)
+  IL_00b8: ret

@@ -1,0 +1,251 @@
+IL Diff: System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Update(Microsoft.Xna.Framework.GameTime)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Update(Microsoft.Xna.Framework.GameTime)
+  IL_0007: ldarg.0
+  IL_0008: call Celeste.Mod.CelesteNet.Client.CelesteNetClient Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Client()
+  IL_000d: brfalse IL_0293
+  IL_0012: ldarg.0
+  IL_0013: call Celeste.Mod.CelesteNet.Client.CelesteNetClient Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Client()
+  IL_0018: callvirt System.Boolean Celeste.Mod.CelesteNet.Client.CelesteNetClient::get_IsReady()
+  IL_001d: brfalse IL_0293
+  IL_0022: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0027: isinst Celeste.Level
+  IL_002c: stloc.0
+  IL_002d: ldloc.0
+  IL_002e: brfalse IL_0293
+  IL_0033: ldarg.0
+  IL_0034: ldfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_0039: brfalse.s IL_0049
+  IL_003b: ldarg.0
+  IL_003c: ldfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_0041: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0046: ldloc.0
+  IL_0047: beq.s IL_005a
+  IL_0049: ldarg.0
+  IL_004a: ldloc.0
+  IL_004b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0050: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0055: stfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_005a: ldarg.0
+  IL_005b: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0060: brfalse.s IL_0082
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0068: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_006d: ldloc.0
+  IL_006e: beq.s IL_0082
+  IL_0070: ldarg.0
+  IL_0071: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0076: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_007b: ldarg.0
+  IL_007c: ldnull
+  IL_007d: stfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0082: ldarg.0
+  IL_0083: ldfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_0088: brfalse IL_0293
+  IL_008d: ldarg.0
+  IL_008e: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0093: brtrue.s IL_00af
+  IL_0095: ldloc.0
+  IL_0096: ldarg.0
+  IL_0097: ldarg.0
+  IL_0098: ldfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_009d: newobj System.Void Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::.ctor(Monocle.Entity)
+  IL_00a2: dup
+  IL_00a3: stloc.1
+  IL_00a4: stfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_00a9: ldloc.1
+  IL_00aa: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00af: ldloc.0
+  IL_00b0: ldfld System.Boolean Monocle.Scene::Paused
+  IL_00b5: brtrue IL_0147
+  IL_00ba: ldarg.0
+  IL_00bb: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_00c0: callvirt System.Boolean Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_EmoteWheel()
+  IL_00c5: brfalse IL_0147
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld Celeste.Player Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Player
+  IL_00d0: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_00d5: brtrue.s IL_0147
+  IL_00d7: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_00dc: ldc.r4 0.05
+  IL_00e1: ble.un.s IL_0147
+  IL_00e3: ldarg.0
+  IL_00e4: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_00e9: ldsfld Celeste.Mod.CelesteNet.Client.CelesteNetClientModule Celeste.Mod.CelesteNet.Client.CelesteNetClientModule::Instance
+  IL_00ee: ldfld Monocle.VirtualJoystick Celeste.Mod.CelesteNet.Client.CelesteNetClientModule::JoystickEmoteWheel
+  IL_00f3: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_00f8: stloc.3
+  IL_00f9: ldloca.s V_3
+  IL_00fb: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_0100: ldc.r4 0.36
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.EmoteMod.EmoteWheelModule::celestenetUpdateEmoteWheel
++ IL_0000: ldc.i4 10981404 @ Celeste.Mod.EmoteMod.EmoteWheelModule::celestenetUpdateEmoteWheel
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ Celeste.Mod.EmoteMod.EmoteWheelModule::celestenetUpdateEmoteWheel
+  |-> retrieves System.Single Celeste.Mod.EmoteMod.EmoteWheelModule/<>c::<celestenetUpdateEmoteWheel>b__10_0()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ Celeste.Mod.EmoteMod.EmoteWheelModule::celestenetUpdateEmoteWheel
++ IL_0000: mul @ Celeste.Mod.EmoteMod.EmoteWheelModule::celestenetUpdateEmoteWheel
+  IL_0105: clt.un
+  IL_0107: ldc.i4.0
+  IL_0108: ceq
+  IL_010a: stfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Shown
+  IL_010f: ldarg.0
+  IL_0110: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0115: ldfld System.Int32 Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Selected
+  IL_011a: stloc.2
+  IL_011b: ldarg.0
+  IL_011c: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0121: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Shown
+  IL_0126: brfalse.s IL_015f
+  IL_0128: ldloc.2
+  IL_0129: ldc.i4.m1
+  IL_012a: beq.s IL_015f
+  IL_012c: ldarg.0
+  IL_012d: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_0132: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmoteWheelSend()
+  IL_0137: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_013c: brfalse.s IL_015f
+  IL_013e: ldarg.0
+  IL_013f: ldloc.2
+  IL_0140: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0145: br.s IL_015f
+  IL_0147: ldarg.0
+  IL_0148: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_014d: ldc.i4.0
+  IL_014e: stfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Shown
+  IL_0153: ldarg.0
+  IL_0154: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0159: ldc.i4.m1
+  IL_015a: stfld System.Int32 Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Selected
+  IL_015f: ldarg.0
+  IL_0160: ldfld Celeste.Mod.CelesteNet.Client.CelesteNetClientContext Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Context
+  IL_0165: ldfld Celeste.Mod.CelesteNet.Client.Components.CelesteNetChatComponent Celeste.Mod.CelesteNet.Client.CelesteNetClientContext::Chat
+  IL_016a: callvirt System.Boolean Celeste.Mod.CelesteNet.Client.Components.CelesteNetChatComponent::get_Active()
+  IL_016f: brtrue IL_0293
+  IL_0174: ldarg.0
+  IL_0175: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_017a: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote1()
+  IL_017f: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_0184: brfalse.s IL_0192
+  IL_0186: ldarg.0
+  IL_0187: ldc.i4.0
+  IL_0188: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_018d: br IL_0293
+  IL_0192: ldarg.0
+  IL_0193: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_0198: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote2()
+  IL_019d: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_01a2: brfalse.s IL_01b0
+  IL_01a4: ldarg.0
+  IL_01a5: ldc.i4.1
+  IL_01a6: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_01ab: br IL_0293
+  IL_01b0: ldarg.0
+  IL_01b1: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_01b6: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote3()
+  IL_01bb: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_01c0: brfalse.s IL_01ce
+  IL_01c2: ldarg.0
+  IL_01c3: ldc.i4.2
+  IL_01c4: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_01c9: br IL_0293
+  IL_01ce: ldarg.0
+  IL_01cf: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_01d4: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote4()
+  IL_01d9: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_01de: brfalse.s IL_01ec
+  IL_01e0: ldarg.0
+  IL_01e1: ldc.i4.3
+  IL_01e2: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_01e7: br IL_0293
+  IL_01ec: ldarg.0
+  IL_01ed: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_01f2: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote5()
+  IL_01f7: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_01fc: brfalse.s IL_020a
+  IL_01fe: ldarg.0
+  IL_01ff: ldc.i4.4
+  IL_0200: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0205: br IL_0293
+  IL_020a: ldarg.0
+  IL_020b: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_0210: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote6()
+  IL_0215: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_021a: brfalse.s IL_0228
+  IL_021c: ldarg.0
+  IL_021d: ldc.i4.5
+  IL_021e: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0223: br IL_0293
+  IL_0228: ldarg.0
+  IL_0229: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_022e: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote7()
+  IL_0233: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_0238: brfalse.s IL_0243
+  IL_023a: ldarg.0
+  IL_023b: ldc.i4.6
+  IL_023c: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0241: br.s IL_0293
+  IL_0243: ldarg.0
+  IL_0244: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_0249: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote8()
+  IL_024e: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_0253: brfalse.s IL_025e
+  IL_0255: ldarg.0
+  IL_0256: ldc.i4.7
+  IL_0257: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_025c: br.s IL_0293
+  IL_025e: ldarg.0
+  IL_025f: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_0264: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote9()
+  IL_0269: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_026e: brfalse.s IL_0279
+  IL_0270: ldarg.0
+  IL_0271: ldc.i4.8
+  IL_0272: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0277: br.s IL_0293
+  IL_0279: ldarg.0
+  IL_027a: call Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::get_Settings()
+  IL_027f: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.CelesteNet.Client.CelesteNetClientSettings::get_ButtonEmote10()
+  IL_0284: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_0289: brfalse.s IL_0293
+  IL_028b: ldarg.0
+  IL_028c: ldc.i4.s 9
+  IL_028e: callvirt System.Void Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Send(System.Int32)
+  IL_0293: ldarg.0
+  IL_0294: ldfld Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel Celeste.Mod.CelesteNet.Client.Components.CelesteNetEmoteComponent::Wheel
+  IL_0299: dup
+  IL_029a: brtrue.s IL_02a0
+  IL_029c: pop
+  IL_029d: ldc.i4.0
+  IL_029e: br.s IL_02a5
+  IL_02a0: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Entities.GhostEmoteWheel::Shown
+  IL_02a5: brfalse.s IL_02d9
+  IL_02a7: ldarg.0
+  IL_02a8: ldfld Celeste.Mod.CelesteNet.Client.CelesteNetClientContext Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Context
+  IL_02ad: ldfld Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent Celeste.Mod.CelesteNet.Client.CelesteNetClientContext::Main
+  IL_02b2: dup
+  IL_02b3: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::StateUpdated
+  IL_02b8: ldarg.0
+  IL_02b9: ldfld Celeste.Mod.CelesteNet.Client.CelesteNetClientContext Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Context
+  IL_02be: ldfld Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent Celeste.Mod.CelesteNet.Client.CelesteNetClientContext::Main
+  IL_02c3: ldfld System.Collections.Generic.HashSet`1<System.String> Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::ForceIdle
+  IL_02c8: ldstr "EmoteWheel"
+  IL_02cd: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Add(T)
+  IL_02d2: or
+  IL_02d3: stfld System.Boolean Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::StateUpdated
+  IL_02d8: ret
+  IL_02d9: ldarg.0
+  IL_02da: ldfld Celeste.Mod.CelesteNet.Client.CelesteNetClientContext Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Context
+  IL_02df: ldfld Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent Celeste.Mod.CelesteNet.Client.CelesteNetClientContext::Main
+  IL_02e4: dup
+  IL_02e5: ldfld System.Boolean Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::StateUpdated
+  IL_02ea: ldarg.0
+  IL_02eb: ldfld Celeste.Mod.CelesteNet.Client.CelesteNetClientContext Celeste.Mod.CelesteNet.Client.CelesteNetGameComponent::Context
+  IL_02f0: ldfld Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent Celeste.Mod.CelesteNet.Client.CelesteNetClientContext::Main
+  IL_02f5: ldfld System.Collections.Generic.HashSet`1<System.String> Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::ForceIdle
+  IL_02fa: ldstr "EmoteWheel"
+  IL_02ff: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Remove(T)
+  IL_0304: or
+  IL_0305: stfld System.Boolean Celeste.Mod.CelesteNet.Client.Components.CelesteNetMainComponent::StateUpdated
+  IL_030a: ret

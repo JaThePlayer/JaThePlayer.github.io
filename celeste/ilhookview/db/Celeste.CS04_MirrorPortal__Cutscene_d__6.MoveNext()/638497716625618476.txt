@@ -1,0 +1,624 @@
+IL Diff: System.Boolean Celeste.CS04_MirrorPortal/<Cutscene>d__6::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.CS04_MirrorPortal Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_006e,IL_0158,IL_0178,IL_01af,IL_01cf,IL_0206,IL_0226,IL_0252,IL_0286,IL_02a7,IL_02eb,IL_0353,IL_03a0,IL_03c1,IL_0496,IL_04d1,IL_0594,IL_0617,IL_064f,IL_0676,IL_06f2,IL_072b
+  IL_006c: ldc.i4.0
+  IL_006d: ret
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4.m1
+  IL_0070: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0075: ldloc.1
+  IL_0076: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_007b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0080: ldc.i4.s 11
+  IL_0082: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0087: ldloc.1
+  IL_0088: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_008d: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0092: ldc.i4.1
+  IL_0093: stfld System.Boolean Monocle.StateMachine::Locked
+  IL_0098: ldloc.1
+  IL_0099: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_009e: ldc.i4.1
+  IL_009f: stfld System.Int32 Celeste.Player::Dashes
+  IL_00a4: ldarg.0
+  IL_00a5: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_00aa: ldfld Celeste.Session Celeste.Level::Session
+  IL_00af: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_00b4: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
++ IL_0000: ldc.i4 13812214 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
+  |-> retrieves Celeste.AreaMode Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpMirrorFakeBSide>b__118_0(Celeste.AreaMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.AreaMode,Celeste.AreaMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
+  IL_00b9: brtrue.s IL_00c6
+  IL_00bb: ldnull
+  IL_00bc: ldc.i4.1
+  IL_00bd: ldc.i4.1
+  IL_00be: call System.Boolean Celeste.Audio::SetMusic(System.String,System.Boolean,System.Boolean)
+  IL_00c3: pop
+  IL_00c4: br.s IL_00d8
+  IL_00c6: ldloc.1
+  IL_00c7: ldloc.1
+  IL_00c8: callvirt System.Collections.IEnumerator Celeste.CS04_MirrorPortal::MusicFadeOutBSide()
+  IL_00cd: ldc.i4.1
+  IL_00ce: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_00d3: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00d8: ldloc.1
+  IL_00d9: ldloc.1
+  IL_00da: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_00df: dup
+  IL_00e0: stloc.2
+  IL_00e1: stfld Celeste.SoundSource Celeste.CS04_MirrorPortal::sfx
+  IL_00e6: ldloc.2
+  IL_00e7: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ec: ldloc.1
+  IL_00ed: ldfld Celeste.SoundSource Celeste.CS04_MirrorPortal::sfx
+  IL_00f2: ldloc.1
+  IL_00f3: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_00f8: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00fd: stfld Microsoft.Xna.Framework.Vector2 Celeste.SoundSource::Position
+  IL_0102: ldloc.1
+  IL_0103: ldfld Celeste.SoundSource Celeste.CS04_MirrorPortal::sfx
+  IL_0108: ldstr "event:/music/lvl5/mirror_cutscene"
+  IL_010d: ldnull
+  IL_010e: ldc.r4 0
+  IL_0113: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_0118: pop
+  IL_0119: ldloc.1
+  IL_011a: ldloc.1
+  IL_011b: callvirt System.Collections.IEnumerator Celeste.CS04_MirrorPortal::CenterCamera()
+  IL_0120: ldc.i4.1
+  IL_0121: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0126: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_012b: ldarg.0
+  IL_012c: ldloc.1
+  IL_012d: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0132: ldloc.1
+  IL_0133: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_0138: callvirt System.Single Monocle.Entity::get_X()
+  IL_013d: conv.i4
+  IL_013e: ldc.i4.0
+  IL_013f: ldc.r4 1
+  IL_0144: ldc.i4.0
+  IL_0145: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_014a: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_014f: ldarg.0
+  IL_0150: ldc.i4.1
+  IL_0151: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0156: ldc.i4.1
+  IL_0157: ret
+  IL_0158: ldarg.0
+  IL_0159: ldc.i4.m1
+  IL_015a: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_015f: ldarg.0
+  IL_0160: ldc.r4 0.25
+  IL_0165: box System.Single
+  IL_016a: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_016f: ldarg.0
+  IL_0170: ldc.i4.2
+  IL_0171: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0176: ldc.i4.1
+  IL_0177: ret
+  IL_0178: ldarg.0
+  IL_0179: ldc.i4.m1
+  IL_017a: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_017f: ldarg.0
+  IL_0180: ldloc.1
+  IL_0181: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0186: ldloc.1
+  IL_0187: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_018c: callvirt System.Single Monocle.Entity::get_X()
+  IL_0191: conv.i4
+  IL_0192: ldc.i4.s 16
+  IL_0194: sub
+  IL_0195: ldc.i4.0
+  IL_0196: ldc.r4 1
+  IL_019b: ldc.i4.0
+  IL_019c: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_01a1: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_01a6: ldarg.0
+  IL_01a7: ldc.i4.3
+  IL_01a8: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_01ad: ldc.i4.1
+  IL_01ae: ret
+  IL_01af: ldarg.0
+  IL_01b0: ldc.i4.m1
+  IL_01b1: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_01b6: ldarg.0
+  IL_01b7: ldc.r4 0.5
+  IL_01bc: box System.Single
+  IL_01c1: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_01c6: ldarg.0
+  IL_01c7: ldc.i4.4
+  IL_01c8: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_01cd: ldc.i4.1
+  IL_01ce: ret
+  IL_01cf: ldarg.0
+  IL_01d0: ldc.i4.m1
+  IL_01d1: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_01d6: ldarg.0
+  IL_01d7: ldloc.1
+  IL_01d8: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_01dd: ldloc.1
+  IL_01de: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_01e3: callvirt System.Single Monocle.Entity::get_X()
+  IL_01e8: conv.i4
+  IL_01e9: ldc.i4.s 16
+  IL_01eb: add
+  IL_01ec: ldc.i4.0
+  IL_01ed: ldc.r4 1
+  IL_01f2: ldc.i4.0
+  IL_01f3: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_01f8: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_01fd: ldarg.0
+  IL_01fe: ldc.i4.5
+  IL_01ff: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0204: ldc.i4.1
+  IL_0205: ret
+  IL_0206: ldarg.0
+  IL_0207: ldc.i4.m1
+  IL_0208: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_020d: ldarg.0
+  IL_020e: ldc.r4 0.25
+  IL_0213: box System.Single
+  IL_0218: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_021d: ldarg.0
+  IL_021e: ldc.i4.6
+  IL_021f: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0224: ldc.i4.1
+  IL_0225: ret
+  IL_0226: ldarg.0
+  IL_0227: ldc.i4.m1
+  IL_0228: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_022d: ldloc.1
+  IL_022e: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0233: ldc.i4.m1
+  IL_0234: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0239: ldarg.0
+  IL_023a: ldc.r4 0.25
+  IL_023f: box System.Single
+  IL_0244: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_0249: ldarg.0
+  IL_024a: ldc.i4.7
+  IL_024b: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0250: ldc.i4.1
+  IL_0251: ret
+  IL_0252: ldarg.0
+  IL_0253: ldc.i4.m1
+  IL_0254: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0259: ldarg.0
+  IL_025a: ldloc.1
+  IL_025b: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0260: ldloc.1
+  IL_0261: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_0266: callvirt System.Single Monocle.Entity::get_X()
+  IL_026b: conv.i4
+  IL_026c: ldc.i4.0
+  IL_026d: ldc.r4 1
+  IL_0272: ldc.i4.0
+  IL_0273: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_0278: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_027d: ldarg.0
+  IL_027e: ldc.i4.8
+  IL_027f: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0284: ldc.i4.1
+  IL_0285: ret
+  IL_0286: ldarg.0
+  IL_0287: ldc.i4.m1
+  IL_0288: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_028d: ldarg.0
+  IL_028e: ldc.r4 0.1
+  IL_0293: box System.Single
+  IL_0298: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_029d: ldarg.0
+  IL_029e: ldc.i4.s 9
+  IL_02a0: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_02a5: ldc.i4.1
+  IL_02a6: ret
+  IL_02a7: ldarg.0
+  IL_02a8: ldc.i4.m1
+  IL_02a9: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_02ae: ldloc.1
+  IL_02af: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_02b4: ldc.i4.0
+  IL_02b5: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_02ba: ldloc.1
+  IL_02bb: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_02c0: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_02c5: ldstr "lookUp"
+  IL_02ca: ldc.i4.0
+  IL_02cb: ldc.i4.0
+  IL_02cc: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_02d1: ldarg.0
+  IL_02d2: ldc.r4 1
+  IL_02d7: box System.Single
+  IL_02dc: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_02e1: ldarg.0
+  IL_02e2: ldc.i4.s 10
+  IL_02e4: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_02e9: ldc.i4.1
+  IL_02ea: ret
+  IL_02eb: ldarg.0
+  IL_02ec: ldc.i4.m1
+  IL_02ed: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_02f2: ldloc.1
+  IL_02f3: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_02f8: ldc.i4.1
+  IL_02f9: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_02fe: ldloc.1
+  IL_02ff: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_0304: callvirt System.Void Celeste.TempleMirrorPortal::Activate()
+  IL_0309: ldloc.1
+  IL_030a: ldarg.0
+  IL_030b: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_0310: ldc.r4 160
+  IL_0315: ldc.r4 90
+  IL_031a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_031f: ldc.r4 3
+  IL_0324: ldc.r4 12
+  IL_0329: callvirt System.Collections.IEnumerator Celeste.Level::ZoomTo(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_032e: ldc.i4.1
+  IL_032f: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0334: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0339: ldarg.0
+  IL_033a: ldc.r4 0.25
+  IL_033f: box System.Single
+  IL_0344: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_0349: ldarg.0
+  IL_034a: ldc.i4.s 11
+  IL_034c: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0351: ldc.i4.1
+  IL_0352: ret
+  IL_0353: ldarg.0
+  IL_0354: ldc.i4.m1
+  IL_0355: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_035a: ldloc.1
+  IL_035b: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0360: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::ForceStrongWindHair
+  IL_0365: ldc.r4 -1
+  IL_036a: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_036f: ldarg.0
+  IL_0370: ldloc.1
+  IL_0371: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0376: ldloc.1
+  IL_0377: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_037c: callvirt System.Single Monocle.Entity::get_X()
+  IL_0381: conv.i4
+  IL_0382: ldc.i4.s 12
+  IL_0384: add
+  IL_0385: ldc.i4.1
+  IL_0386: ldc.r4 1
+  IL_038b: ldc.i4.0
+  IL_038c: callvirt System.Collections.IEnumerator Celeste.Player::DummyWalkToExact(System.Int32,System.Boolean,System.Single,System.Boolean)
+  IL_0391: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_0396: ldarg.0
+  IL_0397: ldc.i4.s 12
+  IL_0399: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_039e: ldc.i4.1
+  IL_039f: ret
+  IL_03a0: ldarg.0
+  IL_03a1: ldc.i4.m1
+  IL_03a2: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_03a7: ldarg.0
+  IL_03a8: ldc.r4 0.5
+  IL_03ad: box System.Single
+  IL_03b2: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_03b7: ldarg.0
+  IL_03b8: ldc.i4.s 13
+  IL_03ba: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_03bf: ldc.i4.1
+  IL_03c0: ret
+  IL_03c1: ldarg.0
+  IL_03c2: ldc.i4.m1
+  IL_03c3: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_03c8: ldloc.1
+  IL_03c9: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_03ce: ldc.i4.1
+  IL_03cf: stfld Celeste.Facings Celeste.Player::Facing
+  IL_03d4: ldloc.1
+  IL_03d5: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_03da: ldc.i4.0
+  IL_03db: stfld System.Boolean Celeste.Player::DummyAutoAnimate
+  IL_03e0: ldloc.1
+  IL_03e1: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_03e6: ldc.i4.0
+  IL_03e7: stfld System.Boolean Celeste.Player::DummyGravity
+  IL_03ec: ldloc.1
+  IL_03ed: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_03f2: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_03f7: ldstr "runWind"
+  IL_03fc: ldc.i4.0
+  IL_03fd: ldc.i4.0
+  IL_03fe: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0403: br IL_049d
+  IL_0408: ldloc.1
+  IL_0409: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_040e: ldloc.1
+  IL_040f: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0414: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0419: ldfld System.Single Monocle.Sprite::Rate
+  IL_041e: ldc.r4 10
+  IL_0423: mul
+  IL_0424: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0429: mul
+  IL_042a: ldnull
+  IL_042b: ldnull
+  IL_042c: callvirt System.Boolean Celeste.Actor::MoveH(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0431: pop
+  IL_0432: ldloc.1
+  IL_0433: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0438: ldc.r4 1
+  IL_043d: ldloc.1
+  IL_043e: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0443: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0448: ldfld System.Single Monocle.Sprite::Rate
+  IL_044d: sub
+  IL_044e: neg
+  IL_044f: ldc.r4 6
+  IL_0454: mul
+  IL_0455: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_045a: mul
+  IL_045b: ldnull
+  IL_045c: ldnull
+  IL_045d: callvirt System.Boolean Celeste.Actor::MoveV(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0462: pop
+  IL_0463: ldloc.1
+  IL_0464: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0469: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_046e: dup
+  IL_046f: ldfld System.Single Monocle.Sprite::Rate
+  IL_0474: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0479: ldc.r4 0.15
+  IL_047e: mul
+  IL_047f: sub
+  IL_0480: stfld System.Single Monocle.Sprite::Rate
+  IL_0485: ldarg.0
+  IL_0486: ldnull
+  IL_0487: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_048c: ldarg.0
+  IL_048d: ldc.i4.s 14
+  IL_048f: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0494: ldc.i4.1
+  IL_0495: ret
+  IL_0496: ldarg.0
+  IL_0497: ldc.i4.m1
+  IL_0498: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_049d: ldloc.1
+  IL_049e: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_04a3: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_04a8: ldfld System.Single Monocle.Sprite::Rate
+  IL_04ad: ldc.r4 0
+  IL_04b2: bgt IL_0408
+  IL_04b7: ldarg.0
+  IL_04b8: ldc.r4 0.5
+  IL_04bd: box System.Single
+  IL_04c2: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_04c7: ldarg.0
+  IL_04c8: ldc.i4.s 15
+  IL_04ca: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_04cf: ldc.i4.1
+  IL_04d0: ret
+  IL_04d1: ldarg.0
+  IL_04d2: ldc.i4.m1
+  IL_04d3: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_04d8: ldloc.1
+  IL_04d9: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_04de: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_04e3: ldstr "fallFast"
+  IL_04e8: ldc.i4.0
+  IL_04e9: ldc.i4.0
+  IL_04ea: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_04ef: ldloc.1
+  IL_04f0: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_04f5: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_04fa: ldc.r4 1
+  IL_04ff: stfld System.Single Monocle.Sprite::Rate
+  IL_0504: ldarg.0
+  IL_0505: ldloc.1
+  IL_0506: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_050b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0510: ldc.r4 0
+  IL_0515: ldc.r4 8
+  IL_051a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_051f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0524: stfld Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<target>5__2
+  IL_0529: ldarg.0
+  IL_052a: ldloc.1
+  IL_052b: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0530: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0535: stfld Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<from>5__3
+  IL_053a: ldarg.0
+  IL_053b: ldc.r4 0
+  IL_0540: stfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_0545: br.s IL_05b3
+  IL_0547: ldloc.1
+  IL_0548: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_054d: ldarg.0
+  IL_054e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<from>5__3
+  IL_0553: ldarg.0
+  IL_0554: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<target>5__2
+  IL_0559: ldarg.0
+  IL_055a: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<from>5__3
+  IL_055f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0564: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0569: ldarg.0
+  IL_056a: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_056f: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0574: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0579: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_057e: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0583: ldarg.0
+  IL_0584: ldnull
+  IL_0585: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_058a: ldarg.0
+  IL_058b: ldc.i4.s 16
+  IL_058d: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0592: ldc.i4.1
+  IL_0593: ret
+  IL_0594: ldarg.0
+  IL_0595: ldc.i4.m1
+  IL_0596: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_059b: ldarg.0
+  IL_059c: ldarg.0
+  IL_059d: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_05a2: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_05a7: ldc.r4 2
+  IL_05ac: mul
+  IL_05ad: add
+  IL_05ae: stfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_05b3: ldarg.0
+  IL_05b4: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_05b9: ldc.r4 1
+  IL_05be: blt.s IL_0547
+  IL_05c0: ldloc.1
+  IL_05c1: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_05c6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::ForceStrongWindHair
+  IL_05cb: ldc.r4 0
+  IL_05d0: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_05d5: ldarg.0
+  IL_05d6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<target>5__2
+  IL_05db: initobj Microsoft.Xna.Framework.Vector2
+  IL_05e1: ldarg.0
+  IL_05e2: ldflda Microsoft.Xna.Framework.Vector2 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<from>5__3
+  IL_05e7: initobj Microsoft.Xna.Framework.Vector2
+  IL_05ed: ldloc.1
+  IL_05ee: ldfld Celeste.CS04_MirrorPortal/Fader Celeste.CS04_MirrorPortal::fader
+  IL_05f3: ldc.r4 1
+  IL_05f8: stfld System.Single Celeste.CS04_MirrorPortal/Fader::Target
+  IL_05fd: ldarg.0
+  IL_05fe: ldc.r4 2
+  IL_0603: box System.Single
+  IL_0608: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_060d: ldarg.0
+  IL_060e: ldc.i4.s 17
+  IL_0610: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0615: ldc.i4.1
+  IL_0616: ret
+  IL_0617: ldarg.0
+  IL_0618: ldc.i4.m1
+  IL_0619: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_061e: ldloc.1
+  IL_061f: ldfld Celeste.Player Celeste.CS04_MirrorPortal::player
+  IL_0624: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0629: ldstr "sleep"
+  IL_062e: ldc.i4.0
+  IL_062f: ldc.i4.0
+  IL_0630: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0635: ldarg.0
+  IL_0636: ldc.r4 1
+  IL_063b: box System.Single
+  IL_0640: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_0645: ldarg.0
+  IL_0646: ldc.i4.s 18
+  IL_0648: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_064d: ldc.i4.1
+  IL_064e: ret
+  IL_064f: ldarg.0
+  IL_0650: ldc.i4.m1
+  IL_0651: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0656: ldarg.0
+  IL_0657: ldarg.0
+  IL_0658: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_065d: ldc.r4 1
+  IL_0662: callvirt System.Collections.IEnumerator Celeste.Level::ZoomBack(System.Single)
+  IL_0667: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_066c: ldarg.0
+  IL_066d: ldc.i4.s 19
+  IL_066f: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0674: ldc.i4.1
+  IL_0675: ret
+  IL_0676: ldarg.0
+  IL_0677: ldc.i4.m1
+  IL_0678: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_067d: ldarg.0
+  IL_067e: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_0683: ldfld Celeste.Session Celeste.Level::Session
+  IL_0688: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_068d: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
++ IL_0000: ldc.i4 45047548 @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
+  |-> retrieves Celeste.AreaMode Celeste.Mod.Randomizer.RandoModule::<CutsceneWarpMirrorFakeBSide>b__118_0(Celeste.AreaMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.AreaMode,Celeste.AreaMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::CutsceneWarpMirrorFakeBSide
+  IL_0692: brtrue IL_0732
+  IL_0697: ldarg.0
+  IL_0698: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_069d: ldfld Celeste.Session Celeste.Level::Session
+  IL_06a2: ldstr "templevoid"
+  IL_06a7: stfld System.String Celeste.Session::ColorGrade
+  IL_06ac: ldarg.0
+  IL_06ad: ldc.r4 0
+  IL_06b2: stfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_06b7: br.s IL_070b
+  IL_06b9: ldarg.0
+  IL_06ba: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_06bf: ldc.r4 0.05
+  IL_06c4: mul
+  IL_06c5: stsfld System.Single Celeste.Glitch::Value
+  IL_06ca: ldarg.0
+  IL_06cb: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_06d0: ldc.r4 32
+  IL_06d5: ldarg.0
+  IL_06d6: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_06db: mul
+  IL_06dc: stfld System.Single Celeste.Level::ScreenPadding
+  IL_06e1: ldarg.0
+  IL_06e2: ldnull
+  IL_06e3: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_06e8: ldarg.0
+  IL_06e9: ldc.i4.s 20
+  IL_06eb: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_06f0: ldc.i4.1
+  IL_06f1: ret
+  IL_06f2: ldarg.0
+  IL_06f3: ldc.i4.m1
+  IL_06f4: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_06f9: ldarg.0
+  IL_06fa: ldarg.0
+  IL_06fb: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_0700: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0705: add
+  IL_0706: stfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_070b: ldarg.0
+  IL_070c: ldfld System.Single Celeste.CS04_MirrorPortal/<Cutscene>d__6::<p>5__4
+  IL_0711: ldc.r4 1
+  IL_0716: blt.s IL_06b9
+  IL_0718: br.s IL_0732
+  IL_071a: ldarg.0
+  IL_071b: ldnull
+  IL_071c: stfld System.Object Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>2__current
+  IL_0721: ldarg.0
+  IL_0722: ldc.i4.s 21
+  IL_0724: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0729: ldc.i4.1
+  IL_072a: ret
+  IL_072b: ldarg.0
+  IL_072c: ldc.i4.m1
+  IL_072d: stfld System.Int32 Celeste.CS04_MirrorPortal/<Cutscene>d__6::<>1__state
+  IL_0732: ldloc.1
+  IL_0733: ldfld Celeste.TempleMirrorPortal Celeste.CS04_MirrorPortal::portal
+  IL_0738: dup
+  IL_0739: ldfld System.Single Celeste.TempleMirrorPortal::DistortionFade
+  IL_073e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0743: ldc.r4 2
+  IL_0748: mul
+  IL_0749: sub
+  IL_074a: dup
+  IL_074b: stloc.3
+  IL_074c: stfld System.Single Celeste.TempleMirrorPortal::DistortionFade
+  IL_0751: ldloc.3
+  IL_0752: ldc.r4 0
+  IL_0757: bgt.s IL_071a
+  IL_0759: ldloc.1
+  IL_075a: ldarg.0
+  IL_075b: ldfld Celeste.Level Celeste.CS04_MirrorPortal/<Cutscene>d__6::level
+  IL_0760: ldc.i4.1
+  IL_0761: callvirt System.Void Celeste.CutsceneEntity::EndCutscene(Celeste.Level,System.Boolean)
+  IL_0766: ldc.i4.0
+  IL_0767: ret

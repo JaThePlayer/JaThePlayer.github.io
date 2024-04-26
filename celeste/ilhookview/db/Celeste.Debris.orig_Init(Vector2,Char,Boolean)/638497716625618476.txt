@@ -1,0 +1,106 @@
+IL Diff: Celeste.Debris Celeste.Debris::orig_Init(Microsoft.Xna.Framework.Vector2,System.Char,System.Boolean)
++ IL_0000: ldarg pos @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0007: ldarg.0
+  IL_0008: ldarg.2
+  IL_0009: stfld System.Char Celeste.Debris::tileset
+  IL_000e: ldarg.0
+  IL_000f: ldarg.3
+  IL_0010: stfld System.Boolean Celeste.Debris::playSound
+  IL_0015: ldarg.0
+  IL_0016: ldsfld System.Random Monocle.Calc::Random
+  IL_001b: ldc.r4 0.6
+  IL_0020: ldc.r4 2.6
+  IL_0025: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_002a: stfld System.Single Celeste.Debris::lifeTimer
+  IL_002f: ldarg.0
+  IL_0030: ldc.r4 1
+  IL_0035: stfld System.Single Celeste.Debris::alpha
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.0
+  IL_003c: stfld System.Boolean Celeste.Debris::hasHitGround
+  IL_0041: ldarg.0
+  IL_0042: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0047: stfld Microsoft.Xna.Framework.Vector2 Celeste.Debris::speed
+  IL_004c: ldarg.0
+  IL_004d: ldc.r4 0
+  IL_0052: stfld System.Single Celeste.Debris::fadeLerp
+  IL_0057: ldarg.0
+  IL_0058: ldsfld System.Random Monocle.Calc::Random
+  IL_005d: ldc.i4.1
+  IL_005e: ldc.i4.m1
+  IL_005f: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_0064: stfld System.Int32 Celeste.Debris::rotateSign
+  IL_0069: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_006e: ldstr "debris/"
+  IL_0073: ldarga.s tileset
+  IL_0075: call System.String System.Char::ToString()
+  IL_007a: call System.String System.String::Concat(System.String,System.String)
+  IL_007f: callvirt System.Boolean Monocle.Atlas::Has(System.String)
+  IL_0084: brfalse.s IL_00ae
+  IL_0086: ldarg.0
+  IL_0087: ldfld Monocle.Image Celeste.Debris::image
+  IL_008c: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0091: ldstr "debris/"
+  IL_0096: ldarga.s tileset
+  IL_0098: call System.String System.Char::ToString()
+  IL_009d: call System.String System.String::Concat(System.String,System.String)
+  IL_00a2: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00a7: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_00ac: br.s IL_00c8
+  IL_00ae: ldarg.0
+  IL_00af: ldfld Monocle.Image Celeste.Debris::image
+  IL_00b4: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00b9: ldstr "debris/1"
+  IL_00be: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00c3: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld Monocle.Image Celeste.Debris::image
+  IL_00ce: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_00d3: pop
+  IL_00d4: ldarg.0
+  IL_00d5: ldfld Monocle.Image Celeste.Debris::image
+  IL_00da: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00df: ldarg.0
+  IL_00e0: ldfld System.Single Celeste.Debris::alpha
+  IL_00e5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00ea: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00ef: ldarg.0
+  IL_00f0: ldfld Monocle.Image Celeste.Debris::image
+  IL_00f5: ldsfld System.Random Monocle.Calc::Random
+  IL_00fa: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_00ff: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_0104: ldarg.0
+  IL_0105: ldfld Monocle.Image Celeste.Debris::image
+  IL_010a: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_010f: ldsfld System.Random Monocle.Calc::Random
+  IL_0114: ldc.r4 0.5
+  IL_0119: ldc.r4 1
+  IL_011e: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0123: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0128: ldarg.0
+  IL_0129: ldfld Monocle.Image Celeste.Debris::image
+  IL_012e: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0133: ldsfld System.Random Monocle.Calc::Random
+  IL_0138: ldc.r4 0.5
+  IL_013d: ldc.r4 1
+  IL_0142: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0147: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_014c: ldarg.0
+  IL_014d: ldfld Monocle.Image Celeste.Debris::image
+  IL_0152: ldsfld System.Random Monocle.Calc::Random
+  IL_0157: ldc.r4 0.5
+  IL_015c: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_0161: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_0166: ldarg.0
+  IL_0167: ldfld Monocle.Image Celeste.Debris::image
+  IL_016c: ldsfld System.Random Monocle.Calc::Random
+  IL_0171: ldc.r4 0.5
+  IL_0176: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_017b: callvirt System.Void Monocle.GraphicsComponent::set_FlipY(System.Boolean)
+  IL_0180: ldarg.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0181: ret

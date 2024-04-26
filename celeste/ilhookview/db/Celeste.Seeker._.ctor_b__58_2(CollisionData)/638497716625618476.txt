@@ -1,0 +1,61 @@
+IL Diff: System.Void Celeste.Seeker::<.ctor>b__58_2(Celeste.CollisionData)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Seeker::dead
+  IL_0006: brtrue IL_00ae
+  IL_000b: ldarg.0
+  IL_000c: ldarg.1
+  IL_000d: ldc.i4.3
+  IL_000e: ldc.i4.3
+  IL_000f: call System.Boolean Celeste.Actor::TrySquishWiggle(Celeste.CollisionData,System.Int32,System.Int32)
+  IL_0014: brtrue IL_00ae
+  IL_0019: newobj System.Void Celeste.Seeker/<>c__DisplayClass58_0::.ctor()
+  IL_001e: stloc.0
+  IL_001f: ldloc.0
+  IL_0020: ldarg.0
+  IL_0021: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0026: newobj System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_002b: stfld Monocle.Entity Celeste.Seeker/<>c__DisplayClass58_0::entity
+  IL_0030: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_HotPink()
+  IL_0035: ldarg.0
+  IL_0036: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_003b: ldarg.0
+  IL_003c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0041: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0046: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_004b: newobj System.Void Celeste.DeathEffect::.ctor(Microsoft.Xna.Framework.Color,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Seeker_ILHook
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Seeker_ILHook
++ IL_0000: ldc.i4 35503639 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Seeker_ILHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Seeker_ILHook
+  |-> retrieves Celeste.DeathEffect Celeste.Mod.SkinModHelper.ObjectsHook/<>c::<Celeste_Seeker_ILHook>b__12_0(Celeste.DeathEffect,Celeste.Seeker)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.DeathEffect,Celeste.DeathEffect,Celeste.Seeker>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Seeker_ILHook
+  IL_0050: stloc.1
+  IL_0051: ldloc.1
+  IL_0052: ldloc.0
+  IL_0053: ldftn System.Void Celeste.Seeker/<>c__DisplayClass58_0::<.ctor>b__3()
+  IL_0059: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_005e: stfld System.Action Celeste.DeathEffect::OnEnd
+  IL_0063: ldloc.0
+  IL_0064: ldfld Monocle.Entity Celeste.Seeker/<>c__DisplayClass58_0::entity
+  IL_0069: ldloc.1
+  IL_006a: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_006f: ldloc.0
+  IL_0070: ldfld Monocle.Entity Celeste.Seeker/<>c__DisplayClass58_0::entity
+  IL_0075: ldc.i4 -1000000
+  IL_007a: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_007f: ldarg.0
+  IL_0080: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0085: ldloc.0
+  IL_0086: ldfld Monocle.Entity Celeste.Seeker/<>c__DisplayClass58_0::entity
+  IL_008b: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0090: ldstr "event:/game/05_mirror_temple/seeker_death"
+  IL_0095: ldarg.0
+  IL_0096: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_009b: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00a0: pop
+  IL_00a1: ldarg.0
+  IL_00a2: call System.Void Monocle.Entity::RemoveSelf()
+  IL_00a7: ldarg.0
+  IL_00a8: ldc.i4.1
+  IL_00a9: stfld System.Boolean Celeste.Seeker::dead
+  IL_00ae: ret

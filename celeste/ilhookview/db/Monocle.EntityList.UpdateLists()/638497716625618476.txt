@@ -1,0 +1,234 @@
+IL Diff: System.Void Monocle.EntityList::UpdateLists()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_0006: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_000b: ldc.i4.0
+  IL_000c: ble IL_008b
+  IL_0011: ldc.i4.0
+  IL_0012: stloc.0
+  IL_0013: br.s IL_0076
+  IL_0015: ldarg.0
+  IL_0016: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_001b: ldloc.0
+  IL_001c: callvirt T System.Collections.Generic.List`1<Monocle.Entity>::get_Item(System.Int32)
+  IL_0021: stloc.1
+  IL_0022: ldarg.0
+  IL_0023: ldfld System.Collections.Generic.HashSet`1<Monocle.Entity> Monocle.EntityList::current
+  IL_0028: ldloc.1
+  IL_0029: callvirt System.Boolean System.Collections.Generic.HashSet`1<Monocle.Entity>::Add(T)
+  IL_002e: brfalse.s IL_0072
+  IL_0030: ldarg.0
+  IL_0031: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
+  IL_0036: ldloc.1
+  IL_0037: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::Add(T)
+  IL_003c: ldarg.0
+  IL_003d: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_0042: brfalse.s IL_0072
++ IL_0000: ldloc.1 @ Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerCalculateHelper::IL_EntityList_UpdateLists
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerCalculateHelper::CheckAndAddTag(Monocle.Entity) @ Celeste.Mod.TASHelper.Gameplay.Spinner.SpinnerCalculateHelper::IL_EntityList_UpdateLists
+  IL_0044: ldarg.0
+  IL_0045: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_004a: callvirt Monocle.TagLists Monocle.Scene::get_TagLists()
+  IL_004f: ldloc.1
+  IL_0050: callvirt System.Void Monocle.TagLists::EntityAdded(Monocle.Entity)
+  IL_0055: ldarg.0
+  IL_0056: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_005b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0060: ldloc.1
+  IL_0061: callvirt System.Void Monocle.Tracker::EntityAdded(Monocle.Entity)
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldloc V_1 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 34818957 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.MiscHooks/<>c::<EntityList_UpdateLists>b__10_0(Monocle.EntityList,Monocle.Entity)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Monocle.EntityList,Monocle.Entity>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  IL_0066: ldloc.1
+  IL_0067: ldarg.0
+  IL_0068: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
++ IL_0000: ldc.i4 3413 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 43484073 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.Entities.RoomChest/<>c::<EntityList_UpdateLists>b__44_0()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: brfalse IL_006d @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 3414 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 55812340 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.Entities.RoomChest/<>c::<EntityList_UpdateLists>b__44_1(Monocle.Entity,Monocle.Scene)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Monocle.Entity,Monocle.Scene>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: br IL_0000 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  IL_006d: callvirt System.Void Monocle.Entity::Added(Monocle.Scene)
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 1763289 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.MiscHooks/<>c::<EntityList_UpdateLists>b__10_1(Monocle.EntityList)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Monocle.EntityList>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  IL_0072: ldloc.0
+  IL_0073: ldc.i4.1
+  IL_0074: add
+  IL_0075: stloc.0
+  IL_0076: ldloc.0
+  IL_0077: ldarg.0
+  IL_0078: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_007d: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_0082: blt.s IL_0015
+  IL_0084: ldarg.0
+  IL_0085: ldc.i4.1
+  IL_0086: stfld System.Boolean Monocle.EntityList::unsorted
+  IL_008b: ldarg.0
+  IL_008c: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toRemove
+  IL_0091: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_0096: ldc.i4.0
+  IL_0097: ble IL_0134
+  IL_009c: ldc.i4.0
+  IL_009d: stloc.2
+  IL_009e: br.s IL_010d
+  IL_00a0: ldarg.0
+  IL_00a1: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toRemove
+  IL_00a6: ldloc.2
+  IL_00a7: callvirt T System.Collections.Generic.List`1<Monocle.Entity>::get_Item(System.Int32)
+  IL_00ac: stloc.3
+  IL_00ad: ldarg.0
+  IL_00ae: ldfld System.Collections.Generic.HashSet`1<Monocle.Entity> Monocle.EntityList::current
+  IL_00b3: ldloc.3
+  IL_00b4: callvirt System.Boolean System.Collections.Generic.HashSet`1<Monocle.Entity>::Remove(T)
+  IL_00b9: brfalse.s IL_0109
+  IL_00bb: ldarg.0
+  IL_00bc: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
+  IL_00c1: ldloc.3
+  IL_00c2: callvirt System.Boolean System.Collections.Generic.List`1<Monocle.Entity>::Remove(T)
+  IL_00c7: pop
+  IL_00c8: ldarg.0
+  IL_00c9: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_00ce: brfalse.s IL_0109
+  IL_00d0: ldloc.3
+  IL_00d1: ldarg.0
+  IL_00d2: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
++ IL_0000: ldc.i4 3416 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 24505683 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.Entities.RoomChest/<>c::<EntityList_UpdateLists>b__44_3()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: brfalse IL_00d7 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 3417 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 19224562 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.Entities.RoomChest/<>c::<EntityList_UpdateLists>b__44_4(Monocle.Entity,Monocle.Scene)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Monocle.Entity,Monocle.Scene>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: br IL_00dc @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  IL_00d7: callvirt System.Void Monocle.Entity::Removed(Monocle.Scene)
+  IL_00dc: ldarg.0
+  IL_00dd: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_00e2: callvirt Monocle.TagLists Monocle.Scene::get_TagLists()
+  IL_00e7: ldloc.3
+  IL_00e8: callvirt System.Void Monocle.TagLists::EntityRemoved(Monocle.Entity)
+  IL_00ed: ldarg.0
+  IL_00ee: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_00f3: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00f8: ldloc.3
+  IL_00f9: callvirt System.Void Monocle.Tracker::EntityRemoved(Monocle.Entity)
+  IL_00fe: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_0103: ldloc.3
+  IL_0104: callvirt System.Void Monocle.Pooler::EntityRemoved(Monocle.Entity)
+  IL_0109: ldloc.2
+  IL_010a: ldc.i4.1
+  IL_010b: add
+  IL_010c: stloc.2
+  IL_010d: ldloc.2
+  IL_010e: ldarg.0
+  IL_010f: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toRemove
+  IL_0114: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_0119: blt IL_00a0
+  IL_011e: ldarg.0
+  IL_011f: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toRemove
+  IL_0124: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::Clear()
+  IL_0129: ldarg.0
+  IL_012a: ldfld System.Collections.Generic.HashSet`1<Monocle.Entity> Monocle.EntityList::removing
+  IL_012f: callvirt System.Void System.Collections.Generic.HashSet`1<Monocle.Entity>::Clear()
+  IL_0134: ldarg.0
+  IL_0135: ldfld System.Boolean Monocle.EntityList::unsorted
+  IL_013a: brfalse.s IL_0153
+  IL_013c: ldarg.0
+  IL_013d: ldc.i4.0
+  IL_013e: stfld System.Boolean Monocle.EntityList::unsorted
+  IL_0143: ldarg.0
+  IL_0144: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
+  IL_0149: ldsfld System.Comparison`1<Monocle.Entity> Monocle.EntityList::CompareDepth
+  IL_014e: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::Sort(System.Comparison`1<T>)
+  IL_0153: ldarg.0
+  IL_0154: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_0159: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_015e: ldc.i4.0
+  IL_015f: ble IL_01e3
+  IL_0164: ldarg.0
+  IL_0165: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAwake
+  IL_016a: ldarg.0
+  IL_016b: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_0170: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::AddRange(System.Collections.Generic.IEnumerable`1<T>)
+  IL_0175: ldarg.0
+  IL_0176: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAdd
+  IL_017b: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::Clear()
+  IL_0180: ldarg.0
++ IL_0000: ldarg.0 @ Bitsbolts.Components.AwakePriority::OnEntityListUpdateLists
++ IL_0000: call System.Void Bitsbolts.Components.AwakePriority::<OnEntityListUpdateLists>m__1(Monocle.EntityList) @ Bitsbolts.Components.AwakePriority::OnEntityListUpdateLists
+  IL_0181: ldfld System.Collections.Generic.HashSet`1<Monocle.Entity> Monocle.EntityList::adding
+  IL_0186: callvirt System.Void System.Collections.Generic.HashSet`1<Monocle.Entity>::Clear()
+  IL_018b: ldarg.0
+  IL_018c: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAwake
+  IL_0191: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0196: stloc.s V_4
+  IL_0198: br.s IL_01bf
+  IL_019a: ldloca.s V_4
+  IL_019c: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_01a1: stloc.s V_5
+  IL_01a3: ldloc.s V_5
+  IL_01a5: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01aa: ldarg.0
+  IL_01ab: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
+  IL_01b0: bne.un.s IL_01bf
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldloc V_1 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 2961 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 8608754 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.MiscHooks/<>c::<EntityList_UpdateLists>b__10_2(Monocle.EntityList,Monocle.Entity)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Monocle.EntityList,Monocle.Entity>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  IL_01b2: ldloc.s V_5
+  IL_01b4: ldarg.0
+  IL_01b5: callvirt Monocle.Scene Monocle.EntityList::get_Scene()
++ IL_0000: ldc.i4 3419 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: ldc.i4 13685665 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.Entities.RoomChest/<>c::<EntityList_UpdateLists>b__44_6()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: brfalse IL_01ba @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: pop @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: pop @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
++ IL_0000: br IL_0000 @ Celeste.Mod.EeveeHelper.Entities.RoomChest::EntityList_UpdateLists
+  IL_01ba: callvirt System.Void Monocle.Entity::Awake(Monocle.Scene)
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 3083 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldc.i4 26220479 @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.EeveeHelper.MiscHooks/<>c::<EntityList_UpdateLists>b__10_3(Monocle.EntityList)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Monocle.EntityList>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.EeveeHelper.MiscHooks::EntityList_UpdateLists
++ IL_0000: ldloc V_5 @ Celeste.Mod.SpinnySpinners.SpinnySpinnersModule::EntityList_UpdateLists
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SpinnySpinners.SpinnySpinnersModule::EntityList_UpdateLists
++ IL_0000: ldc.i4 11200422 @ Celeste.Mod.SpinnySpinners.SpinnySpinnersModule::EntityList_UpdateLists
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpinnySpinners.SpinnySpinnersModule::EntityList_UpdateLists
+  |-> retrieves System.Void Celeste.Mod.SpinnySpinners.SpinnySpinnersModule/<>c::<EntityList_UpdateLists>b__23_1(Monocle.Entity)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Monocle.Entity>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.SpinnySpinners.SpinnySpinnersModule::EntityList_UpdateLists
+  IL_01bf: ldloca.s V_4
+  IL_01c1: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01c6: brtrue.s IL_019a
+  IL_01c8: leave.s IL_01d8
+  IL_01ca: ldloca.s V_4
+  IL_01cc: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01d2: callvirt System.Void System.IDisposable::Dispose()
+  IL_01d7: endfinally
+  IL_01d8: ldarg.0
+  IL_01d9: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::toAwake
+  IL_01de: callvirt System.Void System.Collections.Generic.List`1<Monocle.Entity>::Clear()
+  IL_01e3: ret

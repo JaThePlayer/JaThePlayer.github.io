@@ -1,0 +1,146 @@
+IL Diff: System.Void Celeste.WindSnowFG::Render(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Single Celeste.WindSnowFG::Alpha
+  IL_0006: ldc.r4 0
+  IL_000b: bgt.un.s IL_000e
+  IL_000d: ret
+  IL_000e: ldarg.0
+  IL_000f: ldfld Microsoft.Xna.Framework.Color Celeste.Backdrop::Color
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.WindSnowFG::visibleFade
+  IL_001a: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_001f: ldarg.0
+  IL_0020: ldfld System.Single Celeste.WindSnowFG::Alpha
+  IL_0025: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_002a: stloc.0
+  IL_002b: ldarg.1
+  IL_002c: isinst Celeste.Level
+  IL_0031: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Level::Wind
+  IL_0036: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003b: ldc.r4 0
+  IL_0040: beq.s IL_0053
+  IL_0042: ldarg.0
+  IL_0043: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.WindSnowFG::positions
+  IL_0048: ldlen
+  IL_0049: conv.i4
+  IL_004a: conv.r4
+  IL_004b: ldc.r4 0.6
+  IL_0050: mul
+  IL_0051: br.s IL_005c
+  IL_0053: ldarg.0
+  IL_0054: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.WindSnowFG::positions
+  IL_0059: ldlen
+  IL_005a: conv.i4
+  IL_005b: conv.r4
+  IL_005c: conv.i4
+  IL_005d: stloc.1
+  IL_005e: ldc.i4.0
+  IL_005f: stloc.2
++ IL_0000: ldloc.1 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_WindSnowFG_Render
++ IL_0000: call System.Int32 Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::ReplaceWindSnowAmount(System.Int32) @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_WindSnowFG_Render
++ IL_0000: stloc.1 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_WindSnowFG_Render
+  IL_0060: ldarg.0
+  IL_0061: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.WindSnowFG::positions
+  IL_0066: stloc.3
+  IL_0067: ldc.i4.0
+  IL_0068: stloc.s V_4
+  IL_006a: br IL_0158
+  IL_006f: ldloc.3
+  IL_0070: ldloc.s V_4
+  IL_0072: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_0077: stloc.s V_5
+  IL_0079: ldloca.s V_5
+  IL_007b: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0080: dup
+  IL_0081: ldind.r4
+  IL_0082: ldarg.1
+  IL_0083: isinst Celeste.Level
+  IL_0088: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_008d: callvirt System.Single Monocle.Camera::get_Y()
+  IL_0092: ldarg.0
+  IL_0093: ldflda Microsoft.Xna.Framework.Vector2 Celeste.WindSnowFG::CameraOffset
+  IL_0098: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_009d: add
+  IL_009e: sub
+  IL_009f: stind.r4
+  IL_00a0: ldloca.s V_5
+  IL_00a2: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a7: dup
+  IL_00a8: ldind.r4
+  IL_00a9: ldarg.0
+  IL_00aa: ldfld System.Single Celeste.WindSnowFG::loopHeight
+  IL_00af: rem
+  IL_00b0: stind.r4
+  IL_00b1: ldloc.s V_5
+  IL_00b3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b8: ldc.r4 0
+  IL_00bd: bge.un.s IL_00d0
+  IL_00bf: ldloca.s V_5
+  IL_00c1: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00c6: dup
+  IL_00c7: ldind.r4
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld System.Single Celeste.WindSnowFG::loopHeight
+  IL_00ce: add
+  IL_00cf: stind.r4
+  IL_00d0: ldloca.s V_5
+  IL_00d2: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d7: dup
+  IL_00d8: ldind.r4
+  IL_00d9: ldarg.1
+  IL_00da: isinst Celeste.Level
+  IL_00df: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_00e4: callvirt System.Single Monocle.Camera::get_X()
+  IL_00e9: ldarg.0
+  IL_00ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.WindSnowFG::CameraOffset
+  IL_00ef: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00f4: add
+  IL_00f5: sub
+  IL_00f6: stind.r4
+  IL_00f7: ldloca.s V_5
+  IL_00f9: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00fe: dup
+  IL_00ff: ldind.r4
+  IL_0100: ldarg.0
+  IL_0101: ldfld System.Single Celeste.WindSnowFG::loopWidth
+  IL_0106: rem
+  IL_0107: stind.r4
+  IL_0108: ldloc.s V_5
+  IL_010a: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_010f: ldc.r4 0
+  IL_0114: bge.un.s IL_0127
+  IL_0116: ldloca.s V_5
+  IL_0118: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_011d: dup
+  IL_011e: ldind.r4
+  IL_011f: ldarg.0
+  IL_0120: ldfld System.Single Celeste.WindSnowFG::loopWidth
+  IL_0125: add
+  IL_0126: stind.r4
+  IL_0127: ldloc.2
+  IL_0128: ldloc.1
+  IL_0129: bge.s IL_014e
+  IL_012b: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0130: ldstr "particles/snow"
+  IL_0135: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_013a: ldloc.s V_5
+  IL_013c: ldloc.0
+  IL_013d: ldarg.0
+  IL_013e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.WindSnowFG::scale
+  IL_0143: ldarg.0
+  IL_0144: ldfld System.Single Celeste.WindSnowFG::rotation
+  IL_0149: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_014e: ldloc.2
+  IL_014f: ldc.i4.1
+  IL_0150: add
+  IL_0151: stloc.2
+  IL_0152: ldloc.s V_4
+  IL_0154: ldc.i4.1
+  IL_0155: add
+  IL_0156: stloc.s V_4
+  IL_0158: ldloc.s V_4
+  IL_015a: ldloc.3
+  IL_015b: ldlen
+  IL_015c: conv.i4
+  IL_015d: blt IL_006f
+  IL_0162: ret

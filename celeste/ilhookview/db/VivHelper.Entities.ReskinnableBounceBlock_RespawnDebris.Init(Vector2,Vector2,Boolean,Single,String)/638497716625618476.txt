@@ -1,0 +1,71 @@
+IL Diff: VivHelper.Entities.ReskinnableBounceBlock+RespawnDebris VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Single,System.String)
++ IL_0000: ldarg from @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0006: ldarg.s directory
+  IL_0008: ldarg.3
+  IL_0009: brtrue.s IL_0012
+  IL_000b: ldstr "/fire_rubble"
+  IL_0010: br.s IL_0017
+  IL_0012: ldstr "/ice_rubble"
+  IL_0017: call System.String System.String::Concat(System.String,System.String)
+  IL_001c: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0021: stloc.0
+  IL_0022: ldsfld System.Random Monocle.Calc::Random
+  IL_0027: ldloc.0
+  IL_0028: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_002d: stloc.1
+  IL_002e: ldarg.0
+  IL_002f: ldfld Monocle.Image VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::sprite
+  IL_0034: ldnull
+  IL_0035: ceq
+  IL_0037: stloc.2
+  IL_0038: ldloc.2
+  IL_0039: brfalse.s IL_0061
+  IL_003b: nop
+  IL_003c: ldarg.0
+  IL_003d: ldarg.0
+  IL_003e: ldloc.1
+  IL_003f: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0044: dup
+  IL_0045: stloc.3
+  IL_0046: stfld Monocle.Image VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::sprite
+  IL_004b: ldloc.3
+  IL_004c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0051: nop
+  IL_0052: ldarg.0
+  IL_0053: ldfld Monocle.Image VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::sprite
+  IL_0058: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_005d: pop
+  IL_005e: nop
+  IL_005f: br.s IL_006f
+  IL_0061: nop
+  IL_0062: ldarg.0
+  IL_0063: ldfld Monocle.Image VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::sprite
+  IL_0068: ldloc.1
+  IL_0069: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_006e: nop
+  IL_006f: ldarg.0
+  IL_0070: ldarg.0
+  IL_0071: ldarg.1
+  IL_0072: dup
+  IL_0073: stloc.s V_4
+  IL_0075: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::from
+  IL_007a: ldloc.s V_4
+  IL_007c: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0081: ldarg.0
+  IL_0082: ldc.r4 0
+  IL_0087: stfld System.Single VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::percent
+  IL_008c: ldarg.0
+  IL_008d: ldarg.2
+  IL_008e: stfld Microsoft.Xna.Framework.Vector2 VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::to
+  IL_0093: ldarg.0
+  IL_0094: ldarg.s duration
+  IL_0096: stfld System.Single VivHelper.Entities.ReskinnableBounceBlock/RespawnDebris::duration
+  IL_009b: ldarg.0
+  IL_009c: stloc.s V_5
+  IL_009e: br.s IL_00a0
+  IL_00a0: ldloc.s V_5
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_00a2: ret

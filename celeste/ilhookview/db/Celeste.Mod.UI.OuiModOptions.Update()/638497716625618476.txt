@@ -1,0 +1,41 @@
+IL Diff: System.Void Celeste.Mod.UI.OuiModOptions::Update()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiModOptions::menu
+  IL_0006: brfalse.s IL_0040
+  IL_0008: ldarg.0
+  IL_0009: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiModOptions::menu
+  IL_000e: ldfld System.Boolean Celeste.TextMenu::Focused
+  IL_0013: brfalse.s IL_0040
+  IL_0015: ldarg.0
+  IL_0016: call System.Boolean Celeste.Oui::get_Selected()
+  IL_001b: brfalse.s IL_0040
+  IL_001d: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_0022: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0027: brfalse.s IL_0040
+  IL_0029: ldstr "event:/ui/main/button_back"
+  IL_002e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_0033: pop
+  IL_0034: ldarg.0
+  IL_0035: call Celeste.Overworld Celeste.Oui::get_Overworld()
+  IL_003a: callvirt T Celeste.Overworld::Goto<Celeste.OuiMainMenu>()
+  IL_003f: pop
+  IL_0040: ldarg.0
+  IL_0041: call System.Boolean Celeste.Oui::get_Selected()
+  IL_0046: brfalse.s IL_006d
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Boolean Celeste.Oui::Focused
+  IL_004e: brfalse.s IL_006d
+  IL_0050: ldsfld Monocle.VirtualButton Celeste.Input::QuickRestart
+  IL_0055: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_005a: brfalse.s IL_006d
+  IL_005c: ldarg.0
+  IL_005d: ldfld System.Action Celeste.Mod.UI.OuiModOptions::startSearching
+  IL_0062: dup
+  IL_0063: brtrue.s IL_0067
+  IL_0065: pop
+  IL_0066: ret
+  IL_0067: callvirt System.Void System.Action::Invoke()
+  IL_006c: ret
+  IL_006d: ldarg.0
+  IL_006e: call System.Void Monocle.Entity::Update()
+  IL_0073: ret

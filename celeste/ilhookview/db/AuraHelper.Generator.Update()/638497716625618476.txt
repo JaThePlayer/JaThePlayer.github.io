@@ -1,0 +1,179 @@
+IL Diff: System.Void AuraHelper.Generator::Update()
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::AuraPushRandom() @ TAS.EverestInterop.DesyncFixer::FixAuraEntityDesync
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: call System.Void Monocle.Entity::Update()
+  IL_0007: nop
+  IL_0008: ldarg.0
+  IL_0009: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000e: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0013: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0018: stloc.0
+  IL_0019: ldarg.0
+  IL_001a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0024: callvirt T Monocle.Tracker::GetEntity<AuraHelper.Lantern>()
+  IL_0029: stloc.1
+  IL_002a: ldarg.0
+  IL_002b: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0030: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0035: dup
+  IL_0036: ldind.r4
+  IL_0037: ldarg.0
+  IL_0038: ldfld System.Single AuraHelper.Generator::spdy
+  IL_003d: add
+  IL_003e: stind.r4
+  IL_003f: ldarg.0
+  IL_0040: ldarg.0
+  IL_0041: ldfld System.Int32 AuraHelper.Generator::timer
+  IL_0046: ldc.i4.1
+  IL_0047: add
+  IL_0048: stfld System.Int32 AuraHelper.Generator::timer
+  IL_004d: ldarg.0
+  IL_004e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0053: stloc.2
+  IL_0054: ldarg.0
+  IL_0055: ldfld System.Int32 AuraHelper.Generator::timer
+  IL_005a: ldc.i4.s 12
+  IL_005c: rem
+  IL_005d: brtrue.s IL_0071
+  IL_005f: ldarg.0
+  IL_0060: ldfld System.Int32 AuraHelper.Generator::timer
+  IL_0065: ldc.i4 150
+  IL_006a: cgt
+  IL_006c: ldc.i4.0
+  IL_006d: ceq
+  IL_006f: br.s IL_0072
+  IL_0071: ldc.i4.0
+  IL_0072: stloc.3
+  IL_0073: ldloc.3
+  IL_0074: brfalse IL_0191
+  IL_0079: nop
+  IL_007a: ldsfld System.Random Monocle.Calc::Random
+  IL_007f: stloc.s V_4
+  IL_0081: ldarg.0
+  IL_0082: ldloc.s V_4
+  IL_0084: ldc.i4.1
+  IL_0085: ldc.i4.s 100
+  IL_0087: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_008c: stfld System.Int32 AuraHelper.Generator::dirx
+  IL_0091: ldarg.0
+  IL_0092: ldloc.s V_4
+  IL_0094: ldc.i4.1
+  IL_0095: ldc.i4.s 100
+  IL_0097: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_009c: stfld System.Int32 AuraHelper.Generator::diry
+  IL_00a1: ldarg.0
+  IL_00a2: ldloc.2
+  IL_00a3: newobj System.Void AuraHelper.Cracker::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_00a8: stfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_00ad: ldarg.0
+  IL_00ae: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_00b9: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00be: nop
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_00c5: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00ca: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00cf: dup
+  IL_00d0: ldind.r4
+  IL_00d1: ldc.r4 3
+  IL_00d6: add
+  IL_00d7: stind.r4
+  IL_00d8: ldarg.0
+  IL_00d9: ldfld System.Int32 AuraHelper.Generator::dirx
+  IL_00de: ldc.i4.s 50
+  IL_00e0: clt
+  IL_00e2: ldc.i4.0
+  IL_00e3: ceq
+  IL_00e5: stloc.s V_5
+  IL_00e7: ldloc.s V_5
+  IL_00e9: brfalse.s IL_0110
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_00f1: ldloc.s V_4
+  IL_00f3: ldc.i4 200
+  IL_00f8: ldc.i4 900
+  IL_00fd: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_0102: conv.r4
+  IL_0103: ldc.r4 1000
+  IL_0108: div
+  IL_0109: stfld System.Single AuraHelper.Cracker::spdx
+  IL_010e: br.s IL_0134
+  IL_0110: ldarg.0
+  IL_0111: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_0116: ldloc.s V_4
+  IL_0118: ldc.i4 200
+  IL_011d: ldc.i4 900
+  IL_0122: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_0127: neg
+  IL_0128: conv.r4
+  IL_0129: ldc.r4 1000
+  IL_012e: div
+  IL_012f: stfld System.Single AuraHelper.Cracker::spdx
+  IL_0134: ldarg.0
+  IL_0135: ldfld System.Int32 AuraHelper.Generator::diry
+  IL_013a: ldc.i4.s 50
+  IL_013c: clt
+  IL_013e: ldc.i4.0
+  IL_013f: ceq
+  IL_0141: stloc.s V_6
+  IL_0143: ldloc.s V_6
+  IL_0145: brfalse.s IL_016c
+  IL_0147: ldarg.0
+  IL_0148: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_014d: ldloc.s V_4
+  IL_014f: ldc.i4 200
+  IL_0154: ldc.i4 900
+  IL_0159: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_015e: conv.r4
+  IL_015f: ldc.r4 1000
+  IL_0164: div
+  IL_0165: stfld System.Single AuraHelper.Cracker::spdy
+  IL_016a: br.s IL_0190
+  IL_016c: ldarg.0
+  IL_016d: ldfld AuraHelper.Cracker AuraHelper.Generator::temp
+  IL_0172: ldloc.s V_4
+  IL_0174: ldc.i4 200
+  IL_0179: ldc.i4 900
+  IL_017e: callvirt System.Int32 System.Random::Next(System.Int32,System.Int32)
+  IL_0183: neg
+  IL_0184: conv.r4
+  IL_0185: ldc.r4 1000
+  IL_018a: div
+  IL_018b: stfld System.Single AuraHelper.Cracker::spdy
+  IL_0190: nop
+  IL_0191: ldloc.0
+  IL_0192: brfalse.s IL_019d
+  IL_0194: ldarg.0
+  IL_0195: ldloc.0
+  IL_0196: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_019b: br.s IL_019e
+  IL_019d: ldc.i4.0
+  IL_019e: stloc.s V_7
+  IL_01a0: ldloc.s V_7
+  IL_01a2: brfalse.s IL_01b4
+  IL_01a4: nop
+  IL_01a5: ldloc.0
+  IL_01a6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_01ab: ldc.i4.0
+  IL_01ac: ldc.i4.1
+  IL_01ad: callvirt Celeste.PlayerDeadBody Celeste.Player::Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_01b2: pop
+  IL_01b3: nop
+  IL_01b4: ldarg.0
+  IL_01b5: ldfld System.Int32 AuraHelper.Generator::timer
+  IL_01ba: ldc.i4 200
+  IL_01bf: clt
+  IL_01c1: ldc.i4.0
+  IL_01c2: ceq
+  IL_01c4: stloc.s V_8
+  IL_01c6: ldloc.s V_8
+  IL_01c8: brfalse.s IL_01d1
+  IL_01ca: ldarg.0
+  IL_01cb: call System.Void Monocle.Entity::RemoveSelf()
+  IL_01d0: nop
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::AuraPopRandom() @ TAS.EverestInterop.DesyncFixer::FixAuraEntityDesync
+  IL_01d1: ret

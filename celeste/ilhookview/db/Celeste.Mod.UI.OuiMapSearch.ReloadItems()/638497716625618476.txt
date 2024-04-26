@@ -1,0 +1,546 @@
+IL Diff: System.Void Celeste.Mod.UI.OuiMapSearch::ReloadItems()
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.0
+  IL_0002: stfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_0007: ldarg.0
+  IL_0008: ldc.i4.0
+  IL_0009: stfld System.Int32 Celeste.Mod.UI.OuiMapSearch::matchCount
+  IL_000e: ldarg.0
+  IL_000f: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0014: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_0019: ldc.i4.1
+  IL_001a: callvirt System.Void Celeste.TextMenu::set_BatchMode(System.Boolean)
+  IL_001f: ldarg.0
+  IL_0020: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_0025: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::GetEnumerator()
+  IL_002a: stloc.s V_8
+  IL_002c: br.s IL_004f
+  IL_002e: ldloca.s V_8
+  IL_0030: call T System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>::get_Current()
+  IL_0035: castclass Celeste.TextMenu/Item
+  IL_003a: stloc.s V_9
+  IL_003c: ldarg.0
+  IL_003d: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0042: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_0047: ldloc.s V_9
+  IL_0049: callvirt Celeste.TextMenu Celeste.TextMenu::Remove(Celeste.TextMenu/Item)
+  IL_004e: pop
+  IL_004f: ldloca.s V_8
+  IL_0051: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>::MoveNext()
+  IL_0056: brtrue.s IL_002e
+  IL_0058: leave.s IL_0068
+  IL_005a: ldloca.s V_8
+  IL_005c: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>
+  IL_0062: callvirt System.Void System.IDisposable::Dispose()
+  IL_0067: endfinally
+  IL_0068: ldarg.0
+  IL_0069: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_006e: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Clear()
+  IL_0073: ldnull
+  IL_0074: stloc.0
+  IL_0075: ldc.i4.0
+  IL_0076: stloc.1
+  IL_0077: ldc.i4 2147483647
+  IL_007c: stloc.2
+  IL_007d: ldarg.0
+  IL_007e: ldfld System.String Celeste.Mod.UI.OuiMapSearch::search
+  IL_0083: ldc.i4.s 32
+  IL_0085: ldc.i4.0
+  IL_0086: callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)
+  IL_008b: ldsfld System.Func`2<System.String,System.String> Celeste.Mod.UI.OuiMapSearch/<>c::<>9__29_0
+  IL_0090: dup
+  IL_0091: brtrue.s IL_00aa
+  IL_0093: pop
+  IL_0094: ldsfld Celeste.Mod.UI.OuiMapSearch/<>c Celeste.Mod.UI.OuiMapSearch/<>c::<>9
+  IL_0099: ldftn System.String Celeste.Mod.UI.OuiMapSearch/<>c::<ReloadItems>b__29_0(System.String)
+  IL_009f: newobj System.Void System.Func`2<System.String,System.String>::.ctor(System.Object,System.IntPtr)
+  IL_00a4: dup
+  IL_00a5: stsfld System.Func`2<System.String,System.String> Celeste.Mod.UI.OuiMapSearch/<>c::<>9__29_0
+  IL_00aa: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.String,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
+  IL_00af: call TSource[] System.Linq.Enumerable::ToArray<System.String>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_00b4: stloc.s V_4
+  IL_00b6: ldc.i4.0
+  IL_00b7: stloc.s V_5
+  IL_00b9: ldc.i4.0
+  IL_00ba: stloc.s V_10
+  IL_00bc: br.s IL_010c
+  IL_00be: ldloc.s V_10
++ IL_0000: dup @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ldsfld System.Int32 Celeste.Mod.Procedurline.Demo.DemoMap::DemoMapID @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ceq @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: brfalse IL_00c0 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ldnull @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: br IL_00c5 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
+  IL_00c0: call Celeste.AreaData Celeste.AreaData::Get(System.Int32)
+  IL_00c5: ldfld System.String Celeste.AreaData::Name
+  IL_00ca: stloc.s V_11
+  IL_00cc: ldloc.s V_11
+  IL_00ce: ldnull
+  IL_00cf: call System.String Celeste.Mod.Extensions::DialogCleanOrNull(System.String,Celeste.Language)
+  IL_00d4: dup
+  IL_00d5: brtrue.s IL_00df
+  IL_00d7: pop
+  IL_00d8: ldloc.s V_11
+  IL_00da: call System.String Celeste.Mod.Extensions::SpacedPascalCase(System.String)
+  IL_00df: stloc.3
+  IL_00e0: ldloc.3
+  IL_00e1: callvirt System.String System.String::ToLower()
+  IL_00e6: ldarg.0
+  IL_00e7: ldfld System.String Celeste.Mod.UI.OuiMapSearch::search
+  IL_00ec: callvirt System.String System.String::ToLower()
+  IL_00f1: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00f6: brfalse.s IL_0106
+  IL_00f8: ldarg.0
+  IL_00f9: ldarg.0
+  IL_00fa: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::matchCount
+  IL_00ff: ldc.i4.1
+  IL_0100: add
+  IL_0101: stfld System.Int32 Celeste.Mod.UI.OuiMapSearch::matchCount
+  IL_0106: ldloc.s V_10
+  IL_0108: ldc.i4.1
+  IL_0109: add
+  IL_010a: stloc.s V_10
+  IL_010c: ldloc.s V_10
+  IL_010e: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0113: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_0118: blt.s IL_00be
+  IL_011a: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_011f: stloc.s V_6
+  IL_0121: ldloc.s V_6
+  IL_0123: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_0128: pop
+  IL_0129: ldc.i4.0
+  IL_012a: stloc.s V_12
+  IL_012c: br IL_04b9
+  IL_0131: newobj System.Void Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::.ctor()
+  IL_0136: stloc.s V_13
+  IL_0138: ldloc.s V_13
+  IL_013a: ldarg.0
+  IL_013b: stfld Celeste.Mod.UI.OuiMapSearch Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::<>4__this
+  IL_0140: ldloc.s V_13
+  IL_0142: ldloc.s V_12
++ IL_0000: dup @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ldsfld System.Int32 Celeste.Mod.Procedurline.Demo.DemoMap::DemoMapID @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ceq @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: brfalse IL_0144 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: ldnull @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: br IL_0149 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
+  IL_0144: call Celeste.AreaData Celeste.AreaData::Get(System.Int32)
+  IL_0149: stfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_014e: ldloc.s V_13
+  IL_0150: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_0155: brfalse IL_04b3
+  IL_015a: ldloc.s V_13
+  IL_015c: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_0161: ldc.i4.0
+  IL_0162: callvirt System.Boolean Celeste.AreaData::HasMode(Celeste.AreaMode)
++ IL_0000: ldloc.s V_13 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: ldc.i4 31424834 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
+  |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modMapSearch>b__37_4(System.Boolean,Celeste.AreaData)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.AreaData>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
+  IL_0167: brfalse IL_04b3
+  IL_016c: ldloc.s V_6
+  IL_016e: ldfld System.Boolean Celeste.SaveData::DebugMode
+  IL_0173: brtrue.s IL_0197
+  IL_0175: ldloc.s V_13
+  IL_0177: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_017c: ldfld Celeste.Mod.Meta.MapMeta Celeste.AreaData::Meta
+  IL_0181: dup
+  IL_0182: brtrue.s IL_0188
+  IL_0184: pop
+  IL_0185: ldnull
+  IL_0186: br.s IL_018d
+  IL_0188: callvirt System.String Celeste.Mod.Meta.MapMeta::get_Parent()
+  IL_018d: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0192: brfalse IL_04b3
+  IL_0197: ldloc.s V_13
+  IL_0199: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_019e: callvirt System.String Celeste.AreaData::get_LevelSet()
+  IL_01a3: stloc.s V_14
+  IL_01a5: ldloc.s V_13
+  IL_01a7: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_01ac: ldfld System.String Celeste.AreaData::Name
+  IL_01b1: stloc.s V_15
+  IL_01b3: ldloc.s V_15
+  IL_01b5: ldnull
+  IL_01b6: call System.String Celeste.Mod.Extensions::DialogCleanOrNull(System.String,Celeste.Language)
+  IL_01bb: dup
+  IL_01bc: brtrue.s IL_01c6
+  IL_01be: pop
+  IL_01bf: ldloc.s V_15
+  IL_01c1: call System.String Celeste.Mod.Extensions::SpacedPascalCase(System.String)
+  IL_01c6: stloc.3
+  IL_01c7: ldloc.s V_14
+  IL_01c9: ldstr "Celeste"
+  IL_01ce: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01d3: brfalse.s IL_01df
+  IL_01d5: ldloc.s V_12
+  IL_01d7: ldloc.1
+  IL_01d8: ldloc.2
+  IL_01d9: add
+  IL_01da: bgt IL_04b3
+  IL_01df: newobj System.Void System.Collections.Generic.List`1<System.String>::.ctor()
+  IL_01e4: dup
+  IL_01e5: ldloc.s V_15
+  IL_01e7: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_01ec: dup
+  IL_01ed: ldloc.3
+  IL_01ee: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_01f3: dup
+  IL_01f4: ldloc.s V_14
+  IL_01f6: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_01fb: dup
+  IL_01fc: ldloc.s V_14
+  IL_01fe: call System.String Celeste.Dialog::CleanLevelSet(System.String)
+  IL_0203: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_0208: ldsfld System.Func`2<System.String,System.String> Celeste.Mod.UI.OuiMapSearch/<>c::<>9__29_1
+  IL_020d: dup
+  IL_020e: brtrue.s IL_0227
+  IL_0210: pop
+  IL_0211: ldsfld Celeste.Mod.UI.OuiMapSearch/<>c Celeste.Mod.UI.OuiMapSearch/<>c::<>9
+  IL_0216: ldftn System.String Celeste.Mod.UI.OuiMapSearch/<>c::<ReloadItems>b__29_1(System.String)
+  IL_021c: newobj System.Void System.Func`2<System.String,System.String>::.ctor(System.Object,System.IntPtr)
+  IL_0221: dup
+  IL_0222: stsfld System.Func`2<System.String,System.String> Celeste.Mod.UI.OuiMapSearch/<>c::<>9__29_1
+  IL_0227: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.String,System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
+  IL_022c: call System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.String>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_0231: stloc.s V_16
+  IL_0233: ldloc.s V_4
+  IL_0235: call System.Collections.Generic.List`1<TSource> System.Linq.Enumerable::ToList<System.String>(System.Collections.Generic.IEnumerable`1<TSource>)
+  IL_023a: stloc.s V_17
+  IL_023c: ldloc.s V_4
+  IL_023e: stloc.s V_19
+  IL_0240: ldc.i4.0
+  IL_0241: stloc.s V_20
+  IL_0243: br.s IL_0283
+  IL_0245: newobj System.Void Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_1::.ctor()
+  IL_024a: stloc.s V_21
+  IL_024c: ldloc.s V_21
+  IL_024e: ldloc.s V_19
+  IL_0250: ldloc.s V_20
+  IL_0252: ldelem.ref
+  IL_0253: stfld System.String Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_1::hunk
+  IL_0258: ldloc.s V_16
+  IL_025a: ldloc.s V_21
+  IL_025c: ldftn System.Boolean Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_1::<ReloadItems>b__4(System.String)
+  IL_0262: newobj System.Void System.Func`2<System.String,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0267: call System.Boolean System.Linq.Enumerable::Any<System.String>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_026c: brfalse.s IL_027d
+  IL_026e: ldloc.s V_17
+  IL_0270: ldloc.s V_21
+  IL_0272: ldfld System.String Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_1::hunk
+  IL_0277: callvirt System.Boolean System.Collections.Generic.List`1<System.String>::Remove(T)
+  IL_027c: pop
+  IL_027d: ldloc.s V_20
+  IL_027f: ldc.i4.1
+  IL_0280: add
+  IL_0281: stloc.s V_20
+  IL_0283: ldloc.s V_20
+  IL_0285: ldloc.s V_19
+  IL_0287: ldlen
+  IL_0288: conv.i4
+  IL_0289: blt.s IL_0245
+  IL_028b: ldloc.s V_17
+  IL_028d: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_0292: ldc.i4.0
+  IL_0293: bgt IL_04b3
+  IL_0298: ldarg.0
+  IL_0299: ldarg.0
+  IL_029a: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_029f: ldc.i4.1
+  IL_02a0: add
+  IL_02a1: stfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_02a6: ldloc.3
+  IL_02a7: ldnull
+  IL_02a8: newobj System.Void Celeste.TextMenuExt/ButtonExt::.ctor(System.String,System.String)
+  IL_02ad: stloc.s V_18
+  IL_02af: ldloc.s V_18
+  IL_02b1: ldc.r4 0
+  IL_02b6: callvirt System.Void Celeste.TextMenuExt/ButtonExt::set_Alpha(System.Single)
+  IL_02bb: ldloc.s V_13
+  IL_02bd: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_02c2: ldfld System.String Celeste.AreaData::Icon
+  IL_02c7: ldstr "areas/null"
+  IL_02cc: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_02d1: brfalse.s IL_02e6
+  IL_02d3: ldloc.s V_18
+  IL_02d5: ldloc.s V_13
+  IL_02d7: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area
+  IL_02dc: ldfld System.String Celeste.AreaData::Icon
+  IL_02e1: callvirt System.Void Celeste.TextMenuExt/ButtonExt::set_Icon(System.String)
+  IL_02e6: ldloc.s V_18
+  IL_02e8: ldc.r4 64
+  IL_02ed: newobj System.Void System.Nullable`1<System.Single>::.ctor(T)
+  IL_02f2: callvirt System.Void Celeste.TextMenuExt/ButtonExt::set_IconWidth(System.Nullable`1<System.Single>)
+  IL_02f7: ldloc.s V_14
+  IL_02f9: ldstr "Celeste"
+  IL_02fe: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0303: brfalse.s IL_0314
+  IL_0305: ldloc.s V_12
+  IL_0307: ldloc.1
+  IL_0308: ldloc.2
+  IL_0309: add
+  IL_030a: ble.s IL_0314
+  IL_030c: ldloc.s V_18
+  IL_030e: ldc.i4.1
+  IL_030f: stfld System.Boolean Celeste.TextMenu/Item::Disabled
+  IL_0314: ldloc.3
+  IL_0315: callvirt System.String System.String::ToLower()
+  IL_031a: ldarg.0
+  IL_031b: ldfld System.String Celeste.Mod.UI.OuiMapSearch::search
+  IL_0320: callvirt System.String System.String::ToLower()
+  IL_0325: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_032a: brfalse IL_0419
+  IL_032f: ldloc.s V_5
+  IL_0331: brtrue.s IL_0374
+  IL_0333: ldstr "maplist_search_match"
+  IL_0338: ldnull
+  IL_0339: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_033e: ldnull
+  IL_033f: newobj System.Void Celeste.TextMenuExt/SubHeaderExt::.ctor(System.String,System.String)
+  IL_0344: stsfld Celeste.TextMenuExt/SubHeaderExt Celeste.Mod.UI.OuiMapSearch::perfectMatchHeader
+  IL_0349: ldarg.0
+  IL_034a: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_034f: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_0354: ldc.i4.0
+  IL_0355: ldsfld Celeste.TextMenuExt/SubHeaderExt Celeste.Mod.UI.OuiMapSearch::perfectMatchHeader
+  IL_035a: callvirt Celeste.TextMenu Celeste.TextMenu::Insert(System.Int32,Celeste.TextMenu/Item)
+  IL_035f: pop
+  IL_0360: ldarg.0
+  IL_0361: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_0366: ldc.i4.0
+  IL_0367: ldsfld Celeste.TextMenuExt/SubHeaderExt Celeste.Mod.UI.OuiMapSearch::perfectMatchHeader
+  IL_036c: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Insert(System.Int32,T)
+  IL_0371: ldc.i4.1
+  IL_0372: stloc.s V_5
+  IL_0374: ldarg.0
+  IL_0375: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_037a: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_037f: ldc.i4.1
+  IL_0380: ldloc.s V_18
+  IL_0382: ldloc.s V_13
+  IL_0384: ldftn System.Void Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::<ReloadItems>b__2()
+  IL_038a: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_038f: callvirt Celeste.TextMenu/Item Celeste.TextMenu/Item::Pressed(System.Action)
+  IL_0394: callvirt Celeste.TextMenu Celeste.TextMenu::Insert(System.Int32,Celeste.TextMenu/Item)
+  IL_0399: pop
+  IL_039a: ldarg.0
+  IL_039b: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_03a0: ldc.i4.1
+  IL_03a1: ldloc.s V_18
+  IL_03a3: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Insert(System.Int32,T)
+  IL_03a8: ldarg.0
+  IL_03a9: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::matchCount
+  IL_03ae: ldc.i4.1
+  IL_03af: ble IL_04b3
+  IL_03b4: ldloc.s V_14
+  IL_03b6: stloc.0
+  IL_03b7: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_03bc: ldloc.s V_14
+  IL_03be: callvirt Celeste.LevelSetStats Celeste.SaveData::GetLevelSetStatsFor(System.String)
+  IL_03c3: dup
+  IL_03c4: callvirt System.Int32 Celeste.LevelSetStats::get_AreaOffset()
+  IL_03c9: stloc.1
+  IL_03ca: dup
+  IL_03cb: callvirt System.Int32 Celeste.LevelSetStats::get_UnlockedAreas()
+  IL_03d0: stloc.2
+  IL_03d1: callvirt System.Int32 Celeste.LevelSetStats::get_UnlockedModes()
+  IL_03d6: pop
+  IL_03d7: ldloc.s V_14
+  IL_03d9: call System.String Celeste.Dialog::CleanLevelSet(System.String)
+  IL_03de: ldnull
+  IL_03df: newobj System.Void Celeste.TextMenuExt/SubHeaderExt::.ctor(System.String,System.String)
+  IL_03e4: stloc.s V_22
+  IL_03e6: ldloc.s V_22
+  IL_03e8: ldc.r4 0
+  IL_03ed: callvirt System.Void Celeste.TextMenuExt/SubHeaderExt::set_Alpha(System.Single)
+  IL_03f2: ldarg.0
+  IL_03f3: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_03f8: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_03fd: ldc.i4.1
+  IL_03fe: ldloc.s V_22
+  IL_0400: callvirt Celeste.TextMenu Celeste.TextMenu::Insert(System.Int32,Celeste.TextMenu/Item)
+  IL_0405: pop
+  IL_0406: ldarg.0
+  IL_0407: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_040c: ldc.i4.1
+  IL_040d: ldloc.s V_22
+  IL_040f: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Insert(System.Int32,T)
+  IL_0414: br IL_04b3
+  IL_0419: ldloc.0
+  IL_041a: ldloc.s V_14
+  IL_041c: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0421: brfalse.s IL_0481
+  IL_0423: ldloc.s V_14
+  IL_0425: stloc.0
+  IL_0426: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_042b: ldloc.s V_14
+  IL_042d: callvirt Celeste.LevelSetStats Celeste.SaveData::GetLevelSetStatsFor(System.String)
+  IL_0432: dup
+  IL_0433: callvirt System.Int32 Celeste.LevelSetStats::get_AreaOffset()
+  IL_0438: stloc.1
+  IL_0439: dup
+  IL_043a: callvirt System.Int32 Celeste.LevelSetStats::get_UnlockedAreas()
+  IL_043f: stloc.2
+  IL_0440: callvirt System.Int32 Celeste.LevelSetStats::get_UnlockedModes()
+  IL_0445: pop
+  IL_0446: ldloc.s V_14
+  IL_0448: call System.String Celeste.Dialog::CleanLevelSet(System.String)
+  IL_044d: ldnull
+  IL_044e: newobj System.Void Celeste.TextMenuExt/SubHeaderExt::.ctor(System.String,System.String)
+  IL_0453: stloc.s V_23
+  IL_0455: ldloc.s V_23
+  IL_0457: ldc.r4 0
+  IL_045c: callvirt System.Void Celeste.TextMenuExt/SubHeaderExt::set_Alpha(System.Single)
+  IL_0461: ldarg.0
+  IL_0462: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0467: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_046c: ldloc.s V_23
+  IL_046e: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_0473: pop
+  IL_0474: ldarg.0
+  IL_0475: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_047a: ldloc.s V_23
+  IL_047c: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Add(T)
+  IL_0481: ldarg.0
+  IL_0482: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0487: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_048c: ldloc.s V_18
+  IL_048e: ldloc.s V_13
+  IL_0490: ldftn System.Void Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::<ReloadItems>b__3()
+  IL_0496: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_049b: callvirt Celeste.TextMenu/Item Celeste.TextMenu/Item::Pressed(System.Action)
+  IL_04a0: callvirt Celeste.TextMenu Celeste.TextMenu::Add(Celeste.TextMenu/Item)
+  IL_04a5: pop
+  IL_04a6: ldarg.0
+  IL_04a7: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_04ac: ldloc.s V_18
+  IL_04ae: callvirt System.Void System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::Add(T)
+  IL_04b3: ldloc.s V_12
+  IL_04b5: ldc.i4.1
+  IL_04b6: add
+  IL_04b7: stloc.s V_12
+  IL_04b9: ldloc.s V_12
+  IL_04bb: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_04c0: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_04c5: blt IL_0131
+  IL_04ca: ldarg.0
+  IL_04cb: ldfld Celeste.TextMenu/SubHeader Celeste.Mod.UI.OuiMapSearch::resultHeader
+  IL_04d0: brfalse.s IL_050e
+  IL_04d2: ldarg.0
+  IL_04d3: ldfld Celeste.TextMenu/SubHeader Celeste.Mod.UI.OuiMapSearch::resultHeader
+  IL_04d8: ldarg.0
+  IL_04d9: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_04de: ldc.i4.1
+  IL_04df: beq.s IL_04ee
+  IL_04e1: ldstr "maplist_results_plural"
+  IL_04e6: ldnull
+  IL_04e7: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_04ec: br.s IL_04f9
+  IL_04ee: ldstr "maplist_results_singular"
+  IL_04f3: ldnull
+  IL_04f4: call System.String Celeste.Dialog::Get(System.String,Celeste.Language)
+  IL_04f9: ldarg.0
+  IL_04fa: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_04ff: box System.Int32
+  IL_0504: call System.String System.String::Format(System.String,System.Object)
+  IL_0509: stfld System.String Celeste.TextMenu/SubHeader::Title
+  IL_050e: ldarg.0
+  IL_050f: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0514: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_0519: ldc.i4.0
+  IL_051a: callvirt System.Void Celeste.TextMenu::set_BatchMode(System.Boolean)
+  IL_051f: ldc.r4 0.03
+  IL_0524: stloc.s V_7
+  IL_0526: ldarg.0
+  IL_0527: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_052c: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::get_Count()
+  IL_0531: ldc.i4.0
+  IL_0532: ble.s IL_0552
+  IL_0534: ldc.r4 0.03
+  IL_0539: ldc.r4 1
+  IL_053e: ldarg.0
+  IL_053f: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_0544: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::get_Count()
+  IL_0549: conv.r4
+  IL_054a: div
+  IL_054b: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_0550: stloc.s V_7
+  IL_0552: ldc.i4.0
+  IL_0553: stloc.s V_24
+  IL_0555: br.s IL_0580
+  IL_0557: ldarg.0
+  IL_0558: ldarg.0
+  IL_0559: ldloc.s V_24
+  IL_055b: ldloc.s V_7
+  IL_055d: ldarg.0
+  IL_055e: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_0563: ldloc.s V_24
+  IL_0565: callvirt T System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::get_Item(System.Int32)
+  IL_056a: callvirt System.Collections.IEnumerator Celeste.Mod.UI.OuiMapSearch::FadeIn(System.Int32,System.Single,Celeste.TextMenuExt/IItemExt)
+  IL_056f: ldc.i4.1
+  IL_0570: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0575: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_057a: ldloc.s V_24
+  IL_057c: ldc.i4.1
+  IL_057d: add
+  IL_057e: stloc.s V_24
+  IL_0580: ldloc.s V_24
+  IL_0582: ldarg.0
+  IL_0583: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_0588: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::get_Count()
+  IL_058d: blt.s IL_0557
+  IL_058f: ldarg.0
+  IL_0590: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_0595: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_059a: ldarg.0
+  IL_059b: ldfld System.Int32 Celeste.Mod.UI.OuiMapSearch::itemCount
+  IL_05a0: ldc.i4.0
+  IL_05a1: cgt
+  IL_05a3: stfld System.Int32 Celeste.TextMenu::Selection
+  IL_05a8: ldarg.0
+  IL_05a9: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_05ae: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_05b3: callvirt System.Single Celeste.TextMenu::get_Height()
+  IL_05b8: ldarg.0
+  IL_05b9: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_05be: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_05c3: callvirt System.Single Celeste.TextMenu::get_ScrollableMinSize()
+  IL_05c8: ble.un.s IL_05ef
+  IL_05ca: ldarg.0
+  IL_05cb: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_05d0: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_05d5: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_05da: ldarg.0
+  IL_05db: ldfld Celeste.Mod.UI.OuiMapSearch/SearchMenu Celeste.Mod.UI.OuiMapSearch::menu
+  IL_05e0: ldfld Celeste.TextMenu Celeste.Mod.UI.OuiMapSearch/SearchMenu::rightMenu
+  IL_05e5: callvirt System.Single Celeste.TextMenu::get_ScrollTargetY()
+  IL_05ea: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_05ef: ldarg.0
+  IL_05f0: ldloc.s V_5
+  IL_05f2: stfld System.Boolean Celeste.Mod.UI.OuiMapSearch::quickMatched
+  IL_05f7: ldarg.0
+  IL_05f8: ldfld System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt> Celeste.Mod.UI.OuiMapSearch::items
+  IL_05fd: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.TextMenuExt/IItemExt>::GetEnumerator()
+  IL_0602: stloc.s V_8
+  IL_0604: br.s IL_061d
+  IL_0606: ldloca.s V_8
+  IL_0608: call T System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>::get_Current()
+  IL_060d: castclass Celeste.TextMenu/Item
+  IL_0612: ldarg.0
+  IL_0613: callvirt System.Boolean Celeste.Mod.UI.OuiMapSearch::get_Searching()
+  IL_0618: stfld System.Boolean Celeste.TextMenu/Item::Disabled
+  IL_061d: ldloca.s V_8
+  IL_061f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>::MoveNext()
+  IL_0624: brtrue.s IL_0606
+  IL_0626: leave.s IL_0636
+  IL_0628: ldloca.s V_8
+  IL_062a: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.TextMenuExt/IItemExt>
+  IL_0630: callvirt System.Void System.IDisposable::Dispose()
+  IL_0635: endfinally
+  IL_0636: ret

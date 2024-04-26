@@ -1,0 +1,162 @@
+IL Diff: System.Void Celeste.CassetteBlockManager::AdvanceMusic(System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Single Celeste.CassetteBlockManager::beatTimer
+  IL_0007: ldarg.1
+  IL_0008: add
+  IL_0009: stfld System.Single Celeste.CassetteBlockManager::beatTimer
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Single Celeste.CassetteBlockManager::beatTimer
+  IL_0014: ldc.r4 0.16666667
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldc.i4 67021574 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
+  |-> retrieves System.Single Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock/<>c::<swingCassetteMusic>b__5_0(System.Single,Celeste.CassetteBlockManager,System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Single,System.Single,Celeste.CassetteBlockManager,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
+  IL_0019: bge.un.s IL_001c
+  IL_001b: ret
+  IL_001c: ldarg.0
+  IL_001d: ldarg.0
+  IL_001e: ldfld System.Single Celeste.CassetteBlockManager::beatTimer
+  IL_0023: ldc.r4 0.16666667
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldarg.0 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: ldc.i4 60038408 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
+  |-> retrieves System.Single Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock/<>c::<swingCassetteMusic>b__5_0(System.Single,Celeste.CassetteBlockManager,System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Single,System.Single,Celeste.CassetteBlockManager,System.Int32>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::swingCassetteMusic
+  IL_0028: sub
+  IL_0029: stfld System.Single Celeste.CassetteBlockManager::beatTimer
+  IL_002e: ldarg.0
+  IL_002f: ldarg.0
+  IL_0030: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_0035: ldc.i4.1
+  IL_0036: add
+  IL_0037: stfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_003c: ldarg.0
+  IL_003d: ldarg.0
+  IL_003e: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_0043: ldarg.0
+  IL_0044: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndexMax
+  IL_0049: rem
+  IL_004a: stfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_004f: ldarg.0
+  IL_0050: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_0055: ldarg.0
+  IL_0056: ldfld System.Int32 Celeste.CassetteBlockManager::beatsPerTick
+  IL_005b: ldarg.0
+  IL_005c: ldfld System.Int32 Celeste.CassetteBlockManager::ticksPerSwap
+  IL_0061: mul
+  IL_0062: rem
+  IL_0063: brtrue.s IL_00ae
+  IL_0065: ldarg.0
+  IL_0066: ldarg.0
+  IL_0067: ldfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_006c: ldc.i4.1
+  IL_006d: add
+  IL_006e: stfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_0073: ldarg.0
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_007a: ldarg.0
+  IL_007b: ldfld System.Int32 Celeste.CassetteBlockManager::maxBeat
+  IL_0080: rem
+  IL_0081: stfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_0086: ldarg.0
+  IL_0087: ldarg.0
+  IL_0088: ldfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_008d: callvirt System.Void Celeste.CassetteBlockManager::SetActiveIndex(System.Int32)
+  IL_0092: ldarg.0
+  IL_0093: ldfld System.Boolean Celeste.CassetteBlockManager::isLevelMusic
+  IL_0098: brtrue.s IL_00a5
+  IL_009a: ldstr "event:/game/general/cassette_block_switch_2"
+  IL_009f: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_00a4: pop
+  IL_00a5: ldc.i4.1
+  IL_00a6: ldc.i4.0
+  IL_00a7: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_00ac: br.s IL_00fd
+  IL_00ae: ldarg.0
+  IL_00af: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_00b4: ldc.i4.1
+  IL_00b5: add
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld System.Int32 Celeste.CassetteBlockManager::beatsPerTick
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld System.Int32 Celeste.CassetteBlockManager::ticksPerSwap
+  IL_00c2: mul
+  IL_00c3: rem
+  IL_00c4: brtrue.s IL_00db
+  IL_00c6: ldarg.0
+  IL_00c7: ldarg.0
+  IL_00c8: ldfld System.Int32 Celeste.CassetteBlockManager::currentIndex
+  IL_00cd: ldc.i4.1
+  IL_00ce: add
+  IL_00cf: ldarg.0
+  IL_00d0: ldfld System.Int32 Celeste.CassetteBlockManager::maxBeat
+  IL_00d5: rem
+  IL_00d6: callvirt System.Void Celeste.CassetteBlockManager::SetWillActivate(System.Int32)
+  IL_00db: ldarg.0
+  IL_00dc: ldfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_00e1: ldarg.0
+  IL_00e2: ldfld System.Int32 Celeste.CassetteBlockManager::beatsPerTick
+  IL_00e7: rem
+  IL_00e8: brtrue.s IL_00fd
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld System.Boolean Celeste.CassetteBlockManager::isLevelMusic
+  IL_00f0: brtrue.s IL_00fd
+  IL_00f2: ldstr "event:/game/general/cassette_block_switch_1"
+  IL_00f7: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_00fc: pop
+  IL_0000: ldarg.0
++ IL_0000: call System.Void FrostHelper.Components.CassetteListener::AdvanceMusicCallback(Celeste.CassetteBlockManager) @ FrostHelper.Components.CassetteListener::CassetteBlockManager_AdvanceMusic
++ IL_00fd: ldarg.0 @ FrostHelper.Components.CassetteListener::CassetteBlockManager_AdvanceMusic
+  IL_00fe: ldfld System.Int32 Celeste.CassetteBlockManager::leadBeats
+  IL_0103: ldc.i4.0
+  IL_0104: ble.s IL_013d
+  IL_0106: ldarg.0
+  IL_0107: ldarg.0
+  IL_0108: ldfld System.Int32 Celeste.CassetteBlockManager::leadBeats
+  IL_010d: ldc.i4.1
+  IL_010e: sub
+  IL_010f: stfld System.Int32 Celeste.CassetteBlockManager::leadBeats
+  IL_0114: ldarg.0
+  IL_0115: ldfld System.Int32 Celeste.CassetteBlockManager::leadBeats
+  IL_011a: brtrue.s IL_013d
+  IL_011c: ldarg.0
+  IL_011d: ldc.i4.0
+  IL_011e: stfld System.Int32 Celeste.CassetteBlockManager::beatIndex
+  IL_0123: ldarg.0
+  IL_0124: ldfld System.Boolean Celeste.CassetteBlockManager::isLevelMusic
+  IL_0129: brtrue.s IL_013d
+  IL_012b: ldarg.0
+  IL_012c: ldfld FMOD.Studio.EventInstance Celeste.CassetteBlockManager::sfx
+  IL_0131: dup
+  IL_0132: brtrue.s IL_0137
+  IL_0134: pop
+  IL_0135: br.s IL_013d
+  IL_0137: callvirt FMOD.RESULT FMOD.Studio.EventInstance::start()
+  IL_013c: pop
+  IL_013d: ldarg.0
+  IL_013e: ldfld System.Int32 Celeste.CassetteBlockManager::leadBeats
++ IL_0000: call System.Int32 TAS.EverestInterop.AutoMute::MuteBeats(System.Int32) @ TAS.EverestInterop.AutoMute::CassetteBlockManagerOnAdvanceMusic
+  IL_0143: ldc.i4.0
+  IL_0144: bgt.s IL_0163
+  IL_0146: ldarg.0
+  IL_0147: ldfld FMOD.Studio.EventInstance Celeste.CassetteBlockManager::sfx
+  IL_014c: dup
+  IL_014d: brtrue.s IL_0151
+  IL_014f: pop
+  IL_0150: ret
+  IL_0151: ldstr "sixteenth_note"
+  IL_0156: ldarg.0
+  IL_0157: callvirt System.Int32 Celeste.CassetteBlockManager::GetSixteenthNote()
+  IL_015c: conv.r4
+  IL_015d: callvirt FMOD.RESULT FMOD.Studio.EventInstance::setParameterValue(System.String,System.Single)
+  IL_0162: pop
+  IL_0163: ret

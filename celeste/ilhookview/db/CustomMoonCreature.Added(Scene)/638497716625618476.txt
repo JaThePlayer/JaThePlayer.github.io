@@ -1,0 +1,48 @@
+IL Diff: System.Void CustomMoonCreature::Added(Monocle.Scene)
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0008: nop
+  IL_0009: ldc.i4.0
+  IL_000a: stloc.0
+  IL_000b: br.s IL_004b
+  IL_000d: nop
+  IL_000e: ldarg.1
+  IL_000f: ldarg.0
+  IL_0010: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0015: ldsfld System.Random Monocle.Calc::Random
+  IL_001a: ldc.i4.s -4
+  IL_001c: ldc.i4.4
+  IL_001d: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0022: conv.r4
+  IL_0023: ldsfld System.Random Monocle.Calc::Random
+  IL_0028: ldc.i4.s -4
+  IL_002a: ldc.i4.4
+  IL_002b: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0030: conv.r4
+  IL_0031: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0036: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_003b: newobj System.Void Celeste.MoonCreature::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0040: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0045: nop
+  IL_0046: nop
+  IL_0047: ldloc.0
+  IL_0048: ldc.i4.1
+  IL_0049: add
+  IL_004a: stloc.0
+  IL_004b: ldloc.0
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Int32 CustomMoonCreature::spawn
+  IL_0052: clt
+  IL_0054: stloc.1
+  IL_0055: ldloc.1
+  IL_0056: brtrue.s IL_000d
+  IL_0058: ldarg.0
+  IL_0059: ldarg.1
+  IL_005a: isinst Celeste.Level
+  IL_005f: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0064: stfld Microsoft.Xna.Framework.Rectangle CustomMoonCreature::originLevelBounds
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.SimplifiedGraphicsFeature::CustomMoonCreatureAdded(Monocle.Entity) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
+  IL_0069: ret

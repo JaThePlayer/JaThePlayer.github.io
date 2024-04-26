@@ -1,0 +1,13 @@
+IL Diff: System.Void Celeste.Mod.Entities.LavaBlockerTrigger::OnLeave(Celeste.Player)
++ IL_0000: ldarg this @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.LavaBlockerTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
++ IL_0000: call System.Void FrostHelper.CustomRisingLava::OnLavaBlockerTriggerLeave(Celeste.Mod.Entities.LavaBlockerTrigger) @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.LavaBlockerTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnLeave(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Boolean Celeste.Mod.Entities.LavaBlockerTrigger::canReenter
+  IL_000d: brtrue.s IL_0016
+  IL_000f: ldarg.0
+  IL_0010: ldc.i4.0
+  IL_0011: stfld System.Boolean Celeste.Mod.Entities.LavaBlockerTrigger::enabled
+  IL_0016: ret

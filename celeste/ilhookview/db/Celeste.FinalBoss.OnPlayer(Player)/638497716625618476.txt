@@ -1,0 +1,251 @@
+IL Diff: System.Void Celeste.FinalBoss::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0006: brtrue.s IL_000e
+  IL_0008: ldarg.0
+  IL_0009: callvirt System.Void Celeste.FinalBoss::CreateBossSprite()
+  IL_000e: ldarg.0
+  IL_000f: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0014: ldstr "getHit"
+  IL_0019: ldc.i4.0
+  IL_001a: ldc.i4.0
+  IL_001b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0020: ldstr "event:/char/badeline/boss_hug"
+  IL_0025: ldarg.0
+  IL_0026: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_002b: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0030: pop
+  IL_0031: ldarg.0
+  IL_0032: ldfld Celeste.SoundSource Celeste.FinalBoss::chargeSfx
+  IL_0037: ldc.i4.1
+  IL_0038: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_003d: pop
+  IL_003e: ldarg.0
+  IL_003f: ldfld Celeste.SoundSource Celeste.FinalBoss::laserSfx
+  IL_0044: ldfld System.String Celeste.SoundSource::EventName
+  IL_0049: ldstr "event:/char/badeline/boss_laser_charge"
+  IL_004e: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0053: brfalse.s IL_006f
+  IL_0055: ldarg.0
+  IL_0056: ldfld Celeste.SoundSource Celeste.FinalBoss::laserSfx
+  IL_005b: callvirt System.Boolean Celeste.SoundSource::get_Playing()
+  IL_0060: brfalse.s IL_006f
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.SoundSource Celeste.FinalBoss::laserSfx
+  IL_0068: ldc.i4.1
+  IL_0069: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_006e: pop
+  IL_006f: ldarg.0
+  IL_0070: ldc.i4.0
+  IL_0071: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0076: ldarg.0
+  IL_0077: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_007c: stfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss::avoidPos
+  IL_0081: ldarg.0
+  IL_0082: ldarg.0
+  IL_0083: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_0088: ldc.i4.1
+  IL_0089: add
+  IL_008a: stfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_008f: ldarg.0
+  IL_0090: ldfld System.Boolean Celeste.FinalBoss::dialog
+  IL_0095: brfalse.s IL_00f5
+  IL_0097: ldarg.0
+  IL_0098: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_009d: ldc.i4.1
+  IL_009e: bne.un.s IL_00b7
+  IL_00a0: ldarg.0
+  IL_00a1: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00a6: ldstr "ch6_boss_tired_a"
+  IL_00ab: newobj System.Void Celeste.MiniTextbox::.ctor(System.String)
+  IL_00b0: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00b5: br.s IL_00f5
+  IL_00b7: ldarg.0
+  IL_00b8: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_00bd: ldc.i4.2
+  IL_00be: bne.un.s IL_00d7
+  IL_00c0: ldarg.0
+  IL_00c1: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00c6: ldstr "ch6_boss_tired_b"
+  IL_00cb: newobj System.Void Celeste.MiniTextbox::.ctor(System.String)
+  IL_00d0: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00d5: br.s IL_00f5
+  IL_00d7: ldarg.0
+  IL_00d8: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_00dd: ldc.i4.3
+  IL_00de: bne.un.s IL_00f5
+  IL_00e0: ldarg.0
+  IL_00e1: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00e6: ldstr "ch6_boss_tired_c"
+  IL_00eb: newobj System.Void Celeste.MiniTextbox::.ctor(System.String)
+  IL_00f0: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00f5: ldarg.0
+  IL_00f6: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_00fb: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0100: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.FinalBossShot>()
+  IL_0105: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_010a: stloc.1
+  IL_010b: br.s IL_011e
+  IL_010d: ldloca.s V_1
+  IL_010f: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0114: castclass Celeste.FinalBossShot
+  IL_0119: callvirt System.Void Celeste.FinalBossShot::Destroy()
+  IL_011e: ldloca.s V_1
+  IL_0120: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0125: brtrue.s IL_010d
+  IL_0127: leave.s IL_0137
+  IL_0129: ldloca.s V_1
+  IL_012b: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0131: callvirt System.Void System.IDisposable::Dispose()
+  IL_0136: endfinally
+  IL_0137: ldarg.0
+  IL_0138: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_013d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0142: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.FinalBossBeam>()
+  IL_0147: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_014c: stloc.1
+  IL_014d: br.s IL_0160
+  IL_014f: ldloca.s V_1
+  IL_0151: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0156: castclass Celeste.FinalBossBeam
+  IL_015b: callvirt System.Void Celeste.FinalBossBeam::Destroy()
+  IL_0160: ldloca.s V_1
+  IL_0162: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0167: brtrue.s IL_014f
+  IL_0169: leave.s IL_0179
+  IL_016b: ldloca.s V_1
+  IL_016d: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0173: callvirt System.Void System.IDisposable::Dispose()
+  IL_0178: endfinally
+  IL_0179: ldarg.0
+  IL_017a: ldarg.0
+  IL_017b: call System.Single Monocle.Entity::get_X()
+  IL_0180: callvirt System.Void Celeste.FinalBoss::TriggerFallingBlocks(System.Single)
+  IL_0185: ldarg.0
+  IL_0186: ldarg.0
+  IL_0187: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_018c: callvirt System.Void Celeste.FinalBoss::TriggerMovingBlocks(System.Int32)
+  IL_0191: ldarg.0
+  IL_0192: ldfld Monocle.Coroutine Celeste.FinalBoss::attackCoroutine
+  IL_0197: ldc.i4.0
+  IL_0198: stfld System.Boolean Monocle.Component::Active
+  IL_019d: ldarg.0
+  IL_019e: ldc.i4.1
+  IL_019f: stfld System.Boolean Celeste.FinalBoss::Moving
+  IL_01a4: ldarg.0
+  IL_01a5: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_01aa: ldarg.0
+  IL_01ab: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FinalBoss::nodes
+  IL_01b0: ldlen
+  IL_01b1: conv.i4
+  IL_01b2: ldc.i4.1
+  IL_01b3: sub
+  IL_01b4: ceq
+  IL_01b6: stloc.0
+  IL_01b7: ldarg.0
+  IL_01b8: ldarg.0
+  IL_01b9: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_01be: ldfld Celeste.Session Celeste.Level::Session
+  IL_01c3: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_01c8: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_01cd: ldc.i4.0
+  IL_01ce: ceq
+  IL_01d0: call System.Boolean Celeste.FinalBoss::CanChangeMusic(System.Boolean)
+  IL_01d5: brfalse IL_031d
+  IL_01da: ldloc.0
+  IL_01db: brfalse.s IL_0234
+  IL_01dd: ldarg.0
+  IL_01de: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_01e3: ldfld Celeste.Session Celeste.Level::Session
+  IL_01e8: ldfld System.String Celeste.Session::Level
+  IL_01ed: ldstr "boss-19"
+  IL_01f2: callvirt System.Boolean System.String::Equals(System.String)
+  IL_01f7: brfalse.s IL_0234
+  IL_01f9: ldarg.0
+  IL_01fa: ldc.r4 0.25
+  IL_01ff: ldarg.0
+  IL_0200: ldftn System.Void Celeste.FinalBoss::<OnPlayer>b__41_0()
+  IL_0206: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_020b: ldc.i4.1
+  IL_020c: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_0211: pop
+  IL_0212: call FMOD.Studio.EventInstance Celeste.Audio::get_CurrentAmbienceEventInstance()
+  IL_0217: ldstr "postboss"
+  IL_021c: ldc.r4 1
+  IL_0221: call System.Void Celeste.Audio::SetParameter(FMOD.Studio.EventInstance,System.String,System.Single)
+  IL_0226: ldnull
+  IL_0227: ldc.i4.1
+  IL_0228: ldc.i4.1
+  IL_0229: call System.Boolean Celeste.Audio::SetMusic(System.String,System.Boolean,System.Boolean)
+  IL_022e: pop
+  IL_022f: br IL_031d
+  IL_0234: ldarg.0
+  IL_0235: ldfld System.Boolean Celeste.FinalBoss::startHit
+  IL_023a: brfalse.s IL_029c
+  IL_023c: ldarg.0
+  IL_023d: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_0242: ldfld Celeste.Session Celeste.Level::Session
+  IL_0247: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_024c: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0251: callvirt System.String Celeste.AudioTrackState::get_Event()
+  IL_0256: ldstr "event:/music/lvl6/badeline_glitch"
+  IL_025b: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0260: brfalse.s IL_029c
+  IL_0262: ldarg.0
+  IL_0263: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_0268: ldfld Celeste.Session Celeste.Level::Session
+  IL_026d: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0272: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0277: ldstr "event:/music/lvl6/badeline_glitch"
+  IL_027c: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_0281: ldarg.0
+  IL_0282: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_0287: ldfld Celeste.Session Celeste.Level::Session
+  IL_028c: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0291: ldc.i4.0
+  IL_0292: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_0297: br IL_031d
+  IL_029c: ldarg.0
+  IL_029d: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_02a2: ldfld Celeste.Session Celeste.Level::Session
+  IL_02a7: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_02ac: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_02b1: callvirt System.String Celeste.AudioTrackState::get_Event()
+  IL_02b6: ldstr "event:/music/lvl6/badeline_fight"
++ IL_0000: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::IL_FinalBoss_OnPlayer
++ IL_0000: call System.String Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::ChangeMusic(System.String,Celeste.FinalBoss) @ Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::IL_FinalBoss_OnPlayer
+  IL_02bb: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_02c0: brfalse.s IL_031d
+  IL_02c2: ldarg.0
+  IL_02c3: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_02c8: ldfld Celeste.Session Celeste.Level::Session
+  IL_02cd: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_02d2: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_02d7: callvirt System.String Celeste.AudioTrackState::get_Event()
+  IL_02dc: ldstr "event:/music/lvl6/badeline_glitch"
+  IL_02e1: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_02e6: brfalse.s IL_031d
+  IL_02e8: ldarg.0
+  IL_02e9: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_02ee: ldfld Celeste.Session Celeste.Level::Session
+  IL_02f3: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_02f8: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_02fd: ldstr "event:/music/lvl6/badeline_fight"
++ IL_0000: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::IL_FinalBoss_OnPlayer
++ IL_0000: call System.String Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::ChangeMusic(System.String,Celeste.FinalBoss) @ Celeste.Mod.SSMHelper.Entities.CrystalBombBadelineBoss::IL_FinalBoss_OnPlayer
+  IL_0302: callvirt System.Void Celeste.AudioTrackState::set_Event(System.String)
+  IL_0307: ldarg.0
+  IL_0308: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_030d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0312: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0317: ldc.i4.0
+  IL_0318: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_031d: ldarg.0
+  IL_031e: ldarg.0
+  IL_031f: ldarg.1
+  IL_0320: ldloc.0
+  IL_0321: callvirt System.Collections.IEnumerator Celeste.FinalBoss::MoveSequence(Celeste.Player,System.Boolean)
+  IL_0326: ldc.i4.1
+  IL_0327: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_032c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0331: ret

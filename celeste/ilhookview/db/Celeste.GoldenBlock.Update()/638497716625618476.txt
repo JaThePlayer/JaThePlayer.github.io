@@ -1,0 +1,13 @@
+IL Diff: System.Void Celeste.GoldenBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.GoldenBlock::orig_Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Single Celeste.GoldenBlock::renderLerp
+  IL_000c: ldc.r4 0
+  IL_0011: bne.un.s IL_001a
+  IL_0013: ldarg.0
+  IL_0014: call System.Void Celeste.Platform::EnableStaticMovers()
+  IL_0019: ret
+  IL_001a: ldarg.0
+  IL_001b: call System.Void Celeste.Platform::DisableStaticMovers()
+  IL_0020: ret

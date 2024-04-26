@@ -1,0 +1,286 @@
+IL Diff: System.Void Celeste.SwapBlock::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Solid::Update()
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: ldc.i4 37640710 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock/<>c::<SwapBlock_Update>b__81_1(Celeste.SwapBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.SwapBlock>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: brfalse.s IL_0006 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: ret @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0006: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
+  IL_0007: ldfld System.Single Celeste.SwapBlock::returnTimer
+  IL_000c: ldc.r4 0
+  IL_0011: ble.un.s IL_005a
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.SwapBlock::returnTimer
+  IL_001a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_001f: sub
+  IL_0020: stfld System.Single Celeste.SwapBlock::returnTimer
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Single Celeste.SwapBlock::returnTimer
+  IL_002b: ldc.r4 0
+  IL_0030: bgt.un.s IL_005a
+  IL_0032: ldarg.0
+  IL_0033: ldc.i4.0
+  IL_0034: stfld System.Int32 Celeste.SwapBlock::target
+  IL_0039: ldarg.0
+  IL_003a: ldc.r4 0
+  IL_003f: stfld System.Single Celeste.SwapBlock::speed
+  IL_0044: ldarg.0
+  IL_0045: ldstr "event:/game/05_mirror_temple/swapblock_return"
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2961 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: ldc.i4 6756697 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c__DisplayClass8_1::<modSwapBlockSounds>b__5(System.String,Celeste.SwapBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_004a: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  IL_004b: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0050: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0055: stfld FMOD.Studio.EventInstance Celeste.SwapBlock::returnSfx
+  IL_005a: ldarg.0
+  IL_005b: ldfld Celeste.DisplacementRenderer/Burst Celeste.SwapBlock::burst
+  IL_0060: brfalse.s IL_0073
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.DisplacementRenderer/Burst Celeste.SwapBlock::burst
+  IL_0068: ldarg.0
+  IL_0069: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_006e: stfld Microsoft.Xna.Framework.Vector2 Celeste.DisplacementRenderer/Burst::Position
+  IL_0073: ldarg.0
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Single Celeste.SwapBlock::redAlpha
+  IL_007a: ldarg.0
+  IL_007b: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_0080: ldc.i4.1
+  IL_0081: beq.s IL_0086
+  IL_0083: ldc.i4.1
+  IL_0084: br.s IL_0087
+  IL_0086: ldc.i4.0
+  IL_0087: conv.r4
+  IL_0088: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_008d: ldc.r4 32
+  IL_0092: mul
+  IL_0093: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0098: stfld System.Single Celeste.SwapBlock::redAlpha
+  IL_009d: ldarg.0
+  IL_009e: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_00a3: brtrue.s IL_00ca
+  IL_00a5: ldarg.0
+  IL_00a6: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_00ab: ldc.r4 0
+  IL_00b0: bne.un.s IL_00ca
+  IL_00b2: ldarg.0
+  IL_00b3: ldfld Monocle.Sprite Celeste.SwapBlock::middleRed
+  IL_00b8: ldc.i4.0
+  IL_00b9: callvirt System.Void Monocle.Sprite::SetAnimationFrame(System.Int32)
+  IL_00be: ldarg.0
+  IL_00bf: ldfld Monocle.Sprite Celeste.SwapBlock::middleGreen
+  IL_00c4: ldc.i4.0
+  IL_00c5: callvirt System.Void Monocle.Sprite::SetAnimationFrame(System.Int32)
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_00d0: ldc.i4.1
+  IL_00d1: bne.un.s IL_00fe
+  IL_00d3: ldarg.0
+  IL_00d4: ldarg.0
+  IL_00d5: ldfld System.Single Celeste.SwapBlock::speed
+  IL_00da: ldarg.0
+  IL_00db: ldfld System.Single Celeste.SwapBlock::maxForwardSpeed
+  IL_00e0: ldarg.0
+  IL_00e1: ldfld System.Single Celeste.SwapBlock::maxForwardSpeed
+  IL_00e6: ldc.r4 0.2
+  IL_00eb: div
+  IL_00ec: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00f1: mul
+  IL_00f2: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_00f7: stfld System.Single Celeste.SwapBlock::speed
+  IL_00fc: br.s IL_0127
+  IL_00fe: ldarg.0
+  IL_00ff: ldarg.0
+  IL_0100: ldfld System.Single Celeste.SwapBlock::speed
+  IL_0105: ldarg.0
+  IL_0106: ldfld System.Single Celeste.SwapBlock::maxBackwardSpeed
+  IL_010b: ldarg.0
+  IL_010c: ldfld System.Single Celeste.SwapBlock::maxBackwardSpeed
+  IL_0111: ldc.r4 1.5
+  IL_0116: div
+  IL_0117: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_011c: mul
+  IL_011d: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0122: stfld System.Single Celeste.SwapBlock::speed
+  IL_0127: ldarg.0
+  IL_0128: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_012d: stloc.0
+  IL_012e: ldarg.0
+  IL_012f: ldarg.0
+  IL_0130: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_0135: ldarg.0
+  IL_0136: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_013b: conv.r4
+  IL_013c: ldarg.0
+  IL_013d: ldfld System.Single Celeste.SwapBlock::speed
+  IL_0142: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0147: mul
+  IL_0148: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_014d: stfld System.Single Celeste.SwapBlock::lerp
+  IL_0152: ldarg.0
+  IL_0153: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_0158: ldloc.0
+  IL_0159: beq IL_02ae
+  IL_015e: ldarg.0
+  IL_015f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_0164: ldarg.0
+  IL_0165: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_016a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_016f: ldarg.0
+  IL_0170: ldfld System.Single Celeste.SwapBlock::speed
+  IL_0175: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_017a: stloc.1
+  IL_017b: ldarg.0
+  IL_017c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0181: ldarg.0
+  IL_0182: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_0187: ldc.i4.1
+  IL_0188: bne.un.s IL_01a7
+  IL_018a: ldarg.0
+  IL_018b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_0190: ldarg.0
+  IL_0191: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_0196: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_019b: ldarg.0
+  IL_019c: ldfld System.Single Celeste.SwapBlock::maxForwardSpeed
+  IL_01a1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01a6: stloc.1
+  IL_01a7: ldarg.0
+  IL_01a8: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_01ad: ldloc.0
+  IL_01ae: bge.un.s IL_01bc
+  IL_01b0: ldloc.1
+  IL_01b1: ldc.r4 -1
+  IL_01b6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01bb: stloc.1
+  IL_01bc: ldarg.0
+  IL_01bd: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_01c2: ldc.i4.1
+  IL_01c3: bne.un.s IL_01ee
+  IL_01c5: ldarg.0
+  IL_01c6: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01cb: ldc.r4 0.02
+  IL_01d0: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_01d5: brfalse.s IL_01ee
+  IL_01d7: ldarg.0
+  IL_01d8: ldarg.0
+  IL_01d9: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_01de: ldarg.0
+  IL_01df: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_01e4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01e9: callvirt System.Void Celeste.SwapBlock::MoveParticles(Microsoft.Xna.Framework.Vector2)
+  IL_01ee: ldarg.0
+  IL_01ef: ldarg.0
+  IL_01f0: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_01f5: ldarg.0
+  IL_01f6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_01fb: ldarg.0
+  IL_01fc: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_0201: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::Lerp(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0206: ldloc.1
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: ldc.i4 28998687 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock/<>c::<SwapBlock_Update>b__81_3(Microsoft.Xna.Framework.Vector2,Celeste.SwapBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::SwapBlock_Update
+  IL_0207: call System.Void Celeste.Platform::MoveTo(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_020c: ldarg.0
+  IL_020d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0212: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::SwapBlock_Update
++ IL_0000: call System.Boolean VivHelper.Entities.AudioFixSwapBlock::ModifiedCheckHandler(System.Boolean,Celeste.SwapBlock) @ VivHelper.Entities.AudioFixSwapBlock::SwapBlock_Update
++ IL_0000: ldarg.0 @ VivHelper.Entities.AudioFixSwapBlock::SwapBlock_Update
++ IL_0000: call System.Boolean Celeste.Mod.EeveeHelper.MiscHooks::ModifiedSwapBlockCheckHandler(System.Boolean,Celeste.SwapBlock) @ Celeste.Mod.EeveeHelper.MiscHooks::SwapBlock_Update
+  IL_0217: brfalse IL_02ae
+  IL_021c: ldarg.0
+  IL_021d: ldfld FMOD.Studio.EventInstance Celeste.SwapBlock::moveSfx
+  IL_0222: ldarg.0
+  IL_0223: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0228: call System.Void Celeste.Audio::Position(FMOD.Studio.EventInstance,Microsoft.Xna.Framework.Vector2)
+  IL_022d: ldarg.0
+  IL_022e: ldfld FMOD.Studio.EventInstance Celeste.SwapBlock::returnSfx
+  IL_0233: ldarg.0
+  IL_0234: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0239: call System.Void Celeste.Audio::Position(FMOD.Studio.EventInstance,Microsoft.Xna.Framework.Vector2)
+  IL_023e: ldarg.0
+  IL_023f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0244: ldarg.0
+  IL_0245: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::start
+  IL_024a: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_024f: brfalse.s IL_0281
+  IL_0251: ldarg.0
+  IL_0252: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_0257: brtrue.s IL_0281
+  IL_0259: ldarg.0
+  IL_025a: ldfld FMOD.Studio.EventInstance Celeste.SwapBlock::returnSfx
+  IL_025f: ldstr "end"
+  IL_0264: ldc.r4 1
+  IL_0269: call System.Void Celeste.Audio::SetParameter(FMOD.Studio.EventInstance,System.String,System.Single)
+  IL_026e: ldstr "event:/game/05_mirror_temple/swapblock_return_end"
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 3083 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: ldc.i4 10421579 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c__DisplayClass8_1::<modSwapBlockSounds>b__5(System.String,Celeste.SwapBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0273: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  IL_0274: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0279: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_027e: pop
+  IL_027f: br.s IL_02ae
+  IL_0281: ldarg.0
+  IL_0282: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0287: ldarg.0
+  IL_0288: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SwapBlock::end
+  IL_028d: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0292: brfalse.s IL_02ae
+  IL_0294: ldarg.0
+  IL_0295: ldfld System.Int32 Celeste.SwapBlock::target
+  IL_029a: ldc.i4.1
+  IL_029b: bne.un.s IL_02ae
+  IL_029d: ldstr "event:/game/05_mirror_temple/swapblock_move_end"
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: ldc.i4 83416 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock/<>c__DisplayClass8_1::<modSwapBlockSounds>b__5(System.String,Celeste.SwapBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.SwapBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
++ IL_02a2: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableSwapBlock::modSwapBlockSounds
+  IL_02a3: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_02a8: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_02ad: pop
+  IL_02ae: ldarg.0
+  IL_02af: ldfld System.Boolean Celeste.SwapBlock::Swapping
+  IL_02b4: brfalse.s IL_02ca
+  IL_02b6: ldarg.0
+  IL_02b7: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_02bc: ldc.r4 1
+  IL_02c1: blt.un.s IL_02ca
+  IL_02c3: ldarg.0
+  IL_02c4: ldc.i4.0
+  IL_02c5: stfld System.Boolean Celeste.SwapBlock::Swapping
+  IL_02ca: ldarg.0
+  IL_02cb: ldarg.0
+  IL_02cc: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_02d1: ldc.r4 0
+  IL_02d6: ble.s IL_02ea
+  IL_02d8: ldarg.0
+  IL_02d9: ldfld System.Single Celeste.SwapBlock::lerp
+  IL_02de: ldc.r4 1
+  IL_02e3: clt.un
+  IL_02e5: ldc.i4.0
+  IL_02e6: ceq
+  IL_02e8: br.s IL_02eb
+  IL_02ea: ldc.i4.1
+  IL_02eb: stfld System.Boolean Celeste.Solid::StopPlayerRunIntoAnimation
+  IL_02f0: ret

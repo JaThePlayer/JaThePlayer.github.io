@@ -1,0 +1,771 @@
+IL Diff: Celeste.FancyText+Text Celeste.FancyText::Parse()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.String Celeste.FancyText::text
+  IL_0006: ldarg.0
+  IL_0007: ldfld Celeste.Language Celeste.FancyText::language
+  IL_000c: ldfld System.String Celeste.Language::SplitRegex
+  IL_0011: call System.String[] System.Text.RegularExpressions.Regex::Split(System.String,System.String)
+  IL_0016: stloc.0
+  IL_0017: ldloc.0
+  IL_0018: ldlen
+  IL_0019: conv.i4
+  IL_001a: newarr System.String
+  IL_001f: stloc.1
+  IL_0020: ldc.i4.0
+  IL_0021: stloc.2
+  IL_0022: ldc.i4.0
+  IL_0023: stloc.s V_5
+  IL_0025: br.s IL_0043
+  IL_0027: ldloc.0
+  IL_0028: ldloc.s V_5
+  IL_002a: ldelem.ref
+  IL_002b: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0030: brtrue.s IL_003d
+  IL_0032: ldloc.1
+  IL_0033: ldloc.2
+  IL_0034: dup
+  IL_0035: ldc.i4.1
+  IL_0036: add
+  IL_0037: stloc.2
+  IL_0038: ldloc.0
+  IL_0039: ldloc.s V_5
+  IL_003b: ldelem.ref
+  IL_003c: stelem.ref
+  IL_003d: ldloc.s V_5
+  IL_003f: ldc.i4.1
+  IL_0040: add
+  IL_0041: stloc.s V_5
+  IL_0043: ldloc.s V_5
+  IL_0045: ldloc.0
+  IL_0046: ldlen
+  IL_0047: conv.i4
+  IL_0048: blt.s IL_0027
+  IL_004a: newobj System.Void System.Collections.Generic.Stack`1<Microsoft.Xna.Framework.Color>::.ctor()
+  IL_004f: stloc.3
+  IL_0050: ldc.i4.2
+  IL_0051: newarr Celeste.FancyText/Portrait
+  IL_0056: stloc.s V_4
+  IL_0058: ldc.i4.0
+  IL_0059: stloc.s V_6
+  IL_005b: br IL_08f7
+  IL_0060: ldloc.1
+  IL_0061: ldloc.s V_6
+  IL_0063: ldelem.ref
+  IL_0064: ldstr "{"
+  IL_0069: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_006e: brfalse IL_08e7
+  IL_0073: ldloc.s V_6
+  IL_0075: ldc.i4.1
+  IL_0076: add
+  IL_0077: stloc.s V_6
+  IL_0079: ldloc.1
+  IL_007a: ldloc.s V_6
+  IL_007c: dup
+  IL_007d: ldc.i4.1
+  IL_007e: add
+  IL_007f: stloc.s V_6
+  IL_0081: ldelem.ref
+  IL_0082: stloc.s V_7
+  IL_0084: newobj System.Void System.Collections.Generic.List`1<System.String>::.ctor()
+  IL_0089: stloc.s V_8
+  IL_008b: br.s IL_00a9
+  IL_008d: ldloc.1
+  IL_008e: ldloc.s V_6
+  IL_0090: ldelem.ref
+  IL_0091: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_0096: brtrue.s IL_00a3
+  IL_0098: ldloc.s V_8
+  IL_009a: ldloc.1
+  IL_009b: ldloc.s V_6
+  IL_009d: ldelem.ref
+  IL_009e: callvirt System.Void System.Collections.Generic.List`1<System.String>::Add(T)
+  IL_00a3: ldloc.s V_6
+  IL_00a5: ldc.i4.1
+  IL_00a6: add
+  IL_00a7: stloc.s V_6
+  IL_00a9: ldloc.s V_6
+  IL_00ab: ldloc.1
+  IL_00ac: ldlen
+  IL_00ad: conv.i4
+  IL_00ae: bge.s IL_00c0
+  IL_00b0: ldloc.1
+  IL_00b1: ldloc.s V_6
+  IL_00b3: ldelem.ref
+  IL_00b4: ldstr "}"
+  IL_00b9: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_00be: brtrue.s IL_008d
+  IL_00c0: ldc.r4 0
+  IL_00c5: stloc.s V_9
+  IL_00c7: ldloc.s V_7
+  IL_00c9: ldc.i4 167
+  IL_00ce: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_00d3: ldloca.s V_9
+  IL_00d5: call System.Boolean System.Single::TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single&)
+  IL_00da: brfalse.s IL_00fe
+  IL_00dc: ldarg.0
+  IL_00dd: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_00e2: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_00e7: newobj System.Void Celeste.FancyText/Wait::.ctor()
+  IL_00ec: dup
+  IL_00ed: ldloc.s V_9
+  IL_00ef: stfld System.Single Celeste.FancyText/Wait::Duration
+  IL_00f4: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_00f9: br IL_08f1
+  IL_00fe: ldloc.s V_7
+  IL_0100: ldc.i4.0
+  IL_0101: callvirt System.Char System.String::get_Chars(System.Int32)
+  IL_0106: ldc.i4.s 35
+  IL_0108: bne.un IL_01ea
+  IL_010d: ldstr ""
+  IL_0112: stloc.s V_10
+  IL_0114: ldloc.s V_7
+  IL_0116: callvirt System.Int32 System.String::get_Length()
+  IL_011b: ldc.i4.1
+  IL_011c: ble.s IL_012a
+  IL_011e: ldloc.s V_7
+  IL_0120: ldc.i4.1
+  IL_0121: callvirt System.String System.String::Substring(System.Int32)
+  IL_0126: stloc.s V_10
+  IL_0128: br.s IL_013e
+  IL_012a: ldloc.s V_8
+  IL_012c: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_0131: ldc.i4.0
+  IL_0132: ble.s IL_013e
+  IL_0134: ldloc.s V_8
+  IL_0136: ldc.i4.0
+  IL_0137: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_013c: stloc.s V_10
+  IL_013e: ldloc.s V_10
+  IL_0140: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0145: brfalse.s IL_0172
+  IL_0147: ldloc.3
+  IL_0148: callvirt System.Int32 System.Collections.Generic.Stack`1<Microsoft.Xna.Framework.Color>::get_Count()
+  IL_014d: ldc.i4.0
+  IL_014e: ble.s IL_0161
+  IL_0150: ldarg.0
+  IL_0151: ldloc.3
+  IL_0152: callvirt T System.Collections.Generic.Stack`1<Microsoft.Xna.Framework.Color>::Pop()
+  IL_0157: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_015c: br IL_08f1
+  IL_0161: ldarg.0
+  IL_0162: ldarg.0
+  IL_0163: ldfld Microsoft.Xna.Framework.Color Celeste.FancyText::defaultColor
+  IL_0168: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_016d: br IL_08f1
+  IL_0172: ldloc.3
+  IL_0173: ldarg.0
+  IL_0174: ldfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_0179: callvirt System.Void System.Collections.Generic.Stack`1<Microsoft.Xna.Framework.Color>::Push(T)
+  IL_017e: ldloc.s V_10
+  IL_0180: ldstr "red"
+  IL_0185: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_018a: brfalse.s IL_019c
+  IL_018c: ldarg.0
+  IL_018d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
+  IL_0192: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_0197: br IL_08f1
+  IL_019c: ldloc.s V_10
+  IL_019e: ldstr "green"
+  IL_01a3: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01a8: brfalse.s IL_01ba
+  IL_01aa: ldarg.0
+  IL_01ab: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Green()
+  IL_01b0: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_01b5: br IL_08f1
+  IL_01ba: ldloc.s V_10
+  IL_01bc: ldstr "blue"
+  IL_01c1: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01c6: brfalse.s IL_01d8
+  IL_01c8: ldarg.0
+  IL_01c9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Blue()
+  IL_01ce: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_01d3: br IL_08f1
+  IL_01d8: ldarg.0
+  IL_01d9: ldloc.s V_10
+  IL_01db: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_01e0: stfld Microsoft.Xna.Framework.Color Celeste.FancyText::currentColor
+  IL_01e5: br IL_08f1
+  IL_01ea: ldloc.s V_7
+  IL_01ec: ldstr "break"
+  IL_01f1: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_01f6: brfalse.s IL_024b
+  IL_01f8: ldarg.0
+  IL_01f9: callvirt System.Void Celeste.FancyText::CalcLineWidth()
+  IL_01fe: ldarg.0
+  IL_01ff: ldarg.0
+  IL_0200: ldfld System.Int32 Celeste.FancyText::currentPage
+  IL_0205: ldc.i4.1
+  IL_0206: add
+  IL_0207: stfld System.Int32 Celeste.FancyText::currentPage
+  IL_020c: ldarg.0
+  IL_020d: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_0212: dup
+  IL_0213: ldfld System.Int32 Celeste.FancyText/Text::Pages
+  IL_0218: ldc.i4.1
+  IL_0219: add
+  IL_021a: stfld System.Int32 Celeste.FancyText/Text::Pages
+  IL_021f: ldarg.0
+  IL_0220: ldc.i4.0
+  IL_0221: stfld System.Int32 Celeste.FancyText::currentLine
+  IL_0226: ldarg.0
+  IL_0227: ldc.r4 0
+  IL_022c: stfld System.Single Celeste.FancyText::currentPosition
+  IL_0231: ldarg.0
+  IL_0232: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_0237: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_023c: newobj System.Void Celeste.FancyText/NewPage::.ctor()
+  IL_0241: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_0246: br IL_08f1
+  IL_024b: ldloc.s V_7
+  IL_024d: ldstr "n"
+  IL_0252: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0257: brfalse.s IL_0264
+  IL_0259: ldarg.0
+  IL_025a: callvirt System.Void Celeste.FancyText::AddNewLine()
+  IL_025f: br IL_08f1
+  IL_0264: ldloc.s V_7
+  IL_0266: ldstr ">>"
+  IL_026b: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0270: brfalse.s IL_02ba
+  IL_0272: ldloc.s V_8
+  IL_0274: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_0279: ldc.i4.0
+  IL_027a: ble.s IL_02aa
+  IL_027c: ldloc.s V_8
+  IL_027e: ldc.i4.0
+  IL_027f: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_0284: ldc.i4 167
+  IL_0289: call System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+  IL_028e: ldloca.s V_11
+  IL_0290: call System.Boolean System.Single::TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single&)
+  IL_0295: brfalse.s IL_02aa
+  IL_0297: ldarg.0
+  IL_0298: ldc.r4 0.01
+  IL_029d: ldloc.s V_11
+  IL_029f: div
+  IL_02a0: stfld System.Single Celeste.FancyText::currentDelay
+  IL_02a5: br IL_08f1
+  IL_02aa: ldarg.0
+  IL_02ab: ldc.r4 0.01
+  IL_02b0: stfld System.Single Celeste.FancyText::currentDelay
+  IL_02b5: br IL_08f1
+  IL_02ba: ldloc.s V_7
++ IL_0000: dup @ Bitsbolts.Components.FancyTextExt::ILFancyTextParse
++ IL_0000: ldarg.0 @ Bitsbolts.Components.FancyTextExt::ILFancyTextParse
++ IL_0000: ldloc.s V_8 @ Bitsbolts.Components.FancyTextExt::ILFancyTextParse
++ IL_0000: call System.Void Bitsbolts.Components.FancyTextExt::OnFancyTextParseParam(System.String,Celeste.FancyText,System.Collections.Generic.List`1<System.String>) @ Bitsbolts.Components.FancyTextExt::ILFancyTextParse
+  IL_02bc: ldstr "/>>"
+  IL_02c1: callvirt System.Boolean System.String::Equals(System.String)
+  IL_02c6: brfalse.s IL_02d8
+  IL_02c8: ldarg.0
+  IL_02c9: ldc.r4 0.01
+  IL_02ce: stfld System.Single Celeste.FancyText::currentDelay
+  IL_02d3: br IL_08f1
+  IL_02d8: ldloc.s V_7
+  IL_02da: ldstr "anchor"
+  IL_02df: callvirt System.Boolean System.String::Equals(System.String)
+  IL_02e4: brfalse.s IL_031d
+  IL_02e6: ldloc.s V_8
+  IL_02e8: ldc.i4.0
+  IL_02e9: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_02ee: ldc.i4.1
+  IL_02ef: ldloca.s V_12
+  IL_02f1: call System.Boolean System.Enum::TryParse<Celeste.FancyText/Anchors>(System.String,System.Boolean,TEnum&)
+  IL_02f6: brfalse IL_08f1
+  IL_02fb: ldarg.0
+  IL_02fc: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_0301: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0306: newobj System.Void Celeste.FancyText/Anchor::.ctor()
+  IL_030b: dup
+  IL_030c: ldloc.s V_12
+  IL_030e: stfld Celeste.FancyText/Anchors Celeste.FancyText/Anchor::Position
+  IL_0313: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_0318: br IL_08f1
+  IL_031d: ldloc.s V_7
+  IL_031f: ldstr "portrait"
+  IL_0324: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0329: brtrue.s IL_034a
+  IL_032b: ldloc.s V_7
+  IL_032d: ldstr "left"
+  IL_0332: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0337: brtrue.s IL_034a
+  IL_0339: ldloc.s V_7
+  IL_033b: ldstr "right"
+  IL_0340: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0345: brfalse IL_0607
+  IL_034a: ldloc.s V_7
+  IL_034c: ldstr "portrait"
+  IL_0351: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0356: brfalse.s IL_0394
+  IL_0358: ldloc.s V_8
+  IL_035a: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_035f: ldc.i4.0
+  IL_0360: ble.s IL_0394
+  IL_0362: ldloc.s V_8
+  IL_0364: ldc.i4.0
+  IL_0365: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_036a: ldstr "none"
+  IL_036f: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0374: brfalse.s IL_0394
+  IL_0376: newobj System.Void Celeste.FancyText/Portrait::.ctor()
+  IL_037b: stloc.s V_13
+  IL_037d: ldarg.0
+  IL_037e: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_0383: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0388: ldloc.s V_13
+  IL_038a: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_038f: br IL_08f1
+  IL_0394: ldloc.s V_7
+  IL_0396: ldstr "left"
+  IL_039b: callvirt System.Boolean System.String::Equals(System.String)
+  IL_03a0: brfalse.s IL_03ad
+  IL_03a2: ldloc.s V_4
+  IL_03a4: ldc.i4.0
+  IL_03a5: ldelem.ref
+  IL_03a6: stloc.s V_13
+  IL_03a8: br IL_0498
+  IL_03ad: ldloc.s V_7
+  IL_03af: ldstr "right"
+  IL_03b4: callvirt System.Boolean System.String::Equals(System.String)
+  IL_03b9: brfalse.s IL_03c6
+  IL_03bb: ldloc.s V_4
+  IL_03bd: ldc.i4.1
+  IL_03be: ldelem.ref
+  IL_03bf: stloc.s V_13
+  IL_03c1: br IL_0498
+  IL_03c6: newobj System.Void Celeste.FancyText/Portrait::.ctor()
+  IL_03cb: stloc.s V_13
+  IL_03cd: ldloc.s V_8
+  IL_03cf: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<System.String>::GetEnumerator()
+  IL_03d4: stloc.s V_14
+  IL_03d6: br IL_047c
+  IL_03db: ldloca.s V_14
+  IL_03dd: call T System.Collections.Generic.List`1/Enumerator<System.String>::get_Current()
+  IL_03e2: stloc.s V_15
+  IL_03e4: ldloc.s V_15
+  IL_03e6: ldstr "upsidedown"
+  IL_03eb: callvirt System.Boolean System.String::Equals(System.String)
+  IL_03f0: brfalse.s IL_03ff
+  IL_03f2: ldloc.s V_13
+  IL_03f4: ldc.i4.1
+  IL_03f5: stfld System.Boolean Celeste.FancyText/Portrait::UpsideDown
+  IL_03fa: br IL_047c
+  IL_03ff: ldloc.s V_15
+  IL_0401: ldstr "flip"
+  IL_0406: callvirt System.Boolean System.String::Equals(System.String)
+  IL_040b: brfalse.s IL_0417
+  IL_040d: ldloc.s V_13
+  IL_040f: ldc.i4.1
+  IL_0410: stfld System.Boolean Celeste.FancyText/Portrait::Flipped
+  IL_0415: br.s IL_047c
+  IL_0417: ldloc.s V_15
+  IL_0419: ldstr "left"
+  IL_041e: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0423: brfalse.s IL_042f
+  IL_0425: ldloc.s V_13
+  IL_0427: ldc.i4.m1
+  IL_0428: stfld System.Int32 Celeste.FancyText/Portrait::Side
+  IL_042d: br.s IL_047c
+  IL_042f: ldloc.s V_15
+  IL_0431: ldstr "right"
+  IL_0436: callvirt System.Boolean System.String::Equals(System.String)
+  IL_043b: brfalse.s IL_0447
+  IL_043d: ldloc.s V_13
+  IL_043f: ldc.i4.1
+  IL_0440: stfld System.Int32 Celeste.FancyText/Portrait::Side
+  IL_0445: br.s IL_047c
+  IL_0447: ldloc.s V_15
+  IL_0449: ldstr "pop"
+  IL_044e: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0453: brfalse.s IL_045f
+  IL_0455: ldloc.s V_13
+  IL_0457: ldc.i4.1
+  IL_0458: stfld System.Boolean Celeste.FancyText/Portrait::Pop
+  IL_045d: br.s IL_047c
+  IL_045f: ldloc.s V_13
+  IL_0461: ldfld System.String Celeste.FancyText/Portrait::Sprite
+  IL_0466: brtrue.s IL_0473
+  IL_0468: ldloc.s V_13
+  IL_046a: ldloc.s V_15
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.SkinModHelper.SomePatches::ilFancyTextParse
++ IL_0000: ldc.i4 10521125 @ Celeste.Mod.SkinModHelper.SomePatches::ilFancyTextParse
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.SomePatches::ilFancyTextParse
+  |-> retrieves System.String Celeste.Mod.SkinModHelper.SomePatches/<>c::<ilFancyTextParse>b__6_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SkinModHelper.SomePatches::ilFancyTextParse
+  IL_046c: stfld System.String Celeste.FancyText/Portrait::Sprite
+  IL_0471: br.s IL_047c
+  IL_0473: ldloc.s V_13
+  IL_0475: ldloc.s V_15
+  IL_0477: stfld System.String Celeste.FancyText/Portrait::Animation
+  IL_047c: ldloca.s V_14
+  IL_047e: call System.Boolean System.Collections.Generic.List`1/Enumerator<System.String>::MoveNext()
+  IL_0483: brtrue IL_03db
+  IL_0488: leave.s IL_0498
+  IL_048a: ldloca.s V_14
+  IL_048c: constrained. System.Collections.Generic.List`1/Enumerator<System.String>
+  IL_0492: callvirt System.Void System.IDisposable::Dispose()
+  IL_0497: endfinally
+  IL_0498: ldsfld Monocle.SpriteBank Celeste.GFX::PortraitsSpriteBank
+  IL_049d: ldloc.s V_13
+  IL_049f: callvirt System.String Celeste.FancyText/Portrait::get_SpriteId()
+  IL_04a4: callvirt System.Boolean Monocle.SpriteBank::Has(System.String)
+  IL_04a9: brfalse IL_05dd
+  IL_04ae: ldsfld Monocle.SpriteBank Celeste.GFX::PortraitsSpriteBank
+  IL_04b3: ldfld System.Collections.Generic.Dictionary`2<System.String,Monocle.SpriteData> Monocle.SpriteBank::SpriteData
+  IL_04b8: ldloc.s V_13
+  IL_04ba: callvirt System.String Celeste.FancyText/Portrait::get_SpriteId()
+  IL_04bf: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Monocle.SpriteData>::get_Item(TKey)
+  IL_04c4: ldfld System.Collections.Generic.List`1<Monocle.SpriteDataSource> Monocle.SpriteData::Sources
+  IL_04c9: stloc.s V_16
+  IL_04cb: ldloc.s V_16
+  IL_04cd: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.SpriteDataSource>::get_Count()
+  IL_04d2: ldc.i4.1
+  IL_04d3: sub
+  IL_04d4: stloc.s V_17
+  IL_04d6: br IL_05d5
+  IL_04db: ldloc.s V_16
+  IL_04dd: ldloc.s V_17
+  IL_04df: callvirt T System.Collections.Generic.List`1<Monocle.SpriteDataSource>::get_Item(System.Int32)
+  IL_04e4: ldfld System.Xml.XmlElement Monocle.SpriteDataSource::XML
+  IL_04e9: stloc.s V_18
+  IL_04eb: ldloc.s V_18
+  IL_04ed: brfalse IL_05cf
+  IL_04f2: ldloc.s V_13
+  IL_04f4: ldfld System.String Celeste.FancyText/Portrait::SfxEvent
+  IL_04f9: brtrue.s IL_051d
+  IL_04fb: ldloc.s V_13
+  IL_04fd: ldstr "event:/char/dialogue/"
+  IL_0502: ldloc.s V_18
+  IL_0504: ldstr "sfx"
+  IL_0509: ldstr ""
+  IL_050e: call System.String Monocle.Calc::Attr(System.Xml.XmlElement,System.String,System.String)
+  IL_0513: call System.String System.String::Concat(System.String,System.String)
+  IL_0518: stfld System.String Celeste.FancyText/Portrait::SfxEvent
+  IL_051d: ldloc.s V_18
+  IL_051f: ldstr "glitchy"
+  IL_0524: call System.Boolean Monocle.Calc::HasAttr(System.Xml.XmlElement,System.String)
+  IL_0529: brfalse.s IL_053f
+  IL_052b: ldloc.s V_13
+  IL_052d: ldloc.s V_18
+  IL_052f: ldstr "glitchy"
+  IL_0534: ldc.i4.0
+  IL_0535: call System.Boolean Monocle.Calc::AttrBool(System.Xml.XmlElement,System.String,System.Boolean)
+  IL_053a: stfld System.Boolean Celeste.FancyText/Portrait::Glitchy
+  IL_053f: ldloc.s V_18
+  IL_0541: ldstr "sfxs"
+  IL_0546: call System.Boolean Monocle.Calc::HasChild(System.Xml.XmlElement,System.String)
+  IL_054b: brfalse IL_05cf
+  IL_0550: ldloc.s V_13
+  IL_0552: ldfld System.Int32 Celeste.FancyText/Portrait::SfxExpression
+  IL_0557: ldc.i4.1
+  IL_0558: bne.un IL_05cf
+  IL_055d: ldloc.s V_18
+  IL_055f: ldstr "sfxs"
+  IL_0564: callvirt System.Xml.XmlElement System.Xml.XmlNode::get_Item(System.String)
+  IL_0569: callvirt System.Collections.IEnumerator System.Xml.XmlNode::GetEnumerator()
+  IL_056e: stloc.s V_19
+  IL_0570: br.s IL_05af
+  IL_0572: ldloc.s V_19
+  IL_0574: callvirt System.Object System.Collections.IEnumerator::get_Current()
+  IL_0579: isinst System.Xml.XmlElement
+  IL_057e: stloc.s V_20
+  IL_0580: ldloc.s V_20
+  IL_0582: brfalse.s IL_05af
+  IL_0584: ldloc.s V_20
+  IL_0586: callvirt System.String System.Xml.XmlNode::get_Name()
+  IL_058b: ldloc.s V_13
+  IL_058d: ldfld System.String Celeste.FancyText/Portrait::Animation
+  IL_0592: ldc.i4.3
+  IL_0593: callvirt System.Boolean System.String::Equals(System.String,System.StringComparison)
+  IL_0598: brfalse.s IL_05af
+  IL_059a: ldloc.s V_13
+  IL_059c: ldloc.s V_20
+  IL_059e: ldstr "index"
+  IL_05a3: call System.Int32 Monocle.Calc::AttrInt(System.Xml.XmlElement,System.String)
+  IL_05a8: stfld System.Int32 Celeste.FancyText/Portrait::SfxExpression
+  IL_05ad: leave.s IL_05cf
+  IL_05af: ldloc.s V_19
+  IL_05b1: callvirt System.Boolean System.Collections.IEnumerator::MoveNext()
+  IL_05b6: brtrue.s IL_0572
+  IL_05b8: leave.s IL_05cf
+  IL_05ba: ldloc.s V_19
+  IL_05bc: isinst System.IDisposable
+  IL_05c1: stloc.s V_21
+  IL_05c3: ldloc.s V_21
+  IL_05c5: brfalse.s IL_05ce
+  IL_05c7: ldloc.s V_21
+  IL_05c9: callvirt System.Void System.IDisposable::Dispose()
+  IL_05ce: endfinally
+  IL_05cf: ldloc.s V_17
+  IL_05d1: ldc.i4.1
+  IL_05d2: sub
+  IL_05d3: stloc.s V_17
+  IL_05d5: ldloc.s V_17
+  IL_05d7: ldc.i4.0
+  IL_05d8: bge IL_04db
+  IL_05dd: ldarg.0
+  IL_05de: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_05e3: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_05e8: ldloc.s V_13
+  IL_05ea: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_05ef: ldloc.s V_4
+  IL_05f1: ldloc.s V_13
+  IL_05f3: ldfld System.Int32 Celeste.FancyText/Portrait::Side
+  IL_05f8: ldc.i4.0
+  IL_05f9: bgt.s IL_05fe
+  IL_05fb: ldc.i4.0
+  IL_05fc: br.s IL_05ff
+  IL_05fe: ldc.i4.1
+  IL_05ff: ldloc.s V_13
+  IL_0601: stelem.ref
+  IL_0602: br IL_08f1
+  IL_0607: ldloc.s V_7
+  IL_0609: ldstr "trigger"
+  IL_060e: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0613: brtrue.s IL_0626
+  IL_0615: ldloc.s V_7
+  IL_0617: ldstr "silent_trigger"
+  IL_061c: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0621: brfalse IL_06b2
+  IL_0626: ldstr ""
+  IL_062b: stloc.s V_23
+  IL_062d: ldc.i4.1
+  IL_062e: stloc.s V_24
+  IL_0630: br.s IL_064f
+  IL_0632: ldloc.s V_23
+  IL_0634: ldloc.s V_8
+  IL_0636: ldloc.s V_24
+  IL_0638: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_063d: ldstr " "
+  IL_0642: call System.String System.String::Concat(System.String,System.String,System.String)
+  IL_0647: stloc.s V_23
+  IL_0649: ldloc.s V_24
+  IL_064b: ldc.i4.1
+  IL_064c: add
+  IL_064d: stloc.s V_24
+  IL_064f: ldloc.s V_24
+  IL_0651: ldloc.s V_8
+  IL_0653: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_0658: blt.s IL_0632
+  IL_065a: ldloc.s V_8
+  IL_065c: ldc.i4.0
+  IL_065d: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_0662: ldloca.s V_22
+  IL_0664: call System.Boolean System.Int32::TryParse(System.String,System.Int32&)
+  IL_0669: brfalse IL_08f1
+  IL_066e: ldloc.s V_22
+  IL_0670: ldc.i4.0
+  IL_0671: blt IL_08f1
+  IL_0676: ldarg.0
+  IL_0677: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_067c: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0681: newobj System.Void Celeste.FancyText/Trigger::.ctor()
+  IL_0686: dup
+  IL_0687: ldloc.s V_22
+  IL_0689: stfld System.Int32 Celeste.FancyText/Trigger::Index
+  IL_068e: dup
+  IL_068f: ldloc.s V_7
+  IL_0691: ldstr "silent"
+  IL_0696: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_069b: stfld System.Boolean Celeste.FancyText/Trigger::Silent
+  IL_06a0: dup
+  IL_06a1: ldloc.s V_23
+  IL_06a3: stfld System.String Celeste.FancyText/Trigger::Label
+  IL_06a8: callvirt System.Void System.Collections.Generic.List`1<Celeste.FancyText/Node>::Add(T)
+  IL_06ad: br IL_08f1
+  IL_06b2: ldloc.s V_7
+  IL_06b4: ldstr "*"
+  IL_06b9: callvirt System.Boolean System.String::Equals(System.String)
+  IL_06be: brfalse.s IL_06cc
+  IL_06c0: ldarg.0
+  IL_06c1: ldc.i4.1
+  IL_06c2: stfld System.Boolean Celeste.FancyText::currentShake
+  IL_06c7: br IL_08f1
+  IL_06cc: ldloc.s V_7
+  IL_06ce: ldstr "/*"
+  IL_06d3: callvirt System.Boolean System.String::Equals(System.String)
+  IL_06d8: brfalse.s IL_06e6
+  IL_06da: ldarg.0
+  IL_06db: ldc.i4.0
+  IL_06dc: stfld System.Boolean Celeste.FancyText::currentShake
+  IL_06e1: br IL_08f1
+  IL_06e6: ldloc.s V_7
+  IL_06e8: ldstr "~"
+  IL_06ed: callvirt System.Boolean System.String::Equals(System.String)
+  IL_06f2: brfalse.s IL_0700
+  IL_06f4: ldarg.0
+  IL_06f5: ldc.i4.1
+  IL_06f6: stfld System.Boolean Celeste.FancyText::currentWave
+  IL_06fb: br IL_08f1
+  IL_0700: ldloc.s V_7
+  IL_0702: ldstr "/~"
+  IL_0707: callvirt System.Boolean System.String::Equals(System.String)
+  IL_070c: brfalse.s IL_071a
+  IL_070e: ldarg.0
+  IL_070f: ldc.i4.0
+  IL_0710: stfld System.Boolean Celeste.FancyText::currentWave
+  IL_0715: br IL_08f1
+  IL_071a: ldloc.s V_7
+  IL_071c: ldstr "!"
+  IL_0721: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0726: brfalse.s IL_0734
+  IL_0728: ldarg.0
+  IL_0729: ldc.i4.1
+  IL_072a: stfld System.Boolean Celeste.FancyText::currentImpact
+  IL_072f: br IL_08f1
+  IL_0734: ldloc.s V_7
+  IL_0736: ldstr "/!"
+  IL_073b: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0740: brfalse.s IL_074e
+  IL_0742: ldarg.0
+  IL_0743: ldc.i4.0
+  IL_0744: stfld System.Boolean Celeste.FancyText::currentImpact
+  IL_0749: br IL_08f1
+  IL_074e: ldloc.s V_7
+  IL_0750: ldstr "%"
+  IL_0755: callvirt System.Boolean System.String::Equals(System.String)
+  IL_075a: brfalse.s IL_0768
+  IL_075c: ldarg.0
+  IL_075d: ldc.i4.1
+  IL_075e: stfld System.Boolean Celeste.FancyText::currentMessedUp
+  IL_0763: br IL_08f1
+  IL_0768: ldloc.s V_7
+  IL_076a: ldstr "/%"
+  IL_076f: callvirt System.Boolean System.String::Equals(System.String)
+  IL_0774: brfalse.s IL_0782
+  IL_0776: ldarg.0
+  IL_0777: ldc.i4.0
+  IL_0778: stfld System.Boolean Celeste.FancyText::currentMessedUp
+  IL_077d: br IL_08f1
+  IL_0782: ldloc.s V_7
+  IL_0784: ldstr "big"
+  IL_0789: callvirt System.Boolean System.String::Equals(System.String)
+  IL_078e: brfalse.s IL_07a0
+  IL_0790: ldarg.0
+  IL_0791: ldc.r4 1.5
+  IL_0796: stfld System.Single Celeste.FancyText::currentScale
+  IL_079b: br IL_08f1
+  IL_07a0: ldloc.s V_7
+  IL_07a2: ldstr "/big"
+  IL_07a7: callvirt System.Boolean System.String::Equals(System.String)
+  IL_07ac: brfalse.s IL_07be
+  IL_07ae: ldarg.0
+  IL_07af: ldc.r4 1
+  IL_07b4: stfld System.Single Celeste.FancyText::currentScale
+  IL_07b9: br IL_08f1
+  IL_07be: ldloc.s V_7
+  IL_07c0: ldstr "s"
+  IL_07c5: callvirt System.Boolean System.String::Equals(System.String)
+  IL_07ca: brfalse.s IL_0800
+  IL_07cc: ldc.i4.1
+  IL_07cd: stloc.s V_25
+  IL_07cf: ldloc.s V_8
+  IL_07d1: callvirt System.Int32 System.Collections.Generic.List`1<System.String>::get_Count()
+  IL_07d6: ldc.i4.0
+  IL_07d7: ble.s IL_07e9
+  IL_07d9: ldloc.s V_8
+  IL_07db: ldc.i4.0
+  IL_07dc: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_07e1: ldloca.s V_25
+  IL_07e3: call System.Boolean System.Int32::TryParse(System.String,System.Int32&)
+  IL_07e8: pop
+  IL_07e9: ldarg.0
+  IL_07ea: ldarg.0
+  IL_07eb: ldfld System.Single Celeste.FancyText::currentPosition
+  IL_07f0: ldc.i4.5
+  IL_07f1: ldloc.s V_25
+  IL_07f3: mul
+  IL_07f4: conv.r4
+  IL_07f5: add
+  IL_07f6: stfld System.Single Celeste.FancyText::currentPosition
+  IL_07fb: br IL_08f1
+  IL_0800: ldloc.s V_7
++ IL_0000: ldarg.0 @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
++ IL_0000: ldloc.s V_7 @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
++ IL_0000: ldloc.s V_8 @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
++ IL_0000: ldc.i4 2944 @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
++ IL_0000: ldc.i4 38241097 @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
+  |-> retrieves System.Void PrismaticHelper.Cutscenes.ParserHooks/<>c::<ParsePhTriggers>b__6_0(Celeste.FancyText,System.String,System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]])
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal3<Celeste.FancyText,System.String,System.Collections.Generic.List`1<System.String>>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/VoidVal3`3<T0,T1,T2>) @ PrismaticHelper.Cutscenes.ParserHooks::ParsePhTriggers
+  IL_0802: ldstr "savedata"
+  IL_0807: callvirt System.Boolean System.String::Equals(System.String)
+  IL_080c: brfalse IL_08f1
+  IL_0811: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0816: brtrue.s IL_085f
+  IL_0818: ldloc.s V_8
+  IL_081a: ldc.i4.0
+  IL_081b: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_0820: ldstr "name"
+  IL_0825: ldc.i4.5
+  IL_0826: callvirt System.Boolean System.String::Equals(System.String,System.StringComparison)
+  IL_082b: brfalse.s IL_083d
+  IL_082d: ldarg.0
+  IL_082e: ldstr "Madeline"
+  IL_0833: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_0838: br IL_08f1
+  IL_083d: ldarg.0
+  IL_083e: ldstr "[SD:"
+  IL_0843: ldloc.s V_8
+  IL_0845: ldc.i4.0
+  IL_0846: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_084b: ldstr "]"
+  IL_0850: call System.String System.String::Concat(System.String,System.String,System.String)
+  IL_0855: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_085a: br IL_08f1
+  IL_085f: ldloc.s V_8
+  IL_0861: ldc.i4.0
+  IL_0862: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_0867: ldstr "name"
+  IL_086c: ldc.i4.5
+  IL_086d: callvirt System.Boolean System.String::Equals(System.String,System.StringComparison)
+  IL_0872: brfalse.s IL_08b5
+  IL_0874: ldarg.0
+  IL_0875: ldfld Celeste.Language Celeste.FancyText::language
+  IL_087a: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_087f: ldfld System.String Celeste.SaveData::Name
+  IL_0884: callvirt System.Boolean Celeste.Language::CanDisplay(System.String)
+  IL_0889: brtrue.s IL_08a3
+  IL_088b: ldarg.0
+  IL_088c: ldstr "FILE_DEFAULT"
+  IL_0891: ldarg.0
+  IL_0892: ldfld Celeste.Language Celeste.FancyText::language
+  IL_0897: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_089c: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_08a1: br.s IL_08f1
+  IL_08a3: ldarg.0
+  IL_08a4: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_08a9: ldfld System.String Celeste.SaveData::Name
+  IL_08ae: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_08b3: br.s IL_08f1
+  IL_08b5: ldtoken Celeste.SaveData
+  IL_08ba: call System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+  IL_08bf: ldloc.s V_8
+  IL_08c1: ldc.i4.0
+  IL_08c2: callvirt T System.Collections.Generic.List`1<System.String>::get_Item(System.Int32)
+  IL_08c7: callvirt System.Reflection.FieldInfo System.Type::GetField(System.String)
+  IL_08cc: stloc.s V_26
+  IL_08ce: ldarg.0
+  IL_08cf: ldloc.s V_26
+  IL_08d1: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_08d6: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_08db: callvirt System.String System.Object::ToString()
+  IL_08e0: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_08e5: br.s IL_08f1
+  IL_08e7: ldarg.0
+  IL_08e8: ldloc.1
+  IL_08e9: ldloc.s V_6
+  IL_08eb: ldelem.ref
+  IL_08ec: callvirt System.Void Celeste.FancyText::AddWord(System.String)
+  IL_08f1: ldloc.s V_6
+  IL_08f3: ldc.i4.1
+  IL_08f4: add
+  IL_08f5: stloc.s V_6
+  IL_08f7: ldloc.s V_6
+  IL_08f9: ldloc.2
+  IL_08fa: blt IL_0060
+  IL_08ff: ldarg.0
+  IL_0900: callvirt System.Void Celeste.FancyText::CalcLineWidth()
+  IL_0905: ldarg.0
+  IL_0906: ldfld Celeste.FancyText/Text Celeste.FancyText::group
+  IL_090b: ret

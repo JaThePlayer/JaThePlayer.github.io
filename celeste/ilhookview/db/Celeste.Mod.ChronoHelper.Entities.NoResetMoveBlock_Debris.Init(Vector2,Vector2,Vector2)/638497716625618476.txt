@@ -1,0 +1,77 @@
+IL Diff: Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock+Debris Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldc.i4.1
+  IL_0003: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0008: ldarg.0
+  IL_0009: ldarg.1
+  IL_000a: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_000f: ldarg.0
+  IL_0010: ldarg.1
+  IL_0011: ldarg.2
+  IL_0012: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0017: ldc.r4 60
+  IL_001c: ldsfld System.Random Monocle.Calc::Random
+  IL_0021: ldc.r4 60
+  IL_0026: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_002b: add
+  IL_002c: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0031: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::speed
+  IL_0036: ldarg.0
+  IL_0037: ldarg.3
+  IL_0038: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::home
+  IL_003d: ldarg.0
+  IL_003e: ldfld Monocle.Image Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::sprite
+  IL_0043: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0048: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_004d: ldarg.0
+  IL_004e: ldfld Monocle.Image Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::sprite
+  IL_0053: ldsfld System.Random Monocle.Calc::Random
+  IL_0058: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_005d: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_0062: ldarg.0
+  IL_0063: ldc.i4.0
+  IL_0064: stfld System.Boolean Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::returning
+  IL_0069: ldarg.0
+  IL_006a: ldc.i4.0
+  IL_006b: stfld System.Boolean Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::shaking
+  IL_0070: ldarg.0
+  IL_0071: ldfld Monocle.Image Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::sprite
+  IL_0076: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_007b: ldc.r4 1
+  IL_0080: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0085: ldarg.0
+  IL_0086: ldfld Monocle.Image Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::sprite
+  IL_008b: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0090: ldc.r4 1
+  IL_0095: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_009a: ldarg.0
+  IL_009b: ldfld Monocle.Image Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::sprite
+  IL_00a0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00a5: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00aa: ldarg.0
+  IL_00ab: ldc.r4 1
+  IL_00b0: stfld System.Single Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::alpha
+  IL_00b5: ldarg.0
+  IL_00b6: ldc.i4.0
+  IL_00b7: stfld System.Boolean Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::firstHit
+  IL_00bc: ldarg.0
+  IL_00bd: ldsfld System.Random Monocle.Calc::Random
+  IL_00c2: ldc.r4 3.4906585
+  IL_00c7: ldc.r4 10.471975
+  IL_00cc: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_00d1: ldsfld System.Random Monocle.Calc::Random
+  IL_00d6: ldc.i4.1
+  IL_00d7: ldc.i4.m1
+  IL_00d8: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_00dd: conv.r4
+  IL_00de: mul
+  IL_00df: stfld System.Single Celeste.Mod.ChronoHelper.Entities.NoResetMoveBlock/Debris::spin
+  IL_00e4: ldarg.0
+  IL_00e5: stloc.0
+  IL_00e6: br.s IL_00e8
+  IL_00e8: ldloc.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_00e9: ret

@@ -1,0 +1,15 @@
+IL Diff: System.Boolean Celeste.Actor::IsRiding(Celeste.Solid)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldarg.0
+  IL_0003: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0008: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.ActorHooks::Actor_IsRiding_Solid
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.GravityHelper.Hooks.ActorHooks::Actor_IsRiding_Solid
++ IL_0000: ldc.i4 19300223 @ Celeste.Mod.GravityHelper.Hooks.ActorHooks::Actor_IsRiding_Solid
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.ActorHooks::Actor_IsRiding_Solid
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitActorInvertVectorDelegate>b__19_0(Microsoft.Xna.Framework.Vector2,Celeste.Actor)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Actor>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.ActorHooks::Actor_IsRiding_Solid
+  IL_000d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0012: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0017: ret

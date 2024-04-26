@@ -1,0 +1,125 @@
+IL Diff: System.Boolean Celeste.Mod.PandorasBox.DreamDashController::dreamDashRedirect(Celeste.Player)
+  IL_0000: nop
+  IL_0001: ldarg.1
+  IL_0002: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0007: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_000c: ldc.i4.s 9
+  IL_000e: ceq
+  IL_0010: stloc.0
+  IL_0011: ldloc.0
+  IL_0012: brfalse IL_0125
+  IL_0017: nop
+  IL_0018: ldsfld System.Reflection.FieldInfo Celeste.Mod.PandorasBox.DreamDashController::playerDashCooldownTimerMethod
+  IL_001d: ldarg.1
+  IL_001e: ldc.r4 0
+  IL_0023: box System.Single
+  IL_0028: callvirt System.Void System.Reflection.FieldInfo::SetValue(System.Object,System.Object)
+  IL_002d: nop
+  IL_002e: ldarg.1
+  IL_002f: callvirt System.Boolean Celeste.Player::get_CanDash()
+  IL_0034: stloc.1
+  IL_0035: ldloc.1
+  IL_0036: brfalse IL_0124
+  IL_003b: nop
+  IL_003c: ldc.i4.1
+  IL_003d: call Microsoft.Xna.Framework.Vector2 Celeste.Input::GetAimVector(Celeste.Facings)
+  IL_0042: ldarg.1
+  IL_0043: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0048: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_004d: stloc.2
+  IL_004e: ldarg.0
+  IL_004f: ldfld System.Boolean Celeste.Mod.PandorasBox.DreamDashController::AllowDreamDashRedirection
+  IL_0054: brfalse.s IL_0059
+  IL_0056: ldloc.2
+  IL_0057: brfalse.s IL_0063
+  IL_0059: ldarg.0
+  IL_005a: ldfld System.Boolean Celeste.Mod.PandorasBox.DreamDashController::AllowSameDirectionDash
+  IL_005f: ldloc.2
+  IL_0060: and
+  IL_0061: br.s IL_0064
+  IL_0063: ldc.i4.1
+  IL_0064: stloc.3
+  IL_0065: ldloc.3
+  IL_0066: brfalse IL_0123
+  IL_006b: nop
+  IL_006c: ldarg.1
+  IL_006d: ldc.i4.0
+  IL_006e: ldarg.1
+  IL_006f: ldfld System.Int32 Celeste.Player::Dashes
+  IL_0074: ldc.i4.1
+  IL_0075: sub
+  IL_0076: call System.Int32 System.Math::Max(System.Int32,System.Int32)
+  IL_007b: stfld System.Int32 Celeste.Player::Dashes
+  IL_0080: ldstr "event:/char/madeline/dreamblock_enter"
+  IL_0085: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_008a: pop
+  IL_008b: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_0090: ldc.r4 0.25
+  IL_0095: cgt
+  IL_0097: stloc.s V_4
+  IL_0099: ldloc.s V_4
+  IL_009b: brfalse.s IL_00aa
+  IL_009d: nop
+  IL_009e: ldc.r4 0.05
+  IL_00a3: call System.Void Celeste.Celeste::Freeze(System.Single)
++ IL_0000: ldarg.0 @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: ldarg.1 @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: ldloc.2 @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: ldc.i4 21206448 @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
+  |-> retrieves System.Boolean Celeste.Mod.SaladimHelper.PandorasBoxHookModule/<>c::<OnPandorasBoxDreamDashControllerHook>b__3_2(Celeste.DreamBlock,Celeste.Player,System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Boolean,Celeste.DreamBlock,Celeste.Player,System.Boolean>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
++ IL_0000: ret @ Celeste.Mod.SaladimHelper.PandorasBoxHookModule::OnPandorasBoxDreamDashControllerHook
+  IL_00a8: nop
+  IL_00a9: nop
+  IL_00aa: ldloc.2
+  IL_00ab: stloc.s V_5
+  IL_00ad: ldloc.s V_5
+  IL_00af: brfalse.s IL_00e9
+  IL_00b1: nop
+  IL_00b2: ldarg.1
+  IL_00b3: dup
+  IL_00b4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld System.Single Celeste.Mod.PandorasBox.DreamDashController::sameDirectionSpeedMultiplier
+  IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00c4: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00c9: ldarg.1
+  IL_00ca: dup
+  IL_00cb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00d0: ldarg.0
+  IL_00d1: ldfld System.Single Celeste.Mod.PandorasBox.DreamDashController::sameDirectionSpeedMultiplier
+  IL_00d6: call System.Int32 System.Math::Sign(System.Single)
+  IL_00db: conv.r4
+  IL_00dc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00e1: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00e6: nop
+  IL_00e7: br.s IL_0113
+  IL_00e9: nop
+  IL_00ea: ldarg.1
+  IL_00eb: ldc.i4.1
+  IL_00ec: call Microsoft.Xna.Framework.Vector2 Celeste.Input::GetAimVector(Celeste.Facings)
+  IL_00f1: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00f6: ldarg.1
+  IL_00f7: ldarg.1
+  IL_00f8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00fd: ldarg.1
+  IL_00fe: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0103: call System.Single Microsoft.Xna.Framework.Vector2::Length()
+  IL_0108: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_010d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0112: nop
+  IL_0113: ldsfld Monocle.VirtualButton Celeste.Input::Dash
+  IL_0118: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_011d: nop
+  IL_011e: ldc.i4.1
+  IL_011f: stloc.s V_6
+  IL_0121: br.s IL_012a
+  IL_0123: nop
+  IL_0124: nop
+  IL_0125: ldc.i4.0
+  IL_0126: stloc.s V_6
+  IL_0128: br.s IL_012a
+  IL_012a: ldloc.s V_6
+  IL_012c: ret

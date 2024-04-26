@@ -1,0 +1,189 @@
+IL Diff: System.Void Celeste.Refill::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0007: ldarg.0
+  IL_0008: ldc.r4 16
+  IL_000d: ldc.r4 16
+  IL_0012: ldc.r4 -8
+  IL_0017: ldc.r4 -8
+  IL_001c: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0021: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_0026: ldarg.0
+  IL_0027: ldarg.0
+  IL_0028: ldftn System.Void Celeste.Refill::OnPlayer(Celeste.Player)
+  IL_002e: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_0033: ldnull
+  IL_0034: ldnull
+  IL_0035: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_003a: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_003f: ldarg.0
+  IL_0040: ldarg.2
+  IL_0041: stfld System.Boolean Celeste.Refill::twoDashes
+  IL_0046: ldarg.0
+  IL_0047: ldarg.3
+  IL_0048: stfld System.Boolean Celeste.Refill::oneUse
+  IL_004d: ldarg.2
+  IL_004e: brfalse.s IL_0079
+  IL_0050: ldstr "objects/refillTwo/"
+  IL_0055: stloc.0
+  IL_0056: ldarg.0
+  IL_0057: ldsfld Monocle.ParticleType Celeste.Refill::P_ShatterTwo
+  IL_005c: stfld Monocle.ParticleType Celeste.Refill::p_shatter
+  IL_0061: ldarg.0
+  IL_0062: ldsfld Monocle.ParticleType Celeste.Refill::P_RegenTwo
+  IL_0067: stfld Monocle.ParticleType Celeste.Refill::p_regen
+  IL_006c: ldarg.0
+  IL_006d: ldsfld Monocle.ParticleType Celeste.Refill::P_GlowTwo
+  IL_0072: stfld Monocle.ParticleType Celeste.Refill::p_glow
+  IL_0077: br.s IL_00a0
+  IL_0079: ldstr "objects/refill/"
++ IL_0000: ldarg.0 @ FrostHelper.Entities.BirdRefill::RefillOnctor_Vector2_bool_bool
++ IL_0000: call System.String FrostHelper.Entities.BirdRefill::GetDirectory(System.String,Celeste.Refill) @ FrostHelper.Entities.BirdRefill::RefillOnctor_Vector2_bool_bool
+  IL_007e: stloc.0
+  IL_007f: ldarg.0
+  IL_0080: ldsfld Monocle.ParticleType Celeste.Refill::P_Shatter
+  IL_0085: stfld Monocle.ParticleType Celeste.Refill::p_shatter
+  IL_008a: ldarg.0
+  IL_008b: ldsfld Monocle.ParticleType Celeste.Refill::P_Regen
+  IL_0090: stfld Monocle.ParticleType Celeste.Refill::p_regen
+  IL_0095: ldarg.0
+  IL_0096: ldsfld Monocle.ParticleType Celeste.Refill::P_Glow
+  IL_009b: stfld Monocle.ParticleType Celeste.Refill::p_glow
+  IL_00a0: ldarg.0
+  IL_00a1: ldarg.0
+  IL_00a2: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00a7: ldloc.0
+  IL_00a8: ldstr "outline"
+  IL_00ad: call System.String System.String::Concat(System.String,System.String)
+  IL_00b2: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_00b7: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_00bc: dup
+  IL_00bd: stloc.1
+  IL_00be: stfld Monocle.Image Celeste.Refill::outline
+  IL_00c3: ldloc.1
+  IL_00c4: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Monocle.Image Celeste.Refill::outline
+  IL_00cf: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_00d4: pop
+  IL_00d5: ldarg.0
+  IL_00d6: ldfld Monocle.Image Celeste.Refill::outline
+  IL_00db: ldc.i4.0
+  IL_00dc: stfld System.Boolean Monocle.Component::Visible
+  IL_00e1: ldarg.0
+  IL_00e2: ldarg.0
+  IL_00e3: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00e8: ldloc.0
+  IL_00e9: ldstr "idle"
+  IL_00ee: call System.String System.String::Concat(System.String,System.String)
+  IL_00f3: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_00f8: dup
+  IL_00f9: stloc.2
+  IL_00fa: stfld Monocle.Sprite Celeste.Refill::sprite
+  IL_00ff: ldloc.2
+  IL_0100: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0105: ldarg.0
+  IL_0106: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_010b: ldstr "idle"
+  IL_0110: ldstr ""
+  IL_0115: ldc.r4 0.1
+  IL_011a: callvirt System.Void Monocle.Sprite::AddLoop(System.String,System.String,System.Single)
+  IL_011f: ldarg.0
+  IL_0120: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_0125: ldstr "idle"
+  IL_012a: ldc.i4.0
+  IL_012b: ldc.i4.0
+  IL_012c: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0131: ldarg.0
+  IL_0132: ldfld Monocle.Sprite Celeste.Refill::sprite
+  IL_0137: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_013c: pop
+  IL_013d: ldarg.0
+  IL_013e: ldarg.0
+  IL_013f: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0144: ldloc.0
+  IL_0145: ldstr "flash"
+  IL_014a: call System.String System.String::Concat(System.String,System.String)
+  IL_014f: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_0154: dup
+  IL_0155: stloc.2
+  IL_0156: stfld Monocle.Sprite Celeste.Refill::flash
+  IL_015b: ldloc.2
+  IL_015c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0161: ldarg.0
+  IL_0162: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_0167: ldstr "flash"
+  IL_016c: ldstr ""
+  IL_0171: ldc.r4 0.05
+  IL_0176: callvirt System.Void Monocle.Sprite::Add(System.String,System.String,System.Single)
+  IL_017b: ldarg.0
+  IL_017c: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_0181: ldarg.0
+  IL_0182: ldftn System.Void Celeste.Refill::<.ctor>b__20_0(System.String)
+  IL_0188: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_018d: stfld System.Action`1<System.String> Monocle.Sprite::OnFinish
+  IL_0192: ldarg.0
+  IL_0193: ldfld Monocle.Sprite Celeste.Refill::flash
+  IL_0198: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_019d: pop
+  IL_019e: ldarg.0
+  IL_019f: ldarg.0
+  IL_01a0: ldc.r4 1
+  IL_01a5: ldc.r4 4
+  IL_01aa: ldarg.0
+  IL_01ab: ldftn System.Void Celeste.Refill::<.ctor>b__20_1(System.Single)
+  IL_01b1: newobj System.Void System.Action`1<System.Single>::.ctor(System.Object,System.IntPtr)
+  IL_01b6: ldc.i4.0
+  IL_01b7: ldc.i4.0
+  IL_01b8: call Monocle.Wiggler Monocle.Wiggler::Create(System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.Boolean)
+  IL_01bd: dup
+  IL_01be: stloc.3
+  IL_01bf: stfld Monocle.Wiggler Celeste.Refill::wiggler
+  IL_01c4: ldloc.3
+  IL_01c5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01ca: ldarg.0
+  IL_01cb: newobj System.Void Celeste.MirrorReflection::.ctor()
+  IL_01d0: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01d5: ldarg.0
+  IL_01d6: ldarg.0
+  IL_01d7: ldc.r4 0.8
+  IL_01dc: ldc.r4 16
+  IL_01e1: newobj System.Void Celeste.BloomPoint::.ctor(System.Single,System.Single)
+  IL_01e6: dup
+  IL_01e7: stloc.s V_4
+  IL_01e9: stfld Celeste.BloomPoint Celeste.Refill::bloom
+  IL_01ee: ldloc.s V_4
+  IL_01f0: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01f5: ldarg.0
+  IL_01f6: ldarg.0
+  IL_01f7: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_01fc: ldc.r4 1
+  IL_0201: ldc.i4.s 16
+  IL_0203: ldc.i4.s 48
+  IL_0205: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_020a: dup
+  IL_020b: stloc.s V_5
+  IL_020d: stfld Celeste.VertexLight Celeste.Refill::light
+  IL_0212: ldloc.s V_5
+  IL_0214: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0219: ldarg.0
+  IL_021a: ldarg.0
+  IL_021b: ldc.r4 0.6
+  IL_0220: ldc.r4 0
+  IL_0225: newobj System.Void Monocle.SineWave::.ctor(System.Single,System.Single)
+  IL_022a: dup
+  IL_022b: stloc.s V_6
+  IL_022d: stfld Monocle.SineWave Celeste.Refill::sine
+  IL_0232: ldloc.s V_6
+  IL_0234: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0239: ldarg.0
+  IL_023a: ldfld Monocle.SineWave Celeste.Refill::sine
+  IL_023f: callvirt Monocle.SineWave Monocle.SineWave::Randomize()
+  IL_0244: pop
+  IL_0245: ldarg.0
+  IL_0246: callvirt System.Void Celeste.Refill::UpdateY()
+  IL_024b: ldarg.0
+  IL_024c: ldc.i4.s -100
+  IL_024e: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0253: ret

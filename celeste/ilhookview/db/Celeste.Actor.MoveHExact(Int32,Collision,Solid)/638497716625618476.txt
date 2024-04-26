@@ -1,0 +1,86 @@
+IL Diff: System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0006: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_000b: ldarg.1
+  IL_000c: conv.r4
+  IL_000d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0012: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0017: stloc.0
+  IL_0018: ldarg.1
+  IL_0019: call System.Int32 System.Math::Sign(System.Int32)
+  IL_001e: stloc.1
+  IL_001f: ldc.i4.0
+  IL_0020: stloc.2
+  IL_0021: br IL_00c2
+  IL_0026: ldarg.0
+  IL_0027: ldarg.0
+  IL_0028: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_002d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0032: ldloc.1
+  IL_0033: conv.r4
+  IL_0034: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0039: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_003e: call T Monocle.Entity::CollideFirst<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0043: stloc.3
+  IL_0044: ldloc.3
+  IL_0045: brfalse.s IL_00aa
+  IL_0047: ldarg.0
+  IL_0048: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Actor::movementCounter
+  IL_004d: ldc.r4 0
+  IL_0052: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0057: ldarg.2
+  IL_0058: brfalse.s IL_00a8
+  IL_005a: ldarg.2
+  IL_005b: ldloca.s V_4
+  IL_005d: initobj Celeste.CollisionData
+  IL_0063: ldloca.s V_4
+  IL_0065: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_006a: ldloc.1
+  IL_006b: conv.r4
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0071: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Direction
+  IL_0076: ldloca.s V_4
+  IL_0078: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_007d: ldloc.2
+  IL_007e: conv.r4
+  IL_007f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0084: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Moved
+  IL_0089: ldloca.s V_4
+  IL_008b: ldloc.0
+  IL_008c: stfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::TargetPosition
+  IL_0091: ldloca.s V_4
+  IL_0093: ldloc.3
+  IL_0094: stfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_0099: ldloca.s V_4
+  IL_009b: ldarg.3
+  IL_009c: stfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_00a1: ldloc.s V_4
+  IL_00a3: callvirt System.Void Celeste.Collision::Invoke(Celeste.CollisionData)
+  IL_00a8: ldc.i4.1
+  IL_00a9: ret
++ IL_0000: ldarg.0 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: ldloc.1 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: call System.Boolean Celeste.Mod.ProgHelper.ClipPreventionTrigger::CheckH(Celeste.Actor,System.Int32) @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: brfalse.s IL_00aa @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: ldc.i4.0 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: ret @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
+  IL_00aa: ldloc.2
+  IL_00ab: ldloc.1
+  IL_00ac: add
+  IL_00ad: stloc.2
+  IL_00ae: ldarg.1
+  IL_00af: ldloc.1
+  IL_00b0: sub
+  IL_00b1: starg.s moveH
+  IL_00b3: ldarg.0
+  IL_00b4: ldarg.0
+  IL_00b5: call System.Single Monocle.Entity::get_X()
+  IL_00ba: ldloc.1
+  IL_00bb: conv.r4
+  IL_00bc: add
+  IL_00bd: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_00c2: ldarg.1
+  IL_00c3: brtrue IL_0026
+  IL_00c8: ldc.i4.0
+  IL_00c9: ret

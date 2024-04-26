@@ -1,0 +1,296 @@
+IL Diff: System.Void Celeste.CrushBlock::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Celeste.CrushBlock+Axes,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldstr "62222b"
+  IL_0006: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_000b: stfld Microsoft.Xna.Framework.Color Celeste.CrushBlock::fill
+  IL_0010: ldarg.0
+  IL_0011: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0016: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrushBlock::idleImages
+  IL_001b: ldarg.0
+  IL_001c: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0021: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrushBlock::activeTopImages
+  IL_0026: ldarg.0
+  IL_0027: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_002c: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrushBlock::activeRightImages
+  IL_0031: ldarg.0
+  IL_0032: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0037: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrushBlock::activeLeftImages
+  IL_003c: ldarg.0
+  IL_003d: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0042: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrushBlock::activeBottomImages
+  IL_0047: ldarg.0
+  IL_0048: ldarg.1
+  IL_0049: ldarg.2
+  IL_004a: ldarg.3
+  IL_004b: ldc.i4.0
+  IL_004c: call System.Void Celeste.Solid::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Boolean)
+  IL_0051: ldarg.0
+  IL_0052: ldarg.0
+  IL_0053: ldftn Celeste.DashCollisionResults Celeste.CrushBlock::OnDashed(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0059: newobj System.Void Celeste.DashCollision::.ctor(System.Object,System.IntPtr)
+  IL_005e: stfld Celeste.DashCollision Celeste.Platform::OnDashCollide
+  IL_0063: ldarg.0
+  IL_0064: newobj System.Void System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState>::.ctor()
+  IL_0069: stfld System.Collections.Generic.List`1<Celeste.CrushBlock/MoveState> Celeste.CrushBlock::returnStack
+  IL_006e: ldarg.0
+  IL_006f: ldarg.s chillOut
+  IL_0071: stfld System.Boolean Celeste.CrushBlock::chillOut
+  IL_0076: ldarg.0
+  IL_0077: ldarg.0
+  IL_0078: call System.Single Monocle.Entity::get_Width()
+  IL_007d: ldc.r4 48
+  IL_0082: blt.un.s IL_0096
+  IL_0084: ldarg.0
+  IL_0085: call System.Single Monocle.Entity::get_Height()
+  IL_008a: ldc.r4 48
+  IL_008f: clt.un
+  IL_0091: ldc.i4.0
+  IL_0092: ceq
+  IL_0094: br.s IL_0097
+  IL_0096: ldc.i4.0
+  IL_0097: ldarg.s chillOut
+  IL_0099: and
+  IL_009a: stfld System.Boolean Celeste.CrushBlock::giant
+  IL_009f: ldarg.0
+  IL_00a0: ldc.i4.1
+  IL_00a1: stfld System.Boolean Celeste.CrushBlock::canActivate
+  IL_00a6: ldarg.0
+  IL_00a7: ldc.i4.1
+  IL_00a8: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_00ad: stfld Monocle.Coroutine Celeste.CrushBlock::attackCoroutine
+  IL_00b2: ldarg.0
+  IL_00b3: ldfld Monocle.Coroutine Celeste.CrushBlock::attackCoroutine
+  IL_00b8: ldc.i4.0
+  IL_00b9: stfld System.Boolean Monocle.Coroutine::RemoveOnComplete
+  IL_00be: ldarg.0
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Monocle.Coroutine Celeste.CrushBlock::attackCoroutine
+  IL_00c5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ca: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_00cf: ldstr "objects/crushblock/block"
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockSprites
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockSprites
++ IL_0000: ldc.i4 52772895 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockSprites
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockSprites
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockSprites>b__5_0(System.String,Celeste.CrushBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock::modCrushBlockSprites
++ IL_0000: ldarg.0 @ VivHelper.Entities.WrappableCrushBlockReskinnable::modCrushBlockSprites
++ IL_0000: ldc.i4 2944 @ VivHelper.Entities.WrappableCrushBlockReskinnable::modCrushBlockSprites
++ IL_0000: ldc.i4 61132345 @ VivHelper.Entities.WrappableCrushBlockReskinnable::modCrushBlockSprites
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.WrappableCrushBlockReskinnable::modCrushBlockSprites
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableCrushBlock/<>c::<modCrushBlockSprites>b__5_0(System.String,Celeste.CrushBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrushBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.WrappableCrushBlockReskinnable::modCrushBlockSprites
+  IL_00d4: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_00d9: stloc.0
+  IL_00da: ldarg.s axes
+  IL_00dc: switch IL_00ed,IL_0107,IL_011f
+  IL_00ed: ldloc.0
+  IL_00ee: ldc.i4.3
+  IL_00ef: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_00f4: stloc.1
+  IL_00f5: ldarg.0
+  IL_00f6: ldarg.0
+  IL_00f7: ldc.i4.1
+  IL_00f8: dup
+  IL_00f9: stloc.2
+  IL_00fa: stfld System.Boolean Celeste.CrushBlock::canMoveVertically
+  IL_00ff: ldloc.2
+  IL_0100: stfld System.Boolean Celeste.CrushBlock::canMoveHorizontally
+  IL_0105: br.s IL_0135
+  IL_0107: ldloc.0
+  IL_0108: ldc.i4.1
+  IL_0109: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_010e: stloc.1
+  IL_010f: ldarg.0
+  IL_0110: ldc.i4.1
+  IL_0111: stfld System.Boolean Celeste.CrushBlock::canMoveHorizontally
+  IL_0116: ldarg.0
+  IL_0117: ldc.i4.0
+  IL_0118: stfld System.Boolean Celeste.CrushBlock::canMoveVertically
+  IL_011d: br.s IL_0135
+  IL_011f: ldloc.0
+  IL_0120: ldc.i4.2
+  IL_0121: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_0126: stloc.1
+  IL_0127: ldarg.0
+  IL_0128: ldc.i4.0
+  IL_0129: stfld System.Boolean Celeste.CrushBlock::canMoveHorizontally
+  IL_012e: ldarg.0
+  IL_012f: ldc.i4.1
+  IL_0130: stfld System.Boolean Celeste.CrushBlock::canMoveVertically
+  IL_0135: ldarg.0
+  IL_0136: ldarg.0
+  IL_0137: ldsfld Monocle.SpriteBank Celeste.GFX::SpriteBank
+  IL_013c: ldarg.0
+  IL_013d: ldfld System.Boolean Celeste.CrushBlock::giant
+  IL_0142: brtrue.s IL_014b
+  IL_0144: ldstr "crushblock_face"
+  IL_0149: br.s IL_0150
+  IL_014b: ldstr "giant_crushblock_face"
+  IL_0150: callvirt Monocle.Sprite Monocle.SpriteBank::Create(System.String)
+  IL_0155: dup
+  IL_0156: stloc.3
+  IL_0157: stfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_015c: ldloc.3
+  IL_015d: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0162: ldarg.0
+  IL_0163: ldfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_0168: ldarg.0
+  IL_0169: call System.Single Monocle.Entity::get_Width()
+  IL_016e: ldarg.0
+  IL_016f: call System.Single Monocle.Entity::get_Height()
+  IL_0174: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0179: ldc.r4 2
+  IL_017e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0183: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0188: ldarg.0
+  IL_0189: ldfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_018e: ldstr "idle"
+  IL_0193: ldc.i4.0
+  IL_0194: ldc.i4.0
+  IL_0195: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_019a: ldarg.0
+  IL_019b: ldfld Monocle.Sprite Celeste.CrushBlock::face
+  IL_01a0: ldarg.0
+  IL_01a1: ldftn System.Void Celeste.CrushBlock::<.ctor>b__28_0(System.String)
+  IL_01a7: newobj System.Void System.Action`1<System.String>::.ctor(System.Object,System.IntPtr)
+  IL_01ac: stfld System.Action`1<System.String> Monocle.Sprite::OnLastFrame
+  IL_01b1: ldarg.0
+  IL_01b2: call System.Single Monocle.Entity::get_Width()
+  IL_01b7: ldc.r4 8
+  IL_01bc: div
+  IL_01bd: conv.i4
+  IL_01be: ldc.i4.1
+  IL_01bf: sub
+  IL_01c0: stloc.s V_4
+  IL_01c2: ldarg.0
+  IL_01c3: call System.Single Monocle.Entity::get_Height()
+  IL_01c8: ldc.r4 8
+  IL_01cd: div
+  IL_01ce: conv.i4
+  IL_01cf: ldc.i4.1
+  IL_01d0: sub
+  IL_01d1: stloc.s V_5
+  IL_01d3: ldarg.0
+  IL_01d4: ldloc.1
+  IL_01d5: ldc.i4.0
+  IL_01d6: ldc.i4.0
+  IL_01d7: ldc.i4.0
+  IL_01d8: ldc.i4.0
+  IL_01d9: ldc.i4.m1
+  IL_01da: ldc.i4.m1
+  IL_01db: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_01e0: ldarg.0
+  IL_01e1: ldloc.1
+  IL_01e2: ldloc.s V_4
+  IL_01e4: ldc.i4.0
+  IL_01e5: ldc.i4.3
+  IL_01e6: ldc.i4.0
+  IL_01e7: ldc.i4.1
+  IL_01e8: ldc.i4.m1
+  IL_01e9: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_01ee: ldarg.0
+  IL_01ef: ldloc.1
+  IL_01f0: ldc.i4.0
+  IL_01f1: ldloc.s V_5
+  IL_01f3: ldc.i4.0
+  IL_01f4: ldc.i4.3
+  IL_01f5: ldc.i4.m1
+  IL_01f6: ldc.i4.1
+  IL_01f7: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_01fc: ldarg.0
+  IL_01fd: ldloc.1
+  IL_01fe: ldloc.s V_4
+  IL_0200: ldloc.s V_5
+  IL_0202: ldc.i4.3
+  IL_0203: ldc.i4.3
+  IL_0204: ldc.i4.1
+  IL_0205: ldc.i4.1
+  IL_0206: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_020b: ldc.i4.1
+  IL_020c: stloc.s V_6
+  IL_020e: br.s IL_0249
+  IL_0210: ldarg.0
+  IL_0211: ldloc.1
+  IL_0212: ldloc.s V_6
+  IL_0214: ldc.i4.0
+  IL_0215: ldsfld System.Random Monocle.Calc::Random
+  IL_021a: ldc.i4.1
+  IL_021b: ldc.i4.2
+  IL_021c: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_0221: ldc.i4.0
+  IL_0222: ldc.i4.0
+  IL_0223: ldc.i4.m1
+  IL_0224: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0229: ldarg.0
+  IL_022a: ldloc.1
+  IL_022b: ldloc.s V_6
+  IL_022d: ldloc.s V_5
+  IL_022f: ldsfld System.Random Monocle.Calc::Random
+  IL_0234: ldc.i4.1
+  IL_0235: ldc.i4.2
+  IL_0236: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_023b: ldc.i4.3
+  IL_023c: ldc.i4.0
+  IL_023d: ldc.i4.1
+  IL_023e: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0243: ldloc.s V_6
+  IL_0245: ldc.i4.1
+  IL_0246: add
+  IL_0247: stloc.s V_6
+  IL_0249: ldloc.s V_6
+  IL_024b: ldloc.s V_4
+  IL_024d: blt.s IL_0210
+  IL_024f: ldc.i4.1
+  IL_0250: stloc.s V_7
+  IL_0252: br.s IL_028d
+  IL_0254: ldarg.0
+  IL_0255: ldloc.1
+  IL_0256: ldc.i4.0
+  IL_0257: ldloc.s V_7
+  IL_0259: ldc.i4.0
+  IL_025a: ldsfld System.Random Monocle.Calc::Random
+  IL_025f: ldc.i4.1
+  IL_0260: ldc.i4.2
+  IL_0261: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_0266: ldc.i4.m1
+  IL_0267: ldc.i4.0
+  IL_0268: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_026d: ldarg.0
+  IL_026e: ldloc.1
+  IL_026f: ldloc.s V_4
+  IL_0271: ldloc.s V_7
+  IL_0273: ldc.i4.3
+  IL_0274: ldsfld System.Random Monocle.Calc::Random
+  IL_0279: ldc.i4.1
+  IL_027a: ldc.i4.2
+  IL_027b: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_0280: ldc.i4.1
+  IL_0281: ldc.i4.0
+  IL_0282: callvirt System.Void Celeste.CrushBlock::AddImage(Monocle.MTexture,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0287: ldloc.s V_7
+  IL_0289: ldc.i4.1
+  IL_028a: add
+  IL_028b: stloc.s V_7
+  IL_028d: ldloc.s V_7
+  IL_028f: ldloc.s V_5
+  IL_0291: blt.s IL_0254
+  IL_0293: ldarg.0
+  IL_0294: ldc.r4 0.2
+  IL_0299: newobj System.Void Celeste.LightOcclude::.ctor(System.Single)
+  IL_029e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_02a3: ldarg.0
+  IL_02a4: ldarg.0
+  IL_02a5: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_02aa: dup
+  IL_02ab: stloc.s V_8
+  IL_02ad: stfld Celeste.SoundSource Celeste.CrushBlock::returnLoopSfx
+  IL_02b2: ldloc.s V_8
+  IL_02b4: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_02b9: ldarg.0
+  IL_02ba: ldarg.0
+  IL_02bb: ldftn System.Boolean Celeste.CrushBlock::<.ctor>b__28_1()
+  IL_02c1: newobj System.Void System.Func`1<System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_02c6: newobj System.Void Celeste.WaterInteraction::.ctor(System.Func`1<System.Boolean>)
+  IL_02cb: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_02d0: ret

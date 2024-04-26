@@ -1,0 +1,67 @@
+IL Diff: System.Void Celeste.Level::Pause(System.Int32,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: ldarg.2
+  IL_0003: ldarg.3
+  IL_0004: callvirt System.Void Celeste.Level::orig_Pause(System.Int32,System.Boolean,System.Boolean)
+  IL_0009: ldarg.0
+  IL_000a: call Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_000f: castclass Monocle.EntityList
+  IL_0014: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::get_ToAdd()
+  IL_0019: ldsfld System.Func`2<Monocle.Entity,System.Boolean> Celeste.Level/<>c::<>9__25_1
+  IL_001e: dup
+  IL_001f: brtrue.s IL_0038
+  IL_0021: pop
+  IL_0022: ldsfld Celeste.Level/<>c Celeste.Level/<>c::<>9
+  IL_0027: ldftn System.Boolean Celeste.Level/<>c::<Pause>b__25_1(Monocle.Entity)
+  IL_002d: newobj System.Void System.Func`2<Monocle.Entity,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0032: dup
+  IL_0033: stsfld System.Func`2<Monocle.Entity,System.Boolean> Celeste.Level/<>c::<>9__25_1
+  IL_0038: call TSource System.Linq.Enumerable::FirstOrDefault<Monocle.Entity>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_003d: isinst Celeste.TextMenu
+  IL_0042: stloc.0
+  IL_0043: ldloc.0
+  IL_0044: brfalse.s IL_00b7
+  IL_0046: ldloc.0
+  IL_0047: dup
+  IL_0048: ldfld System.Action Celeste.TextMenu::OnPause
+  IL_004d: ldarg.0
+  IL_004e: ldftn System.Void Celeste.Level::<Pause>g__Unpause|25_0()
+  IL_0054: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0059: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+  IL_005e: castclass System.Action
+  IL_0063: stfld System.Action Celeste.TextMenu::OnPause
+  IL_0068: ldloc.0
+  IL_0069: dup
+  IL_006a: ldfld System.Action Celeste.TextMenu::OnESC
+  IL_006f: ldarg.0
+  IL_0070: ldftn System.Void Celeste.Level::<Pause>g__Unpause|25_0()
+  IL_0076: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_007b: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+  IL_0080: castclass System.Action
+  IL_0085: stfld System.Action Celeste.TextMenu::OnESC
+  IL_008a: ldarg.3
+  IL_008b: brtrue.s IL_00b7
+  IL_008d: ldloc.0
+  IL_008e: dup
+  IL_008f: ldfld System.Action Celeste.TextMenu::OnCancel
+  IL_0094: ldarg.0
+  IL_0095: ldftn System.Void Celeste.Level::<Pause>g__Unpause|25_0()
+  IL_009b: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_00a0: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+  IL_00a5: castclass System.Action
+  IL_00aa: stfld System.Action Celeste.TextMenu::OnCancel
+  IL_00af: ldarg.0
+  IL_00b0: ldloc.0
+  IL_00b1: ldarg.2
+  IL_00b2: call System.Void Celeste.Mod.Everest/Events/Level::CreatePauseMenuButtons(Celeste.Level,Celeste.TextMenu,System.Boolean)
+  IL_0000: ldarg.0
++ IL_0000: ldloc.0 @ Celeste.Mod.GhostModForTas.Module.HookPauseMenu+<>c::<Initialize>b__1_0
++ IL_0000: ldarg.2 @ Celeste.Mod.GhostModForTas.Module.HookPauseMenu+<>c::<Initialize>b__1_0
++ IL_0000: call System.Void Celeste.Mod.GhostModForTas.Module.HookPauseMenu::TryAddButton(Celeste.Level,Celeste.TextMenu,System.Boolean) @ Celeste.Mod.GhostModForTas.Module.HookPauseMenu+<>c::<Initialize>b__1_0
++ IL_00b7: ldarg.0 @ Celeste.Mod.GhostModForTas.Module.HookPauseMenu+<>c::<Initialize>b__1_0
+  IL_00b8: ldarg.1
+  IL_00b9: ldarg.2
+  IL_00ba: ldarg.3
+  IL_00bb: call System.Void Celeste.Mod.Everest/Events/Level::Pause(Celeste.Level,System.Int32,System.Boolean,System.Boolean)
+  IL_00c0: ret

@@ -1,0 +1,20 @@
+IL Diff: System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_0000: ldsfld System.Single Monocle.Engine::FreezeTimer
+  IL_0005: ldarg.0
+  IL_0006: bge.un.s IL_002f
+  IL_0008: ldarg.0
+  IL_0009: stsfld System.Single Monocle.Engine::FreezeTimer
+  IL_000e: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0013: brfalse.s IL_002f
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper::ILCelesteFreeze
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper::Vanilla_AdvanceCasstteBlockVisualizer(System.Single) @ Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper::ILCelesteFreeze
+  IL_0015: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_001a: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_001f: callvirt T Monocle.Tracker::GetEntity<Celeste.CassetteBlockManager>()
+  IL_0024: stloc.0
+  IL_0025: ldloc.0
+  IL_0026: brfalse.s IL_002f
+  IL_0028: ldloc.0
+  IL_0029: ldarg.0
+  IL_002a: callvirt System.Void Celeste.CassetteBlockManager::AdvanceMusic(System.Single)
+  IL_002f: ret

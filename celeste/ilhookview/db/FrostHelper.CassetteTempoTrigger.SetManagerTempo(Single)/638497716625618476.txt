@@ -1,0 +1,16 @@
+IL Diff: System.Void FrostHelper.CassetteTempoTrigger::SetManagerTempo(System.Single)
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_000b: callvirt T Monocle.Tracker::GetEntity<Celeste.CassetteBlockManager>()
+  IL_0010: stloc.0
+  IL_0011: ldloc.0
+  IL_0012: brfalse.s IL_002a
+  IL_0014: ldloc.0
+  IL_0015: call MonoMod.Utils.DynamicData MonoMod.Utils.DynamicData::For(System.Object)
+  IL_001a: ldstr "tempoMult"
+  IL_001f: ldarg.1
+  IL_0020: box System.Single
+  IL_0025: callvirt System.Void MonoMod.Utils.DynamicData::Set(System.String,System.Object)
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper/CassetteBlockVisualizer::SetStateChanged() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_002a: ret

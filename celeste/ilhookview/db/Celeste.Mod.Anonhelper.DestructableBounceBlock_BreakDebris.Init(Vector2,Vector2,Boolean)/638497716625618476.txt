@@ -1,0 +1,91 @@
+IL Diff: Celeste.Mod.Anonhelper.DestructableBounceBlock+BreakDebris Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0006: ldarg.3
+  IL_0007: brtrue.s IL_0010
+  IL_0009: ldstr "objects/AnonHelper/bumpBlockNew/fire_rubble"
+  IL_000e: br.s IL_0015
+  IL_0010: ldstr "objects/AnonHelper/bumpBlockNew/ice_rubble"
+  IL_0015: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_001a: stloc.0
+  IL_001b: ldsfld System.Random Monocle.Calc::Random
+  IL_0020: ldloc.0
+  IL_0021: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_0026: stloc.1
+  IL_0027: ldarg.0
+  IL_0028: ldfld Monocle.Image Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::sprite
+  IL_002d: ldnull
+  IL_002e: ceq
+  IL_0030: stloc.2
+  IL_0031: ldloc.2
+  IL_0032: brfalse.s IL_005a
+  IL_0034: nop
+  IL_0035: ldarg.0
+  IL_0036: ldarg.0
+  IL_0037: ldloc.1
+  IL_0038: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_003d: dup
+  IL_003e: stloc.3
+  IL_003f: stfld Monocle.Image Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::sprite
+  IL_0044: ldloc.3
+  IL_0045: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_004a: nop
+  IL_004b: ldarg.0
+  IL_004c: ldfld Monocle.Image Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::sprite
+  IL_0051: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0056: pop
+  IL_0057: nop
+  IL_0058: br.s IL_0068
+  IL_005a: nop
+  IL_005b: ldarg.0
+  IL_005c: ldfld Monocle.Image Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::sprite
+  IL_0061: ldloc.1
+  IL_0062: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_0067: nop
+  IL_0068: ldarg.0
+  IL_0069: ldarg.1
+  IL_006a: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_006f: ldarg.2
+  IL_0070: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0075: ldsfld System.Random Monocle.Calc::Random
+  IL_007a: ldc.r4 -0.1
+  IL_007f: ldc.r4 0.1
+  IL_0084: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0089: add
+  IL_008a: ldc.r4 1
+  IL_008f: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_0094: starg.s direction
+  IL_0096: ldarg.0
+  IL_0097: ldarg.2
+  IL_0098: ldarg.3
+  IL_0099: brtrue.s IL_00ae
+  IL_009b: ldsfld System.Random Monocle.Calc::Random
+  IL_00a0: ldc.i4.s 120
+  IL_00a2: ldc.i4 200
+  IL_00a7: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00ac: br.s IL_00bc
+  IL_00ae: ldsfld System.Random Monocle.Calc::Random
+  IL_00b3: ldc.i4.s 20
+  IL_00b5: ldc.i4.s 40
+  IL_00b7: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00bc: conv.r4
+  IL_00bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00c2: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::speed
+  IL_00c7: ldarg.0
+  IL_00c8: ldc.r4 0
+  IL_00cd: stfld System.Single Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::percent
+  IL_00d2: ldarg.0
+  IL_00d3: ldsfld System.Random Monocle.Calc::Random
+  IL_00d8: ldc.i4.2
+  IL_00d9: ldc.i4.3
+  IL_00da: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_00df: conv.r4
+  IL_00e0: stfld System.Single Celeste.Mod.Anonhelper.DestructableBounceBlock/BreakDebris::duration
+  IL_00e5: ldarg.0
+  IL_00e6: stloc.s V_4
+  IL_00e8: br.s IL_00ea
+  IL_00ea: ldloc.s V_4
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_00ec: ret

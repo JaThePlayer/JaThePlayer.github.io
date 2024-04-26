@@ -1,0 +1,61 @@
+IL Diff: System.Void Celeste.Mod.Entities.CrystalShatterTrigger::OnEnter(Celeste.Player)
++ IL_0000: ldarg this @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.CrystalShatterTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
++ IL_0000: call System.Void FrostHelper.CustomSpinner::OnCrystalShatterTriggerEnter(Celeste.Mod.Entities.CrystalShatterTrigger) @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.CrystalShatterTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Trigger::OnEnter(Celeste.Player)
+  IL_0007: ldarg.0
+  IL_0008: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0012: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.CrystalStaticSpinner>()
+  IL_0017: stloc.0
+  IL_0018: ldloc.0
+  IL_0019: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Entity>::get_Count()
+  IL_001e: ldc.i4.0
+  IL_001f: ble IL_0095
+  IL_0024: ldarg.0
+  IL_0025: ldfld Celeste.Mod.Entities.CrystalShatterTrigger/Modes Celeste.Mod.Entities.CrystalShatterTrigger::mode
+  IL_002a: ldc.i4.1
+  IL_002b: bne.un.s IL_0038
+  IL_002d: ldstr "event:/game/06_reflection/boss_spikes_burst"
+  IL_0032: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_0037: pop
+  IL_0038: ldloc.0
+  IL_0039: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_003e: stloc.1
+  IL_003f: br.s IL_007c
+  IL_0041: ldloca.s V_1
+  IL_0043: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0048: castclass Celeste.CrystalStaticSpinner
+  IL_004d: stloc.2
+  IL_004e: ldloc.2
+  IL_004f: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0054: stloc.3
+  IL_0055: ldloc.2
+  IL_0056: ldc.i4.1
+  IL_0057: stfld System.Boolean Monocle.Entity::Collidable
+  IL_005c: ldarg.0
+  IL_005d: ldfld Celeste.Mod.Entities.CrystalShatterTrigger/Modes Celeste.Mod.Entities.CrystalShatterTrigger::mode
+  IL_0062: ldc.i4.1
+  IL_0063: beq.s IL_006e
+  IL_0065: ldarg.0
+  IL_0066: ldloc.2
+  IL_0067: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_006c: brfalse.s IL_0075
+  IL_006e: ldloc.2
+  IL_006f: ldc.i4.0
+  IL_0070: callvirt System.Void Celeste.CrystalStaticSpinner::Destroy(System.Boolean)
+  IL_0075: ldloc.2
+  IL_0076: ldloc.3
+  IL_0077: stfld System.Boolean Monocle.Entity::Collidable
+  IL_007c: ldloca.s V_1
+  IL_007e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0083: brtrue.s IL_0041
+  IL_0085: leave.s IL_0095
+  IL_0087: ldloca.s V_1
+  IL_0089: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_008f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0094: endfinally
+  IL_0095: ldarg.0
+  IL_0096: call System.Void Monocle.Entity::RemoveSelf()
+  IL_009b: ret

@@ -1,0 +1,93 @@
+IL Diff: System.Void Celeste.Booster::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Single Celeste.Booster::cannotUseTimer
+  IL_000c: ldc.r4 0
+  IL_0011: ble.un.s IL_0025
+  IL_0013: ldarg.0
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.Booster::cannotUseTimer
+  IL_001a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_001f: sub
+  IL_0020: stfld System.Single Celeste.Booster::cannotUseTimer
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Single Celeste.Booster::respawnTimer
+  IL_002b: ldc.r4 0
+  IL_0030: ble.un.s IL_0057
+  IL_0032: ldarg.0
+  IL_0033: ldarg.0
+  IL_0034: ldfld System.Single Celeste.Booster::respawnTimer
+  IL_0039: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_003e: sub
+  IL_003f: stfld System.Single Celeste.Booster::respawnTimer
+  IL_0044: ldarg.0
+  IL_0045: ldfld System.Single Celeste.Booster::respawnTimer
+  IL_004a: ldc.r4 0
+  IL_004f: bgt.un.s IL_0057
+  IL_0051: ldarg.0
+  IL_0052: callvirt System.Void Celeste.Booster::Respawn()
+  IL_0057: ldarg.0
+  IL_0058: ldfld Monocle.Coroutine Celeste.Booster::dashRoutine
+  IL_005d: ldfld System.Boolean Monocle.Component::Active
+  IL_0062: brtrue.s IL_00d7
+  IL_0064: ldarg.0
+  IL_0065: ldfld System.Single Celeste.Booster::respawnTimer
+  IL_006a: ldc.r4 0
+  IL_006f: bgt.un.s IL_00d7
+  IL_0071: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0076: stloc.0
+  IL_0077: ldarg.0
+  IL_0078: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_007d: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0082: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0087: stloc.1
+  IL_0088: ldloc.1
+  IL_0089: brfalse.s IL_00b0
+  IL_008b: ldarg.0
+  IL_008c: ldloc.1
+  IL_008d: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_0092: brfalse.s IL_00b0
+  IL_0094: ldloc.1
+  IL_0095: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_009a: ldsfld Microsoft.Xna.Framework.Vector2 Celeste.Booster::playerOffset
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Update
++ IL_0000: ldc.i4 794480 @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Update
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.BoosterHooks::Booster_Update
+  IL_009f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a4: ldarg.0
+  IL_00a5: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00aa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00af: stloc.0
+  IL_00b0: ldarg.0
+  IL_00b1: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_00bc: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00c1: ldloc.0
+  IL_00c2: ldc.r4 80
+  IL_00c7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00cc: mul
+  IL_00cd: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Approach(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00d2: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00d7: ldarg.0
+  IL_00d8: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_00dd: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_00e2: ldstr "inside"
+  IL_00e7: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00ec: brfalse.s IL_0110
+  IL_00ee: ldarg.0
+  IL_00ef: callvirt System.Boolean Celeste.Booster::get_BoostingPlayer()
+  IL_00f4: brtrue.s IL_0110
+  IL_00f6: ldarg.0
+  IL_00f7: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Player>()
+  IL_00fc: brtrue.s IL_0110
+  IL_00fe: ldarg.0
+  IL_00ff: ldfld Monocle.Sprite Celeste.Booster::sprite
+  IL_0104: ldstr "loop"
+  IL_0109: ldc.i4.0
+  IL_010a: ldc.i4.0
+  IL_010b: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0110: ret

@@ -1,0 +1,241 @@
+IL Diff: System.Void Celeste.Parallax::Render(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0006: castclass Monocle.MTexture
+  IL_000b: callvirt System.Boolean Monocle.MTexture::get_IsPacked()
+  IL_0010: brtrue.s IL_0028
+  IL_0012: ldsfld System.Reflection.FieldInfo Celeste.Parallax::spriteBatchSamplerState
+  IL_0017: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_001c: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_0021: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointWrap
+  IL_0026: beq.s IL_0030
+  IL_0028: ldarg.0
+  IL_0029: ldarg.1
+  IL_002a: callvirt System.Void Celeste.Parallax::orig_Render(Monocle.Scene)
+  IL_002f: ret
+  IL_0030: ldarg.1
+  IL_0031: isinst Celeste.Level
+  IL_0036: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_003b: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0040: ldarg.0
+  IL_0041: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Parallax::CameraOffset
+  IL_0046: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_004b: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_0050: stloc.0
+  IL_0051: ldarg.0
+  IL_0052: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Backdrop::Position
+  IL_0057: ldloc.0
+  IL_0058: ldarg.0
+  IL_0059: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Backdrop::Scroll
+  IL_005e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0063: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0068: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Floor(Microsoft.Xna.Framework.Vector2)
+  IL_006d: stloc.1
+  IL_006e: ldarg.0
+  IL_006f: ldfld System.Single Celeste.Parallax::fadeIn
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Single Celeste.Parallax::Alpha
+  IL_007a: mul
+  IL_007b: ldarg.0
+  IL_007c: ldfld System.Single Celeste.Backdrop::FadeAlphaMultiplier
+  IL_0081: mul
+  IL_0082: stloc.2
+  IL_0083: ldarg.0
+  IL_0084: ldfld Celeste.Backdrop/Fader Celeste.Backdrop::FadeX
+  IL_0089: brfalse.s IL_00a5
+  IL_008b: ldloc.2
+  IL_008c: ldarg.0
+  IL_008d: ldfld Celeste.Backdrop/Fader Celeste.Backdrop::FadeX
+  IL_0092: ldloc.0
+  IL_0093: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0098: ldc.r4 160
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 39058096 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  |-> retrieves System.Single Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onParallaxRender>b__7_0(System.Single,Celeste.Parallax)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Parallax>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  IL_009d: add
+  IL_009e: callvirt System.Single Celeste.Backdrop/Fader::Value(System.Single)
+  IL_00a3: mul
+  IL_00a4: stloc.2
+  IL_00a5: ldarg.0
+  IL_00a6: ldfld Celeste.Backdrop/Fader Celeste.Backdrop::FadeY
+  IL_00ab: brfalse.s IL_00c7
+  IL_00ad: ldloc.2
+  IL_00ae: ldarg.0
+  IL_00af: ldfld Celeste.Backdrop/Fader Celeste.Backdrop::FadeY
+  IL_00b4: ldloc.0
+  IL_00b5: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ba: ldc.r4 90
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 9589201 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  |-> retrieves System.Single Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onParallaxRender>b__7_0(System.Single,Celeste.Parallax)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Parallax>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  IL_00bf: add
+  IL_00c0: callvirt System.Single Celeste.Backdrop/Fader::Value(System.Single)
+  IL_00c5: mul
+  IL_00c6: stloc.2
+  IL_00c7: ldarg.0
+  IL_00c8: ldfld Microsoft.Xna.Framework.Color Celeste.Backdrop::Color
+  IL_00cd: stloc.3
+  IL_00ce: ldloc.2
+  IL_00cf: ldc.r4 1
+  IL_00d4: bge.un.s IL_00de
+  IL_00d6: ldloc.3
+  IL_00d7: ldloc.2
+  IL_00d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00dd: stloc.3
+  IL_00de: ldloca.s V_3
+  IL_00e0: call System.Byte Microsoft.Xna.Framework.Color::get_A()
+  IL_00e5: ldc.i4.1
+  IL_00e6: bgt.s IL_00e9
+  IL_00e8: ret
+  IL_00e9: ldarg.0
+  IL_00ea: ldfld System.Boolean Celeste.Backdrop::LoopX
+  IL_00ef: brfalse.s IL_0125
+  IL_00f1: ldloca.s V_1
+  IL_00f3: ldloc.1
+  IL_00f4: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00f9: ldarg.0
+  IL_00fa: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_00ff: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_0104: conv.r4
+  IL_0105: rem
+  IL_0106: ldarg.0
+  IL_0107: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_010c: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_0111: conv.r4
+  IL_0112: sub
+  IL_0113: ldarg.0
+  IL_0114: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0119: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_011e: conv.r4
+  IL_011f: rem
+  IL_0120: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0125: ldarg.0
+  IL_0126: ldfld System.Boolean Celeste.Backdrop::LoopY
+  IL_012b: brfalse.s IL_0161
+  IL_012d: ldloca.s V_1
+  IL_012f: ldloc.1
+  IL_0130: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0135: ldarg.0
+  IL_0136: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_013b: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_0140: conv.r4
+  IL_0141: rem
+  IL_0142: ldarg.0
+  IL_0143: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0148: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_014d: conv.r4
+  IL_014e: sub
+  IL_014f: ldarg.0
+  IL_0150: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0155: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_015a: conv.r4
+  IL_015b: rem
+  IL_015c: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0161: ldc.i4.0
+  IL_0162: stloc.s V_4
+  IL_0164: ldarg.0
+  IL_0165: ldfld System.Boolean Celeste.Backdrop::FlipX
+  IL_016a: brfalse.s IL_0172
+  IL_016c: ldloc.s V_4
+  IL_016e: ldc.i4.1
+  IL_016f: or
+  IL_0170: stloc.s V_4
+  IL_0172: ldarg.0
+  IL_0173: ldfld System.Boolean Celeste.Backdrop::FlipY
+  IL_0178: brfalse.s IL_0180
+  IL_017a: ldloc.s V_4
+  IL_017c: ldc.i4.2
+  IL_017d: or
+  IL_017e: stloc.s V_4
+  IL_0180: ldarg.0
+  IL_0181: ldfld System.Boolean Celeste.Backdrop::LoopX
+  IL_0186: brtrue.s IL_0195
+  IL_0188: ldarg.0
+  IL_0189: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_018e: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_0193: br.s IL_01a8
+  IL_0195: ldc.r4 320
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 38527782 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  |-> retrieves System.Single Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onParallaxRender>b__7_0(System.Single,Celeste.Parallax)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Parallax>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  IL_019a: ldloc.1
+  IL_019b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01a0: sub
+  IL_01a1: conv.r8
+  IL_01a2: call System.Double System.Math::Ceiling(System.Double)
+  IL_01a7: conv.i4
+  IL_01a8: stloc.s V_5
+  IL_01aa: ldarg.0
+  IL_01ab: ldfld System.Boolean Celeste.Backdrop::LoopY
+  IL_01b0: brtrue.s IL_01bf
+  IL_01b2: ldarg.0
+  IL_01b3: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_01b8: callvirt System.Int32 Monocle.MTexture::get_Height()
+  IL_01bd: br.s IL_01d2
+  IL_01bf: ldc.r4 180
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 2961 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: ldc.i4 33742615 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  |-> retrieves System.Single Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onParallaxRender>b__7_0(System.Single,Celeste.Parallax)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Parallax>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onParallaxRender
+  IL_01c4: ldloc.1
+  IL_01c5: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01ca: sub
+  IL_01cb: conv.r8
+  IL_01cc: call System.Double System.Math::Ceiling(System.Double)
+  IL_01d1: conv.i4
+  IL_01d2: stloc.s V_6
+  IL_01d4: ldloca.s V_7
+  IL_01d6: ldarg.0
+  IL_01d7: ldfld System.Boolean Celeste.Backdrop::FlipX
+  IL_01dc: brtrue.s IL_01e1
+  IL_01de: ldc.i4.0
+  IL_01df: br.s IL_01e4
+  IL_01e1: ldloc.s V_5
+  IL_01e3: neg
+  IL_01e4: ldarg.0
+  IL_01e5: ldfld System.Boolean Celeste.Backdrop::FlipY
+  IL_01ea: brtrue.s IL_01ef
+  IL_01ec: ldc.i4.0
+  IL_01ed: br.s IL_01f2
+  IL_01ef: ldloc.s V_6
+  IL_01f1: neg
+  IL_01f2: ldloc.s V_5
+  IL_01f4: ldloc.s V_6
+  IL_01f6: call System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_01fb: ldarg.0
+  IL_01fc: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0201: castclass Monocle.MTexture
+  IL_0206: callvirt System.Single Monocle.MTexture::get_ScaleFix()
+  IL_020b: stloc.s V_8
+  IL_020d: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0212: ldarg.0
+  IL_0213: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0218: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_021d: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_0222: ldloc.1
+  IL_0223: ldloc.s V_7
+  IL_0225: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_022a: ldloc.3
+  IL_022b: ldc.r4 0
+  IL_0230: ldarg.0
+  IL_0231: ldfld Monocle.MTexture Celeste.Parallax::Texture
+  IL_0236: callvirt Microsoft.Xna.Framework.Vector2 Monocle.MTexture::get_DrawOffset()
+  IL_023b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0240: ldloc.s V_8
+  IL_0242: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0247: ldloc.s V_8
+  IL_0249: ldloc.s V_4
+  IL_024b: ldc.r4 0
+  IL_0250: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
+  IL_0255: ret

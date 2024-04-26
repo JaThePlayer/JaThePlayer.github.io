@@ -1,0 +1,153 @@
+IL Diff: System.Void Monocle.Commands::Log(System.Object,Microsoft.Xna.Framework.Color)
+  IL_0000: ldarg.1
+  IL_0001: callvirt System.String System.Object::ToString()
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld System.Text.StringBuilder Monocle.Commands::debugRClog
+  IL_000d: brfalse.s IL_001d
+  IL_000f: ldarg.0
+  IL_0010: ldfld System.Text.StringBuilder Monocle.Commands::debugRClog
+  IL_0015: ldloc.0
+  IL_0016: callvirt System.Text.StringBuilder System.Text.StringBuilder::AppendLine(System.String)
+  IL_001b: pop
+  IL_001c: ret
+  IL_001d: ldloc.0
+  IL_001e: ldstr "
+"
+  IL_0023: callvirt System.Boolean System.String::Contains(System.String)
+  IL_0028: brfalse.s IL_0056
+  IL_002a: ldloc.0
+  IL_002b: ldc.i4.s 10
+  IL_002d: ldc.i4.0
+  IL_002e: callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)
+  IL_0033: stloc.3
+  IL_0034: ldc.i4.0
+  IL_0035: stloc.s V_4
+  IL_0037: br.s IL_004e
+  IL_0039: ldloc.3
+  IL_003a: ldloc.s V_4
+  IL_003c: ldelem.ref
+  IL_003d: stloc.s V_5
+  IL_003f: ldarg.0
+  IL_0040: ldloc.s V_5
+  IL_0042: ldarg.2
+  IL_0043: callvirt System.Void Monocle.Commands::Log(System.Object,Microsoft.Xna.Framework.Color)
+  IL_0048: ldloc.s V_4
+  IL_004a: ldc.i4.1
+  IL_004b: add
+  IL_004c: stloc.s V_4
+  IL_004e: ldloc.s V_4
+  IL_0050: ldloc.3
+  IL_0051: ldlen
+  IL_0052: conv.i4
+  IL_0053: blt.s IL_0039
+  IL_0055: ret
+  IL_0056: call System.Int32 Monocle.Engine::get_ViewWidth()
+  IL_005b: ldc.i4.s 40
+  IL_005d: sub
+  IL_005e: stloc.1
+  IL_005f: br.s IL_00d0
+  IL_0061: ldc.i4.m1
+  IL_0062: stloc.s V_6
+  IL_0064: ldc.i4.0
+  IL_0065: stloc.s V_7
+  IL_0067: br.s IL_009b
+  IL_0069: ldloc.0
+  IL_006a: ldloc.s V_7
+  IL_006c: callvirt System.Char System.String::get_Chars(System.Int32)
+  IL_0071: ldc.i4.s 32
+  IL_0073: bne.un.s IL_0095
+  IL_0075: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_007a: ldloc.0
+  IL_007b: ldc.i4.0
+  IL_007c: ldloc.s V_7
+  IL_007e: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+  IL_0083: callvirt Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Graphics.SpriteFont::MeasureString(System.String)
+  IL_0088: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_008d: ldloc.1
+  IL_008e: conv.r4
+  IL_008f: bgt.s IL_00a5
+  IL_0091: ldloc.s V_7
+  IL_0093: stloc.s V_6
+  IL_0095: ldloc.s V_7
+  IL_0097: ldc.i4.1
+  IL_0098: add
+  IL_0099: stloc.s V_7
+  IL_009b: ldloc.s V_7
+  IL_009d: ldloc.0
+  IL_009e: callvirt System.Int32 System.String::get_Length()
+  IL_00a3: blt.s IL_0069
+  IL_00a5: ldloc.s V_6
+  IL_00a7: ldc.i4.m1
+  IL_00a8: beq.s IL_00e7
+  IL_00aa: ldarg.0
+  IL_00ab: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_00b0: ldc.i4.0
+  IL_00b1: ldloc.0
+  IL_00b2: ldc.i4.0
+  IL_00b3: ldloc.s V_6
+  IL_00b5: callvirt System.String System.String::Substring(System.Int32,System.Int32)
+  IL_00ba: ldarg.2
+  IL_00bb: newobj System.Void Monocle.Commands/Line::.ctor(System.String,Microsoft.Xna.Framework.Color)
+  IL_00c0: callvirt System.Void System.Collections.Generic.List`1<Monocle.Commands/Line>::Insert(System.Int32,T)
+  IL_00c5: ldloc.0
+  IL_00c6: ldloc.s V_6
+  IL_00c8: ldc.i4.1
+  IL_00c9: add
+  IL_00ca: callvirt System.String System.String::Substring(System.Int32)
+  IL_00cf: stloc.0
+  IL_00d0: call Microsoft.Xna.Framework.Graphics.SpriteFont Monocle.Draw::get_DefaultFont()
+  IL_00d5: ldloc.0
+  IL_00d6: callvirt Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Graphics.SpriteFont::MeasureString(System.String)
+  IL_00db: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00e0: ldloc.1
+  IL_00e1: conv.r4
+  IL_00e2: bgt IL_0061
+  IL_00e7: ldarg.0
+  IL_00e8: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_00ed: ldc.i4.0
+  IL_00ee: ldloc.0
+  IL_00ef: ldarg.2
+  IL_00f0: newobj System.Void Monocle.Commands/Line::.ctor(System.String,Microsoft.Xna.Framework.Color)
+  IL_00f5: callvirt System.Void System.Collections.Generic.List`1<Monocle.Commands/Line>::Insert(System.Int32,T)
+  IL_00fa: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_00ff: callvirt System.Int32 Celeste.Mod.Core.CoreModuleSettings::get_ExtraCommandHistoryLines()
++ IL_0000: call System.Int32 Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement::ExtraExtraHistoryLines() @ Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement::ILCommandsLog
++ IL_0000: add @ Celeste.Mod.TASHelper.Gameplay.ConsoleEnhancement::ILCommandsLog
+  IL_0104: call System.Int32 Monocle.Engine::get_ViewHeight()
+  IL_0109: ldc.i4.s 100
+  IL_010b: sub
+  IL_010c: ldc.i4.s 30
+  IL_010e: div
+  IL_010f: add
+  IL_0110: ldc.i4.0
+  IL_0111: call System.Int32 System.Math::Max(System.Int32,System.Int32)
+  IL_0116: stloc.2
+  IL_0117: ldarg.0
+  IL_0118: ldarg.0
+  IL_0119: ldfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_011e: ldc.i4.0
+  IL_011f: ldarg.0
+  IL_0120: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_0125: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_012a: ldc.i4.1
+  IL_012b: sub
+  IL_012c: ldc.i4.0
+  IL_012d: call System.Int32 System.Math::Max(System.Int32,System.Int32)
+  IL_0132: call System.Int32 Monocle.Calc::Clamp(System.Int32,System.Int32,System.Int32)
+  IL_0137: stfld System.Int32 Monocle.Commands::firstLineIndexToDraw
+  IL_013c: br.s IL_0156
+  IL_013e: ldarg.0
+  IL_013f: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_0144: ldarg.0
+  IL_0145: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_014a: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_014f: ldc.i4.1
+  IL_0150: sub
+  IL_0151: callvirt System.Void System.Collections.Generic.List`1<Monocle.Commands/Line>::RemoveAt(System.Int32)
+  IL_0156: ldarg.0
+  IL_0157: ldfld System.Collections.Generic.List`1<Monocle.Commands/Line> Monocle.Commands::drawCommands
+  IL_015c: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Commands/Line>::get_Count()
+  IL_0161: ldloc.2
+  IL_0162: bgt.s IL_013e
+  IL_0164: ret

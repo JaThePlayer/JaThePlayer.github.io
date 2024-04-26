@@ -1,0 +1,447 @@
+IL Diff: System.Void Celeste.Textbox::Render()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: stloc.0
+  IL_000c: ldloc.0
+  IL_000d: brfalse.s IL_0028
+  IL_000f: ldloc.0
+  IL_0010: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
++ IL_0000: ldc.i4 55378167 @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.HintController/<>c::<Textbox_Render_Update>b__34_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
+  IL_0015: brtrue.s IL_0027
+  IL_0017: ldloc.0
+  IL_0018: ldfld Celeste.PlayerDeadBody Celeste.Level::RetryPlayerCorpse
+  IL_001d: brtrue.s IL_0027
+  IL_001f: ldloc.0
+  IL_0020: ldfld System.Boolean Celeste.Level::SkippingCutscene
+  IL_0025: brfalse.s IL_0028
+  IL_0027: ret
+  IL_0028: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
+  IL_002d: ldarg.0
+  IL_002e: ldfld System.Single Celeste.Textbox::ease
+  IL_0033: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_0038: stloc.1
+  IL_0039: ldloc.1
+  IL_003a: ldc.r4 0.05
+  IL_003f: bge.un.s IL_0042
+  IL_0041: ret
+  IL_0042: ldc.r4 116
+  IL_0047: stloc.2
+  IL_0048: ldloc.2
+  IL_0049: ldloc.2
+  IL_004a: ldc.r4 2
+  IL_004f: div
+  IL_0050: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0055: ldarg.0
+  IL_0056: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Textbox::RenderOffset
+  IL_005b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0060: stloc.3
+  IL_0061: ldarg.0
+  IL_0062: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Textbox::RenderOffset
+  IL_0067: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_006c: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0071: brfalse.s IL_00c9
+  IL_0073: ldarg.0
+  IL_0074: ldfld Celeste.FancyText/Anchors Celeste.Textbox::anchor
+  IL_0079: ldc.i4.2
+  IL_007a: bne.un.s IL_0099
+  IL_007c: ldloca.s V_3
+  IL_007e: ldloc.2
+  IL_007f: ldc.r4 1080
+  IL_0084: ldloc.2
+  IL_0085: ldc.r4 2
+  IL_008a: div
+  IL_008b: sub
+  IL_008c: ldc.r4 272
+  IL_0091: sub
+  IL_0092: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0097: br.s IL_00af
+  IL_0099: ldarg.0
+  IL_009a: ldfld Celeste.FancyText/Anchors Celeste.Textbox::anchor
+  IL_009f: ldc.i4.1
+  IL_00a0: bne.un.s IL_00af
+  IL_00a2: ldloca.s V_3
+  IL_00a4: ldloc.2
+  IL_00a5: ldc.r4 404
+  IL_00aa: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00af: ldloca.s V_3
+  IL_00b1: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00b6: dup
+  IL_00b7: ldind.r4
+  IL_00b8: ldc.r4 136
+  IL_00bd: ldc.r4 1
+  IL_00c2: ldloc.1
+  IL_00c3: sub
+  IL_00c4: mul
+  IL_00c5: conv.i4
+  IL_00c6: conv.r4
+  IL_00c7: add
+  IL_00c8: stind.r4
+  IL_00c9: ldarg.0
+  IL_00ca: ldfld Monocle.MTexture Celeste.Textbox::textbox
+  IL_00cf: ldloc.3
+  IL_00d0: ldc.r4 1688
+  IL_00d5: ldc.r4 272
+  IL_00da: ldloc.1
+  IL_00db: mul
+  IL_00dc: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00e1: ldc.r4 2
+  IL_00e6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00eb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00f5: ldc.r4 1
+  IL_00fa: ldloc.1
+  IL_00fb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0100: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_0105: ldarg.0
+  IL_0106: ldfld System.Boolean Celeste.Textbox::waitingForInput
+  IL_010b: brfalse IL_0191
+  IL_0110: ldarg.0
+  IL_0111: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_0116: brfalse.s IL_012e
+  IL_0118: ldarg.0
+  IL_0119: ldarg.0
+  IL_011a: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_011f: callvirt System.Int32 Celeste.Textbox::PortraitSide(Celeste.FancyText/Portrait)
+  IL_0124: ldc.i4.0
+  IL_0125: blt.s IL_012e
+  IL_0127: ldc.r4 1432
+  IL_012c: br.s IL_0133
+  IL_012e: ldc.r4 1688
+  IL_0133: stloc.s V_4
+  IL_0135: ldloc.3
+  IL_0136: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_013b: ldloc.s V_4
+  IL_013d: add
+  IL_013e: ldloc.3
+  IL_013f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0144: ldc.r4 272
+  IL_0149: add
+  IL_014a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_014f: ldc.r4 -48
+  IL_0154: ldc.i4.s -40
+  IL_0156: ldarg.0
+  IL_0157: ldfld System.Single Celeste.Textbox::timer
+  IL_015c: ldc.r4 1
+  IL_0161: rem
+  IL_0162: ldc.r4 0.25
+  IL_0167: blt.s IL_016c
+  IL_0169: ldc.i4.0
+  IL_016a: br.s IL_016d
+  IL_016c: ldc.i4.6
+  IL_016d: add
+  IL_016e: conv.r4
+  IL_016f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0174: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0179: stloc.s V_5
+  IL_017b: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_0180: ldstr "textboxbutton"
+  IL_0185: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_018a: ldloc.s V_5
+  IL_018c: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2)
+  IL_0191: ldarg.0
+  IL_0192: ldfld System.Boolean Celeste.Textbox::portraitExists
+  IL_0197: brfalse IL_03a4
+  IL_019c: ldarg.0
+  IL_019d: ldarg.0
+  IL_019e: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_01a3: callvirt System.Int32 Celeste.Textbox::PortraitSide(Celeste.FancyText/Portrait)
+  IL_01a8: ldc.i4.0
+  IL_01a9: ble.s IL_01f2
+  IL_01ab: ldarg.0
+  IL_01ac: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_01b1: ldloc.3
+  IL_01b2: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01b7: ldc.r4 1688
+  IL_01bc: add
+  IL_01bd: ldc.r4 240
+  IL_01c2: sub
+  IL_01c3: ldc.r4 16
+  IL_01c8: sub
+  IL_01c9: ldloc.3
+  IL_01ca: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01cf: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01d4: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_01d9: ldarg.0
+  IL_01da: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_01df: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_01e4: ldarg.0
+  IL_01e5: ldfld System.Single Celeste.Textbox::portraitScale
+  IL_01ea: neg
+  IL_01eb: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01f0: br.s IL_022a
+  IL_01f2: ldarg.0
+  IL_01f3: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_01f8: ldloc.3
+  IL_01f9: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01fe: ldc.r4 16
+  IL_0203: add
+  IL_0204: ldloc.3
+  IL_0205: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_020f: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0214: ldarg.0
+  IL_0215: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_021a: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_021f: ldarg.0
+  IL_0220: ldfld System.Single Celeste.Textbox::portraitScale
+  IL_0225: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_022a: ldarg.0
+  IL_022b: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0230: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0235: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_023a: dup
+  IL_023b: ldind.r4
+  IL_023c: ldarg.0
+  IL_023d: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_0242: ldfld System.Boolean Celeste.FancyText/Portrait::Flipped
+  IL_0247: brtrue.s IL_024c
+  IL_0249: ldc.i4.1
+  IL_024a: br.s IL_024d
+  IL_024c: ldc.i4.m1
+  IL_024d: conv.r4
+  IL_024e: mul
+  IL_024f: stind.r4
+  IL_0250: ldarg.0
+  IL_0251: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0256: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_025b: ldarg.0
+  IL_025c: ldfld System.Single Celeste.Textbox::portraitScale
+  IL_0261: ldc.r4 272
+  IL_0266: ldloc.1
+  IL_0267: mul
+  IL_0268: ldc.r4 32
+  IL_026d: sub
+  IL_026e: ldc.r4 240
+  IL_0273: div
+  IL_0274: mul
+  IL_0275: ldarg.0
+  IL_0276: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_027b: ldfld System.Boolean Celeste.FancyText/Portrait::UpsideDown
+  IL_0280: brtrue.s IL_0285
+  IL_0282: ldc.i4.1
+  IL_0283: br.s IL_0286
+  IL_0285: ldc.i4.m1
+  IL_0286: conv.r4
+  IL_0287: mul
+  IL_0288: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_028d: ldarg.0
+  IL_028e: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0293: dup
+  IL_0294: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0299: ldc.r4 0.9
+  IL_029e: ldarg.0
+  IL_029f: ldfld Monocle.Wiggler Celeste.Textbox::portraitWiggle
+  IL_02a4: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_02a9: ldc.r4 0.1
+  IL_02ae: mul
+  IL_02af: add
+  IL_02b0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02b5: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_02ba: ldarg.0
+  IL_02bb: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_02c0: dup
+  IL_02c1: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_02c6: ldc.r4 120
+  IL_02cb: ldc.r4 272
+  IL_02d0: ldloc.1
+  IL_02d1: mul
+  IL_02d2: ldc.r4 0.5
+  IL_02d7: mul
+  IL_02d8: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02dd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02e2: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_02e7: ldarg.0
+  IL_02e8: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_02ed: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_02f2: ldloc.1
+  IL_02f3: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02f8: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_02fd: ldarg.0
+  IL_02fe: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0303: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0308: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_030d: call System.Single System.Math::Abs(System.Single)
+  IL_0312: ldc.r4 0.05
+  IL_0317: ble.un IL_03a4
+  IL_031c: ldarg.0
+  IL_031d: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0322: callvirt System.Void Monocle.Component::Render()
+  IL_0327: ldarg.0
+  IL_0328: ldfld System.Boolean Celeste.Textbox::isPortraitGlitchy
+  IL_032d: brfalse.s IL_03a4
+  IL_032f: ldarg.0
+  IL_0330: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_0335: brfalse.s IL_03a4
+  IL_0337: ldarg.0
+  IL_0338: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_033d: ldarg.0
+  IL_033e: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0343: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0348: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_034d: ldarg.0
+  IL_034e: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_0353: ldarg.0
+  IL_0354: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0359: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Origin
+  IL_035e: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Origin
+  IL_0363: ldarg.0
+  IL_0364: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_0369: ldarg.0
+  IL_036a: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_036f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0374: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0379: ldarg.0
+  IL_037a: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_037f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0384: ldc.r4 0.2
+  IL_0389: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_038e: ldloc.1
+  IL_038f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0394: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0399: ldarg.0
+  IL_039a: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_039f: callvirt System.Void Monocle.Component::Render()
+  IL_03a4: ldarg.0
+  IL_03a5: ldfld Monocle.MTexture Celeste.Textbox::textboxOverlay
+  IL_03aa: brfalse.s IL_0403
+  IL_03ac: ldc.i4.1
+  IL_03ad: stloc.s V_6
+  IL_03af: ldarg.0
+  IL_03b0: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_03b5: brfalse.s IL_03c9
+  IL_03b7: ldarg.0
+  IL_03b8: ldarg.0
+  IL_03b9: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_03be: callvirt System.Int32 Celeste.Textbox::PortraitSide(Celeste.FancyText/Portrait)
+  IL_03c3: ldc.i4.0
+  IL_03c4: ble.s IL_03c9
+  IL_03c6: ldc.i4.m1
+  IL_03c7: stloc.s V_6
+  IL_03c9: ldarg.0
+  IL_03ca: ldfld Monocle.MTexture Celeste.Textbox::textboxOverlay
+  IL_03cf: ldloc.3
+  IL_03d0: ldc.r4 1688
+  IL_03d5: ldc.r4 272
+  IL_03da: ldloc.1
+  IL_03db: mul
+  IL_03dc: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03e1: ldc.r4 2
+  IL_03e6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_03eb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03f0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_03f5: ldloc.s V_6
+  IL_03f7: conv.r4
+  IL_03f8: ldloc.1
+  IL_03f9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03fe: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_0403: ldarg.0
+  IL_0404: ldfld System.Int32 Celeste.Textbox::shakeSeed
+  IL_0409: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_040e: ldc.i4.1
+  IL_040f: stloc.s V_7
+  IL_0411: ldarg.0
+  IL_0412: callvirt System.Int32 Celeste.Textbox::get_Start()
+  IL_0417: stloc.s V_11
+  IL_0419: br.s IL_045b
+  IL_041b: ldarg.0
+  IL_041c: ldfld Celeste.FancyText/Text Celeste.Textbox::text
+  IL_0421: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0426: ldloc.s V_11
+  IL_0428: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_042d: isinst Celeste.FancyText/NewLine
+  IL_0432: brfalse.s IL_043c
+  IL_0434: ldloc.s V_7
+  IL_0436: ldc.i4.1
+  IL_0437: add
+  IL_0438: stloc.s V_7
+  IL_043a: br.s IL_0455
+  IL_043c: ldarg.0
+  IL_043d: ldfld Celeste.FancyText/Text Celeste.Textbox::text
+  IL_0442: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0447: ldloc.s V_11
+  IL_0449: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_044e: isinst Celeste.FancyText/NewPage
+  IL_0453: brtrue.s IL_046f
+  IL_0455: ldloc.s V_11
+  IL_0457: ldc.i4.1
+  IL_0458: add
+  IL_0459: stloc.s V_11
+  IL_045b: ldloc.s V_11
+  IL_045d: ldarg.0
+  IL_045e: ldfld Celeste.FancyText/Text Celeste.Textbox::text
+  IL_0463: ldfld System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.FancyText/Text::Nodes
+  IL_0468: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Count()
+  IL_046d: blt.s IL_041b
+  IL_046f: ldloca.s V_8
+  IL_0471: ldarg.0
+  IL_0472: ldfld System.Single Celeste.Textbox::innerTextPadding
+  IL_0477: ldarg.0
+  IL_0478: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_047d: brfalse.s IL_048e
+  IL_047f: ldarg.0
+  IL_0480: ldarg.0
+  IL_0481: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_0486: callvirt System.Int32 Celeste.Textbox::PortraitSide(Celeste.FancyText/Portrait)
+  IL_048b: ldc.i4.0
+  IL_048c: blt.s IL_0495
+  IL_048e: ldc.r4 0
+  IL_0493: br.s IL_049a
+  IL_0495: ldc.r4 256
+  IL_049a: add
+  IL_049b: ldarg.0
+  IL_049c: ldfld System.Single Celeste.Textbox::innerTextPadding
+  IL_04a1: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04a6: ldarg.0
+  IL_04a7: ldfld Celeste.FancyText/Portrait Celeste.Textbox::portrait
+  IL_04ac: brfalse.s IL_04b6
+  IL_04ae: ldarg.0
+  IL_04af: ldfld System.Single Celeste.Textbox::maxLineWidth
+  IL_04b4: br.s IL_04bc
+  IL_04b6: ldarg.0
+  IL_04b7: ldfld System.Single Celeste.Textbox::maxLineWidthNoPortrait
+  IL_04bc: ldarg.0
+  IL_04bd: ldfld System.Int32 Celeste.Textbox::linesPerPage
+  IL_04c2: conv.r4
+  IL_04c3: ldarg.0
+  IL_04c4: ldfld System.Single Celeste.Textbox::lineHeight
+  IL_04c9: mul
+  IL_04ca: ldloc.1
+  IL_04cb: mul
+  IL_04cc: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04d1: ldc.r4 2
+  IL_04d6: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_04db: stloc.s V_9
+  IL_04dd: ldloc.s V_7
+  IL_04df: ldc.i4.4
+  IL_04e0: bge.s IL_04e9
+  IL_04e2: ldc.r4 1
+  IL_04e7: br.s IL_04ee
+  IL_04e9: ldc.r4 0.75
+  IL_04ee: stloc.s V_10
+  IL_04f0: ldarg.0
+  IL_04f1: ldfld Celeste.FancyText/Text Celeste.Textbox::text
+  IL_04f6: ldloc.3
+  IL_04f7: ldloc.s V_8
+  IL_04f9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04fe: ldloc.s V_9
+  IL_0500: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0505: ldc.r4 0.5
+  IL_050a: ldc.r4 0.5
+  IL_050f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0514: ldc.r4 1
+  IL_0519: ldloc.1
+  IL_051a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_051f: ldloc.s V_10
+  IL_0521: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0526: ldloc.1
+  IL_0527: ldarg.0
+  IL_0528: callvirt System.Int32 Celeste.Textbox::get_Start()
+  IL_052d: ldc.i4 2147483647
+  IL_0532: callvirt System.Void Celeste.FancyText/Text::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,System.Int32)
+  IL_0537: call System.Void Monocle.Calc::PopRandom()
+  IL_053c: ret

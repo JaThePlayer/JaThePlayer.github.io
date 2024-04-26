@@ -1,0 +1,18 @@
+IL Diff: System.Void Celeste.CassetteBlock::ShiftSize(System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: conv.r4
++ IL_0000: ldarg.0 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
++ IL_0000: call System.Boolean Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::IsWonkyWithoutBoost(Celeste.CassetteBlock) @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
++ IL_0000: brfalse IL_0000 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
++ IL_0000: call System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::MoveVWithoutBoost(Celeste.CassetteBlock,System.Single) @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
++ IL_0000: br IL_0008 @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
++ IL_0000: nop @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlock::CassetteBlock_ShiftSize
+  IL_0003: call System.Void Celeste.Platform::MoveV(System.Single)
+  IL_0008: ldarg.0
+  IL_0009: ldarg.0
+  IL_000a: ldfld System.Int32 Celeste.CassetteBlock::blockHeight
+  IL_000f: ldarg.1
+  IL_0010: sub
+  IL_0011: stfld System.Int32 Celeste.CassetteBlock::blockHeight
+  IL_0016: ret

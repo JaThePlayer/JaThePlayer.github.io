@@ -1,0 +1,52 @@
+IL Diff: System.Void Celeste.Mod.Entities.LavaBlockerTrigger::OnStay(Celeste.Player)
++ IL_0000: ldarg this @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.LavaBlockerTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
++ IL_0000: call System.Void FrostHelper.CustomRisingLava::OnLavaBlockerTriggerStay(Celeste.Mod.Entities.LavaBlockerTrigger) @ FrostHelper.EasierILHook+<>c__DisplayClass28_0`1[[System.Action`1[[Celeste.Mod.Entities.LavaBlockerTrigger, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]::<CreatePrefixHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.Mod.Entities.LavaBlockerTrigger::enabled
+  IL_0006: brtrue.s IL_0009
+  IL_0008: ret
+  IL_0009: ldarg.0
+  IL_000a: ldfld System.Collections.Generic.List`1<MonoMod.Utils.DynData`1<Celeste.RisingLava>> Celeste.Mod.Entities.LavaBlockerTrigger::risingLavas
+  IL_000f: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<MonoMod.Utils.DynData`1<Celeste.RisingLava>>::GetEnumerator()
+  IL_0014: stloc.0
+  IL_0015: br.s IL_0033
+  IL_0017: ldloca.s V_0
+  IL_0019: call T System.Collections.Generic.List`1/Enumerator<MonoMod.Utils.DynData`1<Celeste.RisingLava>>::get_Current()
+  IL_001e: stloc.1
+  IL_001f: ldloc.1
+  IL_0020: callvirt System.Boolean MonoMod.Utils.DynData`1<Celeste.RisingLava>::get_IsAlive()
+  IL_0025: brfalse.s IL_0033
+  IL_0027: ldloc.1
+  IL_0028: ldstr "waiting"
+  IL_002d: ldc.i4.1
+  IL_002e: callvirt System.Void MonoMod.Utils.DynData`1<Celeste.RisingLava>::Set<System.Boolean>(System.String,T)
+  IL_0033: ldloca.s V_0
+  IL_0035: call System.Boolean System.Collections.Generic.List`1/Enumerator<MonoMod.Utils.DynData`1<Celeste.RisingLava>>::MoveNext()
+  IL_003a: brtrue.s IL_0017
+  IL_003c: leave.s IL_004c
+  IL_003e: ldloca.s V_0
+  IL_0040: constrained. System.Collections.Generic.List`1/Enumerator<MonoMod.Utils.DynData`1<Celeste.RisingLava>>
+  IL_0046: callvirt System.Void System.IDisposable::Dispose()
+  IL_004b: endfinally
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Collections.Generic.List`1<Celeste.SandwichLava> Celeste.Mod.Entities.LavaBlockerTrigger::sandwichLavas
+  IL_0052: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.SandwichLava>::GetEnumerator()
+  IL_0057: stloc.2
+  IL_0058: br.s IL_006c
+  IL_005a: ldloca.s V_2
+  IL_005c: call T System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>::get_Current()
+  IL_0061: stloc.3
+  IL_0062: ldloc.3
+  IL_0063: brfalse.s IL_006c
+  IL_0065: ldloc.3
+  IL_0066: ldc.i4.1
+  IL_0067: stfld System.Boolean Celeste.SandwichLava::Waiting
+  IL_006c: ldloca.s V_2
+  IL_006e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>::MoveNext()
+  IL_0073: brtrue.s IL_005a
+  IL_0075: leave.s IL_0085
+  IL_0077: ldloca.s V_2
+  IL_0079: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.SandwichLava>
+  IL_007f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0084: endfinally
+  IL_0085: ret

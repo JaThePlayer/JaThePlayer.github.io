@@ -1,0 +1,516 @@
+IL Diff: System.Void Celeste.DreamBlock::Render()
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: call System.Single Monocle.Entity::get_Right()
+  IL_0012: ldloc.0
+  IL_0013: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0018: blt.s IL_0044
+  IL_001a: ldarg.0
+  IL_001b: call System.Single Monocle.Entity::get_Left()
+  IL_0020: ldloc.0
+  IL_0021: callvirt System.Single Monocle.Camera::get_Right()
+  IL_0026: bgt.s IL_0044
+  IL_0028: ldarg.0
+  IL_0029: call System.Single Monocle.Entity::get_Bottom()
+  IL_002e: ldloc.0
+  IL_002f: callvirt System.Single Monocle.Camera::get_Top()
+  IL_0034: blt.s IL_0044
+  IL_0036: ldarg.0
+  IL_0037: call System.Single Monocle.Entity::get_Top()
+  IL_003c: ldloc.0
+  IL_003d: callvirt System.Single Monocle.Camera::get_Bottom()
+  IL_0042: ble.un.s IL_0045
+  IL_0044: ret
+  IL_0045: ldarg.0
+  IL_0046: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_004b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0050: ldarg.0
+  IL_0051: call System.Single Monocle.Entity::get_X()
+  IL_0056: add
+  IL_0057: ldarg.0
+  IL_0058: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_005d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0062: ldarg.0
+  IL_0063: call System.Single Monocle.Entity::get_Y()
+  IL_0068: add
+  IL_0069: ldarg.0
+  IL_006a: call System.Single Monocle.Entity::get_Width()
+  IL_006f: ldarg.0
+  IL_0070: call System.Single Monocle.Entity::get_Height()
+  IL_0075: ldarg.0
+  IL_0076: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_007b: brtrue.s IL_0084
+  IL_007d: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::disabledBackColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_0082 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::DeactivatedBackColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_0082: br.s IL_0089
+  IL_0084: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::activeBackColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldc.i4 29203649 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks/<>c::<emitReplaceActiveBackColor>b__6_1(Microsoft.Xna.Framework.Color,Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.DreamBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_0089 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::ActivatedBackColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_0089: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_008e: ldarg.0
+  IL_008f: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0094: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0099: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_009e: stloc.1
+  IL_009f: ldc.i4.0
+  IL_00a0: stloc.2
+  IL_00a1: br IL_01f0
+  IL_00a6: ldarg.0
+  IL_00a7: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_00ac: ldloc.2
+  IL_00ad: ldelema Celeste.DreamBlock/DreamParticle
+  IL_00b2: ldfld System.Int32 Celeste.DreamBlock/DreamParticle::Layer
+  IL_00b7: stloc.3
+  IL_00b8: ldarg.0
+  IL_00b9: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_00be: ldloc.2
+  IL_00bf: ldelema Celeste.DreamBlock/DreamParticle
+  IL_00c4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock/DreamParticle::Position
+  IL_00c9: stloc.s V_4
+  IL_00cb: ldloc.s V_4
+  IL_00cd: ldloc.1
+  IL_00ce: ldc.r4 0.3
+  IL_00d3: ldc.r4 0.25
+  IL_00d8: ldloc.3
+  IL_00d9: conv.r4
+  IL_00da: mul
+  IL_00db: add
+  IL_00dc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00e1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00e6: stloc.s V_4
+  IL_00e8: ldarg.0
+  IL_00e9: ldloc.s V_4
+  IL_00eb: callvirt Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::PutInside(Microsoft.Xna.Framework.Vector2)
+  IL_00f0: stloc.s V_4
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_00f8: ldloc.2
+  IL_00f9: ldelema Celeste.DreamBlock/DreamParticle
+  IL_00fe: ldfld Microsoft.Xna.Framework.Color Celeste.DreamBlock/DreamParticle::Color
+  IL_0103: stloc.s V_5
+  IL_0105: ldloc.3
+  IL_0106: brtrue.s IL_013e
+  IL_0108: ldarg.0
+  IL_0109: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_010e: ldloc.2
+  IL_010f: ldelema Celeste.DreamBlock/DreamParticle
+  IL_0114: ldfld System.Single Celeste.DreamBlock/DreamParticle::TimeOffset
+  IL_0119: ldc.r4 4
+  IL_011e: mul
+  IL_011f: ldarg.0
+  IL_0120: ldfld System.Single Celeste.DreamBlock::animTimer
+  IL_0125: add
+  IL_0126: ldc.r4 4
+  IL_012b: rem
+  IL_012c: conv.i4
+  IL_012d: stloc.s V_7
+  IL_012f: ldarg.0
+  IL_0130: ldfld Monocle.MTexture[] Celeste.DreamBlock::particleTextures
+  IL_0135: ldc.i4.3
+  IL_0136: ldloc.s V_7
+  IL_0138: sub
+  IL_0139: ldelem.ref
+  IL_013a: stloc.s V_6
+  IL_013c: br.s IL_0182
+  IL_013e: ldloc.3
+  IL_013f: ldc.i4.1
+  IL_0140: bne.un.s IL_0178
+  IL_0142: ldarg.0
+  IL_0143: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_0148: ldloc.2
+  IL_0149: ldelema Celeste.DreamBlock/DreamParticle
+  IL_014e: ldfld System.Single Celeste.DreamBlock/DreamParticle::TimeOffset
+  IL_0153: ldc.r4 2
+  IL_0158: mul
+  IL_0159: ldarg.0
+  IL_015a: ldfld System.Single Celeste.DreamBlock::animTimer
+  IL_015f: add
+  IL_0160: ldc.r4 2
+  IL_0165: rem
+  IL_0166: conv.i4
+  IL_0167: stloc.s V_8
+  IL_0169: ldarg.0
+  IL_016a: ldfld Monocle.MTexture[] Celeste.DreamBlock::particleTextures
+  IL_016f: ldc.i4.1
+  IL_0170: ldloc.s V_8
+  IL_0172: add
+  IL_0173: ldelem.ref
+  IL_0174: stloc.s V_6
+  IL_0176: br.s IL_0182
+  IL_0178: ldarg.0
+  IL_0179: ldfld Monocle.MTexture[] Celeste.DreamBlock::particleTextures
+  IL_017e: ldc.i4.2
+  IL_017f: ldelem.ref
+  IL_0180: stloc.s V_6
+  IL_0182: ldloc.s V_4
+  IL_0184: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0189: ldarg.0
+  IL_018a: call System.Single Monocle.Entity::get_X()
+  IL_018f: ldc.r4 2
+  IL_0194: add
+  IL_0195: blt.un.s IL_01ec
+  IL_0197: ldloc.s V_4
+  IL_0199: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_019e: ldarg.0
+  IL_019f: call System.Single Monocle.Entity::get_Y()
+  IL_01a4: ldc.r4 2
+  IL_01a9: add
+  IL_01aa: blt.un.s IL_01ec
+  IL_01ac: ldloc.s V_4
+  IL_01ae: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01b3: ldarg.0
+  IL_01b4: call System.Single Monocle.Entity::get_Right()
+  IL_01b9: ldc.r4 2
+  IL_01be: sub
+  IL_01bf: bge.un.s IL_01ec
+  IL_01c1: ldloc.s V_4
+  IL_01c3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01c8: ldarg.0
+  IL_01c9: call System.Single Monocle.Entity::get_Bottom()
+  IL_01ce: ldc.r4 2
+  IL_01d3: sub
+  IL_01d4: bge.un.s IL_01ec
+  IL_01d6: ldloc.s V_6
+  IL_01d8: ldloc.s V_4
+  IL_01da: ldarg.0
+  IL_01db: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_01e0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01e5: ldloc.s V_5
+  IL_01e7: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_01ec: ldloc.2
+  IL_01ed: ldc.i4.1
+  IL_01ee: add
+  IL_01ef: stloc.2
+  IL_01f0: ldloc.2
+  IL_01f1: ldarg.0
+  IL_01f2: ldfld Celeste.DreamBlock/DreamParticle[] Celeste.DreamBlock::particles
+  IL_01f7: ldlen
+  IL_01f8: conv.i4
+  IL_01f9: blt IL_00a6
+  IL_01fe: ldarg.0
+  IL_01ff: ldfld System.Single Celeste.DreamBlock::whiteFill
+  IL_0204: ldc.r4 0
+  IL_0209: ble.un.s IL_0257
+  IL_020b: ldarg.0
+  IL_020c: call System.Single Monocle.Entity::get_X()
+  IL_0211: ldarg.0
+  IL_0212: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_0217: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_021c: add
+  IL_021d: ldarg.0
+  IL_021e: call System.Single Monocle.Entity::get_Y()
+  IL_0223: ldarg.0
+  IL_0224: ldflda Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_0229: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_022e: add
+  IL_022f: ldarg.0
+  IL_0230: call System.Single Monocle.Entity::get_Width()
+  IL_0235: ldarg.0
+  IL_0236: call System.Single Monocle.Entity::get_Height()
+  IL_023b: ldarg.0
+  IL_023c: ldfld System.Single Celeste.DreamBlock::whiteHeight
+  IL_0241: mul
+  IL_0242: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0247: ldarg.0
+  IL_0248: ldfld System.Single Celeste.DreamBlock::whiteFill
+  IL_024d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0252: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0257: ldarg.0
+  IL_0258: ldarg.0
+  IL_0259: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_025e: ldarg.0
+  IL_025f: call System.Single Monocle.Entity::get_X()
+  IL_0264: ldarg.0
+  IL_0265: call System.Single Monocle.Entity::get_Y()
+  IL_026a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_026f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0274: ldarg.0
+  IL_0275: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_027a: ldarg.0
+  IL_027b: call System.Single Monocle.Entity::get_X()
+  IL_0280: ldarg.0
+  IL_0281: call System.Single Monocle.Entity::get_Width()
+  IL_0286: add
+  IL_0287: ldarg.0
+  IL_0288: call System.Single Monocle.Entity::get_Y()
+  IL_028d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0292: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0297: ldc.r4 0
+  IL_029c: callvirt System.Void Celeste.DreamBlock::WobbleLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02a1: ldarg.0
+  IL_02a2: ldarg.0
+  IL_02a3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_02a8: ldarg.0
+  IL_02a9: call System.Single Monocle.Entity::get_X()
+  IL_02ae: ldarg.0
+  IL_02af: call System.Single Monocle.Entity::get_Width()
+  IL_02b4: add
+  IL_02b5: ldarg.0
+  IL_02b6: call System.Single Monocle.Entity::get_Y()
+  IL_02bb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02c0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02c5: ldarg.0
+  IL_02c6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_02cb: ldarg.0
+  IL_02cc: call System.Single Monocle.Entity::get_X()
+  IL_02d1: ldarg.0
+  IL_02d2: call System.Single Monocle.Entity::get_Width()
+  IL_02d7: add
+  IL_02d8: ldarg.0
+  IL_02d9: call System.Single Monocle.Entity::get_Y()
+  IL_02de: ldarg.0
+  IL_02df: call System.Single Monocle.Entity::get_Height()
+  IL_02e4: add
+  IL_02e5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02ea: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02ef: ldc.r4 0.7
+  IL_02f4: callvirt System.Void Celeste.DreamBlock::WobbleLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02f9: ldarg.0
+  IL_02fa: ldarg.0
+  IL_02fb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_0300: ldarg.0
+  IL_0301: call System.Single Monocle.Entity::get_X()
+  IL_0306: ldarg.0
+  IL_0307: call System.Single Monocle.Entity::get_Width()
+  IL_030c: add
+  IL_030d: ldarg.0
+  IL_030e: call System.Single Monocle.Entity::get_Y()
+  IL_0313: ldarg.0
+  IL_0314: call System.Single Monocle.Entity::get_Height()
+  IL_0319: add
+  IL_031a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_031f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0324: ldarg.0
+  IL_0325: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_032a: ldarg.0
+  IL_032b: call System.Single Monocle.Entity::get_X()
+  IL_0330: ldarg.0
+  IL_0331: call System.Single Monocle.Entity::get_Y()
+  IL_0336: ldarg.0
+  IL_0337: call System.Single Monocle.Entity::get_Height()
+  IL_033c: add
+  IL_033d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0342: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0347: ldc.r4 1.5
+  IL_034c: callvirt System.Void Celeste.DreamBlock::WobbleLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0351: ldarg.0
+  IL_0352: ldarg.0
+  IL_0353: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_0358: ldarg.0
+  IL_0359: call System.Single Monocle.Entity::get_X()
+  IL_035e: ldarg.0
+  IL_035f: call System.Single Monocle.Entity::get_Y()
+  IL_0364: ldarg.0
+  IL_0365: call System.Single Monocle.Entity::get_Height()
+  IL_036a: add
+  IL_036b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0370: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0375: ldarg.0
+  IL_0376: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_037b: ldarg.0
+  IL_037c: call System.Single Monocle.Entity::get_X()
+  IL_0381: ldarg.0
+  IL_0382: call System.Single Monocle.Entity::get_Y()
+  IL_0387: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_038c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0391: ldc.r4 2.5
+  IL_0396: callvirt System.Void Celeste.DreamBlock::WobbleLine(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_039b: ldarg.0
+  IL_039c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_03a1: ldarg.0
+  IL_03a2: call System.Single Monocle.Entity::get_X()
+  IL_03a7: ldarg.0
+  IL_03a8: call System.Single Monocle.Entity::get_Y()
+  IL_03ad: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03b2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03b7: ldc.r4 2
+  IL_03bc: ldc.r4 2
+  IL_03c1: ldarg.0
+  IL_03c2: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_03c7: brtrue.s IL_03d0
+  IL_03c9: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::disabledLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_03ce @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::DeactivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_03ce: br.s IL_03d5
+  IL_03d0: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::activeLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldc.i4 16685407 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks/<>c::<emitReplaceActiveLineColor>b__5_1(Microsoft.Xna.Framework.Color,Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.DreamBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_03d5 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::ActivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_03d5: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_03da: ldarg.0
+  IL_03db: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_03e0: ldarg.0
+  IL_03e1: call System.Single Monocle.Entity::get_X()
+  IL_03e6: ldarg.0
+  IL_03e7: call System.Single Monocle.Entity::get_Width()
+  IL_03ec: add
+  IL_03ed: ldc.r4 2
+  IL_03f2: sub
+  IL_03f3: ldarg.0
+  IL_03f4: call System.Single Monocle.Entity::get_Y()
+  IL_03f9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03fe: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0403: ldc.r4 2
+  IL_0408: ldc.r4 2
+  IL_040d: ldarg.0
+  IL_040e: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_0413: brtrue.s IL_041c
+  IL_0415: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::disabledLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_041a @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::DeactivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_041a: br.s IL_0421
+  IL_041c: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::activeLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldc.i4 2959 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldc.i4 9340737 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks/<>c::<emitReplaceActiveLineColor>b__5_1(Microsoft.Xna.Framework.Color,Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.DreamBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_0421 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::ActivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_0421: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0426: ldarg.0
+  IL_0427: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_042c: ldarg.0
+  IL_042d: call System.Single Monocle.Entity::get_X()
+  IL_0432: ldarg.0
+  IL_0433: call System.Single Monocle.Entity::get_Y()
+  IL_0438: ldarg.0
+  IL_0439: call System.Single Monocle.Entity::get_Height()
+  IL_043e: add
+  IL_043f: ldc.r4 2
+  IL_0444: sub
+  IL_0445: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_044a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_044f: ldc.r4 2
+  IL_0454: ldc.r4 2
+  IL_0459: ldarg.0
+  IL_045a: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_045f: brtrue.s IL_0468
+  IL_0461: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::disabledLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_0466 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::DeactivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_0466: br.s IL_046d
+  IL_0468: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::activeLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldc.i4 2961 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldc.i4 18402256 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks/<>c::<emitReplaceActiveLineColor>b__5_1(Microsoft.Xna.Framework.Color,Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.DreamBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_046d @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::ActivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_046d: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0472: ldarg.0
+  IL_0473: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock::shake
+  IL_0478: ldarg.0
+  IL_0479: call System.Single Monocle.Entity::get_X()
+  IL_047e: ldarg.0
+  IL_047f: call System.Single Monocle.Entity::get_Width()
+  IL_0484: add
+  IL_0485: ldc.r4 2
+  IL_048a: sub
+  IL_048b: ldarg.0
+  IL_048c: call System.Single Monocle.Entity::get_Y()
+  IL_0491: ldarg.0
+  IL_0492: call System.Single Monocle.Entity::get_Height()
+  IL_0497: add
+  IL_0498: ldc.r4 2
+  IL_049d: sub
+  IL_049e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04a8: ldc.r4 2
+  IL_04ad: ldc.r4 2
+  IL_04b2: ldarg.0
+  IL_04b3: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_04b8: brtrue.s IL_04c1
+  IL_04ba: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::disabledLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_04bf @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::DeactivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_04bf: br.s IL_04c6
+  IL_04c1: ldsfld Microsoft.Xna.Framework.Color Celeste.DreamBlock::activeLineColor
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldc.i4 3083 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldc.i4 14187763 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks/<>c::<emitReplaceActiveLineColor>b__5_1(Microsoft.Xna.Framework.Color,Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.DreamBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.DreamBlockHooks::DreamBlock_Render
++ IL_0000: isinst Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: brfalse IL_04c6 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: pop @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: castclass Celeste.Mod.Procedurline.CustomDreamBlock @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData Celeste.Mod.Procedurline.CustomDreamBlock::Data @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
++ IL_0000: ldfld Microsoft.Xna.Framework.Color Celeste.Mod.Procedurline.CustomDreamBlock/DreamBlockData::ActivatedLineColor @ Celeste.Mod.Procedurline.CustomDreamBlock::RenderModifier
+  IL_04c6: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_04cb: ret

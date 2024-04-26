@@ -1,0 +1,109 @@
+IL Diff: System.Void Celeste.Player::<.ctor>b__280_2(System.String)
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: brfalse IL_0149
+  IL_000b: ldarg.0
+  IL_000c: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0011: brtrue IL_0149
+  IL_0016: ldarg.0
+  IL_0017: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_001c: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0021: ldstr "idle"
+  IL_0026: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_002b: brfalse IL_0149
+  IL_0030: ldarg.0
+  IL_0031: ldfld Celeste.Level Celeste.Player::level
+  IL_0036: ldfld System.Boolean Celeste.Level::InCutscene
+  IL_003b: brtrue IL_0149
+  IL_0040: ldarg.0
+  IL_0041: ldfld System.Single Celeste.Player::idleTimer
+  IL_0046: ldc.r4 3
+  IL_004b: ble.un IL_0149
+  IL_0050: ldsfld System.Random Monocle.Calc::Random
+  IL_0055: ldc.r4 0.2
+  IL_005a: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_005f: brfalse IL_0149
+  IL_0064: ldstr ""
+  IL_0069: stloc.0
+  IL_006a: ldarg.0
+  IL_006b: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0070: callvirt Celeste.PlayerSpriteMode Celeste.PlayerSprite::get_Mode()
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: ldc.i4 23866228 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
+  |-> retrieves Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem/<>c::<patch_SpriteMode_BackPack>b__24_0(Celeste.PlayerSpriteMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.PlayerSpriteMode,Celeste.PlayerSpriteMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
+  IL_0075: brtrue.s IL_0099
+  IL_0077: ldarg.0
+  IL_0078: ldfld Celeste.Level Celeste.Player::level
+  IL_007d: callvirt Celeste.Session/CoreModes Celeste.Level::get_CoreMode()
+  IL_0082: ldc.i4.1
+  IL_0083: beq.s IL_008c
+  IL_0085: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleColdOptions
+  IL_008a: br.s IL_0091
+  IL_008c: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleWarmOptions
+  IL_0091: callvirt T Monocle.Chooser`1<System.String>::Choose()
+  IL_0096: stloc.0
+  IL_0097: br.s IL_00a4
+  IL_0099: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleNoBackpackOptions
+  IL_009e: callvirt T Monocle.Chooser`1<System.String>::Choose()
+  IL_00a3: stloc.0
+  IL_00a4: ldloc.0
+  IL_00a5: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_00aa: brtrue IL_0149
+  IL_00af: ldarg.0
+  IL_00b0: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00b5: ldloc.0
+  IL_00b6: callvirt System.Boolean Monocle.Sprite::Has(System.String)
+  IL_00bb: brfalse IL_0149
+  IL_00c0: ldarg.0
+  IL_00c1: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00c6: ldloc.0
+  IL_00c7: ldc.i4.0
+  IL_00c8: ldc.i4.0
+  IL_00c9: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00ce: ldarg.0
+  IL_00cf: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_00d4: callvirt Celeste.PlayerSpriteMode Celeste.PlayerSprite::get_Mode()
++ IL_0000: ldc.i4 2957 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: ldc.i4 54116291 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
+  |-> retrieves Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem/<>c::<patch_SpriteMode_BackPack>b__24_0(Celeste.PlayerSpriteMode)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.PlayerSpriteMode,Celeste.PlayerSpriteMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
+  IL_00d9: brtrue.s IL_0125
+  IL_00db: ldloc.0
+  IL_00dc: ldstr "idleB"
+  IL_00e1: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_00e6: brfalse.s IL_0100
+  IL_00e8: ldarg.0
+  IL_00e9: ldarg.0
+  IL_00ea: ldstr "event:/char/madeline/idle_scratch"
+  IL_00ef: ldnull
+  IL_00f0: ldc.r4 0
+  IL_00f5: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_00fa: stfld FMOD.Studio.EventInstance Celeste.Player::idleSfx
+  IL_00ff: ret
+  IL_0100: ldloc.0
+  IL_0101: ldstr "idleC"
+  IL_0106: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_010b: brfalse.s IL_0149
+  IL_010d: ldarg.0
+  IL_010e: ldarg.0
+  IL_010f: ldstr "event:/char/madeline/idle_sneeze"
+  IL_0114: ldnull
+  IL_0115: ldc.r4 0
+  IL_011a: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_011f: stfld FMOD.Studio.EventInstance Celeste.Player::idleSfx
+  IL_0124: ret
+  IL_0125: ldloc.0
+  IL_0126: ldstr "idleA"
+  IL_012b: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0130: brfalse.s IL_0149
+  IL_0132: ldarg.0
+  IL_0133: ldarg.0
+  IL_0134: ldstr "event:/char/madeline/idle_crackknuckles"
+  IL_0139: ldnull
+  IL_013a: ldc.r4 0
+  IL_013f: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_0144: stfld FMOD.Studio.EventInstance Celeste.Player::idleSfx
+  IL_0149: ret

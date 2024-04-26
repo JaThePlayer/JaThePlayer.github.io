@@ -1,0 +1,33 @@
+IL Diff: System.Boolean Celeste.Player::IsRiding(Celeste.JumpThru)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0006: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_0000: dup @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: ldc.i4 2944 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: ldc.i4 27319067 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c__DisplayClass44_0::<Check_State_DreamDash>b__1(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: brfalse.s IL_000b @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
++ IL_0000: br.s IL_000f @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_IsRiding_JumpThru
+  IL_000b: ldc.i4.s 9
+  IL_000d: bne.un.s IL_0011
+  IL_000f: ldc.i4.0
+  IL_0010: ret
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0017: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_001c: ldc.i4.1
+  IL_001d: beq.s IL_0039
+  IL_001f: ldarg.0
+  IL_0020: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0025: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_002a: ldc.r4 0
+  IL_002f: blt.un.s IL_0039
+  IL_0031: ldarg.0
+  IL_0032: ldarg.1
+  IL_0033: call System.Boolean Celeste.Actor::IsRiding(Celeste.JumpThru)
+  IL_0038: ret
+  IL_0039: ldc.i4.0
+  IL_003a: ret

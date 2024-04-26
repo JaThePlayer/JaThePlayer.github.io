@@ -1,0 +1,129 @@
+IL Diff: System.Void Monocle.TileGrid::RenderAt(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
++ IL_0000: call System.Int32[0...,0...] Celeste.Mod.ProgHelper.TileGridExtensions::GetPulseIndices(Monocle.TileGrid) @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: stloc V_9 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: ldarg.0 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
+  IL_0001: ldfld System.Single Monocle.TileGrid::Alpha
+  IL_0006: ldc.r4 0
+  IL_000b: bgt.un.s IL_000e
+  IL_000d: ret
+  IL_000e: ldarg.0
+  IL_000f: ldfld Monocle.Camera Monocle.TileGrid::ClipCamera
+  IL_0014: brtrue.s IL_0031
+  IL_0016: ldarg.0
+  IL_0017: call Monocle.Scene Monocle.Component::get_Scene()
+  IL_001c: isinst Celeste.Level
+  IL_0021: stloc.0
+  IL_0022: ldloc.0
+  IL_0023: brfalse.s IL_0031
+  IL_0025: ldarg.0
+  IL_0026: ldloc.0
+  IL_0027: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_002c: stfld Monocle.Camera Monocle.TileGrid::ClipCamera
+  IL_0031: ldarg.0
+  IL_0032: callvirt Microsoft.Xna.Framework.Rectangle Monocle.TileGrid::GetClippedRenderTiles()
+  IL_0037: stloc.1
+  IL_0038: ldarg.0
+  IL_0039: callvirt System.Int32 Monocle.TileGrid::get_TileWidth()
+  IL_003e: stloc.2
+  IL_003f: ldarg.0
+  IL_0040: callvirt System.Int32 Monocle.TileGrid::get_TileHeight()
+  IL_0045: stloc.3
+  IL_0046: ldarg.0
+  IL_0047: ldfld Microsoft.Xna.Framework.Color Monocle.TileGrid::Color
+  IL_004c: ldarg.0
+  IL_004d: ldfld System.Single Monocle.TileGrid::Alpha
+  IL_0052: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0057: stloc.s V_4
+  IL_0059: ldloca.s V_5
+  IL_005b: ldarg.1
+  IL_005c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0061: ldloca.s V_1
+  IL_0063: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0068: ldloc.2
+  IL_0069: mul
+  IL_006a: conv.r4
+  IL_006b: add
+  IL_006c: ldarg.1
+  IL_006d: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0072: ldloca.s V_1
+  IL_0074: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0079: ldloc.3
+  IL_007a: mul
+  IL_007b: conv.r4
+  IL_007c: add
+  IL_007d: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0082: ldloca.s V_1
+  IL_0084: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_0089: stloc.s V_6
+  IL_008b: br IL_011f
+  IL_0090: ldloca.s V_1
+  IL_0092: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0097: stloc.s V_7
+  IL_0099: br.s IL_00e9
+  IL_009b: ldarg.0
+  IL_009c: ldfld Monocle.VirtualMap`1<Monocle.MTexture> Monocle.TileGrid::Tiles
+  IL_00a1: ldloc.s V_6
+  IL_00a3: ldloc.s V_7
+  IL_00a5: callvirt T Monocle.VirtualMap`1<Monocle.MTexture>::get_Item(System.Int32,System.Int32)
+  IL_00aa: stloc.s V_8
+  IL_00ac: ldloc.s V_8
+  IL_00ae: brfalse.s IL_00d6
+  IL_00b0: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00b5: ldloc.s V_8
+  IL_00b7: callvirt Monocle.VirtualTexture Monocle.MTexture::get_Texture()
+  IL_00bc: callvirt Microsoft.Xna.Framework.Graphics.Texture2D Monocle.VirtualTexture::get_Texture_Safe()
+  IL_00c1: ldloc.s V_5
+  IL_00c3: ldloc.s V_8
+  IL_00c5: callvirt Microsoft.Xna.Framework.Rectangle Monocle.MTexture::get_ClipRect()
+  IL_00ca: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_00cf: ldloc.s V_4
++ IL_0000: ldarg.0 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: ldloc.s V_6 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: ldloc.s V_7 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: ldloc V_9 @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.ProgHelper.TileGridExtensions::GetColor(Microsoft.Xna.Framework.Color,Monocle.TileGrid,System.Int32,System.Int32,System.Int32[0...,0...]) @ Celeste.Mod.ProgHelper.TileGridExtensions::TileGrid_RenderAt_il
+  IL_00d1: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color)
+  IL_00d6: ldloca.s V_5
+  IL_00d8: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00dd: dup
+  IL_00de: ldind.r4
+  IL_00df: ldloc.3
+  IL_00e0: conv.r4
+  IL_00e1: add
+  IL_00e2: stind.r4
+  IL_00e3: ldloc.s V_7
+  IL_00e5: ldc.i4.1
+  IL_00e6: add
+  IL_00e7: stloc.s V_7
+  IL_00e9: ldloc.s V_7
+  IL_00eb: ldloca.s V_1
+  IL_00ed: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_00f2: blt.s IL_009b
+  IL_00f4: ldloca.s V_5
+  IL_00f6: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00fb: dup
+  IL_00fc: ldind.r4
+  IL_00fd: ldloc.2
+  IL_00fe: conv.r4
+  IL_00ff: add
+  IL_0100: stind.r4
+  IL_0101: ldloca.s V_5
+  IL_0103: ldarg.1
+  IL_0104: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0109: ldloca.s V_1
+  IL_010b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0110: ldloc.3
+  IL_0111: mul
+  IL_0112: conv.r4
+  IL_0113: add
+  IL_0114: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0119: ldloc.s V_6
+  IL_011b: ldc.i4.1
+  IL_011c: add
+  IL_011d: stloc.s V_6
+  IL_011f: ldloc.s V_6
+  IL_0121: ldloca.s V_1
+  IL_0123: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0128: blt IL_0090
+  IL_012d: ret
