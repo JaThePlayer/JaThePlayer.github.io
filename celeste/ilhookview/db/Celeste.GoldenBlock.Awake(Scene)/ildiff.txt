@@ -1,0 +1,57 @@
+IL Diff: System.Void Celeste.GoldenBlock::Awake(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Solid::Awake(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: call System.Void Celeste.Platform::DisableStaticMovers()
+  IL_000d: ldarg.0
+  IL_000e: ldc.i4.0
+  IL_000f: stfld System.Boolean Monocle.Entity::Visible
+  IL_0014: ldarg.0
+  IL_0015: ldc.i4.0
+  IL_0016: stfld System.Boolean Monocle.Entity::Collidable
+  IL_001b: ldarg.0
+  IL_001c: ldc.r4 1
+  IL_0021: stfld System.Single Celeste.GoldenBlock::renderLerp
+  IL_0026: ldc.i4.0
++ IL_0000: pop @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyGoldenBlockAwake
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyGoldenBlockAwake
++ IL_0000: ldc.i4 4634507 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyGoldenBlockAwake
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyGoldenBlockAwake
+  |-> retrieves System.Boolean Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyGoldenBlockAwake>b__33_0()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyGoldenBlockAwake
+  IL_0027: stloc.0
+  IL_0028: ldarg.1
+  IL_0029: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_002e: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.Strawberry>()
+  IL_0033: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Strawberry>::GetEnumerator()
+  IL_0038: stloc.1
+  IL_0039: br.s IL_005c
+  IL_003b: ldloca.s V_1
+  IL_003d: call T System.Collections.Generic.List`1/Enumerator<Celeste.Strawberry>::get_Current()
+  IL_0042: stloc.2
+  IL_0043: ldloc.2
+  IL_0044: callvirt System.Boolean Celeste.Strawberry::get_Golden()
+  IL_0049: brfalse.s IL_005c
+  IL_004b: ldloc.2
+  IL_004c: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_0051: ldfld Celeste.Leader Celeste.Follower::Leader
+  IL_0056: brfalse.s IL_005c
+  IL_0058: ldc.i4.1
+  IL_0059: stloc.0
+  IL_005a: leave.s IL_0075
+  IL_005c: ldloca.s V_1
+  IL_005e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Strawberry>::MoveNext()
+  IL_0063: brtrue.s IL_003b
+  IL_0065: leave.s IL_0075
+  IL_0067: ldloca.s V_1
+  IL_0069: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Strawberry>
+  IL_006f: callvirt System.Void System.IDisposable::Dispose()
+  IL_0074: endfinally
+  IL_0075: ldloc.0
+  IL_0076: brtrue.s IL_0084
+  IL_0078: ldarg.0
+  IL_0079: ldarg.0
+  IL_007a: call System.Void Celeste.Platform::DestroyStaticMovers()
+  IL_007f: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0084: ret

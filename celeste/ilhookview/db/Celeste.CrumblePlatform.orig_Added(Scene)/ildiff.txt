@@ -1,0 +1,240 @@
+IL Diff: System.Void Celeste.CrumblePlatform::orig_Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_000c: ldstr "objects/crumbleBlock/outline"
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformAdded
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformAdded
++ IL_0000: ldc.i4 48209976 @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformAdded
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformAdded
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform/<>c::<onCrumblePlatformAdded>b__31_0(System.String,Celeste.CrumblePlatform)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.CrumblePlatform>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.CustomizableCrumblePlatform::onCrumblePlatformAdded
+  IL_0011: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0016: stloc.0
+  IL_0017: ldarg.0
+  IL_0018: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_001d: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::outline
+  IL_0022: ldarg.0
+  IL_0023: call System.Single Monocle.Entity::get_Width()
+  IL_0028: ldc.r4 8
+  IL_002d: bgt.un.s IL_006e
+  IL_002f: ldloc.0
+  IL_0030: ldc.i4.s 24
+  IL_0032: ldc.i4.0
+  IL_0033: ldc.i4.8
+  IL_0034: ldc.i4.8
+  IL_0035: ldnull
+  IL_0036: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_003b: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0040: stloc.1
+  IL_0041: ldloc.1
+  IL_0042: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0047: ldc.r4 0
+  IL_004c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0051: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0056: ldarg.0
+  IL_0057: ldloc.1
+  IL_0058: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005d: ldarg.0
+  IL_005e: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::outline
+  IL_0063: ldloc.1
+  IL_0064: callvirt System.Void System.Collections.Generic.List`1<Monocle.Image>::Add(T)
+  IL_0069: br IL_00f9
+  IL_006e: ldc.i4.0
+  IL_006f: stloc.2
+  IL_0070: br IL_00ec
+  IL_0075: ldloc.2
+  IL_0076: brtrue.s IL_007c
+  IL_0078: ldc.i4.0
+  IL_0079: stloc.3
+  IL_007a: br.s IL_0096
+  IL_007c: ldloc.2
+  IL_007d: ldc.i4.0
+  IL_007e: ble.s IL_0094
+  IL_0080: ldloc.2
+  IL_0081: conv.r4
+  IL_0082: ldarg.0
+  IL_0083: call System.Single Monocle.Entity::get_Width()
+  IL_0088: ldc.r4 8
+  IL_008d: sub
+  IL_008e: bge.un.s IL_0094
+  IL_0090: ldc.i4.1
+  IL_0091: stloc.3
+  IL_0092: br.s IL_0096
+  IL_0094: ldc.i4.2
+  IL_0095: stloc.3
+  IL_0096: ldloc.0
+  IL_0097: ldloc.3
+  IL_0098: ldc.i4.8
+  IL_0099: mul
+  IL_009a: ldc.i4.0
+  IL_009b: ldc.i4.8
+  IL_009c: ldc.i4.8
+  IL_009d: ldnull
+  IL_009e: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_00a3: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_00a8: stloc.s V_4
+  IL_00aa: ldloc.s V_4
+  IL_00ac: ldloc.2
+  IL_00ad: conv.r4
+  IL_00ae: ldc.r4 0
+  IL_00b3: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b8: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00bd: ldloc.s V_4
+  IL_00bf: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00c4: ldc.r4 0
+  IL_00c9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00ce: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00d3: ldarg.0
+  IL_00d4: ldloc.s V_4
+  IL_00d6: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00db: ldarg.0
+  IL_00dc: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::outline
+  IL_00e1: ldloc.s V_4
+  IL_00e3: callvirt System.Void System.Collections.Generic.List`1<Monocle.Image>::Add(T)
+  IL_00e8: ldloc.2
+  IL_00e9: ldc.i4.8
+  IL_00ea: add
+  IL_00eb: stloc.2
+  IL_00ec: ldloc.2
+  IL_00ed: conv.r4
+  IL_00ee: ldarg.0
+  IL_00ef: call System.Single Monocle.Entity::get_Width()
+  IL_00f4: blt IL_0075
+  IL_00f9: ldarg.0
+  IL_00fa: ldarg.0
+  IL_00fb: ldc.i4.1
+  IL_00fc: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_0101: dup
+  IL_0102: stloc.s V_5
+  IL_0104: stfld Monocle.Coroutine Celeste.CrumblePlatform::outlineFader
+  IL_0109: ldloc.s V_5
+  IL_010b: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0110: ldarg.0
+  IL_0111: ldfld Monocle.Coroutine Celeste.CrumblePlatform::outlineFader
+  IL_0116: ldc.i4.0
+  IL_0117: stfld System.Boolean Monocle.Coroutine::RemoveOnComplete
+  IL_011c: ldarg.0
+  IL_011d: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0122: stfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_0127: ldarg.0
+  IL_0128: newobj System.Void System.Collections.Generic.List`1<Monocle.Coroutine>::.ctor()
+  IL_012d: stfld System.Collections.Generic.List`1<Monocle.Coroutine> Celeste.CrumblePlatform::falls
+  IL_0132: ldarg.0
+  IL_0133: newobj System.Void System.Collections.Generic.List`1<System.Int32>::.ctor()
+  IL_0138: stfld System.Collections.Generic.List`1<System.Int32> Celeste.CrumblePlatform::fallOrder
+  IL_013d: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0142: ldstr "objects/crumbleBlock/"
+  IL_0147: ldarg.1
+  IL_0148: call Celeste.AreaData Celeste.AreaData::Get(Monocle.Scene)
+  IL_014d: ldfld System.String Celeste.AreaData::CrumbleBlock
+  IL_0152: call System.String System.String::Concat(System.String,System.String)
+  IL_0157: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_015c: stloc.s V_6
+  IL_015e: ldc.i4.0
+  IL_015f: stloc.s V_7
+  IL_0161: br IL_0203
+  IL_0166: ldarg.0
+  IL_0167: call System.Single Monocle.Entity::get_X()
+  IL_016c: call System.Single System.Math::Abs(System.Single)
+  IL_0171: ldloc.s V_7
+  IL_0173: conv.r4
+  IL_0174: add
+  IL_0175: ldc.r4 8
+  IL_017a: div
+  IL_017b: conv.i4
+  IL_017c: ldc.i4.4
+  IL_017d: rem
+  IL_017e: stloc.s V_8
+  IL_0180: ldloc.s V_6
+  IL_0182: ldloc.s V_8
+  IL_0184: ldc.i4.8
+  IL_0185: mul
+  IL_0186: ldc.i4.0
+  IL_0187: ldc.i4.8
+  IL_0188: ldc.i4.8
+  IL_0189: ldnull
+  IL_018a: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_018f: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0194: stloc.s V_9
+  IL_0196: ldloc.s V_9
+  IL_0198: ldc.i4.4
+  IL_0199: ldloc.s V_7
+  IL_019b: add
+  IL_019c: conv.r4
+  IL_019d: ldc.r4 4
+  IL_01a2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01a7: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_01ac: ldloc.s V_9
+  IL_01ae: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_01b3: pop
+  IL_01b4: ldarg.0
+  IL_01b5: ldloc.s V_9
+  IL_01b7: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01bc: ldarg.0
+  IL_01bd: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_01c2: ldloc.s V_9
+  IL_01c4: callvirt System.Void System.Collections.Generic.List`1<Monocle.Image>::Add(T)
+  IL_01c9: ldc.i4.1
+  IL_01ca: newobj System.Void Monocle.Coroutine::.ctor(System.Boolean)
+  IL_01cf: stloc.s V_10
+  IL_01d1: ldloc.s V_10
+  IL_01d3: ldc.i4.0
+  IL_01d4: stfld System.Boolean Monocle.Coroutine::RemoveOnComplete
+  IL_01d9: ldarg.0
+  IL_01da: ldfld System.Collections.Generic.List`1<Monocle.Coroutine> Celeste.CrumblePlatform::falls
+  IL_01df: ldloc.s V_10
+  IL_01e1: callvirt System.Void System.Collections.Generic.List`1<Monocle.Coroutine>::Add(T)
+  IL_01e6: ldarg.0
+  IL_01e7: ldloc.s V_10
+  IL_01e9: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01ee: ldarg.0
+  IL_01ef: ldfld System.Collections.Generic.List`1<System.Int32> Celeste.CrumblePlatform::fallOrder
+  IL_01f4: ldloc.s V_7
+  IL_01f6: ldc.i4.8
+  IL_01f7: div
+  IL_01f8: callvirt System.Void System.Collections.Generic.List`1<System.Int32>::Add(T)
+  IL_01fd: ldloc.s V_7
+  IL_01ff: ldc.i4.8
+  IL_0200: add
+  IL_0201: stloc.s V_7
+  IL_0203: ldloc.s V_7
+  IL_0205: conv.r4
+  IL_0206: ldarg.0
+  IL_0207: call System.Single Monocle.Entity::get_Width()
+  IL_020c: blt IL_0166
+  IL_0211: ldarg.0
+  IL_0212: ldfld System.Collections.Generic.List`1<System.Int32> Celeste.CrumblePlatform::fallOrder
+  IL_0217: call System.Void Monocle.Calc::Shuffle<System.Int32>(System.Collections.Generic.List`1<T>)
+  IL_021c: ldarg.0
+  IL_021d: ldarg.0
+  IL_021e: callvirt System.Collections.IEnumerator Celeste.CrumblePlatform::Sequence()
+  IL_0223: ldc.i4.1
+  IL_0224: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0229: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_022e: ldarg.0
+  IL_022f: ldarg.0
+  IL_0230: ldarg.0
+  IL_0231: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_0236: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Image>::get_Count()
+  IL_023b: ldc.i4.0
+  IL_023c: ldarg.0
+  IL_023d: ldftn System.Void Celeste.CrumblePlatform::<Added>b__10_0(Microsoft.Xna.Framework.Vector2[])
+  IL_0243: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2[]>::.ctor(System.Object,System.IntPtr)
+  IL_0248: newobj System.Void Monocle.ShakerList::.ctor(System.Int32,System.Boolean,System.Action`1<Microsoft.Xna.Framework.Vector2[]>)
+  IL_024d: dup
+  IL_024e: stloc.s V_11
+  IL_0250: stfld Monocle.ShakerList Celeste.CrumblePlatform::shaker
+  IL_0255: ldloc.s V_11
+  IL_0257: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_025c: ldarg.0
+  IL_025d: ldarg.0
+  IL_025e: ldc.r4 0.2
+  IL_0263: newobj System.Void Celeste.LightOcclude::.ctor(System.Single)
+  IL_0268: dup
+  IL_0269: stloc.s V_12
+  IL_026b: stfld Celeste.LightOcclude Celeste.CrumblePlatform::occluder
+  IL_0270: ldloc.s V_12
+  IL_0272: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0277: ret

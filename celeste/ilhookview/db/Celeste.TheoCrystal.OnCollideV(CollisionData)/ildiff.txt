@@ -1,0 +1,95 @@
+IL Diff: System.Void Celeste.TheoCrystal::OnCollideV(Celeste.CollisionData)
+  IL_0000: ldarg.1
+  IL_0001: ldfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_0006: isinst Celeste.DashSwitch
+  IL_000b: brfalse.s IL_003f
+  IL_000d: ldarg.1
+  IL_000e: ldfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_0013: isinst Celeste.DashSwitch
+  IL_0018: ldfld Celeste.DashCollision Celeste.Platform::OnDashCollide
+  IL_001d: ldnull
+  IL_001e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0023: ldarg.0
+  IL_0024: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0029: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_OnCollideV
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_OnCollideV
++ IL_0000: ldc.i4 34133299 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_OnCollideV
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_OnCollideV
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitActorInvertFloatDelegate>b__21_0(System.Single,Celeste.Actor)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Single,System.Single,Celeste.Actor>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_OnCollideV
+  IL_002e: call System.Int32 System.Math::Sign(System.Single)
+  IL_0033: conv.r4
+  IL_0034: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0039: callvirt Celeste.DashCollisionResults Celeste.DashCollision::Invoke(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_003e: pop
+  IL_003f: ldarg.0
+  IL_0040: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0045: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_004a: ldc.r4 0
+  IL_004f: ble.un.s IL_00c0
+  IL_0051: ldarg.0
+  IL_0052: ldfld System.Single Celeste.TheoCrystal::hardVerticalHitSoundCooldown
+  IL_0057: ldc.r4 0
+  IL_005c: bgt.un.s IL_00a5
+  IL_005e: ldstr "event:/game/05_mirror_temple/crystaltheo_hit_ground"
+  IL_0063: ldarg.0
+  IL_0064: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0069: ldstr "crystal_velocity"
+  IL_006e: ldarg.0
+  IL_006f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0074: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0079: ldc.r4 0
+  IL_007e: ldc.r4 200
+  IL_0083: ldc.r4 0
+  IL_0088: ldc.r4 1
+  IL_008d: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0092: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_0097: pop
+  IL_0098: ldarg.0
+  IL_0099: ldc.r4 0.5
+  IL_009e: stfld System.Single Celeste.TheoCrystal::hardVerticalHitSoundCooldown
+  IL_00a3: br.s IL_00c0
+  IL_00a5: ldstr "event:/game/05_mirror_temple/crystaltheo_hit_ground"
+  IL_00aa: ldarg.0
+  IL_00ab: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b0: ldstr "crystal_velocity"
+  IL_00b5: ldc.r4 0
+  IL_00ba: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_00bf: pop
+  IL_00c0: ldarg.0
+  IL_00c1: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_00c6: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00cb: ldc.r4 160
+  IL_00d0: ble.un.s IL_00de
+  IL_00d2: ldarg.0
+  IL_00d3: ldarg.1
+  IL_00d4: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::Direction
+  IL_00d9: callvirt System.Void Celeste.TheoCrystal::ImpactParticles(Microsoft.Xna.Framework.Vector2)
+  IL_00de: ldarg.0
+  IL_00df: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_00e4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00e9: ldc.r4 140
+  IL_00ee: ble.un.s IL_011f
+  IL_00f0: ldarg.1
+  IL_00f1: ldfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_00f6: isinst Celeste.SwapBlock
+  IL_00fb: brtrue.s IL_011f
+  IL_00fd: ldarg.1
+  IL_00fe: ldfld Celeste.Platform Celeste.CollisionData::Hit
+  IL_0103: isinst Celeste.DashSwitch
+  IL_0108: brtrue.s IL_011f
+  IL_010a: ldarg.0
+  IL_010b: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0110: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0115: dup
+  IL_0116: ldind.r4
+  IL_0117: ldc.r4 -0.6
+  IL_011c: mul
+  IL_011d: stind.r4
+  IL_011e: ret
+  IL_011f: ldarg.0
+  IL_0120: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0125: ldc.r4 0
+  IL_012a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_012f: ret

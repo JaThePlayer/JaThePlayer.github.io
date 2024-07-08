@@ -1,0 +1,380 @@
+IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Single Celeste.BloomRenderer::Strength
++ IL_0000: ldc.i4 3646 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 58082471 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_0006: ldc.r4 0
+  IL_000b: ble.un IL_03d4
+  IL_0010: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::TempA
+  IL_0015: stloc.0
+  IL_0016: ldarg.1
+  IL_0017: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_001c: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::TempA
+  IL_0021: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::TempB
+  IL_0026: ldc.r4 0
+  IL_002b: ldc.i4.1
+  IL_002c: ldc.i4.2
+  IL_002d: ldc.r4 1
+  IL_0032: ldc.i4.0
+  IL_0033: ldc.r4 1
+  IL_0038: call Microsoft.Xna.Framework.Graphics.Texture2D Celeste.GaussianBlur::Blur(Microsoft.Xna.Framework.Graphics.Texture2D,Monocle.VirtualRenderTarget,Monocle.VirtualRenderTarget,System.Single,System.Boolean,Celeste.GaussianBlur/Samples,System.Single,Celeste.GaussianBlur/Direction,System.Single)
+  IL_003d: stloc.1
+  IL_003e: ldarg.2
+  IL_003f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0044: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.BloomPoint>()
+  IL_0049: stloc.2
+  IL_004a: ldarg.2
+  IL_004b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0050: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.EffectCutout>()
+  IL_0055: stloc.3
+  IL_0056: call Monocle.Engine Monocle.Engine::get_Instance()
+  IL_005b: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0060: ldloc.0
+  IL_0061: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_0066: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::SetRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  IL_006b: call Monocle.Engine Monocle.Engine::get_Instance()
+  IL_0070: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0075: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_007a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
+  IL_007f: ldarg.0
+  IL_0080: ldfld System.Single Celeste.BloomRenderer::Base
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomBase(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3085 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 41311335 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomBase(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_0085: ldc.r4 1
+  IL_008a: bge.un IL_02d8
+  IL_008f: ldarg.2
+  IL_0090: isinst Celeste.Level
+  IL_0095: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_009a: stloc.s V_4
+  IL_009c: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_00a1: ldc.i4.0
+  IL_00a2: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_00a7: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointClamp
+  IL_00ac: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::None
+  IL_00b1: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_00b6: ldnull
+  IL_00b7: ldloc.s V_4
+  IL_00b9: callvirt Microsoft.Xna.Framework.Matrix Monocle.Camera::get_Matrix()
+  IL_00be: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_00c3: ldc.r4 1
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld Monocle.MTexture Celeste.BloomRenderer::gradient
+  IL_00ce: callvirt System.Int32 Monocle.MTexture::get_Width()
+  IL_00d3: conv.r4
+  IL_00d4: div
+  IL_00d5: stloc.s V_5
+  IL_00d7: ldloc.2
+  IL_00d8: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_00dd: stloc.s V_6
+  IL_00df: br IL_015b
+  IL_00e4: ldloca.s V_6
+  IL_00e6: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_00eb: isinst Celeste.BloomPoint
+  IL_00f0: stloc.s V_7
+  IL_00f2: ldloc.s V_7
+  IL_00f4: ldfld System.Boolean Monocle.Component::Visible
+  IL_00f9: brfalse.s IL_015b
+  IL_00fb: ldloc.s V_7
+  IL_00fd: ldfld System.Single Celeste.BloomPoint::Radius
+  IL_0102: ldc.r4 0
+  IL_0107: ble.s IL_015b
+  IL_0109: ldloc.s V_7
+  IL_010b: ldfld System.Single Celeste.BloomPoint::Alpha
+  IL_0110: ldc.r4 0
+  IL_0115: ble.s IL_015b
+  IL_0117: ldarg.0
+  IL_0118: ldfld Monocle.MTexture Celeste.BloomRenderer::gradient
+  IL_011d: ldloc.s V_7
+  IL_011f: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0124: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0129: ldloc.s V_7
+  IL_012b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.BloomPoint::Position
+  IL_0130: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0135: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2698 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 64164361 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_013a: ldloc.s V_7
+  IL_013c: ldfld System.Single Celeste.BloomPoint::Alpha
+  IL_0141: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0146: ldloc.s V_7
+  IL_0148: ldfld System.Single Celeste.BloomPoint::Radius
+  IL_014d: ldc.r4 2
+  IL_0152: mul
+  IL_0153: ldloc.s V_5
+  IL_0155: mul
+  IL_0156: callvirt System.Void Monocle.MTexture::DrawCentered(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_015b: ldloca.s V_6
+  IL_015d: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_0162: brtrue IL_00e4
+  IL_0167: leave.s IL_0177
+  IL_0169: ldloca.s V_6
+  IL_016b: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_0171: callvirt System.Void System.IDisposable::Dispose()
+  IL_0176: endfinally
+  IL_0177: ldarg.2
+  IL_0178: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_017d: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.CustomBloom>()
+  IL_0182: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_0187: stloc.s V_6
+  IL_0189: br.s IL_01b7
+  IL_018b: ldloca.s V_6
+  IL_018d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0192: castclass Celeste.CustomBloom
+  IL_0197: stloc.s V_8
+  IL_0199: ldloc.s V_8
+  IL_019b: ldfld System.Boolean Monocle.Component::Visible
+  IL_01a0: brfalse.s IL_01b7
+  IL_01a2: ldloc.s V_8
+  IL_01a4: ldfld System.Action Celeste.CustomBloom::OnRenderBloom
+  IL_01a9: brfalse.s IL_01b7
+  IL_01ab: ldloc.s V_8
+  IL_01ad: ldfld System.Action Celeste.CustomBloom::OnRenderBloom
+  IL_01b2: callvirt System.Void System.Action::Invoke()
+  IL_01b7: ldloca.s V_6
+  IL_01b9: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_01be: brtrue.s IL_018b
+  IL_01c0: leave.s IL_01d0
+  IL_01c2: ldloca.s V_6
+  IL_01c4: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_01ca: callvirt System.Void System.IDisposable::Dispose()
+  IL_01cf: endfinally
+  IL_01d0: ldarg.2
+  IL_01d1: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_01d6: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.SeekerBarrier>()
++ IL_0000: ldc.i4 3679 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
++ IL_0000: ldc.i4 21765934 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
+  |-> retrieves System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController/<>c::<modBloomRendererApply>b__34_1(System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Collections.Generic.List`1<Monocle.Entity>,System.Collections.Generic.List`1<Monocle.Entity>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
+  IL_01db: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_01e0: stloc.s V_9
+  IL_01e2: br.s IL_01fa
+  IL_01e4: ldloca.s V_9
+  IL_01e6: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_01eb: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_01f0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2882 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 29930744 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_01f5: call System.Void Monocle.Draw::Rect(Monocle.Collider,Microsoft.Xna.Framework.Color)
+  IL_01fa: ldloca.s V_9
+  IL_01fc: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0201: brtrue.s IL_01e4
+  IL_0203: leave.s IL_0213
+  IL_0205: ldloca.s V_9
+  IL_0207: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_020d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0212: endfinally
+  IL_0213: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0218: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_021d: ldloc.3
+  IL_021e: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Component>::get_Count()
+  IL_0223: ldc.i4.0
+  IL_0224: ble IL_02d8
+  IL_0229: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_022e: ldc.i4.0
+  IL_022f: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Celeste.BloomRenderer::CutoutBlendstate
+  IL_0234: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::PointClamp
+  IL_0239: ldnull
+  IL_023a: ldnull
+  IL_023b: ldnull
+  IL_023c: ldloc.s V_4
+  IL_023e: callvirt Microsoft.Xna.Framework.Matrix Monocle.Camera::get_Matrix()
+  IL_0243: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_0248: ldloc.3
+  IL_0249: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_024e: stloc.s V_6
+  IL_0250: br.s IL_02b5
+  IL_0252: ldloca.s V_6
+  IL_0254: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_0259: isinst Celeste.EffectCutout
+  IL_025e: stloc.s V_10
+  IL_0260: ldloc.s V_10
+  IL_0262: ldfld System.Boolean Monocle.Component::Visible
+  IL_0267: brfalse.s IL_02b5
+  IL_0269: ldloc.s V_10
+  IL_026b: callvirt System.Int32 Celeste.EffectCutout::get_Left()
+  IL_0270: conv.r4
+  IL_0271: ldloc.s V_10
+  IL_0273: callvirt System.Int32 Celeste.EffectCutout::get_Top()
+  IL_0278: conv.r4
+  IL_0279: ldloc.s V_10
+  IL_027b: callvirt System.Int32 Celeste.EffectCutout::get_Right()
+  IL_0280: ldloc.s V_10
+  IL_0282: callvirt System.Int32 Celeste.EffectCutout::get_Left()
+  IL_0287: sub
+  IL_0288: conv.r4
+  IL_0289: ldloc.s V_10
+  IL_028b: callvirt System.Int32 Celeste.EffectCutout::get_Bottom()
+  IL_0290: ldloc.s V_10
+  IL_0292: callvirt System.Int32 Celeste.EffectCutout::get_Top()
+  IL_0297: sub
+  IL_0298: conv.r4
+  IL_0299: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2884 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 8471224 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_029e: ldc.r4 1
+  IL_02a3: ldloc.s V_10
+  IL_02a5: ldfld System.Single Celeste.EffectCutout::Alpha
+  IL_02aa: sub
+  IL_02ab: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02b0: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_02b5: ldloca.s V_6
+  IL_02b7: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_02bc: brtrue.s IL_0252
+  IL_02be: leave.s IL_02ce
+  IL_02c0: ldloca.s V_6
+  IL_02c2: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_02c8: callvirt System.Void System.IDisposable::Dispose()
+  IL_02cd: endfinally
+  IL_02ce: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_02d3: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
++ IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldarg.1 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldarg.2 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldloc.s V_1 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 3681 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 29674028 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
+  |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.BloomMask/<>c::<BloomRenderer_ApplyIL>b__16_5(Celeste.BloomRenderer,Monocle.VirtualRenderTarget,Monocle.Scene,Microsoft.Xna.Framework.Graphics.Texture2D)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal4<Celeste.BloomRenderer,Monocle.VirtualRenderTarget,Monocle.Scene,Microsoft.Xna.Framework.Graphics.Texture2D>(T0,T1,T2,T3,MonoMod.Cil.FastDelegateInvokers/VoidVal4`4<T0,T1,T2,T3>) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
+  IL_02d8: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_02dd: ldc.i4.0
+  IL_02de: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_02e3: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState)
+  IL_02e8: ldc.r4 -10
+  IL_02ed: ldc.r4 -10
+  IL_02f2: ldc.r4 340
+  IL_02f7: ldc.r4 200
+  IL_02fc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2978 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 15080561 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_0301: ldarg.0
+  IL_0302: ldfld System.Single Celeste.BloomRenderer::Base
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomBase(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3568 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 57883877 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomBase(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_0307: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_030c: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0311: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0316: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_031b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0320: ldc.i4.0
+  IL_0321: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Celeste.BloomRenderer::BlurredScreenToMask
+  IL_0326: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState)
+  IL_032b: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0330: ldloc.1
+  IL_0331: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0336: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2980 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 13565898 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_033b: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0340: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0345: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
++ IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldarg.2 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 3746 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 54786107 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
+  |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.BloomMask/<>c::<BloomRenderer_ApplyIL>b__16_9(Celeste.BloomRenderer,Monocle.Scene)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.BloomRenderer,Monocle.Scene>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
+  IL_034a: call Monocle.Engine Monocle.Engine::get_Instance()
+  IL_034f: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
+  IL_0354: ldarg.1
+  IL_0355: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_035a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::SetRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  IL_035f: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0364: ldc.i4.0
+  IL_0365: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Celeste.BloomRenderer::AdditiveMaskToScreen
+  IL_036a: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState)
+  IL_036f: ldc.i4.0
+  IL_0370: stloc.s V_11
+  IL_0372: br.s IL_03bf
+  IL_0374: ldloc.s V_11
+  IL_0376: conv.r4
+  IL_0377: ldarg.0
+  IL_0378: ldfld System.Single Celeste.BloomRenderer::Strength
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3648 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 7059734 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_037d: ldc.r4 1
+  IL_0382: sub
+  IL_0383: blt.s IL_0391
+  IL_0385: ldarg.0
+  IL_0386: ldfld System.Single Celeste.BloomRenderer::Strength
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3650 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 34967577 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_038b: ldloc.s V_11
+  IL_038d: conv.r4
+  IL_038e: sub
+  IL_038f: br.s IL_0396
+  IL_0391: ldc.r4 1
+  IL_0396: stloc.s V_12
+  IL_0398: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_039d: ldloc.0
+  IL_039e: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_03a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_03a8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
++ IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
++ IL_0000: ldc.i4 2983 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: ldc.i4 25095915 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
+  IL_03ad: ldloc.s V_12
+  IL_03af: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_03b4: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_03b9: ldloc.s V_11
+  IL_03bb: ldc.i4.1
+  IL_03bc: add
+  IL_03bd: stloc.s V_11
+  IL_03bf: ldloc.s V_11
+  IL_03c1: conv.r4
+  IL_03c2: ldarg.0
+  IL_03c3: ldfld System.Single Celeste.BloomRenderer::Strength
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3659 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 13801497 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
+  IL_03c8: blt.s IL_0374
+  IL_03ca: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_03cf: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_03d4: ret

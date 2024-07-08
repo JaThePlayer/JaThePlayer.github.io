@@ -1,0 +1,107 @@
+IL Diff: Microsoft.Xna.Framework.Vector2 Celeste.Input::GetAimVector(Celeste.Facings)
+  IL_0000: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_0005: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0011: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0016: brfalse.s IL_004c
+  IL_0018: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_001d: brfalse.s IL_0036
+  IL_001f: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0024: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0029: ldfld System.Boolean Celeste.Assists::DashAssist
+  IL_002e: brfalse.s IL_0036
+  IL_0030: ldsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0035: ret
+  IL_0036: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_003b: ldarg.0
+  IL_003c: conv.r4
+  IL_003d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0042: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0047: br IL_0151
+  IL_004c: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0051: brfalse.s IL_0074
+  IL_0053: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0058: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_005d: ldfld System.Boolean Celeste.Assists::ThreeSixtyDashing
+  IL_0062: brfalse.s IL_0074
+  IL_0064: ldloc.0
+  IL_0065: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_006a: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_006f: br IL_0151
+  IL_0074: ldloc.0
+  IL_0075: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_007a: stloc.1
+  IL_007b: ldloc.1
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.GravityHelper.Hooks.InputHooks::Input_GetAimVector
++ IL_0000: ldc.i4 60999329 @ Celeste.Mod.GravityHelper.Hooks.InputHooks::Input_GetAimVector
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.InputHooks::Input_GetAimVector
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Hooks.InputHooks/<>c::<Input_GetAimVector>b__3_5(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.InputHooks::Input_GetAimVector
+  IL_007c: ldc.r4 0
+  IL_0081: blt.s IL_0086
+  IL_0083: ldc.i4.0
+  IL_0084: br.s IL_0087
+  IL_0086: ldc.i4.1
+  IL_0087: stloc.2
+  IL_0088: ldc.r4 0.3926991
+  IL_008d: ldloc.2
+  IL_008e: conv.r4
+  IL_008f: ldc.r4 0.08726646
+  IL_0094: mul
+  IL_0095: sub
+  IL_0096: stloc.3
+  IL_0097: ldloc.1
+  IL_0098: ldc.r4 0
+  IL_009d: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_00a2: ldloc.3
+  IL_00a3: bge.un.s IL_00be
+  IL_00a5: ldc.r4 1
+  IL_00aa: ldc.r4 0
+  IL_00af: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b4: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_00b9: br IL_0151
+  IL_00be: ldloc.1
+  IL_00bf: ldc.r4 3.1415927
+  IL_00c4: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_00c9: ldloc.3
+  IL_00ca: bge.un.s IL_00e2
+  IL_00cc: ldc.r4 -1
+  IL_00d1: ldc.r4 0
+  IL_00d6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00db: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_00e0: br.s IL_0151
+  IL_00e2: ldloc.1
+  IL_00e3: ldc.r4 -1.5707964
+  IL_00e8: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_00ed: ldloc.3
+  IL_00ee: bge.un.s IL_0106
+  IL_00f0: ldc.r4 0
+  IL_00f5: ldc.r4 -1
+  IL_00fa: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00ff: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0104: br.s IL_0151
+  IL_0106: ldloc.1
+  IL_0107: ldc.r4 1.5707964
+  IL_010c: call System.Single Monocle.Calc::AbsAngleDiff(System.Single,System.Single)
+  IL_0111: ldloc.3
+  IL_0112: bge.un.s IL_012a
+  IL_0114: ldc.r4 0
+  IL_0119: ldc.r4 1
+  IL_011e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0123: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0128: br.s IL_0151
+  IL_012a: ldloc.0
+  IL_012b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0130: call System.Int32 System.Math::Sign(System.Single)
+  IL_0135: conv.r4
+  IL_0136: ldloc.0
+  IL_0137: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_013c: call System.Int32 System.Math::Sign(System.Single)
+  IL_0141: conv.r4
+  IL_0142: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0147: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_014c: stsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0151: ldsfld Microsoft.Xna.Framework.Vector2 Celeste.Input::LastAim
+  IL_0156: ret

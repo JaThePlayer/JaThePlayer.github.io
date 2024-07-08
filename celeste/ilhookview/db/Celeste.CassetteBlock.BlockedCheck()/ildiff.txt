@@ -1,0 +1,31 @@
+IL Diff: System.Boolean Celeste.CassetteBlock::BlockedCheck()
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::CollideFirst<Celeste.TheoCrystal>()
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck
++ IL_0000: ldc.i4 24567997 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck
+  |-> retrieves Celeste.TheoCrystal ExtendedVariants.Variants.TheoCrystalsEverywhere/<>c::<excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck>b__11_1(Celeste.TheoCrystal,Celeste.CassetteBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.TheoCrystal,Celeste.TheoCrystal,Celeste.CassetteBlock>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromCassetteBlockBlockedCheck
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: brfalse.s IL_0015
+  IL_000a: ldarg.0
+  IL_000b: ldloc.0
+  IL_000c: callvirt System.Boolean Celeste.CassetteBlock::TryActorWiggleUp(Monocle.Entity)
+  IL_0011: brtrue.s IL_0015
+  IL_0013: ldc.i4.1
+  IL_0014: ret
+  IL_0015: ldarg.0
+  IL_0016: call T Monocle.Entity::CollideFirst<Celeste.Player>()
+  IL_001b: stloc.1
+  IL_001c: ldloc.1
+  IL_001d: brfalse.s IL_002a
+  IL_001f: ldarg.0
+  IL_0020: ldloc.1
+  IL_0021: callvirt System.Boolean Celeste.CassetteBlock::TryActorWiggleUp(Monocle.Entity)
+  IL_0026: brtrue.s IL_002a
+  IL_0028: ldc.i4.1
+  IL_0029: ret
+  IL_002a: ldc.i4.0
+  IL_002b: ret

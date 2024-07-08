@@ -1,0 +1,123 @@
+IL Diff: System.Void Celeste.TextMenu::Update()
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.TextMenu::orig_Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.TextMenu::Focused
+  IL_000c: brfalse IL_016b
+  IL_0011: ldarg.0
+  IL_0012: callvirt System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::get_Items()
+  IL_0017: ldsfld System.Func`2<Celeste.TextMenu/Item,System.Boolean> Celeste.TextMenu/<>c::<>9__33_0
+  IL_001c: dup
+  IL_001d: brtrue.s IL_0036
+  IL_001f: pop
+  IL_0020: ldsfld Celeste.TextMenu/<>c Celeste.TextMenu/<>c::<>9
+  IL_0025: ldftn System.Boolean Celeste.TextMenu/<>c::<Update>b__33_0(Celeste.TextMenu/Item)
+  IL_002b: newobj System.Void System.Func`2<Celeste.TextMenu/Item,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_0030: dup
+  IL_0031: stsfld System.Func`2<Celeste.TextMenu/Item,System.Boolean> Celeste.TextMenu/<>c::<>9__33_0
+  IL_0036: call System.Boolean System.Linq.Enumerable::Any<Celeste.TextMenu/Item>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,System.Boolean>)
+  IL_003b: brfalse IL_016b
+  IL_0040: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0045: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.Core.CoreModuleSettings::get_MenuPageDown()
+  IL_004a: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_004f: brfalse IL_00d6
+  IL_0054: ldarg.0
+  IL_0055: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_005a: ldarg.0
+  IL_005b: callvirt System.Int32 Celeste.TextMenu::get_LastPossibleSelection()
+  IL_0060: beq IL_00d6
+  IL_0065: ldarg.0
+  IL_0066: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_006b: ldfld System.Action Celeste.TextMenu/Item::OnLeave
+  IL_0070: dup
+  IL_0071: brtrue.s IL_0076
+  IL_0073: pop
+  IL_0074: br.s IL_007b
+  IL_0076: callvirt System.Void System.Action::Invoke()
+  IL_007b: ldarg.0
+  IL_007c: ldarg.0
+  IL_007d: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0082: callvirt System.Single Celeste.TextMenu::GetYOffsetOf(Celeste.TextMenu/Item)
+  IL_0087: stloc.0
+  IL_0088: br.s IL_0092
+  IL_008a: ldarg.0
+  IL_008b: ldc.i4.1
+  IL_008c: ldc.i4.0
+  IL_008d: callvirt System.Void Celeste.TextMenu::MoveSelection(System.Int32,System.Boolean)
+  IL_0092: ldarg.0
+  IL_0093: ldarg.0
+  IL_0094: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0099: callvirt System.Single Celeste.TextMenu::GetYOffsetOf(Celeste.TextMenu/Item)
+  IL_009e: ldloc.0
+  IL_009f: ldc.r4 1080
+  IL_00a4: add
+  IL_00a5: bge.un.s IL_00b5
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_00ad: ldarg.0
+  IL_00ae: callvirt System.Int32 Celeste.TextMenu::get_LastPossibleSelection()
+  IL_00b3: blt.s IL_008a
+  IL_00b5: ldstr "event:/ui/main/rollover_down"
+  IL_00ba: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_00bf: pop
+  IL_00c0: ldarg.0
+  IL_00c1: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_00c6: ldfld System.Action Celeste.TextMenu/Item::OnEnter
+  IL_00cb: dup
+  IL_00cc: brtrue.s IL_00d0
+  IL_00ce: pop
+  IL_00cf: ret
+  IL_00d0: callvirt System.Void System.Action::Invoke()
+  IL_00d5: ret
+  IL_00d6: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_00db: callvirt Celeste.Mod.ButtonBinding Celeste.Mod.Core.CoreModuleSettings::get_MenuPageUp()
+  IL_00e0: callvirt System.Boolean Celeste.Mod.ButtonBinding::get_Pressed()
+  IL_00e5: brfalse IL_016b
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_00f0: ldarg.0
+  IL_00f1: callvirt System.Int32 Celeste.TextMenu::get_FirstPossibleSelection()
+  IL_00f6: beq IL_016b
+  IL_00fb: ldarg.0
+  IL_00fc: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0101: ldfld System.Action Celeste.TextMenu/Item::OnLeave
+  IL_0106: dup
+  IL_0107: brtrue.s IL_010c
+  IL_0109: pop
+  IL_010a: br.s IL_0111
+  IL_010c: callvirt System.Void System.Action::Invoke()
+  IL_0111: ldarg.0
+  IL_0112: ldarg.0
+  IL_0113: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0118: callvirt System.Single Celeste.TextMenu::GetYOffsetOf(Celeste.TextMenu/Item)
+  IL_011d: stloc.1
+  IL_011e: br.s IL_0128
+  IL_0120: ldarg.0
+  IL_0121: ldc.i4.m1
+  IL_0122: ldc.i4.0
+  IL_0123: callvirt System.Void Celeste.TextMenu::MoveSelection(System.Int32,System.Boolean)
+  IL_0128: ldarg.0
+  IL_0129: ldarg.0
+  IL_012a: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_012f: callvirt System.Single Celeste.TextMenu::GetYOffsetOf(Celeste.TextMenu/Item)
+  IL_0134: ldloc.1
+  IL_0135: ldc.r4 1080
+  IL_013a: sub
+  IL_013b: ble.un.s IL_014b
+  IL_013d: ldarg.0
+  IL_013e: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_0143: ldarg.0
+  IL_0144: callvirt System.Int32 Celeste.TextMenu::get_FirstPossibleSelection()
+  IL_0149: bgt.s IL_0120
+  IL_014b: ldstr "event:/ui/main/rollover_up"
+  IL_0150: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)
+  IL_0155: pop
+  IL_0156: ldarg.0
+  IL_0157: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_015c: ldfld System.Action Celeste.TextMenu/Item::OnEnter
+  IL_0161: dup
+  IL_0162: brtrue.s IL_0166
+  IL_0164: pop
+  IL_0165: ret
+  IL_0166: callvirt System.Void System.Action::Invoke()
+  IL_016b: ret

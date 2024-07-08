@@ -1,0 +1,81 @@
+IL Diff: System.Void Celeste.TheoCrystal::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: stfld Celeste.Level Celeste.TheoCrystal::Level
+  IL_0013: ldarg.0
+  IL_0014: ldfld Celeste.Level Celeste.TheoCrystal::Level
+  IL_0019: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_001e: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.TheoCrystal>()
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromAdded
++ IL_0000: ldc.i4 12828381 @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromAdded
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromAdded
+  |-> retrieves System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ExtendedVariants.Variants.TheoCrystalsEverywhere/<>c::<excludeExtendedVariantTheoCrystalFromAdded>b__10_1(System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Collections.Generic.List`1<Monocle.Entity>,System.Collections.Generic.List`1<Monocle.Entity>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.TheoCrystalsEverywhere::excludeExtendedVariantTheoCrystalFromAdded
+  IL_0023: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0028: stloc.0
+  IL_0029: br.s IL_004f
+  IL_002b: ldloca.s V_0
+  IL_002d: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0032: castclass Celeste.TheoCrystal
+  IL_0037: stloc.1
+  IL_0038: ldloc.1
+  IL_0039: ldarg.0
+  IL_003a: beq.s IL_004f
+  IL_003c: ldloc.1
+  IL_003d: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_0042: callvirt System.Boolean Celeste.Holdable::get_IsHeld()
+  IL_0047: brfalse.s IL_004f
+  IL_0049: ldarg.0
+  IL_004a: call System.Void Monocle.Entity::RemoveSelf()
+  IL_004f: ldloca.s V_0
+  IL_0051: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0056: brtrue.s IL_002b
+  IL_0058: leave.s IL_0068
+  IL_005a: ldloca.s V_0
+  IL_005c: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0062: callvirt System.Void System.IDisposable::Dispose()
+  IL_0067: endfinally
+  IL_0068: ldarg.0
+  IL_0069: ldfld Celeste.Level Celeste.TheoCrystal::Level
+  IL_006e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0073: ldfld System.String Celeste.Session::Level
+  IL_0078: ldstr "e-00"
+  IL_007d: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0082: brfalse.s IL_00e4
+  IL_0084: ldarg.0
+  IL_0085: ldarg.0
+  IL_0086: ldc.r4 0
+  IL_008b: ldc.r4 -24
+  IL_0090: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0095: ldstr "tutorial_carry"
+  IL_009a: ldnull
+  IL_009b: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_00a0: ldc.i4.2
+  IL_00a1: newarr System.Object
+  IL_00a6: dup
+  IL_00a7: ldc.i4.0
+  IL_00a8: ldstr "tutorial_hold"
+  IL_00ad: ldnull
+  IL_00ae: call System.String Celeste.Dialog::Clean(System.String,Celeste.Language)
+  IL_00b3: stelem.ref
+  IL_00b4: dup
+  IL_00b5: ldc.i4.1
+  IL_00b6: ldc.i4.2
+  IL_00b7: box Celeste.BirdTutorialGui/ButtonPrompt
+  IL_00bc: stelem.ref
+  IL_00bd: newobj System.Void Celeste.BirdTutorialGui::.ctor(Monocle.Entity,Microsoft.Xna.Framework.Vector2,System.Object,System.Object[])
+  IL_00c2: stfld Celeste.BirdTutorialGui Celeste.TheoCrystal::tutorialGui
+  IL_00c7: ldarg.0
+  IL_00c8: ldfld Celeste.BirdTutorialGui Celeste.TheoCrystal::tutorialGui
+  IL_00cd: ldc.i4.0
+  IL_00ce: stfld System.Boolean Celeste.BirdTutorialGui::Open
+  IL_00d3: ldarg.0
+  IL_00d4: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d9: ldarg.0
+  IL_00da: ldfld Celeste.BirdTutorialGui Celeste.TheoCrystal::tutorialGui
+  IL_00df: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00e4: ret

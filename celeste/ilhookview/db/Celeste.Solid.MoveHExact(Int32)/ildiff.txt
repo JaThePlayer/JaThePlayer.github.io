@@ -1,0 +1,220 @@
+IL Diff: System.Void Celeste.Solid::MoveHExact(System.Int32)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.Solid::GetRiders()
+  IL_0006: ldarg.0
+  IL_0007: call System.Single Monocle.Entity::get_Right()
+  IL_000c: stloc.0
+  IL_000d: ldarg.0
+  IL_000e: call System.Single Monocle.Entity::get_Left()
+  IL_0013: stloc.1
+  IL_0014: ldnull
+  IL_0015: stloc.2
+  IL_0016: ldarg.0
+  IL_0017: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001c: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0021: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0026: stloc.2
+  IL_0027: ldloc.2
+  IL_0028: brfalse.s IL_0099
+  IL_002a: ldsfld Monocle.VirtualIntegerAxis Celeste.Input::MoveX
+  IL_002f: ldfld System.Int32 Monocle.VirtualIntegerAxis::Value
+  IL_0034: ldarg.1
+  IL_0035: call System.Int32 System.Math::Sign(System.Int32)
+  IL_003a: bne.un.s IL_0099
+  IL_003c: ldloc.2
+  IL_003d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0042: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0047: call System.Int32 System.Math::Sign(System.Single)
+  IL_004c: ldarg.1
+  IL_004d: call System.Int32 System.Math::Sign(System.Int32)
+  IL_0052: bne.un.s IL_0099
+  IL_0054: ldsfld System.Collections.Generic.HashSet`1<Celeste.Actor> Celeste.Solid::riders
+  IL_0059: ldloc.2
+  IL_005a: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.Actor>::Contains(T)
+  IL_005f: brtrue.s IL_0099
+  IL_0061: ldarg.0
+  IL_0062: ldloc.2
+  IL_0063: ldarg.0
+  IL_0064: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0069: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_006e: ldarg.1
+  IL_006f: conv.r4
+  IL_0070: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0075: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_007a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_007f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0084: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0089: brfalse.s IL_0099
+  IL_008b: ldloc.2
+  IL_008c: ldc.r4 1
+  IL_0091: ldnull
+  IL_0092: ldnull
+  IL_0093: callvirt System.Boolean Celeste.Actor::MoveV(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0098: pop
+  IL_0099: ldarg.0
+  IL_009a: ldarg.0
+  IL_009b: call System.Single Monocle.Entity::get_X()
+  IL_00a0: ldarg.1
+  IL_00a1: conv.r4
+  IL_00a2: add
+  IL_00a3: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_00a8: ldarg.0
+  IL_00a9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00ae: ldarg.1
+  IL_00af: conv.r4
+  IL_00b0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00b5: call System.Void Celeste.Platform::MoveStaticMovers(Microsoft.Xna.Framework.Vector2)
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_00c0: brfalse IL_01ec
+  IL_00c5: ldarg.0
+  IL_00c6: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00cb: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_00d0: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Actor>()
+  IL_00d5: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_00da: stloc.3
+  IL_00db: br IL_01d0
+  IL_00e0: ldloca.s V_3
+  IL_00e2: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_00e7: castclass Celeste.Actor
++ IL_0000: call Celeste.Actor Celeste.Mod.ReverseHelper.Entities.CustomInvisibleBarrier::<UniversalBarrier>g__nameless1|13_0(Celeste.Actor) @ Celeste.Mod.ReverseHelper.Entities.CustomInvisibleBarrier::UniversalBarrier
+  IL_00ec: stloc.s V_4
+  IL_00ee: ldloc.s V_4
+  IL_00f0: ldfld System.Boolean Celeste.Actor::AllowPushing
+  IL_00f5: brfalse IL_01d0
+  IL_00fa: ldloc.s V_4
+  IL_00fc: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_0101: stloc.s V_5
+  IL_0103: ldloc.s V_4
+  IL_0105: ldc.i4.1
+  IL_0106: stfld System.Boolean Monocle.Entity::Collidable
+  IL_010b: ldloc.s V_4
+  IL_010d: ldfld System.Boolean Celeste.Actor::TreatNaive
+  IL_0112: brtrue.s IL_0175
+  IL_0114: ldarg.0
+  IL_0115: ldloc.s V_4
+  IL_0117: ldarg.0
+  IL_0118: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_011d: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0122: brfalse.s IL_0175
+  IL_0124: ldarg.1
+  IL_0125: ldc.i4.0
+  IL_0126: ble.s IL_0138
+  IL_0128: ldarg.1
+  IL_0129: ldloc.s V_4
+  IL_012b: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0130: ldloc.0
+  IL_0131: sub
+  IL_0132: conv.i4
+  IL_0133: sub
+  IL_0134: stloc.s V_6
+  IL_0136: br.s IL_0146
+  IL_0138: ldarg.1
+  IL_0139: ldloc.s V_4
+  IL_013b: callvirt System.Single Monocle.Entity::get_Right()
+  IL_0140: ldloc.1
+  IL_0141: sub
+  IL_0142: conv.i4
+  IL_0143: sub
+  IL_0144: stloc.s V_6
+  IL_0146: ldarg.0
+  IL_0147: ldc.i4.0
+  IL_0148: stfld System.Boolean Monocle.Entity::Collidable
+  IL_014d: ldloc.s V_4
+  IL_014f: ldloc.s V_6
+  IL_0151: ldloc.s V_4
+  IL_0153: ldfld Celeste.Collision Celeste.Actor::SquishCallback
+  IL_0158: ldarg.0
+  IL_0159: callvirt System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_015e: pop
++ IL_0000: ldsfld System.Boolean Celeste.Mod.EeveeHelper.Components.EntityContainerMover::LiftSpeedFix @ Celeste.Mod.EeveeHelper.MiscHooks::Solid_MoveHExact
++ IL_0000: brtrue IL_016c @ Celeste.Mod.EeveeHelper.MiscHooks::Solid_MoveHExact
+  IL_015f: ldloc.s V_4
+  IL_0161: ldarg.0
+  IL_0162: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldloc V_4 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldc.i4 35128232 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock/<>c::<Solid_MoveHExact>b__86_0(Microsoft.Xna.Framework.Vector2,Celeste.Solid,Celeste.Actor)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Solid,Celeste.Actor>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
+  IL_0167: callvirt System.Void Celeste.Actor::set_LiftSpeed(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
++ IL_0000: ldloc.s V_4 @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: call System.Void Celeste.Mod.TeraHelper.Entities.TeraBlock::OnTeraSolidMove(Celeste.Solid,Celeste.Actor) @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: ldloc.s V_4 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: call System.Void ChroniaHelper.Entities.TeraBlock::OnTeraSolidMove(Celeste.Solid,Celeste.Actor) @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_016c: ldarg.0 @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
+  IL_016d: ldc.i4.1
+  IL_016e: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0173: br.s IL_01c7
+  IL_0175: ldsfld System.Collections.Generic.HashSet`1<Celeste.Actor> Celeste.Solid::riders
+  IL_017a: ldloc.s V_4
+  IL_017c: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.Actor>::Contains(T)
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
++ IL_0000: ldloc V_4 @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
++ IL_0000: ldarg.1 @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
++ IL_0000: ldc.i4 416411 @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel/<>c::<Solid_MoveHExact>b__3_1(System.Boolean,Celeste.Solid,Celeste.Actor,System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal4<System.Boolean,System.Boolean,Celeste.Solid,Celeste.Actor,System.Int32>(T0,T1,T2,T3,MonoMod.Cil.FastDelegateInvokers/TypeVal4`5<TResult,T0,T1,T2,T3>) @ Celeste.Mod.CommunalHelper.Entities.FrictionlessPanel::Solid_MoveHExact
+  IL_0181: brfalse.s IL_01c7
+  IL_0183: ldarg.0
+  IL_0184: ldc.i4.0
+  IL_0185: stfld System.Boolean Monocle.Entity::Collidable
+  IL_018a: ldloc.s V_4
+  IL_018c: ldfld System.Boolean Celeste.Actor::TreatNaive
+  IL_0191: brfalse.s IL_01a8
+  IL_0193: ldloc.s V_4
+  IL_0195: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_019a: ldarg.1
+  IL_019b: conv.r4
+  IL_019c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01a1: callvirt System.Void Celeste.Actor::NaiveMove(Microsoft.Xna.Framework.Vector2)
+  IL_01a6: br.s IL_01b3
+  IL_01a8: ldloc.s V_4
+  IL_01aa: ldarg.1
+  IL_01ab: ldnull
+  IL_01ac: ldnull
+  IL_01ad: callvirt System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision,Celeste.Solid)
+  IL_01b2: pop
++ IL_0000: ldsfld System.Boolean Celeste.Mod.EeveeHelper.Components.EntityContainerMover::LiftSpeedFix @ Celeste.Mod.EeveeHelper.MiscHooks::Solid_MoveHExact
++ IL_0000: brtrue IL_01c0 @ Celeste.Mod.EeveeHelper.MiscHooks::Solid_MoveHExact
+  IL_01b3: ldloc.s V_4
+  IL_01b5: ldarg.0
+  IL_01b6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldloc V_4 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldc.i4 2884 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: ldc.i4 26814566 @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
+  |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock/<>c::<Solid_MoveHExact>b__86_0(Microsoft.Xna.Framework.Vector2,Celeste.Solid,Celeste.Actor)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Solid,Celeste.Actor>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.CommunalHelper.Entities.MoveSwapBlock::Solid_MoveHExact
+  IL_01bb: callvirt System.Void Celeste.Actor::set_LiftSpeed(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
++ IL_0000: ldloc.s V_4 @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: call System.Void Celeste.Mod.TeraHelper.Entities.TeraBlock::OnTeraSolidMove(Celeste.Solid,Celeste.Actor) @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: ldloc.s V_4 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_0000: call System.Void ChroniaHelper.Entities.TeraBlock::OnTeraSolidMove(Celeste.Solid,Celeste.Actor) @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
++ IL_01c0: ldarg.0 @ ChroniaHelper.Entities.TeraBlock::OnSolidMoveH
+  IL_01c1: ldc.i4.1
+  IL_01c2: stfld System.Boolean Monocle.Entity::Collidable
+  IL_01c7: ldloc.s V_4
+  IL_01c9: ldloc.s V_5
+  IL_01cb: stfld System.Boolean Monocle.Entity::Collidable
+  IL_01d0: ldloca.s V_3
+  IL_01d2: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01d7: brtrue IL_00e0
+  IL_01dc: leave.s IL_01ec
+  IL_01de: ldloca.s V_3
+  IL_01e0: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01e6: callvirt System.Void System.IDisposable::Dispose()
+  IL_01eb: endfinally
+  IL_01ec: ldsfld System.Collections.Generic.HashSet`1<Celeste.Actor> Celeste.Solid::riders
+  IL_01f1: callvirt System.Void System.Collections.Generic.HashSet`1<Celeste.Actor>::Clear()
++ IL_0000: call System.Void Celeste.Mod.ReverseHelper.Entities.CustomInvisibleBarrier::<UniversalBarrier>g__nameless2|13_1() @ Celeste.Mod.ReverseHelper.Entities.CustomInvisibleBarrier::UniversalBarrier
+  IL_01f6: ret

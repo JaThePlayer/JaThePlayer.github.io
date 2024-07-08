@@ -1,0 +1,67 @@
+IL Diff: System.Boolean Celeste.Player::IsRiding(Celeste.Solid)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0006: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_000b: ldc.i4.s 23
+  IL_000d: bne.un.s IL_0011
+  IL_000f: ldc.i4.0
+  IL_0010: ret
+  IL_0011: ldarg.0
+  IL_0012: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0017: callvirt System.Int32 Monocle.StateMachine::get_State()
++ IL_0000: dup @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: ldc.i4 24316148 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c__DisplayClass44_0::<Check_State_DreamDash>b__1(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: brfalse.s IL_001c @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
++ IL_0000: br.s IL_0020 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash+<>c::<.cctor>b__60_0
+  IL_001c: ldc.i4.s 9
+  IL_001e: bne.un.s IL_0028
+  IL_0020: ldarg.0
+  IL_0021: ldarg.1
+  IL_0022: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity)
+  IL_0027: ret
+  IL_0028: ldarg.0
+  IL_0029: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_002e: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0033: ldc.i4.1
+  IL_0034: beq.s IL_0044
+  IL_0036: ldarg.0
+  IL_0037: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_003c: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0041: ldc.i4.6
+  IL_0042: bne.un.s IL_0068
+  IL_0044: ldarg.0
+  IL_0045: ldarg.1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_004c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.Facings Celeste.Player::Facing
+  IL_0057: conv.r4
+  IL_0058: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_005d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0062: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0067: ret
+  IL_0068: ldarg.0
+  IL_0069: ldfld System.Int32 Celeste.Player::climbTriggerDir
+  IL_006e: brfalse.s IL_0094
+  IL_0070: ldarg.0
+  IL_0071: ldarg.1
+  IL_0072: ldarg.0
+  IL_0073: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0078: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_007d: ldarg.0
+  IL_007e: ldfld System.Int32 Celeste.Player::climbTriggerDir
+  IL_0083: conv.r4
+  IL_0084: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0089: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_008e: call System.Boolean Monocle.Entity::CollideCheck(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_0093: ret
+  IL_0094: ldarg.0
+  IL_0095: ldarg.1
+  IL_0096: call System.Boolean Celeste.Actor::IsRiding(Celeste.Solid)
+  IL_009b: ret

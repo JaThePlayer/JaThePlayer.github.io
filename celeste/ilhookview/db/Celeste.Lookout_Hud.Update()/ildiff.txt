@@ -1,0 +1,372 @@
+IL Diff: System.Void Celeste.Lookout/Hud::Update()
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: dup
+  IL_0007: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_000c: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0011: stloc.0
+  IL_0012: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0017: stloc.1
+  IL_0018: ldc.i4 320
+  IL_001d: stloc.2
+  IL_001e: ldc.i4 180
+  IL_0023: stloc.3
+  IL_0024: ldarg.0
+  IL_0025: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_002a: ldloc.0
+  IL_002b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0030: ldc.r4 8
+  IL_0035: sub
+  IL_0036: conv.i4
+  IL_0037: ldloc.0
+  IL_0038: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003d: conv.i4
+  IL_003e: ldloc.2
+  IL_003f: ldloc.3
+  IL_0040: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_0045: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.LookoutBlocker>(Microsoft.Xna.Framework.Rectangle)
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: ldc.i4 38136151 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.LookoutBuilder/<>c::<HudOnUpdate>b__6_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  IL_004a: stloc.s V_4
+  IL_004c: ldarg.0
+  IL_004d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0052: ldloc.0
+  IL_0053: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0058: ldc.r4 8
+  IL_005d: add
+  IL_005e: conv.i4
+  IL_005f: ldloc.0
+  IL_0060: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0065: conv.i4
+  IL_0066: ldloc.2
+  IL_0067: ldloc.3
+  IL_0068: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_006d: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.LookoutBlocker>(Microsoft.Xna.Framework.Rectangle)
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: ldc.i4 2020513 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.LookoutBuilder/<>c::<HudOnUpdate>b__6_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  IL_0072: stloc.s V_5
+  IL_0074: ldarg.0
+  IL_0075: ldfld System.Boolean Celeste.Lookout/Hud::TrackMode
+  IL_007a: brfalse.s IL_0089
+  IL_007c: ldarg.0
+  IL_007d: ldfld System.Single Celeste.Lookout/Hud::TrackPercent
+  IL_0082: ldc.r4 1
+  IL_0087: bge.s IL_00b1
+  IL_0089: ldarg.0
+  IL_008a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_008f: ldloc.0
+  IL_0090: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0095: conv.i4
+  IL_0096: ldloc.0
+  IL_0097: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_009c: ldc.r4 8
+  IL_00a1: sub
+  IL_00a2: conv.i4
+  IL_00a3: ldloc.2
+  IL_00a4: ldloc.3
+  IL_00a5: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00aa: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.LookoutBlocker>(Microsoft.Xna.Framework.Rectangle)
++ IL_0000: ldc.i4 2884 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: ldc.i4 29443884 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.LookoutBuilder/<>c::<HudOnUpdate>b__6_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  IL_00af: br.s IL_00b2
+  IL_00b1: ldc.i4.1
+  IL_00b2: stloc.s V_6
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld System.Boolean Celeste.Lookout/Hud::TrackMode
+  IL_00ba: brfalse.s IL_00c9
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld System.Single Celeste.Lookout/Hud::TrackPercent
+  IL_00c2: ldc.r4 0
+  IL_00c7: ble.s IL_00f1
+  IL_00c9: ldarg.0
+  IL_00ca: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00cf: ldloc.0
+  IL_00d0: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d5: conv.i4
+  IL_00d6: ldloc.0
+  IL_00d7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00dc: ldc.r4 8
+  IL_00e1: add
+  IL_00e2: conv.i4
+  IL_00e3: ldloc.2
+  IL_00e4: ldloc.3
+  IL_00e5: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00ea: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.LookoutBlocker>(Microsoft.Xna.Framework.Rectangle)
++ IL_0000: ldc.i4 2978 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: ldc.i4 36144416 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.LookoutBuilder/<>c::<HudOnUpdate>b__6_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::HudOnUpdate
+  IL_00ef: br.s IL_00f2
+  IL_00f1: ldc.i4.1
+  IL_00f2: stloc.s V_7
+  IL_00f4: ldarg.0
+  IL_00f5: ldarg.0
+  IL_00f6: ldfld System.Single Celeste.Lookout/Hud::left
+  IL_00fb: ldloc.s V_4
+  IL_00fd: brtrue.s IL_0111
+  IL_00ff: ldloc.0
+  IL_0100: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0105: ldloca.s V_1
+  IL_0107: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_010c: ldc.i4.2
+  IL_010d: add
+  IL_010e: conv.r4
+  IL_010f: bgt.s IL_0114
+  IL_0111: ldc.i4.0
+  IL_0112: br.s IL_0115
+  IL_0114: ldc.i4.1
+  IL_0115: conv.r4
+  IL_0116: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_011b: ldc.r4 8
+  IL_0120: mul
+  IL_0121: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0126: stfld System.Single Celeste.Lookout/Hud::left
+  IL_012b: ldarg.0
+  IL_012c: ldarg.0
+  IL_012d: ldfld System.Single Celeste.Lookout/Hud::right
+  IL_0132: ldloc.s V_5
+  IL_0134: brtrue.s IL_014b
+  IL_0136: ldloc.0
+  IL_0137: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_013c: ldloc.2
+  IL_013d: conv.r4
+  IL_013e: add
+  IL_013f: ldloca.s V_1
+  IL_0141: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0146: ldc.i4.2
+  IL_0147: sub
+  IL_0148: conv.r4
+  IL_0149: blt.s IL_014e
+  IL_014b: ldc.i4.0
+  IL_014c: br.s IL_014f
+  IL_014e: ldc.i4.1
+  IL_014f: conv.r4
+  IL_0150: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0155: ldc.r4 8
+  IL_015a: mul
+  IL_015b: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0160: stfld System.Single Celeste.Lookout/Hud::right
+  IL_0165: ldarg.0
+  IL_0166: ldarg.0
+  IL_0167: ldfld System.Single Celeste.Lookout/Hud::up
+  IL_016c: ldloc.s V_6
+  IL_016e: brtrue.s IL_0182
+  IL_0170: ldloc.0
+  IL_0171: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0176: ldloca.s V_1
+  IL_0178: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_017d: ldc.i4.2
+  IL_017e: add
+  IL_017f: conv.r4
+  IL_0180: bgt.s IL_0185
+  IL_0182: ldc.i4.0
+  IL_0183: br.s IL_0186
+  IL_0185: ldc.i4.1
+  IL_0186: conv.r4
+  IL_0187: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_018c: ldc.r4 8
+  IL_0191: mul
+  IL_0192: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0197: stfld System.Single Celeste.Lookout/Hud::up
+  IL_019c: ldarg.0
+  IL_019d: ldarg.0
+  IL_019e: ldfld System.Single Celeste.Lookout/Hud::down
+  IL_01a3: ldloc.s V_7
+  IL_01a5: brtrue.s IL_01bc
+  IL_01a7: ldloc.0
+  IL_01a8: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01ad: ldloc.3
+  IL_01ae: conv.r4
+  IL_01af: add
+  IL_01b0: ldloca.s V_1
+  IL_01b2: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_01b7: ldc.i4.2
+  IL_01b8: sub
+  IL_01b9: conv.r4
+  IL_01ba: blt.s IL_01bf
+  IL_01bc: ldc.i4.0
+  IL_01bd: br.s IL_01c0
+  IL_01bf: ldc.i4.1
+  IL_01c0: conv.r4
+  IL_01c1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01c6: ldc.r4 8
+  IL_01cb: mul
+  IL_01cc: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_01d1: stfld System.Single Celeste.Lookout/Hud::down
+  IL_01d6: ldarg.0
+  IL_01d7: ldsfld Monocle.VirtualJoystick Celeste.Input::Aim
+  IL_01dc: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
+  IL_01e1: stfld Microsoft.Xna.Framework.Vector2 Celeste.Lookout/Hud::aim
+  IL_01e6: ldarg.0
+  IL_01e7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Lookout/Hud::aim
+  IL_01ec: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_01f1: ldc.r4 0
+  IL_01f6: bge.un.s IL_0233
+  IL_01f8: ldarg.0
+  IL_01f9: ldarg.0
+  IL_01fa: ldfld System.Single Celeste.Lookout/Hud::multLeft
+  IL_01ff: ldc.r4 0
+  IL_0204: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0209: ldc.r4 2
+  IL_020e: mul
+  IL_020f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0214: stfld System.Single Celeste.Lookout/Hud::multLeft
+  IL_0219: ldarg.0
+  IL_021a: ldarg.0
+  IL_021b: ldfld System.Single Celeste.Lookout/Hud::timerLeft
+  IL_0220: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0225: ldc.r4 12
+  IL_022a: mul
+  IL_022b: add
+  IL_022c: stfld System.Single Celeste.Lookout/Hud::timerLeft
+  IL_0231: br.s IL_026c
+  IL_0233: ldarg.0
+  IL_0234: ldarg.0
+  IL_0235: ldfld System.Single Celeste.Lookout/Hud::multLeft
+  IL_023a: ldc.r4 1
+  IL_023f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0244: ldc.r4 2
+  IL_0249: mul
+  IL_024a: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_024f: stfld System.Single Celeste.Lookout/Hud::multLeft
+  IL_0254: ldarg.0
+  IL_0255: ldarg.0
+  IL_0256: ldfld System.Single Celeste.Lookout/Hud::timerLeft
+  IL_025b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0260: ldc.r4 6
+  IL_0265: mul
+  IL_0266: add
+  IL_0267: stfld System.Single Celeste.Lookout/Hud::timerLeft
+  IL_026c: ldarg.0
+  IL_026d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Lookout/Hud::aim
+  IL_0272: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0277: ldc.r4 0
+  IL_027c: ble.un.s IL_02b9
+  IL_027e: ldarg.0
+  IL_027f: ldarg.0
+  IL_0280: ldfld System.Single Celeste.Lookout/Hud::multRight
+  IL_0285: ldc.r4 0
+  IL_028a: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_028f: ldc.r4 2
+  IL_0294: mul
+  IL_0295: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_029a: stfld System.Single Celeste.Lookout/Hud::multRight
+  IL_029f: ldarg.0
+  IL_02a0: ldarg.0
+  IL_02a1: ldfld System.Single Celeste.Lookout/Hud::timerRight
+  IL_02a6: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02ab: ldc.r4 12
+  IL_02b0: mul
+  IL_02b1: add
+  IL_02b2: stfld System.Single Celeste.Lookout/Hud::timerRight
+  IL_02b7: br.s IL_02f2
+  IL_02b9: ldarg.0
+  IL_02ba: ldarg.0
+  IL_02bb: ldfld System.Single Celeste.Lookout/Hud::multRight
+  IL_02c0: ldc.r4 1
+  IL_02c5: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02ca: ldc.r4 2
+  IL_02cf: mul
+  IL_02d0: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_02d5: stfld System.Single Celeste.Lookout/Hud::multRight
+  IL_02da: ldarg.0
+  IL_02db: ldarg.0
+  IL_02dc: ldfld System.Single Celeste.Lookout/Hud::timerRight
+  IL_02e1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02e6: ldc.r4 6
+  IL_02eb: mul
+  IL_02ec: add
+  IL_02ed: stfld System.Single Celeste.Lookout/Hud::timerRight
+  IL_02f2: ldarg.0
+  IL_02f3: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Lookout/Hud::aim
+  IL_02f8: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02fd: ldc.r4 0
+  IL_0302: bge.un.s IL_033f
+  IL_0304: ldarg.0
+  IL_0305: ldarg.0
+  IL_0306: ldfld System.Single Celeste.Lookout/Hud::multUp
+  IL_030b: ldc.r4 0
+  IL_0310: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0315: ldc.r4 2
+  IL_031a: mul
+  IL_031b: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0320: stfld System.Single Celeste.Lookout/Hud::multUp
+  IL_0325: ldarg.0
+  IL_0326: ldarg.0
+  IL_0327: ldfld System.Single Celeste.Lookout/Hud::timerUp
+  IL_032c: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0331: ldc.r4 12
+  IL_0336: mul
+  IL_0337: add
+  IL_0338: stfld System.Single Celeste.Lookout/Hud::timerUp
+  IL_033d: br.s IL_0378
+  IL_033f: ldarg.0
+  IL_0340: ldarg.0
+  IL_0341: ldfld System.Single Celeste.Lookout/Hud::multUp
+  IL_0346: ldc.r4 1
+  IL_034b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0350: ldc.r4 2
+  IL_0355: mul
+  IL_0356: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_035b: stfld System.Single Celeste.Lookout/Hud::multUp
+  IL_0360: ldarg.0
+  IL_0361: ldarg.0
+  IL_0362: ldfld System.Single Celeste.Lookout/Hud::timerUp
+  IL_0367: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_036c: ldc.r4 6
+  IL_0371: mul
+  IL_0372: add
+  IL_0373: stfld System.Single Celeste.Lookout/Hud::timerUp
+  IL_0378: ldarg.0
+  IL_0379: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Lookout/Hud::aim
+  IL_037e: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0383: ldc.r4 0
+  IL_0388: ble.un.s IL_03c5
+  IL_038a: ldarg.0
+  IL_038b: ldarg.0
+  IL_038c: ldfld System.Single Celeste.Lookout/Hud::multDown
+  IL_0391: ldc.r4 0
+  IL_0396: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_039b: ldc.r4 2
+  IL_03a0: mul
+  IL_03a1: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_03a6: stfld System.Single Celeste.Lookout/Hud::multDown
+  IL_03ab: ldarg.0
+  IL_03ac: ldarg.0
+  IL_03ad: ldfld System.Single Celeste.Lookout/Hud::timerDown
+  IL_03b2: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03b7: ldc.r4 12
+  IL_03bc: mul
+  IL_03bd: add
+  IL_03be: stfld System.Single Celeste.Lookout/Hud::timerDown
+  IL_03c3: br.s IL_03fe
+  IL_03c5: ldarg.0
+  IL_03c6: ldarg.0
+  IL_03c7: ldfld System.Single Celeste.Lookout/Hud::multDown
+  IL_03cc: ldc.r4 1
+  IL_03d1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03d6: ldc.r4 2
+  IL_03db: mul
+  IL_03dc: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_03e1: stfld System.Single Celeste.Lookout/Hud::multDown
+  IL_03e6: ldarg.0
+  IL_03e7: ldarg.0
+  IL_03e8: ldfld System.Single Celeste.Lookout/Hud::timerDown
+  IL_03ed: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_03f2: ldc.r4 6
+  IL_03f7: mul
+  IL_03f8: add
+  IL_03f9: stfld System.Single Celeste.Lookout/Hud::timerDown
+  IL_03fe: ldarg.0
+  IL_03ff: call System.Void Monocle.Entity::Update()
+  IL_0404: ret

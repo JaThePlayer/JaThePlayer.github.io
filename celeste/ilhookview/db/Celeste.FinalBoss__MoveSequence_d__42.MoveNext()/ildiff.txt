@@ -1,0 +1,348 @@
+IL Diff: System.Boolean Celeste.FinalBoss/<MoveSequence>d__42::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.FinalBoss Celeste.FinalBoss/<MoveSequence>d__42::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_014b,IL_01ad,IL_0268,IL_0305,IL_038d
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: newobj System.Void Celeste.FinalBoss/<>c__DisplayClass42_0::.ctor()
+  IL_003b: stfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.FinalBoss Celeste.FinalBoss/<MoveSequence>d__42::<>4__this
+  IL_004c: stfld Celeste.FinalBoss Celeste.FinalBoss/<>c__DisplayClass42_0::<>4__this
+  IL_0051: ldarg.0
+  IL_0052: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_0057: ldarg.0
+  IL_0058: ldfld System.Boolean Celeste.FinalBoss/<MoveSequence>d__42::lastHit
+  IL_005d: stfld System.Boolean Celeste.FinalBoss/<>c__DisplayClass42_0::lastHit
+  IL_0062: ldarg.0
+  IL_0063: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_0068: ldfld System.Boolean Celeste.FinalBoss/<>c__DisplayClass42_0::lastHit
+  IL_006d: brfalse.s IL_00ba
+  IL_006f: ldstr "boss_pitch"
+  IL_0074: ldc.r4 1
+  IL_0079: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_007e: ldc.i4.1
+  IL_007f: ldnull
+  IL_0080: ldc.r4 0.3
+  IL_0085: ldc.i4.1
+  IL_0086: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_008b: stloc.2
+  IL_008c: ldloc.2
+  IL_008d: ldsfld System.Action`1<Monocle.Tween> Celeste.FinalBoss/<>c::<>9__42_0
+  IL_0092: dup
+  IL_0093: brtrue.s IL_00ac
+  IL_0095: pop
+  IL_0096: ldsfld Celeste.FinalBoss/<>c Celeste.FinalBoss/<>c::<>9
+  IL_009b: ldftn System.Void Celeste.FinalBoss/<>c::<MoveSequence>b__42_0(Monocle.Tween)
+  IL_00a1: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_00a6: dup
+  IL_00a7: stsfld System.Action`1<Monocle.Tween> Celeste.FinalBoss/<>c::<>9__42_0
+  IL_00ac: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_00b1: ldloc.1
+  IL_00b2: ldloc.2
+  IL_00b3: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b8: br.s IL_00f4
+  IL_00ba: ldc.i4.1
+  IL_00bb: ldnull
+  IL_00bc: ldc.r4 0.3
+  IL_00c1: ldc.i4.1
+  IL_00c2: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_00c7: stloc.3
+  IL_00c8: ldloc.3
+  IL_00c9: ldsfld System.Action`1<Monocle.Tween> Celeste.FinalBoss/<>c::<>9__42_1
+  IL_00ce: dup
+  IL_00cf: brtrue.s IL_00e8
+  IL_00d1: pop
+  IL_00d2: ldsfld Celeste.FinalBoss/<>c Celeste.FinalBoss/<>c::<>9
+  IL_00d7: ldftn System.Void Celeste.FinalBoss/<>c::<MoveSequence>b__42_1(Monocle.Tween)
+  IL_00dd: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_00e2: dup
+  IL_00e3: stsfld System.Action`1<Monocle.Tween> Celeste.FinalBoss/<>c::<>9__42_1
+  IL_00e8: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_00ed: ldloc.1
+  IL_00ee: ldloc.3
+  IL_00ef: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00f4: ldarg.0
+  IL_00f5: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_00fa: brfalse.s IL_012e
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_0102: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0107: brtrue.s IL_012e
+  IL_0109: ldarg.0
+  IL_010a: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_010f: ldloc.1
+  IL_0110: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0115: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_011a: ldc.r4 4
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.GravityHelper.Hooks.FinalBossHooks::FinalBoss_MoveSequence
++ IL_0000: ldc.i4 1634354 @ Celeste.Mod.GravityHelper.Hooks.FinalBossHooks::FinalBoss_MoveSequence
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.FinalBossHooks::FinalBoss_MoveSequence
+  |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.FinalBossHooks::FinalBoss_MoveSequence
+  IL_011f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0124: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0129: callvirt System.Void Celeste.Player::StartAttract(Microsoft.Xna.Framework.Vector2)
+  IL_012e: ldarg.0
+  IL_012f: ldc.r4 0.15
+  IL_0134: stfld System.Single Celeste.FinalBoss/<MoveSequence>d__42::<timer>5__2
+  IL_0139: br.s IL_0164
+  IL_013b: ldarg.0
+  IL_013c: ldnull
+  IL_013d: stfld System.Object Celeste.FinalBoss/<MoveSequence>d__42::<>2__current
+  IL_0142: ldarg.0
+  IL_0143: ldc.i4.1
+  IL_0144: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0149: ldc.i4.1
+  IL_014a: ret
+  IL_014b: ldarg.0
+  IL_014c: ldc.i4.m1
+  IL_014d: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0152: ldarg.0
+  IL_0153: ldarg.0
+  IL_0154: ldfld System.Single Celeste.FinalBoss/<MoveSequence>d__42::<timer>5__2
+  IL_0159: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_015e: sub
+  IL_015f: stfld System.Single Celeste.FinalBoss/<MoveSequence>d__42::<timer>5__2
+  IL_0164: ldarg.0
+  IL_0165: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_016a: brfalse.s IL_0186
+  IL_016c: ldarg.0
+  IL_016d: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_0172: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_0177: brtrue.s IL_0186
+  IL_0179: ldarg.0
+  IL_017a: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_017f: callvirt System.Boolean Celeste.Player::get_AtAttractTarget()
+  IL_0184: brfalse.s IL_013b
+  IL_0186: ldarg.0
+  IL_0187: ldfld System.Single Celeste.FinalBoss/<MoveSequence>d__42::<timer>5__2
+  IL_018c: ldc.r4 0
+  IL_0191: ble.un.s IL_01b4
+  IL_0193: ldarg.0
+  IL_0194: ldarg.0
+  IL_0195: ldfld System.Single Celeste.FinalBoss/<MoveSequence>d__42::<timer>5__2
+  IL_019a: box System.Single
+  IL_019f: stfld System.Object Celeste.FinalBoss/<MoveSequence>d__42::<>2__current
+  IL_01a4: ldarg.0
+  IL_01a5: ldc.i4.2
+  IL_01a6: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_01ab: ldc.i4.1
+  IL_01ac: ret
+  IL_01ad: ldarg.0
+  IL_01ae: ldc.i4.m1
+  IL_01af: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_01b4: ldloc.1
+  IL_01b5: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01ba: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_01bf: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.ReflectionTentacles>()
+  IL_01c4: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_01c9: stloc.s V_4
+  IL_01cb: br.s IL_01de
+  IL_01cd: ldloca.s V_4
+  IL_01cf: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_01d4: castclass Celeste.ReflectionTentacles
+  IL_01d9: callvirt System.Void Celeste.ReflectionTentacles::Retreat()
+  IL_01de: ldloca.s V_4
+  IL_01e0: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01e5: brtrue.s IL_01cd
+  IL_01e7: leave.s IL_01f7
+  IL_01e9: ldloca.s V_4
+  IL_01eb: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_01f1: callvirt System.Void System.IDisposable::Dispose()
+  IL_01f6: endfinally
+  IL_01f7: ldarg.0
+  IL_01f8: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_01fd: brfalse.s IL_0233
+  IL_01ff: ldc.r4 0.1
+  IL_0204: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_0209: ldarg.0
+  IL_020a: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_020f: ldfld System.Boolean Celeste.FinalBoss/<>c__DisplayClass42_0::lastHit
+  IL_0214: brfalse.s IL_0222
+  IL_0216: ldc.r4 0.5
+  IL_021b: stsfld System.Single Monocle.Engine::TimeRate
+  IL_0220: br.s IL_022c
+  IL_0222: ldc.r4 0.75
+  IL_0227: stsfld System.Single Monocle.Engine::TimeRate
+  IL_022c: ldc.i4.2
+  IL_022d: ldc.i4.1
+  IL_022e: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0233: ldloc.1
+  IL_0234: ldarg.0
+  IL_0235: ldfld Celeste.Player Celeste.FinalBoss/<MoveSequence>d__42::player
+  IL_023a: callvirt System.Void Celeste.FinalBoss::PushPlayer(Celeste.Player)
+  IL_023f: ldloc.1
+  IL_0240: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_0245: ldc.r4 0.3
+  IL_024a: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_024f: ldarg.0
+  IL_0250: ldc.r4 0.05
+  IL_0255: box System.Single
+  IL_025a: stfld System.Object Celeste.FinalBoss/<MoveSequence>d__42::<>2__current
+  IL_025f: ldarg.0
+  IL_0260: ldc.i4.3
+  IL_0261: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0266: ldc.i4.1
+  IL_0267: ret
+  IL_0268: ldarg.0
+  IL_0269: ldc.i4.m1
+  IL_026a: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_026f: ldc.r4 0
+  IL_0274: stloc.s V_5
+  IL_0276: br.s IL_02e3
+  IL_0278: ldloc.1
+  IL_0279: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_027e: ldloc.1
+  IL_027f: ldfld Monocle.Sprite Celeste.FinalBoss::Sprite
+  IL_0284: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0289: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_028e: ldloc.s V_5
+  IL_0290: ldsfld System.Random Monocle.Calc::Random
+  IL_0295: ldc.r4 -0.034906585
+  IL_029a: ldc.r4 0.034906585
+  IL_029f: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_02a4: add
+  IL_02a5: ldsfld System.Random Monocle.Calc::Random
+  IL_02aa: ldc.i4.s 16
+  IL_02ac: ldc.i4.s 20
+  IL_02ae: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_02b3: conv.r4
+  IL_02b4: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_02b9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02be: stloc.s V_6
+  IL_02c0: ldloc.1
+  IL_02c1: ldfld Celeste.Level Celeste.FinalBoss::level
+  IL_02c6: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_02cb: ldsfld Monocle.ParticleType Celeste.FinalBoss::P_Burst
+  IL_02d0: ldloc.s V_6
+  IL_02d2: ldloc.s V_5
+  IL_02d4: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02d9: ldloc.s V_5
+  IL_02db: ldc.r4 0.17453292
+  IL_02e0: add
+  IL_02e1: stloc.s V_5
+  IL_02e3: ldloc.s V_5
+  IL_02e5: ldc.r4 6.2831855
+  IL_02ea: blt.s IL_0278
+  IL_02ec: ldarg.0
+  IL_02ed: ldc.r4 0.05
+  IL_02f2: box System.Single
+  IL_02f7: stfld System.Object Celeste.FinalBoss/<MoveSequence>d__42::<>2__current
+  IL_02fc: ldarg.0
+  IL_02fd: ldc.i4.4
+  IL_02fe: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0303: ldc.i4.1
+  IL_0304: ret
+  IL_0305: ldarg.0
+  IL_0306: ldc.i4.m1
+  IL_0307: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_030c: newobj System.Void Celeste.FinalBoss/<>c__DisplayClass42_1::.ctor()
+  IL_0311: stloc.s V_7
+  IL_0313: ldloc.s V_7
+  IL_0315: ldarg.0
+  IL_0316: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_031b: stfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<>c__DisplayClass42_1::CS$<>8__locals1
+  IL_0320: ldstr "boss_pitch"
+  IL_0325: ldc.r4 0
+  IL_032a: call System.Void Celeste.Audio::SetMusicParam(System.String,System.Single)
+  IL_032f: ldloc.s V_7
+  IL_0331: ldsfld System.Single Monocle.Engine::TimeRate
+  IL_0336: stfld System.Single Celeste.FinalBoss/<>c__DisplayClass42_1::from
+  IL_033b: ldc.i4.1
+  IL_033c: ldnull
+  IL_033d: ldc.r4 0.35
+  IL_0342: ldsfld System.Single Monocle.Engine::TimeRateB
+  IL_0347: div
+  IL_0348: ldc.i4.1
+  IL_0349: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_034e: stloc.s V_8
+  IL_0350: ldloc.s V_8
+  IL_0352: ldc.i4.1
+  IL_0353: stfld System.Boolean Monocle.Tween::UseRawDeltaTime
+  IL_0358: ldloc.s V_8
+  IL_035a: ldloc.s V_7
+  IL_035c: ldftn System.Void Celeste.FinalBoss/<>c__DisplayClass42_1::<MoveSequence>b__2(Monocle.Tween)
+  IL_0362: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_0367: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_036c: ldloc.1
+  IL_036d: ldloc.s V_8
+  IL_036f: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0374: ldarg.0
+  IL_0375: ldc.r4 0.2
+  IL_037a: box System.Single
+  IL_037f: stfld System.Object Celeste.FinalBoss/<MoveSequence>d__42::<>2__current
+  IL_0384: ldarg.0
+  IL_0385: ldc.i4.5
+  IL_0386: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_038b: ldc.i4.1
+  IL_038c: ret
+  IL_038d: ldarg.0
+  IL_038e: ldc.i4.m1
+  IL_038f: stfld System.Int32 Celeste.FinalBoss/<MoveSequence>d__42::<>1__state
+  IL_0394: newobj System.Void Celeste.FinalBoss/<>c__DisplayClass42_2::.ctor()
+  IL_0399: stloc.s V_9
+  IL_039b: ldloc.s V_9
+  IL_039d: ldarg.0
+  IL_039e: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<MoveSequence>d__42::<>8__1
+  IL_03a3: stfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<>c__DisplayClass42_2::CS$<>8__locals2
+  IL_03a8: ldloc.s V_9
+  IL_03aa: ldloc.1
+  IL_03ab: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03b0: stfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::from
+  IL_03b5: ldloc.s V_9
+  IL_03b7: ldloc.1
+  IL_03b8: ldfld Microsoft.Xna.Framework.Vector2[] Celeste.FinalBoss::nodes
+  IL_03bd: ldloc.1
+  IL_03be: ldfld System.Int32 Celeste.FinalBoss::nodeIndex
+  IL_03c3: ldelem.any Microsoft.Xna.Framework.Vector2
+  IL_03c8: stfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::to
+  IL_03cd: ldloc.s V_9
+  IL_03cf: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::from
+  IL_03d4: ldloc.s V_9
+  IL_03d6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::to
+  IL_03db: call System.Single Microsoft.Xna.Framework.Vector2::Distance(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03e0: ldc.r4 600
+  IL_03e5: div
+  IL_03e6: stloc.s V_10
+  IL_03e8: ldloc.s V_9
+  IL_03ea: ldloc.s V_9
+  IL_03ec: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::to
+  IL_03f1: ldloc.s V_9
+  IL_03f3: ldfld Microsoft.Xna.Framework.Vector2 Celeste.FinalBoss/<>c__DisplayClass42_2::from
+  IL_03f8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03fd: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0402: stfld System.Single Celeste.FinalBoss/<>c__DisplayClass42_2::dir
+  IL_0407: ldc.i4.1
+  IL_0408: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_040d: ldloc.s V_10
+  IL_040f: ldc.i4.1
+  IL_0410: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_0415: stloc.s V_11
+  IL_0417: ldloc.s V_11
+  IL_0419: ldloc.s V_9
+  IL_041b: ldftn System.Void Celeste.FinalBoss/<>c__DisplayClass42_2::<MoveSequence>b__3(Monocle.Tween)
+  IL_0421: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_0426: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_042b: ldloc.s V_11
+  IL_042d: ldloc.s V_9
+  IL_042f: ldfld Celeste.FinalBoss/<>c__DisplayClass42_0 Celeste.FinalBoss/<>c__DisplayClass42_2::CS$<>8__locals2
+  IL_0434: ldftn System.Void Celeste.FinalBoss/<>c__DisplayClass42_0::<MoveSequence>b__4(Monocle.Tween)
+  IL_043a: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_043f: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnComplete
+  IL_0444: ldloc.1
+  IL_0445: ldloc.s V_11
+  IL_0447: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_044c: ldc.i4.0
+  IL_044d: ret

@@ -1,0 +1,33 @@
+IL Diff: System.Void Monocle.EntityList::RenderExcept(System.Int32)
+  IL_0000: ldarg.0
++ IL_0000: callvirt Monocle.Scene Monocle.EntityList::get_Scene() @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
++ IL_0000: call System.Collections.Generic.List`1<Monocle.Component> Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::getRenderHooks(Monocle.Scene) @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
++ IL_0000: stloc V_2 @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
++ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
+  IL_0001: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
+  IL_0006: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_000b: stloc.0
+  IL_000c: br.s IL_002d
+  IL_000e: ldloca.s V_0
+  IL_0010: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0015: stloc.1
+  IL_0016: ldloc.1
+  IL_0017: ldfld System.Boolean Monocle.Entity::Visible
+  IL_001c: brfalse.s IL_002d
+  IL_001e: ldloc.1
+  IL_001f: ldarg.1
+  IL_0020: callvirt System.Boolean Monocle.Entity::TagCheck(System.Int32)
+  IL_0025: brtrue.s IL_002d
+  IL_0027: ldloc.1
++ IL_0000: dup @ Bitsbolts.Components.WorldCamera::ILEntityListRenderExcept
+  IL_0028: callvirt System.Void Monocle.Entity::Render()
++ IL_0000: call System.Void Bitsbolts.Components.WorldCamera::<ILEntityListRenderExcept>m__2(Monocle.Entity) @ Bitsbolts.Components.WorldCamera::ILEntityListRenderExcept
+  IL_002d: ldloca.s V_0
+  IL_002f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0034: brtrue.s IL_000e
+  IL_0036: leave.s IL_0046
+  IL_0038: ldloca.s V_0
+  IL_003a: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0040: callvirt System.Void System.IDisposable::Dispose()
+  IL_0045: endfinally
+  IL_0046: ret

@@ -1,0 +1,237 @@
+IL Diff: System.Boolean Celeste.DreamBlock/<Deactivate>d__15::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.DreamBlock Celeste.DreamBlock/<Deactivate>d__15::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_005a,IL_00e3,IL_012e,IL_0207,IL_0260
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: ldloc.1
+  IL_0037: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_003c: stfld Celeste.Level Celeste.DreamBlock/<Deactivate>d__15::<level>5__2
+  IL_0041: ldarg.0
+  IL_0042: ldc.r4 1
+  IL_0047: box System.Single
+  IL_004c: stfld System.Object Celeste.DreamBlock/<Deactivate>d__15::<>2__current
+  IL_0051: ldarg.0
+  IL_0052: ldc.i4.1
+  IL_0053: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0058: ldc.i4.1
+  IL_0059: ret
+  IL_005a: ldarg.0
+  IL_005b: ldc.i4.m1
+  IL_005c: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0061: ldc.i4.0
+  IL_0062: ldc.i4.2
+  IL_0063: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0068: ldloc.1
+  IL_0069: ldfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_006e: brtrue.s IL_0088
+  IL_0070: ldloc.1
+  IL_0071: ldc.i4.1
+  IL_0072: ldloc.1
+  IL_0073: ldftn System.Void Celeste.DreamBlock::<Deactivate>b__15_0(Microsoft.Xna.Framework.Vector2)
+  IL_0079: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_007e: newobj System.Void Monocle.Shaker::.ctor(System.Boolean,System.Action`1<Microsoft.Xna.Framework.Vector2>)
+  IL_0083: stfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_0088: ldloc.1
+  IL_0089: ldloc.1
+  IL_008a: ldfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_008f: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0094: ldloc.1
+  IL_0095: ldfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_009a: ldc.r4 0.02
+  IL_009f: stfld System.Single Monocle.Shaker::Interval
+  IL_00a4: ldloc.1
+  IL_00a5: ldfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_00aa: ldc.i4.1
+  IL_00ab: callvirt System.Void Monocle.Shaker::set_On(System.Boolean)
+  IL_00b0: ldarg.0
+  IL_00b1: ldc.r4 0
+  IL_00b6: stfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_00bb: br.s IL_00fc
+  IL_00bd: ldloc.1
+  IL_00be: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_00c3: ldarg.0
+  IL_00c4: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_00c9: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_00ce: stfld System.Single Celeste.DreamBlock::whiteFill
+  IL_00d3: ldarg.0
+  IL_00d4: ldnull
+  IL_00d5: stfld System.Object Celeste.DreamBlock/<Deactivate>d__15::<>2__current
+  IL_00da: ldarg.0
+  IL_00db: ldc.i4.2
+  IL_00dc: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_00e1: ldc.i4.1
+  IL_00e2: ret
+  IL_00e3: ldarg.0
+  IL_00e4: ldc.i4.m1
+  IL_00e5: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_00ea: ldarg.0
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_00f1: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00f6: add
+  IL_00f7: stfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_0102: ldc.r4 1
+  IL_0107: blt.s IL_00bd
+  IL_0109: ldloc.1
+  IL_010a: ldfld Monocle.Shaker Celeste.DreamBlock::shaker
+  IL_010f: ldc.i4.0
+  IL_0110: callvirt System.Void Monocle.Shaker::set_On(System.Boolean)
+  IL_0115: ldarg.0
+  IL_0116: ldc.r4 0.5
+  IL_011b: box System.Single
+  IL_0120: stfld System.Object Celeste.DreamBlock/<Deactivate>d__15::<>2__current
+  IL_0125: ldarg.0
+  IL_0126: ldc.i4.3
+  IL_0127: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_012c: ldc.i4.1
+  IL_012d: ret
+  IL_012e: ldarg.0
+  IL_012f: ldc.i4.m1
+  IL_0130: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0135: ldloc.1
+  IL_0136: callvirt System.Void Celeste.DreamBlock::DeactivateNoRoutine()
+  IL_013b: ldloc.1
+  IL_013c: ldc.r4 1
+  IL_0141: stfld System.Single Celeste.DreamBlock::whiteHeight
+  IL_0146: ldloc.1
+  IL_0147: ldc.r4 1
+  IL_014c: stfld System.Single Celeste.DreamBlock::whiteFill
+  IL_0151: ldarg.0
+  IL_0152: ldc.r4 1
+  IL_0157: stfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_015c: br IL_0226
+  IL_0161: ldloc.1
+  IL_0162: ldarg.0
+  IL_0163: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_0168: stfld System.Single Celeste.DreamBlock::whiteHeight
+  IL_016d: ldarg.0
+  IL_016e: ldfld Celeste.Level Celeste.DreamBlock/<Deactivate>d__15::<level>5__2
+  IL_0173: ldc.r4 0.1
+  IL_0178: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_017d: brfalse.s IL_01ce
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
++ IL_0000: ldfld Celeste.DreamBlock Celeste.DreamBlock/<Deactivate>d__15::<>4__this @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
++ IL_0000: ldc.i4 19351517 @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock/<>c::<DreamBlockSlowRoutine>b__53_2(Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.DreamBlock>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
++ IL_0000: brtrue IL_01ce @ Celeste.Mod.CommunalHelper.Entities.ConnectedDreamBlock::DreamBlockSlowRoutine
+  IL_017f: ldc.i4.0
+  IL_0180: stloc.2
+  IL_0181: br.s IL_01c4
+  IL_0183: ldarg.0
+  IL_0184: ldfld Celeste.Level Celeste.DreamBlock/<Deactivate>d__15::<level>5__2
+  IL_0189: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_018e: ldsfld Monocle.ParticleType Celeste.Strawberry::P_WingsBurst
+  IL_0193: ldloc.1
+  IL_0194: callvirt System.Single Monocle.Entity::get_X()
+  IL_0199: ldloc.2
+  IL_019a: conv.r4
+  IL_019b: add
+  IL_019c: ldloc.1
+  IL_019d: callvirt System.Single Monocle.Entity::get_Y()
+  IL_01a2: ldloc.1
+  IL_01a3: callvirt System.Single Monocle.Entity::get_Height()
+  IL_01a8: ldloc.1
+  IL_01a9: ldfld System.Single Celeste.DreamBlock::whiteHeight
+  IL_01ae: mul
+  IL_01af: add
+  IL_01b0: ldc.r4 1
+  IL_01b5: add
+  IL_01b6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: ldfld Celeste.DreamBlock Celeste.DreamBlock/<Deactivate>d__15::<>4__this @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: ldc.i4 14394670 @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock/<>c::<DreamBlock_ActivationParticles>b__76_0(Celeste.DreamBlock)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.DreamBlock>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: brfalse.s IL_01bb @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: pop @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
++ IL_0000: br.s IL_01c0 @ Celeste.Mod.CommunalHelper.Entities.DreamMoveBlock::DreamBlock_ActivationParticles
+  IL_01bb: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2)
+  IL_01c0: ldloc.2
+  IL_01c1: ldc.i4.4
+  IL_01c2: add
+  IL_01c3: stloc.2
+  IL_01c4: ldloc.2
+  IL_01c5: conv.r4
+  IL_01c6: ldloc.1
+  IL_01c7: callvirt System.Single Monocle.Entity::get_Width()
+  IL_01cc: blt.s IL_0183
+  IL_01ce: ldarg.0
+  IL_01cf: ldfld Celeste.Level Celeste.DreamBlock/<Deactivate>d__15::<level>5__2
+  IL_01d4: ldc.r4 0.1
+  IL_01d9: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_01de: brfalse.s IL_01f0
+  IL_01e0: ldarg.0
+  IL_01e1: ldfld Celeste.Level Celeste.DreamBlock/<Deactivate>d__15::<level>5__2
+  IL_01e6: ldc.r4 0.3
+  IL_01eb: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_01f0: ldc.i4.2
+  IL_01f1: ldc.i4.0
+  IL_01f2: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_01f7: ldarg.0
+  IL_01f8: ldnull
+  IL_01f9: stfld System.Object Celeste.DreamBlock/<Deactivate>d__15::<>2__current
+  IL_01fe: ldarg.0
+  IL_01ff: ldc.i4.4
+  IL_0200: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0205: ldc.i4.1
+  IL_0206: ret
+  IL_0207: ldarg.0
+  IL_0208: ldc.i4.m1
+  IL_0209: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_020e: ldarg.0
+  IL_020f: ldarg.0
+  IL_0210: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_0215: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_021a: ldc.r4 0.5
+  IL_021f: mul
+  IL_0220: sub
+  IL_0221: stfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_0226: ldarg.0
+  IL_0227: ldfld System.Single Celeste.DreamBlock/<Deactivate>d__15::<alpha>5__3
+  IL_022c: ldc.r4 0
+  IL_0231: bgt IL_0161
+  IL_0236: br.s IL_0267
+  IL_0238: ldloc.1
+  IL_0239: ldloc.1
+  IL_023a: ldfld System.Single Celeste.DreamBlock::whiteFill
+  IL_023f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0244: ldc.r4 3
+  IL_0249: mul
+  IL_024a: sub
+  IL_024b: stfld System.Single Celeste.DreamBlock::whiteFill
+  IL_0250: ldarg.0
+  IL_0251: ldnull
+  IL_0252: stfld System.Object Celeste.DreamBlock/<Deactivate>d__15::<>2__current
+  IL_0257: ldarg.0
+  IL_0258: ldc.i4.5
+  IL_0259: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_025e: ldc.i4.1
+  IL_025f: ret
+  IL_0260: ldarg.0
+  IL_0261: ldc.i4.m1
+  IL_0262: stfld System.Int32 Celeste.DreamBlock/<Deactivate>d__15::<>1__state
+  IL_0267: ldloc.1
+  IL_0268: ldfld System.Single Celeste.DreamBlock::whiteFill
+  IL_026d: ldc.r4 0
+  IL_0272: bgt.s IL_0238
+  IL_0274: ldc.i4.0
+  IL_0275: ret

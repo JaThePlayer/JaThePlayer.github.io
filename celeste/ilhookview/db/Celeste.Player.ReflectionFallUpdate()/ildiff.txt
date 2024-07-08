@@ -1,0 +1,97 @@
+IL Diff: System.Int32 Celeste.Player::ReflectionFallUpdate()
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.1
+  IL_0002: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0007: ldarg.0
+  IL_0008: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_000d: ldc.r4 0.05
+  IL_0012: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0017: brfalse.s IL_0026
+  IL_0019: ldarg.0
+  IL_001a: ldc.i4.1
+  IL_001b: stfld System.Boolean Celeste.Player::wasDashB
+  IL_0020: ldarg.0
+  IL_0021: callvirt System.Void Celeste.Player::CreateTrail()
+  IL_0026: ldarg.0
+  IL_0027: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Water>()
+  IL_002c: brfalse.s IL_005b
+  IL_002e: ldarg.0
+  IL_002f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0034: ldarg.0
+  IL_0035: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_003a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003f: ldc.r4 -20
+  IL_0044: ldc.r4 400
+  IL_0049: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_004e: mul
+  IL_004f: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0054: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0059: br.s IL_0086
+  IL_005b: ldarg.0
+  IL_005c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0061: ldarg.0
+  IL_0062: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0067: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_006c: ldc.r4 320
+  IL_0071: ldc.r4 225
+  IL_0076: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_007b: mul
+  IL_007c: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0081: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0086: ldarg.0
+  IL_0087: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_008c: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0091: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.FlyFeather>()
+  IL_0096: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_009b: stloc.1
+  IL_009c: br.s IL_00aa
+  IL_009e: ldloca.s V_1
+  IL_00a0: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_00a5: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_00aa: ldloca.s V_1
+  IL_00ac: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00b1: brtrue.s IL_009e
+  IL_00b3: leave.s IL_00c3
+  IL_00b5: ldloca.s V_1
+  IL_00b7: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00bd: callvirt System.Void System.IDisposable::Dispose()
+  IL_00c2: endfinally
+  IL_00c3: ldarg.0
+  IL_00c4: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00c9: ldarg.0
+  IL_00ca: call System.Single Monocle.Entity::get_X()
+  IL_00cf: ldc.r4 6
+  IL_00d4: sub
+  IL_00d5: conv.i4
+  IL_00d6: ldarg.0
+  IL_00d7: call System.Single Monocle.Entity::get_Y()
+  IL_00dc: ldc.r4 6
+  IL_00e1: sub
+  IL_00e2: conv.i4
+  IL_00e3: ldc.i4.s 12
+  IL_00e5: ldc.i4.s 12
+  IL_00e7: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00ec: callvirt T Monocle.Scene::CollideFirst<Celeste.CrystalStaticSpinner>(Microsoft.Xna.Framework.Rectangle)
+  IL_00f1: stloc.0
+  IL_00f2: ldloc.0
+  IL_00f3: brfalse.s IL_011d
+  IL_00f5: ldloc.0
+  IL_00f6: ldc.i4.0
+  IL_00f7: callvirt System.Void Celeste.CrystalStaticSpinner::Destroy(System.Boolean)
+  IL_00fc: ldarg.0
+  IL_00fd: ldfld Celeste.Level Celeste.Player::level
+  IL_0102: ldc.r4 0.3
+  IL_0107: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_010c: ldc.i4.1
+  IL_010d: ldc.i4.1
+  IL_010e: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0113: ldc.r4 0.01
+  IL_0118: call System.Void Celeste.Celeste::Freeze(System.Single)
++ IL_0000: ldarg.0 @ VivHelper.VivHelperModule::Player_ReflectionFallUpdate
++ IL_0000: ldc.i4 2698 @ VivHelper.VivHelperModule::Player_ReflectionFallUpdate
++ IL_0000: ldc.i4 692154 @ VivHelper.VivHelperModule::Player_ReflectionFallUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_ReflectionFallUpdate
+  |-> retrieves System.Void VivHelper.VivHelperModule/<>c::<Player_ReflectionFallUpdate>b__76_0(Celeste.Player)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ VivHelper.VivHelperModule::Player_ReflectionFallUpdate
+  IL_011d: ldc.i4.s 18
+  IL_011f: ret

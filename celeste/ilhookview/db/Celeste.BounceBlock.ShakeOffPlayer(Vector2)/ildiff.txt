@@ -1,0 +1,22 @@
+IL Diff: System.Void Celeste.BounceBlock::ShakeOffPlayer(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: callvirt Celeste.Player Celeste.BounceBlock::WindUpPlayerCheck()
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: brfalse.s IL_0023
+  IL_000a: ldloc.0
+  IL_000b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0010: ldc.i4.0
+  IL_0011: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0016: ldloc.0
+  IL_0017: ldarg.1
+  IL_0018: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_001d: ldloc.0
++ IL_0000: dup @ ExtendedVariants.Variants.CoyoteTime::onJumpGraceTimerReset
+  IL_001e: callvirt System.Void Celeste.Player::StartJumpGraceTime()
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.CoyoteTime::onJumpGraceTimerReset
++ IL_0000: ldc.i4 206574 @ ExtendedVariants.Variants.CoyoteTime::onJumpGraceTimerReset
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.CoyoteTime::onJumpGraceTimerReset
+  |-> retrieves System.Void ExtendedVariants.Variants.CoyoteTime::<onJumpGraceTimerReset>b__6_0(Celeste.Player)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ ExtendedVariants.Variants.CoyoteTime::onJumpGraceTimerReset
+  IL_0023: ret

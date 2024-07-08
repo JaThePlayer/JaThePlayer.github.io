@@ -1,0 +1,469 @@
+IL Diff: System.Boolean Celeste.Player/<BirdDashTutorialCoroutine>d__561::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Player Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_003a,IL_0051,IL_0192,IL_02d2,IL_0368,IL_03ab,IL_0468,IL_04df,IL_05b3
+  IL_0038: ldc.i4.0
+  IL_0039: ret
+  IL_003a: ldarg.0
+  IL_003b: ldc.i4.m1
+  IL_003c: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0041: ldarg.0
+  IL_0042: ldnull
+  IL_0043: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_0048: ldarg.0
+  IL_0049: ldc.i4.1
+  IL_004a: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_004f: ldc.i4.1
+  IL_0050: ret
+  IL_0051: ldarg.0
+  IL_0052: ldc.i4.m1
+  IL_0053: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0058: ldloc.1
+  IL_0059: callvirt System.Void Celeste.Player::CreateTrail()
+  IL_005e: ldloc.1
+  IL_005f: ldc.i4.1
+  IL_0060: ldloc.1
+  IL_0061: ldftn System.Void Celeste.Player::CreateTrail()
+  IL_0067: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_006c: ldc.r4 0.08
+  IL_0071: ldc.i4.1
+  IL_0072: call Monocle.Alarm Monocle.Alarm::Create(Monocle.Alarm/AlarmMode,System.Action,System.Single,System.Boolean)
+  IL_0077: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_007c: ldloc.1
+  IL_007d: ldc.i4.1
+  IL_007e: ldloc.1
+  IL_007f: ldftn System.Void Celeste.Player::CreateTrail()
+  IL_0085: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_008a: ldc.r4 0.15
+  IL_008f: ldc.i4.1
+  IL_0090: call Monocle.Alarm Monocle.Alarm::Create(Monocle.Alarm/AlarmMode,System.Action,System.Single,System.Boolean)
+  IL_0095: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_009a: ldc.r4 1
+  IL_009f: ldc.r4 -1
+  IL_00a4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a9: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
+  IL_00ae: stloc.2
+  IL_00af: ldloc.1
+  IL_00b0: ldc.i4.1
+  IL_00b1: stfld Celeste.Facings Celeste.Player::Facing
+  IL_00b6: ldloc.1
+  IL_00b7: ldloc.2
+  IL_00b8: ldc.r4 240
+  IL_00bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00c2: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_00c7: ldloc.1
+  IL_00c8: ldloc.2
+  IL_00c9: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00ce: ldloc.1
+  IL_00cf: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00d4: ldloc.1
+  IL_00d5: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00da: ldc.r4 0.2
+  IL_00df: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00e4: ldloc.1
+  IL_00e5: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00ea: ldloc.1
+  IL_00eb: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_00f0: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_00f5: call Celeste.SlashFx Celeste.SlashFx::Burst(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fa: pop
+  IL_00fb: ldarg.0
+  IL_00fc: ldc.r4 0
+  IL_0101: stfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_0106: br IL_01ab
+  IL_010b: ldloc.1
+  IL_010c: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0111: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0116: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_011b: brfalse.s IL_0182
+  IL_011d: ldloc.1
+  IL_011e: ldfld Celeste.Level Celeste.Player::level
+  IL_0123: ldc.r4 0.02
+  IL_0128: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_012d: brfalse.s IL_0182
+  IL_012f: ldloc.1
+  IL_0130: ldfld Celeste.Level Celeste.Player::level
+  IL_0135: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_013a: ldsfld Monocle.ParticleType Celeste.Player::P_DashA
+  IL_013f: ldloc.1
+  IL_0140: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0145: ldsfld System.Random Monocle.Calc::Random
+  IL_014a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_014f: ldc.r4 -2
+  IL_0154: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0159: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_015e: ldc.r4 2
+  IL_0163: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0168: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::Range(System.Random,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_016d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0172: ldloc.1
+  IL_0173: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_0178: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_017d: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0182: ldarg.0
+  IL_0183: ldnull
+  IL_0184: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_0189: ldarg.0
+  IL_018a: ldc.i4.2
+  IL_018b: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0190: ldc.i4.1
+  IL_0191: ret
+  IL_0192: ldarg.0
+  IL_0193: ldc.i4.m1
+  IL_0194: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0199: ldarg.0
+  IL_019a: ldarg.0
+  IL_019b: ldfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_01a0: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_01a5: add
+  IL_01a6: stfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_01ab: ldarg.0
+  IL_01ac: ldfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_01b1: ldc.r4 0.15
+  IL_01b6: blt IL_010b
+  IL_01bb: ldloc.1
+  IL_01bc: ldc.i4.1
+  IL_01bd: stfld System.Boolean Celeste.Player::AutoJump
+  IL_01c2: ldloc.1
+  IL_01c3: ldc.r4 0
+  IL_01c8: stfld System.Single Celeste.Player::AutoJumpTimer
+  IL_01cd: ldloc.1
+  IL_01ce: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
+  IL_01d3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01d8: ldc.r4 0
+  IL_01dd: bgt.un.s IL_01f5
+  IL_01df: ldloc.1
+  IL_01e0: ldloc.1
+- IL_01e1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
+- IL_01e6: ldc.r4 160 @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
+- IL_01eb: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single) @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
++ IL_0000: ldc.i4 2698 @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
++ IL_0000: ldc.i4 34894827 @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
+  |-> retrieves Microsoft.Xna.Framework.Vector2 YoctoHelper.Hooks.KeepDashSpeedHook::GetDashSpeed(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.KeepDashSpeedHook::KeepDashSpeed
+  IL_01f0: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01f5: ldloc.1
+  IL_01f6: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_01fb: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0200: ldc.r4 0
+  IL_0205: bge.un.s IL_021b
+  IL_0207: ldloc.1
+  IL_0208: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_020d: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0212: dup
+  IL_0213: ldind.r4
+  IL_0214: ldc.r4 0.75
+  IL_0219: mul
+  IL_021a: stind.r4
+  IL_021b: ldloc.1
+  IL_021c: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0221: ldstr "fallFast"
+  IL_0226: ldc.i4.0
+  IL_0227: ldc.i4.0
+  IL_0228: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_022d: ldarg.0
+  IL_022e: ldc.i4.0
+  IL_022f: stfld System.Boolean Celeste.Player/<BirdDashTutorialCoroutine>d__561::<climbing>5__2
+  IL_0234: br IL_02d9
+  IL_0239: ldloc.1
+  IL_023a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_023f: ldloc.1
+  IL_0240: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0245: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_024a: ldc.r4 160
+  IL_024f: ldc.r4 900
+  IL_0254: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0259: mul
+  IL_025a: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_025f: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0264: ldloc.1
+  IL_0265: ldloc.1
+  IL_0266: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_026b: ldc.r4 1
+  IL_0270: ldc.r4 0
+  IL_0275: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_027a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_027f: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_0284: brfalse.s IL_028d
+  IL_0286: ldarg.0
+  IL_0287: ldc.i4.1
+  IL_0288: stfld System.Boolean Celeste.Player/<BirdDashTutorialCoroutine>d__561::<climbing>5__2
+  IL_028d: ldloc.1
+  IL_028e: callvirt System.Single Monocle.Entity::get_Top()
+  IL_0293: ldloc.1
+  IL_0294: ldfld Celeste.Level Celeste.Player::level
+  IL_0299: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_029e: stloc.3
+  IL_029f: ldloca.s V_3
+  IL_02a1: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_02a6: conv.r4
+  IL_02a7: ble.un.s IL_02c2
+  IL_02a9: ldloc.1
+  IL_02aa: ldfld Celeste.Level Celeste.Player::level
+  IL_02af: callvirt System.Void Celeste.Level::CancelCutscene()
+  IL_02b4: ldloc.1
+  IL_02b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_02ba: ldc.i4.0
+  IL_02bb: ldc.i4.1
+  IL_02bc: callvirt Celeste.PlayerDeadBody Celeste.Player::Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_02c1: pop
+  IL_02c2: ldarg.0
+  IL_02c3: ldnull
+  IL_02c4: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_02c9: ldarg.0
+  IL_02ca: ldc.i4.3
+  IL_02cb: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_02d0: ldc.i4.1
+  IL_02d1: ret
+  IL_02d2: ldarg.0
+  IL_02d3: ldc.i4.m1
+  IL_02d4: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_02d9: ldloc.1
+  IL_02da: ldc.i4.1
+  IL_02db: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_02e0: brtrue.s IL_02ed
+  IL_02e2: ldarg.0
+  IL_02e3: ldfld System.Boolean Celeste.Player/<BirdDashTutorialCoroutine>d__561::<climbing>5__2
+  IL_02e8: brfalse IL_0239
+  IL_02ed: ldarg.0
+  IL_02ee: ldfld System.Boolean Celeste.Player/<BirdDashTutorialCoroutine>d__561::<climbing>5__2
+  IL_02f3: brfalse IL_051c
+  IL_02f8: ldloc.1
+  IL_02f9: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_02fe: ldstr "wallslide"
+  IL_0303: ldc.i4.0
+  IL_0304: ldc.i4.0
+  IL_0305: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_030a: ldloc.1
+  IL_030b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0310: ldc.r4 4
+  IL_0315: ldc.r4 -6
+  IL_031a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_031f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0324: ldc.r4 -4
+  IL_0329: ldc.r4 0
+  IL_032e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0333: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_0338: ldc.i4.1
+  IL_0339: ldnull
+  IL_033a: call System.Void Celeste.Dust::Burst(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Monocle.ParticleType)
+  IL_033f: ldloc.1
+  IL_0340: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0345: ldc.r4 0
+  IL_034a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_034f: ldarg.0
+  IL_0350: ldc.r4 0.2
+  IL_0355: box System.Single
+  IL_035a: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_035f: ldarg.0
+  IL_0360: ldc.i4.4
+  IL_0361: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0366: ldc.i4.1
+  IL_0367: ret
+  IL_0368: ldarg.0
+  IL_0369: ldc.i4.m1
+  IL_036a: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_036f: ldloc.1
+  IL_0370: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0375: ldstr "climbUp"
+  IL_037a: ldc.i4.0
+  IL_037b: ldc.i4.0
+  IL_037c: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0381: br.s IL_03b2
+  IL_0383: ldloc.1
+  IL_0384: ldloc.1
+  IL_0385: callvirt System.Single Monocle.Entity::get_Y()
+  IL_038a: ldc.r4 -45
+  IL_038f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0394: mul
+  IL_0395: add
+  IL_0396: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_039b: ldarg.0
+  IL_039c: ldnull
+  IL_039d: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_03a2: ldarg.0
+  IL_03a3: ldc.i4.5
+  IL_03a4: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_03a9: ldc.i4.1
+  IL_03aa: ret
+  IL_03ab: ldarg.0
+  IL_03ac: ldc.i4.m1
+  IL_03ad: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_03b2: ldloc.1
+  IL_03b3: ldloc.1
+  IL_03b4: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03b9: ldc.r4 1
+  IL_03be: ldc.r4 0
+  IL_03c3: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_03c8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03cd: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_03d2: brtrue.s IL_0383
+  IL_03d4: ldloc.1
+  IL_03d5: ldloc.1
+  IL_03d6: callvirt System.Single Monocle.Entity::get_Y()
+  IL_03db: conv.r8
+  IL_03dc: call System.Double System.Math::Round(System.Double)
+  IL_03e1: conv.r4
+  IL_03e2: callvirt System.Void Monocle.Entity::set_Y(System.Single)
+  IL_03e7: ldloc.1
+  IL_03e8: ldstr "event:/char/madeline/climb_ledge"
+  IL_03ed: ldnull
+  IL_03ee: ldc.r4 0
+  IL_03f3: callvirt FMOD.Studio.EventInstance Celeste.Player::Play(System.String,System.String,System.Single)
+  IL_03f8: pop
+  IL_03f9: ldloc.1
+  IL_03fa: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_03ff: ldstr "jumpFast"
+  IL_0404: ldc.i4.0
+  IL_0405: ldc.i4.0
+  IL_0406: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_040b: ldloc.1
+  IL_040c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0411: ldc.r4 -105
+  IL_0416: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_041b: br.s IL_046f
+  IL_041d: ldloc.1
+  IL_041e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0423: ldloc.1
+  IL_0424: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0429: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_042e: ldc.r4 160
+  IL_0433: ldc.r4 900
+  IL_0438: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_043d: mul
+  IL_043e: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0443: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0448: ldloc.1
+  IL_0449: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_044e: ldc.r4 20
+  IL_0453: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0458: ldarg.0
+  IL_0459: ldnull
+  IL_045a: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_045f: ldarg.0
+  IL_0460: ldc.i4.6
+  IL_0461: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_0466: ldc.i4.1
+  IL_0467: ret
+  IL_0468: ldarg.0
+  IL_0469: ldc.i4.m1
+  IL_046a: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_046f: ldloc.1
+  IL_0470: ldc.i4.1
+  IL_0471: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_0476: brfalse.s IL_041d
+  IL_0478: ldloc.1
+  IL_0479: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_047e: ldc.r4 0
+  IL_0483: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0488: ldloc.1
+  IL_0489: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_048e: ldc.r4 0
+  IL_0493: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0498: ldloc.1
+  IL_0499: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_049e: ldstr "walk"
+  IL_04a3: ldc.i4.0
+  IL_04a4: ldc.i4.0
+  IL_04a5: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_04aa: ldarg.0
+  IL_04ab: ldc.r4 0
+  IL_04b0: stfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_04b5: br.s IL_04f8
+  IL_04b7: ldloc.1
+  IL_04b8: ldloc.1
+  IL_04b9: callvirt System.Single Monocle.Entity::get_X()
+  IL_04be: ldc.r4 32
+  IL_04c3: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04c8: mul
+  IL_04c9: add
+  IL_04ca: callvirt System.Void Monocle.Entity::set_X(System.Single)
+  IL_04cf: ldarg.0
+  IL_04d0: ldnull
+  IL_04d1: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_04d6: ldarg.0
+  IL_04d7: ldc.i4.7
+  IL_04d8: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_04dd: ldc.i4.1
+  IL_04de: ret
+  IL_04df: ldarg.0
+  IL_04e0: ldc.i4.m1
+  IL_04e1: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_04e6: ldarg.0
+  IL_04e7: ldarg.0
+  IL_04e8: ldfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_04ed: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04f2: add
+  IL_04f3: stfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_04f8: ldarg.0
+  IL_04f9: ldfld System.Single Celeste.Player/<BirdDashTutorialCoroutine>d__561::<time>5__3
+  IL_04fe: ldc.r4 0.5
+  IL_0503: blt.s IL_04b7
+  IL_0505: ldloc.1
+  IL_0506: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_050b: ldstr "tired"
+  IL_0510: ldc.i4.0
+  IL_0511: ldc.i4.0
+  IL_0512: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0517: br IL_05cf
+  IL_051c: ldloc.1
+  IL_051d: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
+  IL_0522: ldstr "tired"
+  IL_0527: ldc.i4.0
+  IL_0528: ldc.i4.0
+  IL_0529: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_052e: ldloc.1
+  IL_052f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0534: ldc.r4 0
+  IL_0539: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_053e: br.s IL_05ba
+  IL_0540: ldloc.1
+  IL_0541: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0546: ldloc.1
+  IL_0547: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_054c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0551: ldc.r4 0
+  IL_0556: ldc.r4 240
+  IL_055b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0560: mul
+  IL_0561: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_0566: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_056b: ldloc.1
+  IL_056c: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0571: ldc.r4 0.04
+  IL_0576: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_057b: brfalse.s IL_05a3
+  IL_057d: ldloc.1
+  IL_057e: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_BottomCenter()
+  IL_0583: ldc.r4 0
+  IL_0588: ldc.r4 -2
+  IL_058d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0592: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0597: ldc.r4 -2.3561945
+  IL_059c: ldc.i4.1
+  IL_059d: ldnull
+  IL_059e: call System.Void Celeste.Dust::Burst(Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Monocle.ParticleType)
+  IL_05a3: ldarg.0
+  IL_05a4: ldnull
+  IL_05a5: stfld System.Object Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>2__current
+  IL_05aa: ldarg.0
+  IL_05ab: ldc.i4.8
+  IL_05ac: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_05b1: ldc.i4.1
+  IL_05b2: ret
+  IL_05b3: ldarg.0
+  IL_05b4: ldc.i4.m1
+  IL_05b5: stfld System.Int32 Celeste.Player/<BirdDashTutorialCoroutine>d__561::<>1__state
+  IL_05ba: ldloc.1
+  IL_05bb: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_05c0: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_05c5: ldc.r4 0
+  IL_05ca: bne.un IL_0540
+  IL_05cf: ldc.i4.0
+  IL_05d0: ret

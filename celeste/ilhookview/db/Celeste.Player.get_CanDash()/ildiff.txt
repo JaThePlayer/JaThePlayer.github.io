@@ -1,0 +1,40 @@
+IL Diff: System.Boolean Celeste.Player::get_CanDash()
+  IL_0000: call System.Boolean Celeste.Input::get_CrouchDashPressed()
+  IL_0005: brtrue.s IL_000e
+  IL_0007: call System.Boolean Celeste.Input::get_DashPressed()
+  IL_000c: brfalse.s IL_005d
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Single Celeste.Player::dashCooldownTimer
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
++ IL_0000: ldc.i4 54731530 @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
+  |-> retrieves System.Single ExtendedVariants.Variants.DisableDashCooldown::modDashCooldownTimer(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DisableDashCooldown::modCanDash
+  IL_0014: ldc.r4 0
+  IL_0019: bgt.un.s IL_005d
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Int32 Celeste.Player::Dashes
+  IL_0021: ldc.i4.0
+  IL_0022: ble.s IL_005d
+  IL_0024: ldsfld Celeste.TalkComponent Celeste.TalkComponent::PlayerOver
+  IL_0029: brfalse.s IL_0037
+  IL_002b: ldsfld Monocle.VirtualButton Celeste.Input::Talk
+  IL_0030: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0035: brtrue.s IL_005d
+  IL_0037: ldarg.0
+  IL_0038: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_003d: brfalse.s IL_005b
+  IL_003f: ldarg.0
+  IL_0040: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_0045: ldfld System.Boolean Celeste.Booster::Ch9HubTransition
+  IL_004a: brfalse.s IL_005b
+  IL_004c: ldarg.0
+  IL_004d: ldfld Celeste.Booster Celeste.Player::LastBooster
+  IL_0052: callvirt System.Boolean Celeste.Booster::get_BoostingPlayer()
+  IL_0057: ldc.i4.0
+  IL_0058: ceq
+  IL_005a: ret
+  IL_005b: ldc.i4.1
+  IL_005c: ret
+  IL_005d: ldc.i4.0
+  IL_005e: ret

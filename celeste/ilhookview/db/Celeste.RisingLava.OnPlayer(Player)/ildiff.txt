@@ -1,0 +1,69 @@
+IL Diff: System.Void Celeste.RisingLava::OnPlayer(Celeste.Player)
+  IL_0000: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0005: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_000a: ldfld System.Boolean Celeste.Assists::Invincible
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::EnableInvincible
++ IL_0000: ldc.i4 62159379 @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::EnableInvincible
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::EnableInvincible
+  |-> retrieves System.Boolean Celeste.Mod.SpeedrunTool.Other.LookoutBuilder/<>c::<EnableInvincible>b__5_1(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SpeedrunTool.Other.LookoutBuilder::EnableInvincible
+  IL_000f: brfalse IL_00b8
+  IL_0014: ldarg.0
+  IL_0015: ldfld System.Single Celeste.RisingLava::delay
+  IL_001a: ldc.r4 0
+  IL_001f: bgt.un IL_00cb
+  IL_0024: newobj System.Void Celeste.RisingLava/<>c__DisplayClass15_0::.ctor()
+  IL_0029: stloc.0
+  IL_002a: ldloc.0
+  IL_002b: ldarg.0
+  IL_002c: stfld Celeste.RisingLava Celeste.RisingLava/<>c__DisplayClass15_0::<>4__this
+  IL_0031: ldloc.0
+  IL_0032: ldarg.0
+  IL_0033: call System.Single Monocle.Entity::get_Y()
+  IL_0038: stfld System.Single Celeste.RisingLava/<>c__DisplayClass15_0::from
+  IL_003d: ldloc.0
+  IL_003e: ldarg.0
+  IL_003f: call System.Single Monocle.Entity::get_Y()
+  IL_0044: ldc.r4 48
+  IL_0049: add
+  IL_004a: stfld System.Single Celeste.RisingLava/<>c__DisplayClass15_0::to
+  IL_004f: ldarg.1
+  IL_0050: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0055: ldc.r4 -200
+  IL_005a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_005f: ldarg.1
+  IL_0060: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_0065: pop
+  IL_0066: ldarg.0
+  IL_0067: ldc.i4.1
+  IL_0068: ldc.r4 0.4
+  IL_006d: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_0072: ldloc.0
+  IL_0073: ldftn System.Void Celeste.RisingLava/<>c__DisplayClass15_0::<OnPlayer>b__0(Monocle.Tween)
+  IL_0079: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_007e: ldnull
+  IL_007f: call Monocle.Tween Monocle.Tween::Set(Monocle.Entity,Monocle.Tween/TweenMode,System.Single,Monocle.Ease/Easer,System.Action`1<Monocle.Tween>,System.Action`1<Monocle.Tween>)
+  IL_0084: pop
+  IL_0085: ldarg.0
+  IL_0086: ldc.r4 0.5
+  IL_008b: stfld System.Single Celeste.RisingLava::delay
+  IL_0090: ldarg.0
+  IL_0091: ldfld Celeste.SoundSource Celeste.RisingLava::loopSfx
+  IL_0096: ldstr "rising"
+  IL_009b: ldc.r4 0
+  IL_00a0: callvirt Celeste.SoundSource Celeste.SoundSource::Param(System.String,System.Single)
+  IL_00a5: pop
+  IL_00a6: ldstr "event:/game/general/assist_screenbottom"
+  IL_00ab: ldarg.1
+  IL_00ac: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b1: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00b6: pop
+  IL_00b7: ret
+  IL_00b8: ldarg.1
+  IL_00b9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00be: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_00c3: ldc.i4.0
+  IL_00c4: ldc.i4.1
+  IL_00c5: callvirt Celeste.PlayerDeadBody Celeste.Player::Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_00ca: pop
+  IL_00cb: ret

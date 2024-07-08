@@ -1,0 +1,102 @@
+IL Diff: System.Int32 Celeste.Player::SummitLaunchUpdate()
+  IL_0000: ldarg.0
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Single Celeste.Player::summitLaunchParticleTimer
+  IL_0007: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_000c: sub
+  IL_000d: stfld System.Single Celeste.Player::summitLaunchParticleTimer
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Single Celeste.Player::summitLaunchParticleTimer
+  IL_0018: ldc.r4 0
+  IL_001d: ble.un.s IL_005c
+  IL_001f: ldarg.0
+  IL_0020: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0025: ldc.r4 0.03
+  IL_002a: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_002f: brfalse.s IL_005c
+  IL_0031: ldarg.0
+  IL_0032: ldfld Celeste.Level Celeste.Player::level
+  IL_0037: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_003c: ldsfld Monocle.ParticleType Celeste.BadelineBoost::P_Move
+  IL_0041: ldc.i4.1
+  IL_0042: ldarg.0
+  IL_0043: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0048: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_004d: ldc.r4 4
+  IL_0052: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0057: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_005c: ldarg.0
+  IL_005d: ldc.i4.1
+  IL_005e: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0063: ldarg.0
+  IL_0064: ldarg.0
+  IL_0065: ldfld System.Single Celeste.Player::summitLaunchTargetX
+  IL_006a: ldc.r4 20
+  IL_006f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0074: mul
+  IL_0075: ldnull
+  IL_0076: call System.Void Celeste.Actor::MoveTowardsX(System.Single,System.Single,Celeste.Collision)
+  IL_007b: ldarg.0
+  IL_007c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0081: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_UnaryNegation(Microsoft.Xna.Framework.Vector2)
+  IL_0086: ldc.r4 240
+  IL_008b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0090: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0095: ldarg.0
+  IL_0096: ldfld Celeste.Level Celeste.Player::level
+  IL_009b: ldc.r4 0.2
+  IL_00a0: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_00a5: brfalse.s IL_00d1
+  IL_00a7: ldarg.0
+  IL_00a8: ldfld Celeste.Level Celeste.Player::level
+  IL_00ad: call Monocle.Pooler Monocle.Engine::get_Pooler()
+  IL_00b2: callvirt T Monocle.Pooler::Create<Celeste.SpeedRing>()
+  IL_00b7: ldarg.0
+  IL_00b8: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00bd: ldc.r4 1.5707964
+  IL_00c2: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00c7: callvirt Celeste.SpeedRing Celeste.SpeedRing::Init(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color)
+  IL_00cc: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_00d1: ldarg.0
+  IL_00d2: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_00d7: ldarg.0
+  IL_00d8: call System.Single Monocle.Entity::get_X()
+  IL_00dd: ldc.r4 4
+  IL_00e2: sub
+  IL_00e3: conv.i4
+  IL_00e4: ldarg.0
+  IL_00e5: call System.Single Monocle.Entity::get_Y()
++ IL_0000: call System.Boolean Celeste.Mod.GravityHelper.GravityHelperModule::get_ShouldInvertPlayer() @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SummitLaunchUpdate
++ IL_0000: brfalse.s IL_00ea @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SummitLaunchUpdate
++ IL_0000: ldc.r4 -28 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SummitLaunchUpdate
++ IL_0000: br.s IL_00ef @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_SummitLaunchUpdate
+  IL_00ea: ldc.r4 40
+  IL_00ef: sub
+  IL_00f0: conv.i4
+  IL_00f1: ldc.i4.8
+  IL_00f2: ldc.i4.s 12
+  IL_00f4: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00f9: callvirt T Monocle.Scene::CollideFirst<Celeste.CrystalStaticSpinner>(Microsoft.Xna.Framework.Rectangle)
+  IL_00fe: stloc.0
+  IL_00ff: ldloc.0
+  IL_0100: brfalse.s IL_012a
+  IL_0102: ldloc.0
+  IL_0103: ldc.i4.0
+  IL_0104: callvirt System.Void Celeste.CrystalStaticSpinner::Destroy(System.Boolean)
+  IL_0109: ldarg.0
+  IL_010a: ldfld Celeste.Level Celeste.Player::level
+  IL_010f: ldc.r4 0.3
+  IL_0114: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_0119: ldc.i4.1
+  IL_011a: ldc.i4.0
+  IL_011b: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0120: ldc.r4 0.01
+  IL_0125: call System.Void Celeste.Celeste::Freeze(System.Single)
++ IL_0000: ldarg.0 @ VivHelper.VivHelperModule::Player_SummitLaunchUpdate
++ IL_0000: ldc.i4 2698 @ VivHelper.VivHelperModule::Player_SummitLaunchUpdate
++ IL_0000: ldc.i4 39951618 @ VivHelper.VivHelperModule::Player_SummitLaunchUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_SummitLaunchUpdate
+  |-> retrieves System.Void VivHelper.VivHelperModule/<>c::<Player_SummitLaunchUpdate>b__77_0(Celeste.Player)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ VivHelper.VivHelperModule::Player_SummitLaunchUpdate
+  IL_012a: ldc.i4.s 10
+  IL_012c: ret

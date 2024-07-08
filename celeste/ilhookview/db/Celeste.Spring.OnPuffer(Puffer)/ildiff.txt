@@ -1,0 +1,14 @@
+IL Diff: System.Void Celeste.Spring::OnPuffer(Celeste.Puffer)
+  IL_0000: ldarg.1
+  IL_0001: ldarg.0
+  IL_0002: callvirt System.Boolean Celeste.Puffer::HitSpring(Celeste.Spring)
+  IL_0007: brfalse.s IL_000f
+  IL_0009: ldarg.0
++ IL_0000: ldarg.0 @ ChroniaHelper.Entities.TeraBlock::SpringOnPuffer
++ IL_0000: ldarg.1 @ ChroniaHelper.Entities.TeraBlock::SpringOnPuffer
++ IL_0000: call System.Void ChroniaHelper.Entities.TeraBlock::ActorUseSpring(Celeste.Spring,Celeste.Actor) @ ChroniaHelper.Entities.TeraBlock::SpringOnPuffer
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnPuffer
++ IL_0000: ldarg.1 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnPuffer
++ IL_0000: call System.Void Celeste.Mod.TeraHelper.Entities.TeraBlock::ActorUseSpring(Celeste.Spring,Celeste.Actor) @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnPuffer
+  IL_000a: callvirt System.Void Celeste.Spring::BounceAnimate()
+  IL_000f: ret

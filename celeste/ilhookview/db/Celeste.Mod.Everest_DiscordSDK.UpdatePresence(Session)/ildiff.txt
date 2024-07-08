@@ -1,0 +1,230 @@
+IL Diff: System.Void Celeste.Mod.Everest/DiscordSDK::UpdatePresence(Celeste.Session)
+  IL_0000: ldarg.1
+  IL_0001: brtrue.s IL_0076
+  IL_0003: ldarg.0
+  IL_0004: ldloca.s V_0
+  IL_0006: initobj Discord.Activity
+  IL_000c: ldloca.s V_0
+  IL_000e: ldstr "In Menus"
+  IL_0013: stfld System.String Discord.Activity::Details
+  IL_0018: ldloc.0
+  IL_0019: stfld Discord.Activity Celeste.Mod.Everest/DiscordSDK::NextPresence
+  IL_001e: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0023: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowIcon()
+  IL_0028: brfalse IL_02d2
+  IL_002d: ldarg.0
+  IL_002e: ldflda Discord.Activity Celeste.Mod.Everest/DiscordSDK::NextPresence
+  IL_0033: ldloca.s V_1
+  IL_0035: initobj Discord.ActivityAssets
+  IL_003b: ldloca.s V_1
+  IL_003d: ldstr "https://celestemodupdater.0x0a.de/rich-presence-icons-static/everest.png"
+  IL_0042: stfld System.String Discord.ActivityAssets::LargeImage
+  IL_0047: ldloca.s V_1
+  IL_0049: ldstr "Everest"
+  IL_004e: stfld System.String Discord.ActivityAssets::LargeText
+  IL_0053: ldloca.s V_1
+  IL_0055: ldstr "https://celestemodupdater.0x0a.de/rich-presence-icons-static/celeste.png"
+  IL_005a: stfld System.String Discord.ActivityAssets::SmallImage
+  IL_005f: ldloca.s V_1
+  IL_0061: ldstr "Celeste"
+  IL_0066: stfld System.String Discord.ActivityAssets::SmallText
+  IL_006b: ldloc.1
+  IL_006c: stfld Discord.ActivityAssets Discord.Activity::Assets
+  IL_0071: br IL_02d2
+  IL_0076: ldsfld System.Collections.Generic.Dictionary`2<System.String,Celeste.Language> Celeste.Dialog::Languages
+  IL_007b: ldstr "english"
+  IL_0080: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Celeste.Language>::get_Item(TKey)
+  IL_0085: stloc.2
+  IL_0086: ldarg.1
+  IL_0087: call Celeste.AreaData Celeste.AreaData::Get(Celeste.Session)
+  IL_008c: stloc.3
+  IL_008d: ldstr "a map"
+  IL_0092: stloc.s V_4
+  IL_0094: ldstr "Everest"
+  IL_0099: stloc.s V_5
+  IL_009b: ldstr "https://celestemodupdater.0x0a.de/rich-presence-icons-static/everest.png"
+  IL_00a0: stloc.s V_6
+  IL_00a2: ldstr ""
+  IL_00a7: stloc.s V_7
+  IL_00a9: ldstr ""
+  IL_00ae: stloc.s V_8
+  IL_00b0: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_00b5: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowMap()
+  IL_00ba: brfalse IL_01d5
+  IL_00bf: ldarg.0
+  IL_00c0: ldloc.3
+  IL_00c1: ldfld System.String Celeste.AreaData::Name
+  IL_00c6: ldloc.2
+  IL_00c7: call System.String Celeste.Mod.Extensions::DialogCleanOrNull(System.String,Celeste.Language)
+  IL_00cc: dup
+  IL_00cd: brtrue.s IL_00d6
+  IL_00cf: pop
+  IL_00d0: ldloc.3
+  IL_00d1: ldfld System.String Celeste.AreaData::Name
+  IL_00d6: callvirt System.String Celeste.Mod.Everest/DiscordSDK::FilterEmojiFrom(System.String)
+  IL_00db: stloc.s V_4
+  IL_00dd: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_00e2: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowIcon()
+  IL_00e7: brfalse.s IL_00f2
+  IL_00e9: ldarg.0
+  IL_00ea: ldloc.3
+  IL_00eb: callvirt System.String Celeste.Mod.Everest/DiscordSDK::GetMapIconURLCached(Celeste.AreaData)
+  IL_00f0: stloc.s V_6
+  IL_00f2: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_00f7: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowSide()
+  IL_00fc: brfalse.s IL_0146
+  IL_00fe: ldloc.3
+  IL_00ff: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0104: ldlen
+  IL_0105: conv.i4
+  IL_0106: ldc.i4.2
+  IL_0107: blt.s IL_0146
+  IL_0109: ldloc.3
+  IL_010a: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_010f: ldc.i4.1
+  IL_0110: ldelem.ref
+  IL_0111: brfalse.s IL_0146
+  IL_0113: ldstr " | "
+  IL_0118: call System.ReadOnlySpan`1<System.Char> System.String::op_Implicit(System.String)
+  IL_011d: ldc.i4.s 65
+  IL_011f: ldarg.1
+  IL_0120: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0125: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_012a: add
+  IL_012b: conv.u2
+  IL_012c: stloc.s V_10
+  IL_012e: ldloca.s V_10
+  IL_0130: newobj System.Void System.ReadOnlySpan`1<System.Char>::.ctor(T&)
+  IL_0135: ldstr "-Side"
+  IL_013a: call System.ReadOnlySpan`1<System.Char> System.String::op_Implicit(System.String)
+  IL_013f: call System.String System.String::Concat(System.ReadOnlySpan`1<System.Char>,System.ReadOnlySpan`1<System.Char>,System.ReadOnlySpan`1<System.Char>)
+  IL_0144: stloc.s V_7
+  IL_0146: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_014b: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowRoom()
+  IL_0150: brfalse.s IL_0164
+  IL_0152: ldstr " | Room "
+  IL_0157: ldarg.1
+  IL_0158: ldfld System.String Celeste.Session::Level
+  IL_015d: call System.String System.String::Concat(System.String,System.String)
+  IL_0162: stloc.s V_8
+  IL_0164: ldarg.0
+  IL_0165: ldloc.3
+  IL_0166: call System.Boolean Celeste.Mod.Everest/DiscordSDK::IsOnlyMapInLevelSet(Celeste.AreaData)
+  IL_016b: brtrue.s IL_01d1
+  IL_016d: ldarg.0
+  IL_016e: ldloc.3
+  IL_016f: callvirt System.String Celeste.AreaData::get_LevelSet()
+  IL_0174: ldloc.2
+  IL_0175: call System.String Celeste.Mod.Extensions::DialogCleanOrNull(System.String,Celeste.Language)
+  IL_017a: dup
+  IL_017b: brtrue.s IL_0184
+  IL_017d: pop
+  IL_017e: ldloc.3
+  IL_017f: callvirt System.String Celeste.AreaData::get_LevelSet()
+  IL_0184: callvirt System.String Celeste.Mod.Everest/DiscordSDK::FilterEmojiFrom(System.String)
+  IL_0189: ldstr " | "
+  IL_018e: ldarg.1
+  IL_018f: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_0194: call System.Int32 Celeste.AreaKey::get_ChapterIndex()
++ IL_0000: ldarg.1 @ Celeste.Mod.CollabUtils2.LobbyHelper::modDiscordChangePresence
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CollabUtils2.LobbyHelper::modDiscordChangePresence
++ IL_0000: ldc.i4 7373130 @ Celeste.Mod.CollabUtils2.LobbyHelper::modDiscordChangePresence
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modDiscordChangePresence
+  |-> retrieves System.Int32 Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modDiscordChangePresence>b__32_2(System.Int32,Celeste.Session)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Session>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modDiscordChangePresence
+  IL_0199: ldc.i4.0
+  IL_019a: bge.s IL_01a3
+  IL_019c: ldstr ""
+  IL_01a1: br.s IL_01c6
+  IL_01a3: ldstr "Chapter "
+  IL_01a8: ldarg.1
+  IL_01a9: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_01ae: call System.Int32 Celeste.AreaKey::get_ChapterIndex()
+  IL_01b3: stloc.s V_11
+  IL_01b5: ldloca.s V_11
+  IL_01b7: call System.String System.Int32::ToString()
+  IL_01bc: ldstr " - "
+  IL_01c1: call System.String System.String::Concat(System.String,System.String,System.String)
+  IL_01c6: ldloc.s V_4
+  IL_01c8: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+  IL_01cd: stloc.s V_5
+  IL_01cf: br.s IL_01d5
+  IL_01d1: ldloc.s V_4
+  IL_01d3: stloc.s V_5
+  IL_01d5: ldstr ""
+  IL_01da: stloc.s V_9
+  IL_01dc: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_01e1: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowBerries()
+  IL_01e6: brfalse.s IL_0205
+  IL_01e8: ldarg.0
+  IL_01e9: ldarg.1
+  IL_01ea: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::Strawberries
+  IL_01ef: callvirt System.Int32 System.Collections.Generic.HashSet`1<Celeste.EntityID>::get_Count()
+  IL_01f4: ldstr "berry"
+  IL_01f9: ldstr "berries"
+  IL_01fe: callvirt System.String Celeste.Mod.Everest/DiscordSDK::Pluralize(System.Int32,System.String,System.String)
+  IL_0203: stloc.s V_9
+  IL_0205: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_020a: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowDeaths()
+  IL_020f: brfalse.s IL_0247
+  IL_0211: ldloc.s V_9
+  IL_0213: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  IL_0218: brtrue.s IL_0228
+  IL_021a: ldloc.s V_9
+  IL_021c: ldstr " | "
+  IL_0221: call System.String System.String::Concat(System.String,System.String)
+  IL_0226: stloc.s V_9
+  IL_0228: ldloc.s V_9
+  IL_022a: ldarg.0
+  IL_022b: ldarg.1
+  IL_022c: ldfld System.Int32 Celeste.Session::Deaths
+  IL_0231: ldstr "death"
+  IL_0236: ldstr "deaths"
+  IL_023b: callvirt System.String Celeste.Mod.Everest/DiscordSDK::Pluralize(System.Int32,System.String,System.String)
+  IL_0240: call System.String System.String::Concat(System.String,System.String)
+  IL_0245: stloc.s V_9
+  IL_0247: ldarg.0
+  IL_0248: ldloca.s V_0
+  IL_024a: initobj Discord.Activity
+  IL_0250: ldloca.s V_0
+  IL_0252: ldstr "Playing "
+  IL_0257: ldloc.s V_4
+  IL_0259: ldloc.s V_7
+  IL_025b: ldloc.s V_8
+  IL_025d: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+  IL_0262: stfld System.String Discord.Activity::Details
+  IL_0267: ldloca.s V_0
+  IL_0269: ldloc.s V_9
+  IL_026b: stfld System.String Discord.Activity::State
+  IL_0270: ldloca.s V_0
+  IL_0272: ldflda Discord.ActivityTimestamps Discord.Activity::Timestamps
+  IL_0277: ldarg.0
+  IL_0278: ldfld System.Int64 Celeste.Mod.Everest/DiscordSDK::StartTimestamp
+  IL_027d: stfld System.Int64 Discord.ActivityTimestamps::Start
+  IL_0282: ldloc.0
+  IL_0283: stfld Discord.Activity Celeste.Mod.Everest/DiscordSDK::NextPresence
+  IL_0288: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_028d: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_DiscordShowIcon()
+  IL_0292: brfalse.s IL_02d2
+  IL_0294: ldarg.0
+  IL_0295: ldflda Discord.Activity Celeste.Mod.Everest/DiscordSDK::NextPresence
+  IL_029a: ldloca.s V_1
+  IL_029c: initobj Discord.ActivityAssets
+  IL_02a2: ldloca.s V_1
+  IL_02a4: ldloc.s V_6
+  IL_02a6: stfld System.String Discord.ActivityAssets::LargeImage
+  IL_02ab: ldloca.s V_1
+  IL_02ad: ldloc.s V_5
+  IL_02af: stfld System.String Discord.ActivityAssets::LargeText
+  IL_02b4: ldloca.s V_1
+  IL_02b6: ldstr "https://celestemodupdater.0x0a.de/rich-presence-icons-static/celeste.png"
+  IL_02bb: stfld System.String Discord.ActivityAssets::SmallImage
+  IL_02c0: ldloca.s V_1
+  IL_02c2: ldstr "Celeste"
+  IL_02c7: stfld System.String Discord.ActivityAssets::SmallText
+  IL_02cc: ldloc.1
+  IL_02cd: stfld Discord.ActivityAssets Discord.Activity::Assets
+  IL_02d2: ldarg.0
+  IL_02d3: ldc.i4.1
+  IL_02d4: stfld System.Boolean Celeste.Mod.Everest/DiscordSDK::MustUpdatePresence
+  IL_02d9: ret

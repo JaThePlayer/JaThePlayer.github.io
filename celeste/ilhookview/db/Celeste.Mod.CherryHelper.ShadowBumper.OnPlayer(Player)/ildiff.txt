@@ -1,0 +1,90 @@
+IL Diff: System.Void Celeste.Mod.CherryHelper.ShadowBumper::OnPlayer(Celeste.Player)
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Single Celeste.Mod.CherryHelper.ShadowBumper::respawnTimer
+  IL_0007: ldc.r4 0
+  IL_000c: cgt.un
+  IL_000e: ldc.i4.0
+  IL_000f: ceq
+  IL_0011: stloc.0
+  IL_0012: ldloc.0
+  IL_0013: brfalse IL_00fe
+  IL_0018: nop
+  IL_0019: ldstr "event:/game/09_core/pinballbumper_hit"
+  IL_001e: ldarg.0
+  IL_001f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0024: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0029: pop
+  IL_002a: ldarg.0
+  IL_002b: ldc.r4 0.6
+  IL_0030: stfld System.Single Celeste.Mod.CherryHelper.ShadowBumper::respawnTimer
+  IL_0035: ldarg.1
+  IL_0036: ldarg.0
+  IL_0037: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_003c: ldc.i4.0
+  IL_003d: ldc.i4.0
+  IL_003e: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::ExplodeLaunch(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 59225967 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
+  |-> retrieves System.Void ExtendedVariants.Variants.ExplodeLaunchSpeed::correctExplodeLaunchSpeed()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
+  IL_0043: stloc.1
+  IL_0044: call Celeste.Mod.CherryHelper.CherryHelperSession Celeste.Mod.CherryHelper.CherryHelper::get_Session()
+  IL_0049: ldc.i4.1
+  IL_004a: callvirt System.Void Celeste.Mod.CherryHelper.CherryHelperSession::set_HasShadowDash(System.Boolean)
+  IL_004f: nop
+  IL_0050: ldarg.0
+  IL_0051: ldfld Monocle.Sprite Celeste.Mod.CherryHelper.ShadowBumper::sprite
+  IL_0056: ldstr "hit"
+  IL_005b: ldc.i4.1
+  IL_005c: ldc.i4.0
+  IL_005d: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0062: nop
+  IL_0063: ldarg.0
+  IL_0064: ldfld Celeste.VertexLight Celeste.Mod.CherryHelper.ShadowBumper::light
+  IL_0069: ldc.i4.0
+  IL_006a: stfld System.Boolean Monocle.Component::Visible
+  IL_006f: ldarg.0
+  IL_0070: ldfld Celeste.BloomPoint Celeste.Mod.CherryHelper.ShadowBumper::bloom
+  IL_0075: ldc.i4.0
+  IL_0076: stfld System.Boolean Monocle.Component::Visible
+  IL_007b: ldarg.0
+  IL_007c: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0081: ldloc.1
+  IL_0082: ldc.r4 0.15
+  IL_0087: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_008c: nop
+  IL_008d: ldarg.0
+  IL_008e: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0093: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_0098: ldarg.0
+  IL_0099: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_009e: ldc.r4 0.3
+  IL_00a3: ldc.r4 8
+  IL_00a8: ldc.r4 32
+  IL_00ad: ldc.r4 0.8
+  IL_00b2: ldnull
+  IL_00b3: ldnull
+  IL_00b4: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_00b9: pop
+  IL_00ba: ldarg.0
+  IL_00bb: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00c0: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_00c5: ldsfld Monocle.ParticleType Celeste.Mod.CherryHelper.ShadowBumper::P_Launch
+  IL_00ca: ldc.i4.s 12
+  IL_00cc: ldarg.0
+  IL_00cd: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00d2: ldloc.1
+  IL_00d3: ldc.r4 12
+  IL_00d8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00dd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00e2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00e7: ldc.r4 3
+  IL_00ec: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00f1: ldloc.1
+  IL_00f2: call System.Single Monocle.Calc::Angle(Microsoft.Xna.Framework.Vector2)
+  IL_00f7: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fc: nop
+  IL_00fd: nop
+  IL_00fe: ret

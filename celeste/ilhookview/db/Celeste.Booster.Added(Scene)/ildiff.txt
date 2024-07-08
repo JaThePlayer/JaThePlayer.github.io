@@ -1,0 +1,49 @@
+IL Diff: System.Void Celeste.Booster::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_000c: ldstr "objects/booster/outline"
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Booster_ILHook
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Booster_ILHook
++ IL_0000: ldc.i4 12518163 @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Booster_ILHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Booster_ILHook
+  |-> retrieves System.String Celeste.Mod.SkinModHelper.ObjectsHook/<>c::<Celeste_Booster_ILHook>b__9_0(System.String,Celeste.Booster)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Booster>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SkinModHelper.ObjectsHook::Celeste_Booster_ILHook
+  IL_0011: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0016: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_001b: stloc.0
+  IL_001c: ldloc.0
+  IL_001d: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0022: pop
+  IL_0023: ldloc.0
+  IL_0024: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0029: ldc.r4 0.75
+  IL_002e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0033: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0038: ldarg.0
+  IL_0039: ldarg.0
+  IL_003a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_003f: newobj System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0044: stfld Monocle.Entity Celeste.Booster::outline
+  IL_0049: ldarg.0
+  IL_004a: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_004f: ldc.i4 8999
+  IL_0054: callvirt System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0059: ldarg.0
+  IL_005a: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_005f: ldc.i4.0
+  IL_0060: stfld System.Boolean Monocle.Entity::Visible
+  IL_0065: ldarg.0
+  IL_0066: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_006b: ldloc.0
+  IL_006c: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0071: ldarg.0
+  IL_0072: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_0077: newobj System.Void Celeste.MirrorReflection::.ctor()
+  IL_007c: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0081: ldarg.1
+  IL_0082: ldarg.0
+  IL_0083: ldfld Monocle.Entity Celeste.Booster::outline
+  IL_0088: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_008d: ret

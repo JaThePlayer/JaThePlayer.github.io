@@ -1,0 +1,42 @@
+IL Diff: System.Void Celeste.Player::BoostBegin()
+  IL_0000: ldarg.0
+  IL_0001: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0006: dup
+  IL_0007: brtrue.s IL_000d
+  IL_0009: pop
+  IL_000a: ldnull
+  IL_000b: br.s IL_0017
+  IL_000d: ldfld Celeste.Session Celeste.Level::Session
+  IL_0012: callvirt Celeste.MapData Celeste.Session::get_MapData()
+  IL_0017: castclass Celeste.MapData
+  IL_001c: callvirt Celeste.Mod.Meta.MapMetaModeProperties Celeste.MapData::get_Meta()
+  IL_0021: dup
+  IL_0022: brtrue.s IL_0030
+  IL_0024: pop
+  IL_0025: ldloca.s V_0
+  IL_0027: initobj System.Nullable`1<System.Boolean>
+  IL_002d: ldloc.0
+  IL_002e: br.s IL_0035
+  IL_0030: callvirt System.Nullable`1<System.Boolean> Celeste.Mod.Meta.MapMetaModeProperties::get_TheoInBubble()
+  IL_0035: stloc.0
+  IL_0036: ldloca.s V_0
+  IL_0038: call T System.Nullable`1<System.Boolean>::GetValueOrDefault()
+  IL_003d: brfalse.s IL_004d
+  IL_003f: ldarg.0
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: ldc.i4 37715807 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
+  |-> retrieves System.Boolean Celeste.Mod.EeveeHelper.Entities.PatientBooster/<>c::<Player_BoostBegin>b__16_0(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: brfalse IL_0040 @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: pop @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
++ IL_0000: br IL_004c @ Celeste.Mod.EeveeHelper.Entities.PatientBooster::Player_BoostBegin
+  IL_0040: callvirt System.Boolean Celeste.Player::RefillDash()
+  IL_0045: pop
+  IL_0046: ldarg.0
+  IL_0047: callvirt System.Void Celeste.Player::RefillStamina()
+  IL_004c: ret
+  IL_004d: ldarg.0
+  IL_004e: callvirt System.Void Celeste.Player::orig_BoostBegin()
+  IL_0053: ret

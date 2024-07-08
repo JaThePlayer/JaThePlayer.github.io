@@ -1,0 +1,49 @@
+IL Diff: System.Void Celeste.Snowball::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldarg.0
+  IL_0008: call System.Single Monocle.Entity::get_X()
+  IL_000d: ldc.r4 200
+  IL_0012: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0017: mul
+  IL_0018: sub
+  IL_0019: call System.Void Monocle.Entity::set_X(System.Single)
+  IL_001e: ldarg.0
+  IL_001f: ldarg.0
+  IL_0020: ldfld System.Single Celeste.Snowball::atY
+  IL_0025: ldc.r4 4
+  IL_002a: ldarg.0
+  IL_002b: ldfld Monocle.SineWave Celeste.Snowball::sine
+  IL_0030: callvirt System.Single Monocle.SineWave::get_Value()
+  IL_0035: mul
+  IL_0036: add
+  IL_0037: call System.Void Monocle.Entity::set_Y(System.Single)
+  IL_003c: ldarg.0
+  IL_003d: call System.Single Monocle.Entity::get_X()
+  IL_0042: ldarg.0
+  IL_0043: ldfld Celeste.Level Celeste.Snowball::level
+  IL_0048: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_004d: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0052: ldc.r4 60
+  IL_0057: sub
+  IL_0058: bge.un.s IL_007f
+  IL_005a: ldarg.0
+  IL_005b: ldarg.0
+  IL_005c: ldfld System.Single Celeste.Snowball::resetTimer
+  IL_0061: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0066: add
+  IL_0067: stfld System.Single Celeste.Snowball::resetTimer
+  IL_006c: ldarg.0
+  IL_006d: ldfld System.Single Celeste.Snowball::resetTimer
+  IL_0072: ldc.r4 0.8
++ IL_0000: pop @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballUpdate
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballUpdate
++ IL_0000: ldc.i4 33606817 @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballUpdate
+  |-> retrieves System.Single ExtendedVariants.Variants.SnowballsEverywhere::determineDelayBetweenSnowballs()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.SnowballsEverywhere::modSnowballUpdate
+  IL_0077: blt.un.s IL_007f
+  IL_0079: ldarg.0
+  IL_007a: callvirt System.Void Celeste.Snowball::ResetPosition()
+  IL_007f: ret

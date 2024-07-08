@@ -1,0 +1,14 @@
+IL Diff: System.Void Celeste.Spring::OnHoldable(Celeste.Holdable)
+  IL_0000: ldarg.1
+  IL_0001: ldarg.0
+  IL_0002: callvirt System.Boolean Celeste.Holdable::HitSpring(Celeste.Spring)
+  IL_0007: brfalse.s IL_000f
+  IL_0009: ldarg.0
++ IL_0000: ldarg.0 @ ChroniaHelper.Entities.TeraBlock::SpringOnHoldable
++ IL_0000: ldarg.1 @ ChroniaHelper.Entities.TeraBlock::SpringOnHoldable
++ IL_0000: call System.Void ChroniaHelper.Entities.TeraBlock::HoldableUseSpring(Celeste.Spring,Celeste.Holdable) @ ChroniaHelper.Entities.TeraBlock::SpringOnHoldable
++ IL_0000: ldarg.0 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnHoldable
++ IL_0000: ldarg.1 @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnHoldable
++ IL_0000: call System.Void Celeste.Mod.TeraHelper.Entities.TeraBlock::HoldableUseSpring(Celeste.Spring,Celeste.Holdable) @ Celeste.Mod.TeraHelper.Entities.TeraBlock::SpringOnHoldable
+  IL_000a: callvirt System.Void Celeste.Spring::BounceAnimate()
+  IL_000f: ret

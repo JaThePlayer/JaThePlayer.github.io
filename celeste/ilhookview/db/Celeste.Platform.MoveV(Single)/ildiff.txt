@@ -1,0 +1,58 @@
+IL Diff: System.Void Celeste.Platform::MoveV(System.Single)
+  IL_0000: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0005: ldc.r4 0
+  IL_000a: bne.un.s IL_001e
+  IL_000c: ldarg.0
+  IL_000d: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_0012: ldc.r4 0
+  IL_0017: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_001c: br.s IL_0030
+  IL_001e: ldarg.0
+  IL_001f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Platform::LiftSpeed
+  IL_0024: ldarg.1
+  IL_0025: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_002a: div
+  IL_002b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0000: ldc.i4 39457869 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
+  |-> retrieves System.Void ExtendedVariants.Variants.LiftboostProtection::<PatchLiftboostProtectionY>b__14_2(Celeste.Platform)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Platform>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0030: ldarg.0 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
+  IL_0031: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Platform::movementCounter
+  IL_0036: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_003b: dup
+  IL_003c: ldind.r4
+  IL_003d: ldarg.1
+  IL_003e: add
+  IL_003f: stind.r4
+  IL_0040: ldarg.0
+  IL_0041: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Platform::movementCounter
+  IL_0046: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_004b: conv.r8
+  IL_004c: call System.Double System.Math::Round(System.Double)
+  IL_0051: conv.i4
+  IL_0052: stloc.0
++ IL_0000: ldarg.0 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
+  IL_0000: ldloc.0
++ IL_0000: ldc.i4 2882 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0000: ldc.i4 41970849 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
+  |-> retrieves System.Void ExtendedVariants.Variants.LiftboostProtection::<PatchLiftboostProtectionY>b__14_4(Celeste.Platform,System.Int32)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.Platform,System.Int32>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
++ IL_0053: ldloc.0 @ ExtendedVariants.Variants.LiftboostProtection::PatchLiftboostProtectionY
+  IL_0054: brfalse.s IL_006e
+  IL_0056: ldarg.0
+  IL_0057: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Platform::movementCounter
+  IL_005c: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0061: dup
+  IL_0062: ldind.r4
+  IL_0063: ldloc.0
+  IL_0064: conv.r4
+  IL_0065: sub
+  IL_0066: stind.r4
+  IL_0067: ldarg.0
+  IL_0068: ldloc.0
+  IL_0069: callvirt System.Void Celeste.Platform::MoveVExact(System.Int32)
+  IL_006e: ret

@@ -1,0 +1,115 @@
+IL Diff: System.Void Celeste.Textbox::Update()
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: isinst Celeste.Level
+  IL_000b: stloc.0
+  IL_000c: ldloc.0
+  IL_000d: brfalse.s IL_0020
+  IL_000f: ldloc.0
+  IL_0010: callvirt System.Boolean Celeste.Level::get_FrozenOrPaused()
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
++ IL_0000: ldc.i4 19778894 @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.HintController/<>c::<Textbox_Render_Update>b__34_0(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.HintController::Textbox_Render_Update
+  IL_0015: brtrue.s IL_001f
+  IL_0017: ldloc.0
+  IL_0018: ldfld Celeste.PlayerDeadBody Celeste.Level::RetryPlayerCorpse
+  IL_001d: brfalse.s IL_0020
+  IL_001f: ret
+  IL_0020: ldarg.0
+  IL_0021: ldfld System.Boolean Celeste.Textbox::autoPressContinue
+  IL_0026: brtrue.s IL_0033
+  IL_0028: ldarg.0
+  IL_0029: ldfld Monocle.Coroutine Celeste.Textbox::skipRoutine
+  IL_002e: callvirt System.Void Monocle.Component::Update()
+  IL_0033: ldarg.0
+  IL_0034: ldfld Monocle.Coroutine Celeste.Textbox::runRoutine
+  IL_0039: callvirt System.Void Monocle.Component::Update()
+  IL_003e: ldarg.0
+  IL_003f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0044: brfalse.s IL_0068
+  IL_0046: ldarg.0
+  IL_0047: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_004c: ldc.r4 0.05
+  IL_0051: callvirt System.Boolean Monocle.Scene::OnInterval(System.Single)
+  IL_0056: brfalse.s IL_0068
+  IL_0058: ldarg.0
+  IL_0059: ldsfld System.Random Monocle.Calc::Random
+  IL_005e: callvirt System.Int32 System.Random::Next()
+  IL_0063: stfld System.Int32 Celeste.Textbox::shakeSeed
+  IL_0068: ldarg.0
+  IL_0069: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_006e: brfalse.s IL_0088
+  IL_0070: ldarg.0
+  IL_0071: ldfld System.Single Celeste.Textbox::ease
+  IL_0076: ldc.r4 1
+  IL_007b: blt.un.s IL_0088
+  IL_007d: ldarg.0
+  IL_007e: ldfld Monocle.Sprite Celeste.Textbox::portraitSprite
+  IL_0083: callvirt System.Void Monocle.Component::Update()
+  IL_0088: ldarg.0
+  IL_0089: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_008e: brfalse.s IL_00a8
+  IL_0090: ldarg.0
+  IL_0091: ldfld System.Single Celeste.Textbox::ease
+  IL_0096: ldc.r4 1
+  IL_009b: blt.un.s IL_00a8
+  IL_009d: ldarg.0
+  IL_009e: ldfld Monocle.Sprite Celeste.Textbox::portraitGlitchy
+  IL_00a3: callvirt System.Void Monocle.Component::Update()
+  IL_00a8: ldarg.0
+  IL_00a9: ldarg.0
+  IL_00aa: ldfld System.Single Celeste.Textbox::timer
+  IL_00af: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00b4: add
+  IL_00b5: stfld System.Single Celeste.Textbox::timer
+  IL_00ba: ldarg.0
+  IL_00bb: ldfld Monocle.Wiggler Celeste.Textbox::portraitWiggle
+  IL_00c0: callvirt System.Void Monocle.Component::Update()
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld System.Int32 Celeste.Textbox::index
+  IL_00cb: ldarg.0
+  IL_00cc: callvirt System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.Textbox::get_Nodes()
+  IL_00d1: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Count()
+  IL_00d6: call System.Int32 System.Math::Min(System.Int32,System.Int32)
+  IL_00db: stloc.1
+  IL_00dc: ldarg.0
+  IL_00dd: callvirt System.Int32 Celeste.Textbox::get_Start()
+  IL_00e2: stloc.2
+  IL_00e3: br.s IL_0142
+  IL_00e5: ldarg.0
+  IL_00e6: callvirt System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.Textbox::get_Nodes()
+  IL_00eb: ldloc.2
+  IL_00ec: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_00f1: isinst Celeste.FancyText/Char
+  IL_00f6: brfalse.s IL_013e
+  IL_00f8: ldarg.0
+  IL_00f9: callvirt System.Collections.Generic.List`1<Celeste.FancyText/Node> Celeste.Textbox::get_Nodes()
+  IL_00fe: ldloc.2
+  IL_00ff: callvirt T System.Collections.Generic.List`1<Celeste.FancyText/Node>::get_Item(System.Int32)
+  IL_0104: isinst Celeste.FancyText/Char
+  IL_0109: stloc.3
+  IL_010a: ldloc.3
+  IL_010b: ldfld System.Single Celeste.FancyText/Char::Fade
+  IL_0110: ldc.r4 1
+  IL_0115: bge.un.s IL_013e
+  IL_0117: ldloc.3
+  IL_0118: ldloc.3
+  IL_0119: ldfld System.Single Celeste.FancyText/Char::Fade
+  IL_011e: ldc.r4 8
+  IL_0123: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0128: mul
+  IL_0129: add
+  IL_012a: ldc.r4 0
+  IL_012f: ldc.r4 1
+  IL_0134: call System.Single Monocle.Calc::Clamp(System.Single,System.Single,System.Single)
+  IL_0139: stfld System.Single Celeste.FancyText/Char::Fade
+  IL_013e: ldloc.2
+  IL_013f: ldc.i4.1
+  IL_0140: add
+  IL_0141: stloc.2
+  IL_0142: ldloc.2
+  IL_0143: ldloc.1
+  IL_0144: blt.s IL_00e5
+  IL_0146: ret

@@ -1,0 +1,109 @@
+IL Diff: System.Boolean Celeste.CS10_MoonIntro/<BadelineAppears>d__10::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.CS10_MoonIntro Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0022,IL_0113,IL_0136
+  IL_0020: ldc.i4.0
+  IL_0021: ret
+  IL_0022: ldarg.0
+  IL_0023: ldc.i4.m1
+  IL_0024: stfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_0029: ldloc.1
+  IL_002a: ldfld Celeste.Level Celeste.CutsceneEntity::Level
+  IL_002f: ldfld Celeste.Session Celeste.Level::Session
+  IL_0034: ldflda Celeste.PlayerInventory Celeste.Session::Inventory
+  IL_0039: ldc.i4.1
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.Randomizer.RandoModule::DontGiveOneDash
++ IL_0000: ldc.i4 4172356 @ Celeste.Mod.Randomizer.RandoModule::DontGiveOneDash
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::DontGiveOneDash
+  |-> retrieves System.Int32 Celeste.Mod.Randomizer.RandoModule::<DontGiveOneDash>b__51_0(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::DontGiveOneDash
+  IL_003a: stfld System.Int32 Celeste.PlayerInventory::Dashes
+  IL_003f: ldloc.1
+  IL_0040: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_0045: ldc.i4.1
+  IL_0046: stfld System.Int32 Celeste.Player::Dashes
+  IL_004b: ldloc.1
+  IL_004c: ldfld Celeste.Level Celeste.CutsceneEntity::Level
+  IL_0051: ldloc.1
+  IL_0052: ldloc.1
+  IL_0053: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_0058: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_005d: newobj System.Void Celeste.BadelineDummy::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0062: dup
+  IL_0063: stloc.2
+  IL_0064: stfld Celeste.BadelineDummy Celeste.CS10_MoonIntro::badeline
+  IL_0069: ldloc.2
+  IL_006a: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_006f: ldloc.1
+  IL_0070: ldfld Celeste.Level Celeste.CutsceneEntity::Level
+  IL_0075: ldfld Celeste.DisplacementRenderer Celeste.Level::Displacement
+  IL_007a: ldloc.1
+  IL_007b: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_0080: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0085: ldc.r4 0.5
+  IL_008a: ldc.r4 8
+  IL_008f: ldc.r4 32
+  IL_0094: ldc.r4 0.5
+  IL_0099: ldnull
+  IL_009a: ldnull
+  IL_009b: callvirt Celeste.DisplacementRenderer/Burst Celeste.DisplacementRenderer::AddBurst(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,System.Single,Monocle.Ease/Easer,Monocle.Ease/Easer)
+  IL_00a0: pop
+  IL_00a1: ldstr "event:/char/badeline/maddy_split"
+  IL_00a6: ldloc.1
+  IL_00a7: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_00ac: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00b1: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00b6: pop
+  IL_00b7: ldloc.1
+  IL_00b8: ldfld Celeste.BadelineDummy Celeste.CS10_MoonIntro::badeline
+  IL_00bd: ldfld Celeste.PlayerSprite Celeste.BadelineDummy::Sprite
+  IL_00c2: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00c7: ldc.r4 1
+  IL_00cc: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00d1: ldarg.0
+  IL_00d2: ldloc.1
+  IL_00d3: ldfld Celeste.BadelineDummy Celeste.CS10_MoonIntro::badeline
+  IL_00d8: ldloc.1
+  IL_00d9: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_00de: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00e3: ldc.r4 -16
+  IL_00e8: ldc.r4 -16
+  IL_00ed: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f7: ldc.i4.1
+  IL_00f8: newobj System.Void System.Nullable`1<System.Int32>::.ctor(T)
+  IL_00fd: ldc.i4.0
+  IL_00fe: ldc.i4.0
+  IL_00ff: ldc.i4.0
+  IL_0100: callvirt System.Collections.IEnumerator Celeste.BadelineDummy::FloatTo(Microsoft.Xna.Framework.Vector2,System.Nullable`1<System.Int32>,System.Boolean,System.Boolean,System.Boolean)
+  IL_0105: stfld System.Object Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>2__current
+  IL_010a: ldarg.0
+  IL_010b: ldc.i4.1
+  IL_010c: stfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_0111: ldc.i4.1
+  IL_0112: ret
+  IL_0113: ldarg.0
+  IL_0114: ldc.i4.m1
+  IL_0115: stfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_011a: ldloc.1
+  IL_011b: ldfld Celeste.Player Celeste.CS10_MoonIntro::player
+  IL_0120: ldc.i4.m1
+  IL_0121: stfld Celeste.Facings Celeste.Player::Facing
+  IL_0126: ldarg.0
+  IL_0127: ldnull
+  IL_0128: stfld System.Object Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>2__current
+  IL_012d: ldarg.0
+  IL_012e: ldc.i4.2
+  IL_012f: stfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_0134: ldc.i4.1
+  IL_0135: ret
+  IL_0136: ldarg.0
+  IL_0137: ldc.i4.m1
+  IL_0138: stfld System.Int32 Celeste.CS10_MoonIntro/<BadelineAppears>d__10::<>1__state
+  IL_013d: ldc.i4.0
+  IL_013e: ret

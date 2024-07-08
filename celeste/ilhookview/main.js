@@ -89,11 +89,26 @@ function parseILInstructionString(instr) {
     }
 }
 
-async function fetchMethodAsync(func) {
+async function fetchMethodHookListAsync(func, files) {
     const methodInfo = getMethodInfo(func)
-    const files = await getFileListAsync(methodInfo.directoryName)
 
-    const filename = queryStringParams.v ??= files[0]
+    const filename = "allhooks.txt"
+    if (!files.includes(filename)) {
+        return null
+    }
+
+    const rawPath = `db/${methodInfo.directoryName}/${filename}`
+    const response = await fetch(rawPath);
+    return {
+        data: (await response.text()).split('\n'),
+        rawAdress: rawPath
+    };
+}
+
+async function fetchMethodAsync(func, files) {
+    const methodInfo = getMethodInfo(func)
+
+    const filename = queryStringParams.v ??= "ildiff.txt"
     if (!files.includes(filename)) {
         return [{
             fullText: "Couldn't find the file! Is the 'v' query string correct?",
@@ -130,7 +145,23 @@ function scrollToOpcodeAtOffset(offset) {
 async function createILViewAsync(func) {
     const methodInfo = getMethodInfo(func)
     if (methodInfo) {
-        const funcData = await fetchMethodAsync(func);
+        const files = await getFileListAsync(methodInfo.directoryName)
+        const hookList = await fetchMethodHookListAsync(func, files);
+
+        const hookListElement = document.querySelector('.hook-list')
+        while (hookListElement.lastChild) {
+            hookListElement.removeChild(hookListElement.lastChild)
+        }
+        if (hookList) {
+            const hookListElementPre = document.createElement("pre")
+            hookListElement.appendChild(hookListElementPre)
+            for (const hook of hookList.data) {
+                hookListElementPre.innerText += `${hook}\n`
+            }
+            hookListElementPre.innerText = hookListElementPre.innerText.trimEnd()
+        }
+
+        const funcData = await fetchMethodAsync(func, files);
         const funcIL = funcData.data;
 
         document.querySelector('.method-name').textContent = methodInfo.name;

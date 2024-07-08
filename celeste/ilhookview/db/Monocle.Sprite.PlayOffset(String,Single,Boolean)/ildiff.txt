@@ -1,0 +1,120 @@
+IL Diff: System.Void Monocle.Sprite::PlayOffset(System.String,System.Single,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.String Monocle.Sprite::get_CurrentAnimationID()
+  IL_0006: ldarg.1
+  IL_0007: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_000c: ldarg.3
+  IL_000d: or
+  IL_000e: brfalse IL_0123
+  IL_0013: ldarg.0
+  IL_0014: ldfld System.Action`2<System.String,System.String> Monocle.Sprite::OnChange
+  IL_0019: brfalse.s IL_002d
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Action`2<System.String,System.String> Monocle.Sprite::OnChange
+  IL_0021: ldarg.0
+  IL_0022: callvirt System.String Monocle.Sprite::get_LastAnimationID()
+  IL_0027: ldarg.1
+  IL_0028: callvirt System.Void System.Action`2<System.String,System.String>::Invoke(T1,T2)
+  IL_002d: ldarg.0
+  IL_002e: ldarg.0
+  IL_002f: ldarg.1
+  IL_0030: dup
+  IL_0031: stloc.0
+  IL_0032: callvirt System.Void Monocle.Sprite::set_CurrentAnimationID(System.String)
+  IL_0037: ldloc.0
+  IL_0038: callvirt System.Void Monocle.Sprite::set_LastAnimationID(System.String)
+  IL_003d: ldarg.0
+  IL_003e: ldarg.0
+  IL_003f: ldfld System.Collections.Generic.Dictionary`2<System.String,Monocle.Sprite/Animation> Monocle.Sprite::animations
+  IL_0044: ldarg.1
+- IL_0045: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,Monocle.Sprite/Animation>::get_Item(TKey) @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
++ IL_0000: ldarg.0 @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
++ IL_0000: ldc.i4 50103031 @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
+  |-> retrieves Monocle.Sprite+Animation Celeste.Mod.Procedurline.SpriteManager::SpriteDictGetHook(System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Monocle.Sprite+Animation, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],System.String,Monocle.Sprite)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Monocle.Sprite/Animation,System.Collections.Generic.Dictionary`2<System.String,Monocle.Sprite/Animation>,System.String,Monocle.Sprite>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.Procedurline.SpriteManager+<>c__DisplayClass8_0::<.ctor>b__1
+  IL_004a: stfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_004f: ldarg.0
+  IL_0050: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_0055: ldfld System.Single Monocle.Sprite/Animation::Delay
+  IL_005a: ldc.r4 0
+  IL_005f: ble.un IL_00f7
+  IL_0064: ldarg.0
+  IL_0065: ldc.i4.1
+  IL_0066: callvirt System.Void Monocle.Sprite::set_Animating(System.Boolean)
+  IL_006b: ldarg.0
+  IL_006c: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_0071: ldfld System.Single Monocle.Sprite/Animation::Delay
+  IL_0076: ldarg.0
+  IL_0077: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_007c: ldfld Monocle.MTexture[] Monocle.Sprite/Animation::Frames
+  IL_0081: ldlen
+  IL_0082: conv.i4
+  IL_0083: conv.r4
+  IL_0084: mul
+  IL_0085: ldarg.2
+  IL_0086: mul
+  IL_0087: stloc.1
+  IL_0088: ldarg.0
+  IL_0089: ldc.i4.0
+  IL_008a: callvirt System.Void Monocle.Sprite::set_CurrentAnimationFrame(System.Int32)
+  IL_008f: br.s IL_00af
+  IL_0091: ldarg.0
+  IL_0092: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_0097: stloc.2
+  IL_0098: ldarg.0
+  IL_0099: ldloc.2
+  IL_009a: ldc.i4.1
+  IL_009b: add
+  IL_009c: callvirt System.Void Monocle.Sprite::set_CurrentAnimationFrame(System.Int32)
+  IL_00a1: ldloc.1
+  IL_00a2: ldarg.0
+  IL_00a3: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_00a8: ldfld System.Single Monocle.Sprite/Animation::Delay
+  IL_00ad: sub
+  IL_00ae: stloc.1
+  IL_00af: ldloc.1
+  IL_00b0: ldarg.0
+  IL_00b1: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_00b6: ldfld System.Single Monocle.Sprite/Animation::Delay
+  IL_00bb: bge.s IL_0091
+  IL_00bd: ldarg.0
+  IL_00be: ldarg.0
+  IL_00bf: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_00c4: ldarg.0
+  IL_00c5: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_00ca: ldfld Monocle.MTexture[] Monocle.Sprite/Animation::Frames
+  IL_00cf: ldlen
+  IL_00d0: conv.i4
+  IL_00d1: rem
+  IL_00d2: callvirt System.Void Monocle.Sprite::set_CurrentAnimationFrame(System.Int32)
+  IL_00d7: ldarg.0
+  IL_00d8: ldloc.1
+  IL_00d9: stfld System.Single Monocle.Sprite::animationTimer
+  IL_00de: ldarg.0
+  IL_00df: ldarg.0
+  IL_00e0: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_00e5: ldfld Monocle.MTexture[] Monocle.Sprite/Animation::Frames
+  IL_00ea: ldarg.0
+  IL_00eb: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_00f0: ldelem.ref
+  IL_00f1: callvirt System.Void Monocle.Sprite::SetFrame(Monocle.MTexture)
+  IL_00f6: ret
+  IL_00f7: ldarg.0
+  IL_00f8: ldc.r4 0
+  IL_00fd: stfld System.Single Monocle.Sprite::animationTimer
+  IL_0102: ldarg.0
+  IL_0103: ldc.i4.0
+  IL_0104: callvirt System.Void Monocle.Sprite::set_Animating(System.Boolean)
+  IL_0109: ldarg.0
+  IL_010a: ldc.i4.0
+  IL_010b: callvirt System.Void Monocle.Sprite::set_CurrentAnimationFrame(System.Int32)
+  IL_0110: ldarg.0
+  IL_0111: ldarg.0
+  IL_0112: ldfld Monocle.Sprite/Animation Monocle.Sprite::currentAnimation
+  IL_0117: ldfld Monocle.MTexture[] Monocle.Sprite/Animation::Frames
+  IL_011c: ldc.i4.0
+  IL_011d: ldelem.ref
+  IL_011e: callvirt System.Void Monocle.Sprite::SetFrame(Monocle.MTexture)
+  IL_0123: ret

@@ -1,0 +1,555 @@
+IL Diff: System.Void Celeste.TheoCrystal::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Celeste.Actor::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Boolean Celeste.TheoCrystal::shattering
+  IL_000c: brtrue.s IL_0016
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Boolean Celeste.TheoCrystal::dead
+  IL_0014: brfalse.s IL_0017
+  IL_0016: ret
+  IL_0017: ldarg.0
+  IL_0018: ldfld System.Single Celeste.TheoCrystal::swatTimer
+  IL_001d: ldc.r4 0
+  IL_0022: ble.un.s IL_0036
+  IL_0024: ldarg.0
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Single Celeste.TheoCrystal::swatTimer
+  IL_002b: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0030: sub
+  IL_0031: stfld System.Single Celeste.TheoCrystal::swatTimer
+  IL_0036: ldarg.0
+  IL_0037: ldarg.0
+  IL_0038: ldfld System.Single Celeste.TheoCrystal::hardVerticalHitSoundCooldown
+  IL_003d: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0042: sub
+  IL_0043: stfld System.Single Celeste.TheoCrystal::hardVerticalHitSoundCooldown
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Boolean Celeste.TheoCrystal::OnPedestal
+  IL_004e: brfalse.s IL_005c
+  IL_0050: ldarg.0
+  IL_0051: ldc.i4 8999
+  IL_0056: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_005b: ret
+  IL_005c: ldarg.0
+  IL_005d: ldc.i4.s 100
+  IL_005f: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0064: ldarg.0
+  IL_0065: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_006a: callvirt System.Boolean Celeste.Holdable::get_IsHeld()
+  IL_006f: brfalse.s IL_0081
+  IL_0071: ldarg.0
+  IL_0072: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0077: stfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::prevLiftSpeed
+  IL_007c: br IL_0545
+  IL_0081: ldarg.0
+  IL_0082: ldc.i4.1
+  IL_0083: call System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_0088: brfalse IL_0213
+  IL_008d: ldarg.0
+  IL_008e: ldarg.0
+  IL_008f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0094: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_0099: ldc.r4 3
+  IL_009e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a8: ldc.i4.1
+  IL_00a9: call System.Boolean Celeste.Actor::OnGround(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_00ae: brtrue.s IL_00b8
+  IL_00b0: ldc.r4 20
+  IL_00b5: stloc.0
+  IL_00b6: br.s IL_00e9
+  IL_00b8: ldarg.0
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00c4: ldc.r4 3
+  IL_00c9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ce: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d3: ldc.i4.1
+  IL_00d4: call System.Boolean Celeste.Actor::OnGround(Microsoft.Xna.Framework.Vector2,System.Int32)
+  IL_00d9: brtrue.s IL_00e3
+  IL_00db: ldc.r4 -20
+  IL_00e0: stloc.0
+  IL_00e1: br.s IL_00e9
+  IL_00e3: ldc.r4 0
+  IL_00e8: stloc.0
+  IL_00e9: ldarg.0
+  IL_00ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_00ef: ldarg.0
+  IL_00f0: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_00f5: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00fa: ldloc.0
+  IL_00fb: ldc.r4 800
+  IL_0100: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0105: mul
+  IL_0106: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_010b: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0110: ldarg.0
+  IL_0111: call Microsoft.Xna.Framework.Vector2 Celeste.Actor::get_LiftSpeed()
+  IL_0116: stloc.1
+  IL_0117: ldloc.1
+  IL_0118: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_011d: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0122: brfalse IL_01d2
+  IL_0127: ldarg.0
+  IL_0128: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::prevLiftSpeed
+  IL_012d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0132: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Inequality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0137: brfalse IL_01d2
+  IL_013c: ldarg.0
+  IL_013d: ldarg.0
+  IL_013e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::prevLiftSpeed
+  IL_0143: stfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0148: ldarg.0
+  IL_0149: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_014e: stfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::prevLiftSpeed
+  IL_0153: ldarg.0
+  IL_0154: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0159: ldarg.0
+  IL_015a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_015f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0164: ldc.r4 0.6
+  IL_0169: mul
+  IL_016a: ldc.r4 0
+  IL_016f: call System.Single System.Math::Min(System.Single,System.Single)
+  IL_0174: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0179: ldarg.0
+  IL_017a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_017f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0184: ldc.r4 0
+  IL_0189: beq.s IL_01ad
+  IL_018b: ldarg.0
+  IL_018c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0191: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0196: ldc.r4 0
+  IL_019b: bne.un.s IL_01ad
+  IL_019d: ldarg.0
+  IL_019e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_01a3: ldc.r4 -60
+  IL_01a8: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01ad: ldarg.0
+  IL_01ae: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_01b3: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01b8: ldc.r4 0
+  IL_01bd: bge.un IL_02d7
+  IL_01c2: ldarg.0
+  IL_01c3: ldc.r4 0.15
+  IL_01c8: stfld System.Single Celeste.TheoCrystal::noGravityTimer
+  IL_01cd: br IL_02d7
+  IL_01d2: ldarg.0
+  IL_01d3: ldloc.1
+  IL_01d4: stfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::prevLiftSpeed
+  IL_01d9: ldloc.1
+  IL_01da: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01df: ldc.r4 0
+  IL_01e4: bge.un IL_02d7
+  IL_01e9: ldarg.0
+  IL_01ea: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_01ef: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_01f4: ldc.r4 0
+  IL_01f9: bge.un IL_02d7
+  IL_01fe: ldarg.0
+  IL_01ff: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0204: ldc.r4 0
+  IL_0209: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_020e: br IL_02d7
+  IL_0213: ldarg.0
+  IL_0214: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_0219: callvirt System.Boolean Celeste.Holdable::get_ShouldHaveGravity()
+  IL_021e: brfalse IL_02d7
+  IL_0223: ldc.r4 800
+  IL_0228: stloc.2
+  IL_0229: ldarg.0
+  IL_022a: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_022f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0234: call System.Single System.Math::Abs(System.Single)
+  IL_0239: ldc.r4 30
+  IL_023e: bgt.un.s IL_0248
+  IL_0240: ldloc.2
+  IL_0241: ldc.r4 0.5
+  IL_0246: mul
+  IL_0247: stloc.2
+  IL_0248: ldc.r4 350
+  IL_024d: stloc.3
+  IL_024e: ldarg.0
+  IL_024f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0254: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0259: ldc.r4 0
+  IL_025e: bge.un.s IL_0268
+  IL_0260: ldloc.3
+  IL_0261: ldc.r4 0.5
+  IL_0266: mul
+  IL_0267: stloc.3
+  IL_0268: ldarg.0
+  IL_0269: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_026e: ldarg.0
+  IL_026f: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0274: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0279: ldc.r4 0
+  IL_027e: ldloc.3
+  IL_027f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0284: mul
+  IL_0285: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_028a: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_028f: ldarg.0
+  IL_0290: ldfld System.Single Celeste.TheoCrystal::noGravityTimer
+  IL_0295: ldc.r4 0
+  IL_029a: ble.un.s IL_02b0
+  IL_029c: ldarg.0
+  IL_029d: ldarg.0
+  IL_029e: ldfld System.Single Celeste.TheoCrystal::noGravityTimer
+  IL_02a3: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02a8: sub
+  IL_02a9: stfld System.Single Celeste.TheoCrystal::noGravityTimer
+  IL_02ae: br.s IL_02d7
+  IL_02b0: ldarg.0
+  IL_02b1: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_02b6: ldarg.0
+  IL_02b7: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_02bc: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02c1: ldc.r4 200
+  IL_02c6: ldloc.2
+  IL_02c7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02cc: mul
+  IL_02cd: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_02d2: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_02d7: ldarg.0
+  IL_02d8: ldarg.0
+  IL_02d9: call Microsoft.Xna.Framework.Vector2 Celeste.Actor::get_ExactPosition()
+  IL_02de: stfld Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::previousPosition
+  IL_02e3: ldarg.0
+  IL_02e4: ldarg.0
+  IL_02e5: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_02ea: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02ef: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_02f4: mul
+  IL_02f5: ldarg.0
+  IL_02f6: ldfld Celeste.Collision Celeste.TheoCrystal::onCollideH
+  IL_02fb: ldnull
+  IL_02fc: call System.Boolean Celeste.Actor::MoveH(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0301: pop
+  IL_0302: ldarg.0
+  IL_0303: ldarg.0
+  IL_0304: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0309: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_030e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0313: mul
+  IL_0314: ldarg.0
+  IL_0315: ldfld Celeste.Collision Celeste.TheoCrystal::onCollideV
+  IL_031a: ldnull
+  IL_031b: call System.Boolean Celeste.Actor::MoveV(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0320: pop
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 3650 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 53050759 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
+  |-> retrieves System.Boolean Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks/<>c::<TheoCrystal_Update>b__3_8(Celeste.TheoCrystal)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.TheoCrystal>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: brfalse IL_0321 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 3659 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2144259 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
+  |-> retrieves System.Void Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks/<>c::<TheoCrystal_Update>b__3_9(Celeste.TheoCrystal)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.TheoCrystal>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: br.s IL_04b9 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0321: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
+  IL_0322: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0327: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_032c: ldarg.0
+  IL_032d: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_0332: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 30585047 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_0337: stloc.s V_4
+  IL_0339: ldloca.s V_4
+  IL_033b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0340: conv.r4
+  IL_0341: ble.un.s IL_0388
+  IL_0343: ldarg.0
+  IL_0344: ldc.r4 32
+  IL_0349: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_034e: mul
+  IL_034f: ldnull
+  IL_0350: ldnull
+  IL_0351: call System.Boolean Celeste.Actor::MoveH(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_0356: pop
+  IL_0357: ldarg.0
+  IL_0358: call System.Single Monocle.Entity::get_Left()
+  IL_035d: ldc.r4 8
+  IL_0362: sub
+  IL_0363: ldarg.0
+  IL_0364: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_0369: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 61469782 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_036e: stloc.s V_4
+  IL_0370: ldloca.s V_4
+  IL_0372: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Right()
+  IL_0377: conv.r4
+  IL_0378: ble.un IL_04b9
+  IL_037d: ldarg.0
+  IL_037e: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0383: br IL_04b9
+  IL_0388: ldarg.0
+  IL_0389: call System.Single Monocle.Entity::get_Left()
+  IL_038e: ldarg.0
+  IL_038f: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_0394: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2884 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 12996478 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_0399: stloc.s V_4
+  IL_039b: ldloca.s V_4
+  IL_039d: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_03a2: conv.r4
+  IL_03a3: bge.un.s IL_03d9
+  IL_03a5: ldarg.0
+  IL_03a6: ldarg.0
+  IL_03a7: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_03ac: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2978 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 46081782 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_03b1: stloc.s V_4
+  IL_03b3: ldloca.s V_4
+  IL_03b5: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_03ba: conv.r4
+  IL_03bb: call System.Void Monocle.Entity::set_Left(System.Single)
+  IL_03c0: ldarg.0
+  IL_03c1: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_03c6: ldflda System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_03cb: dup
+  IL_03cc: ldind.r4
+  IL_03cd: ldc.r4 -0.4
+  IL_03d2: mul
+  IL_03d3: stind.r4
+  IL_03d4: br IL_04b9
+  IL_03d9: ldarg.0
+  IL_03da: call System.Single Monocle.Entity::get_Top()
+  IL_03df: ldarg.0
+  IL_03e0: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_03e5: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2980 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 41636838 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_03ea: stloc.s V_4
+  IL_03ec: ldloca.s V_4
+  IL_03ee: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_03f3: ldc.i4.4
+  IL_03f4: sub
+  IL_03f5: conv.r4
+  IL_03f6: bge.un.s IL_042a
+  IL_03f8: ldarg.0
+  IL_03f9: ldarg.0
+  IL_03fa: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_03ff: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 2983 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 17140727 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_0404: stloc.s V_4
+  IL_0406: ldloca.s V_4
+  IL_0408: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_040d: ldc.i4.4
+  IL_040e: add
+  IL_040f: conv.r4
+  IL_0410: call System.Void Monocle.Entity::set_Top(System.Single)
+  IL_0415: ldarg.0
+  IL_0416: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_041b: ldc.r4 0
+  IL_0420: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0425: br IL_04b9
+  IL_042a: ldarg.0
+  IL_042b: call System.Single Monocle.Entity::get_Bottom()
+  IL_0430: ldarg.0
+  IL_0431: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_0436: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 3085 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 46221648 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_043b: stloc.s V_4
+  IL_043d: ldloca.s V_4
+  IL_043f: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_0444: conv.r4
+  IL_0445: ble.un.s IL_0496
+  IL_0447: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_044c: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0451: ldfld System.Boolean Celeste.Assists::Invincible
+  IL_0456: brfalse.s IL_0496
+  IL_0458: ldarg.0
+  IL_0459: ldarg.0
+  IL_045a: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_045f: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 3568 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 52966042 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_0464: stloc.s V_4
+  IL_0466: ldloca.s V_4
+  IL_0468: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_046d: conv.r4
+  IL_046e: call System.Void Monocle.Entity::set_Bottom(System.Single)
+  IL_0473: ldarg.0
+  IL_0474: ldflda Microsoft.Xna.Framework.Vector2 Celeste.TheoCrystal::Speed
+  IL_0479: ldc.r4 -300
+  IL_047e: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0483: ldstr "event:/game/general/assist_screenbottom"
+  IL_0488: ldarg.0
+  IL_0489: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_048e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0493: pop
+  IL_0494: br.s IL_04b9
+  IL_0496: ldarg.0
+  IL_0497: call System.Single Monocle.Entity::get_Top()
+  IL_049c: ldarg.0
+  IL_049d: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_04a2: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 3646 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 62391037 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_04a7: stloc.s V_4
+  IL_04a9: ldloca.s V_4
+  IL_04ab: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_04b0: conv.r4
+  IL_04b1: ble.un.s IL_04b9
+  IL_04b3: ldarg.0
+  IL_04b4: callvirt System.Void Celeste.TheoCrystal::Die()
+  IL_04b9: ldarg.0
+  IL_04ba: call System.Single Monocle.Entity::get_X()
+  IL_04bf: ldarg.0
+  IL_04c0: ldfld Celeste.Level Celeste.TheoCrystal::Level
+- IL_04c5: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds() @ Celeste.Mod.GravityHelper.Hooks.TheoCrystalHooks::TheoCrystal_Update
++ IL_0000: ldc.i4 3648 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: ldc.i4 20509216 @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  |-> retrieves Microsoft.Xna.Framework.Rectangle Celeste.Mod.Randomizer.RandoModule::<BeGracefulOnTransitions>b__47_0(Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Rectangle,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Randomizer.RandoModule::BeGracefulOnTransitions
+  IL_04ca: stloc.s V_4
+  IL_04cc: ldloca.s V_4
+  IL_04ce: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_04d3: ldc.i4.s 10
+  IL_04d5: add
+  IL_04d6: conv.r4
+  IL_04d7: bge.un.s IL_04ed
+  IL_04d9: ldarg.0
+  IL_04da: ldc.r4 32
+  IL_04df: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_04e4: mul
+  IL_04e5: ldnull
+  IL_04e6: ldnull
+  IL_04e7: call System.Boolean Celeste.Actor::MoveH(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_04ec: pop
+  IL_04ed: ldarg.0
+  IL_04ee: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_04f3: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_04f8: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_04fd: stloc.s V_5
+  IL_04ff: ldarg.0
+  IL_0500: call T Monocle.Entity::CollideFirst<Celeste.TempleGate>()
+  IL_0505: stloc.s V_6
+  IL_0507: ldloc.s V_6
+  IL_0509: brfalse.s IL_0545
+  IL_050b: ldloc.s V_5
+  IL_050d: brfalse.s IL_0545
+  IL_050f: ldloc.s V_6
+  IL_0511: ldc.i4.0
+  IL_0512: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0517: ldarg.0
+  IL_0518: ldloc.s V_5
+  IL_051a: callvirt System.Single Monocle.Entity::get_X()
+  IL_051f: ldarg.0
+  IL_0520: call System.Single Monocle.Entity::get_X()
+  IL_0525: sub
+  IL_0526: call System.Int32 System.Math::Sign(System.Single)
+  IL_052b: ldc.i4.s 32
+  IL_052d: mul
+  IL_052e: conv.r4
+  IL_052f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0534: mul
+  IL_0535: ldnull
+  IL_0536: ldnull
+  IL_0537: call System.Boolean Celeste.Actor::MoveH(System.Single,Celeste.Collision,Celeste.Solid)
+  IL_053c: pop
+  IL_053d: ldloc.s V_6
+  IL_053f: ldc.i4.1
+  IL_0540: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0545: ldarg.0
+  IL_0546: ldfld System.Boolean Celeste.TheoCrystal::dead
+  IL_054b: brtrue.s IL_0558
+  IL_054d: ldarg.0
+  IL_054e: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_0553: callvirt System.Void Celeste.Holdable::CheckAgainstColliders()
+  IL_0558: ldarg.0
+  IL_0559: ldfld Celeste.HoldableCollider Celeste.TheoCrystal::hitSeeker
+  IL_055e: brfalse.s IL_0587
+  IL_0560: ldarg.0
+  IL_0561: ldfld System.Single Celeste.TheoCrystal::swatTimer
+  IL_0566: ldc.r4 0
+  IL_056b: bgt.un.s IL_0587
+  IL_056d: ldarg.0
+  IL_056e: ldfld Celeste.HoldableCollider Celeste.TheoCrystal::hitSeeker
+  IL_0573: ldarg.0
+  IL_0574: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_0579: callvirt System.Boolean Celeste.HoldableCollider::Check(Celeste.Holdable)
+  IL_057e: brtrue.s IL_0587
+  IL_0580: ldarg.0
+  IL_0581: ldnull
+  IL_0582: stfld Celeste.HoldableCollider Celeste.TheoCrystal::hitSeeker
+  IL_0587: ldarg.0
+  IL_0588: ldfld Celeste.BirdTutorialGui Celeste.TheoCrystal::tutorialGui
+  IL_058d: brfalse.s IL_05fb
+  IL_058f: ldarg.0
+  IL_0590: ldfld System.Boolean Celeste.TheoCrystal::OnPedestal
+  IL_0595: brtrue.s IL_05d8
+  IL_0597: ldarg.0
+  IL_0598: ldfld Celeste.Holdable Celeste.TheoCrystal::Hold
+  IL_059d: callvirt System.Boolean Celeste.Holdable::get_IsHeld()
+  IL_05a2: brtrue.s IL_05d8
+  IL_05a4: ldarg.0
+  IL_05a5: ldc.i4.1
+  IL_05a6: call System.Boolean Celeste.Actor::OnGround(System.Int32)
+  IL_05ab: brfalse.s IL_05d8
+  IL_05ad: ldarg.0
+  IL_05ae: ldfld Celeste.Level Celeste.TheoCrystal::Level
+  IL_05b3: ldfld Celeste.Session Celeste.Level::Session
+  IL_05b8: ldstr "foundTheoInCrystal"
+  IL_05bd: callvirt System.Boolean Celeste.Session::GetFlag(System.String)
+  IL_05c2: brfalse.s IL_05d8
+  IL_05c4: ldarg.0
+  IL_05c5: ldarg.0
+  IL_05c6: ldfld System.Single Celeste.TheoCrystal::tutorialTimer
+  IL_05cb: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_05d0: add
+  IL_05d1: stfld System.Single Celeste.TheoCrystal::tutorialTimer
+  IL_05d6: br.s IL_05e3
+  IL_05d8: ldarg.0
+  IL_05d9: ldc.r4 0
+  IL_05de: stfld System.Single Celeste.TheoCrystal::tutorialTimer
+  IL_05e3: ldarg.0
+  IL_05e4: ldfld Celeste.BirdTutorialGui Celeste.TheoCrystal::tutorialGui
+  IL_05e9: ldarg.0
+  IL_05ea: ldfld System.Single Celeste.TheoCrystal::tutorialTimer
+  IL_05ef: ldc.r4 0.25
+  IL_05f4: cgt
+  IL_05f6: stfld System.Boolean Celeste.BirdTutorialGui::Open
+  IL_05fb: ret

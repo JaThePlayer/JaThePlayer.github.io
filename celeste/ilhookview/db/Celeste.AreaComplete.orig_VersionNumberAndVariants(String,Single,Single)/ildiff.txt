@@ -1,0 +1,83 @@
+IL Diff: System.Void Celeste.AreaComplete::orig_VersionNumberAndVariants(System.String,System.Single,System.Single)
+  IL_0000: ldloca.s V_0
+  IL_0002: ldc.r4 1820
+  IL_0007: ldc.r4 300
+  IL_000c: ldc.r4 1
+  IL_0011: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_0016: ldarg.1
+  IL_0017: callvirt System.Single Monocle.Ease/Easer::Invoke(System.Single)
+  IL_001c: sub
+  IL_001d: mul
+  IL_001e: add
+  IL_001f: ldc.r4 1020
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.CollabUtils2.UI.AreaCompleteInfoInLevel::shiftVersionNumberAndVariantsUp
++ IL_0000: ldc.i4 48766817 @ Celeste.Mod.CollabUtils2.UI.AreaCompleteInfoInLevel::shiftVersionNumberAndVariantsUp
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.UI.AreaCompleteInfoInLevel::shiftVersionNumberAndVariantsUp
+  |-> retrieves System.Single Celeste.Mod.CollabUtils2.UI.AreaCompleteInfoInLevel/<>c::<shiftVersionNumberAndVariantsUp>b__12_1(System.Single)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CollabUtils2.UI.AreaCompleteInfoInLevel::shiftVersionNumberAndVariantsUp
+  IL_0024: ldsfld System.Single Celeste.AreaComplete::versionOffset
+  IL_0029: add
+  IL_002a: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_002f: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0034: ldfld System.Boolean Celeste.SaveData::AssistMode
+  IL_0039: brtrue.s IL_004a
+  IL_003b: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0040: ldfld System.Boolean Celeste.SaveData::VariantMode
+  IL_0045: brfalse IL_00e4
+  IL_004a: ldsfld Monocle.Atlas Celeste.GFX::Gui
+  IL_004f: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0054: ldfld System.Boolean Celeste.SaveData::AssistMode
+  IL_0059: brtrue.s IL_0062
+  IL_005b: ldstr "cs_variantmode"
++ IL_0000: ldc.i4 2882 @ ExtendedVariants.Module.ExtendedVariantsModule::ilModVersionNumberAndVariants
++ IL_0000: ldc.i4 50420766 @ ExtendedVariants.Module.ExtendedVariantsModule::ilModVersionNumberAndVariants
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Module.ExtendedVariantsModule::ilModVersionNumberAndVariants
+  |-> retrieves System.String ExtendedVariants.Module.ExtendedVariantsModule::modVariantModeLogo(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Module.ExtendedVariantsModule::ilModVersionNumberAndVariants
+  IL_0060: br.s IL_0067
+  IL_0062: ldstr "cs_assistmode"
+  IL_0067: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_006c: ldloca.s V_0
+  IL_006e: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0073: dup
+  IL_0074: ldind.r4
+  IL_0075: ldc.r4 32
+  IL_007a: sub
+  IL_007b: stind.r4
+  IL_007c: ldloc.0
+  IL_007d: ldc.r4 0
+  IL_0082: ldc.r4 -8
+  IL_0087: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_008c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0091: ldc.r4 0.5
+  IL_0096: ldc.r4 1
+  IL_009b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00a5: ldc.r4 0.6
+  IL_00aa: callvirt System.Void Monocle.MTexture::DrawJustified(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_00af: ldarg.0
+  IL_00b0: ldloc.0
+  IL_00b1: ldc.r4 0.5
+  IL_00b6: ldc.r4 0
+  IL_00bb: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00c0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00c5: ldc.r4 0.5
+  IL_00ca: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00cf: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00d4: ldc.r4 2
+  IL_00d9: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_00de: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_00e3: ret
+  IL_00e4: ldarg.0
+  IL_00e5: ldloc.0
+  IL_00e6: ldc.r4 0.5
+  IL_00eb: ldc.r4 0.5
+  IL_00f0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00fa: ldc.r4 0.5
+  IL_00ff: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0104: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0109: ldc.r4 2
+  IL_010e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0113: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0118: ret

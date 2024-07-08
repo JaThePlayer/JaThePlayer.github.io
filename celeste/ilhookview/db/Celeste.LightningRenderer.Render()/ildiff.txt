@@ -1,0 +1,220 @@
+IL Diff: System.Void Celeste.LightningRenderer::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.List`1<Celeste.Lightning> Celeste.LightningRenderer::list
+  IL_0006: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.Lightning>::get_Count()
+  IL_000b: ldc.i4.0
+  IL_000c: bgt.s IL_000f
+  IL_000e: ret
+  IL_000f: ldarg.0
+  IL_0010: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0015: isinst Celeste.Level
+  IL_001a: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_001f: stloc.0
+  IL_0020: ldloc.0
+  IL_0021: callvirt System.Single Monocle.Camera::get_Left()
+  IL_0026: conv.i4
+  IL_0027: ldloc.0
+  IL_0028: callvirt System.Single Monocle.Camera::get_Top()
+  IL_002d: conv.i4
+  IL_002e: ldloc.0
+  IL_002f: callvirt System.Single Monocle.Camera::get_Right()
+  IL_0034: ldloc.0
+  IL_0035: callvirt System.Single Monocle.Camera::get_Left()
+  IL_003a: sub
+  IL_003b: conv.i4
+  IL_003c: ldloc.0
+  IL_003d: callvirt System.Single Monocle.Camera::get_Bottom()
+  IL_0042: ldloc.0
+  IL_0043: callvirt System.Single Monocle.Camera::get_Top()
+  IL_0048: sub
+  IL_0049: conv.i4
+  IL_004a: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_004f: pop
+  IL_0050: ldarg.0
+  IL_0051: ldfld System.Collections.Generic.List`1<Celeste.Lightning> Celeste.LightningRenderer::list
+  IL_0056: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Lightning>::GetEnumerator()
+  IL_005b: stloc.1
+  IL_005c: br.s IL_00b1
+  IL_005e: ldloca.s V_1
+  IL_0060: call T System.Collections.Generic.List`1/Enumerator<Celeste.Lightning>::get_Current()
+  IL_0065: stloc.2
+  IL_0066: ldloc.2
+  IL_0067: ldfld System.Boolean Monocle.Entity::Visible
++ IL_0000: ldloc.2 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedLightning(System.Boolean,Celeste.Lightning) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
+  IL_006c: brfalse.s IL_00b1
+  IL_006e: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0073: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Lightning
+  IL_0078: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_007d: ldloc.2
+  IL_007e: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0083: ldloc.2
+  IL_0084: callvirt System.Single Monocle.Entity::get_X()
+  IL_0089: conv.i4
+  IL_008a: ldloc.2
+  IL_008b: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0090: conv.i4
+  IL_0091: ldloc.2
+  IL_0092: ldfld System.Int32 Celeste.Lightning::VisualWidth
+  IL_0097: ldloc.2
+  IL_0098: ldfld System.Int32 Celeste.Lightning::VisualHeight
+  IL_009d: newobj System.Void Microsoft.Xna.Framework.Rectangle::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)
+  IL_00a2: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Rectangle>::.ctor(T)
+  IL_00a7: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00ac: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color)
+  IL_00b1: ldloca.s V_1
+  IL_00b3: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Lightning>::MoveNext()
+  IL_00b8: brtrue.s IL_005e
+  IL_00ba: leave.s IL_00ca
+  IL_00bc: ldloca.s V_1
+  IL_00be: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Lightning>
+  IL_00c4: callvirt System.Void System.IDisposable::Dispose()
+  IL_00c9: endfinally
+  IL_00ca: ldarg.0
+  IL_00cb: ldfld System.Collections.Generic.List`1<Celeste.LightningRenderer/Edge> Celeste.LightningRenderer::edges
+  IL_00d0: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.LightningRenderer/Edge>::get_Count()
+  IL_00d5: ldc.i4.0
+  IL_00d6: ble IL_027a
+  IL_00db: ldarg.0
+  IL_00dc: ldfld System.Boolean Celeste.LightningRenderer::DrawEdges
++ IL_0000: ldc.i4 2698 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: ldc.i4 19220449 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
+  |-> retrieves System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature/<>c::<LightningRenderer_RenderIL>b__46_3(System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
+  IL_00e1: brfalse IL_027a
+  IL_00e6: ldc.i4.0
+  IL_00e7: stloc.s V_5
+  IL_00e9: br.s IL_011b
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColorsLerped
+  IL_00f1: ldloc.s V_5
+  IL_00f3: ldarg.0
+  IL_00f4: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColors
+  IL_00f9: ldloc.s V_5
+  IL_00fb: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0100: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0105: ldarg.0
+  IL_0106: ldfld System.Single Celeste.LightningRenderer::Fade
+  IL_010b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Lerp(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)
+  IL_0110: stelem.any Microsoft.Xna.Framework.Color
+  IL_0115: ldloc.s V_5
+  IL_0117: ldc.i4.1
+  IL_0118: add
+  IL_0119: stloc.s V_5
+  IL_011b: ldloc.s V_5
+  IL_011d: ldarg.0
+  IL_011e: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColorsLerped
+  IL_0123: ldlen
+  IL_0124: conv.i4
+  IL_0125: blt.s IL_00eb
+  IL_0127: ldc.i4.0
+  IL_0128: stloc.3
+  IL_0129: ldarg.0
+  IL_012a: ldfld System.UInt32 Celeste.LightningRenderer::leapSeed
+  IL_012f: stloc.s V_4
+  IL_0131: ldarg.0
+  IL_0132: ldfld System.Collections.Generic.List`1<Celeste.LightningRenderer/Edge> Celeste.LightningRenderer::edges
+  IL_0137: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.LightningRenderer/Edge>::GetEnumerator()
+  IL_013c: stloc.s V_6
+  IL_013e: br IL_023c
+  IL_0143: ldloca.s V_6
+  IL_0145: call T System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Edge>::get_Current()
+  IL_014a: stloc.s V_7
+  IL_014c: ldloc.s V_7
+  IL_014e: ldfld System.Boolean Celeste.LightningRenderer/Edge::Visible
+  IL_0153: brfalse IL_023c
+  IL_0158: ldloca.s V_3
+  IL_015a: ldarg.0
+  IL_015b: ldflda Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.LightningRenderer::edgeVerts
+  IL_0160: ldarg.0
+  IL_0161: ldfld System.UInt32 Celeste.LightningRenderer::edgeSeed
+  IL_0166: ldloc.s V_7
+  IL_0168: ldfld Celeste.Lightning Celeste.LightningRenderer/Edge::Parent
+  IL_016d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0172: ldloc.s V_7
+  IL_0174: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::A
+  IL_0179: ldloc.s V_7
+  IL_017b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::B
+  IL_0180: ldarg.0
+  IL_0181: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColorsLerped
+  IL_0186: ldc.i4.0
+  IL_0187: ldelem.any Microsoft.Xna.Framework.Color
+  IL_018c: ldc.r4 1
+  IL_0191: ldarg.0
+  IL_0192: ldfld System.Single Celeste.LightningRenderer::Fade
+  IL_0197: ldc.r4 3
+  IL_019c: mul
+  IL_019d: add
+  IL_019e: call System.Void Celeste.LightningRenderer::DrawSimpleLightning(System.Int32&,Microsoft.Xna.Framework.Graphics.VertexPositionColor[]&,System.UInt32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_01a3: ldloca.s V_3
+  IL_01a5: ldarg.0
+  IL_01a6: ldflda Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.LightningRenderer::edgeVerts
+  IL_01ab: ldarg.0
+  IL_01ac: ldfld System.UInt32 Celeste.LightningRenderer::edgeSeed
+  IL_01b1: ldc.i4.1
+  IL_01b2: add
+  IL_01b3: ldloc.s V_7
+  IL_01b5: ldfld Celeste.Lightning Celeste.LightningRenderer/Edge::Parent
+  IL_01ba: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01bf: ldloc.s V_7
+  IL_01c1: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::A
+  IL_01c6: ldloc.s V_7
+  IL_01c8: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::B
+  IL_01cd: ldarg.0
+  IL_01ce: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColorsLerped
+  IL_01d3: ldc.i4.1
+  IL_01d4: ldelem.any Microsoft.Xna.Framework.Color
+  IL_01d9: ldc.r4 1
+  IL_01de: ldarg.0
+  IL_01df: ldfld System.Single Celeste.LightningRenderer::Fade
+  IL_01e4: ldc.r4 3
+  IL_01e9: mul
+  IL_01ea: add
+  IL_01eb: call System.Void Celeste.LightningRenderer::DrawSimpleLightning(System.Int32&,Microsoft.Xna.Framework.Graphics.VertexPositionColor[]&,System.UInt32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
+  IL_01f0: ldloca.s V_4
+  IL_01f2: call System.UInt32 Celeste.LightningRenderer::PseudoRand(System.UInt32&)
+  IL_01f7: ldc.i4.s 30
+  IL_01f9: rem.un
+  IL_01fa: brtrue.s IL_023c
+  IL_01fc: ldloca.s V_3
+  IL_01fe: ldarg.0
+  IL_01ff: ldflda Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.LightningRenderer::edgeVerts
+  IL_0204: ldarg.0
+  IL_0205: ldfld System.UInt32 Celeste.LightningRenderer::edgeSeed
+  IL_020a: ldloc.s V_7
+  IL_020c: ldfld Celeste.Lightning Celeste.LightningRenderer/Edge::Parent
+  IL_0211: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0216: ldloc.s V_7
+  IL_0218: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::A
+  IL_021d: ldloc.s V_7
+  IL_021f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LightningRenderer/Edge::B
+  IL_0224: ldc.r4 24
+  IL_0229: ldc.i4.s 10
+  IL_022b: ldarg.0
+  IL_022c: ldfld Microsoft.Xna.Framework.Color[] Celeste.LightningRenderer::electricityColorsLerped
+  IL_0231: ldc.i4.1
+  IL_0232: ldelem.any Microsoft.Xna.Framework.Color
+  IL_0237: call System.Void Celeste.LightningRenderer::DrawBezierLightning(System.Int32&,Microsoft.Xna.Framework.Graphics.VertexPositionColor[]&,System.UInt32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Int32,Microsoft.Xna.Framework.Color)
+  IL_023c: ldloca.s V_6
+  IL_023e: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Edge>::MoveNext()
+  IL_0243: brtrue IL_0143
+  IL_0248: leave.s IL_0258
+  IL_024a: ldloca.s V_6
+  IL_024c: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.LightningRenderer/Edge>
+  IL_0252: callvirt System.Void System.IDisposable::Dispose()
+  IL_0257: endfinally
+  IL_0258: ldloc.3
+  IL_0259: ldc.i4.0
+  IL_025a: ble.s IL_027a
+  IL_025c: call System.Void Celeste.GameplayRenderer::End()
+  IL_0261: ldloc.0
+  IL_0262: callvirt Microsoft.Xna.Framework.Matrix Monocle.Camera::get_Matrix()
+  IL_0267: ldarg.0
+  IL_0268: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.LightningRenderer::edgeVerts
+  IL_026d: ldloc.3
+  IL_026e: ldnull
+  IL_026f: ldnull
+  IL_0270: call System.Void Celeste.GFX::DrawVertices<Microsoft.Xna.Framework.Graphics.VertexPositionColor>(Microsoft.Xna.Framework.Matrix,T[],System.Int32,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Graphics.BlendState)
+  IL_0275: call System.Void Celeste.GameplayRenderer::Begin()
+  IL_027a: ret

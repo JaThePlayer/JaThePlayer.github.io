@@ -1,0 +1,86 @@
+IL Diff: System.Void Celeste.Strawberry::OnPlayer(Celeste.Player)
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_0006: ldfld Celeste.Leader Celeste.Follower::Leader
+  IL_000b: brtrue IL_00e9
+  IL_0010: ldarg.0
+  IL_0011: ldfld System.Boolean Celeste.Strawberry::collected
+  IL_0016: brtrue IL_00e9
+  IL_001b: ldarg.0
+  IL_001c: ldfld System.Boolean Celeste.Strawberry::WaitingOnSeeds
+  IL_0021: brtrue IL_00e9
+  IL_0026: ldarg.0
+  IL_0027: ldc.i4.1
+  IL_0028: stfld System.Boolean Celeste.Strawberry::ReturnHomeWhenLost
+  IL_002d: ldarg.0
+  IL_002e: callvirt System.Boolean Celeste.Strawberry::get_Winged()
+  IL_0033: brfalse.s IL_0084
+  IL_0035: newobj System.Void Celeste.Strawberry/<>c__DisplayClass44_0::.ctor()
+  IL_003a: stloc.0
+  IL_003b: ldloc.0
+  IL_003c: ldarg.0
+  IL_003d: stfld Celeste.Strawberry Celeste.Strawberry/<>c__DisplayClass44_0::<>4__this
+  IL_0042: ldloc.0
+  IL_0043: ldarg.0
+  IL_0044: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0049: stfld Celeste.Level Celeste.Strawberry/<>c__DisplayClass44_0::level
+  IL_004e: ldarg.0
+  IL_004f: ldc.i4.0
+  IL_0050: callvirt System.Void Celeste.Strawberry::set_Winged(System.Boolean)
+  IL_0055: ldarg.0
+  IL_0056: ldfld Monocle.Sprite Celeste.Strawberry::sprite
+  IL_005b: ldc.r4 0
+  IL_0060: stfld System.Single Monocle.Sprite::Rate
+  IL_0065: ldarg.0
+  IL_0066: ldarg.0
+  IL_0067: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_006c: ldfld System.Single Celeste.Follower::FollowDelay
+  IL_0071: ldloc.0
+  IL_0072: ldftn System.Void Celeste.Strawberry/<>c__DisplayClass44_0::<OnPlayer>b__0()
+  IL_0078: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_007d: ldc.i4.1
+  IL_007e: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_0083: pop
+  IL_0084: ldarg.0
+  IL_0085: callvirt System.Boolean Celeste.Strawberry::get_Golden()
+  IL_008a: brfalse.s IL_00a2
+  IL_008c: ldarg.0
+  IL_008d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0092: isinst Celeste.Level
+  IL_0097: ldfld Celeste.Session Celeste.Level::Session
+  IL_009c: ldc.i4.1
+  IL_009d: stfld System.Boolean Celeste.Session::GrabbedGolden
+  IL_00a2: ldarg.0
+  IL_00a3: ldfld System.Boolean Celeste.Strawberry::isGhostBerry
+  IL_00a8: brtrue.s IL_00b1
+  IL_00aa: ldstr "event:/game/general/strawberry_touch"
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_0000: ldc.i4 66844709 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.SecretBerry/<>c__DisplayClass3_1::<replaceStrawberryStrings>b__6(System.String,Celeste.Strawberry)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Strawberry>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
+  IL_00af: br.s IL_00b6
+  IL_00b1: ldstr "event:/game/general/strawberry_blue_touch"
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_0000: ldc.i4 24851873 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.SecretBerry/<>c__DisplayClass3_1::<replaceStrawberryStrings>b__6(System.String,Celeste.Strawberry)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Strawberry>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
++ IL_00b6: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.SecretBerry::replaceStrawberryStrings
+  IL_00b7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00bc: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_00c1: pop
+  IL_00c2: ldarg.1
+  IL_00c3: ldfld Celeste.Leader Celeste.Player::Leader
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld Celeste.Follower Celeste.Strawberry::Follower
+  IL_00ce: callvirt System.Void Celeste.Leader::GainFollower(Celeste.Follower)
+  IL_00d3: ldarg.0
+  IL_00d4: ldfld Monocle.Wiggler Celeste.Strawberry::wiggler
+  IL_00d9: callvirt System.Void Monocle.Wiggler::Start()
+  IL_00de: ldarg.0
+  IL_00df: ldc.i4 -1000000
+  IL_00e4: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_00e9: ret

@@ -1,0 +1,568 @@
+IL Diff: System.Boolean Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldloc.0
+  IL_0008: switch IL_003b,IL_003d,IL_003f,IL_0044,IL_0049,IL_004e,IL_0053,IL_0058,IL_005d,IL_0062,IL_0067
+  IL_0039: br.s IL_006c
+  IL_003b: br.s IL_006e
+  IL_003d: br.s IL_0089
+  IL_003f: br IL_00e2
+  IL_0044: br IL_014b
+  IL_0049: br IL_0170
+  IL_004e: br IL_03b6
+  IL_0053: br IL_03dc
+  IL_0058: br IL_043c
+  IL_005d: br IL_0591
+  IL_0062: br IL_05d7
+  IL_0067: br IL_0640
+  IL_006c: ldc.i4.0
+  IL_006d: ret
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4.m1
+  IL_0070: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0075: nop
+  IL_0076: br.s IL_0091
+  IL_0078: nop
+  IL_0079: ldarg.0
+  IL_007a: ldnull
+  IL_007b: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0080: ldarg.0
+  IL_0081: ldc.i4.1
+  IL_0082: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0087: ldc.i4.1
+  IL_0088: ret
+  IL_0089: ldarg.0
+  IL_008a: ldc.i4.m1
+  IL_008b: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0090: nop
+  IL_0091: ldarg.0
+  IL_0092: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0097: ldfld System.Boolean Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::Triggered
+  IL_009c: brtrue.s IL_00ae
+  IL_009e: ldarg.0
+  IL_009f: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_00a4: callvirt System.Boolean Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::PlayerFallCheck()
+  IL_00a9: ldc.i4.0
+  IL_00aa: ceq
+  IL_00ac: br.s IL_00af
+  IL_00ae: ldc.i4.0
+  IL_00af: stloc.1
+  IL_00b0: ldloc.1
+  IL_00b1: brtrue.s IL_0078
+  IL_00b3: br.s IL_00ea
+  IL_00b5: nop
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_00bc: ldarg.0
+  IL_00bd: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_00c2: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::FallDelay
+  IL_00c7: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_00cc: sub
+  IL_00cd: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::FallDelay
+  IL_00d2: ldarg.0
+  IL_00d3: ldnull
+  IL_00d4: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_00d9: ldarg.0
+  IL_00da: ldc.i4.2
+  IL_00db: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_00e0: ldc.i4.1
+  IL_00e1: ret
+  IL_00e2: ldarg.0
+  IL_00e3: ldc.i4.m1
+  IL_00e4: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_00e9: nop
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_00f0: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::FallDelay
+  IL_00f5: ldc.r4 0
+  IL_00fa: cgt
+  IL_00fc: stloc.2
+  IL_00fd: ldloc.2
+  IL_00fe: brtrue.s IL_00b5
+  IL_0100: ldarg.0
+  IL_0101: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0106: ldc.i4.1
+  IL_0107: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::set_HasStartedFalling(System.Boolean)
+  IL_010c: nop
+  IL_010d: ldarg.0
+  IL_010e: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0113: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::ShakeSfx()
+  IL_0118: nop
+  IL_0119: ldarg.0
+  IL_011a: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_011f: ldc.r4 0
+  IL_0124: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_0129: nop
+  IL_012a: ldc.i4.1
+  IL_012b: ldc.i4.1
+  IL_012c: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0131: nop
+  IL_0132: ldarg.0
+  IL_0133: ldc.r4 0.2
+  IL_0138: box System.Single
+  IL_013d: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0142: ldarg.0
+  IL_0143: ldc.i4.3
+  IL_0144: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0149: ldc.i4.1
+  IL_014a: ret
+  IL_014b: ldarg.0
+  IL_014c: ldc.i4.m1
+  IL_014d: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0152: ldarg.0
+  IL_0153: ldc.r4 0.4
+  IL_0158: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<timer>5__1
+  IL_015d: br.s IL_018a
+  IL_015f: nop
+  IL_0160: ldarg.0
+  IL_0161: ldnull
+  IL_0162: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0167: ldarg.0
+  IL_0168: ldc.i4.4
+  IL_0169: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_016e: ldc.i4.1
+  IL_016f: ret
+  IL_0170: ldarg.0
+  IL_0171: ldc.i4.m1
+  IL_0172: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0177: ldarg.0
+  IL_0178: ldarg.0
+  IL_0179: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<timer>5__1
+  IL_017e: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0183: sub
+  IL_0184: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<timer>5__1
+  IL_0189: nop
+  IL_018a: ldarg.0
+  IL_018b: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<timer>5__1
+  IL_0190: ldc.r4 0
+  IL_0195: ble.un.s IL_01a4
+  IL_0197: ldarg.0
+  IL_0198: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_019d: callvirt System.Boolean Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::PlayerWaitCheck()
+  IL_01a2: br.s IL_01a5
+  IL_01a4: ldc.i4.0
+  IL_01a5: stloc.3
+  IL_01a6: ldloc.3
+  IL_01a7: brtrue.s IL_015f
+  IL_01a9: ldarg.0
+  IL_01aa: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_01af: callvirt System.Void Celeste.Platform::StopShaking()
+  IL_01b4: nop
+  IL_01b5: ldarg.0
+  IL_01b6: ldc.i4.2
+  IL_01b7: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_01bc: br IL_02ab
+  IL_01c1: nop
+  IL_01c2: ldarg.0
+  IL_01c3: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_01c8: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01cd: ldarg.0
+  IL_01ce: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_01d3: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_TopLeft()
+  IL_01d8: ldarg.0
+  IL_01d9: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_01de: conv.r4
+  IL_01df: ldc.r4 -2
+  IL_01e4: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01e9: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01ee: callvirt System.Boolean Monocle.Scene::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_01f3: stloc.s V_4
+  IL_01f5: ldloc.s V_4
+  IL_01f7: brfalse.s IL_024e
+  IL_01f9: nop
+  IL_01fa: ldarg.0
+  IL_01fb: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0200: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0205: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_020a: ldsfld Monocle.ParticleType Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::P_FallDustA
+  IL_020f: ldc.i4.2
+  IL_0210: ldarg.0
+  IL_0211: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0216: callvirt System.Single Monocle.Entity::get_X()
+  IL_021b: ldarg.0
+  IL_021c: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_0221: conv.r4
+  IL_0222: add
+  IL_0223: ldarg.0
+  IL_0224: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0229: callvirt System.Single Monocle.Entity::get_Y()
+  IL_022e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0233: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0238: ldc.r4 4
+  IL_023d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0242: ldc.r4 1.5707964
+  IL_0247: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_024c: nop
+  IL_024d: nop
+  IL_024e: ldarg.0
+  IL_024f: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0254: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0259: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_025e: ldsfld Monocle.ParticleType Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::P_FallDustB
+  IL_0263: ldc.i4.2
+  IL_0264: ldarg.0
+  IL_0265: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_026a: callvirt System.Single Monocle.Entity::get_X()
+  IL_026f: ldarg.0
+  IL_0270: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_0275: conv.r4
+  IL_0276: add
+  IL_0277: ldarg.0
+  IL_0278: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_027d: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0282: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0287: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_028c: ldc.r4 4
+  IL_0291: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0296: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_029b: nop
+  IL_029c: nop
+  IL_029d: ldarg.0
+  IL_029e: ldarg.0
+  IL_029f: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_02a4: ldc.i4.4
+  IL_02a5: add
+  IL_02a6: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_02ab: ldarg.0
+  IL_02ac: ldfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<i>5__5
+  IL_02b1: conv.r4
+  IL_02b2: ldarg.0
+  IL_02b3: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_02b8: callvirt System.Single Monocle.Entity::get_Width()
+  IL_02bd: clt
+  IL_02bf: stloc.s V_5
+  IL_02c1: ldloc.s V_5
+  IL_02c3: brtrue IL_01c1
+  IL_02c8: ldarg.0
+  IL_02c9: ldc.r4 0
+  IL_02ce: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<speed>5__2
+  IL_02d3: ldarg.0
+  IL_02d4: ldc.r4 160
+  IL_02d9: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<maxSpeed>5__3
+  IL_02de: br IL_0599
+  IL_02e3: nop
+  IL_02e4: ldarg.0
+  IL_02e5: ldarg.0
+  IL_02e6: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_02eb: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_02f0: stfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_02f5: ldarg.0
+  IL_02f6: ldarg.0
+  IL_02f7: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<speed>5__2
+  IL_02fc: ldarg.0
+  IL_02fd: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0302: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::angle
+  IL_0307: ldarg.0
+  IL_0308: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<maxSpeed>5__3
+  IL_030d: mul
+  IL_030e: ldc.r4 500
+  IL_0313: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0318: mul
+  IL_0319: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
+  IL_031e: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<speed>5__2
+  IL_0323: ldarg.0
+  IL_0324: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0329: ldarg.0
+  IL_032a: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<speed>5__2
+  IL_032f: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_0334: mul
+  IL_0335: ldc.i4.1
+  IL_0336: ldnull
+  IL_0337: callvirt System.Boolean Celeste.Platform::MoveVCollideSolids(System.Single,System.Boolean,System.Action`3<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Celeste.Platform>)
+  IL_033c: stloc.s V_6
+  IL_033e: ldloc.s V_6
+  IL_0340: brfalse IL_0481
+  IL_0345: nop
+  IL_0346: ldarg.0
+  IL_0347: ldc.r4 0
+  IL_034c: stfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<speed>5__2
+  IL_0351: ldarg.0
+  IL_0352: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0357: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::ImpactSfx()
+  IL_035c: nop
+  IL_035d: ldc.i4.2
+  IL_035e: ldc.i4.1
+  IL_035f: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0364: nop
+  IL_0365: ldarg.0
+  IL_0366: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_036b: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0370: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0375: ldc.r4 0.3
+  IL_037a: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_037f: nop
+  IL_0380: ldarg.0
+  IL_0381: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0386: ldc.r4 0
+  IL_038b: callvirt System.Void Celeste.Platform::StartShaking(System.Single)
+  IL_0390: nop
+  IL_0391: ldarg.0
+  IL_0392: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0397: callvirt System.Void Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::LandParticles()
+  IL_039c: nop
+  IL_039d: ldarg.0
+  IL_039e: ldc.r4 0.2
+  IL_03a3: box System.Single
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
++ IL_0000: ldc.i4 41597916 @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
+  |-> retrieves System.Object Celeste.Mod.SaladimHelper.ChronoHookModule/<>c::<SequenceHook>b__5_7(System.Object)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Object,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
+  IL_03a8: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_03ad: ldarg.0
+  IL_03ae: ldc.i4.5
+  IL_03af: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_03b4: ldc.i4.1
+  IL_03b5: ret
+  IL_03b6: ldarg.0
+  IL_03b7: ldc.i4.m1
+  IL_03b8: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_03bd: ldarg.0
+  IL_03be: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_03c3: callvirt System.Void Celeste.Platform::StopShaking()
+  IL_03c8: nop
+  IL_03c9: br.s IL_03e4
+  IL_03cb: nop
+  IL_03cc: ldarg.0
+  IL_03cd: ldnull
+  IL_03ce: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_03d3: ldarg.0
+  IL_03d4: ldc.i4.6
+  IL_03d5: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_03da: ldc.i4.1
+  IL_03db: ret
+  IL_03dc: ldarg.0
+  IL_03dd: ldc.i4.m1
+  IL_03de: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_03e3: nop
+  IL_03e4: ldarg.0
+  IL_03e5: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_03ea: ldarg.0
+  IL_03eb: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_03f0: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03f5: ldc.r4 0
+  IL_03fa: ldc.r4 1
+  IL_03ff: ldarg.0
+  IL_0400: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0405: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::angle
+  IL_040a: mul
+  IL_040b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0410: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0415: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.SolidTiles>(Microsoft.Xna.Framework.Vector2)
+  IL_041a: stloc.s V_7
+  IL_041c: ldloc.s V_7
+  IL_041e: brtrue.s IL_03cb
+  IL_0420: br.s IL_0444
+  IL_0422: nop
+  IL_0423: ldarg.0
+  IL_0424: ldc.r4 0.1
+  IL_0429: box System.Single
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
++ IL_0000: ldc.i4 26197193 @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
+  |-> retrieves System.Object Celeste.Mod.SaladimHelper.ChronoHookModule/<>c::<SequenceHook>b__5_2(System.Object)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Object,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SaladimHelper.ChronoHookModule::SequenceHook
+  IL_042e: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0433: ldarg.0
+  IL_0434: ldc.i4.7
+  IL_0435: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_043a: ldc.i4.1
+  IL_043b: ret
+  IL_043c: ldarg.0
+  IL_043d: ldc.i4.m1
+  IL_043e: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0443: nop
+  IL_0444: ldarg.0
+  IL_0445: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_044a: ldarg.0
+  IL_044b: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0450: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0455: ldc.r4 0
+  IL_045a: ldc.r4 1
+  IL_045f: ldarg.0
+  IL_0460: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0465: ldfld System.Single Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock::angle
+  IL_046a: mul
+  IL_046b: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0470: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0475: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Platform>(Microsoft.Xna.Framework.Vector2)
+  IL_047a: stloc.s V_8
+  IL_047c: ldloc.s V_8
+  IL_047e: brtrue.s IL_0422
+  IL_0480: nop
+  IL_0481: ldarg.0
+  IL_0482: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0487: callvirt System.Single Monocle.Entity::get_Top()
+  IL_048c: ldarg.0
+  IL_048d: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_0492: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0497: stloc.s V_10
+  IL_0499: ldloca.s V_10
+  IL_049b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_04a0: ldc.i4.s 16
+  IL_04a2: add
+  IL_04a3: conv.r4
+  IL_04a4: bgt IL_0577
+  IL_04a9: ldarg.0
+  IL_04aa: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_04af: callvirt System.Single Monocle.Entity::get_Top()
+  IL_04b4: ldarg.0
+  IL_04b5: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_04ba: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_04bf: stloc.s V_10
+  IL_04c1: ldloca.s V_10
+  IL_04c3: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Bottom()
+  IL_04c8: ldc.i4.1
+  IL_04c9: sub
+  IL_04ca: conv.r4
+  IL_04cb: ble.un.s IL_04fc
+  IL_04cd: ldarg.0
+  IL_04ce: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_04d3: ldarg.0
+  IL_04d4: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_04d9: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_04de: ldc.r4 0
+  IL_04e3: ldc.r4 1
+  IL_04e8: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_04ed: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_04f2: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_04f7: brtrue IL_0577
+  IL_04fc: ldarg.0
+  IL_04fd: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0502: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0507: ldarg.0
+  IL_0508: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_050d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0512: stloc.s V_10
+  IL_0514: ldloca.s V_10
+  IL_0516: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_051b: ldc.i4.s 16
+  IL_051d: sub
+  IL_051e: conv.r4
+  IL_051f: blt.s IL_0574
+  IL_0521: ldarg.0
+  IL_0522: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0527: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_052c: ldarg.0
+  IL_052d: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_0532: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0537: stloc.s V_10
+  IL_0539: ldloca.s V_10
+  IL_053b: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0540: ldc.i4.1
+  IL_0541: add
+  IL_0542: conv.r4
+  IL_0543: bge.un.s IL_0571
+  IL_0545: ldarg.0
+  IL_0546: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_054b: ldarg.0
+  IL_054c: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0551: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0556: ldc.r4 0
+  IL_055b: ldc.r4 -1
+  IL_0560: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0565: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_056a: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>(Microsoft.Xna.Framework.Vector2)
+  IL_056f: br.s IL_0572
+  IL_0571: ldc.i4.0
+  IL_0572: br.s IL_0575
+  IL_0574: ldc.i4.1
+  IL_0575: br.s IL_0578
+  IL_0577: ldc.i4.1
+  IL_0578: stloc.s V_9
+  IL_057a: ldloc.s V_9
+  IL_057c: brfalse.s IL_0581
+  IL_057e: nop
+  IL_057f: br.s IL_05a1
+  IL_0581: ldarg.0
+  IL_0582: ldnull
+  IL_0583: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0588: ldarg.0
+  IL_0589: ldc.i4.8
+  IL_058a: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_058f: ldc.i4.1
+  IL_0590: ret
+  IL_0591: ldarg.0
+  IL_0592: ldc.i4.m1
+  IL_0593: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0598: nop
+  IL_0599: ldc.i4.1
+  IL_059a: stloc.s V_11
+  IL_059c: br IL_02e3
+  IL_05a1: ldarg.0
+  IL_05a2: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_05a7: ldarg.0
+  IL_05a8: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_05ad: ldc.i4.0
+  IL_05ae: dup
+  IL_05af: stloc.s V_12
+  IL_05b1: stfld System.Boolean Monocle.Entity::Visible
+  IL_05b6: ldloc.s V_12
+  IL_05b8: stfld System.Boolean Monocle.Entity::Collidable
+  IL_05bd: ldarg.0
+  IL_05be: ldc.r4 0.2
+  IL_05c3: box System.Single
+  IL_05c8: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_05cd: ldarg.0
+  IL_05ce: ldc.i4.s 9
+  IL_05d0: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_05d5: ldc.i4.1
+  IL_05d6: ret
+  IL_05d7: ldarg.0
+  IL_05d8: ldc.i4.m1
+  IL_05d9: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_05de: ldarg.0
+  IL_05df: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_05e4: ldfld Celeste.Session Celeste.Level::Session
+  IL_05e9: callvirt Celeste.MapData Celeste.Session::get_MapData()
+  IL_05ee: ldarg.0
+  IL_05ef: ldfld Celeste.Level Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<level>5__4
+  IL_05f4: ldarg.0
+  IL_05f5: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_05fa: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_05ff: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0604: ldarg.0
+  IL_0605: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_060a: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_060f: ldc.r4 12
+  IL_0614: add
+  IL_0615: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_061a: callvirt System.Boolean Celeste.MapData::CanTransitionTo(Celeste.Level,Microsoft.Xna.Framework.Vector2)
+  IL_061f: stloc.s V_13
+  IL_0621: ldloc.s V_13
+  IL_0623: brfalse.s IL_0666
+  IL_0625: nop
+  IL_0626: ldarg.0
+  IL_0627: ldc.r4 0.2
+  IL_062c: box System.Single
+  IL_0631: stfld System.Object Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>2__current
+  IL_0636: ldarg.0
+  IL_0637: ldc.i4.s 10
+  IL_0639: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_063e: ldc.i4.1
+  IL_063f: ret
+  IL_0640: ldarg.0
+  IL_0641: ldc.i4.m1
+  IL_0642: stfld System.Int32 Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>1__state
+  IL_0647: ldarg.0
+  IL_0648: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_064d: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0652: ldc.r4 0.3
+  IL_0657: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_065c: nop
+  IL_065d: ldc.i4.2
+  IL_065e: ldc.i4.1
+  IL_065f: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0664: nop
+  IL_0665: nop
+  IL_0666: ldarg.0
+  IL_0667: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_066c: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0671: nop
+  IL_0672: ldarg.0
+  IL_0673: ldfld Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock Celeste.Mod.ChronoHelper.Entities.GravityFallingBlock/<Sequence>d__23::<>4__this
+  IL_0678: callvirt System.Void Celeste.Platform::DestroyStaticMovers()
+  IL_067d: nop
+  IL_067e: ldc.i4.0
+  IL_067f: ret

@@ -1,0 +1,190 @@
+IL Diff: System.Void Celeste.TouchSwitch::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0006: ldstr "objects/touchswitch/container"
+  IL_000b: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0010: stfld Monocle.MTexture Celeste.TouchSwitch::border
+  IL_0015: ldarg.0
+  IL_0016: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_001b: ldstr "objects/touchswitch/icon"
++ IL_0000: ldc.i4 2698 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableTouchSwitch::modTouchSwitchConstructor
++ IL_0000: ldc.i4 28735057 @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableTouchSwitch::modTouchSwitchConstructor
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableTouchSwitch::modTouchSwitchConstructor
+  |-> retrieves System.String Celeste.Mod.MaxHelpingHand.Entities.ReskinnableTouchSwitch/<>c::<modTouchSwitchConstructor>b__4_0(System.String)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Entities.ReskinnableTouchSwitch::modTouchSwitchConstructor
+  IL_0020: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_0025: stfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_002a: ldarg.0
+  IL_002b: ldstr "5fcde4"
+  IL_0030: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0035: stfld Microsoft.Xna.Framework.Color Celeste.TouchSwitch::inactiveColor
+  IL_003a: ldarg.0
+  IL_003b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0040: stfld Microsoft.Xna.Framework.Color Celeste.TouchSwitch::activeColor
+  IL_0045: ldarg.0
+  IL_0046: ldstr "f141df"
+  IL_004b: call Microsoft.Xna.Framework.Color Monocle.Calc::HexToColor(System.String)
+  IL_0050: stfld Microsoft.Xna.Framework.Color Celeste.TouchSwitch::finishColor
+  IL_0055: ldarg.0
+  IL_0056: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_005b: stfld Microsoft.Xna.Framework.Vector2 Celeste.TouchSwitch::pulse
+  IL_0060: ldarg.0
+  IL_0061: ldarg.1
+  IL_0062: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0067: ldarg.0
+  IL_0068: ldc.i4 2000
+  IL_006d: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0072: ldarg.0
+  IL_0073: ldarg.0
+  IL_0074: ldc.i4.0
+  IL_0075: newobj System.Void Celeste.Switch::.ctor(System.Boolean)
+  IL_007a: dup
+  IL_007b: stloc.0
+  IL_007c: stfld Celeste.Switch Celeste.TouchSwitch::Switch
+  IL_0081: ldloc.0
+  IL_0082: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0087: ldarg.0
+  IL_0088: ldarg.0
+  IL_0089: ldftn System.Void Celeste.TouchSwitch::OnPlayer(Celeste.Player)
+  IL_008f: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
+  IL_0094: ldnull
+  IL_0095: ldc.r4 30
+  IL_009a: ldc.r4 30
+  IL_009f: ldc.r4 -15
+  IL_00a4: ldc.r4 -15
+  IL_00a9: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_00ae: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
+  IL_00b3: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b8: ldarg.0
+  IL_00b9: ldarg.0
+  IL_00ba: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_00bf: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00c4: ldarg.0
+  IL_00c5: ldarg.0
+  IL_00c6: ldc.r4 0
+  IL_00cb: ldc.r4 16
+  IL_00d0: newobj System.Void Celeste.BloomPoint::.ctor(System.Single,System.Single)
+  IL_00d5: dup
+  IL_00d6: stloc.1
+  IL_00d7: stfld Celeste.BloomPoint Celeste.TouchSwitch::bloom
+  IL_00dc: ldloc.1
+  IL_00dd: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00e2: ldarg.0
+  IL_00e3: ldfld Celeste.BloomPoint Celeste.TouchSwitch::bloom
+  IL_00e8: ldc.r4 0
+  IL_00ed: stfld System.Single Celeste.BloomPoint::Alpha
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_00f8: ldstr "idle"
+  IL_00fd: ldstr ""
+  IL_0102: ldc.r4 0
+  IL_0107: ldc.i4.1
+  IL_0108: newarr System.Int32
+  IL_010d: callvirt System.Void Monocle.Sprite::Add(System.String,System.String,System.Single,System.Int32[])
+  IL_0112: ldarg.0
+  IL_0113: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_0118: ldstr "spin"
+  IL_011d: ldstr ""
+  IL_0122: ldc.r4 0.1
+  IL_0127: ldstr "spin"
+  IL_012c: ldc.r4 1
+  IL_0131: newobj System.Void Monocle.Chooser`1<System.String>::.ctor(T,System.Single)
+  IL_0136: ldc.i4.6
+  IL_0137: newarr System.Int32
+  IL_013c: dup
+  IL_013d: ldtoken <PrivateImplementationDetails>/__StaticArrayInitTypeSize=24 <PrivateImplementationDetails>::DB17E883A647963A26D973378923EF4649801319
+  IL_0142: call System.Void System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+  IL_0147: callvirt System.Void Monocle.Sprite::Add(System.String,System.String,System.Single,Monocle.Chooser`1<System.String>,System.Int32[])
+  IL_014c: ldarg.0
+  IL_014d: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_0152: ldstr "spin"
+  IL_0157: ldc.i4.0
+  IL_0158: ldc.i4.0
+  IL_0159: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_015e: ldarg.0
+  IL_015f: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_0164: ldarg.0
+  IL_0165: ldfld Microsoft.Xna.Framework.Color Celeste.TouchSwitch::inactiveColor
+  IL_016a: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_016f: ldarg.0
+  IL_0170: ldfld Monocle.Sprite Celeste.TouchSwitch::icon
+  IL_0175: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_017a: pop
+  IL_017b: ldarg.0
+  IL_017c: ldc.r4 16
+  IL_0181: ldc.r4 16
+  IL_0186: ldc.r4 -8
+  IL_018b: ldc.r4 -8
+  IL_0190: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_0195: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
+  IL_019a: ldarg.0
+  IL_019b: ldarg.0
+  IL_019c: ldftn System.Void Celeste.TouchSwitch::OnHoldable(Celeste.Holdable)
+  IL_01a2: newobj System.Void System.Action`1<Celeste.Holdable>::.ctor(System.Object,System.IntPtr)
+  IL_01a7: ldc.r4 20
+  IL_01ac: ldc.r4 20
+  IL_01b1: ldc.r4 -10
+  IL_01b6: ldc.r4 -10
+  IL_01bb: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_01c0: newobj System.Void Celeste.HoldableCollider::.ctor(System.Action`1<Celeste.Holdable>,Monocle.Collider)
+  IL_01c5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01ca: ldarg.0
+  IL_01cb: ldarg.0
+  IL_01cc: ldftn System.Void Celeste.TouchSwitch::OnSeeker(Celeste.Seeker)
+  IL_01d2: newobj System.Void System.Action`1<Celeste.Seeker>::.ctor(System.Object,System.IntPtr)
+  IL_01d7: ldc.r4 24
+  IL_01dc: ldc.r4 24
+  IL_01e1: ldc.r4 -12
+  IL_01e6: ldc.r4 -12
+  IL_01eb: newobj System.Void Monocle.Hitbox::.ctor(System.Single,System.Single,System.Single,System.Single)
+  IL_01f0: newobj System.Void Celeste.SeekerCollider::.ctor(System.Action`1<Celeste.Seeker>,Monocle.Collider)
+  IL_01f5: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01fa: ldarg.0
+  IL_01fb: ldfld Celeste.Switch Celeste.TouchSwitch::Switch
+  IL_0200: ldarg.0
+  IL_0201: ldftn System.Void Celeste.TouchSwitch::<.ctor>b__16_0()
+  IL_0207: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_020c: stfld System.Action Celeste.Switch::OnActivate
+  IL_0211: ldarg.0
+  IL_0212: ldfld Celeste.Switch Celeste.TouchSwitch::Switch
+  IL_0217: ldarg.0
+  IL_0218: ldftn System.Void Celeste.TouchSwitch::<.ctor>b__16_1()
+  IL_021e: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0223: stfld System.Action Celeste.Switch::OnFinish
+  IL_0228: ldarg.0
+  IL_0229: ldfld Celeste.Switch Celeste.TouchSwitch::Switch
+  IL_022e: ldarg.0
+  IL_022f: ldftn System.Void Celeste.TouchSwitch::<.ctor>b__16_2()
+  IL_0235: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_023a: stfld System.Action Celeste.Switch::OnStartFinished
+  IL_023f: ldarg.0
+  IL_0240: ldarg.0
+  IL_0241: ldc.r4 0.5
+  IL_0246: ldc.r4 4
+  IL_024b: ldarg.0
+  IL_024c: ldftn System.Void Celeste.TouchSwitch::<.ctor>b__16_3(System.Single)
+  IL_0252: newobj System.Void System.Action`1<System.Single>::.ctor(System.Object,System.IntPtr)
+  IL_0257: ldc.i4.0
+  IL_0258: ldc.i4.0
+  IL_0259: call Monocle.Wiggler Monocle.Wiggler::Create(System.Single,System.Single,System.Action`1<System.Single>,System.Boolean,System.Boolean)
+  IL_025e: dup
+  IL_025f: stloc.2
+  IL_0260: stfld Monocle.Wiggler Celeste.TouchSwitch::wiggler
+  IL_0265: ldloc.2
+  IL_0266: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_026b: ldarg.0
+  IL_026c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0271: ldc.r4 0.8
+  IL_0276: ldc.i4.s 16
+  IL_0278: ldc.i4.s 32
+  IL_027a: newobj System.Void Celeste.VertexLight::.ctor(Microsoft.Xna.Framework.Color,System.Single,System.Int32,System.Int32)
+  IL_027f: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0284: ldarg.0
+  IL_0285: ldarg.0
+  IL_0286: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_028b: dup
+  IL_028c: stloc.3
+  IL_028d: stfld Celeste.SoundSource Celeste.TouchSwitch::touchSfx
+  IL_0292: ldloc.3
+  IL_0293: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0298: ret

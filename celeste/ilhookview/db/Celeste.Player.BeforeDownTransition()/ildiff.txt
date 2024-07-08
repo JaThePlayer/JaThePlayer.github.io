@@ -1,0 +1,88 @@
+IL Diff: System.Void Celeste.Player::BeforeDownTransition()
+  IL_0000: ldarg.0
++ IL_0000: ldc.i4 2882 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
++ IL_0000: ldc.i4 62816214 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
+  |-> retrieves System.Boolean Celeste.Mod.GravityHelper.Hooks.PlayerHooks/<>c::<Player_BeforeDownTransition>b__11_1(Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
++ IL_0000: brfalse.s IL_0000 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
++ IL_0000: ret @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
++ IL_0000: ldarg.0 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_BeforeDownTransition
+  IL_0001: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0006: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_000b: ldc.i4.5
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: ldc.i4 2698 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_0
++ IL_0000: ldc.i4 9936165 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_0
+  |-> retrieves System.Int32 VivHelper.Entities.Boosters.BoostFunctions/<>c::<TranslateRedDash>b__2_0(System.Int32,Celeste.Player)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Int32,System.Int32,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_0
++ IL_0000: ldarg.0 @ VivHelper.Entities.Boosters.BoostFunctions+<>c::<Load>b__0_0
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetRedDashState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_000c: beq.s IL_006a
+  IL_000e: ldarg.0
+  IL_000f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0014: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0019: ldc.i4.s 18
+  IL_001b: beq.s IL_006a
+  IL_001d: ldarg.0
+  IL_001e: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0023: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0028: ldc.i4.s 19
++ IL_0000: ldarg.0 @ FrostHelper.CustomFeather::modFeatherState
++ IL_0000: call System.Int32 FrostHelper.FrostModule::GetFeatherState(System.Int32,Celeste.Player) @ FrostHelper.CustomFeather::modFeatherState
+  IL_002a: beq.s IL_006a
+  IL_002c: ldarg.0
+  IL_002d: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0032: ldc.i4.0
+  IL_0033: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0038: ldarg.0
+  IL_0039: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_003e: ldc.r4 0
+  IL_0043: ldarg.0
+  IL_0044: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
+  IL_0049: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_004e: call System.Single System.Math::Max(System.Single,System.Single)
+  IL_0053: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0058: ldarg.0
+  IL_0059: ldc.i4.0
+  IL_005a: stfld System.Boolean Celeste.Player::AutoJump
+  IL_005f: ldarg.0
+  IL_0060: ldc.r4 0
+  IL_0065: stfld System.Single Celeste.Player::varJumpTimer
+  IL_006a: ldarg.0
+  IL_006b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0070: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0075: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Platform>()
+  IL_007a: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_007f: stloc.0
+  IL_0080: br.s IL_00bd
+  IL_0082: ldloca.s V_0
+  IL_0084: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0089: stloc.1
+  IL_008a: ldloc.1
+  IL_008b: isinst Celeste.SolidTiles
+  IL_0090: brtrue.s IL_00bd
+  IL_0092: ldarg.0
+  IL_0093: ldloc.1
+  IL_0094: ldarg.0
+  IL_0095: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_009a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_009f: ldarg.0
+  IL_00a0: call System.Single Monocle.Entity::get_Height()
+  IL_00a5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00aa: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00af: call System.Boolean Monocle.Entity::CollideCheckOutside(Monocle.Entity,Microsoft.Xna.Framework.Vector2)
+  IL_00b4: brfalse.s IL_00bd
+  IL_00b6: ldloc.1
+  IL_00b7: ldc.i4.0
+  IL_00b8: stfld System.Boolean Monocle.Entity::Collidable
+  IL_00bd: ldloca.s V_0
+  IL_00bf: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_00c4: brtrue.s IL_0082
+  IL_00c6: leave.s IL_00d6
+  IL_00c8: ldloca.s V_0
+  IL_00ca: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_00d0: callvirt System.Void System.IDisposable::Dispose()
+  IL_00d5: endfinally
+  IL_00d6: ret
