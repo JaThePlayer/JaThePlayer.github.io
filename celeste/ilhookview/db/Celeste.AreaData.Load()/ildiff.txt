@@ -540,7 +540,7 @@ IL Diff: System.Void Celeste.AreaData::Load()
   IL_062d: blt IL_0494
   IL_0632: ldc.i4.0
   IL_0633: stloc.s V_36
-  IL_0635: br IL_0810
+  IL_0635: br IL_080f
   IL_063a: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
   IL_063f: ldloc.s V_36
   IL_0641: callvirt T System.Collections.Generic.List`1<Celeste.AreaData>::get_Item(System.Int32)
@@ -576,142 +576,141 @@ IL Diff: System.Void Celeste.AreaData::Load()
   IL_0689: ldflda Celeste.ModeProperties[] Celeste.AreaData::Mode
   IL_068e: ldloc.s V_38
   IL_0690: call System.Void System.Array::Resize<Celeste.ModeProperties>(T[]&,System.Int32)
-  IL_0695: ldc.i4.0
-  IL_0696: ldstr "AreaData"
-  IL_069b: ldstr "{0}: {1} - {2} sides"
-  IL_06a0: ldloc.s V_36
-  IL_06a2: box System.Int32
-  IL_06a7: ldloc.s V_37
-  IL_06a9: ldfld System.String Celeste.AreaData::SID
-  IL_06ae: ldloc.s V_37
-  IL_06b0: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_06b5: ldlen
-  IL_06b6: conv.i4
-  IL_06b7: box System.Int32
-  IL_06bc: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
-  IL_06c1: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
-  IL_06c6: ldloc.s V_37
-  IL_06c8: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_06cd: ldc.i4.0
-  IL_06ce: ldelem.ref
-  IL_06cf: ldfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_06d4: brfalse.s IL_06f3
-  IL_06d6: ldloc.s V_37
-  IL_06d8: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_06dd: ldc.i4.0
-  IL_06de: ldelem.ref
-  IL_06df: ldfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_06e4: ldloc.s V_37
-  IL_06e6: ldc.i4.0
-  IL_06e7: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
-  IL_06ec: stfld Celeste.AreaKey Celeste.MapData::Area
-  IL_06f1: br.s IL_070e
-  IL_06f3: ldloc.s V_37
-  IL_06f5: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_06fa: ldc.i4.0
-  IL_06fb: ldelem.ref
-  IL_06fc: ldloc.s V_37
-  IL_06fe: ldc.i4.0
-  IL_06ff: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
-  IL_0704: newobj System.Void Celeste.MapData::.ctor(Celeste.AreaKey)
-  IL_0709: stfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_070e: ldloc.s V_37
-  IL_0710: call System.Boolean Celeste.AreaDataExt::IsInterludeUnsafe(Celeste.AreaData)
-  IL_0715: brtrue IL_080a
-  IL_071a: ldloc.s V_37
-  IL_071c: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_0721: ldc.i4.0
-  IL_0722: ldelem.ref
-  IL_0723: ldfld System.String Celeste.ModeProperties::PoemID
-  IL_0728: brtrue.s IL_074e
-  IL_072a: ldloc.s V_37
-  IL_072c: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_0731: ldc.i4.0
-  IL_0732: ldelem.ref
-  IL_0733: ldloc.s V_37
-  IL_0735: ldfld System.String Celeste.AreaData::SID
-  IL_073a: call System.String Celeste.Mod.Extensions::DialogKeyify(System.String)
-  IL_073f: ldstr "_A"
-  IL_0744: call System.String System.String::Concat(System.String,System.String)
-  IL_0749: stfld System.String Celeste.ModeProperties::PoemID
-  IL_074e: ldloc.s V_37
-  IL_0750: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_0755: ldlen
-  IL_0756: conv.i4
-  IL_0757: ldc.i4.1
-  IL_0758: ble.s IL_0799
-  IL_075a: ldloc.s V_37
-  IL_075c: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_0761: ldc.i4.1
-  IL_0762: ldelem.ref
-  IL_0763: brfalse.s IL_0799
-  IL_0765: ldloc.s V_37
-  IL_0767: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_076c: ldc.i4.1
-  IL_076d: ldelem.ref
-  IL_076e: ldfld System.String Celeste.ModeProperties::PoemID
-  IL_0773: brtrue.s IL_0799
-  IL_0775: ldloc.s V_37
-  IL_0777: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_077c: ldc.i4.1
-  IL_077d: ldelem.ref
-  IL_077e: ldloc.s V_37
-  IL_0780: ldfld System.String Celeste.AreaData::SID
-  IL_0785: call System.String Celeste.Mod.Extensions::DialogKeyify(System.String)
-  IL_078a: ldstr "_B"
-  IL_078f: call System.String System.String::Concat(System.String,System.String)
-  IL_0794: stfld System.String Celeste.ModeProperties::PoemID
-  IL_0799: ldc.i4.1
-  IL_079a: stloc.s V_40
-  IL_079c: br.s IL_07fd
-  IL_079e: ldloc.s V_37
-  IL_07a0: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_07a5: ldloc.s V_40
-  IL_07a7: ldelem.ref
-  IL_07a8: brfalse.s IL_07f7
-  IL_07aa: ldloc.s V_37
-  IL_07ac: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_07b1: ldloc.s V_40
-  IL_07b3: ldelem.ref
-  IL_07b4: ldfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_07b9: brfalse.s IL_07da
-  IL_07bb: ldloc.s V_37
-  IL_07bd: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_07c2: ldloc.s V_40
-  IL_07c4: ldelem.ref
-  IL_07c5: ldfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_07ca: ldloc.s V_37
-  IL_07cc: ldloc.s V_40
-  IL_07ce: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
-  IL_07d3: stfld Celeste.AreaKey Celeste.MapData::Area
-  IL_07d8: br.s IL_07f7
-  IL_07da: ldloc.s V_37
-  IL_07dc: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_07e1: ldloc.s V_40
-  IL_07e3: ldelem.ref
-  IL_07e4: ldloc.s V_37
-  IL_07e6: ldloc.s V_40
-  IL_07e8: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
-  IL_07ed: newobj System.Void Celeste.MapData::.ctor(Celeste.AreaKey)
-  IL_07f2: stfld Celeste.MapData Celeste.ModeProperties::MapData
-  IL_07f7: ldloc.s V_40
-  IL_07f9: ldc.i4.1
-  IL_07fa: add
-  IL_07fb: stloc.s V_40
-  IL_07fd: ldloc.s V_40
-  IL_07ff: ldloc.s V_37
-  IL_0801: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
-  IL_0806: ldlen
-  IL_0807: conv.i4
-  IL_0808: blt.s IL_079e
-  IL_080a: ldloc.s V_36
-  IL_080c: ldc.i4.1
-  IL_080d: add
-  IL_080e: stloc.s V_36
-  IL_0810: ldloc.s V_36
-  IL_0812: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
-  IL_0817: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
-  IL_081c: blt IL_063a
-  IL_0821: call System.Void Celeste.MTNExt::LoadMod()
-  IL_0826: call System.Void Celeste.MTNExt::LoadModData()
-  IL_082b: ret
+  IL_0695: ldstr "AreaData"
+  IL_069a: ldstr "{0}: {1} - {2} sides"
+  IL_069f: ldloc.s V_36
+  IL_06a1: box System.Int32
+  IL_06a6: ldloc.s V_37
+  IL_06a8: ldfld System.String Celeste.AreaData::SID
+  IL_06ad: ldloc.s V_37
+  IL_06af: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_06b4: ldlen
+  IL_06b5: conv.i4
+  IL_06b6: box System.Int32
+  IL_06bb: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+  IL_06c0: call System.Void Celeste.Mod.Logger::Verbose(System.String,System.String)
+  IL_06c5: ldloc.s V_37
+  IL_06c7: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_06cc: ldc.i4.0
+  IL_06cd: ldelem.ref
+  IL_06ce: ldfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_06d3: brfalse.s IL_06f2
+  IL_06d5: ldloc.s V_37
+  IL_06d7: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_06dc: ldc.i4.0
+  IL_06dd: ldelem.ref
+  IL_06de: ldfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_06e3: ldloc.s V_37
+  IL_06e5: ldc.i4.0
+  IL_06e6: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
+  IL_06eb: stfld Celeste.AreaKey Celeste.MapData::Area
+  IL_06f0: br.s IL_070d
+  IL_06f2: ldloc.s V_37
+  IL_06f4: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_06f9: ldc.i4.0
+  IL_06fa: ldelem.ref
+  IL_06fb: ldloc.s V_37
+  IL_06fd: ldc.i4.0
+  IL_06fe: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
+  IL_0703: newobj System.Void Celeste.MapData::.ctor(Celeste.AreaKey)
+  IL_0708: stfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_070d: ldloc.s V_37
+  IL_070f: call System.Boolean Celeste.AreaDataExt::IsInterludeUnsafe(Celeste.AreaData)
+  IL_0714: brtrue IL_0809
+  IL_0719: ldloc.s V_37
+  IL_071b: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0720: ldc.i4.0
+  IL_0721: ldelem.ref
+  IL_0722: ldfld System.String Celeste.ModeProperties::PoemID
+  IL_0727: brtrue.s IL_074d
+  IL_0729: ldloc.s V_37
+  IL_072b: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0730: ldc.i4.0
+  IL_0731: ldelem.ref
+  IL_0732: ldloc.s V_37
+  IL_0734: ldfld System.String Celeste.AreaData::SID
+  IL_0739: call System.String Celeste.Mod.Extensions::DialogKeyify(System.String)
+  IL_073e: ldstr "_A"
+  IL_0743: call System.String System.String::Concat(System.String,System.String)
+  IL_0748: stfld System.String Celeste.ModeProperties::PoemID
+  IL_074d: ldloc.s V_37
+  IL_074f: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0754: ldlen
+  IL_0755: conv.i4
+  IL_0756: ldc.i4.1
+  IL_0757: ble.s IL_0798
+  IL_0759: ldloc.s V_37
+  IL_075b: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0760: ldc.i4.1
+  IL_0761: ldelem.ref
+  IL_0762: brfalse.s IL_0798
+  IL_0764: ldloc.s V_37
+  IL_0766: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_076b: ldc.i4.1
+  IL_076c: ldelem.ref
+  IL_076d: ldfld System.String Celeste.ModeProperties::PoemID
+  IL_0772: brtrue.s IL_0798
+  IL_0774: ldloc.s V_37
+  IL_0776: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_077b: ldc.i4.1
+  IL_077c: ldelem.ref
+  IL_077d: ldloc.s V_37
+  IL_077f: ldfld System.String Celeste.AreaData::SID
+  IL_0784: call System.String Celeste.Mod.Extensions::DialogKeyify(System.String)
+  IL_0789: ldstr "_B"
+  IL_078e: call System.String System.String::Concat(System.String,System.String)
+  IL_0793: stfld System.String Celeste.ModeProperties::PoemID
+  IL_0798: ldc.i4.1
+  IL_0799: stloc.s V_40
+  IL_079b: br.s IL_07fc
+  IL_079d: ldloc.s V_37
+  IL_079f: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_07a4: ldloc.s V_40
+  IL_07a6: ldelem.ref
+  IL_07a7: brfalse.s IL_07f6
+  IL_07a9: ldloc.s V_37
+  IL_07ab: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_07b0: ldloc.s V_40
+  IL_07b2: ldelem.ref
+  IL_07b3: ldfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_07b8: brfalse.s IL_07d9
+  IL_07ba: ldloc.s V_37
+  IL_07bc: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_07c1: ldloc.s V_40
+  IL_07c3: ldelem.ref
+  IL_07c4: ldfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_07c9: ldloc.s V_37
+  IL_07cb: ldloc.s V_40
+  IL_07cd: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
+  IL_07d2: stfld Celeste.AreaKey Celeste.MapData::Area
+  IL_07d7: br.s IL_07f6
+  IL_07d9: ldloc.s V_37
+  IL_07db: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_07e0: ldloc.s V_40
+  IL_07e2: ldelem.ref
+  IL_07e3: ldloc.s V_37
+  IL_07e5: ldloc.s V_40
+  IL_07e7: call Celeste.AreaKey Celeste.AreaDataExt::ToKey(Celeste.AreaData,Celeste.AreaMode)
+  IL_07ec: newobj System.Void Celeste.MapData::.ctor(Celeste.AreaKey)
+  IL_07f1: stfld Celeste.MapData Celeste.ModeProperties::MapData
+  IL_07f6: ldloc.s V_40
+  IL_07f8: ldc.i4.1
+  IL_07f9: add
+  IL_07fa: stloc.s V_40
+  IL_07fc: ldloc.s V_40
+  IL_07fe: ldloc.s V_37
+  IL_0800: ldfld Celeste.ModeProperties[] Celeste.AreaData::Mode
+  IL_0805: ldlen
+  IL_0806: conv.i4
+  IL_0807: blt.s IL_079d
+  IL_0809: ldloc.s V_36
+  IL_080b: ldc.i4.1
+  IL_080c: add
+  IL_080d: stloc.s V_36
+  IL_080f: ldloc.s V_36
+  IL_0811: ldsfld System.Collections.Generic.List`1<Celeste.AreaData> Celeste.AreaData::Areas
+  IL_0816: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.AreaData>::get_Count()
+  IL_081b: blt IL_063a
+  IL_0820: call System.Void Celeste.MTNExt::LoadMod()
+  IL_0825: call System.Void Celeste.MTNExt::LoadModData()
+  IL_082a: ret

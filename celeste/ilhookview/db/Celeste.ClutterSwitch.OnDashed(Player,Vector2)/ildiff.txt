@@ -1,0 +1,85 @@
+IL Diff: Celeste.DashCollisionResults Celeste.ClutterSwitch::OnDashed(Celeste.Player,Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.ClutterSwitch::pressed
+  IL_0006: brtrue IL_011f
+  IL_000b: ldarg.2
+  IL_000c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0011: call System.Boolean Microsoft.Xna.Framework.Vector2::op_Equality(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0016: brfalse IL_011f
+  IL_001b: ldc.r4 0.2
++ IL_0000: pop @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::modClutterSwitch
++ IL_0000: call System.Single Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::GetClutterSwitchSpeed() @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::modClutterSwitch
+  IL_0020: call System.Void Celeste.Celeste::Freeze(System.Single)
+  IL_0025: ldc.i4.2
+  IL_0026: ldc.i4.1
+  IL_0027: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_002c: ldarg.0
+  IL_002d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0032: isinst Celeste.Level
+  IL_0037: dup
+  IL_0038: ldfld Celeste.Session Celeste.Level::Session
+  IL_003d: ldstr "oshiro_clutter_cleared_"
+  IL_0042: ldarg.0
+  IL_0043: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_0048: box System.Int32
+  IL_004d: call System.String System.String::Concat(System.Object,System.Object)
+  IL_0052: ldc.i4.1
+  IL_0053: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0058: dup
+  IL_0059: ldfld Celeste.Session Celeste.Level::Session
+  IL_005e: ldstr "oshiro_clutter_door_open"
+  IL_0063: ldc.i4.0
+  IL_0064: callvirt System.Void Celeste.Session::SetFlag(System.String,System.Boolean)
+  IL_0069: ldarg.0
+  IL_006a: ldfld Celeste.VertexLight Celeste.ClutterSwitch::vertexLight
+  IL_006f: ldc.r4 64
+  IL_0074: callvirt System.Void Celeste.VertexLight::set_StartRadius(System.Single)
+  IL_0079: ldarg.0
+  IL_007a: ldfld Celeste.VertexLight Celeste.ClutterSwitch::vertexLight
+  IL_007f: ldc.r4 128
+  IL_0084: callvirt System.Void Celeste.VertexLight::set_EndRadius(System.Single)
+  IL_0089: dup
+  IL_008a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_008f: ldc.r4 0.6
+  IL_0094: callvirt System.Void Celeste.Level::DirectionalShake(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0099: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_009e: ldsfld Monocle.ParticleType Celeste.ClutterSwitch::P_Pressed
+  IL_00a3: ldc.i4.s 20
+  IL_00a5: ldarg.0
+  IL_00a6: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_TopCenter()
+  IL_00ab: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_00b0: ldc.r4 10
+  IL_00b5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ba: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00bf: ldc.r4 16
+  IL_00c4: ldc.r4 8
+  IL_00c9: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00ce: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00d3: ldarg.0
+  IL_00d4: callvirt System.Void Celeste.ClutterSwitch::BePressed()
+  IL_00d9: ldarg.0
+  IL_00da: ldfld Monocle.Sprite Celeste.ClutterSwitch::sprite
+  IL_00df: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00e4: ldc.r4 1.5
+  IL_00e9: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00ee: ldarg.0
+  IL_00ef: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_00f4: ldc.i4.3
+  IL_00f5: bne.un.s IL_010c
+  IL_00f7: ldarg.0
+  IL_00f8: ldarg.0
+  IL_00f9: ldarg.1
+  IL_00fa: callvirt System.Collections.IEnumerator Celeste.ClutterSwitch::LightningRoutine(Celeste.Player)
+  IL_00ff: ldc.i4.1
+  IL_0100: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_0105: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_010a: br.s IL_011f
+  IL_010c: ldarg.0
+  IL_010d: ldarg.0
+  IL_010e: ldarg.1
+  IL_010f: callvirt System.Collections.IEnumerator Celeste.ClutterSwitch::AbsorbRoutine(Celeste.Player)
+  IL_0114: ldc.i4.1
+  IL_0115: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_011a: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_011f: ldc.i4.1
+  IL_0120: ret

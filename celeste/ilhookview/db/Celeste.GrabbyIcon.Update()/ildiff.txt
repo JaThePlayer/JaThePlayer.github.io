@@ -1,0 +1,39 @@
+IL Diff: System.Void Celeste.GrabbyIcon::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldc.i4.0
+  IL_0007: stloc.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: ldfld System.Boolean Celeste.Level::InCutscene
+  IL_0013: brtrue.s IL_0047
+  IL_0015: ldarg.0
+  IL_0016: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_001b: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0020: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_0025: stloc.1
+  IL_0026: ldloc.1
+  IL_0027: brfalse.s IL_0047
+  IL_0029: ldloc.1
+  IL_002a: callvirt System.Boolean Celeste.Player::get_Dead()
+  IL_002f: brtrue.s IL_0047
+  IL_0031: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0036: ldfld Celeste.GrabModes Celeste.Settings::GrabMode
++ IL_0000: call Celeste.GrabModes Celeste.Mod.EndHelper.EndHelperModule::replaceGrabModeGrabbyIconCheck(Celeste.GrabModes) @ Celeste.Mod.EndHelper.EndHelperModule::ILHook_GrabbyIconUpdate
+  IL_003b: ldc.i4.2
+  IL_003c: bne.un.s IL_0047
+  IL_003e: call System.Boolean Celeste.Input::get_GrabCheck()
+  IL_0043: brfalse.s IL_0047
+  IL_0045: ldc.i4.1
+  IL_0046: stloc.0
+  IL_0047: ldloc.0
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.Boolean Celeste.GrabbyIcon::enabled
+  IL_004e: beq.s IL_0062
+  IL_0050: ldarg.0
+  IL_0051: ldloc.0
+  IL_0052: stfld System.Boolean Celeste.GrabbyIcon::enabled
+  IL_0057: ldarg.0
+  IL_0058: ldfld Monocle.Wiggler Celeste.GrabbyIcon::wiggler
+  IL_005d: callvirt System.Void Monocle.Wiggler::Start()
+  IL_0062: ret

@@ -1,0 +1,401 @@
+IL Diff: System.Void ChroniaHelper.Entities.SeamlessSpinner::CreateSprites()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::expanded
+  IL_0007: stloc.1
+  IL_0008: ldloc.1
+  IL_0009: brfalse.s IL_0011
+  IL_000b: nop
+  IL_000c: br IL_047f
+  IL_0011: ldarg.0
+  IL_0012: ldfld System.Int32 ChroniaHelper.Entities.SeamlessSpinner::randomSeed
+  IL_0017: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_001c: nop
+  IL_001d: ldarg.0
+  IL_001e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0023: ldarg.0
+  IL_0024: ldfld System.String ChroniaHelper.Entities.SeamlessSpinner::imagePath
+  IL_0029: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_002e: stfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0033: ldarg.0
+  IL_0034: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0039: ldstr "idle"
+  IL_003e: ldstr ""
+  IL_0043: ldarg.0
+  IL_0044: ldfld System.Single ChroniaHelper.Entities.SeamlessSpinner::fgAnim
+  IL_0049: callvirt System.Void Monocle.Sprite::AddLoop(System.String,System.String,System.Single)
+  IL_004e: nop
+  IL_004f: ldarg.0
+  IL_0050: ldarg.0
+  IL_0051: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0056: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005b: nop
+  IL_005c: ldarg.0
+  IL_005d: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0062: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0067: ldc.r4 2
+  IL_006c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0071: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0076: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Monocle.Sprite::Justify
+  IL_007b: ldarg.0
+  IL_007c: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0081: ldarg.0
+  IL_0082: ldfld Microsoft.Xna.Framework.Color ChroniaHelper.Entities.SeamlessSpinner::spriteColor
+  IL_0087: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_008c: ldarg.0
+  IL_008d: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::rainbow
+  IL_0092: stloc.2
+  IL_0093: ldloc.2
+  IL_0094: brfalse.s IL_00b4
+  IL_0096: nop
+  IL_0097: ldarg.0
+  IL_0098: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_009d: ldarg.0
+  IL_009e: ldfld Celeste.CrystalStaticSpinner ChroniaHelper.Entities.SeamlessSpinner::spinner
+  IL_00a3: ldarg.0
+  IL_00a4: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00a9: callvirt Microsoft.Xna.Framework.Color Celeste.CrystalStaticSpinner::GetHue(Microsoft.Xna.Framework.Vector2)
+  IL_00ae: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_00b3: nop
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_00ba: ldstr "idle"
+  IL_00bf: ldc.i4.0
+  IL_00c0: ldc.i4.0
+  IL_00c1: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_00c6: nop
+  IL_00c7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00cc: stloc.0
+  IL_00cd: ldarg.0
+  IL_00ce: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipX
+  IL_00d3: ldc.i4.1
+  IL_00d4: ceq
+  IL_00d6: stloc.3
+  IL_00d7: ldloc.3
+  IL_00d8: brfalse.s IL_00ea
+  IL_00da: nop
+  IL_00db: ldloca.s V_0
+  IL_00dd: ldc.r4 -1
+  IL_00e2: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_00e7: nop
+  IL_00e8: br.s IL_0116
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipX
+  IL_00f0: ldc.i4.2
+  IL_00f1: ceq
+  IL_00f3: stloc.s V_4
+  IL_00f5: ldloc.s V_4
+  IL_00f7: brfalse.s IL_0116
+  IL_00f9: nop
+  IL_00fa: ldloca.s V_0
+  IL_00fc: ldsfld System.Random Monocle.Calc::Random
+  IL_0101: ldc.r4 1
+  IL_0106: ldc.r4 -1
+  IL_010b: call T Monocle.Calc::Choose<System.Single>(System.Random,T,T)
+  IL_0110: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0115: nop
+  IL_0116: ldarg.0
+  IL_0117: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipY
+  IL_011c: ldc.i4.1
+  IL_011d: ceq
+  IL_011f: stloc.s V_5
+  IL_0121: ldloc.s V_5
+  IL_0123: brfalse.s IL_0135
+  IL_0125: nop
+  IL_0126: ldloca.s V_0
+  IL_0128: ldc.r4 -1
+  IL_012d: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0132: nop
+  IL_0133: br.s IL_0161
+  IL_0135: ldarg.0
+  IL_0136: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipY
+  IL_013b: ldc.i4.2
+  IL_013c: ceq
+  IL_013e: stloc.s V_6
+  IL_0140: ldloc.s V_6
+  IL_0142: brfalse.s IL_0161
+  IL_0144: nop
+  IL_0145: ldloca.s V_0
+  IL_0147: ldsfld System.Random Monocle.Calc::Random
+  IL_014c: ldc.r4 1
+  IL_0151: ldc.r4 -1
+  IL_0156: call T Monocle.Calc::Choose<System.Single>(System.Random,T,T)
+  IL_015b: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0160: nop
+  IL_0161: ldarg.0
+  IL_0162: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0167: ldloc.0
+  IL_0168: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_016d: ldarg.0
+  IL_016e: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::dynamic
+  IL_0173: ldc.i4.0
+  IL_0174: ceq
+  IL_0176: stloc.s V_7
+  IL_0178: ldloc.s V_7
+  IL_017a: brfalse.s IL_01c0
+  IL_017c: nop
+  IL_017d: ldarg.0
+  IL_017e: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_0183: ldstr ""
+  IL_0188: ldnull
+  IL_0189: callvirt Monocle.MTexture[] Monocle.Sprite::GetFrames(System.String,System.Int32[])
+  IL_018e: ldlen
+  IL_018f: conv.i4
+  IL_0190: stloc.s V_8
+  IL_0192: ldsfld System.Random Monocle.Calc::Random
+  IL_0197: ldc.i4.0
+  IL_0198: ldloc.s V_8
+  IL_019a: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_019f: stloc.s V_9
+  IL_01a1: ldarg.0
+  IL_01a2: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_01a7: ldc.r4 0
+  IL_01ac: stfld System.Single Monocle.Sprite::Rate
+  IL_01b1: ldarg.0
+  IL_01b2: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_01b7: ldloc.s V_9
+  IL_01b9: callvirt System.Void Monocle.Sprite::SetAnimationFrame(System.Int32)
+  IL_01be: nop
+  IL_01bf: nop
+  IL_01c0: ldarg.0
+  IL_01c1: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::trigger
+  IL_01c6: stloc.s V_10
+  IL_01c8: ldloc.s V_10
+  IL_01ca: brfalse IL_037b
+  IL_01cf: nop
+  IL_01d0: ldarg.0
+  IL_01d1: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::sprite
+  IL_01d6: ldc.i4.0
+  IL_01d7: stfld System.Boolean Monocle.Component::Visible
+  IL_01dc: ldarg.0
+  IL_01dd: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_01e2: ldarg.0
+  IL_01e3: ldfld System.String ChroniaHelper.Entities.SeamlessSpinner::imagePath
+  IL_01e8: ldstr "_base"
+  IL_01ed: call System.String System.String::Concat(System.String,System.String)
+  IL_01f2: newobj System.Void Monocle.Sprite::.ctor(Monocle.Atlas,System.String)
+  IL_01f7: stfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_01fc: ldarg.0
+  IL_01fd: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0202: ldstr "load"
+  IL_0207: ldstr ""
+  IL_020c: ldarg.0
+  IL_020d: ldfld System.Single ChroniaHelper.Entities.SeamlessSpinner::triggerAnimDelay
+  IL_0212: callvirt System.Void Monocle.Sprite::Add(System.String,System.String,System.Single)
+  IL_0217: nop
+  IL_0218: ldarg.0
+  IL_0219: ldarg.0
+  IL_021a: ldfld System.Single ChroniaHelper.Entities.SeamlessSpinner::triggerAnimDelay
+  IL_021f: ldarg.0
+  IL_0220: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0225: ldstr ""
+  IL_022a: ldnull
+  IL_022b: callvirt Monocle.MTexture[] Monocle.Sprite::GetFrames(System.String,System.Int32[])
+  IL_0230: ldlen
+  IL_0231: conv.i4
+  IL_0232: conv.r4
+  IL_0233: mul
+  IL_0234: stfld System.Single ChroniaHelper.Entities.SeamlessSpinner::triggerAnimTime
+  IL_0239: ldarg.0
+  IL_023a: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_023f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0244: ldc.r4 2
+  IL_0249: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_024e: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Vector2>::.ctor(T)
+  IL_0253: stfld System.Nullable`1<Microsoft.Xna.Framework.Vector2> Monocle.Sprite::Justify
+  IL_0258: ldarg.0
+  IL_0259: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_025e: ldarg.0
+  IL_025f: ldfld Microsoft.Xna.Framework.Color ChroniaHelper.Entities.SeamlessSpinner::spriteColor
+  IL_0264: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0269: ldarg.0
+  IL_026a: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::rainbow
+  IL_026f: stloc.s V_12
+  IL_0271: ldloc.s V_12
+  IL_0273: brfalse.s IL_0293
+  IL_0275: nop
+  IL_0276: ldarg.0
+  IL_0277: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_027c: ldarg.0
+  IL_027d: ldfld Celeste.CrystalStaticSpinner ChroniaHelper.Entities.SeamlessSpinner::spinner
+  IL_0282: ldarg.0
+  IL_0283: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0288: callvirt Microsoft.Xna.Framework.Color Celeste.CrystalStaticSpinner::GetHue(Microsoft.Xna.Framework.Vector2)
+  IL_028d: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0292: nop
+  IL_0293: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0298: stloc.s V_11
+  IL_029a: ldarg.0
+  IL_029b: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipX
+  IL_02a0: ldc.i4.1
+  IL_02a1: ceq
+  IL_02a3: stloc.s V_13
+  IL_02a5: ldloc.s V_13
+  IL_02a7: brfalse.s IL_02b9
+  IL_02a9: nop
+  IL_02aa: ldloca.s V_11
+  IL_02ac: ldc.r4 -1
+  IL_02b1: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02b6: nop
+  IL_02b7: br.s IL_02e5
+  IL_02b9: ldarg.0
+  IL_02ba: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipX
+  IL_02bf: ldc.i4.2
+  IL_02c0: ceq
+  IL_02c2: stloc.s V_14
+  IL_02c4: ldloc.s V_14
+  IL_02c6: brfalse.s IL_02e5
+  IL_02c8: nop
+  IL_02c9: ldloca.s V_11
+  IL_02cb: ldsfld System.Random Monocle.Calc::Random
+  IL_02d0: ldc.r4 1
+  IL_02d5: ldc.r4 -1
+  IL_02da: call T Monocle.Calc::Choose<System.Single>(System.Random,T,T)
+  IL_02df: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_02e4: nop
+  IL_02e5: ldarg.0
+  IL_02e6: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipY
+  IL_02eb: ldc.i4.1
+  IL_02ec: ceq
+  IL_02ee: stloc.s V_15
+  IL_02f0: ldloc.s V_15
+  IL_02f2: brfalse.s IL_0304
+  IL_02f4: nop
+  IL_02f5: ldloca.s V_11
+  IL_02f7: ldc.r4 -1
+  IL_02fc: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0301: nop
+  IL_0302: br.s IL_0330
+  IL_0304: ldarg.0
+  IL_0305: ldfld ChroniaHelper.Entities.SeamlessSpinner/Flip ChroniaHelper.Entities.SeamlessSpinner::flipY
+  IL_030a: ldc.i4.2
+  IL_030b: ceq
+  IL_030d: stloc.s V_16
+  IL_030f: ldloc.s V_16
+  IL_0311: brfalse.s IL_0330
+  IL_0313: nop
+  IL_0314: ldloca.s V_11
+  IL_0316: ldsfld System.Random Monocle.Calc::Random
+  IL_031b: ldc.r4 1
+  IL_0320: ldc.r4 -1
+  IL_0325: call T Monocle.Calc::Choose<System.Single>(System.Random,T,T)
+  IL_032a: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_032f: nop
+  IL_0330: ldarg.0
+  IL_0331: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0336: ldloc.s V_11
+  IL_0338: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_033d: ldarg.0
+  IL_033e: ldarg.0
+  IL_033f: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0344: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0349: nop
+  IL_034a: ldarg.0
+  IL_034b: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0350: ldstr "load"
+  IL_0355: ldc.i4.0
+  IL_0356: ldc.i4.0
+  IL_0357: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_035c: nop
+  IL_035d: ldarg.0
+  IL_035e: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0363: ldc.i4.0
+  IL_0364: callvirt System.Void Monocle.Sprite::SetAnimationFrame(System.Int32)
+  IL_0369: nop
+  IL_036a: ldarg.0
+  IL_036b: ldfld Monocle.Sprite ChroniaHelper.Entities.SeamlessSpinner::loadSprite
+  IL_0370: ldc.r4 0
+  IL_0375: stfld System.Single Monocle.Sprite::Rate
+  IL_037a: nop
+  IL_037b: nop
+  IL_037c: ldarg.0
+  IL_037d: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0382: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0387: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<ChroniaHelper.Entities.SeamlessSpinner>()
+  IL_038c: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0391: stloc.s V_17
+  IL_0393: br IL_0421
+  IL_0398: ldloca.s V_17
+  IL_039a: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_039f: castclass ChroniaHelper.Entities.SeamlessSpinner
+  IL_03a4: stloc.s V_18
+  IL_03a6: nop
+  IL_03a7: ldloc.s V_18
+  IL_03a9: ldfld System.Int32 ChroniaHelper.Entities.SeamlessSpinner::ID
+  IL_03ae: ldarg.0
+  IL_03af: ldfld System.Int32 ChroniaHelper.Entities.SeamlessSpinner::ID
+  IL_03b4: ble.s IL_03e9
+  IL_03b6: ldloc.s V_18
+  IL_03b8: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::AttachToSolid
+  IL_03bd: ldarg.0
+  IL_03be: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::AttachToSolid
+  IL_03c3: bne.un.s IL_03e9
+  IL_03c5: ldloc.s V_18
+  IL_03c7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03cc: ldarg.0
+  IL_03cd: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03d2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03d7: stloc.s V_20
+  IL_03d9: ldloca.s V_20
+  IL_03db: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_03e0: ldc.r4 576
+  IL_03e5: clt
+  IL_03e7: br.s IL_03ea
+  IL_03e9: ldc.i4.0
+  IL_03ea: stloc.s V_19
+  IL_03ec: ldloc.s V_19
+  IL_03ee: brfalse.s IL_0420
+  IL_03f0: nop
+  IL_03f1: ldarg.0
+  IL_03f2: ldarg.0
+  IL_03f3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03f8: ldloc.s V_18
+  IL_03fa: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_03ff: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0404: ldc.r4 2
+  IL_0409: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_040e: ldarg.0
+  IL_040f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0414: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0419: callvirt System.Void ChroniaHelper.Entities.SeamlessSpinner::AddSprite(Microsoft.Xna.Framework.Vector2)
+  IL_041e: nop
+  IL_041f: nop
+  IL_0420: nop
+  IL_0421: ldloca.s V_17
+  IL_0423: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0428: brtrue IL_0398
+  IL_042d: leave.s IL_043e
+  IL_042f: ldloca.s V_17
+  IL_0431: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0437: callvirt System.Void System.IDisposable::Dispose()
+  IL_043c: nop
+  IL_043d: endfinally
+  IL_043e: ldarg.0
+  IL_043f: ldfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::noBorder
+  IL_0444: ldc.i4.0
+  IL_0445: ceq
+  IL_0447: stloc.s V_21
+  IL_0449: ldloc.s V_21
+  IL_044b: brfalse.s IL_0472
+  IL_044d: nop
+  IL_044e: ldarg.0
+  IL_044f: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0454: ldarg.0
+  IL_0455: ldarg.0
+  IL_0456: ldarg.0
+  IL_0457: ldfld ChroniaHelper.Entities.SeamlessSpinner/Inner ChroniaHelper.Entities.SeamlessSpinner::filler
+  IL_045c: newobj System.Void ChroniaHelper.Entities.SeamlessSpinner/Border::.ctor(Monocle.Entity,Monocle.Entity)
+  IL_0461: dup
+  IL_0462: stloc.s V_22
+  IL_0464: stfld ChroniaHelper.Entities.SeamlessSpinner/Border ChroniaHelper.Entities.SeamlessSpinner::border
+  IL_0469: ldloc.s V_22
+  IL_046b: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0470: nop
+  IL_0471: nop
+  IL_0472: ldarg.0
+  IL_0473: ldc.i4.1
+  IL_0474: stfld System.Boolean ChroniaHelper.Entities.SeamlessSpinner::expanded
+  IL_0479: call System.Void Monocle.Calc::PopRandom()
+  IL_047e: nop
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_047f: ret

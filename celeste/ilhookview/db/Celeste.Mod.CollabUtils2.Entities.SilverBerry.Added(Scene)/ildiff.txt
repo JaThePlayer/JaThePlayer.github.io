@@ -11,7 +11,7 @@ IL Diff: System.Void Celeste.Mod.CollabUtils2.Entities.SilverBerry::Added(Monocl
   IL_0012: stloc.0
   IL_0013: ldarg.0
   IL_0014: ldfld System.Boolean Celeste.Mod.CollabUtils2.Entities.SilverBerry::spawnedThroughGiveSilver
-  IL_0019: brtrue.s IL_007a
+  IL_0019: brtrue.s IL_0082
   IL_001b: ldloc.0
   IL_001c: ldfld System.String Celeste.Session::FurthestSeenLevel
   IL_0021: ldloc.0
@@ -20,23 +20,26 @@ IL Diff: System.Void Celeste.Mod.CollabUtils2.Entities.SilverBerry::Added(Monocl
   IL_002c: brfalse.s IL_0036
   IL_002e: ldloc.0
   IL_002f: ldfld System.Int32 Celeste.Session::Deaths
-  IL_0034: brtrue.s IL_0074
-  IL_0036: ldsfld Celeste.SaveData Celeste.SaveData::Instance
-  IL_003b: ldfld System.Boolean Celeste.SaveData::CheatMode
-  IL_0040: brtrue.s IL_007a
-  IL_0042: ldsfld Celeste.SaveData Celeste.SaveData::Instance
-  IL_0047: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
-  IL_004c: ldloc.0
-  IL_004d: ldflda Celeste.AreaKey Celeste.Session::Area
-  IL_0052: ldfld System.Int32 Celeste.AreaKey::ID
-  IL_0057: callvirt T System.Collections.Generic.List`1<Celeste.AreaStats>::get_Item(System.Int32)
-  IL_005c: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
-  IL_0061: ldloc.0
-  IL_0062: ldflda Celeste.AreaKey Celeste.Session::Area
-  IL_0067: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
-  IL_006c: ldelem.ref
-  IL_006d: ldfld System.Boolean Celeste.AreaModeStats::Completed
-  IL_0072: brtrue.s IL_007a
-  IL_0074: ldarg.0
-  IL_0075: call System.Void Monocle.Entity::RemoveSelf()
-  IL_007a: ret
+  IL_0034: brtrue.s IL_007c
+  IL_0036: ldarg.0
+  IL_0037: ldfld System.Boolean Celeste.Mod.CollabUtils2.Entities.SilverBerry::alwaysSpawn
+  IL_003c: brtrue.s IL_0082
+  IL_003e: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0043: ldfld System.Boolean Celeste.SaveData::CheatMode
+  IL_0048: brtrue.s IL_0082
+  IL_004a: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_004f: callvirt System.Collections.Generic.List`1<Celeste.AreaStats> Celeste.SaveData::get_Areas_Safe()
+  IL_0054: ldloc.0
+  IL_0055: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_005a: ldfld System.Int32 Celeste.AreaKey::ID
+  IL_005f: callvirt T System.Collections.Generic.List`1<Celeste.AreaStats>::get_Item(System.Int32)
+  IL_0064: ldfld Celeste.AreaModeStats[] Celeste.AreaStats::Modes
+  IL_0069: ldloc.0
+  IL_006a: ldflda Celeste.AreaKey Celeste.Session::Area
+  IL_006f: ldfld Celeste.AreaMode Celeste.AreaKey::Mode
+  IL_0074: ldelem.ref
+  IL_0075: ldfld System.Boolean Celeste.AreaModeStats::Completed
+  IL_007a: brtrue.s IL_0082
+  IL_007c: ldarg.0
+  IL_007d: call System.Void Monocle.Entity::RemoveSelf()
+  IL_0082: ret

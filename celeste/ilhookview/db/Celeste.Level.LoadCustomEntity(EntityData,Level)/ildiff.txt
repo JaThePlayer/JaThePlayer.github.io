@@ -375,15 +375,15 @@ IL Diff: System.Boolean Celeste.Level::LoadCustomEntity(Celeste.EntityData,Celes
   IL_03c7: ldc.i4.s 44
   IL_03c9: ldc.i4.0
   IL_03ca: callvirt System.String[] System.String::Split(System.Char,System.StringSplitOptions)
-  IL_03cf: ldsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__36_0
+  IL_03cf: ldsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__42_0
   IL_03d4: dup
   IL_03d5: brtrue.s IL_03ee
   IL_03d7: pop
   IL_03d8: ldsfld Celeste.Level/<>c Celeste.Level/<>c::<>9
-  IL_03dd: ldftn Microsoft.Xna.Framework.Color Celeste.Level/<>c::<LoadCustomEntity>b__36_0(System.String)
+  IL_03dd: ldftn Microsoft.Xna.Framework.Color Celeste.Level/<>c::<LoadCustomEntity>b__42_0(System.String)
   IL_03e3: newobj System.Void System.Func`2<System.String,Microsoft.Xna.Framework.Color>::.ctor(System.Object,System.IntPtr)
   IL_03e8: dup
-  IL_03e9: stsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__36_0
+  IL_03e9: stsfld System.Func`2<System.String,Microsoft.Xna.Framework.Color> Celeste.Level/<>c::<>9__42_0
   IL_03ee: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Select<System.String,Microsoft.Xna.Framework.Color>(System.Collections.Generic.IEnumerable`1<TSource>,System.Func`2<TSource,TResult>)
   IL_03f3: call TSource[] System.Linq.Enumerable::ToArray<Microsoft.Xna.Framework.Color>(System.Collections.Generic.IEnumerable`1<TSource>)
   IL_03f8: stfld Microsoft.Xna.Framework.Color[] Celeste.Cobweb::OverrideColors
@@ -509,37 +509,36 @@ IL Diff: System.Boolean Celeste.Level::LoadCustomEntity(Celeste.EntityData,Celes
   IL_0544: ldarg.0
   IL_0545: ldfld System.String Celeste.EntityData::Name
   IL_054a: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Contains(T)
-  IL_054f: brtrue.s IL_05bd
-  IL_0551: ldc.i4.3
-  IL_0552: ldstr "LoadLevel"
-  IL_0557: ldloca.s V_12
-  IL_0559: ldc.i4.s 41
-  IL_055b: ldc.i4.3
-  IL_055c: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor(System.Int32,System.Int32)
-  IL_0561: ldloca.s V_12
-  IL_0563: ldstr "Failed loading entity "
-  IL_0568: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
-  IL_056d: ldloca.s V_12
-  IL_056f: ldarg.0
-  IL_0570: ldfld System.String Celeste.EntityData::Name
-  IL_0575: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
-  IL_057a: ldloca.s V_12
-  IL_057c: ldstr ". Room: "
-  IL_0581: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
-  IL_0586: ldloca.s V_12
-  IL_0588: ldarg.0
-  IL_0589: ldfld Celeste.LevelData Celeste.EntityData::Level
-  IL_058e: ldfld System.String Celeste.LevelData::Name
-  IL_0593: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
-  IL_0598: ldloca.s V_12
-  IL_059a: ldstr " Position: "
-  IL_059f: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
-  IL_05a4: ldloca.s V_12
-  IL_05a6: ldarg.0
-  IL_05a7: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
-  IL_05ac: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<Microsoft.Xna.Framework.Vector2>(T)
-  IL_05b1: ldloca.s V_12
-  IL_05b3: call System.String System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear()
-  IL_05b8: call System.Void Celeste.Mod.Logger::Log(Celeste.Mod.LogLevel,System.String,System.String)
-  IL_05bd: ldc.i4.0
-  IL_05be: ret
+  IL_054f: brtrue.s IL_05bc
+  IL_0551: ldstr "LoadLevel"
+  IL_0556: ldloca.s V_12
+  IL_0558: ldc.i4.s 41
+  IL_055a: ldc.i4.3
+  IL_055b: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor(System.Int32,System.Int32)
+  IL_0560: ldloca.s V_12
+  IL_0562: ldstr "Failed loading entity "
+  IL_0567: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_056c: ldloca.s V_12
+  IL_056e: ldarg.0
+  IL_056f: ldfld System.String Celeste.EntityData::Name
+  IL_0574: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
+  IL_0579: ldloca.s V_12
+  IL_057b: ldstr ". Room: "
+  IL_0580: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_0585: ldloca.s V_12
+  IL_0587: ldarg.0
+  IL_0588: ldfld Celeste.LevelData Celeste.EntityData::Level
+  IL_058d: ldfld System.String Celeste.LevelData::Name
+  IL_0592: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted(System.String)
+  IL_0597: ldloca.s V_12
+  IL_0599: ldstr " Position: "
+  IL_059e: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral(System.String)
+  IL_05a3: ldloca.s V_12
+  IL_05a5: ldarg.0
+  IL_05a6: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_05ab: call System.Void System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<Microsoft.Xna.Framework.Vector2>(T)
+  IL_05b0: ldloca.s V_12
+  IL_05b2: call System.String System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear()
+  IL_05b7: call System.Void Celeste.Mod.Logger::Warn(System.String,System.String)
+  IL_05bc: ldc.i4.0
+  IL_05bd: ret

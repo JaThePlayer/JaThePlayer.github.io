@@ -1,0 +1,29 @@
+IL Diff: System.Void Celeste.Mod.UI.SubHudRenderer::Render(Monocle.Scene)
++ IL_0000: ldarg.1 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.Gameplay.Hitboxes.OffscreenHitbox::DrawBufferToScreen(Monocle.Scene) @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: call System.Boolean Celeste.Mod.UI.SubHudRenderer::get_DrawToBuffer()
+  IL_0005: brtrue.s IL_000f
+  IL_0007: ldarg.0
+  IL_0008: ldarg.1
+  IL_0009: callvirt System.Void Celeste.Mod.UI.SubHudRenderer::RenderContent(Monocle.Scene)
+  IL_000e: ret
+  IL_000f: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0014: ldc.i4.0
+  IL_0015: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
+  IL_001a: ldsfld Microsoft.Xna.Framework.Graphics.SamplerState Microsoft.Xna.Framework.Graphics.SamplerState::LinearClamp
+  IL_001f: ldsfld Microsoft.Xna.Framework.Graphics.DepthStencilState Microsoft.Xna.Framework.Graphics.DepthStencilState::Default
+  IL_0024: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
+  IL_0029: ldnull
+  IL_002a: ldsfld Microsoft.Xna.Framework.Matrix Monocle.Engine::ScreenMatrix
+  IL_002f: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Begin(Microsoft.Xna.Framework.Graphics.SpriteSortMode,Microsoft.Xna.Framework.Graphics.BlendState,Microsoft.Xna.Framework.Graphics.SamplerState,Microsoft.Xna.Framework.Graphics.DepthStencilState,Microsoft.Xna.Framework.Graphics.RasterizerState,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Matrix)
+  IL_0034: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0039: ldsfld Monocle.VirtualRenderTarget Celeste.Mod.UI.SubHudRenderer::Buffer
+  IL_003e: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_0043: ldc.r4 -1
+  IL_0048: ldc.r4 -1
+  IL_004d: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0052: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0057: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_005c: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
+  IL_0061: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
+  IL_0066: ret

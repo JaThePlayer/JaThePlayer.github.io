@@ -1,21 +1,21 @@
 IL Diff: System.Void Celeste.Glitch::Apply(Monocle.VirtualRenderTarget,System.Single,System.Single,System.Single)
-+ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedDistort() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
-+ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
-+ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedDistort() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
 + IL_0000: call System.Boolean TAS.EverestInterop.Hitboxes.HitboxToggle::IsShowHitbox() @ TAS.EverestInterop.Hitboxes.HitboxToggle::GlitchOnApply
 + IL_0000: brfalse IL_0000 @ TAS.EverestInterop.Hitboxes.HitboxToggle::GlitchOnApply
 + IL_0000: ret @ TAS.EverestInterop.Hitboxes.HitboxToggle::GlitchOnApply
   IL_0000: ldsfld System.Single Celeste.Glitch::Value
-+ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
-+ IL_0000: ldc.i4 64333278 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
++ IL_0000: ldc.i4 26068292 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
   |-> retrieves System.Single ExtendedVariants.Variants.GlitchEffect::modGlitchValue(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
   IL_0005: ldc.r4 0
   IL_000a: ble.un IL_01c7
-  IL_000f: ldsfld Celeste.Settings Celeste.Settings::Instance
-  IL_0014: ldfld System.Boolean Celeste.Settings::DisableFlashes
-  IL_0019: brtrue IL_01c7
+  IL_000f: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_0014: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_AllowGlitch()
+  IL_0019: brfalse IL_01c7
   IL_001e: ldsfld Microsoft.Xna.Framework.Graphics.Effect Celeste.GFX::FxGlitch
   IL_0023: stloc.0
   IL_0024: ldloca.s V_1
@@ -57,8 +57,8 @@ IL Diff: System.Void Celeste.Glitch::Apply(Monocle.VirtualRenderTarget,System.Si
   IL_00a7: ldstr "glitch"
   IL_00ac: callvirt Microsoft.Xna.Framework.Graphics.EffectParameter Microsoft.Xna.Framework.Graphics.EffectParameterCollection::get_Item(System.String)
   IL_00b1: ldsfld System.Single Celeste.Glitch::Value
-+ IL_0000: ldc.i4 2882 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
-+ IL_0000: ldc.i4 43613011 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
++ IL_0000: ldc.i4 3871 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
++ IL_0000: ldc.i4 31156882 @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply
   |-> retrieves System.Single ExtendedVariants.Variants.GlitchEffect::modGlitchValue(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.GlitchEffect::modGlitchApply

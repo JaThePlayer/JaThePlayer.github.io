@@ -7,6 +7,11 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_000e: callvirt Monocle.Scene Monocle.Entity::get_Scene()
   IL_0013: ldarg.0
   IL_0014: ldarg.0
++ IL_0000: call Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper/TalkComponentAltUI Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::<IL_TalkComponent_Update>g__tryGetAltUI|5_2(Celeste.TalkComponent) @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: dup @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: brtrue IL_001a @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: pop @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
   IL_0015: newobj System.Void Celeste.TalkComponent/TalkComponentUI::.ctor(Celeste.TalkComponent)
   IL_001a: dup
   IL_001b: stloc.2
@@ -56,8 +61,8 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_00a7: ldc.i4.1
   IL_00a8: callvirt System.Boolean Celeste.Actor::OnGround(System.Int32)
 + IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 2882 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 52064953 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 3871 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 26893962 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
   |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_0(System.Boolean,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
@@ -79,8 +84,8 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_00d9: ldfld Monocle.StateMachine Celeste.Player::StateMachine
   IL_00de: callvirt System.Int32 Monocle.StateMachine::get_State()
 + IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 2884 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 56511653 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 3873 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 30927350 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
   |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_1(System.Boolean,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
@@ -121,8 +126,8 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
 + IL_0000: ldloc V_1 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
 + IL_0000: ldarg this @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
 + IL_0000: ldfld System.Single Celeste.TalkComponent::disableDelay @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
-+ IL_0000: ldc.i4 255531 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
++ IL_0000: ldc.i4 60812852 @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
   |-> retrieves System.Boolean Celeste.Mod.PandorasBox.CloneSpawner/<>c::<TalkComponent_Update>b__36_0(System.Object,System.Boolean,System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Boolean,System.Object,System.Boolean,System.Single>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.PandorasBox.CloneSpawner::TalkComponent_Update
@@ -167,8 +172,8 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_019f: ldfld Monocle.StateMachine Celeste.Player::StateMachine
   IL_01a4: call System.Int32 Monocle.StateMachine::op_Implicit(Monocle.StateMachine)
 + IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 2978 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 14041141 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 3926 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 22087389 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
   |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_2(System.Boolean,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
@@ -199,8 +204,8 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_01ef: ldfld Monocle.StateMachine Celeste.Player::StateMachine
   IL_01f4: call System.Int32 Monocle.StateMachine::op_Implicit(Monocle.StateMachine)
 + IL_0000: ldloc.0 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 2980 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
-+ IL_0000: ldc.i4 63590609 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 3928 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
++ IL_0000: ldc.i4 44248105 @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
   |-> retrieves System.Boolean PrismaticHelper.Triggers.UnderwaterInteractionTrigger/<>c::<ModTalkComponentUpdate>b__3_2(System.Boolean,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ PrismaticHelper.Triggers.UnderwaterInteractionTrigger::ModTalkComponentUpdate
@@ -231,6 +236,9 @@ IL Diff: System.Void Celeste.TalkComponent::Update()
   IL_023d: ldarg.0
   IL_023e: ldfld System.Single Celeste.TalkComponent::hoverTimer
   IL_0243: ldc.r4 0.1
++ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: ldfld Celeste.TalkComponent/TalkComponentUI Celeste.TalkComponent::UI @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
++ IL_0000: call System.Single Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::<IL_TalkComponent_Update>g__adjustHoverTimerForCustomUI|5_4(System.Single,Celeste.TalkComponent/TalkComponentUI) @ Celeste.Mod.SorbetHelper.Triggers.AlternateInteractPromptWrapper::IL_TalkComponent_Update
   IL_0248: cgt
   IL_024a: br.s IL_024d
   IL_024c: ldc.i4.0

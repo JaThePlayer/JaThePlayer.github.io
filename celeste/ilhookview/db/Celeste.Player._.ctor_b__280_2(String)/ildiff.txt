@@ -21,6 +21,8 @@ IL Diff: System.Void Celeste.Player::<.ctor>b__280_2(System.String)
   IL_004b: ble.un IL_0149
   IL_0050: ldsfld System.Random Monocle.Calc::Random
   IL_0055: ldc.r4 0.2
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
++ IL_0000: call System.Single Celeste.Mod.SkinModHelper.PlayerSkinSystem::<ilPlayer_b__280_2>g__optionsWeight|13_0(System.Single,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_005a: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
   IL_005f: brfalse IL_0149
   IL_0064: ldstr ""
@@ -28,11 +30,8 @@ IL Diff: System.Void Celeste.Player::<.ctor>b__280_2(System.String)
   IL_006a: ldarg.0
   IL_006b: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
   IL_0070: callvirt Celeste.PlayerSpriteMode Celeste.PlayerSprite::get_Mode()
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-+ IL_0000: ldc.i4 53583736 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-  |-> retrieves Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem/<>c::<patch_SpriteMode_BackPack>b__26_0(Celeste.PlayerSpriteMode)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.PlayerSpriteMode,Celeste.PlayerSpriteMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
++ IL_0000: call Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem::<ilPlayer_b__280_2>g___patchSpriteMode_NB_V|13_1(Celeste.PlayerSpriteMode,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_0075: brtrue.s IL_0099
   IL_0077: ldarg.0
   IL_0078: ldfld Celeste.Level Celeste.Player::level
@@ -40,12 +39,18 @@ IL Diff: System.Void Celeste.Player::<.ctor>b__280_2(System.String)
   IL_0082: ldc.i4.1
   IL_0083: beq.s IL_008c
   IL_0085: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleColdOptions
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
++ IL_0000: call Monocle.Chooser`1<System.String> Celeste.Mod.SkinModHelper.PlayerSkinSystem::<ilPlayer_b__280_2>g__chooserC|13_2(Monocle.Chooser`1<System.String>,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_008a: br.s IL_0091
   IL_008c: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleWarmOptions
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
++ IL_0000: call Monocle.Chooser`1<System.String> Celeste.Mod.SkinModHelper.PlayerSkinSystem::<ilPlayer_b__280_2>g__chooserW|13_3(Monocle.Chooser`1<System.String>,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_0091: callvirt T Monocle.Chooser`1<System.String>::Choose()
   IL_0096: stloc.0
   IL_0097: br.s IL_00a4
   IL_0099: ldsfld Monocle.Chooser`1<System.String> Celeste.Player::idleNoBackpackOptions
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
++ IL_0000: call Monocle.Chooser`1<System.String> Celeste.Mod.SkinModHelper.PlayerSkinSystem::<ilPlayer_b__280_2>g__chooserC|13_2(Monocle.Chooser`1<System.String>,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_009e: callvirt T Monocle.Chooser`1<System.String>::Choose()
   IL_00a3: stloc.0
   IL_00a4: ldloc.0
@@ -65,11 +70,7 @@ IL Diff: System.Void Celeste.Player::<.ctor>b__280_2(System.String)
   IL_00ce: ldarg.0
   IL_00cf: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
   IL_00d4: callvirt Celeste.PlayerSpriteMode Celeste.PlayerSprite::get_Mode()
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-+ IL_0000: ldc.i4 45315345 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
-  |-> retrieves Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem/<>c::<patch_SpriteMode_BackPack>b__26_0(Celeste.PlayerSpriteMode)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.PlayerSpriteMode,Celeste.PlayerSpriteMode>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::patch_SpriteMode_BackPack
++ IL_0000: call Celeste.PlayerSpriteMode Celeste.Mod.SkinModHelper.PlayerSkinSystem::_patchSpriteMode_NB(Celeste.PlayerSpriteMode) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::ilPlayer_b__280_2
   IL_00d9: brtrue.s IL_0125
   IL_00db: ldloc.0
   IL_00dc: ldstr "idleB"

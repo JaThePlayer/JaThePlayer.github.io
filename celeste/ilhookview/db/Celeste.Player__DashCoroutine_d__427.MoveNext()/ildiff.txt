@@ -45,6 +45,7 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0090: pop
   IL_0091: ldloc.1
   IL_0092: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::lastAim
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.EndHelper.EndHelperModule::preventDownRedirect(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.EndHelper.EndHelperModule::Hook_IL_DashCoroutine
 + IL_0000: ldloc.1 @ Celeste.Mod.AidenHelper.Triggers.RunAndGunTrigger::ilHookDashCoroutine
 + IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.AidenHelper.Triggers.RunAndGunTrigger::OverrideLastAim(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ Celeste.Mod.AidenHelper.Triggers.RunAndGunTrigger::ilHookDashCoroutine
   IL_0097: stloc.2
@@ -63,18 +64,23 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_00b9: ldloc.2
   IL_00ba: ldc.r4 240
 + IL_0000: call System.Single FrostHelper.ChangeDashSpeedOnce::GetDashSpeed(System.Single) @ FrostHelper.ChangeDashSpeedOnce::DashCoroutinePatch
-+ IL_0000: ldc.i4 2983 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
-+ IL_0000: ldc.i4 23021465 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0000: ldc.i4 4054 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0000: ldc.i4 58353184 @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
+  |-> retrieves System.Single ExtendedVariants.Variants.DashSpeed::getDashSpeedMultiplier()
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyDashSpeedThing
++ IL_0000: ldc.i4 3931 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyDashSpeedThing
++ IL_0000: ldc.i4 3543831 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyDashSpeedThing
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyDashSpeedThing
   |-> retrieves System.Single ExtendedVariants.Variants.DashSpeed::getDashSpeedMultiplier()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
 + IL_0000: mul @ ExtendedVariants.Variants.DashSpeed::modDashSpeed
   IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
   IL_00c4: stloc.3
-+ IL_0000: ldc.i4 2980 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
-+ IL_0000: ldc.i4 45415214 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
++ IL_0000: ldc.i4 3970 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
++ IL_0000: ldc.i4 48773670 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
-  |-> retrieves System.Void Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerDashCoroutine>b__41_0()
+  |-> retrieves System.Void Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerDashCoroutine>b__63_0()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
   IL_00c5: ldloc.1
 + IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
@@ -85,8 +91,8 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
 + IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
 + IL_0000: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::beforeDashSpeed @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
 + IL_0000: ldloc.3 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
-+ IL_0000: ldc.i4 3660 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
-+ IL_0000: ldc.i4 21800934 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
++ IL_0000: ldc.i4 4121 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
++ IL_0000: ldc.i4 28987483 @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
   |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster/<>c::<retainSpeedInBothDirections>b__9_1(Celeste.Player,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<Microsoft.Xna.Framework.Vector2,Celeste.Player,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.MaxHelpingHand.Entities.ReversibleRetentionBooster::retainSpeedInBothDirections
@@ -114,17 +120,17 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0000: ldloc.1
 + IL_0000: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::beforeDashSpeed @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
 + IL_0000: ldloc.s V_3 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
-+ IL_0000: ldc.i4 3651 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
-+ IL_0000: ldc.i4 62904190 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
++ IL_0000: ldc.i4 3968 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
++ IL_0000: ldc.i4 21314756 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
   |-> retrieves Microsoft.Xna.Framework.Vector2 ExtendedVariants.Variants.StretchUpDashes::doUpDashStretch(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
 + IL_0000: stloc.s V_3 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
 + IL_0111: ldloc.1 @ ExtendedVariants.Variants.StretchUpDashes::Player_DashCoroutine
   IL_0112: ldloc.3
-+ IL_0000: ldarg.0 @ TAS.GameInfo::PlayerOnDashCoroutine
-+ IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ TAS.GameInfo::PlayerOnDashCoroutine
-+ IL_0000: call Microsoft.Xna.Framework.Vector2 Bitsbolts.Components.UnboundedDashing::<ILPlayerDashCoroutine>m__1(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ TAS.GameInfo::PlayerOnDashCoroutine
++ IL_0000: ldarg.0 @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
++ IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Bitsbolts.Components.UnboundedDashing::<ILPlayerDashCoroutine>m__1(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
 + IL_0000: ldarg.0 @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Player_DashCoroutine
 + IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Player_DashCoroutine
 + IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.SSMHelper.Entities.DashBoostField::ModifySpeed(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ Celeste.Mod.SSMHelper.Entities.DashBoostField::IL_Player_DashCoroutine
@@ -165,7 +171,19 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0181: stfld Celeste.Facings Celeste.Player::Facing
   IL_0186: ldloc.1
   IL_0187: callvirt System.Void Celeste.Player::CallDashEvents()
-  IL_018c: ldloc.1
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_0000: ldc.i4 24534960 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c::<Player_DashCoroutine>b__38_1()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_0000: brfalse IL_018c @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
+  IL_0000: ldloc.1
++ IL_0000: ldc.i4 3852 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_0000: ldc.i4 19488052 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
+  |-> retrieves System.Void Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash/<>c::<Player_DashCoroutine>b__38_2(Celeste.Player)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
++ IL_018c: ldloc.1 @ Celeste.Mod.CommunalHelper.DashStates.DreamTunnelDash::Player_DashCoroutine
   IL_018d: ldfld Monocle.StateMachine Celeste.Player::StateMachine
   IL_0192: callvirt System.Int32 Monocle.StateMachine::get_PreviousState()
   IL_0197: ldc.i4.s 19
@@ -207,14 +225,14 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_021c: ldloc.1
   IL_021d: callvirt Celeste.PlayerInventory Celeste.Player::get_Inventory()
   IL_0222: ldfld System.Boolean Celeste.PlayerInventory::DreamDash
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DashCoroutine_Helper::true(System.Boolean) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DashCoroutine
++ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DashCoroutine_Helper::hasDreamDash(System.Boolean) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DashCoroutine
   IL_0227: brfalse.s IL_0241
   IL_0229: ldloc.1
   IL_022a: ldloc.1
   IL_022b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
   IL_0230: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
-+ IL_0000: ldc.i4 3682 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
-+ IL_0000: ldc.i4 34974568 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
++ IL_0000: ldc.i4 4133 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
++ IL_0000: ldc.i4 359602 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
   |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
@@ -223,10 +241,10 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
 + IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DashCoroutine_Helper::CollideCheck(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DashCoroutine
 + IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
 + IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
-+ IL_0000: ldc.i4 15742288 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
++ IL_0000: ldc.i4 3872 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
++ IL_0000: ldc.i4 35028347 @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
-  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry/<>c::<Player_DashCoroutine>b__41_1(System.Boolean,Celeste.Player)
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry/<>c::<Player_DashCoroutine>b__42_1(System.Boolean,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CommunalHelper.Entities.DreamTunnelEntry::Player_DashCoroutine
   IL_023f: brtrue.s IL_0298
   IL_0241: ldloc.1
@@ -245,8 +263,8 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_026e: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
   IL_0273: ldc.r4 0
 + IL_0000: ldloc.1 @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
-+ IL_0000: ldc.i4 3680 @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
-+ IL_0000: ldc.i4 55189552 @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
++ IL_0000: ldc.i4 4123 @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
++ IL_0000: ldc.i4 66284799 @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
   |-> retrieves System.Void Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils/<>c::<ILUltra>b__17_7(Celeste.Player)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Player>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.TASHelper.Gameplay.PlayerStateUtils::ILUltra
@@ -257,10 +275,10 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0288: dup
   IL_0289: ldind.r4
   IL_028a: ldc.r4 1.2
-+ IL_0000: ldc.i4 3649 @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
-+ IL_0000: ldc.i4 9291893 @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
++ IL_0000: ldc.i4 3966 @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
++ IL_0000: ldc.i4 16833235 @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
-  |-> retrieves System.Single ExtendedVariants.Variants.UltraSpeedMultiplier::<modUltraBoosts>b__6_0(System.Single)
+  |-> retrieves System.Single ExtendedVariants.Variants.UltraSpeedMultiplier::<modUltraBoosts>b__5_0(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.UltraSpeedMultiplier::modUltraBoosts
   IL_028f: mul
   IL_0290: stind.r4
@@ -271,8 +289,8 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0299: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
   IL_029e: ldloc.1
   IL_029f: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
-+ IL_0000: ldc.i4 3747 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
-+ IL_0000: ldc.i4 14367740 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
++ IL_0000: ldc.i4 4135 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
++ IL_0000: ldc.i4 29127839 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
   |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_DashCoroutine
@@ -284,8 +302,8 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_02b5: ldsfld Celeste.SaveData Celeste.SaveData::Instance
   IL_02ba: ldflda Celeste.Assists Celeste.SaveData::Assists
   IL_02bf: ldfld System.Boolean Celeste.Assists::SuperDashing
-+ IL_0000: ldc.i4 3749 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
-+ IL_0000: ldc.i4 5099973 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
++ IL_0000: ldc.i4 4153 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
++ IL_0000: ldc.i4 10544748 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
   |-> retrieves System.Boolean Celeste.Mod.Anonhelper.SuperDashRefill/<>c::<ModSuperDashChecks>b__25_0(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
@@ -295,13 +313,13 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_02cc: stfld System.Single Celeste.Player::dashTrailTimer
   IL_02d1: ldloc.1
   IL_02d2: ldc.i4.2
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
-+ IL_0000: ldc.i4 62921650 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
++ IL_0000: ldc.i4 3927 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
++ IL_0000: ldc.i4 40239264 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
   |-> retrieves System.Int32 Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::applyDashTrailCounter(System.Int32)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
-+ IL_0000: ldc.i4 3086 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
-+ IL_0000: ldc.i4 37366318 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
++ IL_0000: ldc.i4 3934 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
++ IL_0000: ldc.i4 33316241 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
   |-> retrieves System.Int32 ExtendedVariants.Variants.DashLength::applyDashTrailCounter(System.Int32)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
@@ -312,13 +330,13 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_02e0: stfld System.Single Celeste.Player::dashTrailTimer
   IL_02e5: ldloc.1
   IL_02e6: ldc.i4.1
-+ IL_0000: ldc.i4 2978 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
-+ IL_0000: ldc.i4 63488919 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
++ IL_0000: ldc.i4 3929 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
++ IL_0000: ldc.i4 38154957 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
   |-> retrieves System.Int32 Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::applyDashTrailCounter(System.Int32)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashTrailCounter
-+ IL_0000: ldc.i4 3569 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
-+ IL_0000: ldc.i4 6772893 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
++ IL_0000: ldc.i4 3936 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
++ IL_0000: ldc.i4 14261025 @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
   |-> retrieves System.Int32 ExtendedVariants.Variants.DashLength::applyDashTrailCounter(System.Int32)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DashLength::modDashTrailCounter
@@ -329,8 +347,8 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_02f7: ldc.r4 0
   IL_02fc: beq.s IL_036f
   IL_02fe: call System.Boolean Celeste.Input::get_GrabCheck()
-+ IL_0000: ldc.i4 3647 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
-+ IL_0000: ldc.i4 38492177 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 3964 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 14292394 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
   |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
@@ -463,22 +481,24 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0492: ldsfld Celeste.SaveData Celeste.SaveData::Instance
   IL_0497: ldflda Celeste.Assists Celeste.SaveData::Assists
   IL_049c: ldfld System.Boolean Celeste.Assists::SuperDashing
-+ IL_0000: ldc.i4 3751 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
-+ IL_0000: ldc.i4 10444675 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
++ IL_0000: ldc.i4 4170 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
++ IL_0000: ldc.i4 48818241 @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
   |-> retrieves System.Boolean Celeste.Mod.Anonhelper.SuperDashRefill/<>c::<ModSuperDashChecks>b__25_0(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Anonhelper.SuperDashRefill::ModSuperDashChecks
   IL_04a1: brfalse.s IL_04c5
   IL_04a3: ldarg.0
   IL_04a4: ldc.r4 0.3
-+ IL_0000: ldc.i4 2984 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
-+ IL_0000: ldc.i4 52799376 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
++ IL_0000: call System.Single Celeste.Mod.RandomDashLength.RandomDashLengthModule::determineDashLengthFactor() @ Celeste.Mod.RandomDashLength.RandomDashLengthModule::onDash
++ IL_0000: mul @ Celeste.Mod.RandomDashLength.RandomDashLengthModule::onDash
++ IL_0000: ldc.i4 3932 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
++ IL_0000: ldc.i4 31894482 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
   |-> retrieves System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineDashLengthFactor()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
 + IL_0000: mul @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
-+ IL_0000: ldc.i4 2882 @ ExtendedVariants.Variants.DashLength::modDashLength
-+ IL_0000: ldc.i4 38105462 @ ExtendedVariants.Variants.DashLength::modDashLength
++ IL_0000: ldc.i4 3925 @ ExtendedVariants.Variants.DashLength::modDashLength
++ IL_0000: ldc.i4 18723879 @ ExtendedVariants.Variants.DashLength::modDashLength
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashLength::modDashLength
   |-> retrieves System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineDashLengthFactor()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.DashLength::modDashLength
@@ -497,14 +517,16 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_04c3: br.s IL_04e5
   IL_04c5: ldarg.0
   IL_04c6: ldc.r4 0.15
-+ IL_0000: ldc.i4 3085 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
-+ IL_0000: ldc.i4 5432339 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
++ IL_0000: call System.Single Celeste.Mod.RandomDashLength.RandomDashLengthModule::determineDashLengthFactor() @ Celeste.Mod.RandomDashLength.RandomDashLengthModule::onDash
++ IL_0000: mul @ Celeste.Mod.RandomDashLength.RandomDashLengthModule::onDash
++ IL_0000: ldc.i4 3933 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
++ IL_0000: ldc.i4 18614885 @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
   |-> retrieves System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineDashLengthFactor()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
 + IL_0000: mul @ Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::modDashLength
-+ IL_0000: ldc.i4 2883 @ ExtendedVariants.Variants.DashLength::modDashLength
-+ IL_0000: ldc.i4 7404846 @ ExtendedVariants.Variants.DashLength::modDashLength
++ IL_0000: ldc.i4 3926 @ ExtendedVariants.Variants.DashLength::modDashLength
++ IL_0000: ldc.i4 34297191 @ ExtendedVariants.Variants.DashLength::modDashLength
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DashLength::modDashLength
   |-> retrieves System.Single Celeste.Mod.XaphanHelper.Upgrades.GravityJacket::determineDashLengthFactor()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ ExtendedVariants.Variants.DashLength::modDashLength
@@ -533,20 +555,22 @@ IL Diff: System.Boolean Celeste.Player/<DashCoroutine>d__427::MoveNext()
   IL_0503: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
   IL_0508: ldc.r4 0
 + IL_0000: pop @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
-+ IL_0000: ldc.i4 2982 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
-+ IL_0000: ldc.i4 6083747 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
++ IL_0000: ldc.i4 3972 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
++ IL_0000: ldc.i4 36309848 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
-  |-> retrieves System.Single Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerDashCoroutine>b__41_1()
+  |-> retrieves System.Single Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerDashCoroutine>b__63_1()
 + IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerDashCoroutine
   IL_050d: bgt.un.s IL_0559
   IL_050f: ldloc.1
   IL_0510: ldloc.1
   IL_0511: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player::DashDir
++ IL_0000: ldloc.1 @ Celeste.Mod.FaerieHelper.Entities.CoriolisController::ModifiedCoroutineHook
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Celeste.Mod.FaerieHelper.Entities.CoriolisController::rotateVector(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ Celeste.Mod.FaerieHelper.Entities.CoriolisController::ModifiedCoroutineHook
   IL_0516: ldc.r4 160
   IL_051b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
-+ IL_0000: ldarg.0 @ TAS.GameInfo::PlayerOnDashCoroutine
-+ IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ TAS.GameInfo::PlayerOnDashCoroutine
-+ IL_0000: call Microsoft.Xna.Framework.Vector2 Bitsbolts.Components.UnboundedDashing::<ILPlayerDashCoroutine>m__7(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ TAS.GameInfo::PlayerOnDashCoroutine
++ IL_0000: ldarg.0 @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
++ IL_0000: ldfld Celeste.Player Celeste.Player/<DashCoroutine>d__427::<>4__this @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Bitsbolts.Components.UnboundedDashing::<ILPlayerDashCoroutine>m__7(Microsoft.Xna.Framework.Vector2,Celeste.Player) @ Bitsbolts.Components.UnboundedDashing::ILPlayerDashCoroutine
   IL_0520: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
   IL_0525: ldloc.1
   IL_0526: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed

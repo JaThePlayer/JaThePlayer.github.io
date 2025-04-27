@@ -71,8 +71,14 @@ IL Diff: System.Void Celeste.Mod.UI.OuiMapSearch::ReloadItems()
 + IL_0000: brfalse IL_00c0 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
 + IL_0000: pop @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
 + IL_0000: ldnull @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
-+ IL_0000: br IL_00c5 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
++ IL_0000: br IL_0000 @ Celeste.Mod.Procedurline.Demo.DemoMap::HideChapterModifier
   IL_00c0: call Celeste.AreaData Celeste.AreaData::Get(System.Int32)
++ IL_0000: dup @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
++ IL_0000: stloc V_25 @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
++ IL_0000: ldnull @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
++ IL_0000: ceq @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
++ IL_0000: brtrue IL_0144 @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
++ IL_0000: ldloc V_25 @ Celeste.Mod.Procedurline.Demo.DemoMap::EverestHotFix2
   IL_00c5: ldfld System.String Celeste.AreaData::Name
   IL_00ca: stloc.s V_11
   IL_00cc: ldloc.s V_11
@@ -138,8 +144,8 @@ IL Diff: System.Void Celeste.Mod.UI.OuiMapSearch::ReloadItems()
   IL_0162: callvirt System.Boolean Celeste.AreaData::HasMode(Celeste.AreaMode)
 + IL_0000: ldloc.s V_13 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
 + IL_0000: ldfld Celeste.AreaData Celeste.Mod.UI.OuiMapSearch/<>c__DisplayClass29_0::area @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
-+ IL_0000: ldc.i4 65002838 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
++ IL_0000: ldc.i4 45946778 @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch
   |-> retrieves System.Boolean Celeste.Mod.CollabUtils2.LobbyHelper/<>c::<modMapSearch>b__37_4(System.Boolean,Celeste.AreaData)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,System.Boolean,Celeste.AreaData>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.CollabUtils2.LobbyHelper::modMapSearch

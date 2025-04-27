@@ -1,0 +1,234 @@
+IL Diff: System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::AdvanceMusic(System.Single,Monocle.Scene,Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::CheckDisableAndReset()
+  IL_0006: ldarg.3
+  IL_0007: ldfld System.Boolean Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBlocksDisabled
+  IL_000c: brfalse.s IL_000f
+  IL_000e: ret
+  IL_000f: ldarg.3
+  IL_0010: dup
+  IL_0011: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBeatTimer
+  IL_0016: ldarg.1
++ IL_0000: call System.Single Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::WonkyManagerMultiplyCassetteSpeed(System.Single) @ Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::ILHook_WonkyCassetteBlockManagerAdvMusic
+  IL_0017: add
+  IL_0018: stfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBeatTimer
+  IL_001d: ldc.i4.0
+  IL_001e: stloc.0
+  IL_001f: ldarg.3
+  IL_0020: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBeatTimer
+  IL_0025: ldarg.0
+  IL_0026: ldfld System.Single Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatIncrement
+  IL_002b: blt.un IL_0139
+  IL_0030: ldarg.3
+  IL_0031: dup
+  IL_0032: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBeatTimer
+  IL_0037: ldarg.0
+  IL_0038: ldfld System.Single Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatIncrement
+  IL_003d: sub
+  IL_003e: stfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteBeatTimer
+  IL_0043: ldarg.2
+  IL_0044: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0049: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener>()
+  IL_004e: call System.Collections.Generic.IEnumerable`1<TResult> System.Linq.Enumerable::Cast<Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener>(System.Collections.IEnumerable)
+  IL_0053: ldarg.0
+  IL_0054: ldarg.3
+  IL_0055: ldarg.3
+  IL_0056: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteWonkyBeatIndex
+  IL_005b: callvirt System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::NextBeatIndex(Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession,System.Int32)
+  IL_0060: ldarg.3
+  IL_0061: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteWonkyBeatIndex
+  IL_0066: ldc.i4.s 16
+  IL_0068: ldarg.0
+  IL_0069: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatLength
+  IL_006e: div
+  IL_006f: div
+  IL_0070: ldarg.0
+  IL_0071: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::barLength
+  IL_0076: rem
+  IL_0077: stloc.1
+  IL_0078: dup
+  IL_0079: ldc.i4.s 16
+  IL_007b: ldarg.0
+  IL_007c: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatLength
+  IL_0081: div
+  IL_0082: div
+  IL_0083: ldarg.0
+  IL_0084: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::barLength
+  IL_0089: rem
+  IL_008a: stloc.2
+  IL_008b: conv.r4
+  IL_008c: ldc.i4.s 16
+  IL_008e: ldarg.0
+  IL_008f: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatLength
+  IL_0094: div
+  IL_0095: conv.r4
+  IL_0096: div
+  IL_0097: ldc.r4 1
+  IL_009c: rem
+  IL_009d: ldc.r4 0
+  IL_00a2: ceq
+  IL_00a4: stloc.3
+  IL_00a5: callvirt System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.IEnumerable`1<Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener>::GetEnumerator()
+  IL_00aa: stloc.s V_4
+  IL_00ac: br.s IL_0107
+  IL_00ae: ldloc.s V_4
+  IL_00b0: callvirt T System.Collections.Generic.IEnumerator`1<Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener>::get_Current()
+  IL_00b5: stloc.s V_5
+  IL_00b7: ldloc.s V_5
+  IL_00b9: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::ControllerIndex
+  IL_00be: brtrue.s IL_0107
+  IL_00c0: ldloc.s V_5
+  IL_00c2: ldfld System.Action`1<System.Int32> Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::OnBeat
+  IL_00c7: dup
+  IL_00c8: brtrue.s IL_00cd
+  IL_00ca: pop
+  IL_00cb: br.s IL_00d3
+  IL_00cd: ldloc.1
+  IL_00ce: callvirt System.Void System.Action`1<System.Int32>::Invoke(T)
+  IL_00d3: ldloc.s V_5
+  IL_00d5: ldloc.s V_5
+  IL_00d7: ldfld System.Predicate`1<System.Int32> Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::ShouldBeActive
+  IL_00dc: ldloc.1
+  IL_00dd: callvirt System.Boolean System.Predicate`1<System.Int32>::Invoke(T)
+  IL_00e2: callvirt System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::SetActivated(System.Boolean)
+  IL_00e7: ldloc.3
+  IL_00e8: brfalse.s IL_0107
+  IL_00ea: ldloc.s V_5
+  IL_00ec: ldfld System.Predicate`1<System.Int32> Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::ShouldBeActive
+  IL_00f1: ldloc.2
+  IL_00f2: callvirt System.Boolean System.Predicate`1<System.Int32>::Invoke(T)
+  IL_00f7: ldloc.s V_5
+  IL_00f9: ldfld System.Boolean Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::Activated
+  IL_00fe: beq.s IL_0107
+  IL_0100: ldloc.s V_5
+  IL_0102: callvirt System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteListener::WillToggle()
+  IL_0107: ldloc.s V_4
+  IL_0109: callvirt System.Boolean System.Collections.IEnumerator::MoveNext()
+  IL_010e: brtrue.s IL_00ae
+  IL_0110: leave.s IL_011e
+  IL_0112: ldloc.s V_4
+  IL_0114: brfalse.s IL_011d
+  IL_0116: ldloc.s V_4
+  IL_0118: callvirt System.Void System.IDisposable::Dispose()
+  IL_011d: endfinally
+  IL_011e: ldarg.3
+  IL_011f: ldarg.0
+  IL_0120: ldarg.3
+  IL_0121: ldarg.3
+  IL_0122: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteWonkyBeatIndex
+  IL_0127: callvirt System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::NextBeatIndex(Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession,System.Int32)
+  IL_012c: stfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::CassetteWonkyBeatIndex
+  IL_0131: ldloc.2
+  IL_0132: brtrue.s IL_0139
+  IL_0134: ldloc.1
+  IL_0135: brfalse.s IL_0139
+  IL_0137: ldc.i4.1
+  IL_0138: stloc.0
+  IL_0139: ldarg.3
+  IL_013a: dup
+  IL_013b: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicBeatTimer
+  IL_0140: ldarg.1
++ IL_0000: call System.Single Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::WonkyManagerMultiplyCassetteSpeed(System.Single) @ Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::ILHook_WonkyCassetteBlockManagerAdvMusic
+  IL_0141: add
+  IL_0142: stfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicBeatTimer
+  IL_0147: ldarg.3
+  IL_0148: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicBeatTimer
+  IL_014d: ldarg.0
+  IL_014e: ldfld System.Single Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatIncrement
+  IL_0153: blt.un.s IL_01c3
+  IL_0155: ldarg.3
+  IL_0156: dup
+  IL_0157: ldfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicBeatTimer
+  IL_015c: ldarg.0
+  IL_015d: ldfld System.Single Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatIncrement
+  IL_0162: sub
+  IL_0163: stfld System.Single Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicBeatTimer
+  IL_0168: ldarg.0
+  IL_0169: ldfld FMOD.Studio.EventInstance Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::sfx
+  IL_016e: dup
+  IL_016f: brtrue.s IL_0174
+  IL_0171: pop
+  IL_0172: br.s IL_0193
+  IL_0174: ldarg.0
+  IL_0175: ldfld System.String Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::param
+  IL_017a: ldarg.3
+  IL_017b: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicWonkyBeatIndex
+  IL_0180: ldarg.0
+  IL_0181: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::beatLength
+  IL_0186: mul
+  IL_0187: ldc.i4.s 16
+  IL_0189: div
+  IL_018a: ldc.i4.1
+  IL_018b: add
+  IL_018c: conv.r4
+  IL_018d: callvirt FMOD.RESULT FMOD.Studio.EventInstance::setParameterValue(System.String,System.Single)
+  IL_0192: pop
+  IL_0193: ldarg.3
+  IL_0194: ldarg.0
+  IL_0195: ldarg.3
+  IL_0196: ldarg.3
+  IL_0197: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicWonkyBeatIndex
+  IL_019c: callvirt System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::NextBeatIndex(Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession,System.Int32)
+  IL_01a1: stfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicWonkyBeatIndex
+  IL_01a6: ldarg.3
+  IL_01a7: ldfld System.Boolean Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicLoopStarted
+  IL_01ac: brtrue.s IL_01c3
+  IL_01ae: ldarg.3
+  IL_01af: ldfld System.Int32 Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicWonkyBeatIndex
+  IL_01b4: ldarg.0
+  IL_01b5: ldfld System.Int32 Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::introBeats
+  IL_01ba: bne.un.s IL_01c3
+  IL_01bc: ldarg.3
+  IL_01bd: ldc.i4.1
+  IL_01be: stfld System.Boolean Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession::MusicLoopStarted
+  IL_01c3: ldarg.0
+  IL_01c4: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01c9: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_01ce: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Mod.QuantumMechanics.Entities.WonkyMinorCassetteBlockController>()
+  IL_01d3: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_01d8: stloc.s V_6
+  IL_01da: br.s IL_0230
+  IL_01dc: ldloca.s V_6
+  IL_01de: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_01e3: castclass Celeste.Mod.QuantumMechanics.Entities.WonkyMinorCassetteBlockController
+  IL_01e8: stloc.s V_7
+  IL_01ea: ldloc.s V_7
+  IL_01ec: ldflda Celeste.EntityID Celeste.Mod.QuantumMechanics.Entities.WonkyMinorCassetteBlockController::ID
+  IL_01f1: ldfld System.String Celeste.EntityID::Level
+  IL_01f6: ldarg.2
+  IL_01f7: isinst Celeste.Level
+  IL_01fc: dup
+  IL_01fd: brtrue.s IL_0203
+  IL_01ff: pop
+  IL_0200: ldnull
+  IL_0201: br.s IL_0214
+  IL_0203: ldfld Celeste.Session Celeste.Level::Session
+  IL_0208: dup
+  IL_0209: brtrue.s IL_020f
+  IL_020b: pop
+  IL_020c: ldnull
+  IL_020d: br.s IL_0214
+  IL_020f: ldfld System.String Celeste.Session::Level
+  IL_0214: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0219: brtrue.s IL_0230
+  IL_021b: ldloc.s V_7
+  IL_021d: ldarg.1
++ IL_0000: call System.Single Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::WonkyManagerMultiplyCassetteSpeed(System.Single) @ Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::ILHook_WonkyCassetteBlockManagerAdvMusic
+  IL_021e: ldarg.2
+  IL_021f: callvirt System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyMinorCassetteBlockController::AdvanceMusic(System.Single,Monocle.Scene)
+  IL_0224: ldloc.0
+  IL_0225: brfalse.s IL_0230
+  IL_0227: ldloc.s V_7
+  IL_0229: ldarg.1
++ IL_0000: call System.Single Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::WonkyManagerMultiplyCassetteSpeed(System.Single) @ Celeste.Mod.EndHelper.Integration.QuantumMechanicsIntegration::ILHook_WonkyCassetteBlockManagerAdvMusic
+  IL_022a: ldarg.3
+  IL_022b: callvirt System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyMinorCassetteBlockController::Synchronize(System.Single,Celeste.Mod.QuantumMechanics.QuantumMechanicsModuleSession)
+  IL_0230: ldloca.s V_6
+  IL_0232: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_0237: brtrue.s IL_01dc
+  IL_0239: leave.s IL_0249
+  IL_023b: ldloca.s V_6
+  IL_023d: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0243: callvirt System.Void System.IDisposable::Dispose()
+  IL_0248: endfinally
+  IL_0249: ret

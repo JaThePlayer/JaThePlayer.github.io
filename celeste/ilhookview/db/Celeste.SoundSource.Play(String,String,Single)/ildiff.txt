@@ -1,0 +1,83 @@
+IL Diff: Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.1
+  IL_0002: callvirt Celeste.SoundSource Celeste.SoundSource::Stop(System.Boolean)
+  IL_0007: pop
+  IL_0008: ldarg.0
+  IL_0009: ldarg.1
+  IL_000a: stfld System.String Celeste.SoundSource::EventName
+  IL_000f: ldarg.1
+  IL_0010: call FMOD.Studio.EventDescription Celeste.Audio::GetEventDescription(System.String)
+  IL_0015: stloc.0
+  IL_0016: ldloc.0
++ IL_0000: ldarg.0 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: ldc.i4 17431559 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
+  |-> retrieves FMOD.Studio.EventDescription Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger/<>c::<SoundSource_Play>b__8_0(FMOD.Studio.EventDescription,Celeste.SoundSource)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<FMOD.Studio.EventDescription,FMOD.Studio.EventDescription,Celeste.SoundSource>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
+  IL_0017: ldnull
+  IL_0018: call System.Boolean FMOD.Studio.HandleBase::op_Inequality(FMOD.Studio.HandleBase,FMOD.Studio.HandleBase)
+  IL_001d: brfalse.s IL_0046
+  IL_001f: ldloc.0
+  IL_0020: ldarg.0
+  IL_0021: ldflda FMOD.Studio.EventInstance Celeste.SoundSource::instance
+  IL_0026: callvirt FMOD.RESULT FMOD.Studio.EventDescription::createInstance(FMOD.Studio.EventInstance&)
+  IL_002b: pop
+  IL_002c: ldloc.0
+  IL_002d: ldarg.0
+  IL_002e: ldflda System.Boolean Celeste.SoundSource::is3D
+  IL_0033: callvirt FMOD.RESULT FMOD.Studio.EventDescription::is3D(System.Boolean&)
+  IL_0038: pop
+  IL_0039: ldloc.0
+  IL_003a: ldarg.0
+  IL_003b: ldflda System.Boolean Celeste.SoundSource::isOneshot
+  IL_0040: callvirt FMOD.RESULT FMOD.Studio.EventDescription::isOneshot(System.Boolean&)
+  IL_0045: pop
+  IL_0046: ldarg.0
+  IL_0047: ldfld FMOD.Studio.EventInstance Celeste.SoundSource::instance
++ IL_0000: ldarg.0 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: ldc.i4 2670149 @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
+  |-> retrieves FMOD.Studio.EventInstance Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger/<>c::<SoundSource_Play>b__8_1(FMOD.Studio.EventInstance,Celeste.SoundSource)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<FMOD.Studio.EventInstance,FMOD.Studio.EventInstance,Celeste.SoundSource>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.LylyraHelper.Code.Triggers.MuteSoundSourceTrigger::SoundSource_Play
+  IL_004c: ldnull
+  IL_004d: call System.Boolean FMOD.Studio.HandleBase::op_Inequality(FMOD.Studio.HandleBase,FMOD.Studio.HandleBase)
+  IL_0052: brfalse.s IL_00ad
+  IL_0054: ldarg.0
+  IL_0055: ldfld System.Boolean Celeste.SoundSource::is3D
+  IL_005a: brfalse.s IL_0089
+  IL_005c: ldarg.0
+  IL_005d: ldfld Microsoft.Xna.Framework.Vector2 Celeste.SoundSource::Position
+  IL_0062: stloc.1
+  IL_0063: ldarg.0
+  IL_0064: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0069: brfalse.s IL_007d
+  IL_006b: ldloc.1
+  IL_006c: ldarg.0
+  IL_006d: call Monocle.Entity Monocle.Component::get_Entity()
+  IL_0072: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0077: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_007c: stloc.1
+  IL_007d: ldarg.0
+  IL_007e: ldfld FMOD.Studio.EventInstance Celeste.SoundSource::instance
+  IL_0083: ldloc.1
+  IL_0084: call System.Void Celeste.Audio::Position(FMOD.Studio.EventInstance,Microsoft.Xna.Framework.Vector2)
+  IL_0089: ldarg.2
+  IL_008a: brfalse.s IL_009a
+  IL_008c: ldarg.0
+  IL_008d: ldfld FMOD.Studio.EventInstance Celeste.SoundSource::instance
+  IL_0092: ldarg.2
+  IL_0093: ldarg.3
+  IL_0094: callvirt FMOD.RESULT FMOD.Studio.EventInstance::setParameterValue(System.String,System.Single)
+  IL_0099: pop
+  IL_009a: ldarg.0
+  IL_009b: ldfld FMOD.Studio.EventInstance Celeste.SoundSource::instance
+  IL_00a0: callvirt FMOD.RESULT FMOD.Studio.EventInstance::start()
+  IL_00a5: pop
+  IL_00a6: ldarg.0
+  IL_00a7: ldc.i4.1
+  IL_00a8: callvirt System.Void Celeste.SoundSource::set_Playing(System.Boolean)
+  IL_00ad: ldarg.0
+  IL_00ae: ret

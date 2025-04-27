@@ -1,0 +1,23 @@
+IL Diff: Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Collections.Generic.Dictionary`2<System.String,Monocle.MTexture> Monocle.Atlas::textures
++ IL_0000: ldsfld Celeste.Mod.SkinModHelper.nonBankReskin Celeste.Mod.SkinModHelper.SkinsSystem::OtherSpriteSkins @ Celeste.Mod.SkinModHelper.SkinsSystem::ilAtlas_get_Item
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.SkinsSystem::ilAtlas_get_Item
+  IL_0006: ldarg.1
++ IL_0000: ldc.i4.0 @ Celeste.Mod.SkinModHelper.SkinsSystem::ilAtlas_get_Item
++ IL_0000: call System.String Celeste.Mod.SkinModHelper.nonBankReskin::GetSkinWithPath(Monocle.Atlas,System.String,System.Boolean) @ Celeste.Mod.SkinModHelper.SkinsSystem::ilAtlas_get_Item
+  IL_0007: ldloca.s V_0
+  IL_0009: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,Monocle.MTexture>::TryGetValue(TKey,TValue&)
+  IL_000e: brtrue.s IL_0032
+  IL_0010: ldstr "Atlas"
+  IL_0015: ldstr "Requested texture that does not exist: "
+  IL_001a: ldarg.0
+  IL_001b: ldfld System.String Monocle.Atlas::RelativeDataPath
+  IL_0020: ldarg.1
+  IL_0021: call System.String System.String::Concat(System.String,System.String,System.String)
+  IL_0026: call System.Void Celeste.Mod.Logger::Warn(System.String,System.String)
+  IL_002b: ldarg.0
+  IL_002c: callvirt Monocle.MTexture Monocle.Atlas::GetFallback()
+  IL_0031: ret
+  IL_0032: ldloc.0
+  IL_0033: ret

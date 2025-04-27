@@ -1,0 +1,80 @@
+IL Diff: System.Void Celeste.Mod.Entities.CustomCoreMessage::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedHud() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0006: castclass Celeste.Level
+  IL_000b: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_0010: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_0015: stloc.0
+  IL_0016: ldloc.0
+  IL_0017: ldc.r4 160
+  IL_001c: ldc.r4 90
+  IL_0021: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0026: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_002b: stloc.1
+  IL_002c: ldarg.0
+  IL_002d: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0032: ldloc.0
+  IL_0033: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0038: ldarg.0
+  IL_0039: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_003e: ldloc.1
+  IL_003f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0044: ldc.r4 0.2
+  IL_0049: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_004e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0053: ldc.r4 6
+  IL_0058: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_005d: stloc.2
+  IL_005e: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0063: brfalse.s IL_0089
+  IL_0065: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_006a: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_006f: ldfld System.Boolean Celeste.Assists::MirrorMode
+  IL_0074: brfalse.s IL_0089
+  IL_0076: ldloca.s V_2
+  IL_0078: ldc.r4 1920
+  IL_007d: ldloc.2
+  IL_007e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0083: sub
+  IL_0084: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0089: ldarg.0
+  IL_008a: ldfld System.Boolean Celeste.Mod.Entities.CustomCoreMessage::outline
+  IL_008f: brfalse.s IL_00e1
+  IL_0091: ldarg.0
+  IL_0092: ldfld System.String Celeste.Mod.Entities.CustomCoreMessage::text
+  IL_0097: ldloc.2
+  IL_0098: ldc.r4 0.5
+  IL_009d: ldc.r4 0.5
+  IL_00a2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00ac: ldc.r4 1.25
+  IL_00b1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00b6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_00bb: ldarg.0
+  IL_00bc: ldfld System.Single Celeste.Mod.Entities.CustomCoreMessage::alpha
+  IL_00c1: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00c6: ldc.r4 2
+  IL_00cb: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_00d0: ldarg.0
+  IL_00d1: ldfld System.Single Celeste.Mod.Entities.CustomCoreMessage::alpha
+  IL_00d6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_00db: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_00e0: ret
+  IL_00e1: ldarg.0
+  IL_00e2: ldfld System.String Celeste.Mod.Entities.CustomCoreMessage::text
+  IL_00e7: ldloc.2
+  IL_00e8: ldc.r4 0.5
+  IL_00ed: ldc.r4 0.5
+  IL_00f2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00f7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_00fc: ldc.r4 1.25
+  IL_0101: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0106: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_010b: ldarg.0
+  IL_010c: ldfld System.Single Celeste.Mod.Entities.CustomCoreMessage::alpha
+  IL_0111: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0116: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_011b: ret

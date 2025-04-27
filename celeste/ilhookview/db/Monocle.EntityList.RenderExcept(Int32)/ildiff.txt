@@ -1,9 +1,9 @@
 IL Diff: System.Void Monocle.EntityList::RenderExcept(System.Int32)
   IL_0000: ldarg.0
-+ IL_0000: callvirt Monocle.Scene Monocle.EntityList::get_Scene() @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
-+ IL_0000: call System.Collections.Generic.List`1<Monocle.Component> Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::getRenderHooks(Monocle.Scene) @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
-+ IL_0000: stloc V_2 @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
-+ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Entities.DepthAdheringDisplacementRenderHook::modEntityListRenderExcept
++ IL_0000: callvirt Monocle.Scene Monocle.EntityList::get_Scene() @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
++ IL_0000: call System.Boolean Celeste.Mod.SorbetHelper.Components.RenderOverride::getComponentsExist(Monocle.Scene) @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
++ IL_0000: stloc V_2 @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
++ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
   IL_0001: ldfld System.Collections.Generic.List`1<Monocle.Entity> Monocle.EntityList::entities
   IL_0006: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
   IL_000b: stloc.0
@@ -16,12 +16,15 @@ IL Diff: System.Void Monocle.EntityList::RenderExcept(System.Int32)
   IL_001c: brfalse.s IL_002d
   IL_001e: ldloc.1
   IL_001f: ldarg.1
++ IL_0000: call System.Int32 Celeste.Mod.Aqua.Rendering.RenderHook::ExtraExcludeTags() @ Celeste.Mod.Aqua.Rendering.RenderHook::EntityList_ILRenderExcept
++ IL_0000: or @ Celeste.Mod.Aqua.Rendering.RenderHook::EntityList_ILRenderExcept
   IL_0020: callvirt System.Boolean Monocle.Entity::TagCheck(System.Int32)
++ IL_0000: ldloc.1 @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
++ IL_0000: ldloc V_2 @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
++ IL_0000: call System.Boolean Celeste.Mod.SorbetHelper.Components.RenderOverride::checkSkipEntity(System.Boolean,Monocle.Entity,System.Boolean) @ Celeste.Mod.SorbetHelper.Components.RenderOverride::modEntityListRenderExcept
   IL_0025: brtrue.s IL_002d
   IL_0027: ldloc.1
-+ IL_0000: dup @ Bitsbolts.Components.WorldCamera::ILEntityListRenderExcept
   IL_0028: callvirt System.Void Monocle.Entity::Render()
-+ IL_0000: call System.Void Bitsbolts.Components.WorldCamera::<ILEntityListRenderExcept>m__2(Monocle.Entity) @ Bitsbolts.Components.WorldCamera::ILEntityListRenderExcept
   IL_002d: ldloca.s V_0
   IL_002f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
   IL_0034: brtrue.s IL_000e

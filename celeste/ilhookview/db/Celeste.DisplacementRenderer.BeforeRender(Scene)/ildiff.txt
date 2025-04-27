@@ -51,8 +51,8 @@ IL Diff: System.Void Celeste.DisplacementRenderer::BeforeRender(Monocle.Scene)
   IL_00ba: callvirt T Celeste.BackdropRenderer::Get<Celeste.HeatWave>()
 + IL_0000: ldarg scene @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
 + IL_0000: isinst Celeste.Level @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
-+ IL_0000: ldc.i4 43919904 @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
++ IL_0000: ldc.i4 25303873 @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
   |-> retrieves Celeste.HeatWave Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks/<>c::<DisplacementRenderer_BeforeRender>b__2_4(Celeste.HeatWave,Celeste.Level)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.HeatWave,Celeste.HeatWave,Celeste.Level>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.StyleMaskHelper.StyleMaskCommonHooks::DisplacementRenderer_BeforeRender
@@ -135,10 +135,11 @@ IL Diff: System.Void Celeste.DisplacementRenderer::BeforeRender(Monocle.Scene)
   IL_01a5: ldloca.s V_6
   IL_01a7: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
   IL_01ad: callvirt System.Void System.IDisposable::Dispose()
-+ IL_0000: ldarg.1 @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::modBeforeRender
-+ IL_0000: ldloc.1 @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::modBeforeRender
-+ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::renderDisplacementEffectBlockers(Monocle.Scene,Microsoft.Xna.Framework.Color) @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::modBeforeRender
   IL_01b2: endfinally
   IL_01b3: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
++ IL_0000: ldarg.1 @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::IL_BeforeRender
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::renderFullBlockers(Monocle.Scene) @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::IL_BeforeRender
   IL_01b8: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
++ IL_0000: ldarg.1 @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::IL_BeforeRender
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::renderWaterBlockers(Monocle.Scene) @ Celeste.Mod.SorbetHelper.Entities.DisplacementEffectBlocker::IL_BeforeRender
   IL_01bd: ret

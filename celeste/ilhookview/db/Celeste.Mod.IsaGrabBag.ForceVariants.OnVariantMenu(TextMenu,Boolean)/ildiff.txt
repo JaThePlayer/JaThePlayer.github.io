@@ -4,75 +4,83 @@ IL Diff: System.Void Celeste.Mod.IsaGrabBag.ForceVariants::OnVariantMenu(Celeste
   IL_0002: stsfld Celeste.TextMenu Celeste.Mod.IsaGrabBag.ForceVariants::variantMenu
   IL_0007: call Celeste.Mod.IsaGrabBag.IsaSession Celeste.Mod.IsaGrabBag.GrabBagModule::get_Session()
   IL_000c: stloc.0
-  IL_000d: newobj System.Void System.Collections.Generic.Dictionary`2<Celeste.TextMenu/Item,System.Int32>::.ctor()
-  IL_0012: stsfld System.Collections.Generic.Dictionary`2<Celeste.TextMenu/Item,System.Int32> Celeste.Mod.IsaGrabBag.ForceVariants::itemList
-  IL_0017: ldnull
-  IL_0018: ldftn System.Void Celeste.Mod.IsaGrabBag.ForceVariants::TextMenu_Close(On.Celeste.TextMenu/orig_Close,Celeste.TextMenu)
-  IL_001e: newobj System.Void On.Celeste.TextMenu/hook_Close::.ctor(System.Object,System.IntPtr)
-  IL_0023: call System.Void On.Celeste.TextMenu::add_Close(On.Celeste.TextMenu/hook_Close)
-  IL_0028: nop
-  IL_0029: ldarg.1
-  IL_002a: brtrue.s IL_002f
-  IL_002c: ldc.i4.0
-  IL_002d: br.s IL_0030
-  IL_002f: ldc.i4.8
-  IL_0030: stloc.1
+  IL_000d: ldsfld On.Celeste.TextMenu/hook_Close Celeste.Mod.IsaGrabBag.ForceVariants/<>O::<3>__TextMenu_Close
+  IL_0012: dup
+  IL_0013: brtrue.s IL_0028
+  IL_0015: pop
+  IL_0016: ldnull
+  IL_0017: ldftn System.Void Celeste.Mod.IsaGrabBag.ForceVariants::TextMenu_Close(On.Celeste.TextMenu/orig_Close,Celeste.TextMenu)
+  IL_001d: newobj System.Void On.Celeste.TextMenu/hook_Close::.ctor(System.Object,System.IntPtr)
+  IL_0022: dup
+  IL_0023: stsfld On.Celeste.TextMenu/hook_Close Celeste.Mod.IsaGrabBag.ForceVariants/<>O::<3>__TextMenu_Close
+  IL_0028: call System.Void On.Celeste.TextMenu::add_Close(On.Celeste.TextMenu/hook_Close)
+  IL_002d: nop
+  IL_002e: ldarg.1
+  IL_002f: brtrue.s IL_0034
   IL_0031: ldc.i4.0
-  IL_0032: stloc.2
-  IL_0033: br.s IL_0089
-  IL_0035: nop
-  IL_0036: ldarg.0
-  IL_0037: callvirt System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::get_Items()
-  IL_003c: ldloc.2
-  IL_003d: callvirt T System.Collections.Generic.List`1<Celeste.TextMenu/Item>::get_Item(System.Int32)
-  IL_0042: stloc.3
-  IL_0043: ldloc.3
+  IL_0032: br.s IL_0035
+  IL_0034: ldc.i4.8
+  IL_0035: stloc.1
+  IL_0036: ldc.i4.0
+  IL_0037: stloc.2
+  IL_0038: br.s IL_009b
+  IL_003a: nop
+  IL_003b: ldarg.0
+  IL_003c: callvirt System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::get_Items()
+  IL_0041: ldloc.2
+  IL_0042: callvirt T System.Collections.Generic.List`1<Celeste.TextMenu/Item>::get_Item(System.Int32)
+  IL_0047: stloc.3
+  IL_0048: ldloc.3
 + IL_0000: dup @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
-  IL_0044: isinst Celeste.TextMenu/OnOff
-+ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
-+ IL_0000: ldc.i4 53333771 @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
+  IL_0049: isinst Celeste.TextMenu/OnOff
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
++ IL_0000: ldc.i4 63353349 @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
-  |-> retrieves Celeste.TextMenu+Item ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant/<>c::<modIsaGrabBag>b__5_1(Celeste.TextMenu+Item,Celeste.TextMenu+OnOff)
+  |-> retrieves Celeste.TextMenu+Item ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant/<>c::<modIsaGrabBag>b__6_1(Celeste.TextMenu+Item,Celeste.TextMenu+OnOff)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.TextMenu/Item,Celeste.TextMenu/Item,Celeste.TextMenu/OnOff>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.Vanilla.AbstractVanillaVariant::modIsaGrabBag
-  IL_0049: ldnull
-  IL_004a: cgt.un
-  IL_004c: ldc.i4.0
-  IL_004d: ceq
-  IL_004f: stloc.s V_5
-  IL_0051: ldloc.s V_5
-  IL_0053: brfalse.s IL_0058
-  IL_0055: nop
-  IL_0056: br.s IL_0085
-  IL_0058: ldarg.1
-  IL_0059: brtrue.s IL_0062
-  IL_005b: call System.Boolean Celeste.Mod.IsaGrabBag.ForceVariants::get_bingoUIMenuModified()
-  IL_0060: brtrue.s IL_0073
-  IL_0062: ldsfld System.Collections.Generic.List`1<Celeste.Mod.IsaGrabBag.Variant> Celeste.Mod.IsaGrabBag.ForceVariants::menuLayout
-  IL_0067: ldloc.1
-  IL_0068: dup
-  IL_0069: ldc.i4.1
-  IL_006a: add
-  IL_006b: stloc.1
-  IL_006c: callvirt T System.Collections.Generic.List`1<Celeste.Mod.IsaGrabBag.Variant>::get_Item(System.Int32)
-  IL_0071: br.s IL_0074
-  IL_0073: ldc.i4.6
-  IL_0074: stloc.s V_4
-  IL_0076: ldsfld System.Collections.Generic.Dictionary`2<Celeste.TextMenu/Item,System.Int32> Celeste.Mod.IsaGrabBag.ForceVariants::itemList
-  IL_007b: ldloc.3
-  IL_007c: ldloc.s V_4
-  IL_007e: callvirt System.Void System.Collections.Generic.Dictionary`2<Celeste.TextMenu/Item,System.Int32>::Add(TKey,TValue)
-  IL_0083: nop
-  IL_0084: nop
-  IL_0085: ldloc.2
-  IL_0086: ldc.i4.1
-  IL_0087: add
-  IL_0088: stloc.2
-  IL_0089: ldloc.2
-  IL_008a: ldarg.0
-  IL_008b: callvirt System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::get_Items()
-  IL_0090: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.TextMenu/Item>::get_Count()
-  IL_0095: clt
-  IL_0097: stloc.s V_6
-  IL_0099: ldloc.s V_6
-  IL_009b: brtrue.s IL_0035
-  IL_009d: ret
+  IL_004e: stloc.s V_4
+  IL_0050: ldloc.s V_4
+  IL_0052: ldnull
+  IL_0053: cgt.un
+  IL_0055: ldc.i4.0
+  IL_0056: ceq
+  IL_0058: stloc.s V_6
+  IL_005a: ldloc.s V_6
+  IL_005c: brfalse.s IL_0061
+  IL_005e: nop
+  IL_005f: br.s IL_0097
+  IL_0061: ldarg.1
+  IL_0062: brtrue.s IL_006b
+  IL_0064: call System.Boolean Celeste.Mod.IsaGrabBag.ForceVariants::get_bingoUIMenuModified()
+  IL_0069: brtrue.s IL_007c
+  IL_006b: ldsfld System.Collections.Generic.List`1<Celeste.Mod.IsaGrabBag.Variant> Celeste.Mod.IsaGrabBag.ForceVariants::menuLayout
+  IL_0070: ldloc.1
+  IL_0071: dup
+  IL_0072: ldc.i4.1
+  IL_0073: add
+  IL_0074: stloc.1
+  IL_0075: callvirt T System.Collections.Generic.List`1<Celeste.Mod.IsaGrabBag.Variant>::get_Item(System.Int32)
+  IL_007a: br.s IL_007d
+  IL_007c: ldc.i4.6
+  IL_007d: stloc.s V_5
+  IL_007f: ldloc.s V_4
+  IL_0081: ldloc.s V_4
+  IL_0083: ldfld System.Action`1<T> Celeste.TextMenu/Option`1<System.Boolean>::OnValueChange
+  IL_0088: ldloc.s V_4
+  IL_008a: ldloc.s V_5
+  IL_008c: call System.Action`1<System.Boolean> Celeste.Mod.IsaGrabBag.ForceVariants::OnChangeVariant(System.Action`1<System.Boolean>,Celeste.TextMenu/Option`1<System.Boolean>,Celeste.Mod.IsaGrabBag.Variant)
+  IL_0091: stfld System.Action`1<T> Celeste.TextMenu/Option`1<System.Boolean>::OnValueChange
+  IL_0096: nop
+  IL_0097: ldloc.2
+  IL_0098: ldc.i4.1
+  IL_0099: add
+  IL_009a: stloc.2
+  IL_009b: ldloc.2
+  IL_009c: ldarg.0
+  IL_009d: callvirt System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::get_Items()
+  IL_00a2: callvirt System.Int32 System.Collections.Generic.List`1<Celeste.TextMenu/Item>::get_Count()
+  IL_00a7: clt
+  IL_00a9: stloc.s V_7
+  IL_00ab: ldloc.s V_7
+  IL_00ad: brtrue IL_003a
+  IL_00b2: ret

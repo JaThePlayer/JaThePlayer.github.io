@@ -14,6 +14,9 @@ IL Diff: System.Void Celeste.FloatySpaceBlock::Update()
   IL_0021: ldloca.s V_1
   IL_0023: call T System.Collections.Generic.List`1/Enumerator<Celeste.FloatySpaceBlock>::get_Current()
   IL_0028: callvirt System.Boolean Celeste.Solid::HasPlayerRider()
++ IL_0000: pop @ Celeste.Mod.Aqua.Core.FloatySpaceBlockExtensions::FloatySpaceBlock_ILUpdate
++ IL_0000: ldarg.0 @ Celeste.Mod.Aqua.Core.FloatySpaceBlockExtensions::FloatySpaceBlock_ILUpdate
++ IL_0000: call System.Boolean Celeste.Mod.Aqua.Core.FloatySpaceBlockExtensions::IsPlayerHanging(Celeste.FloatySpaceBlock) @ Celeste.Mod.Aqua.Core.FloatySpaceBlockExtensions::FloatySpaceBlock_ILUpdate
   IL_002d: brfalse.s IL_0033
   IL_002f: ldc.i4.1
   IL_0030: stloc.0
@@ -72,8 +75,8 @@ IL Diff: System.Void Celeste.FloatySpaceBlock::Update()
   IL_00c5: ldarg.0
   IL_00c6: ldfld System.Single Celeste.FloatySpaceBlock::yLerp
   IL_00cb: ldc.r4 1
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
-+ IL_0000: ldc.i4 8614644 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
++ IL_0000: ldc.i4 37470730 @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update
   |-> retrieves System.Single Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertFloatDelegate>b__22_0(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.FloatySpaceBlockHooks::FloatySpaceBlock_Update

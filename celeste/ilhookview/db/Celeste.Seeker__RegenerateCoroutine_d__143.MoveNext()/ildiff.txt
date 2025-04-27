@@ -83,6 +83,8 @@ IL Diff: System.Boolean Celeste.Seeker/<RegenerateCoroutine>d__143::MoveNext()
   IL_00ed: ldloc.1
   IL_00ee: ldfld Monocle.Circle Celeste.Seeker::pushRadius
   IL_00f3: callvirt System.Void Monocle.Entity::set_Collider(Monocle.Collider)
++ IL_0000: ldloc V_1 @ Celeste.Mod.SorbetHelper.Components.ExplodeHittable::IL_Seeker_RegenerateCoroutine
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Components.ExplodeHittable::activateExplodeHittables(Monocle.Entity) @ Celeste.Mod.SorbetHelper.Components.ExplodeHittable::IL_Seeker_RegenerateCoroutine
   IL_00f8: ldloc.1
   IL_00f9: callvirt T Monocle.Entity::CollideFirst<Celeste.Player>()
   IL_00fe: stloc.2
@@ -102,8 +104,8 @@ IL Diff: System.Boolean Celeste.Seeker/<RegenerateCoroutine>d__143::MoveNext()
   IL_0122: ldc.i4.1
   IL_0123: ldc.i4.0
   IL_0124: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::ExplodeLaunch(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
-+ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
-+ IL_0000: ldc.i4 20072965 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 28175355 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
   |-> retrieves System.Void ExtendedVariants.Variants.ExplodeLaunchSpeed::correctExplodeLaunchSpeed()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall

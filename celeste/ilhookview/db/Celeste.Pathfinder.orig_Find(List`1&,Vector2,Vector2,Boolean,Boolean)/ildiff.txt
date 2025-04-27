@@ -1,0 +1,785 @@
+IL Diff: System.Boolean Celeste.Pathfinder::orig_Find(System.Collections.Generic.List`1[[Microsoft.Xna.Framework.Vector2, FNA, Version=23.3.0.0, Culture=neutral, PublicKeyToken=null]]&,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_0000: ldarg.0
+  IL_0001: ldnull
+  IL_0002: stfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Pathfinder::lastPath
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_000d: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0012: stloc.s V_7
+  IL_0014: ldloca.s V_7
+  IL_0016: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Left()
+  IL_001b: ldc.i4.8
+  IL_001c: div
+  IL_001d: stloc.0
+  IL_001e: ldarg.0
+  IL_001f: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_0024: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0029: stloc.s V_7
+  IL_002b: ldloca.s V_7
+  IL_002d: call System.Int32 Microsoft.Xna.Framework.Rectangle::get_Top()
+  IL_0032: ldc.i4.8
+  IL_0033: div
+  IL_0034: stloc.1
+  IL_0035: ldarg.0
+  IL_0036: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_003b: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0040: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Width
+  IL_0045: ldc.i4.8
+  IL_0046: div
+  IL_0047: stloc.2
+  IL_0048: ldarg.0
+  IL_0049: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_004e: callvirt Microsoft.Xna.Framework.Rectangle Celeste.Level::get_Bounds()
+  IL_0053: ldfld System.Int32 Microsoft.Xna.Framework.Rectangle::Height
+  IL_0058: ldc.i4.8
+  IL_0059: div
+  IL_005a: stloc.3
+  IL_005b: ldarg.0
+  IL_005c: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_0061: callvirt Microsoft.Xna.Framework.Point Celeste.Level::get_LevelSolidOffset()
+  IL_0066: stloc.s V_8
+  IL_0068: ldc.i4.0
+  IL_0069: stloc.s V_9
+  IL_006b: br IL_00f8
+  IL_0070: ldc.i4.0
+  IL_0071: stloc.s V_10
+  IL_0073: br.s IL_00ed
+  IL_0075: ldarg.0
+  IL_0076: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_007b: ldloc.s V_9
+  IL_007d: ldloc.s V_10
+  IL_007f: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0084: ldarg.0
+  IL_0085: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_008a: ldfld Monocle.VirtualMap`1<System.Char> Celeste.Level::SolidsData
+  IL_008f: ldloc.s V_9
+  IL_0091: ldloc.s V_8
+  IL_0093: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0098: add
+  IL_0099: ldloc.s V_10
+  IL_009b: ldloc.s V_8
+  IL_009d: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_00a2: add
+  IL_00a3: callvirt T Monocle.VirtualMap`1<System.Char>::get_Item(System.Int32,System.Int32)
+  IL_00a8: ldc.i4.s 48
+  IL_00aa: ceq
+  IL_00ac: ldc.i4.0
+  IL_00ad: ceq
+  IL_00af: stfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_00b4: ldarg.0
+  IL_00b5: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_00ba: ldloc.s V_9
+  IL_00bc: ldloc.s V_10
+  IL_00be: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_00c3: ldc.i4 2147483647
+  IL_00c8: stfld System.Int32 Celeste.Pathfinder/Tile::Cost
+  IL_00cd: ldarg.0
+  IL_00ce: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_00d3: ldloc.s V_9
+  IL_00d5: ldloc.s V_10
+  IL_00d7: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_00dc: ldflda System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_00e1: initobj System.Nullable`1<Microsoft.Xna.Framework.Point>
+  IL_00e7: ldloc.s V_10
+  IL_00e9: ldc.i4.1
+  IL_00ea: add
+  IL_00eb: stloc.s V_10
+  IL_00ed: ldloc.s V_10
+  IL_00ef: ldloc.3
+  IL_00f0: blt.s IL_0075
+  IL_00f2: ldloc.s V_9
+  IL_00f4: ldc.i4.1
+  IL_00f5: add
+  IL_00f6: stloc.s V_9
+  IL_00f8: ldloc.s V_9
+  IL_00fa: ldloc.2
+  IL_00fb: blt IL_0070
+  IL_0100: ldarg.0
+  IL_0101: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_0106: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_010b: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.Solid>()
+  IL_0110: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
+  IL_0115: stloc.s V_11
+  IL_0117: br IL_01f1
+  IL_011c: ldloca.s V_11
+  IL_011e: call T System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::get_Current()
+  IL_0123: stloc.s V_12
+  IL_0125: ldloc.s V_12
++ IL_0000: dup @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
+  IL_0127: ldfld System.Boolean Monocle.Entity::Collidable
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: ldc.i4 7513080 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
+  |-> retrieves System.Boolean ExtendedVariants.Variants.AddSeekers::<hookPathfinderFind>b__16_1(Monocle.Entity,System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Monocle.Entity,System.Boolean>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
+  IL_012c: brfalse IL_01f1
+  IL_0131: ldloc.s V_12
+  IL_0133: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0138: isinst Monocle.Hitbox
+  IL_013d: brfalse IL_01f1
+  IL_0142: ldloc.s V_12
+  IL_0144: callvirt System.Single Monocle.Entity::get_Left()
+  IL_0149: ldc.r4 8
+  IL_014e: div
+  IL_014f: conv.r8
+  IL_0150: call System.Double System.Math::Floor(System.Double)
+  IL_0155: conv.i4
+  IL_0156: stloc.s V_13
+  IL_0158: ldloc.s V_12
+  IL_015a: callvirt System.Single Monocle.Entity::get_Right()
+  IL_015f: ldc.r4 8
+  IL_0164: div
+  IL_0165: conv.r8
+  IL_0166: call System.Double System.Math::Ceiling(System.Double)
+  IL_016b: conv.i4
+  IL_016c: stloc.s V_14
+  IL_016e: br IL_01e8
+  IL_0173: ldloc.s V_12
+  IL_0175: callvirt System.Single Monocle.Entity::get_Top()
+  IL_017a: ldc.r4 8
+  IL_017f: div
+  IL_0180: conv.r8
+  IL_0181: call System.Double System.Math::Floor(System.Double)
+  IL_0186: conv.i4
+  IL_0187: stloc.s V_15
+  IL_0189: ldloc.s V_12
+  IL_018b: callvirt System.Single Monocle.Entity::get_Bottom()
+  IL_0190: ldc.r4 8
+  IL_0195: div
+  IL_0196: conv.r8
+  IL_0197: call System.Double System.Math::Ceiling(System.Double)
+  IL_019c: conv.i4
+  IL_019d: stloc.s V_16
+  IL_019f: br.s IL_01dc
+  IL_01a1: ldloc.s V_13
+  IL_01a3: ldloc.0
+  IL_01a4: sub
+  IL_01a5: stloc.s V_17
+  IL_01a7: ldloc.s V_15
+  IL_01a9: ldloc.1
+  IL_01aa: sub
+  IL_01ab: stloc.s V_18
+  IL_01ad: ldloc.s V_17
+  IL_01af: ldc.i4.0
+  IL_01b0: blt.s IL_01d6
+  IL_01b2: ldloc.s V_18
+  IL_01b4: ldc.i4.0
+  IL_01b5: blt.s IL_01d6
+  IL_01b7: ldloc.s V_17
+  IL_01b9: ldloc.2
+  IL_01ba: bge.s IL_01d6
+  IL_01bc: ldloc.s V_18
+  IL_01be: ldloc.3
+  IL_01bf: bge.s IL_01d6
+  IL_01c1: ldarg.0
+  IL_01c2: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_01c7: ldloc.s V_17
+  IL_01c9: ldloc.s V_18
+  IL_01cb: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_01d0: ldc.i4.1
+  IL_01d1: stfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_01d6: ldloc.s V_15
+  IL_01d8: ldc.i4.1
+  IL_01d9: add
+  IL_01da: stloc.s V_15
+  IL_01dc: ldloc.s V_15
+  IL_01de: ldloc.s V_16
+  IL_01e0: blt.s IL_01a1
+  IL_01e2: ldloc.s V_13
+  IL_01e4: ldc.i4.1
+  IL_01e5: add
+  IL_01e6: stloc.s V_13
+  IL_01e8: ldloc.s V_13
+  IL_01ea: ldloc.s V_14
+  IL_01ec: blt IL_0173
+  IL_01f1: ldloca.s V_11
+  IL_01f3: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
+  IL_01f8: brtrue IL_011c
+  IL_01fd: leave.s IL_020d
+  IL_01ff: ldloca.s V_11
+  IL_0201: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Entity>
+  IL_0207: callvirt System.Void System.IDisposable::Dispose()
+  IL_020c: endfinally
+  IL_020d: ldarg.0
+  IL_020e: ldarg.2
+  IL_020f: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0214: ldc.r4 8
+  IL_0219: div
+  IL_021a: conv.r8
+  IL_021b: call System.Double System.Math::Floor(System.Double)
+  IL_0220: conv.i4
+  IL_0221: ldloc.0
+  IL_0222: sub
+  IL_0223: ldarg.2
+  IL_0224: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0229: ldc.r4 8
+  IL_022e: div
+  IL_022f: conv.r8
+  IL_0230: call System.Double System.Math::Floor(System.Double)
+  IL_0235: conv.i4
+  IL_0236: ldloc.1
+  IL_0237: sub
+  IL_0238: newobj System.Void Microsoft.Xna.Framework.Point::.ctor(System.Int32,System.Int32)
+  IL_023d: dup
+  IL_023e: stloc.s V_19
+  IL_0240: stfld Microsoft.Xna.Framework.Point Celeste.Pathfinder::debugLastStart
+  IL_0245: ldloc.s V_19
+  IL_0247: stloc.s V_4
+  IL_0249: ldarg.0
+  IL_024a: ldarg.3
+  IL_024b: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0250: ldc.r4 8
+  IL_0255: div
+  IL_0256: conv.r8
+  IL_0257: call System.Double System.Math::Floor(System.Double)
+  IL_025c: conv.i4
+  IL_025d: ldloc.0
+  IL_025e: sub
+  IL_025f: ldarg.3
+  IL_0260: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0265: ldc.r4 8
+  IL_026a: div
+  IL_026b: conv.r8
+  IL_026c: call System.Double System.Math::Floor(System.Double)
+  IL_0271: conv.i4
+  IL_0272: ldloc.1
+  IL_0273: sub
+  IL_0274: newobj System.Void Microsoft.Xna.Framework.Point::.ctor(System.Int32,System.Int32)
+  IL_0279: dup
+  IL_027a: stloc.s V_19
+  IL_027c: stfld Microsoft.Xna.Framework.Point Celeste.Pathfinder::debugLastEnd
+  IL_0281: ldloc.s V_19
+  IL_0283: stloc.s V_5
+  IL_0285: ldloc.s V_4
+  IL_0287: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_028c: ldc.i4.0
+  IL_028d: blt.s IL_02d5
+  IL_028f: ldloc.s V_4
+  IL_0291: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0296: ldc.i4.0
+  IL_0297: blt.s IL_02d5
+  IL_0299: ldloc.s V_4
+  IL_029b: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_02a0: ldloc.2
+  IL_02a1: bge.s IL_02d5
+  IL_02a3: ldloc.s V_4
+  IL_02a5: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_02aa: ldloc.3
+  IL_02ab: bge.s IL_02d5
+  IL_02ad: ldloc.s V_5
+  IL_02af: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_02b4: ldc.i4.0
+  IL_02b5: blt.s IL_02d5
+  IL_02b7: ldloc.s V_5
+  IL_02b9: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_02be: ldc.i4.0
+  IL_02bf: blt.s IL_02d5
+  IL_02c1: ldloc.s V_5
+  IL_02c3: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_02c8: ldloc.2
+  IL_02c9: bge.s IL_02d5
+  IL_02cb: ldloc.s V_5
+  IL_02cd: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_02d2: ldloc.3
+  IL_02d3: blt.s IL_02ee
+  IL_02d5: ldarg.s logging
+  IL_02d7: brfalse.s IL_02ec
+  IL_02d9: ldc.i4.1
+  IL_02da: newarr System.Object
+  IL_02df: dup
+  IL_02e0: ldc.i4.0
+  IL_02e1: ldstr "PF: FAILED - Start or End outside the level bounds"
+  IL_02e6: stelem.ref
+  IL_02e7: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_02ec: ldc.i4.0
+  IL_02ed: ret
+  IL_02ee: ldarg.0
+  IL_02ef: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_02f4: ldloc.s V_4
+  IL_02f6: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_02fb: ldloc.s V_4
+  IL_02fd: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0302: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0307: ldfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_030c: brfalse.s IL_0327
+  IL_030e: ldarg.s logging
+  IL_0310: brfalse.s IL_0325
+  IL_0312: ldc.i4.1
+  IL_0313: newarr System.Object
+  IL_0318: dup
+  IL_0319: ldc.i4.0
+  IL_031a: ldstr "PF: FAILED - Start inside a solid"
+  IL_031f: stelem.ref
+  IL_0320: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_0325: ldc.i4.0
+  IL_0326: ret
+  IL_0327: ldarg.0
+  IL_0328: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_032d: ldloc.s V_5
+  IL_032f: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0334: ldloc.s V_5
+  IL_0336: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_033b: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0340: ldfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_0345: brfalse.s IL_0360
+  IL_0347: ldarg.s logging
+  IL_0349: brfalse.s IL_035e
+  IL_034b: ldc.i4.1
+  IL_034c: newarr System.Object
+  IL_0351: dup
+  IL_0352: ldc.i4.0
+  IL_0353: ldstr "PF: FAILED - End inside a solid"
+  IL_0358: stelem.ref
+  IL_0359: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_035e: ldc.i4.0
+  IL_035f: ret
+  IL_0360: ldarg.0
+  IL_0361: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_0366: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::Clear()
+  IL_036b: ldarg.0
+  IL_036c: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_0371: ldloc.s V_4
+  IL_0373: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::Add(T)
+  IL_0378: ldarg.0
+  IL_0379: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_037e: ldloc.s V_4
+  IL_0380: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0385: ldloc.s V_4
+  IL_0387: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_038c: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0391: ldc.i4.0
+  IL_0392: stfld System.Int32 Celeste.Pathfinder/Tile::Cost
+  IL_0397: ldc.i4.0
+  IL_0398: stloc.s V_6
+  IL_039a: br IL_06a6
+  IL_039f: ldarg.0
+  IL_03a0: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_03a5: ldarg.0
+  IL_03a6: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_03ab: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::get_Count()
+  IL_03b0: ldc.i4.1
+  IL_03b1: sub
+  IL_03b2: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::get_Item(System.Int32)
+  IL_03b7: stloc.s V_20
+  IL_03b9: ldarg.0
+  IL_03ba: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_03bf: ldarg.0
+  IL_03c0: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_03c5: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::get_Count()
+  IL_03ca: ldc.i4.1
+  IL_03cb: sub
+  IL_03cc: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::RemoveAt(System.Int32)
+  IL_03d1: ldc.i4.0
+  IL_03d2: stloc.s V_21
+  IL_03d4: br IL_069e
+  IL_03d9: ldloca.s V_22
+  IL_03db: ldsfld Microsoft.Xna.Framework.Point[] Celeste.Pathfinder::directions
+  IL_03e0: ldloc.s V_21
+  IL_03e2: ldelema Microsoft.Xna.Framework.Point
+  IL_03e7: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_03ec: ldsfld Microsoft.Xna.Framework.Point[] Celeste.Pathfinder::directions
+  IL_03f1: ldloc.s V_21
+  IL_03f3: ldelema Microsoft.Xna.Framework.Point
+  IL_03f8: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_03fd: call System.Void Microsoft.Xna.Framework.Point::.ctor(System.Int32,System.Int32)
+  IL_0402: ldloca.s V_23
+  IL_0404: ldloc.s V_20
+  IL_0406: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_040b: ldloc.s V_22
+  IL_040d: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0412: add
+  IL_0413: ldloc.s V_20
+  IL_0415: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_041a: ldloc.s V_22
+  IL_041c: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0421: add
+  IL_0422: call System.Void Microsoft.Xna.Framework.Point::.ctor(System.Int32,System.Int32)
+  IL_0427: ldc.i4.1
+  IL_0428: stloc.s V_24
+  IL_042a: ldloc.s V_23
+  IL_042c: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0431: ldc.i4.0
+  IL_0432: blt IL_0698
+  IL_0437: ldloc.s V_23
+  IL_0439: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_043e: ldc.i4.0
+  IL_043f: blt IL_0698
+  IL_0444: ldloc.s V_23
+  IL_0446: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_044b: ldloc.2
+  IL_044c: bge IL_0698
+  IL_0451: ldloc.s V_23
+  IL_0453: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0458: ldloc.3
+  IL_0459: bge IL_0698
+  IL_045e: ldarg.0
+  IL_045f: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_0464: ldloc.s V_23
+  IL_0466: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_046b: ldloc.s V_23
+  IL_046d: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0472: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0477: ldfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_047c: brtrue IL_0698
+  IL_0481: ldc.i4.0
+  IL_0482: stloc.s V_27
+  IL_0484: br IL_0515
+  IL_0489: ldloca.s V_28
+  IL_048b: ldloc.s V_23
+  IL_048d: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0492: ldsfld Microsoft.Xna.Framework.Point[] Celeste.Pathfinder::directions
+  IL_0497: ldloc.s V_27
+  IL_0499: ldelema Microsoft.Xna.Framework.Point
+  IL_049e: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_04a3: add
+  IL_04a4: ldloc.s V_23
+  IL_04a6: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_04ab: ldsfld Microsoft.Xna.Framework.Point[] Celeste.Pathfinder::directions
+  IL_04b0: ldloc.s V_27
+  IL_04b2: ldelema Microsoft.Xna.Framework.Point
+  IL_04b7: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_04bc: add
+  IL_04bd: call System.Void Microsoft.Xna.Framework.Point::.ctor(System.Int32,System.Int32)
+  IL_04c2: ldloc.s V_28
+  IL_04c4: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_04c9: ldc.i4.0
+  IL_04ca: blt.s IL_050f
+  IL_04cc: ldloc.s V_28
+  IL_04ce: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_04d3: ldc.i4.0
+  IL_04d4: blt.s IL_050f
+  IL_04d6: ldloc.s V_28
+  IL_04d8: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_04dd: ldloc.2
+  IL_04de: bge.s IL_050f
+  IL_04e0: ldloc.s V_28
+  IL_04e2: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_04e7: ldloc.3
+  IL_04e8: bge.s IL_050f
+  IL_04ea: ldarg.0
+  IL_04eb: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_04f0: ldloc.s V_28
+  IL_04f2: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_04f7: ldloc.s V_28
+  IL_04f9: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_04fe: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0503: ldfld System.Boolean Celeste.Pathfinder/Tile::Solid
+  IL_0508: brfalse.s IL_050f
+  IL_050a: ldc.i4.7
+  IL_050b: stloc.s V_24
+  IL_050d: br.s IL_051d
+  IL_050f: ldloc.s V_27
+  IL_0511: ldc.i4.1
+  IL_0512: add
+  IL_0513: stloc.s V_27
+  IL_0515: ldloc.s V_27
+  IL_0517: ldc.i4.4
+  IL_0518: blt IL_0489
+  IL_051d: ldarg.s fewerTurns
+  IL_051f: brfalse IL_05b1
+  IL_0524: ldarg.0
+  IL_0525: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_052a: ldloc.s V_20
+  IL_052c: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0531: ldloc.s V_20
+  IL_0533: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0538: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_053d: ldflda System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_0542: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Point>::get_HasValue()
+  IL_0547: brfalse.s IL_05b1
+  IL_0549: ldloc.s V_23
+  IL_054b: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0550: ldarg.0
+  IL_0551: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_0556: ldloc.s V_20
+  IL_0558: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_055d: ldloc.s V_20
+  IL_055f: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0564: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0569: ldflda System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_056e: call T System.Nullable`1<Microsoft.Xna.Framework.Point>::get_Value()
+  IL_0573: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0578: beq.s IL_05b1
+  IL_057a: ldloc.s V_23
+  IL_057c: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0581: ldarg.0
+  IL_0582: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_0587: ldloc.s V_20
+  IL_0589: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_058e: ldloc.s V_20
+  IL_0590: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0595: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_059a: ldflda System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_059f: call T System.Nullable`1<Microsoft.Xna.Framework.Point>::get_Value()
+  IL_05a4: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_05a9: beq.s IL_05b1
+  IL_05ab: ldloc.s V_24
+  IL_05ad: ldc.i4.4
+  IL_05ae: add
+  IL_05af: stloc.s V_24
+  IL_05b1: ldarg.0
+  IL_05b2: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_05b7: ldloc.s V_20
+  IL_05b9: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_05be: ldloc.s V_20
+  IL_05c0: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_05c5: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_05ca: ldfld System.Int32 Celeste.Pathfinder/Tile::Cost
+  IL_05cf: stloc.s V_25
+  IL_05d1: ldloc.s V_22
+  IL_05d3: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_05d8: brfalse.s IL_05e9
+  IL_05da: ldloc.s V_24
+  IL_05dc: ldloc.s V_25
+  IL_05de: conv.r4
+  IL_05df: ldc.r4 0.5
+  IL_05e4: mul
+  IL_05e5: conv.i4
+  IL_05e6: add
+  IL_05e7: stloc.s V_24
+  IL_05e9: ldloc.s V_25
+  IL_05eb: ldloc.s V_24
+  IL_05ed: add
+  IL_05ee: stloc.s V_26
+  IL_05f0: ldarg.0
+  IL_05f1: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_05f6: ldloc.s V_23
+  IL_05f8: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_05fd: ldloc.s V_23
+  IL_05ff: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0604: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0609: ldfld System.Int32 Celeste.Pathfinder/Tile::Cost
+  IL_060e: ldloc.s V_26
+  IL_0610: ble IL_0698
+  IL_0615: ldarg.0
+  IL_0616: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_061b: ldloc.s V_23
+  IL_061d: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0622: ldloc.s V_23
+  IL_0624: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0629: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_062e: ldloc.s V_26
+  IL_0630: stfld System.Int32 Celeste.Pathfinder/Tile::Cost
+  IL_0635: ldarg.0
+  IL_0636: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_063b: ldloc.s V_23
+  IL_063d: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0642: ldloc.s V_23
+  IL_0644: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_0649: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_064e: ldloc.s V_20
+  IL_0650: newobj System.Void System.Nullable`1<Microsoft.Xna.Framework.Point>::.ctor(T)
+  IL_0655: stfld System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_065a: ldarg.0
+  IL_065b: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_0660: ldloc.s V_23
+  IL_0662: ldarg.0
+  IL_0663: ldfld Celeste.Pathfinder/PointMapComparer Celeste.Pathfinder::comparer
+  IL_0668: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::BinarySearch(T,System.Collections.Generic.IComparer`1<T>)
+  IL_066d: stloc.s V_29
+  IL_066f: ldloc.s V_29
+  IL_0671: ldc.i4.0
+  IL_0672: bge.s IL_0679
+  IL_0674: ldloc.s V_29
+  IL_0676: not
+  IL_0677: stloc.s V_29
+  IL_0679: ldarg.0
+  IL_067a: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_067f: ldloc.s V_29
+  IL_0681: ldloc.s V_23
+  IL_0683: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::Insert(System.Int32,T)
+  IL_0688: ldloc.s V_23
+  IL_068a: ldloc.s V_5
+  IL_068c: call System.Boolean Microsoft.Xna.Framework.Point::op_Equality(Microsoft.Xna.Framework.Point,Microsoft.Xna.Framework.Point)
+  IL_0691: brfalse.s IL_0698
+  IL_0693: ldc.i4.1
+  IL_0694: stloc.s V_6
+  IL_0696: br.s IL_06a6
+  IL_0698: ldloc.s V_21
+  IL_069a: ldc.i4.1
+  IL_069b: add
+  IL_069c: stloc.s V_21
+  IL_069e: ldloc.s V_21
+  IL_06a0: ldc.i4.4
+  IL_06a1: blt IL_03d9
+  IL_06a6: ldarg.0
+  IL_06a7: ldfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder::active
+  IL_06ac: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Point>::get_Count()
+  IL_06b1: ldc.i4.0
+  IL_06b2: ble.s IL_06bb
+  IL_06b4: ldloc.s V_6
+  IL_06b6: brfalse IL_039f
+  IL_06bb: ldloc.s V_6
+  IL_06bd: brtrue.s IL_06d8
+  IL_06bf: ldarg.s logging
+  IL_06c1: brfalse.s IL_06d6
+  IL_06c3: ldc.i4.1
+  IL_06c4: newarr System.Object
+  IL_06c9: dup
+  IL_06ca: ldc.i4.0
+  IL_06cb: ldstr "PF: FAILED - ran out of active nodes, can't find ending"
+  IL_06d0: stelem.ref
+  IL_06d1: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_06d6: ldc.i4.0
+  IL_06d7: ret
++ IL_0000: ldc.i4 3871 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: ldc.i4 4579752 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
+  |-> retrieves System.Boolean ExtendedVariants.Variants.AddSeekers::<hookPathfinderFind>b__16_3()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: brfalse IL_06d8 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: ldc.i4.1 @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
++ IL_0000: ret @ ExtendedVariants.Variants.AddSeekers::hookPathfinderFind
+  IL_06d8: ldarg.1
+  IL_06d9: ldind.ref
+  IL_06da: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Clear()
+  IL_06df: ldloc.s V_5
+  IL_06e1: stloc.s V_30
+  IL_06e3: ldc.i4.0
+  IL_06e4: stloc.s V_31
+  IL_06e6: br.s IL_074f
+  IL_06e8: ldarg.1
+  IL_06e9: ldind.ref
+  IL_06ea: ldloc.s V_30
+  IL_06ec: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_06f1: conv.r4
+  IL_06f2: ldc.r4 0.5
+  IL_06f7: add
+  IL_06f8: ldloc.s V_30
+  IL_06fa: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_06ff: conv.r4
+  IL_0700: ldc.r4 0.5
+  IL_0705: add
+  IL_0706: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_070b: ldc.r4 8
+  IL_0710: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0715: ldarg.0
+  IL_0716: ldfld Celeste.Level Celeste.Pathfinder::level
+  IL_071b: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Level::get_LevelOffset()
+  IL_0720: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0725: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Add(T)
+  IL_072a: ldarg.0
+  IL_072b: ldfld Celeste.Pathfinder/Tile[0...,0...] Celeste.Pathfinder::map
+  IL_0730: ldloc.s V_30
+  IL_0732: ldfld System.Int32 Microsoft.Xna.Framework.Point::X
+  IL_0737: ldloc.s V_30
+  IL_0739: ldfld System.Int32 Microsoft.Xna.Framework.Point::Y
+  IL_073e: call Celeste.Pathfinder/Tile& Celeste.Pathfinder/Tile[0...,0...]::Address(System.Int32,System.Int32)
+  IL_0743: ldflda System.Nullable`1<Microsoft.Xna.Framework.Point> Celeste.Pathfinder/Tile::Parent
+  IL_0748: call T System.Nullable`1<Microsoft.Xna.Framework.Point>::get_Value()
+  IL_074d: stloc.s V_30
+  IL_074f: ldloc.s V_30
+  IL_0751: ldloc.s V_4
+  IL_0753: call System.Boolean Microsoft.Xna.Framework.Point::op_Inequality(Microsoft.Xna.Framework.Point,Microsoft.Xna.Framework.Point)
+  IL_0758: brfalse.s IL_076b
+  IL_075a: ldloc.s V_31
+  IL_075c: dup
+  IL_075d: ldc.i4.1
+  IL_075e: add
+  IL_075f: stloc.s V_31
+  IL_0761: ldc.i4 1000
+  IL_0766: blt IL_06e8
+  IL_076b: ldloc.s V_31
+  IL_076d: ldc.i4 1000
+  IL_0772: blt.s IL_0780
+  IL_0774: ldstr "WARNING: Pathfinder 'succeeded' but then was unable to work out its path?"
+  IL_0779: call System.Void System.Console::WriteLine(System.String)
+  IL_077e: ldc.i4.0
+  IL_077f: ret
+  IL_0780: ldc.i4.1
+  IL_0781: stloc.s V_32
+  IL_0783: br IL_081d
+  IL_0788: ldarg.1
+  IL_0789: ldind.ref
+  IL_078a: ldloc.s V_32
+  IL_078c: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0791: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0796: ldarg.1
+  IL_0797: ldind.ref
+  IL_0798: ldloc.s V_32
+  IL_079a: ldc.i4.1
+  IL_079b: sub
+  IL_079c: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07a1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07a6: bne.un.s IL_07c8
+  IL_07a8: ldarg.1
+  IL_07a9: ldind.ref
+  IL_07aa: ldloc.s V_32
+  IL_07ac: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07b1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07b6: ldarg.1
+  IL_07b7: ldind.ref
+  IL_07b8: ldloc.s V_32
+  IL_07ba: ldc.i4.1
+  IL_07bb: add
+  IL_07bc: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07c1: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_07c6: beq.s IL_0808
+  IL_07c8: ldarg.1
+  IL_07c9: ldind.ref
+  IL_07ca: ldloc.s V_32
+  IL_07cc: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07d1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_07d6: ldarg.1
+  IL_07d7: ldind.ref
+  IL_07d8: ldloc.s V_32
+  IL_07da: ldc.i4.1
+  IL_07db: sub
+  IL_07dc: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07e1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_07e6: bne.un.s IL_0817
+  IL_07e8: ldarg.1
+  IL_07e9: ldind.ref
+  IL_07ea: ldloc.s V_32
+  IL_07ec: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_07f1: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_07f6: ldarg.1
+  IL_07f7: ldind.ref
+  IL_07f8: ldloc.s V_32
+  IL_07fa: ldc.i4.1
+  IL_07fb: add
+  IL_07fc: callvirt T System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Item(System.Int32)
+  IL_0801: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0806: bne.un.s IL_0817
+  IL_0808: ldarg.1
+  IL_0809: ldind.ref
+  IL_080a: ldloc.s V_32
+  IL_080c: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::RemoveAt(System.Int32)
+  IL_0811: ldloc.s V_32
+  IL_0813: ldc.i4.1
+  IL_0814: sub
+  IL_0815: stloc.s V_32
+  IL_0817: ldloc.s V_32
+  IL_0819: ldc.i4.1
+  IL_081a: add
+  IL_081b: stloc.s V_32
+  IL_081d: ldloc.s V_32
+  IL_081f: ldarg.1
+  IL_0820: ldind.ref
+  IL_0821: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0826: ldc.i4.1
+  IL_0827: sub
+  IL_0828: bge.s IL_0837
+  IL_082a: ldarg.1
+  IL_082b: ldind.ref
+  IL_082c: callvirt System.Int32 System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::get_Count()
+  IL_0831: ldc.i4.2
+  IL_0832: bgt IL_0788
+  IL_0837: ldarg.1
+  IL_0838: ldind.ref
+  IL_0839: callvirt System.Void System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2>::Reverse()
+  IL_083e: ldarg.0
+  IL_083f: ldarg.1
+  IL_0840: ldind.ref
+  IL_0841: stfld System.Collections.Generic.List`1<Microsoft.Xna.Framework.Vector2> Celeste.Pathfinder::lastPath
+  IL_0846: ldarg.s logging
+  IL_0848: brfalse.s IL_085d
+  IL_084a: ldc.i4.1
+  IL_084b: newarr System.Object
+  IL_0850: dup
+  IL_0851: ldc.i4.0
+  IL_0852: ldstr "PF: SUCCESS"
+  IL_0857: stelem.ref
+  IL_0858: call System.Void Monocle.Calc::Log(System.Object[])
+  IL_085d: ldc.i4.1
+  IL_085e: ret

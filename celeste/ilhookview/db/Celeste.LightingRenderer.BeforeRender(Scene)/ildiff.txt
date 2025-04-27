@@ -1,8 +1,8 @@
 IL Diff: System.Void Celeste.LightingRenderer::BeforeRender(Monocle.Scene)
 + IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
 + IL_0000: ldfld Celeste.VertexLight[] Celeste.LightingRenderer::lights @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
-+ IL_0000: ldc.i4 9597516 @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
++ IL_0000: ldc.i4 32487874 @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
   |-> retrieves System.Void Celeste.Mod.CommunalHelper.Entities.GlowController/<>c::<IL_LightingRenderer_BeforeRender>b__2_0(Celeste.VertexLight[])
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.VertexLight[]>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.CommunalHelper.Entities.GlowController::IL_LightingRenderer_BeforeRender
@@ -406,6 +406,8 @@ IL Diff: System.Void Celeste.LightingRenderer::BeforeRender(Monocle.Scene)
   IL_04b3: ldsfld Microsoft.Xna.Framework.Graphics.Effect Celeste.GFX::FxLighting
   IL_04b8: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::Additive
   IL_04bd: call System.Void Celeste.GFX::DrawIndexedVertices<Celeste.LightingRenderer/VertexPositionColorMaskTexture>(Microsoft.Xna.Framework.Matrix,T[],System.Int32,System.Int32[],System.Int32,Microsoft.Xna.Framework.Graphics.Effect,Microsoft.Xna.Framework.Graphics.BlendState)
++ IL_0000: ldloc.0 @ Celeste.Mod.SorbetHelper.Components.LightCover::modLightingRendererBeforeRender
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Components.LightCover::drawLightCover(Celeste.Level) @ Celeste.Mod.SorbetHelper.Components.LightCover::modLightingRendererBeforeRender
   IL_04c2: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Light
   IL_04c7: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
   IL_04cc: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::TempA

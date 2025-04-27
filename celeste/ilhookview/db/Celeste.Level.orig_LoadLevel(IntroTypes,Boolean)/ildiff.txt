@@ -1,4 +1,7 @@
 IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,System.Boolean)
++ IL_0000: ldarg.1 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldc.i4 196083713 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: beq IL_010f @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_0000: ldarg.0
   IL_0001: ldc.i4.0
   IL_0002: stfld System.Boolean Celeste.Level::TimerHidden
@@ -108,6 +111,11 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_0131: ldfld Celeste.Session Celeste.Level::Session
   IL_0136: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
   IL_013b: stloc.3
++ IL_0000: ldc.i4 3933 @ VivHelper.Entities.Collectible::ParseCollectibleDecals
++ IL_0000: ldc.i4 7250484 @ VivHelper.Entities.Collectible::ParseCollectibleDecals
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ VivHelper.Entities.Collectible::ParseCollectibleDecals
+  |-> retrieves System.Void VivHelper.Entities.Collectible/<>c::<ParseCollectibleDecals>b__5_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ VivHelper.Entities.Collectible::ParseCollectibleDecals
   IL_013c: ldloca.s V_4
   IL_013e: ldloc.3
   IL_013f: ldflda Microsoft.Xna.Framework.Rectangle Celeste.LevelData::Bounds
@@ -128,6 +136,9 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_016f: br.s IL_0172
   IL_0171: ldc.i4.1
   IL_0172: stloc.s V_5
++ IL_0000: ldarg.1 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldc.i4 196083713 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: beq IL_0000 @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_0174: ldarg.0
   IL_0175: ldloc.3
   IL_0176: ldfld System.Boolean Celeste.LevelData::Dark
@@ -302,8 +313,8 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_0399: ldarg.0
   IL_039a: ldfld Celeste.Session Celeste.Level::Session
   IL_039f: callvirt System.Void Celeste.Session::UpdateLevelStartDashes()
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
-+ IL_0000: ldc.i4 28077502 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
++ IL_0000: ldc.i4 44131915 @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
   |-> retrieves System.Void Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry/<>c::<hookUpdateLevelStartDashes>b__3_0()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.JungleHelper.Entities.GrablessGoldenBerry::hookUpdateLevelStartDashes
@@ -317,6 +328,9 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_03bd: ldfld Microsoft.Xna.Framework.Vector2 Celeste.LevelData::CameraOffset
   IL_03c2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   IL_03c7: stfld Microsoft.Xna.Framework.Vector2 Celeste.Level::CameraOffset
++ IL_0000: ldarg.1 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldc.i4 196083714 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: beq IL_0000 @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_03cc: ldarg.0
   IL_03cd: call Monocle.EntityList Monocle.Scene::get_Entities()
   IL_03d2: callvirt T Monocle.EntityList::FindFirst<Celeste.WindController>()
@@ -357,12 +371,21 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_0432: conv.r4
   IL_0433: newobj System.Void Celeste.Water::.ctor(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean,System.Single,System.Single)
   IL_0438: call System.Void Monocle.Scene::Add(Monocle.Entity)
++ IL_0000: ldarg.1 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldc.i4 196083713 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: beq IL_0000 @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_043d: ldarg.0
   IL_043e: ldloc.3
   IL_043f: ldfld System.Boolean Celeste.LevelData::Space
   IL_0444: stfld System.Boolean Celeste.Level::InSpace
++ IL_0000: ldarg.1 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldc.i4 196083714 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: beq IL_3d91 @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_0449: ldarg.0
   IL_044a: ldfld System.Boolean Celeste.Level::InSpace
++ IL_0000: pop @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldloc V_3 @ Bitsbolts.PassageExt::ILLevelLoadLevel
++ IL_0000: ldfld System.Boolean Celeste.LevelData::Space @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_044f: brfalse.s IL_045c
   IL_0451: ldarg.0
   IL_0452: newobj System.Void Celeste.SpaceController::.ctor()
@@ -417,8 +440,15 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_04f7: ldloc.3
   IL_04f8: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Entities
 + IL_0000: ldarg.0 @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
++ IL_0000: ldarg.2 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 3925 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 27020328 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
+  |-> retrieves System.Collections.Generic.List`1[[Celeste.EntityData, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.EeveeHelper.MiscHooks/<>c__DisplayClass12_0::<HookLevelEntityLoading>b__0(System.Collections.Generic.List`1[[Celeste.EntityData, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],Celeste.Level,System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Collections.Generic.List`1<Celeste.EntityData>,System.Collections.Generic.List`1<Celeste.EntityData>,Celeste.Level,System.Boolean>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
 + IL_0000: ldarg.1 @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
-+ IL_0000: call System.Collections.Generic.List`1<Celeste.EntityData> Bitsbolts.Hooks.GlobalRoomLoader::<ILLevelLoadLevel>m__3(System.Collections.Generic.List`1<Celeste.EntityData>,Celeste.Level,Celeste.Player/IntroTypes) @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
++ IL_0000: call System.Collections.Generic.List`1<Celeste.EntityData> Bitsbolts.Hooks.GlobalRoomLoader::<ILLevelLoadLevel>m__4(System.Collections.Generic.List`1<Celeste.EntityData>,Celeste.Level,Celeste.Player/IntroTypes) @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
   IL_04fd: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.EntityData>::GetEnumerator()
   IL_0502: stloc.s V_16
   IL_0504: br IL_34d2
@@ -426,6 +456,12 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_050b: call T System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::get_Current()
   IL_0510: stloc.s V_17
   IL_0512: ldloc.s V_17
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 3927 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 41162960 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
+  |-> retrieves Celeste.EntityData Celeste.Mod.EeveeHelper.MiscHooks/<>c::<HookLevelEntityLoading>b__12_1(Celeste.EntityData,Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.EntityData,Celeste.EntityData,Celeste.Level>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
   IL_0514: ldfld System.Int32 Celeste.EntityData::ID
   IL_0519: stloc.s V_18
   IL_051b: ldloca.s V_19
@@ -452,8 +488,8 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_055b: ldstr ""
   IL_0560: br.s IL_0567
   IL_0562: ldfld System.String Celeste.EntityData::Name
-+ IL_0000: ldc.i4 2883 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
-+ IL_0000: ldc.i4 59685223 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
++ IL_0000: ldc.i4 3872 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
++ IL_0000: ldc.i4 61642916 @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
   |-> retrieves System.String Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock/<>c::<hookLoadLevel>b__4_1(System.String)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.JungleHelper.Entities.SwingCassetteBlock::hookLoadLevel
@@ -4342,7 +4378,14 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_34f8: stsfld System.Boolean Celeste.Level::_isLoadingTriggers
   IL_34fd: ldloc.3
   IL_34fe: ldfld System.Collections.Generic.List`1<Celeste.EntityData> Celeste.LevelData::Triggers
-+ IL_0000: call System.Collections.Generic.List`1<Celeste.EntityData> Bitsbolts.Hooks.GlobalRoomLoader::<ILLevelLoadLevel>m__5(System.Collections.Generic.List`1<Celeste.EntityData>) @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldarg.2 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 3929 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 45865477 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
+  |-> retrieves System.Collections.Generic.List`1[[Celeste.EntityData, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.EeveeHelper.MiscHooks/<>c__DisplayClass12_0::<HookLevelEntityLoading>b__0(System.Collections.Generic.List`1[[Celeste.EntityData, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],Celeste.Level,System.Boolean)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal3<System.Collections.Generic.List`1<Celeste.EntityData>,System.Collections.Generic.List`1<Celeste.EntityData>,Celeste.Level,System.Boolean>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/TypeVal3`4<TResult,T0,T1,T2>) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: call System.Collections.Generic.List`1<Celeste.EntityData> Bitsbolts.Hooks.GlobalRoomLoader::<ILLevelLoadLevel>m__6(System.Collections.Generic.List`1<Celeste.EntityData>) @ Bitsbolts.Hooks.GlobalRoomLoader::ILLevelLoadLevel
   IL_3503: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.EntityData>::GetEnumerator()
   IL_3508: stloc.s V_16
   IL_350a: br IL_3c67
@@ -4350,6 +4393,12 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_3511: call T System.Collections.Generic.List`1/Enumerator<Celeste.EntityData>::get_Current()
   IL_3516: stloc.s V_46
   IL_3518: ldloc.s V_46
++ IL_0000: ldarg.0 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 3931 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: ldc.i4 24116142 @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
+  |-> retrieves Celeste.EntityData Celeste.Mod.EeveeHelper.MiscHooks/<>c::<HookLevelEntityLoading>b__12_1(Celeste.EntityData,Celeste.Level)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Celeste.EntityData,Celeste.EntityData,Celeste.Level>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.EeveeHelper.MiscHooks::Level_orig_LoadLevel
   IL_351a: ldfld System.Int32 Celeste.EntityData::ID
   IL_351f: ldc.i4 10000000
   IL_3524: add
@@ -5029,6 +5078,7 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_3d8b: callvirt System.Void System.IDisposable::Dispose()
   IL_3d90: endfinally
   IL_3d91: ldarg.1
++ IL_0000: call System.Boolean Bitsbolts.PassageExt::<ILLevelLoadLevel>m__C(System.Int32) @ Bitsbolts.PassageExt::ILLevelLoadLevel
   IL_3d92: brfalse IL_3fb6
   IL_3d97: ldarg.0
   IL_3d98: ldfld Celeste.Session Celeste.Level::Session
@@ -5091,7 +5141,7 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_3e52: call Celeste.Player Celeste.Level::LoadNewPlayerForLevel(Microsoft.Xna.Framework.Vector2,Celeste.PlayerSpriteMode,Celeste.Level)
   IL_3e57: stloc.s V_53
   IL_3e59: ldloc.s V_53
-+ IL_0000: call Celeste.Player TAS.Input.Commands.ConsoleCommand::SetPlayerRemainder(Celeste.Player) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call Celeste.Player TAS.Input.Commands.ConsoleCommand::SetPlayerRemainder(Celeste.Player) @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   IL_3e5b: ldarg.1
   IL_3e5c: stfld Celeste.Player/IntroTypes Celeste.Player::IntroType
   IL_3e61: ldarg.0
@@ -5220,8 +5270,8 @@ IL Diff: System.Void Celeste.Level::orig_LoadLevel(Celeste.Player+IntroTypes,Sys
   IL_3fca: callvirt System.Boolean Celeste.Level::get_ShouldCreateCassetteManager()
   IL_3fcf: brfalse.s IL_3fe9
   IL_3fd1: ldarg.0
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel
-+ IL_0000: ldc.i4 1327299 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel
++ IL_0000: ldc.i4 22085955 @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel
   |-> retrieves Celeste.Level Celeste.Mod.CommunalHelper.Entities.ManualCassetteController/<>c::<Level_orig_LoadLevel>b__13_2(Celeste.Level)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.Level,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.ManualCassetteController::Level_orig_LoadLevel

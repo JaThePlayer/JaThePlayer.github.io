@@ -1,0 +1,173 @@
+IL Diff: System.Boolean Celeste.LockBlock/<UnlockRoutine>d__12::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.LockBlock Celeste.LockBlock/<UnlockRoutine>d__12::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002a,IL_00c9,IL_0152,IL_01b5,IL_01f3
+  IL_0028: ldc.i4.0
+  IL_0029: ret
+  IL_002a: ldarg.0
+  IL_002b: ldc.i4.m1
+  IL_002c: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_0031: ldarg.0
+  IL_0032: ldloc.1
+  IL_0033: ldfld System.String Celeste.LockBlock::unlockSfxName
+  IL_0038: ldloc.1
+  IL_0039: ldloca.s V_2
+  IL_003b: initobj System.Nullable`1<Microsoft.Xna.Framework.Vector2>
+  IL_0041: ldloc.2
+  IL_0042: call Celeste.SoundEmitter Celeste.SoundEmitter::Play(System.String,Monocle.Entity,System.Nullable`1<Microsoft.Xna.Framework.Vector2>)
+  IL_0047: stfld Celeste.SoundEmitter Celeste.LockBlock/<UnlockRoutine>d__12::<emitter>5__2
+  IL_004c: ldarg.0
+  IL_004d: ldfld Celeste.SoundEmitter Celeste.LockBlock/<UnlockRoutine>d__12::<emitter>5__2
+  IL_0052: callvirt Celeste.SoundSource Celeste.SoundEmitter::get_Source()
+  IL_0057: ldc.i4.1
+  IL_0058: stfld System.Boolean Celeste.SoundSource::DisposeOnTransition
+  IL_005d: ldarg.0
+  IL_005e: ldloc.1
+  IL_005f: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0064: stfld Celeste.Level Celeste.LockBlock/<UnlockRoutine>d__12::<level>5__3
+  IL_0069: ldarg.0
+  IL_006a: ldarg.0
+  IL_006b: ldfld Celeste.Follower Celeste.LockBlock/<UnlockRoutine>d__12::fol
+  IL_0070: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0075: isinst Celeste.Key
+  IL_007a: stfld Celeste.Key Celeste.LockBlock/<UnlockRoutine>d__12::<key>5__4
+  IL_007f: ldloc.1
+  IL_0080: ldarg.0
+  IL_0081: ldfld Celeste.Key Celeste.LockBlock/<UnlockRoutine>d__12::<key>5__4
+  IL_0086: ldloc.1
+  IL_0087: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_008c: ldc.r4 0
+  IL_0091: ldc.r4 2
+  IL_0096: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_009b: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a0: callvirt System.Collections.IEnumerator Celeste.Key::UseRoutine(Microsoft.Xna.Framework.Vector2)
+  IL_00a5: ldc.i4.1
+  IL_00a6: newobj System.Void Monocle.Coroutine::.ctor(System.Collections.IEnumerator,System.Boolean)
+  IL_00ab: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b0: ldarg.0
+  IL_00b1: ldc.r4 1.2
++ IL_0000: ldarg.0 @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__0
++ IL_0000: ldfld Celeste.LockBlock Celeste.LockBlock/<UnlockRoutine>d__12::<>4__this @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__0
++ IL_0000: call System.Single Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::GoldenCutInHalf(System.Single,Monocle.Entity) @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__0
+  IL_00b6: box System.Single
+  IL_00bb: stfld System.Object Celeste.LockBlock/<UnlockRoutine>d__12::<>2__current
+  IL_00c0: ldarg.0
+  IL_00c1: ldc.i4.1
+  IL_00c2: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_00c7: ldc.i4.1
+  IL_00c8: ret
+  IL_00c9: ldarg.0
+  IL_00ca: ldc.i4.m1
+  IL_00cb: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_00d0: ldloc.1
+  IL_00d1: ldc.i4.1
+  IL_00d2: stfld System.Boolean Celeste.LockBlock::UnlockingRegistered
+  IL_00d7: ldloc.1
+  IL_00d8: ldfld System.Boolean Celeste.LockBlock::stepMusicProgress
+  IL_00dd: brfalse.s IL_0119
+  IL_00df: ldarg.0
+  IL_00e0: ldfld Celeste.Level Celeste.LockBlock/<UnlockRoutine>d__12::<level>5__3
+  IL_00e5: ldfld Celeste.Session Celeste.Level::Session
+  IL_00ea: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_00ef: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_00f4: dup
+  IL_00f5: callvirt System.Int32 Celeste.AudioTrackState::get_Progress()
+  IL_00fa: stloc.3
+  IL_00fb: ldloc.3
+  IL_00fc: ldc.i4.1
+  IL_00fd: add
+  IL_00fe: callvirt System.Void Celeste.AudioTrackState::set_Progress(System.Int32)
+  IL_0103: ldarg.0
+  IL_0104: ldfld Celeste.Level Celeste.LockBlock/<UnlockRoutine>d__12::<level>5__3
+  IL_0109: ldfld Celeste.Session Celeste.Level::Session
+  IL_010e: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_0113: ldc.i4.0
+  IL_0114: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_0119: ldarg.0
+  IL_011a: ldfld Celeste.Level Celeste.LockBlock/<UnlockRoutine>d__12::<level>5__3
+  IL_011f: ldfld Celeste.Session Celeste.Level::Session
+  IL_0124: ldfld System.Collections.Generic.HashSet`1<Celeste.EntityID> Celeste.Session::DoNotLoad
+  IL_0129: ldloc.1
+  IL_012a: ldfld Celeste.EntityID Celeste.LockBlock::ID
+  IL_012f: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.EntityID>::Add(T)
+  IL_0134: pop
+  IL_0135: ldarg.0
+  IL_0136: ldfld Celeste.Key Celeste.LockBlock/<UnlockRoutine>d__12::<key>5__4
+  IL_013b: callvirt System.Void Celeste.Key::RegisterUsed()
+  IL_0140: br.s IL_0159
+  IL_0142: ldarg.0
+  IL_0143: ldnull
+  IL_0144: stfld System.Object Celeste.LockBlock/<UnlockRoutine>d__12::<>2__current
+  IL_0149: ldarg.0
+  IL_014a: ldc.i4.2
+  IL_014b: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_0150: ldc.i4.1
+  IL_0151: ret
+  IL_0152: ldarg.0
+  IL_0153: ldc.i4.m1
+  IL_0154: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_0159: ldarg.0
+  IL_015a: ldfld Celeste.Key Celeste.LockBlock/<UnlockRoutine>d__12::<key>5__4
+  IL_015f: callvirt System.Boolean Celeste.Key::get_Turning()
+  IL_0164: brtrue.s IL_0142
+  IL_0166: ldloc.1
+  IL_0167: ldloc.1
+  IL_0168: callvirt System.Int32 Monocle.Entity::get_Tag()
+  IL_016d: ldsfld Monocle.BitTag Celeste.Tags::TransitionUpdate
+  IL_0172: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0177: or
+  IL_0178: callvirt System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_017d: ldloc.1
+  IL_017e: ldc.i4.0
+  IL_017f: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0184: ldarg.0
+  IL_0185: ldfld Celeste.SoundEmitter Celeste.LockBlock/<UnlockRoutine>d__12::<emitter>5__2
+  IL_018a: callvirt Celeste.SoundSource Celeste.SoundEmitter::get_Source()
+  IL_018f: ldc.i4.0
+  IL_0190: stfld System.Boolean Celeste.SoundSource::DisposeOnTransition
+  IL_0195: ldarg.0
+  IL_0196: ldloc.1
+  IL_0197: ldfld Monocle.Sprite Celeste.LockBlock::sprite
+  IL_019c: ldstr "open"
+  IL_01a1: ldc.i4.0
+  IL_01a2: callvirt System.Collections.IEnumerator Monocle.Sprite::PlayRoutine(System.String,System.Boolean)
+  IL_01a7: stfld System.Object Celeste.LockBlock/<UnlockRoutine>d__12::<>2__current
+  IL_01ac: ldarg.0
+  IL_01ad: ldc.i4.3
+  IL_01ae: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_01b3: ldc.i4.1
+  IL_01b4: ret
+  IL_01b5: ldarg.0
+  IL_01b6: ldc.i4.m1
+  IL_01b7: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_01bc: ldarg.0
+  IL_01bd: ldfld Celeste.Level Celeste.LockBlock/<UnlockRoutine>d__12::<level>5__3
+  IL_01c2: ldc.r4 0.3
+  IL_01c7: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_01cc: ldc.i4.1
+  IL_01cd: ldc.i4.1
+  IL_01ce: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_01d3: ldarg.0
+  IL_01d4: ldloc.1
+  IL_01d5: ldfld Monocle.Sprite Celeste.LockBlock::sprite
+  IL_01da: ldstr "burst"
+  IL_01df: ldc.i4.0
+  IL_01e0: callvirt System.Collections.IEnumerator Monocle.Sprite::PlayRoutine(System.String,System.Boolean)
+  IL_01e5: stfld System.Object Celeste.LockBlock/<UnlockRoutine>d__12::<>2__current
+  IL_01ea: ldarg.0
+  IL_01eb: ldc.i4.4
+  IL_01ec: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_01f1: ldc.i4.1
+  IL_01f2: ret
+  IL_01f3: ldarg.0
+  IL_01f4: ldc.i4.m1
+  IL_01f5: stfld System.Int32 Celeste.LockBlock/<UnlockRoutine>d__12::<>1__state
+  IL_01fa: ldloc.1
+  IL_01fb: callvirt System.Void Monocle.Entity::RemoveSelf()
+  IL_0200: ldc.i4.0
+  IL_0201: ret

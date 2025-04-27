@@ -1,11 +1,7 @@
 IL Diff: System.Void Celeste.Puffer::Explode()
   IL_0000: ldarg.0
-+ IL_0000: ldc.i4 2699 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
-+ IL_0000: ldc.i4 12582065 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
-  |-> retrieves System.Void TAS.EverestInterop.Hitboxes.HitboxOptimized/<>c::<Initialize>b__2_1(Celeste.Puffer)
-+ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Puffer>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
-+ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass4_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.Hitboxes.HitboxOptimized::Initialize_HookBefore(Celeste.Puffer) @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   IL_0001: call Monocle.Collider Monocle.Entity::get_Collider()
   IL_0006: stloc.0
   IL_0007: ldarg.0
@@ -23,7 +19,9 @@ IL Diff: System.Void Celeste.Puffer::Explode()
   IL_002f: ldc.i4.0
   IL_0030: ldc.i4.0
   IL_0031: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
-  IL_0036: ldarg.0
+  IL_0000: ldarg.0
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Components.ExplodeHittable::activateExplodeHittables(Monocle.Entity) @ Celeste.Mod.SorbetHelper.Components.ExplodeHittable::IL_Puffer_Explode
++ IL_0036: ldarg.0 @ Celeste.Mod.SorbetHelper.Components.ExplodeHittable::IL_Puffer_Explode
   IL_0037: call T Monocle.Entity::CollideFirst<Celeste.Player>()
   IL_003c: stloc.1
   IL_003d: ldloc.1
@@ -42,11 +40,11 @@ IL Diff: System.Void Celeste.Puffer::Explode()
   IL_0060: ldc.i4.0
   IL_0061: ldc.i4.1
   IL_0062: callvirt Microsoft.Xna.Framework.Vector2 Celeste.Player::ExplodeLaunch(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
-+ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
 + IL_0000: ldarg.0 @ FrostHelper.DirectionalPuffer::Puffer_Explode
 + IL_0000: ldloc.1 @ FrostHelper.DirectionalPuffer::Puffer_Explode
 + IL_0000: call System.Void FrostHelper.DirectionalPuffer::HandleCustomExplodeEvents(Celeste.Puffer,Celeste.Player) @ FrostHelper.DirectionalPuffer::Puffer_Explode
-+ IL_0000: ldc.i4 2134548 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
++ IL_0000: ldc.i4 61997076 @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall
   |-> retrieves System.Void ExtendedVariants.Variants.ExplodeLaunchSpeed::correctExplodeLaunchSpeed()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ExplodeLaunchSpeed::wrapExplodeLaunchCall

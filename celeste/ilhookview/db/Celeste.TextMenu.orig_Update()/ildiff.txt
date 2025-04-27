@@ -1,0 +1,205 @@
+IL Diff: System.Void Celeste.TextMenu::orig_Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Action Celeste.TextMenu::OnUpdate
+  IL_000c: brfalse.s IL_0019
+  IL_000e: ldarg.0
+  IL_000f: ldfld System.Action Celeste.TextMenu::OnUpdate
+  IL_0014: callvirt System.Void System.Action::Invoke()
+  IL_0019: ldarg.0
+  IL_001a: ldfld System.Boolean Celeste.TextMenu::Focused
+  IL_001f: brfalse IL_019c
+  IL_0024: ldsfld Monocle.VirtualButton Celeste.Input::MenuDown
+  IL_0029: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
++ IL_0000: ldarg.0 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Boolean Celeste.Mod.TASHelper.Module.Menu.OptionSubMenuExt::OnMenuTryDown(System.Boolean,Celeste.TextMenu) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Boolean Celeste.Mod.GhostModForTas.Module.OptionSubMenuExt::OnMenuTryDown(System.Boolean,Celeste.TextMenu) @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_002e: brfalse.s IL_0054
+  IL_0030: ldsfld Monocle.VirtualButton Celeste.Input::MenuDown
+  IL_0035: callvirt System.Boolean Monocle.VirtualButton::get_Repeating()
+  IL_003a: brfalse.s IL_004a
+  IL_003c: ldarg.0
+  IL_003d: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_0042: ldarg.0
+  IL_0043: callvirt System.Int32 Celeste.TextMenu::get_LastPossibleSelection()
+  IL_0048: beq.s IL_0082
+  IL_004a: ldarg.0
+  IL_004b: ldc.i4.1
+  IL_004c: ldc.i4.1
+  IL_004d: callvirt System.Void Celeste.TextMenu::MoveSelection(System.Int32,System.Boolean)
+  IL_0052: br.s IL_0082
+  IL_0054: ldsfld Monocle.VirtualButton Celeste.Input::MenuUp
+  IL_0059: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_005e: brfalse.s IL_0082
+  IL_0060: ldsfld Monocle.VirtualButton Celeste.Input::MenuUp
+  IL_0065: callvirt System.Boolean Monocle.VirtualButton::get_Repeating()
+  IL_006a: brfalse.s IL_007a
+  IL_006c: ldarg.0
+  IL_006d: ldfld System.Int32 Celeste.TextMenu::Selection
+  IL_0072: ldarg.0
+  IL_0073: callvirt System.Int32 Celeste.TextMenu::get_FirstPossibleSelection()
+  IL_0078: beq.s IL_0082
+  IL_007a: ldarg.0
+  IL_007b: ldc.i4.m1
+  IL_007c: ldc.i4.1
+  IL_007d: callvirt System.Void Celeste.TextMenu::MoveSelection(System.Int32,System.Boolean)
+  IL_0082: ldarg.0
+  IL_0083: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0088: brfalse IL_0118
+  IL_008d: ldsfld Monocle.VirtualButton Celeste.Input::MenuLeft
+  IL_0092: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0097: brfalse.s IL_00a4
+  IL_0099: ldarg.0
+  IL_009a: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_009f: callvirt System.Void Celeste.TextMenu/Item::LeftPressed()
+  IL_00a4: ldsfld Monocle.VirtualButton Celeste.Input::MenuRight
+  IL_00a9: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_00ae: brfalse.s IL_00bb
+  IL_00b0: ldarg.0
+  IL_00b1: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_00b6: callvirt System.Void Celeste.TextMenu/Item::RightPressed()
+  IL_00bb: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_00c0: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_00c5: brfalse.s IL_00ef
+  IL_00c7: ldarg.0
+  IL_00c8: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_00cd: callvirt System.Void Celeste.TextMenu/Item::ConfirmPressed()
+  IL_00d2: ldarg.0
+  IL_00d3: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_00d8: ldfld System.Action Celeste.TextMenu/Item::OnPressed
+  IL_00dd: brfalse.s IL_00ef
+  IL_00df: ldarg.0
+  IL_00e0: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_00e5: ldfld System.Action Celeste.TextMenu/Item::OnPressed
+  IL_00ea: callvirt System.Void System.Action::Invoke()
+  IL_00ef: ldsfld Monocle.VirtualButton Celeste.Input::MenuJournal
+  IL_00f4: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_00f9: brfalse.s IL_0118
+  IL_00fb: ldarg.0
+  IL_00fc: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_0101: ldfld System.Action Celeste.TextMenu/Item::OnAltPressed
+  IL_0106: brfalse.s IL_0118
+  IL_0108: ldarg.0
+  IL_0109: callvirt Celeste.TextMenu/Item Celeste.TextMenu::get_Current()
+  IL_010e: ldfld System.Action Celeste.TextMenu/Item::OnAltPressed
+  IL_0113: callvirt System.Void System.Action::Invoke()
+  IL_0118: ldsfld Monocle.VirtualButton Celeste.Input::MenuConfirm
+  IL_011d: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0122: brtrue IL_019c
+  IL_0127: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
+  IL_012c: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0131: brfalse.s IL_0148
+  IL_0133: ldarg.0
+  IL_0134: ldfld System.Action Celeste.TextMenu::OnCancel
+  IL_0139: brfalse.s IL_0148
+  IL_013b: ldarg.0
+  IL_013c: ldfld System.Action Celeste.TextMenu::OnCancel
+  IL_0141: callvirt System.Void System.Action::Invoke()
+  IL_0146: br.s IL_019c
+  IL_0148: ldsfld Monocle.VirtualButton Celeste.Input::ESC
+  IL_014d: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_0152: brfalse.s IL_0173
+  IL_0154: ldarg.0
+  IL_0155: ldfld System.Action Celeste.TextMenu::OnESC
+  IL_015a: brfalse.s IL_0173
+  IL_015c: ldsfld Monocle.VirtualButton Celeste.Input::ESC
+  IL_0161: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_0166: ldarg.0
+  IL_0167: ldfld System.Action Celeste.TextMenu::OnESC
+  IL_016c: callvirt System.Void System.Action::Invoke()
+  IL_0171: br.s IL_019c
+  IL_0173: ldsfld Monocle.VirtualButton Celeste.Input::Pause
+  IL_0178: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
+  IL_017d: brfalse.s IL_019c
+  IL_017f: ldarg.0
+  IL_0180: ldfld System.Action Celeste.TextMenu::OnPause
+  IL_0185: brfalse.s IL_019c
+  IL_0187: ldsfld Monocle.VirtualButton Celeste.Input::Pause
+  IL_018c: callvirt System.Void Monocle.VirtualButton::ConsumeBuffer()
+  IL_0191: ldarg.0
+  IL_0192: ldfld System.Action Celeste.TextMenu::OnPause
+  IL_0197: callvirt System.Void System.Action::Invoke()
+  IL_019c: ldarg.0
+  IL_019d: ldfld System.Collections.Generic.List`1<Celeste.TextMenu/Item> Celeste.TextMenu::items
+  IL_01a2: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.TextMenu/Item>::GetEnumerator()
+  IL_01a7: stloc.0
+  IL_01a8: br.s IL_01cb
+  IL_01aa: ldloca.s V_0
+  IL_01ac: call T System.Collections.Generic.List`1/Enumerator<Celeste.TextMenu/Item>::get_Current()
+  IL_01b1: stloc.1
+  IL_01b2: ldloc.1
+  IL_01b3: ldfld System.Action Celeste.TextMenu/Item::OnUpdate
+  IL_01b8: brfalse.s IL_01c5
+  IL_01ba: ldloc.1
+  IL_01bb: ldfld System.Action Celeste.TextMenu/Item::OnUpdate
+  IL_01c0: callvirt System.Void System.Action::Invoke()
+  IL_01c5: ldloc.1
+  IL_01c6: callvirt System.Void Celeste.TextMenu/Item::Update()
+  IL_01cb: ldloca.s V_0
+  IL_01cd: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.TextMenu/Item>::MoveNext()
+  IL_01d2: brtrue.s IL_01aa
+  IL_01d4: leave.s IL_01e4
+  IL_01d6: ldloca.s V_0
+  IL_01d8: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.TextMenu/Item>
+  IL_01de: callvirt System.Void System.IDisposable::Dispose()
+  IL_01e3: endfinally
+  IL_01e4: call Celeste.Mod.Core.CoreModuleSettings Celeste.Mod.Core.CoreModule::get_Settings()
+  IL_01e9: callvirt System.Boolean Celeste.Mod.Core.CoreModuleSettings::get_AllowTextHighlight()
+  IL_01ee: brtrue.s IL_01fd
+  IL_01f0: ldarg.0
+  IL_01f1: ldsfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColorA
+  IL_01f6: stfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColor
+  IL_01fb: br.s IL_0238
+  IL_01fd: call Monocle.Scene Monocle.Engine::get_Scene()
+  IL_0202: ldc.r4 0.1
+  IL_0207: callvirt System.Boolean Monocle.Scene::OnRawInterval(System.Single)
+  IL_020c: brfalse.s IL_0238
+  IL_020e: ldarg.0
+  IL_020f: ldfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColor
+  IL_0214: ldsfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColorA
+  IL_0219: call System.Boolean Microsoft.Xna.Framework.Color::op_Equality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
+  IL_021e: brfalse.s IL_022d
+  IL_0220: ldarg.0
+  IL_0221: ldsfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColorB
+  IL_0226: stfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColor
+  IL_022b: br.s IL_0238
+  IL_022d: ldarg.0
+  IL_022e: ldsfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColorA
+  IL_0233: stfld Microsoft.Xna.Framework.Color Celeste.TextMenu::HighlightColor
+  IL_0238: ldarg.0
+  IL_0239: ldfld System.Boolean Celeste.TextMenu::AutoScroll
+  IL_023e: brfalse.s IL_029c
+  IL_0240: ldarg.0
+  IL_0241: callvirt System.Single Celeste.TextMenu::get_Height()
+  IL_0246: ldarg.0
+  IL_0247: callvirt System.Single Celeste.TextMenu::get_ScrollableMinSize()
+  IL_024c: ble.un.s IL_028c
+  IL_024e: ldarg.0
+  IL_024f: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0254: ldflda System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0259: dup
+  IL_025a: ldind.r4
+  IL_025b: ldarg.0
+  IL_025c: callvirt System.Single Celeste.TextMenu::get_ScrollTargetY()
+  IL_0261: ldarg.0
+  IL_0262: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0267: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_026c: sub
+  IL_026d: ldc.r4 1
+  IL_0272: ldc.r8 0.009999999776482582
+  IL_027b: call System.Single Monocle.Engine::get_RawDeltaTime()
+  IL_0280: conv.r8
+  IL_0281: call System.Double System.Math::Pow(System.Double,System.Double)
+  IL_0286: conv.r4
+  IL_0287: sub
+  IL_0288: mul
+  IL_0289: add
+  IL_028a: stind.r4
+  IL_028b: ret
+  IL_028c: ldarg.0
+  IL_028d: ldflda Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0292: ldc.r4 540
+  IL_0297: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_029c: ret

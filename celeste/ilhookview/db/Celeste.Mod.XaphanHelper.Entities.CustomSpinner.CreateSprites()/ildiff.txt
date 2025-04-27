@@ -1,0 +1,306 @@
+IL Diff: System.Void Celeste.Mod.XaphanHelper.Entities.CustomSpinner::CreateSprites()
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::expanded
+  IL_0007: ldc.i4.0
+  IL_0008: ceq
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: brfalse IL_0350
+  IL_0011: nop
+  IL_0012: ldarg.0
+  IL_0013: ldfld System.Int32 Celeste.Mod.XaphanHelper.Entities.CustomSpinner::randomSeed
+  IL_0018: call System.Void Monocle.Calc::PushRandom(System.Int32)
+  IL_001d: nop
+  IL_001e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0023: ldarg.0
+  IL_0024: ldfld System.String Celeste.Mod.XaphanHelper.Entities.CustomSpinner::fgDirectory
+  IL_0029: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_002e: stloc.1
+  IL_002f: ldsfld System.Random Monocle.Calc::Random
+  IL_0034: ldloc.1
+  IL_0035: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_003a: stloc.2
+  IL_003b: ldarg.0
+  IL_003c: ldarg.0
+  IL_003d: call System.Single Monocle.Entity::get_X()
+  IL_0042: ldc.r4 4
+  IL_0047: sub
+  IL_0048: ldarg.0
+  IL_0049: call System.Single Monocle.Entity::get_Y()
+  IL_004e: ldc.r4 4
+  IL_0053: sub
+  IL_0054: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0059: callvirt System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_005e: ldc.i4.0
+  IL_005f: ceq
+  IL_0061: stloc.3
+  IL_0062: ldloc.3
+  IL_0063: brfalse.s IL_0093
+  IL_0065: nop
+  IL_0066: ldloc.2
+  IL_0067: ldc.i4.0
+  IL_0068: ldc.i4.0
+  IL_0069: ldc.i4.s 14
+  IL_006b: ldc.i4.s 14
+  IL_006d: ldnull
+  IL_006e: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_0073: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_0078: ldc.r4 12
+  IL_007d: ldc.r4 12
+  IL_0082: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_0087: stloc.s V_4
+  IL_0089: ldarg.0
+  IL_008a: ldloc.s V_4
+  IL_008c: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0091: nop
+  IL_0092: nop
+  IL_0093: ldarg.0
+  IL_0094: ldarg.0
+  IL_0095: call System.Single Monocle.Entity::get_X()
+  IL_009a: ldc.r4 4
+  IL_009f: add
+  IL_00a0: ldarg.0
+  IL_00a1: call System.Single Monocle.Entity::get_Y()
+  IL_00a6: ldc.r4 4
+  IL_00ab: sub
+  IL_00ac: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00b1: callvirt System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_00b6: ldc.i4.0
+  IL_00b7: ceq
+  IL_00b9: stloc.s V_5
+  IL_00bb: ldloc.s V_5
+  IL_00bd: brfalse.s IL_00ee
+  IL_00bf: nop
+  IL_00c0: ldloc.2
+  IL_00c1: ldc.i4.s 10
+  IL_00c3: ldc.i4.0
+  IL_00c4: ldc.i4.s 14
+  IL_00c6: ldc.i4.s 14
+  IL_00c8: ldnull
+  IL_00c9: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_00ce: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_00d3: ldc.r4 2
+  IL_00d8: ldc.r4 12
+  IL_00dd: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_00e2: stloc.s V_6
+  IL_00e4: ldarg.0
+  IL_00e5: ldloc.s V_6
+  IL_00e7: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ec: nop
+  IL_00ed: nop
+  IL_00ee: ldarg.0
+  IL_00ef: ldarg.0
+  IL_00f0: call System.Single Monocle.Entity::get_X()
+  IL_00f5: ldc.r4 4
+  IL_00fa: add
+  IL_00fb: ldarg.0
+  IL_00fc: call System.Single Monocle.Entity::get_Y()
+  IL_0101: ldc.r4 4
+  IL_0106: add
+  IL_0107: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_010c: callvirt System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_0111: ldc.i4.0
+  IL_0112: ceq
+  IL_0114: stloc.s V_7
+  IL_0116: ldloc.s V_7
+  IL_0118: brfalse.s IL_014a
+  IL_011a: nop
+  IL_011b: ldloc.2
+  IL_011c: ldc.i4.s 10
+  IL_011e: ldc.i4.s 10
+  IL_0120: ldc.i4.s 14
+  IL_0122: ldc.i4.s 14
+  IL_0124: ldnull
+  IL_0125: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_012a: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_012f: ldc.r4 2
+  IL_0134: ldc.r4 2
+  IL_0139: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_013e: stloc.s V_8
+  IL_0140: ldarg.0
+  IL_0141: ldloc.s V_8
+  IL_0143: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0148: nop
+  IL_0149: nop
+  IL_014a: ldarg.0
+  IL_014b: ldarg.0
+  IL_014c: call System.Single Monocle.Entity::get_X()
+  IL_0151: ldc.r4 4
+  IL_0156: sub
+  IL_0157: ldarg.0
+  IL_0158: call System.Single Monocle.Entity::get_Y()
+  IL_015d: ldc.r4 4
+  IL_0162: add
+  IL_0163: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0168: callvirt System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::SolidCheck(Microsoft.Xna.Framework.Vector2)
+  IL_016d: ldc.i4.0
+  IL_016e: ceq
+  IL_0170: stloc.s V_9
+  IL_0172: ldloc.s V_9
+  IL_0174: brfalse.s IL_01a5
+  IL_0176: nop
+  IL_0177: ldloc.2
+  IL_0178: ldc.i4.0
+  IL_0179: ldc.i4.s 10
+  IL_017b: ldc.i4.s 14
+  IL_017d: ldc.i4.s 14
+  IL_017f: ldnull
+  IL_0180: callvirt Monocle.MTexture Monocle.MTexture::GetSubtexture(System.Int32,System.Int32,System.Int32,System.Int32,Monocle.MTexture)
+  IL_0185: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_018a: ldc.r4 12
+  IL_018f: ldc.r4 2
+  IL_0194: callvirt Monocle.Image Monocle.Image::SetOrigin(System.Single,System.Single)
+  IL_0199: stloc.s V_10
+  IL_019b: ldarg.0
+  IL_019c: ldloc.s V_10
+  IL_019e: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_01a3: nop
+  IL_01a4: nop
+  IL_01a5: nop
+  IL_01a6: ldarg.0
+  IL_01a7: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01ac: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_01b1: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.Mod.XaphanHelper.Entities.CustomSpinner>()
+  IL_01b6: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Mod.XaphanHelper.Entities.CustomSpinner>::GetEnumerator()
+  IL_01bb: stloc.s V_11
+  IL_01bd: br IL_025f
+  IL_01c2: ldloca.s V_11
+  IL_01c4: call T System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.CustomSpinner>::get_Current()
+  IL_01c9: stloc.s V_12
+  IL_01cb: nop
+  IL_01cc: ldloc.s V_12
+  IL_01ce: ldfld System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::AttachToSolid
+  IL_01d3: ldarg.0
+  IL_01d4: ldfld System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::AttachToSolid
+  IL_01d9: bne.un.s IL_0226
+  IL_01db: ldloc.s V_12
+  IL_01dd: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01e2: ldarg.0
+  IL_01e3: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01e8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01ed: stloc.s V_14
+  IL_01ef: ldloca.s V_14
+  IL_01f1: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_01f6: ldc.r4 576
+  IL_01fb: bge.un.s IL_0226
+  IL_01fd: ldloc.s V_12
+  IL_01ff: ldfld System.String Celeste.Mod.XaphanHelper.Entities.CustomSpinner::type
+  IL_0204: ldarg.0
+  IL_0205: ldfld System.String Celeste.Mod.XaphanHelper.Entities.CustomSpinner::type
+  IL_020a: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_020f: brtrue.s IL_0223
+  IL_0211: ldarg.0
+  IL_0212: ldfld System.String Celeste.Mod.XaphanHelper.Entities.CustomSpinner::type
+  IL_0217: ldstr "hell"
+  IL_021c: call System.Boolean System.String::op_Inequality(System.String,System.String)
+  IL_0221: br.s IL_0224
+  IL_0223: ldc.i4.1
+  IL_0224: br.s IL_0227
+  IL_0226: ldc.i4.0
+  IL_0227: stloc.s V_13
+  IL_0229: ldloc.s V_13
+  IL_022b: brfalse.s IL_025e
+  IL_022d: nop
+  IL_022e: ldarg.0
+  IL_022f: ldarg.0
+  IL_0230: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0235: ldloc.s V_12
+  IL_0237: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_023c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0241: ldc.r4 2
+  IL_0246: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_024b: ldarg.0
+  IL_024c: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0251: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0256: ldc.i4.0
+  IL_0257: callvirt System.Void Celeste.Mod.XaphanHelper.Entities.CustomSpinner::AddFiller(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_025c: nop
+  IL_025d: nop
+  IL_025e: nop
+  IL_025f: ldloca.s V_11
+  IL_0261: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.CustomSpinner>::MoveNext()
+  IL_0266: brtrue IL_01c2
+  IL_026b: leave.s IL_027c
+  IL_026d: ldloca.s V_11
+  IL_026f: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.CustomSpinner>
+  IL_0275: callvirt System.Void System.IDisposable::Dispose()
+  IL_027a: nop
+  IL_027b: endfinally
+  IL_027c: ldarg.0
+  IL_027d: ldfld System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::CanAttach
+  IL_0282: stloc.s V_15
+  IL_0284: ldloc.s V_15
+  IL_0286: brfalse IL_0325
+  IL_028b: nop
+  IL_028c: nop
+  IL_028d: ldarg.0
+  IL_028e: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0293: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0298: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.Mod.XaphanHelper.Entities.ExplosiveBoulder>()
+  IL_029d: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Mod.XaphanHelper.Entities.ExplosiveBoulder>::GetEnumerator()
+  IL_02a2: stloc.s V_16
+  IL_02a4: br.s IL_030a
+  IL_02a6: ldloca.s V_16
+  IL_02a8: call T System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.ExplosiveBoulder>::get_Current()
+  IL_02ad: stloc.s V_17
+  IL_02af: nop
+  IL_02b0: ldloc.s V_17
+  IL_02b2: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02b7: ldarg.0
+  IL_02b8: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02bd: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02c2: stloc.s V_14
+  IL_02c4: ldloca.s V_14
+  IL_02c6: call System.Single Microsoft.Xna.Framework.Vector2::LengthSquared()
+  IL_02cb: ldc.r4 576
+  IL_02d0: clt
+  IL_02d2: stloc.s V_18
+  IL_02d4: ldloc.s V_18
+  IL_02d6: brfalse.s IL_0309
+  IL_02d8: nop
+  IL_02d9: ldarg.0
+  IL_02da: ldarg.0
+  IL_02db: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02e0: ldloc.s V_17
+  IL_02e2: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02e7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_02ec: ldc.r4 2
+  IL_02f1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02f6: ldarg.0
+  IL_02f7: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_02fc: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0301: ldc.i4.1
+  IL_0302: callvirt System.Void Celeste.Mod.XaphanHelper.Entities.CustomSpinner::AddFiller(Microsoft.Xna.Framework.Vector2,System.Boolean)
+  IL_0307: nop
+  IL_0308: nop
+  IL_0309: nop
+  IL_030a: ldloca.s V_16
+  IL_030c: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.ExplosiveBoulder>::MoveNext()
+  IL_0311: brtrue.s IL_02a6
+  IL_0313: leave.s IL_0324
+  IL_0315: ldloca.s V_16
+  IL_0317: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Mod.XaphanHelper.Entities.ExplosiveBoulder>
+  IL_031d: callvirt System.Void System.IDisposable::Dispose()
+  IL_0322: nop
+  IL_0323: endfinally
+  IL_0324: nop
+  IL_0325: ldarg.0
+  IL_0326: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_032b: ldarg.0
+  IL_032c: ldarg.0
+  IL_032d: newobj System.Void Celeste.Mod.XaphanHelper.Entities.CustomSpinner/Border::.ctor(Monocle.Entity)
+  IL_0332: dup
+  IL_0333: stloc.s V_19
+  IL_0335: stfld Celeste.Mod.XaphanHelper.Entities.CustomSpinner/Border Celeste.Mod.XaphanHelper.Entities.CustomSpinner::border
+  IL_033a: ldloc.s V_19
+  IL_033c: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0341: nop
+  IL_0342: ldarg.0
+  IL_0343: ldc.i4.1
+  IL_0344: stfld System.Boolean Celeste.Mod.XaphanHelper.Entities.CustomSpinner::expanded
+  IL_0349: call System.Void Monocle.Calc::PopRandom()
+  IL_034e: nop
+  IL_034f: nop
++ IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.Spinner.SimplifiedSpinner::CallNeedClearSprites() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0350: ret

@@ -1,0 +1,91 @@
+IL Diff: System.Void Celeste.TheoCrystal::ImpactParticles(Microsoft.Xna.Framework.Vector2)
+  IL_0000: ldarg.1
+  IL_0001: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0006: ldc.r4 0
+  IL_000b: ble.un.s IL_0041
+  IL_000d: ldc.r4 3.1415927
+  IL_0012: stloc.0
+  IL_0013: ldloca.s V_1
+  IL_0015: ldarg.0
+  IL_0016: call System.Single Monocle.Entity::get_Right()
+  IL_001b: ldarg.0
+  IL_001c: call System.Single Monocle.Entity::get_Y()
+  IL_0021: ldc.r4 4
+  IL_0026: sub
+  IL_0027: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_002c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0031: ldc.r4 6
+  IL_0036: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_003b: stloc.2
+  IL_003c: br IL_00e0
+  IL_0041: ldarg.1
+  IL_0042: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0047: ldc.r4 0
+  IL_004c: bge.un.s IL_007f
+  IL_004e: ldc.r4 0
+  IL_0053: stloc.0
+  IL_0054: ldloca.s V_1
+  IL_0056: ldarg.0
+  IL_0057: call System.Single Monocle.Entity::get_Left()
+  IL_005c: ldarg.0
+  IL_005d: call System.Single Monocle.Entity::get_Y()
+  IL_0062: ldc.r4 4
+  IL_0067: sub
+  IL_0068: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_006d: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitY()
+  IL_0072: ldc.r4 6
+  IL_0077: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_007c: stloc.2
+  IL_007d: br.s IL_00e0
+  IL_007f: ldarg.1
+  IL_0080: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0085: ldc.r4 0
+  IL_008a: ble.un.s IL_00b7
+  IL_008c: ldc.r4 -1.5707964
+  IL_0091: stloc.0
+  IL_0092: ldloca.s V_1
+  IL_0094: ldarg.0
+  IL_0095: call System.Single Monocle.Entity::get_X()
+  IL_009a: ldarg.0
+  IL_009b: call System.Single Monocle.Entity::get_Bottom()
+  IL_00a0: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00a5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00aa: ldc.r4 6
+  IL_00af: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00b4: stloc.2
+  IL_00b5: br.s IL_00e0
+  IL_00b7: ldc.r4 1.5707964
+  IL_00bc: stloc.0
+  IL_00bd: ldloca.s V_1
+  IL_00bf: ldarg.0
+  IL_00c0: call System.Single Monocle.Entity::get_X()
+  IL_00c5: ldarg.0
+  IL_00c6: call System.Single Monocle.Entity::get_Top()
+  IL_00cb: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00d0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_UnitX()
+  IL_00d5: ldc.r4 6
+  IL_00da: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00df: stloc.2
+  IL_00e0: ldarg.0
+  IL_00e1: ldfld Celeste.Level Celeste.TheoCrystal::Level
+  IL_00e6: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_00eb: ldsfld Monocle.ParticleType Celeste.TheoCrystal::P_Impact
+  IL_00f0: ldc.i4.s 12
+  IL_00f2: ldloc.1
+  IL_00f3: ldloc.2
+  IL_00f4: ldloc.0
++ IL_0000: ldarg.0 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: ldc.i4 15801081 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
+  |-> retrieves System.Boolean Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal/<>c::<TheoCrystal_ImpactParticles>b__10_1(Celeste.TheoCrystal)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.TheoCrystal>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: brfalse IL_00f5 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: ldc.i4 4819169 @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
+  |-> retrieves System.Void Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal/<>c::<TheoCrystal_ImpactParticles>b__10_2(Monocle.ParticleSystem,Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
++ IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal6<Monocle.ParticleSystem,Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single>(T0,T1,T2,T3,T4,T5,MonoMod.Cil.FastDelegateInvokers/VoidVal6`6<T0,T1,T2,T3,T4,T5>) @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
++ IL_0000: br IL_00fa @ Celeste.Mod.CommunalHelper.Entities.DreamTheoCrystal::TheoCrystal_ImpactParticles
+  IL_00f5: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fa: ret

@@ -1,0 +1,45 @@
+IL Diff: System.Void Monocle.Engine::Draw(Microsoft.Xna.Framework.GameTime)
+  IL_0000: ldarg.0
+  IL_0001: callvirt System.Void Monocle.Engine::RenderCore()
+  IL_0006: ldarg.0
+  IL_0007: ldarg.1
+  IL_0008: call System.Void Microsoft.Xna.Framework.Game::Draw(Microsoft.Xna.Framework.GameTime)
+  IL_000d: call Monocle.Commands Monocle.Engine::get_Commands()
+  IL_0012: ldfld System.Boolean Monocle.Commands::Open
+  IL_0017: brfalse.s IL_0023
+  IL_0019: call Monocle.Commands Monocle.Engine::get_Commands()
+  IL_001e: callvirt System.Void Monocle.Commands::Render()
++ IL_0000: call System.Void TAS.EverestInterop.StudioUpdateBanner::Render() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0023: ldarg.0
+  IL_0024: ldarg.0
+  IL_0025: ldfld System.Int32 Monocle.Engine::fpsCounter
+  IL_002a: ldc.i4.1
+  IL_002b: add
+  IL_002c: stfld System.Int32 Monocle.Engine::fpsCounter
+  IL_0031: ldarg.0
+  IL_0032: ldarg.0
+  IL_0033: ldfld System.TimeSpan Monocle.Engine::counterElapsed
+  IL_0038: ldarg.1
+  IL_0039: callvirt System.TimeSpan Microsoft.Xna.Framework.GameTime::get_ElapsedGameTime()
+  IL_003e: call System.TimeSpan System.TimeSpan::op_Addition(System.TimeSpan,System.TimeSpan)
+  IL_0043: stfld System.TimeSpan Monocle.Engine::counterElapsed
+  IL_0048: ldarg.0
+  IL_0049: ldfld System.TimeSpan Monocle.Engine::counterElapsed
+  IL_004e: ldc.r8 1
+  IL_0057: call System.TimeSpan NETCoreifier.TimeSpanShims::FromSeconds(System.Double)
+  IL_005c: call System.Boolean System.TimeSpan::op_GreaterThanOrEqual(System.TimeSpan,System.TimeSpan)
+  IL_0061: brfalse.s IL_0094
+  IL_0063: ldarg.0
+  IL_0064: ldfld System.Int32 Monocle.Engine::fpsCounter
+  IL_0069: stsfld System.Int32 Monocle.Engine::FPS
+  IL_006e: ldarg.0
+  IL_006f: ldc.i4.0
+  IL_0070: stfld System.Int32 Monocle.Engine::fpsCounter
+  IL_0075: ldarg.0
+  IL_0076: ldarg.0
+  IL_0077: ldfld System.TimeSpan Monocle.Engine::counterElapsed
+  IL_007c: ldc.r8 1
+  IL_0085: call System.TimeSpan NETCoreifier.TimeSpanShims::FromSeconds(System.Double)
+  IL_008a: call System.TimeSpan System.TimeSpan::op_Subtraction(System.TimeSpan,System.TimeSpan)
+  IL_008f: stfld System.TimeSpan Monocle.Engine::counterElapsed
+  IL_0094: ret

@@ -57,13 +57,18 @@ IL Diff: System.Void Celeste.Player::Render()
   IL_00b3: ldarg.0
   IL_00b4: ldfld Monocle.StateMachine Celeste.Player::StateMachine
   IL_00b9: callvirt System.Int32 Monocle.StateMachine::get_State()
-+ IL_0000: ldc.i4 2978 @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
-+ IL_0000: ldc.i4 51076941 @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
-  |-> retrieves System.Int32 Celeste.Mod.XaphanHelper.Controllers.HeatController/<>c::<modILPlayerRender>b__13_0(System.Int32)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.Controllers.HeatController::modILPlayerRender
++ IL_0000: ldc.i4 3926 @ Celeste.Mod.XaphanHelper.XaphanModule::modILPlayerRender
++ IL_0000: ldc.i4 63972773 @ Celeste.Mod.XaphanHelper.XaphanModule::modILPlayerRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.XaphanHelper.XaphanModule::modILPlayerRender
+  |-> retrieves System.Int32 Celeste.Mod.XaphanHelper.XaphanModule/<>c::<modILPlayerRender>b__184_0(System.Int32)
++ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Int32,System.Int32>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.XaphanHelper.XaphanModule::modILPlayerRender
   IL_00be: ldc.i4.s 19
   IL_00c0: beq.s IL_00f4
++ IL_0000: ldc.i4 3928 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnRender
++ IL_0000: ldc.i4 14412110 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnRender
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Boolean>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnRender
+  |-> retrieves System.Boolean LuckyHelper.Modules.CustomWaterModule/<>c::<PlayerOnRender>b__6_0()
++ IL_0000: callvirt TResult System.Func`1<System.Boolean>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnRender
   IL_00c2: ldarg.0
   IL_00c3: callvirt System.Boolean Celeste.Player::get_IsTired()
   IL_00c8: brfalse.s IL_00e4
@@ -74,19 +79,15 @@ IL Diff: System.Void Celeste.Player::Render()
   IL_00d3: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
   IL_00d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Red()
 + IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldc.i4 2980 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldc.i4 41255242 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.SkinModHelper.PlayerSkinSystem::<PlayerRenderIlHook_Color>g___pLowStaminaFlash|12_0(Microsoft.Xna.Framework.Color,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 3522116 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
   |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger/<>c::<patchPlayerRender>b__4_1(Microsoft.Xna.Framework.Color,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: ldc.i4 33542072 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger/<>c::<patchPlayerRender>b__4_1(Microsoft.Xna.Framework.Color,Celeste.Player)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: ldc.i4 3568 @ VivHelper.VivHelperModule::Player_Render
-+ IL_0000: ldc.i4 31032697 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 3929 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 62600130 @ VivHelper.VivHelperModule::Player_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_Render
   |-> retrieves Microsoft.Xna.Framework.Color VivHelper.VivHelperModule/<>c::<Player_Render>b__93_0(Microsoft.Xna.Framework.Color)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.VivHelperModule::Player_Render
@@ -95,21 +96,17 @@ IL Diff: System.Void Celeste.Player::Render()
   IL_00e4: ldarg.0
   IL_00e5: ldfld Celeste.PlayerSprite Celeste.Player::Sprite
   IL_00ea: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
-+ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: ldc.i4 2983 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: ldc.i4 53340291 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.SkinModHelper.PlayerSkinSystem/<>c::<PlayerRenderIlHook_Color>b__14_1(Microsoft.Xna.Framework.Color,Celeste.Player)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
-+ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.DzhakeHelper.DzhakeHelperHooks::PlayersColor(Microsoft.Xna.Framework.Color) @ Celeste.Mod.DzhakeHelper.DzhakeHelperHooks::PlayerRender
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.DzhakeHelper.DzhakeHelperHooks::PlayersColor(Microsoft.Xna.Framework.Color) @ Celeste.Mod.DzhakeHelper.DzhakeHelperHooks::PlayerRender_IL
 + IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldc.i4 32553289 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: call Microsoft.Xna.Framework.Color Celeste.Mod.SkinModHelper.PlayerSkinSystem::<PlayerRenderIlHook_Color>g___pSilhouette|12_1(Microsoft.Xna.Framework.Color,Celeste.Player) @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
++ IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.PlayerSkinSystem::PlayerRenderIlHook_Color
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
++ IL_0000: ldc.i4 16856008 @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
   |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger/<>c::<patchPlayerRender>b__4_3(Microsoft.Xna.Framework.Color,Celeste.Player)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Triggers.MadelineSilhouetteTrigger::patchPlayerRender
-+ IL_0000: ldc.i4 3646 @ VivHelper.VivHelperModule::Player_Render
-+ IL_0000: ldc.i4 30620565 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 3931 @ VivHelper.VivHelperModule::Player_Render
++ IL_0000: ldc.i4 37445749 @ VivHelper.VivHelperModule::Player_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Player_Render
   |-> retrieves Microsoft.Xna.Framework.Color VivHelper.VivHelperModule/<>c::<Player_Render>b__93_0(Microsoft.Xna.Framework.Color)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.VivHelperModule::Player_Render
@@ -200,14 +197,10 @@ IL Diff: System.Void Celeste.Player::Render()
   IL_0204: ldsfld Monocle.Atlas Celeste.GFX::Game
   IL_0209: ldstr "characters/player/startStarFlyWhite"
 + IL_0000: ldarg.0 @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
-+ IL_0000: ldc.i4 3085 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
-+ IL_0000: ldc.i4 29040226 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
++ IL_0000: call System.String Celeste.Mod.SkinModHelper.SomePatches::<PlayerRenderIlHook_Sprite>g___findStartStarFlyWhiteSprite|10_0(System.String,Celeste.Player) @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
++ IL_0000: ldc.i4 3873 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
++ IL_0000: ldc.i4 23159408 @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
-  |-> retrieves System.String SkinModHelper.Module.SkinModHelperModule/<>c::<PlayerRenderIlHook>b__31_0(System.String)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.String,System.String,Celeste.Player>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
-+ IL_0000: ldc.i4 41729634 @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.SkinModHelper.SomePatches::PlayerRenderIlHook_Sprite
   |-> retrieves System.String SkinModHelper.Module.SkinModHelperModule/<>c::<PlayerRenderIlHook>b__31_0(System.String)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ SkinModHelper.Module.SkinModHelperModule::PlayerRenderIlHook
   IL_020e: ldarg.0

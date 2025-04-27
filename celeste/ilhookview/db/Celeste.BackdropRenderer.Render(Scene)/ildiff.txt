@@ -1,5 +1,5 @@
 IL Diff: System.Void Celeste.BackdropRenderer::Render(Monocle.Scene)
-+ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsNotSimplifiedBackdrop() @ TAS.EverestInterop.SimplifiedGraphicsFeature::BackdropRenderer_Render
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::<BackdropRenderer_Render>g__IsNotSimplifiedBackdrop|30_0() @ TAS.EverestInterop.SimplifiedGraphicsFeature::BackdropRenderer_Render
 + IL_0000: brtrue IL_0000 @ TAS.EverestInterop.SimplifiedGraphicsFeature::BackdropRenderer_Render
 + IL_0000: ret @ TAS.EverestInterop.SimplifiedGraphicsFeature::BackdropRenderer_Render
   IL_0000: ldsfld Microsoft.Xna.Framework.Graphics.BlendState Microsoft.Xna.Framework.Graphics.BlendState::AlphaBlend
@@ -16,15 +16,19 @@ IL Diff: System.Void Celeste.BackdropRenderer::Render(Monocle.Scene)
 + IL_0000: dup @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
 + IL_0000: dup @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
   IL_0020: ldfld System.Boolean Celeste.Backdrop::Visible
++ IL_0000: dup @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modBackdropRendererRender
 + IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
++ IL_0000: ldloca V_4 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modBackdropRendererRender
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::backdropRenderLoopAdditiveBlendBufferSwap(System.Boolean,Celeste.BackdropRenderer,System.Int32&) @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modBackdropRendererRender
++ IL_0000: ldarg.0 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modBackdropRendererRender
 + IL_0000: ldarg.1 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
-+ IL_0000: ldc.i4 2978 @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
-+ IL_0000: ldc.i4 28407200 @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
++ IL_0000: ldc.i4 3926 @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
++ IL_0000: ldc.i4 24458229 @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
   |-> retrieves System.Boolean Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController/<>c::<onBackdropRender>b__7_1(Celeste.Backdrop,System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal4<System.Boolean,Celeste.Backdrop,System.Boolean,Celeste.BackdropRenderer,Monocle.Scene>(T0,T1,T2,T3,MonoMod.Cil.FastDelegateInvokers/TypeVal4`5<TResult,T0,T1,T2,T3>) @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
-+ IL_0000: ldc.i4 44519572 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
++ IL_0000: ldc.i4 18027374 @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.StylegroundLightingHandler::BackdropRenderer_Render
   |-> retrieves System.Boolean Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController/<>c::<onBackdropRender>b__7_1(Celeste.Backdrop,System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal2<System.Boolean,Celeste.Backdrop,System.Boolean>(T0,T1,MonoMod.Cil.FastDelegateInvokers/TypeVal2`3<TResult,T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.ParallaxFadeOutController::onBackdropRender
@@ -85,19 +89,19 @@ IL Diff: System.Void Celeste.BackdropRenderer::Render(Monocle.Scene)
   IL_00af: ldarg.1
 + IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
 + IL_0000: ldloc V_2 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-+ IL_0000: ldc.i4 41187041 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
++ IL_0000: ldc.i4 50931183 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-  |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController/<>c::<modBackdropRendererRender>b__20_1(Celeste.BackdropRenderer,Celeste.Backdrop)
+  |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController/<>c::<modBackdropRendererRender>b__25_1(Celeste.BackdropRenderer,Celeste.Backdrop)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.BackdropRenderer,Celeste.Backdrop>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
   IL_00b0: callvirt System.Void Celeste.Backdrop::Render(Monocle.Scene)
 + IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
 + IL_0000: ldloc V_2 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
 + IL_0000: ldloc V_0 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-+ IL_0000: ldc.i4 47816059 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
++ IL_0000: ldc.i4 3873 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
++ IL_0000: ldc.i4 31785124 @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
-  |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController/<>c::<modBackdropRendererRender>b__20_2(Celeste.BackdropRenderer,Celeste.Backdrop,Microsoft.Xna.Framework.Graphics.BlendState)
+  |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController/<>c::<modBackdropRendererRender>b__25_2(Celeste.BackdropRenderer,Celeste.Backdrop,Microsoft.Xna.Framework.Graphics.BlendState)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal3<Celeste.BackdropRenderer,Celeste.Backdrop,Microsoft.Xna.Framework.Graphics.BlendState>(T0,T1,T2,MonoMod.Cil.FastDelegateInvokers/VoidVal3`3<T0,T1,T2>) @ Celeste.Mod.MaxHelpingHand.Entities.StylegroundFadeController::modBackdropRendererRender
   IL_00b5: ldloca.s V_1
   IL_00b7: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Backdrop>::MoveNext()

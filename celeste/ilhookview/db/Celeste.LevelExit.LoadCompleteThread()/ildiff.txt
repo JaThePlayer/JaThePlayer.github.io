@@ -1,0 +1,65 @@
+IL Diff: System.Void Celeste.LevelExit::LoadCompleteThread()
+  IL_0000: ldarg.0
+  IL_0001: ldfld Celeste.Session Celeste.LevelExit::session
+  IL_0006: call Celeste.AreaData Celeste.AreaData::Get(Celeste.Session)
+  IL_000b: stloc.0
+  IL_000c: ldarg.0
+  IL_000d: ldloc.0
+  IL_000e: ldfld Celeste.Mod.Meta.MapMeta Celeste.AreaData::Meta
+  IL_0013: dup
+  IL_0014: brtrue.s IL_001a
+  IL_0016: pop
+  IL_0017: ldnull
+  IL_0018: br.s IL_001f
+  IL_001a: callvirt Celeste.Mod.Meta.MapMetaCompleteScreen Celeste.Mod.Meta.MapMeta::get_CompleteScreen()
++ IL_0000: ldarg.0 @ Celeste.Mod.MaxHelpingHand.Module.SideSpecificEndscreens::ilSwapAreaCompleteScreen
++ IL_0000: ldfld Celeste.Session Celeste.LevelExit::session @ Celeste.Mod.MaxHelpingHand.Module.SideSpecificEndscreens::ilSwapAreaCompleteScreen
++ IL_0000: call Celeste.Mod.Meta.MapMetaCompleteScreen Celeste.Mod.MaxHelpingHand.Module.SideSpecificEndscreens::swapAreaCompleteScreen(Celeste.Mod.Meta.MapMetaCompleteScreen,Celeste.Session) @ Celeste.Mod.MaxHelpingHand.Module.SideSpecificEndscreens::ilSwapAreaCompleteScreen
+  IL_001f: dup
+  IL_0020: stloc.1
+  IL_0021: stfld Celeste.Mod.Meta.MapMetaCompleteScreen Celeste.LevelExit::completeMeta
+  IL_0026: ldloc.1
+  IL_0027: brfalse.s IL_005e
+  IL_0029: ldarg.0
+  IL_002a: ldfld Celeste.Mod.Meta.MapMetaCompleteScreen Celeste.LevelExit::completeMeta
+  IL_002f: callvirt System.String Celeste.Mod.Meta.MapMetaCompleteScreen::get_Atlas()
+  IL_0034: brfalse.s IL_005e
+  IL_0036: ldarg.0
+  IL_0037: ldstr "Graphics"
+  IL_003c: ldstr "Atlases"
+  IL_0041: ldarg.0
+  IL_0042: ldfld Celeste.Mod.Meta.MapMetaCompleteScreen Celeste.LevelExit::completeMeta
+  IL_0047: callvirt System.String Celeste.Mod.Meta.MapMetaCompleteScreen::get_Atlas()
+  IL_004c: call System.String System.IO.Path::Combine(System.String,System.String,System.String)
+  IL_0051: ldc.i4.6
+  IL_0052: call Monocle.Atlas Monocle.Atlas::FromAtlas(System.String,Monocle.Atlas/AtlasDataFormat)
+  IL_0057: stfld Monocle.Atlas Celeste.LevelExit::completeAtlas
+  IL_005c: br.s IL_00ac
+  IL_005e: ldarg.0
+  IL_005f: ldloc.0
+  IL_0060: callvirt System.Xml.XmlElement Celeste.AreaData::get_CompleteScreenXml()
+  IL_0065: dup
+  IL_0066: stloc.2
+  IL_0067: stfld System.Xml.XmlElement Celeste.LevelExit::completeXml
+  IL_006c: ldloc.2
+  IL_006d: brfalse.s IL_00ac
+  IL_006f: ldarg.0
+  IL_0070: ldfld System.Xml.XmlElement Celeste.LevelExit::completeXml
+  IL_0075: ldstr "atlas"
+  IL_007a: call System.Boolean Monocle.Calc::HasAttr(System.Xml.XmlElement,System.String)
+  IL_007f: brfalse.s IL_00ac
+  IL_0081: ldarg.0
+  IL_0082: ldstr "Graphics"
+  IL_0087: ldstr "Atlases"
+  IL_008c: ldarg.0
+  IL_008d: ldfld System.Xml.XmlElement Celeste.LevelExit::completeXml
+  IL_0092: ldstr "atlas"
+  IL_0097: call System.String Monocle.Calc::Attr(System.Xml.XmlElement,System.String)
+  IL_009c: call System.String System.IO.Path::Combine(System.String,System.String,System.String)
+  IL_00a1: ldc.i4.6
+  IL_00a2: call Monocle.Atlas Monocle.Atlas::FromAtlas(System.String,Monocle.Atlas/AtlasDataFormat)
+  IL_00a7: stfld Monocle.Atlas Celeste.LevelExit::completeAtlas
+  IL_00ac: ldarg.0
+  IL_00ad: ldc.i4.1
+  IL_00ae: stfld System.Boolean Celeste.LevelExit::completeLoaded
+  IL_00b3: ret

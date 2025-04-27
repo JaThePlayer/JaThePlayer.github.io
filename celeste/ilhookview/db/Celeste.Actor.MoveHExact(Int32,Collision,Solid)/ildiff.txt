@@ -56,12 +56,14 @@ IL Diff: System.Boolean Celeste.Actor::MoveHExact(System.Int32,Celeste.Collision
   IL_009b: ldarg.3
   IL_009c: stfld Celeste.Solid Celeste.CollisionData::Pusher
   IL_00a1: ldloc.s V_4
++ IL_0000: ldarg.0 @ Celeste.Mod.FemtoHelper.FemtoModule::onCollideH_IL
++ IL_0000: call Celeste.CollisionData Celeste.Mod.FemtoHelper.FemtoModule::InvokeExtraCollisionActionsH(Celeste.CollisionData,Celeste.Actor) @ Celeste.Mod.FemtoHelper.FemtoModule::onCollideH_IL
   IL_00a3: callvirt System.Void Celeste.Collision::Invoke(Celeste.CollisionData)
   IL_00a8: ldc.i4.1
   IL_00a9: ret
 + IL_0000: ldarg.0 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
 + IL_0000: ldloc.1 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
-+ IL_0000: call System.Boolean Celeste.Mod.ProgHelper.ClipPreventionTrigger::CheckH(Celeste.Actor,System.Int32) @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
++ IL_0000: call System.Boolean Celeste.Mod.ProgHelper.ClipPrevention::CheckH(Celeste.Actor,System.Int32) @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
 + IL_0000: brfalse.s IL_00aa @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
 + IL_0000: ldc.i4.0 @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact
 + IL_0000: ret @ Celeste.Mod.ProgHelper.ActorExtensions::Il_Actor_MoveHExact

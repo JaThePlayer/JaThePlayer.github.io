@@ -1,0 +1,32 @@
+IL Diff: System.Void Celeste.Mod.XaphanHelper.Entities.ThornBarrier/ThornDebris::Init(Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0008: ldarg.0
+  IL_0009: ldfld Monocle.Image Celeste.Mod.XaphanHelper.Entities.ThornBarrier/ThornDebris::image
+  IL_000e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_0013: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0018: ldarg.0
+  IL_0019: ldc.r4 0
+  IL_001e: stfld System.Single Celeste.Mod.XaphanHelper.Entities.ThornBarrier/ThornDebris::percent
+  IL_0023: ldarg.0
+  IL_0024: ldsfld System.Random Monocle.Calc::Random
+  IL_0029: ldc.r4 0.25
+  IL_002e: ldc.r4 1
+  IL_0033: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0038: stfld System.Single Celeste.Mod.XaphanHelper.Entities.ThornBarrier/ThornDebris::duration
+  IL_003d: ldarg.0
+  IL_003e: ldsfld System.Random Monocle.Calc::Random
+  IL_0043: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_0048: ldsfld System.Random Monocle.Calc::Random
+  IL_004d: ldc.i4.s 30
+  IL_004f: ldc.i4.s 100
+  IL_0051: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0056: conv.r4
+  IL_0057: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_005c: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.XaphanHelper.Entities.ThornBarrier/ThornDebris::speed
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0061: ret

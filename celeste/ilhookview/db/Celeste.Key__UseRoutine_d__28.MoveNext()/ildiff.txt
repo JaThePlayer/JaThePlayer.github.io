@@ -1,0 +1,248 @@
+IL Diff: System.Boolean Celeste.Key/<UseRoutine>d__28::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.Key Celeste.Key/<UseRoutine>d__28::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_0127,IL_0147,IL_01ca,IL_022a,IL_027b
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: newobj System.Void Celeste.Key/<>c__DisplayClass28_0::.ctor()
+  IL_003b: stfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.Key Celeste.Key/<UseRoutine>d__28::<>4__this
+  IL_004c: stfld Celeste.Key Celeste.Key/<>c__DisplayClass28_0::<>4__this
+  IL_0051: ldloc.1
+  IL_0052: ldc.i4.1
+  IL_0053: callvirt System.Void Celeste.Key::set_Turning(System.Boolean)
+  IL_0058: ldloc.1
+  IL_0059: ldfld Celeste.Follower Celeste.Key::follower
+  IL_005e: ldc.i4.0
+  IL_005f: stfld System.Boolean Celeste.Follower::MoveTowardsLeader
+  IL_0064: ldloc.1
+  IL_0065: ldfld Monocle.Wiggler Celeste.Key::wiggler
+  IL_006a: callvirt System.Void Monocle.Wiggler::Start()
+  IL_006f: ldloc.1
+  IL_0070: ldc.i4.0
+  IL_0071: stfld System.Boolean Celeste.Key::wobbleActive
+  IL_0076: ldloc.1
+  IL_0077: ldfld Monocle.Sprite Celeste.Key::sprite
+  IL_007c: ldc.r4 0
+  IL_0081: callvirt System.Void Monocle.GraphicsComponent::set_Y(System.Single)
+  IL_0086: ldloc.1
+  IL_0087: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_008c: stloc.2
+  IL_008d: ldarg.0
+  IL_008e: ldfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_0093: ldloc.2
+  IL_0094: ldarg.0
+  IL_0095: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Key/<UseRoutine>d__28::target
+  IL_009a: ldarg.0
+  IL_009b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Key/<UseRoutine>d__28::target
+  IL_00a0: ldloc.2
+  IL_00a1: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00a6: ldc.r4 2
+  IL_00ab: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Division(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00b0: ldc.r4 0
+  IL_00b5: ldc.r4 -48
+  IL_00ba: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00bf: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c4: newobj System.Void Monocle.SimpleCurve::.ctor(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00c9: stfld Monocle.SimpleCurve Celeste.Key/<>c__DisplayClass28_0::curve
+  IL_00ce: ldloc.1
+  IL_00cf: ldc.i4.1
+  IL_00d0: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeOut
+  IL_00d5: ldc.r4 1
++ IL_0000: ldarg.0 @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__1
++ IL_0000: ldfld Celeste.Key Celeste.Key/<UseRoutine>d__28::<>4__this @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__1
++ IL_0000: call System.Single Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::GoldenCutInHalf(System.Single,Monocle.Entity) @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule+<>c__DisplayClass24_0::<Load>b__1
+  IL_00da: ldc.i4.1
+  IL_00db: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_00e0: stfld Monocle.Tween Celeste.Key::tween
+  IL_00e5: ldloc.1
+  IL_00e6: ldfld Monocle.Tween Celeste.Key::tween
+  IL_00eb: ldarg.0
+  IL_00ec: ldfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_00f1: ldftn System.Void Celeste.Key/<>c__DisplayClass28_0::<UseRoutine>b__0(Monocle.Tween)
+  IL_00f7: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_00fc: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_0101: ldloc.1
+  IL_0102: ldloc.1
+  IL_0103: ldfld Monocle.Tween Celeste.Key::tween
+  IL_0108: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_010d: ldarg.0
+  IL_010e: ldloc.1
+  IL_010f: ldfld Monocle.Tween Celeste.Key::tween
+  IL_0114: callvirt System.Collections.IEnumerator Monocle.Tween::Wait()
+  IL_0119: stfld System.Object Celeste.Key/<UseRoutine>d__28::<>2__current
+  IL_011e: ldarg.0
+  IL_011f: ldc.i4.1
+  IL_0120: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0125: ldc.i4.1
+  IL_0126: ret
+  IL_0127: ldarg.0
+  IL_0128: ldc.i4.m1
+  IL_0129: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_012e: ldloc.1
+  IL_012f: ldnull
+  IL_0130: stfld Monocle.Tween Celeste.Key::tween
+  IL_0135: br.s IL_014e
+  IL_0137: ldarg.0
+  IL_0138: ldnull
+  IL_0139: stfld System.Object Celeste.Key/<UseRoutine>d__28::<>2__current
+  IL_013e: ldarg.0
+  IL_013f: ldc.i4.2
+  IL_0140: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0145: ldc.i4.1
+  IL_0146: ret
+  IL_0147: ldarg.0
+  IL_0148: ldc.i4.m1
+  IL_0149: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_014e: ldloc.1
+  IL_014f: ldfld Monocle.Sprite Celeste.Key::sprite
+  IL_0154: callvirt System.Int32 Monocle.Sprite::get_CurrentAnimationFrame()
+  IL_0159: ldc.i4.4
+  IL_015a: bne.un.s IL_0137
+  IL_015c: ldloc.1
+  IL_015d: ldfld Monocle.ParticleEmitter Celeste.Key::shimmerParticles
+  IL_0162: ldc.i4.0
+  IL_0163: stfld System.Boolean Monocle.Component::Active
+  IL_0168: ldc.i4.1
+  IL_0169: ldc.i4.1
+  IL_016a: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_016f: ldc.i4.0
+  IL_0170: stloc.3
+  IL_0171: br.s IL_019a
+  IL_0173: ldloc.1
+  IL_0174: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0179: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_017e: ldsfld Monocle.ParticleType Celeste.Key::P_Insert
+  IL_0183: ldloc.1
+  IL_0184: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0189: ldc.r4 0.3926991
+  IL_018e: ldloc.3
+  IL_018f: conv.r4
+  IL_0190: mul
+  IL_0191: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0196: ldloc.3
+  IL_0197: ldc.i4.1
+  IL_0198: add
+  IL_0199: stloc.3
+  IL_019a: ldloc.3
+  IL_019b: ldc.i4.s 16
+  IL_019d: blt.s IL_0173
+  IL_019f: ldloc.1
+  IL_01a0: ldfld Monocle.Sprite Celeste.Key::sprite
+  IL_01a5: ldstr "enter"
+  IL_01aa: ldc.i4.0
+  IL_01ab: ldc.i4.0
+  IL_01ac: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_01b1: ldarg.0
+  IL_01b2: ldc.r4 0.3
+  IL_01b7: box System.Single
+  IL_01bc: stfld System.Object Celeste.Key/<UseRoutine>d__28::<>2__current
+  IL_01c1: ldarg.0
+  IL_01c2: ldc.i4.3
+  IL_01c3: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_01c8: ldc.i4.1
+  IL_01c9: ret
+  IL_01ca: ldarg.0
+  IL_01cb: ldc.i4.m1
+  IL_01cc: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_01d1: ldloc.1
+  IL_01d2: ldc.i4.1
+  IL_01d3: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
+  IL_01d8: ldc.r4 0.3
+  IL_01dd: ldc.i4.1
+  IL_01de: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_01e3: stfld Monocle.Tween Celeste.Key::tween
+  IL_01e8: ldloc.1
+  IL_01e9: ldfld Monocle.Tween Celeste.Key::tween
+  IL_01ee: ldarg.0
+  IL_01ef: ldfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_01f4: ldftn System.Void Celeste.Key/<>c__DisplayClass28_0::<UseRoutine>b__1(Monocle.Tween)
+  IL_01fa: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_01ff: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_0204: ldloc.1
+  IL_0205: ldloc.1
+  IL_0206: ldfld Monocle.Tween Celeste.Key::tween
+  IL_020b: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0210: ldarg.0
+  IL_0211: ldloc.1
+  IL_0212: ldfld Monocle.Tween Celeste.Key::tween
+  IL_0217: callvirt System.Collections.IEnumerator Monocle.Tween::Wait()
+  IL_021c: stfld System.Object Celeste.Key/<UseRoutine>d__28::<>2__current
+  IL_0221: ldarg.0
+  IL_0222: ldc.i4.4
+  IL_0223: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0228: ldc.i4.1
+  IL_0229: ret
+  IL_022a: ldarg.0
+  IL_022b: ldc.i4.m1
+  IL_022c: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0231: ldloc.1
+  IL_0232: ldnull
+  IL_0233: stfld Monocle.Tween Celeste.Key::tween
+  IL_0238: ldc.i4.0
+  IL_0239: ldc.i4.1
+  IL_023a: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_023f: ldloc.1
+  IL_0240: ldloc.1
+  IL_0241: ldc.r4 1
+  IL_0246: ldarg.0
+  IL_0247: ldfld Celeste.Key/<>c__DisplayClass28_0 Celeste.Key/<UseRoutine>d__28::<>8__1
+  IL_024c: ldftn System.Void Celeste.Key/<>c__DisplayClass28_0::<UseRoutine>b__2()
+  IL_0252: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0257: ldc.i4.1
+  IL_0258: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_025d: stfld Monocle.Alarm Celeste.Key::alarm
+  IL_0262: ldarg.0
+  IL_0263: ldc.r4 0.2
+  IL_0268: box System.Single
+  IL_026d: stfld System.Object Celeste.Key/<UseRoutine>d__28::<>2__current
+  IL_0272: ldarg.0
+  IL_0273: ldc.i4.5
+  IL_0274: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0279: ldc.i4.1
+  IL_027a: ret
+  IL_027b: ldarg.0
+  IL_027c: ldc.i4.m1
+  IL_027d: stfld System.Int32 Celeste.Key/<UseRoutine>d__28::<>1__state
+  IL_0282: ldc.i4.0
+  IL_0283: stloc.s V_4
+  IL_0285: br.s IL_02b1
+  IL_0287: ldloc.1
+  IL_0288: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_028d: ldfld Monocle.ParticleSystem Celeste.Level::ParticlesFG
+  IL_0292: ldsfld Monocle.ParticleType Celeste.Key::P_Insert
+  IL_0297: ldloc.1
+  IL_0298: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_029d: ldc.r4 0.7853982
+  IL_02a2: ldloc.s V_4
+  IL_02a4: conv.r4
+  IL_02a5: mul
+  IL_02a6: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_02ab: ldloc.s V_4
+  IL_02ad: ldc.i4.1
+  IL_02ae: add
+  IL_02af: stloc.s V_4
+  IL_02b1: ldloc.s V_4
+  IL_02b3: ldc.i4.8
+  IL_02b4: blt.s IL_0287
+  IL_02b6: ldloc.1
+  IL_02b7: ldfld Monocle.Sprite Celeste.Key::sprite
+  IL_02bc: ldc.i4.0
+  IL_02bd: stfld System.Boolean Monocle.Component::Visible
+  IL_02c2: ldloc.1
+  IL_02c3: ldc.i4.0
+  IL_02c4: callvirt System.Void Celeste.Key::set_Turning(System.Boolean)
+  IL_02c9: ldc.i4.0
+  IL_02ca: ret

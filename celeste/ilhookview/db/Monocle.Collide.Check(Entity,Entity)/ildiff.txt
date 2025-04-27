@@ -1,0 +1,22 @@
+IL Diff: System.Boolean Monocle.Collide::Check(Monocle.Entity,Monocle.Entity)
+  IL_0000: ldarg.0
+  IL_0001: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0006: brfalse.s IL_0010
+  IL_0008: ldarg.1
+  IL_0009: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_000e: brtrue.s IL_0012
+  IL_0010: ldc.i4.0
+  IL_0011: ret
+  IL_0012: ldarg.0
+  IL_0013: ldarg.1
+  IL_0014: beq.s IL_002b
+  IL_0016: ldarg.1
+  IL_0017: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_001c: brfalse.s IL_002b
+  IL_001e: ldarg.0
+  IL_001f: callvirt Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0024: ldarg.1
+  IL_0025: callvirt System.Boolean Monocle.Collider::Collide(Monocle.Entity)
+  IL_002a: ret
+  IL_002b: ldc.i4.0
+  IL_002c: ret

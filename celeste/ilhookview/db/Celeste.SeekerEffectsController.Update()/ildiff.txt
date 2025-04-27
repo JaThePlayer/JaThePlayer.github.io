@@ -137,8 +137,8 @@ IL Diff: System.Void Celeste.SeekerEffectsController::Update()
   IL_01c1: stloc.3
   IL_01c2: ldsfld System.Single Monocle.Engine::TimeRate
   IL_01c7: ldloc.2
-+ IL_0000: ldc.i4 2698 @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
-+ IL_0000: ldc.i4 63963698 @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
++ IL_0000: ldc.i4 57219851 @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
   |-> retrieves System.Single ExtendedVariants.Variants.AddSeekers::transformTimeRate(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.AddSeekers::onSeekerEffectsControllerUpdate
@@ -184,6 +184,8 @@ IL Diff: System.Void Celeste.SeekerEffectsController::Update()
   IL_0262: call Monocle.Scene Monocle.Entity::get_Scene()
   IL_0267: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
   IL_026c: callvirt System.Int32 Monocle.Tracker::CountEntities<Celeste.Seeker>()
++ IL_0000: ldloc.1 @ VivHelper.Entities.CustomSeeker::SeekerEffectsController_Update
++ IL_0000: call System.Int32 VivHelper.Entities.CustomSeeker::AddSeekerCount(System.Int32,Celeste.Player) @ VivHelper.Entities.CustomSeeker::SeekerEffectsController_Update
   IL_0271: brtrue.s IL_0295
   IL_0273: ldarg.0
   IL_0274: ldc.i4.0
@@ -193,6 +195,8 @@ IL Diff: System.Void Celeste.SeekerEffectsController::Update()
   IL_027c: call Monocle.Scene Monocle.Entity::get_Scene()
   IL_0281: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
   IL_0286: callvirt System.Int32 Monocle.Tracker::CountEntities<Celeste.Seeker>()
++ IL_0000: ldloc.1 @ VivHelper.Entities.CustomSeeker::SeekerEffectsController_Update
++ IL_0000: call System.Int32 VivHelper.Entities.CustomSeeker::AddSeekerCount(System.Int32,Celeste.Player) @ VivHelper.Entities.CustomSeeker::SeekerEffectsController_Update
   IL_028b: ldc.i4.0
   IL_028c: ble.s IL_0295
   IL_028e: ldarg.0

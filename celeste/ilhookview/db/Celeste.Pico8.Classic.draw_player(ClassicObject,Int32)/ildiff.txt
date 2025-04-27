@@ -1,0 +1,51 @@
+IL Diff: System.Void Celeste.Pico8.Classic::draw_player(Celeste.Pico8.Classic+ClassicObject,System.Int32)
+  IL_0000: ldc.i4.0
+  IL_0001: stloc.0
+  IL_0002: ldarg.2
+  IL_0003: ldc.i4.2
+  IL_0004: bne.un.s IL_002e
+  IL_0006: ldarg.0
+  IL_0007: ldfld Celeste.Pico8.Emulator Celeste.Pico8.Classic::E
+  IL_000c: ldarg.0
+  IL_000d: ldfld System.Int32 Celeste.Pico8.Classic::frames
+  IL_0012: ldc.i4.3
+  IL_0013: div
+  IL_0014: ldc.i4.2
+  IL_0015: rem
+  IL_0016: conv.r4
+  IL_0017: callvirt System.Int32 Celeste.Pico8.Emulator::flr(System.Single)
+  IL_001c: brtrue.s IL_0026
++ IL_0000: call System.Boolean Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::ShouldUseSingleColorHair() @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_player
++ IL_0000: brfalse IL_001e @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_player
++ IL_0000: ldc.i4 144 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_player
++ IL_0000: stloc.0 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_player
++ IL_0000: br IL_0024 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_player
+  IL_001e: ldc.i4 160
+  IL_0023: stloc.0
+  IL_0024: br.s IL_0037
+  IL_0026: ldc.i4 144
+  IL_002b: stloc.0
+  IL_002c: br.s IL_0037
+  IL_002e: ldarg.2
+  IL_002f: brtrue.s IL_0037
+  IL_0031: ldc.i4 128
+  IL_0036: stloc.0
+  IL_0037: ldarg.0
+  IL_0038: ldfld Celeste.Pico8.Emulator Celeste.Pico8.Classic::E
+  IL_003d: ldarg.1
+  IL_003e: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::spr
+  IL_0043: ldloc.0
+  IL_0044: conv.r4
+  IL_0045: add
+  IL_0046: ldarg.1
+  IL_0047: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::x
+  IL_004c: ldarg.1
+  IL_004d: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::y
+  IL_0052: ldc.i4.1
+  IL_0053: ldc.i4.1
+  IL_0054: ldarg.1
+  IL_0055: ldfld System.Boolean Celeste.Pico8.Classic/ClassicObject::flipX
+  IL_005a: ldarg.1
+  IL_005b: ldfld System.Boolean Celeste.Pico8.Classic/ClassicObject::flipY
+  IL_0060: callvirt System.Void Celeste.Pico8.Emulator::spr(System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Boolean,System.Boolean)
+  IL_0065: ret

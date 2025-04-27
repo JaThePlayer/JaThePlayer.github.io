@@ -1,0 +1,121 @@
+IL Diff: Celeste.Mod.Aqua.Core.CustomDebris Celeste.Mod.Aqua.Core.CustomDebris::Init(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Int32)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldc.i4.1
+  IL_0002: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0007: ldarg.0
+  IL_0008: ldarg.2
+  IL_0009: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_000e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0013: ldarg.1
+  IL_0014: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0019: stloc.0
+  IL_001a: ldnull
+  IL_001b: stloc.1
+  IL_001c: ldarg.s specificIndex
+  IL_001e: ldc.i4.0
+  IL_001f: bge.s IL_002f
+  IL_0021: ldsfld System.Random Monocle.Calc::Random
+  IL_0026: ldloc.0
+  IL_0027: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_002c: stloc.1
+  IL_002d: br.s IL_003f
+  IL_002f: ldloc.0
+  IL_0030: ldarg.s specificIndex
+  IL_0032: ldloc.0
+  IL_0033: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.MTexture>::get_Count()
+  IL_0038: rem
+  IL_0039: callvirt T System.Collections.Generic.List`1<Monocle.MTexture>::get_Item(System.Int32)
+  IL_003e: stloc.1
+  IL_003f: ldarg.0
+  IL_0040: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_0045: brtrue.s IL_005e
+  IL_0047: ldarg.0
+  IL_0048: ldarg.0
+  IL_0049: ldloc.1
+  IL_004a: newobj System.Void Monocle.Image::.ctor(Monocle.MTexture)
+  IL_004f: dup
+  IL_0050: stloc.2
+  IL_0051: stfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_0056: ldloc.2
+  IL_0057: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_005c: br.s IL_006a
+  IL_005e: ldarg.0
+  IL_005f: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_0064: ldloc.1
+  IL_0065: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_006a: ldarg.0
+  IL_006b: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_0070: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_0075: pop
+  IL_0076: ldarg.0
+  IL_0077: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_007c: ldsfld System.Random Monocle.Calc::Random
+  IL_0081: ldc.r4 0.5
+  IL_0086: call System.Boolean Monocle.Calc::Chance(System.Random,System.Single)
+  IL_008b: callvirt System.Void Monocle.GraphicsComponent::set_FlipX(System.Boolean)
+  IL_0090: ldarg.0
+  IL_0091: ldarg.2
+  IL_0092: ldarg.3
+  IL_0093: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0098: ldc.r4 60
+  IL_009d: ldsfld System.Random Monocle.Calc::Random
+  IL_00a2: ldc.r4 60
+  IL_00a7: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_00ac: add
+  IL_00ad: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00b2: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.Aqua.Core.CustomDebris::_speed
+  IL_00b7: ldarg.0
+  IL_00b8: ldarg.s returnTo
+  IL_00ba: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.Aqua.Core.CustomDebris::_home
+  IL_00bf: ldarg.0
+  IL_00c0: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_00c5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00ca: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00cf: ldarg.0
+  IL_00d0: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_00d5: ldsfld System.Random Monocle.Calc::Random
+  IL_00da: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_00df: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_00e4: ldarg.0
+  IL_00e5: ldc.i4.0
+  IL_00e6: stfld System.Boolean Celeste.Mod.Aqua.Core.CustomDebris::_returning
+  IL_00eb: ldarg.0
+  IL_00ec: ldc.i4.0
+  IL_00ed: stfld System.Boolean Celeste.Mod.Aqua.Core.CustomDebris::_shaking
+  IL_00f2: ldarg.0
+  IL_00f3: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_00f8: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00fd: ldc.r4 1
+  IL_0102: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0107: ldarg.0
+  IL_0108: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_010d: ldflda Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0112: ldc.r4 1
+  IL_0117: stfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_011c: ldarg.0
+  IL_011d: ldfld Monocle.Image Celeste.Mod.Aqua.Core.CustomDebris::_sprite
+  IL_0122: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0127: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_012c: ldarg.0
+  IL_012d: ldc.r4 1
+  IL_0132: stfld System.Single Celeste.Mod.Aqua.Core.CustomDebris::_alpha
+  IL_0137: ldarg.0
+  IL_0138: ldc.i4.0
+  IL_0139: stfld System.Boolean Celeste.Mod.Aqua.Core.CustomDebris::_firstHit
+  IL_013e: ldarg.0
+  IL_013f: ldsfld System.Random Monocle.Calc::Random
+  IL_0144: ldc.r4 3.4906585
+  IL_0149: ldc.r4 10.471975
+  IL_014e: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0153: ldsfld System.Random Monocle.Calc::Random
+  IL_0158: ldc.i4.1
+  IL_0159: ldc.i4.m1
+  IL_015a: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_015f: conv.r4
+  IL_0160: mul
+  IL_0161: stfld System.Single Celeste.Mod.Aqua.Core.CustomDebris::_spin
+  IL_0166: ldarg.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0167: ret

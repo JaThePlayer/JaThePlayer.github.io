@@ -1,0 +1,78 @@
+IL Diff: System.Void Celeste.DreamBlock::Added(Monocle.Scene)
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::Added(Monocle.Scene)
+  IL_0007: ldarg.0
+  IL_0008: ldarg.0
+  IL_0009: call T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_000e: ldfld Celeste.Session Celeste.Level::Session
+  IL_0013: ldflda Celeste.PlayerInventory Celeste.Session::Inventory
+  IL_0018: ldfld System.Boolean Celeste.PlayerInventory::DreamDash
++ IL_0000: ldarg.0 @ Celeste.Mod.MoreLockBlocks.Entities.DreamLockBlock+DreamBlockDummy::DreamBlock_Added
++ IL_0000: call System.Boolean Celeste.Mod.MoreLockBlocks.Entities.DreamLockBlock/DreamBlockDummy::DetermineDreamBlockActive(System.Boolean,Celeste.DreamBlock) @ Celeste.Mod.MoreLockBlocks.Entities.DreamLockBlock+DreamBlockDummy::DreamBlock_Added
+  IL_001d: stfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_0022: ldarg.0
+  IL_0023: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_0028: brfalse IL_00b3
+  IL_002d: ldarg.0
+  IL_002e: ldflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.DreamBlock::node
+  IL_0033: call System.Boolean System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_HasValue()
+  IL_0038: brfalse.s IL_00b3
+  IL_003a: newobj System.Void Celeste.DreamBlock/<>c__DisplayClass22_0::.ctor()
+  IL_003f: stloc.0
+  IL_0040: ldloc.0
+  IL_0041: ldarg.0
+  IL_0042: stfld Celeste.DreamBlock Celeste.DreamBlock/<>c__DisplayClass22_0::<>4__this
+  IL_0047: ldloc.0
+  IL_0048: ldarg.0
+  IL_0049: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_004e: stfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock/<>c__DisplayClass22_0::start
+  IL_0053: ldloc.0
+  IL_0054: ldarg.0
+  IL_0055: ldflda System.Nullable`1<Microsoft.Xna.Framework.Vector2> Celeste.DreamBlock::node
+  IL_005a: call T System.Nullable`1<Microsoft.Xna.Framework.Vector2>::get_Value()
+  IL_005f: stfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock/<>c__DisplayClass22_0::end
+  IL_0064: ldloc.0
+  IL_0065: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock/<>c__DisplayClass22_0::start
+  IL_006a: ldloc.0
+  IL_006b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.DreamBlock/<>c__DisplayClass22_0::end
+  IL_0070: call System.Single Microsoft.Xna.Framework.Vector2::Distance(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0075: ldc.r4 12
+  IL_007a: div
+  IL_007b: stloc.1
+  IL_007c: ldarg.0
+  IL_007d: ldfld System.Boolean Celeste.DreamBlock::fastMoving
+  IL_0082: brfalse.s IL_008c
+  IL_0084: ldloc.1
+  IL_0085: ldc.r4 3
+  IL_008a: div
+  IL_008b: stloc.1
+  IL_008c: ldc.i4.4
+  IL_008d: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0092: ldloc.1
+  IL_0093: ldc.i4.1
+  IL_0094: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_0099: stloc.2
+  IL_009a: ldloc.2
+  IL_009b: ldloc.0
+  IL_009c: ldftn System.Void Celeste.DreamBlock/<>c__DisplayClass22_0::<Added>b__0(Monocle.Tween)
+  IL_00a2: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_00a7: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_00ac: ldarg.0
+  IL_00ad: ldloc.2
+  IL_00ae: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00b3: ldarg.0
+  IL_00b4: ldfld System.Boolean Celeste.DreamBlock::playerHasDreamDash
+  IL_00b9: brtrue.s IL_00d4
+  IL_00bb: ldarg.0
+  IL_00bc: ldarg.0
+  IL_00bd: ldc.r4 1
+  IL_00c2: newobj System.Void Celeste.LightOcclude::.ctor(System.Single)
+  IL_00c7: dup
+  IL_00c8: stloc.3
+  IL_00c9: stfld Celeste.LightOcclude Celeste.DreamBlock::occlude
+  IL_00ce: ldloc.3
+  IL_00cf: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00d4: ldarg.0
+  IL_00d5: callvirt System.Void Celeste.DreamBlock::Setup()
+  IL_00da: ret

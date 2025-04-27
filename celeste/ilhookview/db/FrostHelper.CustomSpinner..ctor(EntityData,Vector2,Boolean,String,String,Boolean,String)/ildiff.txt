@@ -1,216 +1,308 @@
 IL Diff: System.Void FrostHelper.CustomSpinner::.ctor(Celeste.EntityData,Microsoft.Xna.Framework.Vector2,System.Boolean,System.String,System.String,System.Boolean,System.String)
   IL_0000: ldarg.0
-  IL_0001: ldarg.1
-  IL_0002: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
-  IL_0007: ldarg.2
-  IL_0008: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-  IL_000d: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
-  IL_0012: call System.Void FrostHelper.CustomSpinner::LoadIfNeeded()
-  IL_0017: ldarg.0
-  IL_0018: ldarg.1
-  IL_0019: ldfld System.Int32 Celeste.EntityData::ID
-  IL_001e: stfld System.Int32 FrostHelper.CustomSpinner::ID
-  IL_0023: ldarg.0
-  IL_0024: ldarg.1
-  IL_0025: ldstr "rainbow"
-  IL_002a: ldc.i4.0
-  IL_002b: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_0030: stfld System.Boolean FrostHelper.CustomSpinner::Rainbow
+  IL_0001: newobj System.Void System.Collections.Generic.List`1<Monocle.Image>::.ctor()
+  IL_0006: stfld System.Collections.Generic.List`1<Monocle.Image> FrostHelper.CustomSpinner::_images
+  IL_000b: ldarg.0
+  IL_000c: ldc.i4.1
+  IL_000d: stfld System.Boolean FrostHelper.CustomSpinner::ShouldBeCollidable
+  IL_0012: ldarg.0
+  IL_0013: ldarg.1
+  IL_0014: ldfld Microsoft.Xna.Framework.Vector2 Celeste.EntityData::Position
+  IL_0019: ldarg.2
+  IL_001a: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_001f: call System.Void Monocle.Entity::.ctor(Microsoft.Xna.Framework.Vector2)
+  IL_0024: call System.Void FrostHelper.CustomSpinner::LoadIfNeeded()
+  IL_0029: ldarg.0
+  IL_002a: ldarg.1
+  IL_002b: ldfld System.Int32 Celeste.EntityData::ID
+  IL_0030: stfld System.Int32 FrostHelper.CustomSpinner::ID
   IL_0035: ldarg.0
   IL_0036: ldarg.1
-  IL_0037: ldstr "drawOutline"
-  IL_003c: ldc.i4.1
-  IL_003d: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_0042: stfld System.Boolean FrostHelper.CustomSpinner::RenderBorder
-  IL_0047: ldarg.0
-  IL_0048: ldarg.0
-  IL_0049: ldfld System.Boolean FrostHelper.CustomSpinner::RenderBorder
-  IL_004e: brtrue.s IL_0057
-  IL_0050: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
-  IL_0055: br.s IL_006c
-  IL_0057: ldarg.1
-  IL_0058: ldstr "borderColor"
-  IL_005d: ldstr "000000"
-  IL_0062: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
-  IL_0067: call Microsoft.Xna.Framework.Color FrostHelper.ColorHelper::GetColor(System.String)
-  IL_006c: stfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::BorderColor
-  IL_0071: ldarg.0
-  IL_0072: ldarg.1
-  IL_0073: ldstr "debrisCount"
-  IL_0078: ldc.i4.8
-  IL_0079: callvirt System.Int32 Celeste.EntityData::Int(System.String,System.Int32)
-  IL_007e: stfld System.Int32 FrostHelper.CustomSpinner::DestroyDebrisCount
-  IL_0083: ldarg.0
-  IL_0084: ldarg.1
-  IL_0085: ldstr "dashThrough"
-  IL_008a: ldc.i4.0
-  IL_008b: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_0090: stfld System.Boolean FrostHelper.CustomSpinner::DashThrough
-  IL_0095: ldarg.0
-  IL_0096: ldarg.s tint
-+ IL_0000: call System.String TAS.EverestInterop.SimplifiedGraphicsFeature::GetSimplifiedSpinnerColor(System.String) @ TAS.EverestInterop.SimplifiedGraphicsFeature::ModCustomSpinnerColor
-  IL_0098: call Microsoft.Xna.Framework.Color FrostHelper.ColorHelper::GetColor(System.String)
-  IL_009d: stfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::Tint
-  IL_00a2: ldarg.1
-  IL_00a3: ldstr "spritePathSuffix"
-  IL_00a8: ldstr ""
-  IL_00ad: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
-  IL_00b2: stloc.0
-  IL_00b3: ldarg.0
-  IL_00b4: ldarg.1
-  IL_00b5: ldstr "singleFGImage"
-  IL_00ba: ldc.i4.0
-  IL_00bb: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_00c0: stfld System.Boolean FrostHelper.CustomSpinner::SingleFGImage
+  IL_0037: ldstr "scale"
+  IL_003c: ldc.r4 1
+  IL_0041: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
+  IL_0046: stfld System.Single FrostHelper.CustomSpinner::Scale
+  IL_004b: ldarg.0
+  IL_004c: ldarg.1
+  IL_004d: ldstr "imageScale"
+  IL_0052: ldc.r4 1
+  IL_0057: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
+  IL_005c: stfld System.Single FrostHelper.CustomSpinner::ImageScale
+  IL_0061: ldarg.0
+  IL_0062: ldarg.1
+  IL_0063: ldstr "rainbow"
+  IL_0068: ldc.i4.0
+  IL_0069: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_006e: stfld System.Boolean FrostHelper.CustomSpinner::Rainbow
+  IL_0073: ldarg.0
+  IL_0074: ldarg.1
+  IL_0075: ldstr "drawOutline"
+  IL_007a: ldc.i4.1
+  IL_007b: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0080: stfld System.Boolean FrostHelper.CustomSpinner::RenderBorder
+  IL_0085: ldarg.0
+  IL_0086: ldarg.0
+  IL_0087: ldfld System.Boolean FrostHelper.CustomSpinner::RenderBorder
+  IL_008c: brtrue.s IL_0095
+  IL_008e: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_0093: br.s IL_00aa
+  IL_0095: ldarg.1
+  IL_0096: ldstr "borderColor"
+  IL_009b: ldstr "000000"
+  IL_00a0: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_00a5: call Microsoft.Xna.Framework.Color FrostHelper.ColorHelper::GetColor(System.String)
+  IL_00aa: stfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::BorderColor
+  IL_00af: ldarg.0
+  IL_00b0: ldarg.0
+  IL_00b1: ldfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::BorderColor
+  IL_00b6: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_00bb: call System.Boolean Microsoft.Xna.Framework.Color::op_Inequality(Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)
+  IL_00c0: stfld System.Boolean FrostHelper.CustomSpinner::RenderBorder
   IL_00c5: ldarg.0
-  IL_00c6: ldarg.s directory
-  IL_00c8: stfld System.String FrostHelper.CustomSpinner::directory
-  IL_00cd: ldarg.0
-  IL_00ce: ldarg.1
-  IL_00cf: ldstr "moveWithWind"
-  IL_00d4: ldc.i4.0
-  IL_00d5: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_00da: stfld System.Boolean FrostHelper.CustomSpinner::MoveWithWind
-  IL_00df: ldsfld System.Random Monocle.Calc::Random
-  IL_00e4: callvirt System.Int32 System.Random::Next()
-  IL_00e9: pop
-  IL_00ea: ldarg.0
-  IL_00eb: ldarg.s destroyColor
-  IL_00ed: stfld System.String FrostHelper.CustomSpinner::destroyColor
-  IL_00f2: ldarg.0
-  IL_00f3: ldarg.s isCore
-  IL_00f5: stfld System.Boolean FrostHelper.CustomSpinner::isCore
-  IL_00fa: ldarg.0
-  IL_00fb: ldsfld System.Random Monocle.Calc::Random
-  IL_0100: call System.Single Monocle.Calc::NextFloat(System.Random)
-  IL_0105: stfld System.Single FrostHelper.CustomSpinner::offset
-  IL_010a: ldarg.0
-  IL_010b: ldsfld Monocle.BitTag Celeste.Tags::TransitionUpdate
-  IL_0110: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
-  IL_0115: call System.Void Monocle.Entity::set_Tag(System.Int32)
-  IL_011a: ldarg.0
-  IL_011b: ldarg.1
-  IL_011c: ldstr "collidable"
-  IL_0121: ldc.i4.1
-  IL_0122: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
-  IL_0127: stfld System.Boolean FrostHelper.CustomSpinner::HasCollider
-  IL_012c: ldarg.0
-  IL_012d: ldfld System.Boolean FrostHelper.CustomSpinner::HasCollider
-  IL_0132: brfalse.s IL_017e
-  IL_0134: ldarg.0
-  IL_0135: newobj System.Void FrostHelper.Colliders.SpinnerCollider::.ctor()
-  IL_013a: call System.Void Monocle.Entity::set_Collider(Monocle.Collider)
-  IL_013f: ldarg.0
-  IL_0140: ldarg.0
-  IL_0141: ldftn System.Void FrostHelper.CustomSpinner::OnPlayer(Celeste.Player)
-  IL_0147: newobj System.Void System.Action`1<Celeste.Player>::.ctor(System.Object,System.IntPtr)
-  IL_014c: ldnull
-  IL_014d: ldnull
-  IL_014e: newobj System.Void Celeste.PlayerCollider::.ctor(System.Action`1<Celeste.Player>,Monocle.Collider,Monocle.Collider)
-  IL_0153: call System.Void Monocle.Entity::Add(Monocle.Component)
-  IL_0158: ldarg.0
-  IL_0159: ldarg.0
-  IL_015a: ldftn System.Void FrostHelper.CustomSpinner::OnHoldable(Celeste.Holdable)
-  IL_0160: newobj System.Void System.Action`1<Celeste.Holdable>::.ctor(System.Object,System.IntPtr)
-  IL_0165: ldnull
-  IL_0166: newobj System.Void Celeste.HoldableCollider::.ctor(System.Action`1<Celeste.Holdable>,Monocle.Collider)
-  IL_016b: call System.Void Monocle.Entity::Add(Monocle.Component)
-  IL_0170: ldarg.0
-  IL_0171: ldnull
-  IL_0172: newobj System.Void Celeste.LedgeBlocker::.ctor(System.Func`2<Celeste.Player,System.Boolean>)
-  IL_0177: call System.Void Monocle.Entity::Add(Monocle.Component)
-  IL_017c: br.s IL_0185
-  IL_017e: ldarg.0
-  IL_017f: ldc.i4.0
-  IL_0180: stfld System.Boolean Monocle.Entity::Collidable
-  IL_0185: ldarg.0
-  IL_0186: ldc.i4.0
-  IL_0187: stfld System.Boolean Monocle.Entity::Visible
-  IL_018c: ldarg.0
-  IL_018d: ldc.i4 -8500
-  IL_0192: call System.Void Monocle.Entity::set_Depth(System.Int32)
-  IL_0197: ldarg.0
-  IL_0198: ldarg.3
-  IL_0199: stfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
-  IL_019e: ldarg.0
-  IL_019f: ldarg.1
-  IL_01a0: ldstr "attachGroup"
-  IL_01a5: ldc.i4.m1
-  IL_01a6: callvirt System.Int32 Celeste.EntityData::Int(System.String,System.Int32)
-  IL_01ab: stfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_00c6: ldarg.1
+  IL_00c7: ldstr "debrisCount"
+  IL_00cc: ldc.i4.8
+  IL_00cd: callvirt System.Int32 Celeste.EntityData::Int(System.String,System.Int32)
+  IL_00d2: stfld System.Int32 FrostHelper.CustomSpinner::DestroyDebrisCount
+  IL_00d7: ldarg.1
+  IL_00d8: ldfld System.Collections.Generic.Dictionary`2<System.String,System.Object> Celeste.EntityData::Values
+  IL_00dd: ldstr "dashThrough"
+  IL_00e2: ldloca.s V_0
+  IL_00e4: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Object>::TryGetValue(TKey,TValue&)
+  IL_00e9: brfalse.s IL_0130
+  IL_00eb: ldloc.0
+  IL_00ec: stloc.s V_6
+  IL_00ee: ldloc.s V_6
+  IL_00f0: isinst System.Boolean
+  IL_00f5: brfalse.s IL_0102
+  IL_00f7: ldloc.s V_6
+  IL_00f9: unbox.any System.Boolean
+  IL_00fe: brtrue.s IL_0111
+  IL_0100: br.s IL_0128
+  IL_0102: ldloc.s V_6
+  IL_0104: isinst System.String
+  IL_0109: stloc.s V_7
+  IL_010b: ldloc.s V_7
+  IL_010d: brtrue.s IL_0116
+  IL_010f: br.s IL_0128
+  IL_0111: ldc.i4.1
+  IL_0112: stloc.s V_5
+  IL_0114: br.s IL_012b
+  IL_0116: ldloc.s V_7
+  IL_0118: ldc.i4.1
+  IL_0119: ldloca.s V_4
+  IL_011b: call System.Boolean System.Enum::TryParse<FrostHelper.CustomSpinner/CollisionModes>(System.String,System.Boolean,TEnum&)
+  IL_0120: brfalse.s IL_0128
+  IL_0122: ldloc.s V_4
+  IL_0124: stloc.s V_5
+  IL_0126: br.s IL_012b
+  IL_0128: ldc.i4.0
+  IL_0129: stloc.s V_5
+  IL_012b: ldloc.s V_5
+  IL_012d: stloc.3
+  IL_012e: br.s IL_0132
+  IL_0130: ldc.i4.0
+  IL_0131: stloc.3
+  IL_0132: ldarg.0
+  IL_0133: ldloc.3
+  IL_0134: stfld FrostHelper.CustomSpinner/CollisionModes FrostHelper.CustomSpinner::DashThrough
+  IL_0139: ldarg.0
+  IL_013a: ldarg.1
+  IL_013b: ldstr "onHoldable"
+  IL_0140: ldc.i4.1
+  IL_0141: callvirt T Celeste.EntityData::Enum<FrostHelper.CustomSpinner/CollisionModes>(System.String,T)
+  IL_0146: stfld FrostHelper.CustomSpinner/CollisionModes FrostHelper.CustomSpinner::HoldableCollisionMode
+  IL_014b: ldarg.0
+  IL_014c: ldarg.s tint
+  IL_014e: call Microsoft.Xna.Framework.Color FrostHelper.ColorHelper::GetColor(System.String)
+  IL_0153: stfld Microsoft.Xna.Framework.Color FrostHelper.CustomSpinner::Tint
+  IL_0158: ldarg.1
+  IL_0159: ldstr "spritePathSuffix"
+  IL_015e: ldstr ""
+  IL_0163: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0168: stloc.1
+  IL_0169: ldarg.0
+  IL_016a: ldarg.1
+  IL_016b: ldstr "singleFGImage"
+  IL_0170: ldc.i4.0
+  IL_0171: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0176: stfld System.Boolean FrostHelper.CustomSpinner::SingleFGImage
+  IL_017b: ldarg.0
+  IL_017c: ldarg.s directory
+  IL_017e: stfld System.String FrostHelper.CustomSpinner::directory
+  IL_0183: ldarg.0
+  IL_0184: ldarg.1
+  IL_0185: ldstr "moveWithWind"
+  IL_018a: ldc.i4.0
+  IL_018b: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_0190: stfld System.Boolean FrostHelper.CustomSpinner::MoveWithWind
+  IL_0195: ldsfld System.Random Monocle.Calc::Random
+  IL_019a: callvirt System.Int32 System.Random::Next()
+  IL_019f: pop
+  IL_01a0: ldarg.0
+  IL_01a1: ldarg.s destroyColor
+  IL_01a3: stfld System.String FrostHelper.CustomSpinner::destroyColor
+  IL_01a8: ldarg.0
+  IL_01a9: ldarg.s isCore
+  IL_01ab: stfld System.Boolean FrostHelper.CustomSpinner::isCore
   IL_01b0: ldarg.0
-  IL_01b1: ldfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
-  IL_01b6: brfalse.s IL_0215
-  IL_01b8: ldarg.0
-  IL_01b9: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
-  IL_01be: ldc.i4.m1
-  IL_01bf: bne.un.s IL_01c9
-  IL_01c1: newobj System.Void Celeste.StaticMover::.ctor()
-  IL_01c6: stloc.3
-  IL_01c7: br.s IL_01d6
-  IL_01c9: ldarg.0
-  IL_01ca: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
-  IL_01cf: ldc.i4.1
-  IL_01d0: newobj System.Void FrostHelper.GroupedStaticMover::.ctor(System.Int32,System.Boolean)
-  IL_01d5: stloc.3
-  IL_01d6: ldloc.3
-  IL_01d7: stloc.2
-  IL_01d8: ldloc.2
-  IL_01d9: ldarg.0
-  IL_01da: ldftn System.Void FrostHelper.CustomSpinner::OnShake(Microsoft.Xna.Framework.Vector2)
-  IL_01e0: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
-  IL_01e5: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.StaticMover::OnShake
-  IL_01ea: ldloc.2
-  IL_01eb: ldarg.0
-  IL_01ec: ldftn System.Boolean FrostHelper.CustomSpinner::IsRiding(Celeste.Solid)
-  IL_01f2: newobj System.Void System.Func`2<Celeste.Solid,System.Boolean>::.ctor(System.Object,System.IntPtr)
-  IL_01f7: stfld System.Func`2<Celeste.Solid,System.Boolean> Celeste.StaticMover::SolidChecker
-  IL_01fc: ldloc.2
-  IL_01fd: ldarg.0
-  IL_01fe: ldftn System.Void Monocle.Entity::RemoveSelf()
-  IL_0204: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
-  IL_0209: stfld System.Action Celeste.StaticMover::OnDestroy
-  IL_020e: ldarg.0
-  IL_020f: ldloc.2
-  IL_0210: call System.Void Monocle.Entity::Add(Monocle.Component)
-  IL_0215: ldarg.0
-  IL_0216: ldsfld System.Random Monocle.Calc::Random
-  IL_021b: callvirt System.Int32 System.Random::Next()
-  IL_0220: stfld System.Int32 FrostHelper.CustomSpinner::randomSeed
-  IL_0225: ldarg.s isCore
-  IL_0227: pop
-  IL_0228: ldarg.1
-  IL_0229: ldstr "bloomAlpha"
-  IL_022e: ldc.r4 0
-  IL_0233: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
-  IL_0238: stloc.1
-  IL_0239: ldloc.1
-  IL_023a: ldc.r4 0
-  IL_023f: beq.s IL_028c
-  IL_0241: ldarg.0
-  IL_0242: ldarg.0
-  IL_0243: ldfld System.Boolean Monocle.Entity::Collidable
-  IL_0248: brtrue.s IL_0266
-  IL_024a: ldarg.0
-  IL_024b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
-  IL_0250: ldc.r4 8
-  IL_0255: ldc.r4 8
-  IL_025a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
-  IL_025f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-  IL_0264: br.s IL_0271
-  IL_0266: ldarg.0
-  IL_0267: call Monocle.Collider Monocle.Entity::get_Collider()
-  IL_026c: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Collider::get_Center()
-  IL_0271: ldloc.1
-  IL_0272: ldarg.1
-  IL_0273: ldstr "bloomRadius"
-  IL_0278: ldc.r4 0
-  IL_027d: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
-  IL_0282: newobj System.Void Celeste.BloomPoint::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
-  IL_0287: call System.Void Monocle.Entity::Add(Monocle.Component)
-  IL_028c: ldarg.0
-  IL_028d: ldarg.s directory
-  IL_028f: ldloc.0
-  IL_0290: call FrostHelper.CustomSpinnerSpriteSource FrostHelper.CustomSpinnerSpriteSource::Get(System.String,System.String)
-  IL_0295: stfld FrostHelper.CustomSpinnerSpriteSource FrostHelper.CustomSpinner::<SpriteSource>k__BackingField
-  IL_029a: ret
+  IL_01b1: ldsfld System.Random Monocle.Calc::Random
+  IL_01b6: call System.Single Monocle.Calc::NextFloat(System.Random)
+  IL_01bb: stfld System.Single FrostHelper.CustomSpinner::offset
+  IL_01c0: ldarg.0
+  IL_01c1: ldsfld Monocle.BitTag Celeste.Tags::TransitionUpdate
+  IL_01c6: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_01cb: call System.Void Monocle.Entity::set_Tag(System.Int32)
+  IL_01d0: ldarg.0
+  IL_01d1: ldarg.1
+  IL_01d2: ldstr "collidable"
+  IL_01d7: ldc.i4.1
+  IL_01d8: callvirt System.Boolean Celeste.EntityData::Bool(System.String,System.Boolean)
+  IL_01dd: brfalse.s IL_01ee
+  IL_01df: ldarg.0
+  IL_01e0: ldfld System.Single FrostHelper.CustomSpinner::Scale
+  IL_01e5: ldc.r4 0
+  IL_01ea: cgt
+  IL_01ec: br.s IL_01ef
+  IL_01ee: ldc.i4.0
+  IL_01ef: stfld System.Boolean FrostHelper.CustomSpinner::HasCollider
+  IL_01f4: ldarg.0
+  IL_01f5: ldarg.1
+  IL_01f6: ldstr "hitbox"
+  IL_01fb: ldstr "C,6,0,0;R,16,4,-8,-3"
+  IL_0200: callvirt System.String Celeste.EntityData::Attr(System.String,System.String)
+  IL_0205: stfld System.String FrostHelper.CustomSpinner::hitboxStr
+  IL_020a: ldarg.0
+  IL_020b: ldfld System.String FrostHelper.CustomSpinner::hitboxStr
+  IL_0210: call System.Boolean System.String::IsNullOrWhiteSpace(System.String)
+  IL_0215: brfalse.s IL_021e
+  IL_0217: ldarg.0
+  IL_0218: ldc.i4.0
+  IL_0219: stfld System.Boolean FrostHelper.CustomSpinner::HasCollider
+  IL_021e: ldarg.0
+  IL_021f: ldfld System.Boolean FrostHelper.CustomSpinner::HasCollider
+  IL_0224: brfalse.s IL_022e
+  IL_0226: ldarg.0
+  IL_0227: callvirt System.Void FrostHelper.CustomSpinner::CreateCollider()
+  IL_022c: br.s IL_0243
+  IL_022e: ldarg.0
+  IL_022f: ldc.i4.0
+  IL_0230: stfld System.Boolean FrostHelper.CustomSpinner::ShouldBeCollidable
+  IL_0235: ldarg.0
+  IL_0236: ldc.i4.0
+  IL_0237: stfld System.Boolean Monocle.Entity::Collidable
+  IL_023c: ldarg.0
+  IL_023d: ldc.i4.1
+  IL_023e: stfld System.Boolean FrostHelper.CustomSpinner::ColliderDisabledExternally
+  IL_0243: ldarg.0
+  IL_0244: ldarg.1
+  IL_0245: ldstr "depth"
+  IL_024a: ldc.i4 -8500
+  IL_024f: callvirt System.Int32 Celeste.EntityData::Int(System.String,System.Int32)
+  IL_0254: call System.Void Monocle.Entity::set_Depth(System.Int32)
+  IL_0259: ldarg.0
+  IL_025a: ldarg.3
+  IL_025b: stfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
+  IL_0260: ldarg.0
+  IL_0261: ldarg.1
+  IL_0262: ldstr "attachGroup"
+  IL_0267: ldc.i4.m1
+  IL_0268: callvirt System.Int32 Celeste.EntityData::Int(System.String,System.Int32)
+  IL_026d: stfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_0272: ldarg.0
+  IL_0273: ldfld System.Boolean FrostHelper.CustomSpinner::AttachToSolid
+  IL_0278: brfalse IL_0308
+  IL_027d: ldarg.0
+  IL_027e: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_0283: ldc.i4.m1
+  IL_0284: bne.un.s IL_028f
+  IL_0286: newobj System.Void Celeste.StaticMover::.ctor()
+  IL_028b: stloc.s V_9
+  IL_028d: br.s IL_029d
+  IL_028f: ldarg.0
+  IL_0290: ldfld System.Int32 FrostHelper.CustomSpinner::AttachGroup
+  IL_0295: ldc.i4.1
+  IL_0296: newobj System.Void FrostHelper.GroupedStaticMover::.ctor(System.Int32,System.Boolean)
+  IL_029b: stloc.s V_9
+  IL_029d: ldloc.s V_9
+  IL_029f: stloc.s V_8
+  IL_02a1: ldloc.s V_8
+  IL_02a3: ldarg.0
+  IL_02a4: ldftn System.Void FrostHelper.CustomSpinner::OnShake(Microsoft.Xna.Framework.Vector2)
+  IL_02aa: newobj System.Void System.Action`1<Microsoft.Xna.Framework.Vector2>::.ctor(System.Object,System.IntPtr)
+  IL_02af: stfld System.Action`1<Microsoft.Xna.Framework.Vector2> Celeste.StaticMover::OnShake
+  IL_02b4: ldloc.s V_8
+  IL_02b6: ldarg.0
+  IL_02b7: ldftn System.Boolean FrostHelper.CustomSpinner::IsRiding(Celeste.Solid)
+  IL_02bd: newobj System.Void System.Func`2<Celeste.Solid,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  IL_02c2: stfld System.Func`2<Celeste.Solid,System.Boolean> Celeste.StaticMover::SolidChecker
+  IL_02c7: ldloc.s V_8
+  IL_02c9: ldarg.0
+  IL_02ca: ldftn System.Void Monocle.Entity::RemoveSelf()
+  IL_02d0: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_02d5: stfld System.Action Celeste.StaticMover::OnDestroy
+  IL_02da: ldloc.s V_8
+  IL_02dc: ldarg.0
+  IL_02dd: ldftn System.Void FrostHelper.CustomSpinner::<.ctor>b__44_0()
+  IL_02e3: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_02e8: stfld System.Action Celeste.StaticMover::OnDisable
+  IL_02ed: ldloc.s V_8
+  IL_02ef: ldarg.0
+  IL_02f0: ldftn System.Void FrostHelper.CustomSpinner::<.ctor>b__44_1()
+  IL_02f6: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_02fb: stfld System.Action Celeste.StaticMover::OnEnable
+  IL_0300: ldarg.0
+  IL_0301: ldloc.s V_8
+  IL_0303: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0308: ldarg.0
+  IL_0309: ldsfld System.Random Monocle.Calc::Random
+  IL_030e: callvirt System.Int32 System.Random::Next()
+  IL_0313: stfld System.Int32 FrostHelper.CustomSpinner::randomSeed
+  IL_0318: ldarg.s isCore
+  IL_031a: pop
+  IL_031b: ldarg.1
+  IL_031c: ldstr "bloomAlpha"
+  IL_0321: ldc.r4 0
+  IL_0326: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
+  IL_032b: stloc.2
+  IL_032c: ldloc.2
+  IL_032d: ldc.r4 0
+  IL_0332: beq.s IL_038a
+  IL_0334: ldarg.0
+  IL_0335: ldarg.0
+  IL_0336: ldarg.0
+  IL_0337: ldfld System.Boolean Monocle.Entity::Collidable
+  IL_033c: brtrue.s IL_035a
+  IL_033e: ldarg.0
+  IL_033f: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0344: ldc.r4 8
+  IL_0349: ldc.r4 8
+  IL_034e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0353: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0358: br.s IL_0365
+  IL_035a: ldarg.0
+  IL_035b: call Monocle.Collider Monocle.Entity::get_Collider()
+  IL_0360: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Collider::get_Center()
+  IL_0365: ldloc.2
+  IL_0366: ldarg.1
+  IL_0367: ldstr "bloomRadius"
+  IL_036c: ldc.r4 0
+  IL_0371: callvirt System.Single Celeste.EntityData::Float(System.String,System.Single)
+  IL_0376: newobj System.Void Celeste.BloomPoint::.ctor(Microsoft.Xna.Framework.Vector2,System.Single,System.Single)
+  IL_037b: dup
+  IL_037c: stloc.s V_10
+  IL_037e: stfld Celeste.BloomPoint FrostHelper.CustomSpinner::_bloomPoint
+  IL_0383: ldloc.s V_10
+  IL_0385: call System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_038a: ldarg.0
+  IL_038b: ldc.i4.0
+  IL_038c: callvirt System.Void FrostHelper.CustomSpinner::SetVisible(System.Boolean)
+  IL_0391: ldarg.0
+  IL_0392: ldarg.s directory
+  IL_0394: ldloc.1
+  IL_0395: ldc.i4.0
+  IL_0396: call FrostHelper.CustomSpinnerSpriteSource FrostHelper.CustomSpinnerSpriteSource::Get(System.String,System.String,System.Boolean)
+  IL_039b: stfld FrostHelper.CustomSpinnerSpriteSource FrostHelper.CustomSpinner::SpriteSource
++ IL_0000: ldarg.0 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.EverestInterop.SimplifiedGraphicsFeature::SetCustomSpinnerColor(System.Object) @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_03a0: ret

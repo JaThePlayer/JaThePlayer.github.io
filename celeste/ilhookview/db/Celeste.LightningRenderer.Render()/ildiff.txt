@@ -40,8 +40,8 @@ IL Diff: System.Void Celeste.LightningRenderer::Render()
   IL_0065: stloc.2
   IL_0066: ldloc.2
   IL_0067: ldfld System.Boolean Monocle.Entity::Visible
-+ IL_0000: ldloc.2 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
-+ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedLightning(System.Boolean,Celeste.Lightning) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: ldloc V_2 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::<LightningRenderer_RenderIL>g__SimplifyLightning|39_4(System.Boolean,Celeste.Lightning) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
   IL_006c: brfalse.s IL_00b1
   IL_006e: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
   IL_0073: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Lightning
@@ -77,11 +77,7 @@ IL Diff: System.Void Celeste.LightningRenderer::Render()
   IL_00d6: ble IL_027a
   IL_00db: ldarg.0
   IL_00dc: ldfld System.Boolean Celeste.LightningRenderer::DrawEdges
-+ IL_0000: ldc.i4 2698 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
-+ IL_0000: ldc.i4 19220449 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
-  |-> retrieves System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature/<>c::<LightningRenderer_RenderIL>b__46_3(System.Boolean)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::<LightningRenderer_RenderIL>g__DrawEdges|39_5(System.Boolean) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LightningRenderer_RenderIL
   IL_00e1: brfalse IL_027a
   IL_00e6: ldc.i4.0
   IL_00e7: stloc.s V_5

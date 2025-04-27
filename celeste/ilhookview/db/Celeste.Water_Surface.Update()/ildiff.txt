@@ -1,5 +1,5 @@
 IL Diff: System.Void Celeste.Water/Surface::Update()
-+ IL_0000: call System.Boolean TAS.Manager::get_UltraFastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: call System.Boolean TAS.Manager::get_FastForwarding() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_0000: brfalse IL_0000 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_0000: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
   IL_0000: ldarg.0
@@ -452,6 +452,9 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_04d9: ldarg.0
   IL_04da: ldfld System.Int32 Celeste.Water/Surface::rayStartIndex
   IL_04df: stloc.s V_11
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Surface_Update
++ IL_0000: call System.Boolean Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlockSurfaceCheck(Celeste.Water/Surface) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Surface_Update
++ IL_0000: brtrue IL_07e4 @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Surface_Update
   IL_04e1: ldarg.0
   IL_04e2: ldfld System.Collections.Generic.List`1<Celeste.Water/Ray> Celeste.Water/Surface::Rays
   IL_04e7: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Water/Ray>::GetEnumerator()
@@ -604,43 +607,43 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_06ca: ldloc.s V_11
   IL_06cc: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor
   IL_06d1: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor
-- IL_06d6: ldloc.s V_14 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06dd: stfld Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Graphics.VertexPositionColor::Color @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_06d6: ldloc.s V_14 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single) @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06dd: stfld Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Graphics.VertexPositionColor::Color @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
   IL_0000: ldarg.0
-- IL_06e3: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06e8: ldloc.s V_11 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06ea: ldc.i4.1 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06eb: add @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06ec: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06f1: ldloc.s V_20 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06f3: ldc.r4 0 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06f8: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_06fd: stfld Microsoft.Xna.Framework.Vector3 Microsoft.Xna.Framework.Graphics.VertexPositionColor::Position @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0702: ldarg.0 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0703: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0708: ldloc.s V_11 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_070a: ldc.i4.1 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_070b: add @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_070c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0711: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 3419695 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_06e3: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06e8: ldloc.s V_11 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06ea: ldc.i4.1 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06eb: add @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06ec: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06f1: ldloc.s V_20 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06f3: ldc.r4 0 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06f8: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single) @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_06fd: stfld Microsoft.Xna.Framework.Vector3 Microsoft.Xna.Framework.Graphics.VertexPositionColor::Position @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0702: ldarg.0 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0703: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0708: ldloc.s V_11 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_070a: ldc.i4.1 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_070b: add @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_070c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0711: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 56639109 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves System.Object Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__0(System.Object)
+  |-> retrieves System.Object Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__0(System.Object)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Object,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: ldloc.s V_13 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 8559918 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 24365116 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves Celeste.Water+Ray Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__1(Celeste.Water+Ray)
+  |-> retrieves Celeste.Water+Ray Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__1(Celeste.Water+Ray)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.Water/Ray,Celeste.Water/Ray>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 22264790 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3873 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 27417371 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__2(Microsoft.Xna.Framework.Color)
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__2(Microsoft.Xna.Framework.Color)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_06d6: ldloc.s V_14
   IL_06d8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
@@ -648,11 +651,11 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_06e2: ldarg.0
   IL_06e3: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh
   IL_06e8: ldloc.s V_11
-- IL_072a: ldc.i4.2 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_072a: ldc.i4.2 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_06ea: ldc.i4.1 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_06eb: add
   IL_06ec: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor
-- IL_0731: ldloc.s V_22 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_0731: ldloc.s V_22 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_06f1: ldloc.s V_20 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_06f3: ldc.r4 0
   IL_06f8: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single)
@@ -660,39 +663,39 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_0702: ldarg.0
   IL_0703: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh
   IL_0708: ldloc.s V_11
-- IL_074a: ldc.i4.3 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_074a: ldc.i4.3 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_070a: ldc.i4.1 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_070b: add
   IL_070c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor
-- IL_0751: ldloc.s V_20 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0753: ldc.r4 0 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0758: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_075d: stfld Microsoft.Xna.Framework.Vector3 Microsoft.Xna.Framework.Graphics.VertexPositionColor::Position @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_0751: ldloc.s V_20 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0753: ldc.r4 0 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0758: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single) @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_075d: stfld Microsoft.Xna.Framework.Vector3 Microsoft.Xna.Framework.Graphics.VertexPositionColor::Position @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_0711: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_0000: ldarg.0
-- IL_0763: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0768: ldloc.s V_11 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_076a: ldc.i4.3 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_076b: add @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_076c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_0771: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2978 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 58617550 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_0763: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0768: ldloc.s V_11 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_076a: ldc.i4.3 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_076b: add @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_076c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_0771: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
++ IL_0000: ldc.i4 3926 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 6214603 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves System.Object Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__0(System.Object)
+  |-> retrieves System.Object Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__0(System.Object)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Object,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: ldloc.s V_13 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2980 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 50401086 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3928 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 33620852 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves Celeste.Water+Ray Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__1(Celeste.Water+Ray)
+  |-> retrieves Celeste.Water+Ray Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__1(Celeste.Water+Ray)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.Water/Ray,Celeste.Water/Ray>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 2983 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 55956175 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3930 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 38934461 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass9_0::<WaterSurface_Update>b__2(Microsoft.Xna.Framework.Color)
+  |-> retrieves Microsoft.Xna.Framework.Color Celeste.Mod.ScuffedHelper.FourSurfaceWater/CustomSurface/<>c__DisplayClass11_0::<WaterSurface_Update>b__2(Microsoft.Xna.Framework.Color)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_0716: ldloc.s V_14
   IL_0718: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
@@ -700,11 +703,11 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_0722: ldarg.0
   IL_0723: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh
   IL_0728: ldloc.s V_11
-- IL_078a: ldc.i4.4 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_078a: ldc.i4.4 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_072a: ldc.i4.2 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_072b: add
   IL_072c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor
-- IL_0791: ldloc.s V_21 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_0791: ldloc.s V_21 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_0731: ldloc.s V_22 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_0733: ldc.r4 0
   IL_0738: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single)
@@ -712,11 +715,11 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
   IL_0742: ldarg.0
   IL_0743: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh
   IL_0748: ldloc.s V_11
-- IL_07aa: ldc.i4.5 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_07aa: ldc.i4.5 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_074a: ldc.i4.3 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_074b: add
   IL_074c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor
-- IL_07b1: ldloc.s V_22 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_07b1: ldloc.s V_22 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_0751: ldloc.s V_20 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_0753: ldc.r4 0
   IL_0758: newobj System.Void Microsoft.Xna.Framework.Vector3::.ctor(Microsoft.Xna.Framework.Vector2,System.Single)
@@ -724,35 +727,35 @@ IL Diff: System.Void Celeste.Water/Surface::Update()
 + IL_0762: ldarg.0 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0763: ldfld Microsoft.Xna.Framework.Graphics.VertexPositionColor[] Celeste.Water/Surface::mesh @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_0768: ldloc.s V_11
-- IL_07c4: ldc.i4.6 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_07c4: ldc.i4.6 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_076a: ldc.i4.3 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
   IL_076b: add
-- IL_07c6: stloc.s V_11 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07c8: ldloca.s V_12 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07ca: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Water/Ray>::MoveNext() @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07cf: brtrue IL_04f3 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07d4: leave.s IL_07e4 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07d6: ldloca.s V_12 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07d8: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Water/Ray> @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07de: callvirt System.Void System.IDisposable::Dispose() @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07e3: endfinally @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-- IL_07e4: ret @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
+- IL_07c6: stloc.s V_11 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07c8: ldloca.s V_12 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07ca: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Water/Ray>::MoveNext() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07cf: brtrue IL_04f3 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07d4: leave.s IL_07e4 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07d6: ldloca.s V_12 @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07d8: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Water/Ray> @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07de: callvirt System.Void System.IDisposable::Dispose() @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07e3: endfinally @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
+- IL_07e4: ret @ TAS.EverestInterop.FastForwardBoost::SkipUpdateMethod
 + IL_076c: ldelema Microsoft.Xna.Framework.Graphics.VertexPositionColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0771: ldsfld Microsoft.Xna.Framework.Color Celeste.Water::RayTopColor @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: ldarg.0 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 3085 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 36156328 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3932 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 66683598 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Object,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: ldloc.s V_13 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 3568 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 42981490 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3934 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 32662352 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Celeste.Water/Ray,Celeste.Water/Ray>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: pop @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 3646 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
-+ IL_0000: ldc.i4 58948693 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 3936 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
++ IL_0000: ldc.i4 28404842 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update
 + IL_0776: ldloc.s V_14 @ Celeste.Mod.ScuffedHelper.FourSurfaceWater+CustomSurface::WaterSurface_Update

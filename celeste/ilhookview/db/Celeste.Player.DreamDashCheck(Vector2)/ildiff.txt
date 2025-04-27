@@ -1,11 +1,15 @@
 IL Diff: System.Boolean Celeste.Player::DreamDashCheck(Microsoft.Xna.Framework.Vector2)
++ IL_0000: call System.Void Notice::ThisMethodIsGreatlyModifiedByMe_InformMeBeforeYouILHookIt_ToPreventHookCollision() @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
   IL_0000: ldarg.0
   IL_0001: callvirt Celeste.PlayerInventory Celeste.Player::get_Inventory()
   IL_0006: ldfld System.Boolean Celeste.PlayerInventory::DreamDash
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::true(System.Boolean) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
++ IL_0000: ldarg.0 @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
++ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::HasDreamDash(System.Boolean,Celeste.Player) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
   IL_000b: brfalse IL_01c8
   IL_0010: ldarg.0
   IL_0011: callvirt System.Boolean Celeste.Player::get_DashAttacking()
++ IL_0000: ldarg.0 @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
++ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::HasDarkMatter(System.Boolean,Celeste.Player) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
   IL_0016: brfalse IL_01c8
   IL_001b: ldarg.1
   IL_001c: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
@@ -28,15 +32,7 @@ IL Diff: System.Boolean Celeste.Player::DreamDashCheck(Microsoft.Xna.Framework.V
   IL_0052: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
   IL_0057: ldarg.1
   IL_0058: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-- IL_005d: call T Monocle.Entity::CollideFirst<Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: call Celeste.DreamBlock Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::CollideFirst(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: dup @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: ldarg.0 @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::CheckPriorityAndStore(Celeste.DreamBlock,Celeste.Player) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: brfalse IL_0062 @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: pop @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: ldc.i4.1 @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: ret @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
+  IL_005d: call T Monocle.Entity::CollideFirst<Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2)
   IL_0062: stloc.0
   IL_0063: ldloc.0
   IL_0064: brfalse IL_01c8
@@ -45,8 +41,7 @@ IL Diff: System.Boolean Celeste.Player::DreamDashCheck(Microsoft.Xna.Framework.V
   IL_006b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
   IL_0070: ldarg.1
   IL_0071: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-- IL_0076: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::CollideCheck(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
+  IL_0076: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2)
   IL_007b: brfalse IL_01bf
   IL_0080: ldloca.s V_1
   IL_0082: ldarg.1
@@ -110,8 +105,7 @@ IL Diff: System.Boolean Celeste.Player::DreamDashCheck(Microsoft.Xna.Framework.V
   IL_0126: stloc.s V_5
   IL_0128: ldarg.0
   IL_0129: ldloc.s V_5
-- IL_012b: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::CollideCheck(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
+  IL_012b: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2)
   IL_0130: brtrue.s IL_0155
   IL_0132: ldarg.0
   IL_0133: ldarg.0
@@ -151,8 +145,7 @@ IL Diff: System.Boolean Celeste.Player::DreamDashCheck(Microsoft.Xna.Framework.V
   IL_0183: stloc.s V_7
   IL_0185: ldarg.0
   IL_0186: ldloc.s V_7
-- IL_0188: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
-+ IL_0000: call System.Boolean Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer/Player_DreamDashCheck_Helper::CollideCheck(Celeste.Player,Microsoft.Xna.Framework.Vector2) @ Celeste.Mod.ReverseHelper.Entities.DreamBlockConfigurer::Player_DreamDashCheck
+  IL_0188: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid,Celeste.DreamBlock>(Microsoft.Xna.Framework.Vector2)
   IL_018d: brtrue.s IL_01b2
   IL_018f: ldarg.0
   IL_0190: ldarg.0

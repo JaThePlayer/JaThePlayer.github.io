@@ -1,8 +1,9 @@
 IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Monocle.Scene)
   IL_0000: ldarg.0
   IL_0001: ldfld System.Single Celeste.BloomRenderer::Strength
-+ IL_0000: ldc.i4 3646 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 58082471 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomStrength|23_5(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3873 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 7546999 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
@@ -41,9 +42,9 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_007a: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
   IL_007f: ldarg.0
   IL_0080: ldfld System.Single Celeste.BloomRenderer::Base
-+ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomBase(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
-+ IL_0000: ldc.i4 3085 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 41311335 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomBase|23_4(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 8531678 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomBase(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
@@ -99,11 +100,6 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_0130: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
   IL_0135: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2698 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 64164361 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_013a: ldloc.s V_7
   IL_013c: ldfld System.Single Celeste.BloomPoint::Alpha
   IL_0141: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
@@ -152,10 +148,10 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_01d0: ldarg.2
   IL_01d1: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
   IL_01d6: callvirt System.Collections.Generic.List`1<Monocle.Entity> Monocle.Tracker::GetEntities<Celeste.SeekerBarrier>()
-+ IL_0000: ldc.i4 3679 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
-+ IL_0000: ldc.i4 21765934 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
++ IL_0000: ldc.i4 3932 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
++ IL_0000: ldc.i4 55883073 @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
-  |-> retrieves System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController/<>c::<modBloomRendererApply>b__34_1(System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
+  |-> retrieves System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController/<>c::<modBloomRendererApply>b__36_1(System.Collections.Generic.List`1[[Monocle.Entity, Celeste, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]])
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Collections.Generic.List`1<Monocle.Entity>,System.Collections.Generic.List`1<Monocle.Entity>>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.MaxHelpingHand.Entities.SeekerBarrierColorController::modBloomRendererApply
   IL_01db: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Entity>::GetEnumerator()
   IL_01e0: stloc.s V_9
@@ -165,11 +161,6 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_01eb: callvirt Monocle.Collider Monocle.Entity::get_Collider()
   IL_01f0: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2882 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 29930744 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_01f5: call System.Void Monocle.Draw::Rect(Monocle.Collider,Microsoft.Xna.Framework.Color)
   IL_01fa: ldloca.s V_9
   IL_01fc: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Entity>::MoveNext()
@@ -226,11 +217,6 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_0298: conv.r4
   IL_0299: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2884 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 8471224 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_029e: ldc.r4 1
   IL_02a3: ldloc.s V_10
   IL_02a5: ldfld System.Single Celeste.EffectCutout::Alpha
@@ -251,8 +237,8 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
 + IL_0000: ldarg.1 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
 + IL_0000: ldarg.2 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
 + IL_0000: ldloc.s V_1 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
-+ IL_0000: ldc.i4 3681 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
-+ IL_0000: ldc.i4 29674028 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 3934 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 30235063 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
   |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.BloomMask/<>c::<BloomRenderer_ApplyIL>b__16_5(Celeste.BloomRenderer,Monocle.VirtualRenderTarget,Monocle.Scene,Microsoft.Xna.Framework.Graphics.Texture2D)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal4<Celeste.BloomRenderer,Monocle.VirtualRenderTarget,Monocle.Scene,Microsoft.Xna.Framework.Graphics.Texture2D>(T0,T1,T2,T3,MonoMod.Cil.FastDelegateInvokers/VoidVal4`4<T0,T1,T2,T3>) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
@@ -266,16 +252,11 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_02f7: ldc.r4 200
   IL_02fc: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2978 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 15080561 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_0301: ldarg.0
   IL_0302: ldfld System.Single Celeste.BloomRenderer::Base
-+ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomBase(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
-+ IL_0000: ldc.i4 3568 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 57883877 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomBase|23_4(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3871 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 19977280 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomBase(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
@@ -292,18 +273,13 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_0331: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
   IL_0336: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2980 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 13565898 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_033b: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
   IL_0340: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
   IL_0345: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
 + IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
 + IL_0000: ldarg.2 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
-+ IL_0000: ldc.i4 3746 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
-+ IL_0000: ldc.i4 54786107 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 3936 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
++ IL_0000: ldc.i4 33121009 @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
   |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.BloomMask/<>c::<BloomRenderer_ApplyIL>b__16_9(Celeste.BloomRenderer,Monocle.Scene)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.BloomRenderer,Monocle.Scene>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.StyleMaskHelper.Entities.BloomMask::BloomRenderer_ApplyIL
@@ -323,9 +299,9 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_0376: conv.r4
   IL_0377: ldarg.0
   IL_0378: ldfld System.Single Celeste.BloomRenderer::Strength
-+ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
-+ IL_0000: ldc.i4 3648 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 7059734 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomStrength|23_5(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3926 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 7327211 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
@@ -334,9 +310,9 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_0383: blt.s IL_0391
   IL_0385: ldarg.0
   IL_0386: ldfld System.Single Celeste.BloomRenderer::Strength
-+ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
-+ IL_0000: ldc.i4 3650 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 34967577 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomStrength|23_5(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3928 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 56633219 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
@@ -352,11 +328,6 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_03a3: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
   IL_03a8: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: call Microsoft.Xna.Framework.Color FrostHelper.BloomColorChange::ChangeBloomColor(Microsoft.Xna.Framework.Color) @ FrostHelper.BloomColorChange::BloomRenderer_Apply
-+ IL_0000: ldc.i4 2983 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: ldc.i4 25095915 @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
-  |-> retrieves Microsoft.Xna.Framework.Color YoctoHelper.Hooks.BloomColorHook::GetBloomColor(Microsoft.Xna.Framework.Color)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ YoctoHelper.Hooks.BloomColorHook::BloomColor
   IL_03ad: ldloc.s V_12
   IL_03af: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
   IL_03b4: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
@@ -368,9 +339,9 @@ IL Diff: System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Mo
   IL_03c1: conv.r4
   IL_03c2: ldarg.0
   IL_03c3: ldfld System.Single Celeste.BloomRenderer::Strength
-+ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedBloomStrength(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
-+ IL_0000: ldc.i4 3659 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
-+ IL_0000: ldc.i4 13801497 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: call System.Single TAS.EverestInterop.SimplifiedGraphicsFeature::<BloomRendererOnApply>g__SimplifyBloomStrength|23_5(System.Single) @ TAS.EverestInterop.SimplifiedGraphicsFeature::BloomRendererOnApply
++ IL_0000: ldc.i4 3930 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
++ IL_0000: ldc.i4 23888040 @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply
   |-> retrieves System.Single ExtendedVariants.Variants.RoomBloom::modBloomStrength(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.RoomBloom::onBloomRendererApply

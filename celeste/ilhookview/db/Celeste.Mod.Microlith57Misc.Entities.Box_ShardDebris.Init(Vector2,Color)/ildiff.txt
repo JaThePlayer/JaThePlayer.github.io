@@ -1,0 +1,35 @@
+IL Diff: System.Void Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Init(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
++ IL_0000: ldarg position @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0007: ldarg.0
+  IL_0008: ldfld Monocle.Image Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Sprite
+  IL_000d: ldarg.2
+  IL_000e: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0013: ldarg.0
+  IL_0014: ldfld Monocle.Image Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Sprite
+  IL_0019: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_001e: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_0023: ldarg.0
+  IL_0024: ldc.r4 0
+  IL_0029: stfld System.Single Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Percent
+  IL_002e: ldarg.0
+  IL_002f: ldsfld System.Random Monocle.Calc::Random
+  IL_0034: ldc.r4 0.25
+  IL_0039: ldc.r4 1
+  IL_003e: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0043: stfld System.Single Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Duration
+  IL_0048: ldarg.0
+  IL_0049: ldsfld System.Random Monocle.Calc::Random
+  IL_004e: call System.Single Monocle.Calc::NextAngle(System.Random)
+  IL_0053: ldsfld System.Random Monocle.Calc::Random
+  IL_0058: ldc.i4 200
+  IL_005d: ldc.i4 240
+  IL_0062: call System.Int32 Monocle.Calc::Range(System.Random,System.Int32,System.Int32)
+  IL_0067: conv.r4
+  IL_0068: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_006d: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.Microlith57Misc.Entities.Box/ShardDebris::Speed
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0072: ret

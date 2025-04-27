@@ -1,0 +1,22 @@
+IL Diff: System.Void Celeste.Mod.UI.SubHudRenderer::BeforeRender(Monocle.Scene)
++ IL_0000: ldarg.1 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Void TAS.Gameplay.Hitboxes.OffscreenHitbox::DrawHitboxesToBuffer(Monocle.Scene) @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Celeste.Mod.Everest/Events/SubHudRenderer::BeforeRender(Celeste.Mod.UI.SubHudRenderer,Monocle.Scene)
+  IL_0007: call System.Boolean Celeste.Mod.UI.SubHudRenderer::get_DrawToBuffer()
+  IL_000c: brtrue.s IL_000f
+  IL_000e: ret
+  IL_000f: call Microsoft.Xna.Framework.GraphicsDeviceManager Monocle.Engine::get_Graphics()
+  IL_0014: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.GraphicsDeviceManager::get_GraphicsDevice()
+  IL_0019: ldsfld Monocle.VirtualRenderTarget Celeste.Mod.UI.SubHudRenderer::Buffer
+  IL_001e: call Microsoft.Xna.Framework.Graphics.RenderTarget2D Monocle.VirtualRenderTarget::op_Implicit(Monocle.VirtualRenderTarget)
+  IL_0023: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::SetRenderTarget(Microsoft.Xna.Framework.Graphics.RenderTarget2D)
+  IL_0028: call Microsoft.Xna.Framework.GraphicsDeviceManager Monocle.Engine::get_Graphics()
+  IL_002d: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.GraphicsDeviceManager::get_GraphicsDevice()
+  IL_0032: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Transparent()
+  IL_0037: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
+  IL_003c: ldarg.0
+  IL_003d: ldarg.1
+  IL_003e: callvirt System.Void Celeste.Mod.UI.SubHudRenderer::RenderContent(Monocle.Scene)
+  IL_0043: ret

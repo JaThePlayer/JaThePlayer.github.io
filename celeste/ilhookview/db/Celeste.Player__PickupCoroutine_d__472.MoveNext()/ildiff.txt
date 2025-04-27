@@ -81,8 +81,8 @@ IL Diff: System.Boolean Celeste.Player/<PickupCoroutine>d__472::MoveNext()
   IL_00ee: ldloc.1
   IL_00ef: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
   IL_00f4: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-+ IL_0000: ldc.i4 2883 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
-+ IL_0000: ldc.i4 23190430 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
++ IL_0000: ldc.i4 3872 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
++ IL_0000: ldc.i4 11875097 @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
   |-> retrieves Microsoft.Xna.Framework.Vector2 Celeste.Mod.GravityHelper.Extensions.ILCursorExtensions/<>c::<EmitInvertVectorDelegate>b__20_0(Microsoft.Xna.Framework.Vector2)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.GravityHelper.Hooks.PlayerHooks::Player_PickupCoroutine
@@ -116,11 +116,13 @@ IL Diff: System.Boolean Celeste.Player/<PickupCoroutine>d__472::MoveNext()
   IL_0144: ldc.i4.1
   IL_0145: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeInOut
   IL_014a: ldc.r4 0.16
-+ IL_0000: ldc.i4 2699 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
-+ IL_0000: ldc.i4 55725724 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
++ IL_0000: ldc.i4 3851 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
++ IL_0000: ldc.i4 16126099 @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
-  |-> retrieves System.Single ExtendedVariants.Variants.PickupDuration::<hookPickupCoroutine>b__6_0(System.Single)
+  |-> retrieves System.Single ExtendedVariants.Variants.PickupDuration::<hookPickupCoroutine>b__5_0(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.PickupDuration::hookPickupCoroutine
++ IL_0000: ldloc V_1 @ Celeste.Mod.FemtoHelper.Entities.SMWHoldable::PickupRoutineHook
++ IL_0000: call System.Single Celeste.Mod.FemtoHelper.Entities.SMWHoldable::ModPickupSpeed(System.Single,Celeste.Player) @ Celeste.Mod.FemtoHelper.Entities.SMWHoldable::PickupRoutineHook
   IL_014f: ldc.i4.1
   IL_0150: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
   IL_0155: stloc.s V_6
@@ -148,10 +150,10 @@ IL Diff: System.Boolean Celeste.Player/<PickupCoroutine>d__472::MoveNext()
   IL_0190: ldarg.0
   IL_0191: ldfld Microsoft.Xna.Framework.Vector2 Celeste.Player/<PickupCoroutine>d__472::<oldSpeed>5__2
   IL_0196: stfld Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
-+ IL_0000: ldc.i4 44598710 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
++ IL_0000: ldc.i4 31145617 @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
-  |-> retrieves System.Void Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerPickupCoroutine>b__32_2()
+  |-> retrieves System.Void Celeste.Mod.GooberHelper.GooberHelperModule/<>c::<modifyPlayerPickupCoroutine>b__54_2()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.GooberHelper.GooberHelperModule::modifyPlayerPickupCoroutine
   IL_019b: ldloc.1
   IL_019c: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed

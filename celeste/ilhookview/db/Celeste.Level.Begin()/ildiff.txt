@@ -1,0 +1,16 @@
+IL Diff: System.Void Celeste.Level::Begin()
+  IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
+  IL_0005: stsfld Microsoft.Xna.Framework.Color Celeste.ScreenWipe::WipeColor
+  IL_000a: call System.Void Celeste.GameplayBuffers::Create()
+  IL_000f: ldc.r4 1
+  IL_0014: call System.Void Celeste.Distort::set_WaterAlpha(System.Single)
+  IL_0019: ldc.r4 1
+  IL_001e: stsfld System.Single Celeste.Distort::WaterSineDirection
+  IL_0023: ldc.i4.0
+  IL_0024: call System.Void Celeste.Audio::set_MusicUnderwater(System.Boolean)
+  IL_0029: ldsfld FMOD.Studio.EventInstance Celeste.Level::DialogSnapshot
+  IL_002e: call System.Void Celeste.Audio::EndSnapshot(FMOD.Studio.EventInstance)
+  IL_0033: ldarg.0
+  IL_0034: call System.Void Monocle.Scene::Begin()
++ IL_0000: call System.Void TAS.Input.Commands.MetadataCommands::<Load>g__StartFileTime|1_0() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0039: ret

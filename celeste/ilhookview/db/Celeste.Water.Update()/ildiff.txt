@@ -1,0 +1,232 @@
+IL Diff: System.Void Celeste.Water::Update()
+  IL_0000: ldarg.0
+  IL_0001: call System.Void Monocle.Entity::Update()
+  IL_0006: ldarg.0
+  IL_0007: ldfld System.Collections.Generic.List`1<Celeste.Water/Surface> Celeste.Water::Surfaces
+  IL_000c: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.Water/Surface>::GetEnumerator()
+  IL_0011: stloc.0
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
++ IL_0000: call System.Boolean Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlockCheck(Celeste.Water) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
++ IL_0000: brtrue IL_0039 @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
+  IL_0012: br.s IL_0020
+  IL_0014: ldloca.s V_0
+  IL_0016: call T System.Collections.Generic.List`1/Enumerator<Celeste.Water/Surface>::get_Current()
+  IL_001b: callvirt System.Void Celeste.Water/Surface::Update()
+  IL_0020: ldloca.s V_0
+  IL_0022: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.Water/Surface>::MoveNext()
+  IL_0027: brtrue.s IL_0014
+  IL_0029: leave.s IL_0039
+  IL_002b: ldloca.s V_0
+  IL_002d: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.Water/Surface>
+  IL_0033: callvirt System.Void System.IDisposable::Dispose()
+  IL_0038: endfinally
+  IL_0039: ldarg.0
+  IL_003a: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_003f: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0044: callvirt System.Collections.Generic.List`1<Monocle.Component> Monocle.Tracker::GetComponents<Celeste.WaterInteraction>()
+  IL_0049: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Component>::GetEnumerator()
+  IL_004e: stloc.1
+  IL_004f: br IL_02af
+  IL_0054: ldloca.s V_1
+  IL_0056: call T System.Collections.Generic.List`1/Enumerator<Monocle.Component>::get_Current()
+  IL_005b: castclass Celeste.WaterInteraction
+  IL_0060: stloc.2
+  IL_0061: ldloc V_2
+  IL_0065: call Microsoft.Xna.Framework.Vector2 Celeste.WaterInteraction::get_AbsoluteCenter()
+  IL_006a: stloc V_8
+  IL_006e: ldloc.2
+  IL_006f: callvirt Monocle.Entity Monocle.Component::get_Entity()
+  IL_0074: stloc.3
+  IL_0075: ldarg.0
+  IL_0076: ldfld System.Collections.Generic.HashSet`1<Celeste.WaterInteraction> Celeste.Water::contains
+  IL_007b: ldloc.2
+  IL_007c: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.WaterInteraction>::Contains(T)
+  IL_0081: stloc.s V_4
+  IL_0083: ldloc V_2
+  IL_0087: ldarg.0
+  IL_0088: call System.Boolean Celeste.WaterInteraction::Check(Monocle.Entity)
+  IL_008d: stloc.s V_5
+  IL_008f: ldloc.s V_4
+  IL_0091: ldloc.s V_5
+  IL_0093: beq IL_01e1
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
++ IL_0000: call System.Boolean Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlockCheck(Celeste.Water) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
++ IL_0000: brtrue IL_00fe @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Water_Update
+  IL_0098: ldloc V_8
+  IL_009c: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00a1: ldarg.0
+  IL_00a2: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00a7: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ac: bgt.un.s IL_00cc
+  IL_00ae: ldarg.0
+  IL_00af: ldfld Celeste.Water/Surface Celeste.Water::TopSurface
+  IL_00b4: brfalse.s IL_00cc
+  IL_00b6: ldarg.0
+  IL_00b7: ldfld Celeste.Water/Surface Celeste.Water::TopSurface
+  IL_00bc: ldloc V_8
+  IL_00c0: ldc.r4 1
+  IL_00c5: callvirt System.Void Celeste.Water/Surface::DoRipple(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00ca: br.s IL_00fe
+  IL_00cc: ldloc V_8
+  IL_00d0: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00d5: ldarg.0
+  IL_00d6: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_00db: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00e0: ble.un.s IL_00fe
+  IL_00e2: ldarg.0
+  IL_00e3: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_00e8: brfalse.s IL_00fe
+  IL_00ea: ldarg.0
+  IL_00eb: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_00f0: ldloc V_8
+  IL_00f4: ldc.r4 1
+  IL_00f9: callvirt System.Void Celeste.Water/Surface::DoRipple(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_00fe: ldloc.2
+  IL_00ff: ldfld System.Func`1<System.Boolean> Celeste.WaterInteraction::IsDashing
+  IL_0104: callvirt TResult System.Func`1<System.Boolean>::Invoke()
+  IL_0109: stloc.s V_6
+  IL_010b: ldloc V_8
+  IL_010f: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_0114: ldarg.0
+  IL_0115: call Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_011a: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_011f: bge.un.s IL_0132
+  IL_0121: ldarg.0
+  IL_0122: ldloc V_2
+  IL_0126: call Microsoft.Xna.Framework.Rectangle Celeste.WaterInteraction::get_Bounds()
+  IL_012b: call System.Boolean Celeste.Water::_IsShallowAtRectangle(Microsoft.Xna.Framework.Rectangle)
+  IL_0130: brfalse.s IL_0135
+  IL_0132: ldc.i4.0
+  IL_0133: br.s IL_0136
+  IL_0135: ldc.i4.1
+  IL_0136: stloc.s V_7
+  IL_0138: ldloc.s V_4
+  IL_013a: brfalse.s IL_017d
+  IL_013c: ldloc.s V_6
+  IL_013e: brfalse.s IL_0159
+  IL_0140: ldstr "event:/char/madeline/water_dash_out"
+  IL_0145: ldloc V_8
+  IL_0149: ldstr "deep"
+  IL_014e: ldloc.s V_7
+  IL_0150: conv.r4
+  IL_0151: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_0156: pop
+  IL_0157: br.s IL_0170
+  IL_0159: ldstr "event:/char/madeline/water_out"
+  IL_015e: ldloc V_8
+  IL_0162: ldstr "deep"
+  IL_0167: ldloc.s V_7
+  IL_0169: conv.r4
+  IL_016a: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_016f: pop
+  IL_0170: ldloc.2
+  IL_0171: ldc.r4 2
+  IL_0176: stfld System.Single Celeste.WaterInteraction::DrippingTimer
+  IL_017b: br.s IL_01c1
+  IL_017d: ldloc.s V_6
+  IL_017f: brfalse.s IL_019f
+  IL_0181: ldloc.s V_7
+  IL_0183: ldc.i4.1
+  IL_0184: bne.un.s IL_019f
+  IL_0186: ldstr "event:/char/madeline/water_dash_in"
+  IL_018b: ldloc V_8
+  IL_018f: ldstr "deep"
+  IL_0194: ldloc.s V_7
+  IL_0196: conv.r4
+  IL_0197: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_019c: pop
+  IL_019d: br.s IL_01b6
+  IL_019f: ldstr "event:/char/madeline/water_in"
+  IL_01a4: ldloc V_8
+  IL_01a8: ldstr "deep"
+  IL_01ad: ldloc.s V_7
+  IL_01af: conv.r4
+  IL_01b0: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2,System.String,System.Single)
+  IL_01b5: pop
+  IL_01b6: ldloc.2
+  IL_01b7: ldc.r4 0
+  IL_01bc: stfld System.Single Celeste.WaterInteraction::DrippingTimer
+  IL_01c1: ldloc.s V_4
+  IL_01c3: brfalse.s IL_01d4
+  IL_01c5: ldarg.0
+  IL_01c6: ldfld System.Collections.Generic.HashSet`1<Celeste.WaterInteraction> Celeste.Water::contains
+  IL_01cb: ldloc.2
+  IL_01cc: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.WaterInteraction>::Remove(T)
+  IL_01d1: pop
+  IL_01d2: br.s IL_01e1
+  IL_01d4: ldarg.0
+  IL_01d5: ldfld System.Collections.Generic.HashSet`1<Celeste.WaterInteraction> Celeste.Water::contains
+  IL_01da: ldloc.2
+  IL_01db: callvirt System.Boolean System.Collections.Generic.HashSet`1<Celeste.WaterInteraction>::Add(T)
+  IL_01e0: pop
+  IL_01e1: ldarg.0
+  IL_01e2: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_01e7: brfalse IL_02af
+  IL_01ec: ldloc.3
+  IL_01ed: isinst Celeste.Player
+  IL_01f2: brfalse IL_02af
+  IL_01f7: ldloc.s V_5
+  IL_01f9: brfalse IL_028f
+  IL_01fe: ldloc.3
+  IL_01ff: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0204: ldarg.0
+  IL_0205: call System.Single Monocle.Entity::get_Bottom()
+  IL_020a: ldc.r4 8
+  IL_020f: sub
+  IL_0210: ble.un IL_028f
+  IL_0215: ldarg.0
+  IL_0216: ldfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_021b: brtrue.s IL_0239
+  IL_021d: ldarg.0
+  IL_021e: ldarg.0
+  IL_021f: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_0224: ldloc.3
+  IL_0225: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_022a: ldc.r4 0
+  IL_022f: callvirt Celeste.Water/Tension Celeste.Water/Surface::SetTension(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0234: stfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_0239: ldarg.0
+  IL_023a: ldfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_023f: ldarg.0
+  IL_0240: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_0245: ldloc.3
+  IL_0246: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_024b: callvirt System.Single Celeste.Water/Surface::GetPointAlong(Microsoft.Xna.Framework.Vector2)
+  IL_0250: stfld System.Single Celeste.Water/Tension::Position
+  IL_0255: ldarg.0
+  IL_0256: ldfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_025b: ldloc.3
+  IL_025c: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0261: ldarg.0
+  IL_0262: call System.Single Monocle.Entity::get_Bottom()
+  IL_0267: ldc.r4 8
+  IL_026c: sub
+  IL_026d: ldarg.0
+  IL_026e: call System.Single Monocle.Entity::get_Bottom()
+  IL_0273: ldc.r4 4
+  IL_0278: add
+  IL_0279: ldc.r4 0
+  IL_027e: ldc.r4 1
+  IL_0283: call System.Single Monocle.Calc::ClampedMap(System.Single,System.Single,System.Single,System.Single,System.Single)
+  IL_0288: stfld System.Single Celeste.Water/Tension::Strength
+  IL_028d: br.s IL_02af
+  IL_028f: ldarg.0
+  IL_0290: ldfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_0295: brfalse.s IL_02af
+  IL_0297: ldarg.0
+  IL_0298: ldfld Celeste.Water/Surface Celeste.Water::BottomSurface
+  IL_029d: ldarg.0
+  IL_029e: ldfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_02a3: callvirt System.Void Celeste.Water/Surface::RemoveTension(Celeste.Water/Tension)
+  IL_02a8: ldarg.0
+  IL_02a9: ldnull
+  IL_02aa: stfld Celeste.Water/Tension Celeste.Water::playerBottomTension
+  IL_02af: ldloca.s V_1
+  IL_02b1: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Component>::MoveNext()
+  IL_02b6: brtrue IL_0054
+  IL_02bb: leave.s IL_02cb
+  IL_02bd: ldloca.s V_1
+  IL_02bf: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Component>
+  IL_02c5: callvirt System.Void System.IDisposable::Dispose()
+  IL_02ca: endfinally
+  IL_02cb: ret

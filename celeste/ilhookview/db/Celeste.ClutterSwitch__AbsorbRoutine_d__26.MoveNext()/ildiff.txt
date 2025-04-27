@@ -1,0 +1,376 @@
+IL Diff: System.Boolean Celeste.ClutterSwitch/<AbsorbRoutine>d__26::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.ClutterSwitch Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_002e,IL_0324,IL_0406,IL_0445,IL_0470,IL_0497
+  IL_002c: ldc.i4.0
+  IL_002d: ret
+  IL_002e: ldarg.0
+  IL_002f: ldc.i4.m1
+  IL_0030: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0035: ldarg.0
+  IL_0036: newobj System.Void Celeste.ClutterSwitch/<>c__DisplayClass26_0::.ctor()
+  IL_003b: stfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_0040: ldarg.0
+  IL_0041: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_0046: ldarg.0
+  IL_0047: ldfld Celeste.ClutterSwitch Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>4__this
+  IL_004c: stfld Celeste.ClutterSwitch Celeste.ClutterSwitch/<>c__DisplayClass26_0::<>4__this
+  IL_0051: ldloc.1
+  IL_0052: ldloc.1
+  IL_0053: newobj System.Void Celeste.SoundSource::.ctor()
+  IL_0058: dup
+  IL_0059: stloc.3
+  IL_005a: stfld Celeste.SoundSource Celeste.ClutterSwitch::cutsceneSfx
+  IL_005f: ldloc.3
+  IL_0060: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_0065: ldc.r4 0
+  IL_006a: stloc.2
+  IL_006b: ldloc.1
+  IL_006c: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_0071: ldc.i4.1
+  IL_0072: bne.un.s IL_0093
+  IL_0074: ldloc.1
+  IL_0075: ldfld Celeste.SoundSource Celeste.ClutterSwitch::cutsceneSfx
+  IL_007a: ldstr "event:/game/03_resort/clutterswitch_books"
+  IL_007f: ldnull
+  IL_0080: ldc.r4 0
+  IL_0085: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_008a: pop
+  IL_008b: ldc.r4 6.366
+  IL_0090: stloc.2
+  IL_0091: br.s IL_00e0
+  IL_0093: ldloc.1
+  IL_0094: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_0099: brtrue.s IL_00ba
+  IL_009b: ldloc.1
+  IL_009c: ldfld Celeste.SoundSource Celeste.ClutterSwitch::cutsceneSfx
+  IL_00a1: ldstr "event:/game/03_resort/clutterswitch_linens"
+  IL_00a6: ldnull
+  IL_00a7: ldc.r4 0
+  IL_00ac: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00b1: pop
+  IL_00b2: ldc.r4 6.15
+  IL_00b7: stloc.2
+  IL_00b8: br.s IL_00e0
+  IL_00ba: ldloc.1
+  IL_00bb: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_00c0: ldc.i4.2
+  IL_00c1: bne.un.s IL_00e0
+  IL_00c3: ldloc.1
+  IL_00c4: ldfld Celeste.SoundSource Celeste.ClutterSwitch::cutsceneSfx
+  IL_00c9: ldstr "event:/game/03_resort/clutterswitch_boxes"
+  IL_00ce: ldnull
+  IL_00cf: ldc.r4 0
+  IL_00d4: callvirt Celeste.SoundSource Celeste.SoundSource::Play(System.String,System.String,System.Single)
+  IL_00d9: pop
+  IL_00da: ldc.r4 6.066
+  IL_00df: stloc.2
+  IL_00e0: ldloc.1
+  IL_00e1: ldc.i4.1
+  IL_00e2: ldarg.0
+  IL_00e3: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_00e8: ldftn System.Void Celeste.ClutterSwitch/<>c__DisplayClass26_0::<AbsorbRoutine>b__0()
+  IL_00ee: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_00f3: ldloc.2
+  IL_00f4: ldc.i4.1
+  IL_00f5: call Monocle.Alarm Monocle.Alarm::Create(Monocle.Alarm/AlarmMode,System.Action,System.Single,System.Boolean)
+  IL_00fa: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_00ff: ldarg.0
+  IL_0100: ldfld Celeste.Player Celeste.ClutterSwitch/<AbsorbRoutine>d__26::player
+  IL_0105: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_010a: ldc.i4.s 11
++ IL_0000: ldarg.0 @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::modAbsorbRoutine
++ IL_0000: call System.Int32 Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::ShouldChangeAbsorbValue(System.Int32,System.Object) @ Celeste.Mod.GoldenBerryImprovements.GoldenBerryImprovementsModule::modAbsorbRoutine
+  IL_010c: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_0111: ldarg.0
+  IL_0112: ldloc.1
+  IL_0113: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0118: ldloc.1
+  IL_0119: callvirt System.Single Monocle.Entity::get_Width()
+  IL_011e: ldc.r4 2
+  IL_0123: div
+  IL_0124: ldc.r4 0
+  IL_0129: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_012e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0133: stfld Microsoft.Xna.Framework.Vector2 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<target>5__2
+  IL_0138: ldarg.0
+  IL_0139: newobj System.Void Celeste.ClutterAbsorbEffect::.ctor()
+  IL_013e: stfld Celeste.ClutterAbsorbEffect Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<effect>5__3
+  IL_0143: ldloc.1
+  IL_0144: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0149: ldarg.0
+  IL_014a: ldfld Celeste.ClutterAbsorbEffect Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<effect>5__3
+  IL_014f: callvirt System.Void Monocle.Scene::Add(Monocle.Entity)
+  IL_0154: ldloc.1
+  IL_0155: ldfld Monocle.Sprite Celeste.ClutterSwitch::sprite
+  IL_015a: ldstr "break"
+  IL_015f: ldc.i4.0
+  IL_0160: ldc.i4.0
+  IL_0161: callvirt System.Void Monocle.Sprite::Play(System.String,System.Boolean,System.Boolean)
+  IL_0166: ldarg.0
+  IL_0167: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_016c: ldloc.1
+  IL_016d: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_0172: stfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_0177: ldarg.0
+  IL_0178: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_017d: ldfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_0182: ldfld Celeste.Session Celeste.Level::Session
+  IL_0187: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_018c: ldfld Celeste.AudioTrackState Celeste.AudioState::Music
+  IL_0191: dup
+  IL_0192: callvirt System.Int32 Celeste.AudioTrackState::get_Progress()
+  IL_0197: stloc.s V_4
+  IL_0199: ldloc.s V_4
+  IL_019b: ldc.i4.1
+  IL_019c: add
+  IL_019d: callvirt System.Void Celeste.AudioTrackState::set_Progress(System.Int32)
+  IL_01a2: ldarg.0
+  IL_01a3: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_01a8: ldfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_01ad: ldfld Celeste.Session Celeste.Level::Session
+  IL_01b2: ldfld Celeste.AudioState Celeste.Session::Audio
+  IL_01b7: ldc.i4.0
+  IL_01b8: callvirt System.Void Celeste.AudioState::Apply(System.Boolean)
+  IL_01bd: ldarg.0
+  IL_01be: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_01c3: ldfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_01c8: ldfld Celeste.Session Celeste.Level::Session
+  IL_01cd: dup
+  IL_01ce: ldfld System.Single Celeste.Session::LightingAlphaAdd
+  IL_01d3: ldc.r4 0.05
+  IL_01d8: sub
+  IL_01d9: stfld System.Single Celeste.Session::LightingAlphaAdd
+  IL_01de: newobj System.Void Celeste.ClutterSwitch/<>c__DisplayClass26_1::.ctor()
+  IL_01e3: stloc.s V_5
+  IL_01e5: ldloc.s V_5
+  IL_01e7: ldarg.0
+  IL_01e8: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_01ed: stfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<>c__DisplayClass26_1::CS$<>8__locals1
+  IL_01f2: ldloc.s V_5
+  IL_01f4: ldloc.s V_5
+  IL_01f6: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<>c__DisplayClass26_1::CS$<>8__locals1
+  IL_01fb: ldfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_0200: ldfld Celeste.LightingRenderer Celeste.Level::Lighting
+  IL_0205: ldfld System.Single Celeste.LightingRenderer::Alpha
+  IL_020a: stfld System.Single Celeste.ClutterSwitch/<>c__DisplayClass26_1::start
+  IL_020f: ldc.i4.1
+  IL_0210: ldsfld Monocle.Ease/Easer Monocle.Ease::SineInOut
+  IL_0215: ldc.r4 2
+  IL_021a: ldc.i4.1
+  IL_021b: call Monocle.Tween Monocle.Tween::Create(Monocle.Tween/TweenMode,Monocle.Ease/Easer,System.Single,System.Boolean)
+  IL_0220: stloc.s V_6
+  IL_0222: ldloc.s V_6
+  IL_0224: ldloc.s V_5
+  IL_0226: ldftn System.Void Celeste.ClutterSwitch/<>c__DisplayClass26_1::<AbsorbRoutine>b__2(Monocle.Tween)
+  IL_022c: newobj System.Void System.Action`1<Monocle.Tween>::.ctor(System.Object,System.IntPtr)
+  IL_0231: stfld System.Action`1<Monocle.Tween> Monocle.Tween::OnUpdate
+  IL_0236: ldloc.1
+  IL_0237: ldloc.s V_6
+  IL_0239: callvirt System.Void Monocle.Entity::Add(Monocle.Component)
+  IL_023e: ldloc.1
+  IL_023f: ldc.r4 3
+  IL_0244: ldarg.0
+  IL_0245: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_024a: ldftn System.Void Celeste.ClutterSwitch/<>c__DisplayClass26_0::<AbsorbRoutine>b__1()
+  IL_0250: newobj System.Void System.Action::.ctor(System.Object,System.IntPtr)
+  IL_0255: ldc.i4.1
+  IL_0256: call Monocle.Alarm Monocle.Alarm::Set(Monocle.Entity,System.Single,System.Action,Monocle.Alarm/AlarmMode)
+  IL_025b: pop
+  IL_025c: ldc.i4.0
+  IL_025d: ldc.i4.1
+  IL_025e: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0263: ldloc.1
+  IL_0264: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0269: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_026e: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.ClutterBlock>()
+  IL_0273: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.ClutterBlock>::GetEnumerator()
+  IL_0278: stloc.s V_7
+  IL_027a: br.s IL_02a1
+  IL_027c: ldloca.s V_7
+  IL_027e: call T System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlock>::get_Current()
+  IL_0283: stloc.s V_8
+  IL_0285: ldloc.s V_8
+  IL_0287: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterBlock::BlockColor
+  IL_028c: ldloc.1
+  IL_028d: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_0292: bne.un.s IL_02a1
+  IL_0294: ldloc.s V_8
+  IL_0296: ldarg.0
+  IL_0297: ldfld Celeste.ClutterAbsorbEffect Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<effect>5__3
+  IL_029c: callvirt System.Void Celeste.ClutterBlock::Absorb(Celeste.ClutterAbsorbEffect)
+  IL_02a1: ldloca.s V_7
+  IL_02a3: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlock>::MoveNext()
+  IL_02a8: brtrue.s IL_027c
+  IL_02aa: leave.s IL_02ba
+  IL_02ac: ldloca.s V_7
+  IL_02ae: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlock>
+  IL_02b4: callvirt System.Void System.IDisposable::Dispose()
+  IL_02b9: endfinally
+  IL_02ba: ldloc.1
+  IL_02bb: callvirt Monocle.Scene Monocle.Entity::get_Scene()
+  IL_02c0: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_02c5: callvirt System.Collections.Generic.List`1<T> Monocle.EntityList::FindAll<Celeste.ClutterBlockBase>()
+  IL_02ca: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Celeste.ClutterBlockBase>::GetEnumerator()
+  IL_02cf: stloc.s V_9
+  IL_02d1: br.s IL_02f2
+  IL_02d3: ldloca.s V_9
+  IL_02d5: call T System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlockBase>::get_Current()
+  IL_02da: stloc.s V_10
+  IL_02dc: ldloc.s V_10
+  IL_02de: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterBlockBase::BlockColor
+  IL_02e3: ldloc.1
+  IL_02e4: ldfld Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_02e9: bne.un.s IL_02f2
+  IL_02eb: ldloc.s V_10
+  IL_02ed: callvirt System.Void Celeste.ClutterBlockBase::Deactivate()
+  IL_02f2: ldloca.s V_9
+  IL_02f4: call System.Boolean System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlockBase>::MoveNext()
+  IL_02f9: brtrue.s IL_02d3
+  IL_02fb: leave.s IL_030b
+  IL_02fd: ldloca.s V_9
+  IL_02ff: constrained. System.Collections.Generic.List`1/Enumerator<Celeste.ClutterBlockBase>
+  IL_0305: callvirt System.Void System.IDisposable::Dispose()
+  IL_030a: endfinally
+  IL_030b: ldarg.0
+  IL_030c: ldc.r4 1.5
+  IL_0311: box System.Single
+  IL_0316: stfld System.Object Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>2__current
+  IL_031b: ldarg.0
+  IL_031c: ldc.i4.1
+  IL_031d: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0322: ldc.i4.1
+  IL_0323: ret
+  IL_0324: ldarg.0
+  IL_0325: ldc.i4.m1
+  IL_0326: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_032b: ldarg.0
+  IL_032c: ldfld Celeste.Player Celeste.ClutterSwitch/<AbsorbRoutine>d__26::player
+  IL_0331: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0336: ldc.i4.0
+  IL_0337: callvirt System.Void Monocle.StateMachine::set_State(System.Int32)
+  IL_033c: ldarg.0
+  IL_033d: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0342: ldstr "objects/resortclutter/"
+  IL_0347: ldloc.1
+  IL_0348: ldflda Celeste.ClutterBlock/Colors Celeste.ClutterSwitch::color
+  IL_034d: constrained. Celeste.ClutterBlock/Colors
+  IL_0353: callvirt System.String System.Object::ToString()
+  IL_0358: ldstr "_"
+  IL_035d: call System.String System.String::Concat(System.String,System.String,System.String)
+  IL_0362: callvirt System.Collections.Generic.List`1<Monocle.MTexture> Monocle.Atlas::GetAtlasSubtextures(System.String)
+  IL_0367: stfld System.Collections.Generic.List`1<Monocle.MTexture> Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<images>5__4
+  IL_036c: ldarg.0
+  IL_036d: ldc.i4.0
+  IL_036e: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<i>5__5
+  IL_0373: br IL_041f
+  IL_0378: ldc.i4.0
+  IL_0379: stloc.s V_11
+  IL_037b: br.s IL_03cc
+  IL_037d: ldarg.0
+  IL_037e: ldfld Microsoft.Xna.Framework.Vector2 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<target>5__2
+  IL_0383: ldsfld System.Random Monocle.Calc::Random
+  IL_0388: ldc.r4 6.2831855
+  IL_038d: call System.Single Monocle.Calc::NextFloat(System.Random,System.Single)
+  IL_0392: ldc.r4 320
+  IL_0397: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::AngleToVector(System.Single,System.Single)
+  IL_039c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_03a1: stloc.s V_12
+  IL_03a3: ldarg.0
+  IL_03a4: ldfld Celeste.ClutterAbsorbEffect Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<effect>5__3
+  IL_03a9: ldloc.s V_12
+  IL_03ab: ldsfld System.Random Monocle.Calc::Random
+  IL_03b0: ldarg.0
+  IL_03b1: ldfld System.Collections.Generic.List`1<Monocle.MTexture> Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<images>5__4
+  IL_03b6: call T Monocle.Calc::Choose<Monocle.MTexture>(System.Random,System.Collections.Generic.List`1<T>)
+  IL_03bb: ldc.i4.0
+  IL_03bc: ldc.r4 0
+  IL_03c1: callvirt System.Void Celeste.ClutterAbsorbEffect::FlyClutter(Microsoft.Xna.Framework.Vector2,Monocle.MTexture,System.Boolean,System.Single)
+  IL_03c6: ldloc.s V_11
+  IL_03c8: ldc.i4.1
+  IL_03c9: add
+  IL_03ca: stloc.s V_11
+  IL_03cc: ldloc.s V_11
+  IL_03ce: ldc.i4.5
+  IL_03cf: blt.s IL_037d
+  IL_03d1: ldarg.0
+  IL_03d2: ldfld Celeste.ClutterSwitch/<>c__DisplayClass26_0 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>8__1
+  IL_03d7: ldfld Celeste.Level Celeste.ClutterSwitch/<>c__DisplayClass26_0::level
+  IL_03dc: ldc.r4 0.3
+  IL_03e1: callvirt System.Void Celeste.Level::Shake(System.Single)
+  IL_03e6: ldc.i4.0
+  IL_03e7: ldc.i4.2
+  IL_03e8: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_03ed: ldarg.0
+  IL_03ee: ldc.r4 0.05
+  IL_03f3: box System.Single
+  IL_03f8: stfld System.Object Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>2__current
+  IL_03fd: ldarg.0
+  IL_03fe: ldc.i4.2
+  IL_03ff: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0404: ldc.i4.1
+  IL_0405: ret
+  IL_0406: ldarg.0
+  IL_0407: ldc.i4.m1
+  IL_0408: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_040d: ldarg.0
+  IL_040e: ldfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<i>5__5
+  IL_0413: stloc.s V_4
+  IL_0415: ldarg.0
+  IL_0416: ldloc.s V_4
+  IL_0418: ldc.i4.1
+  IL_0419: add
+  IL_041a: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<i>5__5
+  IL_041f: ldarg.0
+  IL_0420: ldfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<i>5__5
+  IL_0425: ldc.i4.s 25
+  IL_0427: blt IL_0378
+  IL_042c: ldarg.0
+  IL_042d: ldc.r4 1.5
+  IL_0432: box System.Single
+  IL_0437: stfld System.Object Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>2__current
+  IL_043c: ldarg.0
+  IL_043d: ldc.i4.3
+  IL_043e: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0443: ldc.i4.1
+  IL_0444: ret
+  IL_0445: ldarg.0
+  IL_0446: ldc.i4.m1
+  IL_0447: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_044c: ldarg.0
+  IL_044d: ldfld Celeste.ClutterAbsorbEffect Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<effect>5__3
+  IL_0452: callvirt System.Void Celeste.ClutterAbsorbEffect::CloseCabinets()
+  IL_0457: ldarg.0
+  IL_0458: ldc.r4 0.2
+  IL_045d: box System.Single
+  IL_0462: stfld System.Object Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>2__current
+  IL_0467: ldarg.0
+  IL_0468: ldc.i4.4
+  IL_0469: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_046e: ldc.i4.1
+  IL_046f: ret
+  IL_0470: ldarg.0
+  IL_0471: ldc.i4.m1
+  IL_0472: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0477: ldc.i4.1
+  IL_0478: ldc.i4.3
+  IL_0479: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_047e: ldarg.0
+  IL_047f: ldc.r4 0.3
+  IL_0484: box System.Single
+  IL_0489: stfld System.Object Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>2__current
+  IL_048e: ldarg.0
+  IL_048f: ldc.i4.5
+  IL_0490: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_0495: ldc.i4.1
+  IL_0496: ret
+  IL_0497: ldarg.0
+  IL_0498: ldc.i4.m1
+  IL_0499: stfld System.Int32 Celeste.ClutterSwitch/<AbsorbRoutine>d__26::<>1__state
+  IL_049e: ldc.i4.0
+  IL_049f: ret

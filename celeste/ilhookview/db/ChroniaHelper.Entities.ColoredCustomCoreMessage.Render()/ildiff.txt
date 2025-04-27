@@ -1,0 +1,253 @@
+IL Diff: System.Void ChroniaHelper.Entities.ColoredCustomCoreMessage::Render()
++ IL_0000: call System.Boolean TAS.EverestInterop.SimplifiedGraphicsFeature::IsSimplifiedHud() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0007: ldstr "ChroniaHelperTimerStatic"
+  IL_000c: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0011: stloc.3
+  IL_0012: ldloc.3
+  IL_0013: brfalse.s IL_0023
+  IL_0015: nop
+  IL_0016: ldarg.0
+  IL_0017: ldarg.0
+  IL_0018: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::timerStatic
+  IL_001d: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_0022: nop
+  IL_0023: ldarg.0
+  IL_0024: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0029: ldstr "ChroniaHelperTimer"
+  IL_002e: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0033: stloc.s V_4
+  IL_0035: ldloc.s V_4
+  IL_0037: brfalse.s IL_0046
+  IL_0039: nop
+  IL_003a: ldarg.0
+  IL_003b: ldsfld System.String ChroniaHelper.Modules.ChroniaHelperSession::timer
+  IL_0040: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_0045: nop
+  IL_0046: ldarg.0
+  IL_0047: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_004c: ldstr "ChroniaHelperFrames"
+  IL_0051: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_0056: stloc.s V_5
+  IL_0058: ldloc.s V_5
+  IL_005a: brfalse.s IL_006e
+  IL_005c: nop
+  IL_005d: ldarg.0
+  IL_005e: ldsflda System.Int32 ChroniaHelper.Modules.ChroniaHelperSession::timerFrames
+  IL_0063: call System.String System.Int32::ToString()
+  IL_0068: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_006d: nop
+  IL_006e: ldarg.0
+  IL_006f: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0074: ldstr "ChroniaHelperFramesStatic"
+  IL_0079: call System.Boolean System.String::op_Equality(System.String,System.String)
+  IL_007e: stloc.s V_6
+  IL_0080: ldloc.s V_6
+  IL_0082: brfalse.s IL_0092
+  IL_0084: nop
+  IL_0085: ldarg.0
+  IL_0086: ldarg.0
+  IL_0087: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::framesStatic
+  IL_008c: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_0091: nop
+  IL_0092: ldarg.0
+  IL_0093: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0098: ldstr "ChroniaHelperRealTime_"
+  IL_009d: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_00a2: stloc.s V_7
+  IL_00a4: ldloc.s V_7
+  IL_00a6: brfalse IL_014a
+  IL_00ab: nop
+  IL_00ac: ldarg.0
+  IL_00ad: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_00b2: ldc.i4.0
+  IL_00b3: ldstr "ChroniaHelperRealTime_"
+  IL_00b8: callvirt System.Int32 System.String::get_Length()
+  IL_00bd: callvirt System.String System.String::Remove(System.Int32,System.Int32)
+  IL_00c2: stloc.s V_8
+  IL_00c4: nop
+  IL_00c5: ldarg.0
+  IL_00c6: ldfld Celeste.Level ChroniaHelper.Entities.ColoredCustomCoreMessage::level
+  IL_00cb: ldfld Celeste.Session Celeste.Level::Session
+  IL_00d0: ldfld System.Collections.Generic.HashSet`1<System.String> Celeste.Session::Flags
+  IL_00d5: callvirt System.Collections.Generic.HashSet`1/Enumerator<T> System.Collections.Generic.HashSet`1<System.String>::GetEnumerator()
+  IL_00da: stloc.s V_9
+  IL_00dc: br.s IL_012f
+  IL_00de: ldloca.s V_9
+  IL_00e0: call T System.Collections.Generic.HashSet`1/Enumerator<System.String>::get_Current()
+  IL_00e5: stloc.s V_10
+  IL_00e7: nop
+  IL_00e8: ldloc.s V_10
+  IL_00ea: ldloc.s V_8
+  IL_00ec: ldstr "_"
+  IL_00f1: call System.String System.String::Concat(System.String,System.String)
+  IL_00f6: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_00fb: stloc.s V_11
+  IL_00fd: ldloc.s V_11
+  IL_00ff: brfalse.s IL_0123
+  IL_0101: nop
+  IL_0102: ldarg.0
+  IL_0103: ldloc.s V_10
+  IL_0105: ldc.i4.0
+  IL_0106: ldloc.s V_8
+  IL_0108: ldstr "_"
+  IL_010d: call System.String System.String::Concat(System.String,System.String)
+  IL_0112: callvirt System.Int32 System.String::get_Length()
+  IL_0117: callvirt System.String System.String::Remove(System.Int32,System.Int32)
+  IL_011c: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_0121: br.s IL_0138
+  IL_0123: ldarg.0
+  IL_0124: ldstr "NO MATCHING CODE"
+  IL_0129: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_012e: nop
+  IL_012f: ldloca.s V_9
+  IL_0131: call System.Boolean System.Collections.Generic.HashSet`1/Enumerator<System.String>::MoveNext()
+  IL_0136: brtrue.s IL_00de
+  IL_0138: leave.s IL_0149
+  IL_013a: ldloca.s V_9
+  IL_013c: constrained. System.Collections.Generic.HashSet`1/Enumerator<System.String>
+  IL_0142: callvirt System.Void System.IDisposable::Dispose()
+  IL_0147: nop
+  IL_0148: endfinally
+  IL_0149: nop
+  IL_014a: ldarg.0
+  IL_014b: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0150: ldstr "keyboardSync_"
+  IL_0155: callvirt System.Boolean System.String::StartsWith(System.String)
+  IL_015a: stloc.s V_12
+  IL_015c: ldloc.s V_12
+  IL_015e: brfalse.s IL_01af
+  IL_0160: nop
+  IL_0161: ldarg.0
+  IL_0162: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::dialog
+  IL_0167: ldc.i4.0
+  IL_0168: ldstr "keyboardSync_"
+  IL_016d: callvirt System.Int32 System.String::get_Length()
+  IL_0172: callvirt System.String System.String::Remove(System.Int32,System.Int32)
+  IL_0177: stloc.s V_13
+  IL_0179: call ChroniaHelper.Modules.ChroniaHelperSession ChroniaHelper.ChroniaHelperModule::get_Session()
+  IL_017e: callvirt System.Collections.Generic.Dictionary`2<System.String,System.String> ChroniaHelper.Modules.ChroniaHelperSession::get_Passwords()
+  IL_0183: ldloc.s V_13
+  IL_0185: callvirt System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.String>::ContainsKey(TKey)
+  IL_018a: stloc.s V_14
+  IL_018c: ldarg.0
+  IL_018d: ldloc.s V_14
+  IL_018f: brtrue.s IL_0198
+  IL_0191: ldsfld System.String System.String::Empty
+  IL_0196: br.s IL_01a9
+  IL_0198: call ChroniaHelper.Modules.ChroniaHelperSession ChroniaHelper.ChroniaHelperModule::get_Session()
+  IL_019d: callvirt System.Collections.Generic.Dictionary`2<System.String,System.String> ChroniaHelper.Modules.ChroniaHelperSession::get_Passwords()
+  IL_01a2: ldloc.s V_13
+  IL_01a4: callvirt TValue System.Collections.Generic.Dictionary`2<System.String,System.String>::get_Item(TKey)
+  IL_01a9: stfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_01ae: nop
+  IL_01af: ldarg.0
+  IL_01b0: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_01b5: castclass Celeste.Level
+  IL_01ba: ldfld Monocle.Camera Celeste.Level::Camera
+  IL_01bf: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Camera::get_Position()
+  IL_01c4: stloc.0
+  IL_01c5: ldloc.0
+  IL_01c6: ldarg.0
+  IL_01c7: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::screenX
+  IL_01cc: ldarg.0
+  IL_01cd: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::screenY
+  IL_01d2: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01d7: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01dc: stloc.1
+  IL_01dd: ldarg.0
+  IL_01de: ldfld System.Boolean ChroniaHelper.Entities.ColoredCustomCoreMessage::lockPosition
+  IL_01e3: brtrue.s IL_021f
+  IL_01e5: ldarg.0
+  IL_01e6: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01eb: ldloc.0
+  IL_01ec: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01f1: ldarg.0
+  IL_01f2: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_01f7: ldloc.1
+  IL_01f8: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01fd: ldarg.0
+  IL_01fe: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::parallax
+  IL_0203: ldc.r4 1
+  IL_0208: sub
+  IL_0209: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_020e: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0213: ldc.r4 6
+  IL_0218: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_021d: br.s IL_0235
+  IL_021f: ldarg.0
+  IL_0220: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0225: ldloc.0
+  IL_0226: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_022b: ldc.r4 6
+  IL_0230: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0235: stloc.2
+  IL_0236: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_023b: brfalse.s IL_024e
+  IL_023d: ldsfld Celeste.SaveData Celeste.SaveData::Instance
+  IL_0242: ldflda Celeste.Assists Celeste.SaveData::Assists
+  IL_0247: ldfld System.Boolean Celeste.Assists::MirrorMode
+  IL_024c: br.s IL_024f
+  IL_024e: ldc.i4.0
+  IL_024f: stloc.s V_15
+  IL_0251: ldloc.s V_15
+  IL_0253: brfalse.s IL_026a
+  IL_0255: nop
+  IL_0256: ldloca.s V_2
+  IL_0258: ldc.r4 1920
+  IL_025d: ldloc.2
+  IL_025e: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0263: sub
+  IL_0264: stfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_0269: nop
+  IL_026a: ldarg.0
+  IL_026b: ldfld System.Boolean ChroniaHelper.Entities.ColoredCustomCoreMessage::outline
+  IL_0270: stloc.s V_16
+  IL_0272: ldloc.s V_16
+  IL_0274: brfalse.s IL_02c3
+  IL_0276: nop
+  IL_0277: ldarg.0
+  IL_0278: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_027d: ldloc.2
+  IL_027e: ldc.r4 0.5
+  IL_0283: ldc.r4 0.5
+  IL_0288: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_028d: ldarg.0
+  IL_028e: ldfld Microsoft.Xna.Framework.Vector2 ChroniaHelper.Entities.ColoredCustomCoreMessage::scale
+  IL_0293: ldarg.0
+  IL_0294: ldfld Microsoft.Xna.Framework.Color ChroniaHelper.Entities.ColoredCustomCoreMessage::color
+  IL_0299: ldarg.0
+  IL_029a: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::alpha
+  IL_029f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02a4: ldc.r4 2
+  IL_02a9: ldarg.0
+  IL_02aa: ldfld Microsoft.Xna.Framework.Color ChroniaHelper.Entities.ColoredCustomCoreMessage::outlineColor
+  IL_02af: ldarg.0
+  IL_02b0: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::alpha
+  IL_02b5: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02ba: call System.Void Celeste.ActiveFont::DrawOutline(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Color)
+  IL_02bf: nop
+  IL_02c0: nop
+  IL_02c1: br.s IL_02f8
+  IL_02c3: nop
+  IL_02c4: ldarg.0
+  IL_02c5: ldfld System.String ChroniaHelper.Entities.ColoredCustomCoreMessage::text
+  IL_02ca: ldloc.2
+  IL_02cb: ldc.r4 0.5
+  IL_02d0: ldc.r4 0.5
+  IL_02d5: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_02da: ldarg.0
+  IL_02db: ldfld Microsoft.Xna.Framework.Vector2 ChroniaHelper.Entities.ColoredCustomCoreMessage::scale
+  IL_02e0: ldarg.0
+  IL_02e1: ldfld Microsoft.Xna.Framework.Color ChroniaHelper.Entities.ColoredCustomCoreMessage::color
+  IL_02e6: ldarg.0
+  IL_02e7: ldfld System.Single ChroniaHelper.Entities.ColoredCustomCoreMessage::alpha
+  IL_02ec: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_02f1: call System.Void Celeste.ActiveFont::Draw(System.String,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_02f6: nop
+  IL_02f7: nop
+  IL_02f8: ret

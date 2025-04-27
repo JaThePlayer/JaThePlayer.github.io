@@ -1,0 +1,63 @@
+IL Diff: Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::Init(Microsoft.Xna.Framework.Vector2,Monocle.MTexture,System.String,System.Single,Microsoft.Xna.Framework.Vector2)
++ IL_0000: ldarg pos @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PushRandom(Microsoft.Xna.Framework.Vector2) @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_0000: nop
+  IL_0001: ldarg.0
+  IL_0002: ldarg.1
+  IL_0003: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0008: ldarg.0
+  IL_0009: ldarg.3
+  IL_000a: stfld System.String Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::impactAudio
+  IL_000f: ldarg.0
+  IL_0010: ldsfld System.Random Monocle.Calc::Random
+  IL_0015: ldc.r4 0.6
+  IL_001a: ldc.r4 2.6
+  IL_001f: call System.Single Monocle.Calc::Range(System.Random,System.Single,System.Single)
+  IL_0024: stfld System.Single Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::lifeTimer
+  IL_0029: ldarg.0
+  IL_002a: ldc.r4 1
+  IL_002f: stfld System.Single Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::alpha
+  IL_0034: ldarg.0
+  IL_0035: ldc.i4.0
+  IL_0036: stfld System.Boolean Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::hasHitGround
+  IL_003b: ldarg.0
+  IL_003c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_0041: stfld Microsoft.Xna.Framework.Vector2 Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::speed
+  IL_0046: ldarg.0
+  IL_0047: ldc.r4 0
+  IL_004c: stfld System.Single Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::fadeLerp
+  IL_0051: ldarg.0
+  IL_0052: ldsfld System.Random Monocle.Calc::Random
+  IL_0057: ldc.i4.1
+  IL_0058: ldc.i4.m1
+  IL_0059: call T Monocle.Calc::Choose<System.Int32>(System.Random,T,T)
+  IL_005e: stfld System.Int32 Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::rotateSign
+  IL_0063: ldarg.0
+  IL_0064: ldfld Monocle.Image Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::image
+  IL_0069: ldarg.2
+  IL_006a: stfld Monocle.MTexture Monocle.Image::Texture
+  IL_006f: ldarg.0
+  IL_0070: ldfld Monocle.Image Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::image
+  IL_0075: callvirt Monocle.Image Monocle.Image::CenterOrigin()
+  IL_007a: pop
+  IL_007b: ldarg.0
+  IL_007c: ldfld Monocle.Image Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::image
+  IL_0081: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0086: ldarg.0
+  IL_0087: ldfld System.Single Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::alpha
+  IL_008c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0091: stfld Microsoft.Xna.Framework.Color Monocle.GraphicsComponent::Color
+  IL_0096: ldarg.0
+  IL_0097: ldfld Monocle.Image Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::image
+  IL_009c: ldarg.s rotation
+  IL_009e: stfld System.Single Monocle.GraphicsComponent::Rotation
+  IL_00a3: ldarg.0
+  IL_00a4: ldfld Monocle.Image Celeste.Mod.AdamsAddons.Registry.Entities.DecalDebris::image
+  IL_00a9: ldarg.s scale
+  IL_00ab: stfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Scale
+  IL_00b0: ldarg.0
+  IL_00b1: stloc.0
+  IL_00b2: br.s IL_00b4
+  IL_00b4: ldloc.0
++ IL_0000: call System.Void TAS.EverestInterop.DesyncFixer::PopRandom() @ TAS.EverestInterop.DesyncFixer+<>c__DisplayClass13_0::<SeededRandom>b__0
+  IL_00b5: ret

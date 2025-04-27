@@ -20,8 +20,8 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
 + IL_0000: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
-+ IL_0000: ldc.i4 29517401 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0000: ldc.i4 25613004 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
   |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumeBuffer>b__24_0(System.Object,System.Single)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
@@ -30,8 +30,8 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
 + IL_0000: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: dup @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: ldfld System.Single Monocle.VirtualButton::bufferCounter @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
-+ IL_0000: ldc.i4 42099290 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
++ IL_0000: ldc.i4 61387456 @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
   |-> retrieves System.Void Celeste.Mod.PandorasBox.CloneSpawner/<>c::<patchConsumeBuffer>b__24_0(System.Object,System.Single)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<System.Object,System.Single>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.PandorasBox.CloneSpawner::patchConsumeBuffer
@@ -49,8 +49,8 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_005a: ldc.r4 0
   IL_005f: blt.un IL_00d9
   IL_0064: call System.Boolean Celeste.Input::get_GrabCheck()
-+ IL_0000: ldc.i4 2978 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
-+ IL_0000: ldc.i4 66209584 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 3926 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
++ IL_0000: ldc.i4 42806272 @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
   |-> retrieves System.Boolean ExtendedVariants.Variants.InvertGrab::invertButtonCheck(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.InvertGrab::modInputGrabCheck
@@ -97,6 +97,12 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_00d8: ret
   IL_00d9: ldsfld Monocle.VirtualJoystick Celeste.Input::Feather
   IL_00de: callvirt Microsoft.Xna.Framework.Vector2 Monocle.VirtualJoystick::get_Value()
++ IL_0000: ldc.i4 3935 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 8753150 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookLoseControl>b__12_0()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_00e3: stloc.1
   IL_00e4: ldloc.1
   IL_00e5: call Microsoft.Xna.Framework.Vector2 Monocle.Calc::SafeNormalize(Microsoft.Xna.Framework.Vector2)
@@ -104,36 +110,32 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_00eb: ldloc.0
   IL_00ec: brtrue.s IL_00f5
   IL_00ee: ldc.r4 80
-+ IL_0000: ldc.i4 2980 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 15513692 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
   IL_00f3: br.s IL_00fa
   IL_00f5: ldc.r4 60
-+ IL_0000: ldc.i4 2983 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 48649522 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
   IL_00fa: stloc.2
++ IL_0000: ldloc V_2 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 3929 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 150791 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookMaxSpeed>b__9_0()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: stloc V_2 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_00fb: ldc.r4 80
-+ IL_0000: ldc.i4 3085 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 48297246 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
   IL_0100: stloc.3
++ IL_0000: ldloc V_3 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 3930 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 1357122 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookMaxSpeed>b__9_1()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: stloc V_3 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_0101: ldarg.0
   IL_0102: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
   IL_0107: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
   IL_010c: call System.Single System.Math::Abs(System.Single)
   IL_0111: ldc.r4 80
-+ IL_0000: ldc.i4 3568 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 19762821 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
   IL_0116: ble.un.s IL_0165
   IL_0118: ldarg.0
   IL_0119: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
@@ -152,7 +154,15 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_0147: ldloc.1
   IL_0148: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
   IL_014d: mul
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
++ IL_0000: call System.Single Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlocksCoolSwimModifyingILHookX(System.Single,Celeste.Player) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
   IL_014e: ldc.r4 400
++ IL_0000: ldc.i4 3931 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 12214104 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookAcceleration>b__10_0()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_0153: call System.Single Monocle.Engine::get_DeltaTime()
   IL_0158: mul
   IL_0159: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
@@ -167,7 +177,15 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_0177: ldloc.1
   IL_0178: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
   IL_017d: mul
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
++ IL_0000: call System.Single Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlocksCoolSwimModifyingILHookX(System.Single,Celeste.Player) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
   IL_017e: ldc.r4 600
++ IL_0000: ldc.i4 3932 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 42818072 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookAcceleration>b__10_2()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_0183: call System.Single Monocle.Engine::get_DeltaTime()
   IL_0188: mul
   IL_0189: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
@@ -185,12 +203,15 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_01af: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
   IL_01b4: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
   IL_01b9: ldc.r4 -60
-+ IL_0000: ldc.i4 3646 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 57284689 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
++ IL_0000: call System.Single Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlocksCoolSwimModifyingILHookY(System.Single,Celeste.Player) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
   IL_01be: ldc.r4 600
++ IL_0000: ldc.i4 3928 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 44755997 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Int32>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Int32 LuckyHelper.Modules.CustomWaterModule/<>c::<HookSwimRise>b__8_0()
++ IL_0000: callvirt TResult System.Func`1<System.Int32>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_01c3: call System.Single Monocle.Engine::get_DeltaTime()
   IL_01c8: mul
   IL_01c9: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
@@ -208,11 +229,6 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_01f6: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
   IL_01fb: call System.Single System.Math::Abs(System.Single)
   IL_0200: ldc.r4 80
-+ IL_0000: ldc.i4 3648 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: ldc.i4 9548266 @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
-  |-> retrieves System.Single ExtendedVariants.Variants.SwimmingSpeed::<patchSwimUpdate>b__5_0(System.Single)
-+ IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.SwimmingSpeed::patchSwimUpdate
   IL_0205: ble.un.s IL_0254
   IL_0207: ldarg.0
   IL_0208: ldflda Microsoft.Xna.Framework.Vector2 Celeste.Player::Speed
@@ -231,7 +247,15 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_0236: ldloc.1
   IL_0237: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
   IL_023c: mul
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
++ IL_0000: call System.Single Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlocksCoolSwimModifyingILHookY(System.Single,Celeste.Player) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
   IL_023d: ldc.r4 400
++ IL_0000: ldc.i4 3933 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 49818333 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookAcceleration>b__10_4()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_0242: call System.Single Monocle.Engine::get_DeltaTime()
   IL_0247: mul
   IL_0248: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
@@ -246,7 +270,15 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_0266: ldloc.1
   IL_0267: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
   IL_026c: mul
++ IL_0000: ldarg this @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
++ IL_0000: call System.Single Celeste.Mod.SelfishHelper.Entities.WaterBlock/Hooks::WaterBlocksCoolSwimModifyingILHookY(System.Single,Celeste.Player) @ Celeste.Mod.SelfishHelper.Entities.WaterBlock+Hooks::Player_SwimUpdate
   IL_026d: ldc.r4 600
++ IL_0000: ldc.i4 3934 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: ldc.i4 45711814 @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<System.Single>>(System.Int32,System.Int32) @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
+  |-> retrieves System.Single LuckyHelper.Modules.CustomWaterModule/<>c::<HookAcceleration>b__10_6()
++ IL_0000: callvirt TResult System.Func`1<System.Single>::Invoke() @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
++ IL_0000: mul @ LuckyHelper.Modules.CustomWaterModule::PlayerOnSwimUpdate
   IL_0272: call System.Single Monocle.Engine::get_DeltaTime()
   IL_0277: mul
   IL_0278: call System.Single Monocle.Calc::Approach(System.Single,System.Single,System.Single)
@@ -282,8 +314,8 @@ IL Diff: System.Int32 Celeste.Player::SwimUpdate()
   IL_02d6: callvirt System.Void Celeste.Player::ClimbHop()
   IL_02db: ldsfld Monocle.VirtualButton Celeste.Input::Jump
   IL_02e0: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
-+ IL_0000: ldc.i4 2884 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
-+ IL_0000: ldc.i4 21631939 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
++ IL_0000: ldc.i4 3873 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
++ IL_0000: ldc.i4 6328003 @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate
   |-> retrieves System.Boolean ExtendedVariants.Variants.DisableJumpingOutOfWater::modInputJumpResult(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.DisableJumpingOutOfWater::modSwimUpdate

@@ -1,0 +1,16 @@
+IL Diff: System.Boolean Celeste.Input::get_GrabCheck()
+  IL_0000: ldsfld Celeste.Settings Celeste.Settings::Instance
+  IL_0005: ldfld Celeste.GrabModes Celeste.Settings::GrabMode
+  IL_000a: stloc.0
+  IL_000b: ldloc.0
+  IL_000c: switch IL_001d,IL_0028,IL_0036
+  IL_001d: ldsfld Monocle.VirtualButton Celeste.Input::Grab
+  IL_0022: callvirt System.Boolean Monocle.VirtualButton::get_Check()
+  IL_0027: ret
+  IL_0028: ldsfld Monocle.VirtualButton Celeste.Input::Grab
+  IL_002d: callvirt System.Boolean Monocle.VirtualButton::get_Check()
+  IL_0032: ldc.i4.0
+  IL_0033: ceq
+  IL_0035: ret
+  IL_0036: ldsfld System.Boolean Celeste.Input::grabToggle
+  IL_003b: ret

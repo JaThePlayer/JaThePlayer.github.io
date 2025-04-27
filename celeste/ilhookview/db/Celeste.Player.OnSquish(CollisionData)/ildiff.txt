@@ -1,0 +1,87 @@
+IL Diff: System.Void Celeste.Player::OnSquish(Celeste.CollisionData)
+  IL_0000: ldc.i4.0
+  IL_0001: stloc.0
+  IL_0002: ldarg.0
+  IL_0003: callvirt System.Boolean Celeste.Player::get_Ducking()
+  IL_0008: brtrue.s IL_007d
+  IL_000a: ldarg.0
+  IL_000b: ldfld Monocle.StateMachine Celeste.Player::StateMachine
+  IL_0010: callvirt System.Int32 Monocle.StateMachine::get_State()
+  IL_0015: ldc.i4.1
+  IL_0016: beq.s IL_007d
+  IL_0018: ldc.i4.1
+  IL_0019: stloc.0
+  IL_001a: ldarg.0
+  IL_001b: ldc.i4.1
+  IL_001c: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_0021: ldarg.1
+  IL_0022: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0027: ldc.i4.1
+  IL_0028: stfld System.Boolean Monocle.Entity::Collidable
+  IL_002d: ldarg.0
+  IL_002e: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_0033: brtrue.s IL_0042
+  IL_0035: ldarg.1
+  IL_0036: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_003b: ldc.i4.0
+  IL_003c: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0041: ret
+  IL_0042: ldarg.0
+  IL_0043: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0048: stloc.1
+  IL_0049: ldarg.0
+  IL_004a: ldarg.1
+  IL_004b: ldfld Microsoft.Xna.Framework.Vector2 Celeste.CollisionData::TargetPosition
+  IL_0050: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0055: ldarg.0
+  IL_0056: call System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_005b: brtrue.s IL_006a
+  IL_005d: ldarg.1
+  IL_005e: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0063: ldc.i4.0
+  IL_0064: stfld System.Boolean Monocle.Entity::Collidable
+  IL_0069: ret
+  IL_006a: ldarg.0
+  IL_006b: ldloc.1
+  IL_006c: stfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0071: ldarg.1
+  IL_0072: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0077: ldc.i4.0
+  IL_0078: stfld System.Boolean Monocle.Entity::Collidable
+  IL_007d: ldarg.0
+  IL_007e: ldarg.1
+  IL_007f: ldc.i4.3
+  IL_0080: ldc.i4.5
+  IL_0081: call System.Boolean Celeste.Actor::TrySquishWiggle(Celeste.CollisionData,System.Int32,System.Int32)
+  IL_0086: brtrue.s IL_00b0
+  IL_0088: ldc.i4.0
+  IL_0089: stloc.2
+  IL_008a: ldarg.1
+  IL_008b: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0090: brfalse.s IL_00a1
+  IL_0092: ldarg.1
+  IL_0093: ldfld Celeste.Solid Celeste.CollisionData::Pusher
+  IL_0098: ldfld System.Boolean Celeste.Solid::SquishEvenInAssistMode
+  IL_009d: brfalse.s IL_00a1
+  IL_009f: ldc.i4.1
+  IL_00a0: stloc.2
+  IL_0000: ldarg.0
++ IL_0000: ldarg.1 @ Celeste.Mod.BossesHelper.BossesHelperModule::ILOnSquish
++ IL_0000: ldloc.2 @ Celeste.Mod.BossesHelper.BossesHelperModule::ILOnSquish
++ IL_0000: call System.Void Celeste.Mod.BossesHelper.BossesHelperModule::KillOnCrush(Celeste.Player,Celeste.CollisionData,System.Boolean) @ Celeste.Mod.BossesHelper.BossesHelperModule::ILOnSquish
++ IL_00a1: ldarg.0 @ Celeste.Mod.BossesHelper.BossesHelperModule::ILOnSquish
+  IL_00a2: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
+  IL_00a7: ldloc.2
+  IL_00a8: ldc.i4.1
+  IL_00a9: callvirt Celeste.PlayerDeadBody Celeste.Player::Die(Microsoft.Xna.Framework.Vector2,System.Boolean,System.Boolean)
+  IL_00ae: pop
+  IL_00af: ret
+  IL_00b0: ldloc.0
+  IL_00b1: brfalse.s IL_00c2
+  IL_00b3: ldarg.0
+  IL_00b4: callvirt System.Boolean Celeste.Player::get_CanUnDuck()
+  IL_00b9: brfalse.s IL_00c2
+  IL_00bb: ldarg.0
+  IL_00bc: ldc.i4.0
+  IL_00bd: callvirt System.Void Celeste.Player::set_Ducking(System.Boolean)
+  IL_00c2: ret

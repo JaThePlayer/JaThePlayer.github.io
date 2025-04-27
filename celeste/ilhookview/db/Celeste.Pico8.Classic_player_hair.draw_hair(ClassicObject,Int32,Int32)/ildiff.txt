@@ -1,0 +1,121 @@
+IL Diff: System.Void Celeste.Pico8.Classic/player_hair::draw_hair(Celeste.Pico8.Classic+ClassicObject,System.Int32,System.Int32)
++ IL_0000: call System.Boolean Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::ShouldUseSingleColorHair() @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
++ IL_0000: brfalse IL_0000 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
+  IL_0000: ldarg.3
++ IL_0000: call System.Int32 Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::GetHairColor(System.Int32) @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
++ IL_0000: stloc.0 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
++ IL_0000: br IL_002f @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
++ IL_0000: ldarg.3 @ Celeste.Mod.FewerVisualDistractions.Patches.AdditionalEffectTweaker::patch_draw_hair
+  IL_0001: ldc.i4.1
+  IL_0002: beq.s IL_002d
+  IL_0004: ldarg.3
+  IL_0005: ldc.i4.2
+  IL_0006: beq.s IL_000c
+  IL_0008: ldc.i4.s 12
+  IL_000a: br.s IL_002e
+  IL_000c: ldc.i4.7
+  IL_000d: ldarg.0
+  IL_000e: ldfld Celeste.Pico8.Emulator Celeste.Pico8.Classic/player_hair::E
+  IL_0013: ldarg.0
+  IL_0014: ldfld Celeste.Pico8.Classic Celeste.Pico8.Classic/player_hair::G
+  IL_0019: ldfld System.Int32 Celeste.Pico8.Classic::frames
+  IL_001e: ldc.i4.3
+  IL_001f: div
+  IL_0020: ldc.i4.2
+  IL_0021: rem
+  IL_0022: conv.r4
+  IL_0023: callvirt System.Int32 Celeste.Pico8.Emulator::flr(System.Single)
+  IL_0028: ldc.i4.4
+  IL_0029: mul
+  IL_002a: add
+  IL_002b: br.s IL_002e
+  IL_002d: ldc.i4.8
+  IL_002e: stloc.0
+  IL_002f: ldloca.s V_1
+  IL_0031: ldarg.1
+  IL_0032: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::x
+  IL_0037: ldc.r4 4
+  IL_003c: add
+  IL_003d: ldarg.2
+  IL_003e: ldc.i4.2
+  IL_003f: mul
+  IL_0040: conv.r4
+  IL_0041: sub
+  IL_0042: ldarg.1
+  IL_0043: ldfld System.Single Celeste.Pico8.Classic/ClassicObject::y
+  IL_0048: ldarg.0
+  IL_0049: ldfld Celeste.Pico8.Emulator Celeste.Pico8.Classic/player_hair::E
+  IL_004e: ldarg.0
+  IL_004f: ldfld Celeste.Pico8.Classic Celeste.Pico8.Classic/player_hair::G
+  IL_0054: ldfld System.Int32 Celeste.Pico8.Classic::k_down
+  IL_0059: callvirt System.Boolean Celeste.Pico8.Emulator::btn(System.Int32)
+  IL_005e: brtrue.s IL_0063
+  IL_0060: ldc.i4.3
+  IL_0061: br.s IL_0064
+  IL_0063: ldc.i4.4
+  IL_0064: conv.r4
+  IL_0065: add
+  IL_0066: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_006b: ldarg.0
+  IL_006c: ldfld Celeste.Pico8.Classic/player_hair/node[] Celeste.Pico8.Classic/player_hair::hair
+  IL_0071: stloc.2
+  IL_0072: ldc.i4.0
+  IL_0073: stloc.3
+  IL_0074: br IL_0103
+  IL_0079: ldloc.2
+  IL_007a: ldloc.3
+  IL_007b: ldelem.ref
+  IL_007c: stloc.s V_4
+  IL_007e: ldloc.s V_4
+  IL_0080: dup
+  IL_0081: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::x
+  IL_0086: ldloc.1
+  IL_0087: ldfld System.Single Microsoft.Xna.Framework.Vector2::X
+  IL_008c: ldloc.s V_4
+  IL_008e: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::x
+  IL_0093: sub
+  IL_0094: ldc.r4 1.5
+  IL_0099: div
+  IL_009a: add
+  IL_009b: stfld System.Single Celeste.Pico8.Classic/player_hair/node::x
+  IL_00a0: ldloc.s V_4
+  IL_00a2: dup
+  IL_00a3: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::y
+  IL_00a8: ldloc.1
+  IL_00a9: ldfld System.Single Microsoft.Xna.Framework.Vector2::Y
+  IL_00ae: ldc.r4 0.5
+  IL_00b3: add
+  IL_00b4: ldloc.s V_4
+  IL_00b6: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::y
+  IL_00bb: sub
+  IL_00bc: ldc.r4 1.5
+  IL_00c1: div
+  IL_00c2: add
+  IL_00c3: stfld System.Single Celeste.Pico8.Classic/player_hair/node::y
+  IL_00c8: ldarg.0
+  IL_00c9: ldfld Celeste.Pico8.Emulator Celeste.Pico8.Classic/player_hair::E
+  IL_00ce: ldloc.s V_4
+  IL_00d0: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::x
+  IL_00d5: ldloc.s V_4
+  IL_00d7: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::y
+  IL_00dc: ldloc.s V_4
+  IL_00de: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::size
+  IL_00e3: ldloc.0
+  IL_00e4: conv.r4
+  IL_00e5: callvirt System.Void Celeste.Pico8.Emulator::circfill(System.Single,System.Single,System.Single,System.Single)
+  IL_00ea: ldloca.s V_1
+  IL_00ec: ldloc.s V_4
+  IL_00ee: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::x
+  IL_00f3: ldloc.s V_4
+  IL_00f5: ldfld System.Single Celeste.Pico8.Classic/player_hair/node::y
+  IL_00fa: call System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_00ff: ldloc.3
+  IL_0100: ldc.i4.1
+  IL_0101: add
+  IL_0102: stloc.3
+  IL_0103: ldloc.3
+  IL_0104: ldloc.2
+  IL_0105: ldlen
+  IL_0106: conv.i4
+  IL_0107: blt IL_0079
+  IL_010c: ret

@@ -22,9 +22,14 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
   IL_003d: add
   IL_003e: call System.Void Monocle.Engine::set_FrameCounter(System.UInt64)
   IL_0043: call System.Void Monocle.MInput::Update()
-+ IL_0000: call System.Boolean TAS.EverestInterop.Core::IsPause() @ TAS.EverestInterop.Core::EngineOnUpdate
-+ IL_0000: brfalse IL_0000 @ TAS.EverestInterop.Core::EngineOnUpdate
-+ IL_0000: ret @ TAS.EverestInterop.Core::EngineOnUpdate
++ IL_0000: call System.Boolean TAS.Playback.Core::IsPaused() @ TAS.Playback.Core::IL_Engine_Update
++ IL_0000: brfalse IL_0000 @ TAS.Playback.Core::IL_Engine_Update
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 65117993 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  |-> retrieves System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore/<>c::<Initialize>b__21_0()
++ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Playback.Core::IL_Engine_Update
 + IL_0000: call System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore::AfterMInputUpdate() @ Celeste.Mod.TASHelper.Predictor.PredictorCore::ILEngineUpdate
   IL_0048: ldsfld System.Boolean Monocle.Engine::ExitOnEscapeKeypress
   IL_004d: brfalse.s IL_0064
@@ -34,8 +39,8 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
   IL_005b: brfalse.s IL_0064
   IL_005d: ldarg.0
   IL_005e: call System.Void Microsoft.Xna.Framework.Game::Exit()
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 56893945 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 3872 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 49191026 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   |-> retrieves System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore/<>c::<Initialize>b__21_0()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
@@ -47,13 +52,13 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
   IL_0075: ldarg.0
   IL_0076: ldarg.1
   IL_0077: call System.Void Microsoft.Xna.Framework.Game::Update(Microsoft.Xna.Framework.GameTime)
-+ IL_0000: ldc.i4 2883 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 42283458 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 3873 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 40066058 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   |-> retrieves System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore/<>c::<Initialize>b__21_0()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   IL_007c: ret
-+ IL_0000: call System.Void Celeste.Mod.GhostModForTas.Recorder.GhostRecorder::IncreaseRTATimer() @ Celeste.Mod.GhostModForTas.Recorder.GhostRecorder+<>c::<Initialize>b__28_0
++ IL_0000: call System.Void Celeste.Mod.GhostModForTas.Recorder.GhostRecorder::IncreaseRTATimer() @ Celeste.Mod.GhostModForTas.Recorder.GhostRecorder+<>c::<Initialize>b__29_0
   IL_007d: ldsfld System.Boolean Monocle.Engine::DashAssistFreeze
   IL_0082: brfalse IL_0103
   IL_0087: ldsfld Monocle.VirtualButton Celeste.Input::Dash
@@ -103,6 +108,7 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
 + IL_0000: call System.Void Celeste.Mod.CommunalHelper.Entities.AbstractInputController::UpdateControllers() @ Celeste.Mod.CommunalHelper.Entities.AbstractInputController::Engine_Update
 + IL_0000: call System.Void Celeste.Mod.CommunalHelper.Entities.StrawberryJam.GrabTempleGate::UpdateAll() @ Celeste.Mod.CommunalHelper.Entities.StrawberryJam.GrabTempleGate::Engine_Update
 + IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper::SJ_AdvanceCasstteBlockVisualizer() @ Celeste.Mod.TASHelper.Gameplay.CassetteBlockHelper::ILEngineUpdate
++ IL_0000: call System.Void vitmod.TriggerTrigger::UpdateFreezeInput() @ vitmod.TriggerTrigger::Engine_Update
 + IL_0000: call System.Void Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::FreezeUpdate() @ Celeste.Mod.QuantumMechanics.Entities.WonkyCassetteBlockController::Engine_Update
   IL_0116: ldsfld System.Single Monocle.Engine::FreezeTimer
   IL_011b: call System.Single Monocle.Engine::get_RawDeltaTime()
@@ -131,14 +137,15 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
   IL_0171: br.s IL_0189
   IL_0173: call Monocle.Commands Monocle.Engine::get_Commands()
   IL_0178: ldfld System.Boolean Monocle.Commands::Enabled
-+ IL_0000: ldc.i4 2698 @ VivHelper.VivHelperModule::Engine_Update
-+ IL_0000: ldc.i4 50892050 @ VivHelper.VivHelperModule::Engine_Update
++ IL_0000: ldc.i4 3851 @ VivHelper.VivHelperModule::Engine_Update
++ IL_0000: ldc.i4 38086628 @ VivHelper.VivHelperModule::Engine_Update
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ VivHelper.VivHelperModule::Engine_Update
   |-> retrieves System.Boolean VivHelper.VivHelperModule/<>c::<Engine_Update>b__111_0(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ VivHelper.VivHelperModule::Engine_Update
   IL_017d: brfalse.s IL_0189
   IL_017f: call Monocle.Commands Monocle.Engine::get_Commands()
   IL_0184: callvirt System.Void Monocle.Commands::UpdateClosed()
++ IL_0000: call System.Void TAS.EverestInterop.StudioUpdateBanner::Update() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   IL_0189: ldarg.0
   IL_018a: ldfld Monocle.Scene Monocle.Engine::scene
   IL_018f: ldarg.0
@@ -171,8 +178,8 @@ IL Diff: System.Void Monocle.Engine::Update(Microsoft.Xna.Framework.GameTime)
   IL_01dd: ldarg.0
   IL_01de: ldarg.1
   IL_01df: call System.Void Microsoft.Xna.Framework.Game::Update(Microsoft.Xna.Framework.GameTime)
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 45006803 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 3925 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 25050209 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   |-> retrieves System.Void Celeste.Mod.TASHelper.Predictor.PredictorCore/<>c::<Initialize>b__21_0()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0

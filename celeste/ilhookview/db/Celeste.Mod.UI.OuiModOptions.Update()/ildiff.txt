@@ -11,6 +11,10 @@ IL Diff: System.Void Celeste.Mod.UI.OuiModOptions::Update()
   IL_001b: brfalse.s IL_0040
   IL_001d: ldsfld Monocle.VirtualButton Celeste.Input::MenuCancel
   IL_0022: callvirt System.Boolean Monocle.VirtualButton::get_Pressed()
++ IL_0000: ldarg.0 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Boolean Celeste.Mod.TASHelper.Module.Menu.OptionSubMenuExt::GetShouldGotoMainMenu(System.Boolean,Celeste.Mod.UI.OuiModOptions) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: call System.Boolean Celeste.Mod.GhostModForTas.Module.OptionSubMenuExt::GetShouldGotoMainMenu(System.Boolean,Celeste.Mod.UI.OuiModOptions) @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   IL_0027: brfalse.s IL_0040
   IL_0029: ldstr "event:/ui/main/button_back"
   IL_002e: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String)

@@ -1,0 +1,376 @@
+IL Diff: System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::MoveNext()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0006: stloc.0
+  IL_0007: ldarg.0
+  IL_0008: ldfld Celeste.CrumblePlatform Celeste.CrumblePlatform/<Sequence>d__11::<>4__this
+  IL_000d: stloc.1
+  IL_000e: ldloc.0
+  IL_000f: switch IL_0032,IL_0080,IL_015b,IL_022b,IL_026b,IL_0341,IL_035a
+  IL_0030: ldc.i4.0
+  IL_0031: ret
+  IL_0032: ldarg.0
+  IL_0033: ldc.i4.m1
+  IL_0034: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0039: ldarg.0
+  IL_003a: ldc.i4.0
+  IL_003b: stfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_0040: ldloc.1
+  IL_0041: callvirt Celeste.Player Celeste.Solid::GetPlayerOnTop()
+  IL_0046: brfalse.s IL_0058
+  IL_0048: ldarg.0
+  IL_0049: ldc.i4.1
+  IL_004a: stfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_004f: ldc.i4.1
+  IL_0050: ldc.i4.1
+  IL_0051: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_0056: br.s IL_0089
+  IL_0058: ldloc.1
+  IL_0059: callvirt Celeste.Player Celeste.Solid::GetPlayerClimbing()
++ IL_0000: ldloc.1 @ Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::CrumblePlatform_ILSequence
++ IL_0000: call System.Boolean Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::WillCrumble(Celeste.Player,Celeste.CrumblePlatform) @ Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::CrumblePlatform_ILSequence
++ IL_0000: ldloc.1 @ Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::CrumblePlatform_ILSequence
++ IL_0000: call System.Boolean Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::WillRespawn(Celeste.CrumblePlatform) @ Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::CrumblePlatform_ILSequence
++ IL_0000: brtrue @ Celeste.Mod.Aqua.Core.CrumblePlatformExtensions::CrumblePlatform_ILSequence
+  IL_005e: brfalse.s IL_0070
+  IL_0060: ldarg.0
+  IL_0061: ldc.i4.0
+  IL_0062: stfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_0067: ldc.i4.1
+  IL_0068: ldc.i4.1
+  IL_0069: call System.Void Celeste.Input::Rumble(Celeste.RumbleStrength,Celeste.RumbleLength)
+  IL_006e: br.s IL_0089
+  IL_0070: ldarg.0
+  IL_0071: ldnull
+  IL_0072: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0077: ldarg.0
+  IL_0078: ldc.i4.1
+  IL_0079: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_007e: ldc.i4.1
+  IL_007f: ret
+  IL_0080: ldarg.0
+  IL_0081: ldc.i4.m1
+  IL_0082: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0087: br.s IL_0040
+  IL_0089: ldstr "event:/game/general/platform_disintegrate"
+  IL_008e: ldloc.1
+  IL_008f: callvirt Microsoft.Xna.Framework.Vector2 Monocle.Entity::get_Center()
+  IL_0094: call FMOD.Studio.EventInstance Celeste.Audio::Play(System.String,Microsoft.Xna.Framework.Vector2)
+  IL_0099: pop
+  IL_009a: ldloc.1
+  IL_009b: ldfld Monocle.ShakerList Celeste.CrumblePlatform::shaker
+  IL_00a0: ldarg.0
+  IL_00a1: ldfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_00a6: brtrue.s IL_00af
+  IL_00a8: ldc.r4 1
+  IL_00ad: br.s IL_00b4
+  IL_00af: ldc.r4 0.6
+  IL_00b4: ldc.i4.0
+  IL_00b5: callvirt Monocle.ShakerList Monocle.ShakerList::ShakeFor(System.Single,System.Boolean)
+  IL_00ba: pop
+  IL_00bb: ldloc.1
+  IL_00bc: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_00c1: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Image>::GetEnumerator()
+  IL_00c6: stloc.3
+  IL_00c7: br.s IL_011d
+  IL_00c9: ldloca.s V_3
+  IL_00cb: call T System.Collections.Generic.List`1/Enumerator<Monocle.Image>::get_Current()
+  IL_00d0: stloc.s V_4
+  IL_00d2: ldloc.1
+  IL_00d3: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_00d8: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_00dd: ldsfld Monocle.ParticleType Celeste.CrumblePlatform::P_Crumble
+  IL_00e2: ldc.i4.2
+  IL_00e3: ldloc.1
+  IL_00e4: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_00e9: ldloc.s V_4
+  IL_00eb: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_00f0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_00f5: ldc.r4 0
+  IL_00fa: ldc.r4 2
+  IL_00ff: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0104: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0109: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_010e: ldc.r4 3
+  IL_0113: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0118: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_011d: ldloca.s V_3
+  IL_011f: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Image>::MoveNext()
+  IL_0124: brtrue.s IL_00c9
+  IL_0126: leave.s IL_0136
+  IL_0128: ldloca.s V_3
+  IL_012a: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Image>
+  IL_0130: callvirt System.Void System.IDisposable::Dispose()
+  IL_0135: endfinally
+  IL_0136: ldarg.0
+  IL_0137: ldc.i4.0
+  IL_0138: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<i>5__4
+  IL_013d: br IL_01ef
+  IL_0142: ldarg.0
+  IL_0143: ldc.r4 0.2
+  IL_0148: box System.Single
+  IL_014d: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0152: ldarg.0
+  IL_0153: ldc.i4.2
+  IL_0154: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0159: ldc.i4.1
+  IL_015a: ret
+  IL_015b: ldarg.0
+  IL_015c: ldc.i4.m1
+  IL_015d: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0162: ldloc.1
+  IL_0163: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_0168: callvirt System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<Monocle.Image>::GetEnumerator()
+  IL_016d: stloc.3
+  IL_016e: br.s IL_01c4
+  IL_0170: ldloca.s V_3
+  IL_0172: call T System.Collections.Generic.List`1/Enumerator<Monocle.Image>::get_Current()
+  IL_0177: stloc.s V_5
+  IL_0179: ldloc.1
+  IL_017a: callvirt T Monocle.Entity::SceneAs<Celeste.Level>()
+  IL_017f: ldfld Monocle.ParticleSystem Celeste.Level::Particles
+  IL_0184: ldsfld Monocle.ParticleType Celeste.CrumblePlatform::P_Crumble
+  IL_0189: ldc.i4.2
+  IL_018a: ldloc.1
+  IL_018b: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_0190: ldloc.s V_5
+  IL_0192: ldfld Microsoft.Xna.Framework.Vector2 Monocle.GraphicsComponent::Position
+  IL_0197: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_019c: ldc.r4 0
+  IL_01a1: ldc.r4 2
+  IL_01a6: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_01ab: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Addition(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01b0: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_01b5: ldc.r4 3
+  IL_01ba: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_01bf: callvirt System.Void Monocle.ParticleSystem::Emit(Monocle.ParticleType,System.Int32,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_01c4: ldloca.s V_3
+  IL_01c6: call System.Boolean System.Collections.Generic.List`1/Enumerator<Monocle.Image>::MoveNext()
+  IL_01cb: brtrue.s IL_0170
+  IL_01cd: leave.s IL_01dd
+  IL_01cf: ldloca.s V_3
+  IL_01d1: constrained. System.Collections.Generic.List`1/Enumerator<Monocle.Image>
+  IL_01d7: callvirt System.Void System.IDisposable::Dispose()
+  IL_01dc: endfinally
+  IL_01dd: ldarg.0
+  IL_01de: ldfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<i>5__4
+  IL_01e3: stloc.s V_6
+  IL_01e5: ldarg.0
+  IL_01e6: ldloc.s V_6
+  IL_01e8: ldc.i4.1
+  IL_01e9: add
+  IL_01ea: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<i>5__4
+  IL_01ef: ldarg.0
+  IL_01f0: ldfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<i>5__4
+  IL_01f5: ldarg.0
+  IL_01f6: ldfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_01fb: brtrue.s IL_0200
+  IL_01fd: ldc.i4.3
+  IL_01fe: br.s IL_0201
+  IL_0200: ldc.i4.1
+  IL_0201: blt IL_0142
+  IL_0206: ldarg.0
+  IL_0207: ldc.r4 0.4
+  IL_020c: stfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_0211: ldarg.0
+  IL_0212: ldfld System.Boolean Celeste.CrumblePlatform/<Sequence>d__11::<onTop>5__2
+  IL_0217: brfalse.s IL_0284
+  IL_0219: br.s IL_0244
+  IL_021b: ldarg.0
+  IL_021c: ldnull
+  IL_021d: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0222: ldarg.0
+  IL_0223: ldc.i4.3
+  IL_0224: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0229: ldc.i4.1
+  IL_022a: ret
+  IL_022b: ldarg.0
+  IL_022c: ldc.i4.m1
+  IL_022d: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0232: ldarg.0
+  IL_0233: ldarg.0
+  IL_0234: ldfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_0239: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_023e: sub
+  IL_023f: stfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_0244: ldarg.0
+  IL_0245: ldfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_024a: ldc.r4 0
+  IL_024f: ble.un.s IL_0291
+  IL_0251: ldloc.1
+  IL_0252: callvirt Celeste.Player Celeste.Solid::GetPlayerOnTop()
+  IL_0257: brtrue.s IL_021b
+  IL_0259: br.s IL_0291
+  IL_025b: ldarg.0
+  IL_025c: ldnull
+  IL_025d: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0262: ldarg.0
+  IL_0263: ldc.i4.4
+  IL_0264: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0269: ldc.i4.1
+  IL_026a: ret
+  IL_026b: ldarg.0
+  IL_026c: ldc.i4.m1
+  IL_026d: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0272: ldarg.0
+  IL_0273: ldarg.0
+  IL_0274: ldfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_0279: call System.Single Monocle.Engine::get_DeltaTime()
+  IL_027e: sub
+  IL_027f: stfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_0284: ldarg.0
+  IL_0285: ldfld System.Single Celeste.CrumblePlatform/<Sequence>d__11::<timer>5__3
+  IL_028a: ldc.r4 0
+  IL_028f: bgt.s IL_025b
+  IL_0291: ldloc.1
+  IL_0292: ldfld Monocle.Coroutine Celeste.CrumblePlatform::outlineFader
+  IL_0297: ldloc.1
+  IL_0298: ldc.r4 1
+  IL_029d: callvirt System.Collections.IEnumerator Celeste.CrumblePlatform::OutlineFade(System.Single)
+  IL_02a2: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_02a7: ldloc.1
+  IL_02a8: ldfld Celeste.LightOcclude Celeste.CrumblePlatform::occluder
+  IL_02ad: ldc.i4.0
+  IL_02ae: stfld System.Boolean Monocle.Component::Visible
+  IL_02b3: ldloc.1
+  IL_02b4: ldc.i4.0
+  IL_02b5: stfld System.Boolean Monocle.Entity::Collidable
+  IL_02ba: ldc.r4 0.05
+  IL_02bf: stloc.2
+  IL_02c0: ldc.i4.0
+  IL_02c1: stloc.s V_7
+  IL_02c3: br.s IL_0323
+  IL_02c5: ldc.i4.0
+  IL_02c6: stloc.s V_8
+  IL_02c8: br.s IL_030e
+  IL_02ca: ldloc.s V_8
+  IL_02cc: ldc.i4.4
+  IL_02cd: rem
+  IL_02ce: ldloc.s V_7
+  IL_02d0: sub
+  IL_02d1: brtrue.s IL_0308
+  IL_02d3: ldloc.1
+  IL_02d4: ldfld System.Collections.Generic.List`1<Monocle.Coroutine> Celeste.CrumblePlatform::falls
+  IL_02d9: ldloc.s V_8
+  IL_02db: callvirt T System.Collections.Generic.List`1<Monocle.Coroutine>::get_Item(System.Int32)
+  IL_02e0: ldloc.1
+  IL_02e1: ldloc.1
+  IL_02e2: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_02e7: ldloc.1
+  IL_02e8: ldfld System.Collections.Generic.List`1<System.Int32> Celeste.CrumblePlatform::fallOrder
+  IL_02ed: ldloc.s V_8
+  IL_02ef: callvirt T System.Collections.Generic.List`1<System.Int32>::get_Item(System.Int32)
+  IL_02f4: callvirt T System.Collections.Generic.List`1<Monocle.Image>::get_Item(System.Int32)
+  IL_02f9: ldloc.2
+  IL_02fa: ldloc.s V_7
+  IL_02fc: conv.r4
+  IL_02fd: mul
+  IL_02fe: callvirt System.Collections.IEnumerator Celeste.CrumblePlatform::TileOut(Monocle.Image,System.Single)
+  IL_0303: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_0308: ldloc.s V_8
+  IL_030a: ldc.i4.1
+  IL_030b: add
+  IL_030c: stloc.s V_8
+  IL_030e: ldloc.s V_8
+  IL_0310: ldloc.1
+  IL_0311: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_0316: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Image>::get_Count()
+  IL_031b: blt.s IL_02ca
+  IL_031d: ldloc.s V_7
+  IL_031f: ldc.i4.1
+  IL_0320: add
+  IL_0321: stloc.s V_7
+  IL_0323: ldloc.s V_7
+  IL_0325: ldc.i4.4
+  IL_0326: blt.s IL_02c5
+  IL_0328: ldarg.0
+  IL_0329: ldc.r4 2
+  IL_032e: box System.Single
+  IL_0333: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0338: ldarg.0
+  IL_0339: ldc.i4.5
+  IL_033a: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_033f: ldc.i4.1
+  IL_0340: ret
+  IL_0341: ldarg.0
+  IL_0342: ldc.i4.m1
+  IL_0343: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0348: br.s IL_0361
+  IL_034a: ldarg.0
+  IL_034b: ldnull
+  IL_034c: stfld System.Object Celeste.CrumblePlatform/<Sequence>d__11::<>2__current
+  IL_0351: ldarg.0
+  IL_0352: ldc.i4.6
+  IL_0353: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0358: ldc.i4.1
+  IL_0359: ret
+  IL_035a: ldarg.0
+  IL_035b: ldc.i4.m1
+  IL_035c: stfld System.Int32 Celeste.CrumblePlatform/<Sequence>d__11::<>1__state
+  IL_0361: ldloc.1
+  IL_0362: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Actor>()
+  IL_0367: brtrue.s IL_034a
+  IL_0369: ldloc.1
+  IL_036a: callvirt System.Boolean Monocle.Entity::CollideCheck<Celeste.Solid>()
+  IL_036f: brtrue.s IL_034a
+  IL_0371: ldloc.1
+  IL_0372: ldfld Monocle.Coroutine Celeste.CrumblePlatform::outlineFader
+  IL_0377: ldloc.1
+  IL_0378: ldc.r4 0
+  IL_037d: callvirt System.Collections.IEnumerator Celeste.CrumblePlatform::OutlineFade(System.Single)
+  IL_0382: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_0387: ldloc.1
+  IL_0388: ldfld Celeste.LightOcclude Celeste.CrumblePlatform::occluder
+  IL_038d: ldc.i4.1
+  IL_038e: stfld System.Boolean Monocle.Component::Visible
+  IL_0393: ldloc.1
+  IL_0394: ldc.i4.1
+  IL_0395: stfld System.Boolean Monocle.Entity::Collidable
+  IL_039a: ldc.i4.0
+  IL_039b: stloc.s V_9
+  IL_039d: br.s IL_0403
+  IL_039f: ldc.i4.0
+  IL_03a0: stloc.s V_10
+  IL_03a2: br.s IL_03ee
+  IL_03a4: ldloc.s V_10
+  IL_03a6: ldc.i4.4
+  IL_03a7: rem
+  IL_03a8: ldloc.s V_9
+  IL_03aa: sub
+  IL_03ab: brtrue.s IL_03e8
+  IL_03ad: ldloc.1
+  IL_03ae: ldfld System.Collections.Generic.List`1<Monocle.Coroutine> Celeste.CrumblePlatform::falls
+  IL_03b3: ldloc.s V_10
+  IL_03b5: callvirt T System.Collections.Generic.List`1<Monocle.Coroutine>::get_Item(System.Int32)
+  IL_03ba: ldloc.1
+  IL_03bb: ldloc.s V_10
+  IL_03bd: ldloc.1
+  IL_03be: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_03c3: ldloc.1
+  IL_03c4: ldfld System.Collections.Generic.List`1<System.Int32> Celeste.CrumblePlatform::fallOrder
+  IL_03c9: ldloc.s V_10
+  IL_03cb: callvirt T System.Collections.Generic.List`1<System.Int32>::get_Item(System.Int32)
+  IL_03d0: callvirt T System.Collections.Generic.List`1<Monocle.Image>::get_Item(System.Int32)
+  IL_03d5: ldc.r4 0.05
+  IL_03da: ldloc.s V_9
+  IL_03dc: conv.r4
+  IL_03dd: mul
+  IL_03de: callvirt System.Collections.IEnumerator Celeste.CrumblePlatform::TileIn(System.Int32,Monocle.Image,System.Single)
+  IL_03e3: callvirt System.Void Monocle.Coroutine::Replace(System.Collections.IEnumerator)
+  IL_03e8: ldloc.s V_10
+  IL_03ea: ldc.i4.1
+  IL_03eb: add
+  IL_03ec: stloc.s V_10
+  IL_03ee: ldloc.s V_10
+  IL_03f0: ldloc.1
+  IL_03f1: ldfld System.Collections.Generic.List`1<Monocle.Image> Celeste.CrumblePlatform::images
+  IL_03f6: callvirt System.Int32 System.Collections.Generic.List`1<Monocle.Image>::get_Count()
+  IL_03fb: blt.s IL_03a4
+  IL_03fd: ldloc.s V_9
+  IL_03ff: ldc.i4.1
+  IL_0400: add
+  IL_0401: stloc.s V_9
+  IL_0403: ldloc.s V_9
+  IL_0405: ldc.i4.4
+  IL_0406: blt.s IL_039f
+  IL_0408: br IL_0039

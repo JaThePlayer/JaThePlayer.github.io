@@ -1,0 +1,41 @@
+IL Diff: System.Void Celeste.GrabbyIcon::Render()
+  IL_0000: ldarg.0
+  IL_0001: ldfld System.Boolean Celeste.GrabbyIcon::enabled
+  IL_0006: brfalse.s IL_007e
+  IL_0008: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_One()
+  IL_000d: ldc.r4 1
+  IL_0012: ldarg.0
+  IL_0013: ldfld Monocle.Wiggler Celeste.GrabbyIcon::wiggler
+  IL_0018: callvirt System.Single Monocle.Wiggler::get_Value()
+  IL_001d: ldc.r4 0.2
+  IL_0022: mul
+  IL_0023: add
+  IL_0024: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Multiply(Microsoft.Xna.Framework.Vector2,System.Single)
+  IL_0029: stloc.0
+  IL_002a: ldarg.0
+  IL_002b: call Monocle.Scene Monocle.Entity::get_Scene()
+  IL_0030: callvirt Monocle.Tracker Monocle.Scene::get_Tracker()
+  IL_0035: callvirt T Monocle.Tracker::GetEntity<Celeste.Player>()
+  IL_003a: stloc.1
+  IL_003b: ldloc.1
+  IL_003c: brfalse.s IL_007e
+  IL_003e: ldsfld Monocle.Atlas Celeste.GFX::Game
+  IL_0043: ldstr "util/glove"
+  IL_0048: callvirt Monocle.MTexture Monocle.Atlas::get_Item(System.String)
+  IL_004d: ldloc.1
+  IL_004e: callvirt System.Single Monocle.Entity::get_X()
++ IL_0000: ldarg.0 @ Celeste.Mod.Aqua.Core.GrabbyIconExtends::GrabbyIcon_ILRender
++ IL_0000: call System.Single Celeste.Mod.Aqua.Core.GrabbyIconExtends::CalculateOffset(Celeste.GrabbyIcon) @ Celeste.Mod.Aqua.Core.GrabbyIconExtends::GrabbyIcon_ILRender
++ IL_0000: add @ Celeste.Mod.Aqua.Core.GrabbyIconExtends::GrabbyIcon_ILRender
+  IL_0053: ldloc.1
+  IL_0054: callvirt System.Single Monocle.Entity::get_Y()
+  IL_0059: ldc.r4 16
+  IL_005e: sub
+  IL_005f: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0064: ldc.r4 0.5
+  IL_0069: ldc.r4 1
+  IL_006e: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_0073: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0078: ldloc.0
+  IL_0079: callvirt System.Void Monocle.MTexture::DrawJustified(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Vector2)
+  IL_007e: ret

@@ -1,0 +1,64 @@
+IL Diff: System.Void Celeste.Mod.Spirialis.TimeGameplayRenderer::Render(Monocle.Scene)
+  IL_0000: nop
+  IL_0001: call System.Void Celeste.Mod.Spirialis.TimeGameplayRenderer::Begin()
+  IL_0006: nop
+  IL_0007: ldarg.1
+  IL_0008: brfalse.s IL_0034
+  IL_000a: ldarg.1
+  IL_000b: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0010: brfalse.s IL_0034
+  IL_0012: ldarg.1
+  IL_0013: isinst Celeste.Level
+  IL_0018: ldfld Celeste.Session Celeste.Level::Session
+  IL_001d: callvirt Celeste.LevelData Celeste.Session::get_LevelData()
+  IL_0022: ldfld System.String Celeste.LevelData::Name
+  IL_0027: ldstr "lobby"
+  IL_002c: ldc.i4.3
+  IL_002d: callvirt System.Boolean System.String::StartsWith(System.String,System.StringComparison)
+  IL_0032: br.s IL_0035
+  IL_0034: ldc.i4.1
+  IL_0035: stloc.1
+  IL_0036: ldloc.1
+  IL_0037: brfalse.s IL_003e
+  IL_0039: br IL_00ba
+  IL_003e: ldsfld System.Reflection.FieldInfo Celeste.Mod.Spirialis.TimeGameplayRenderer::getEntities
+  IL_0043: ldarg.1
+  IL_0044: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_0049: callvirt System.Object System.Reflection.FieldInfo::GetValue(System.Object)
+  IL_004e: castclass System.Collections.Generic.List`1<Monocle.Entity>
+  IL_0053: stloc.0
+  IL_0054: ldarg.0
+  IL_0055: ldloc.0
+  IL_0056: ldsfld Monocle.BitTag Celeste.Tags::HUD
+  IL_005b: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_0060: ldsfld Monocle.BitTag Celeste.TagsExt::SubHUD
+  IL_0065: call System.Int32 Monocle.BitTag::op_Implicit(Monocle.BitTag)
+  IL_006a: or
+  IL_006b: ldsfld Celeste.Mod.Spirialis.TimeController Celeste.Mod.Spirialis.TimeController::instance
+  IL_0070: ldfld System.Int32 Celeste.Mod.Spirialis.TimeController::renderLayer
+  IL_0075: callvirt System.Void Celeste.Mod.Spirialis.TimeGameplayRenderer::CustomRenderExcept(System.Collections.Generic.List`1<Monocle.Entity>,System.Int32,System.Int32)
+  IL_007a: nop
+  IL_007b: ldsfld System.Boolean Celeste.Mod.Spirialis.TimeGameplayRenderer::RenderDebug
++ IL_0000: call System.Boolean TAS.Gameplay.Hitboxes.ModInterop.SpirialisHelperHitbox::FixStopwatchRendering_Delegate(System.Boolean) @ TAS.Utils.ModILHook+<>c__DisplayClass4_0::<Initialize>b__4
+  IL_0080: brtrue.s IL_008e
+  IL_0082: call Monocle.Commands Monocle.Engine::get_Commands()
+  IL_0087: ldfld System.Boolean Monocle.Commands::Open
+  IL_008c: brfalse.s IL_009d
+  IL_008e: ldsfld Celeste.Mod.Spirialis.TimeController Celeste.Mod.Spirialis.TimeController::instance
+  IL_0093: ldfld System.Int32 Celeste.Mod.Spirialis.TimeController::renderLayer
+  IL_0098: ldc.i4.3
+  IL_0099: ceq
+  IL_009b: br.s IL_009e
+  IL_009d: ldc.i4.0
+  IL_009e: stloc.2
+  IL_009f: ldloc.2
+  IL_00a0: brfalse.s IL_00b4
+  IL_00a2: ldarg.1
+  IL_00a3: callvirt Monocle.EntityList Monocle.Scene::get_Entities()
+  IL_00a8: ldarg.0
+  IL_00a9: ldfld Monocle.Camera Celeste.Mod.Spirialis.TimeGameplayRenderer::Camera
+  IL_00ae: callvirt System.Void Monocle.EntityList::DebugRender(Monocle.Camera)
+  IL_00b3: nop
+  IL_00b4: call System.Void Celeste.Mod.Spirialis.TimeGameplayRenderer::End()
+  IL_00b9: nop
+  IL_00ba: ret

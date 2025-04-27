@@ -1,45 +1,38 @@
 IL Diff: System.Void TAS.Manager::EnableRun()
-+ IL_0000: ldc.i4 2699 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 40832798 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ldc.i4 21025005 @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
   |-> retrieves System.Void Celeste.Mod.GhostModForTas.Module.Loader/<>c::<Initialize>b__2_1()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.GhostModForTas.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: ldc.i4 13312083 @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-+ IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-  |-> retrieves System.Void Celeste.Mod.GhostModForTas.Module.Loader/<>c::<Initialize>b__2_1()
-+ IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-  IL_0000: call Monocle.Scene Monocle.Engine::get_Scene()
-  IL_0005: isinst Celeste.GameLoader
-  IL_000a: brtrue.s IL_0013
-  IL_000c: call System.Boolean TAS.EverestInterop.CriticalErrorHandlerFixer::get_Handling()
-  IL_0011: brfalse.s IL_002c
-  IL_0013: ldc.i4.0
-  IL_0014: stsfld System.Boolean TAS.Manager::Running
-  IL_0019: ldc.i4.0
-  IL_001a: stsfld StudioCommunication.States TAS.Manager::LastStates
-  IL_001f: ldc.i4.0
-  IL_0020: stsfld StudioCommunication.States TAS.Manager::States
-  IL_0025: ldc.i4.0
-  IL_0026: stsfld StudioCommunication.States TAS.Manager::NextStates
-  IL_002b: ret
-  IL_002c: ldc.i4.1
-  IL_002d: stsfld System.Boolean TAS.Manager::Running
-  IL_0032: ldsfld StudioCommunication.States TAS.Manager::States
-  IL_0037: ldc.i4.1
-  IL_0038: or
-  IL_0039: stsfld StudioCommunication.States TAS.Manager::States
-  IL_003e: ldsfld StudioCommunication.States TAS.Manager::States
-  IL_0043: ldc.i4 253
-  IL_0048: and
-  IL_0049: stsfld StudioCommunication.States TAS.Manager::States
-  IL_004e: ldsfld StudioCommunication.States TAS.Manager::NextStates
-  IL_0053: ldc.i4 254
-  IL_0058: and
-  IL_0059: stsfld StudioCommunication.States TAS.Manager::NextStates
-  IL_005e: call System.Void TAS.Utils.AttributeUtils::Invoke<TAS.EnableRunAttribute>()
-  IL_0063: ldsfld TAS.Input.InputController TAS.Manager::Controller
-  IL_0068: ldc.i4.1
-  IL_0069: callvirt System.Void TAS.Input.InputController::RefreshInputs(System.Boolean)
-+ IL_0000: call System.Void Celeste.Mod.TASHelper.Utils.RestoreSettingsExt::SkipTASHelper() @ Celeste.Mod.TASHelper.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
-  IL_006e: ret
+  IL_0000: call System.Boolean TAS.Manager::get_Running()
+  IL_0005: brfalse.s IL_0008
+  IL_0007: ret
+  IL_0008: ldc.i4.1
+  IL_0009: dup
+  IL_000a: stsfld TAS.Manager/State TAS.Manager::NextState
+  IL_000f: stsfld TAS.Manager/State TAS.Manager::CurrState
+  IL_0014: ldc.r4 1
+  IL_0019: call System.Void TAS.Manager::set_PlaybackSpeed(System.Single)
+  IL_001e: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_0023: callvirt System.Void TAS.Input.InputController::Stop()
+  IL_0028: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_002d: ldc.i4.0
+  IL_002e: callvirt System.Void TAS.Input.InputController::RefreshInputs(System.Boolean)
+  IL_0033: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_0038: ldfld System.Collections.Generic.List`1<TAS.Input.InputFrame> TAS.Input.InputController::Inputs
+  IL_003d: callvirt System.Int32 System.Collections.Generic.List`1<TAS.Input.InputFrame>::get_Count()
+  IL_0042: brtrue.s IL_0051
+  IL_0044: ldc.i4.0
+  IL_0045: dup
+  IL_0046: stsfld TAS.Manager/State TAS.Manager::NextState
+  IL_004b: stsfld TAS.Manager/State TAS.Manager::CurrState
+  IL_0050: ret
+  IL_0051: call System.Void TAS.Utils.AttributeUtils::Invoke<TAS.EnableRunAttribute>()
+  IL_0056: call System.Void TAS.Savestates::EnableRun()
+  IL_005b: ldstr "Starting TAS: "
+  IL_0060: ldsfld TAS.Input.InputController TAS.Manager::Controller
+  IL_0065: callvirt System.String TAS.Input.InputController::get_FilePath()
+  IL_006a: call System.String System.String::Concat(System.String,System.String)
+  IL_006f: ldc.i4.2
+  IL_0070: call System.Void TAS.Utils.LogUtil::Log(System.Object,Celeste.Mod.LogLevel)
+  IL_0075: ret

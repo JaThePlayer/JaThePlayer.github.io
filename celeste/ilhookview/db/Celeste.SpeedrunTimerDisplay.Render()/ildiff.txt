@@ -4,10 +4,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_0006: ldc.r4 0
   IL_000b: bgt.un.s IL_000e
   IL_000d: ret
-+ IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call System.Single Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::UpdateAlpha(Celeste.SpeedrunTimerDisplay,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: stloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: call System.Single Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::UpdateAlpha() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: stloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_000e: ldc.r4 -300
   IL_0013: ldsfld Monocle.Ease/Easer Monocle.Ease::CubeIn
   IL_0018: ldc.r4 1
@@ -39,10 +37,10 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_0063: ldarg.0
   IL_0064: call System.Single Monocle.Entity::get_Y()
   IL_0069: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
-+ IL_0000: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_0000: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
   IL_0073: ldloc.0
   IL_0074: ldc.r4 32
@@ -62,8 +60,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_00a2: add
   IL_00a3: ldloc.2
   IL_00a4: ldfld System.Boolean Celeste.Session::StartedFromBeginning
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
-+ IL_0000: ldc.i4 43182394 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
++ IL_0000: ldc.i4 26521103 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
   |-> retrieves System.Boolean Celeste.Mod.InverseHelper.InverseHelperModule/<>c::<SpeedrunTimerDisplay_Render>b__13_0(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
@@ -72,8 +70,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_00af: ldloc.2
   IL_00b0: ldfld System.Boolean Celeste.Session::BeatBestTime
   IL_00b5: ldc.r4 1
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_00ba: call System.Void Celeste.SpeedrunTimerDisplay::DrawTime(Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Single)
   IL_00bf: ret
   IL_00c0: ldsfld Celeste.Settings Celeste.Settings::Instance
@@ -141,8 +139,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_0186: conv.r4
   IL_0187: ldc.r4 38
   IL_018c: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_Black()
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_0191: call System.Void Monocle.Draw::Rect(System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)
   IL_0196: ldarg.0
   IL_0197: ldfld Monocle.MTexture Celeste.SpeedrunTimerDisplay::bg
@@ -153,10 +151,10 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_01a1: ldarg.0
   IL_01a2: call System.Single Monocle.Entity::get_Y()
   IL_01a7: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
-+ IL_0000: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White() @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_0000: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
   IL_01b1: ldloc.0
   IL_01b2: ldc.r4 32
@@ -172,8 +170,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_01d1: ldc.i4.0
   IL_01d2: ldc.i4.0
   IL_01d3: ldc.r4 1
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_01d8: call System.Void Celeste.SpeedrunTimerDisplay::DrawTime(Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Single)
   IL_01dd: ldarg.0
   IL_01de: ldfld Monocle.MTexture Celeste.SpeedrunTimerDisplay::bg
@@ -185,8 +183,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_01f0: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
   IL_01f5: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::get_Zero()
   IL_01fa: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::Multiply(Microsoft.Xna.Framework.Color,System.Single) @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_01ff: ldc.r4 0.6
   IL_0204: callvirt System.Void Monocle.MTexture::Draw(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.Single)
   IL_0209: ldloc.0
@@ -211,8 +209,8 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_0245: mul
   IL_0246: ldloc.2
   IL_0247: ldfld System.Boolean Celeste.Session::StartedFromBeginning
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
-+ IL_0000: ldc.i4 8113015 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
++ IL_0000: ldc.i4 725719 @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
   |-> retrieves System.Boolean Celeste.Mod.InverseHelper.InverseHelperModule/<>c::<SpeedrunTimerDisplay_Render>b__13_0(System.Boolean)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,System.Boolean>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.InverseHelper.InverseHelperModule::SpeedrunTimerDisplay_Render
@@ -221,7 +219,7 @@ IL Diff: System.Void Celeste.SpeedrunTimerDisplay::Render()
   IL_0252: ldloc.2
   IL_0253: ldfld System.Boolean Celeste.Session::BeatBestTime
   IL_0258: ldc.r4 0.6
-+ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
-+ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::ILSpeedrunTimerDisplayRender
++ IL_0000: ldloc V_10 @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
++ IL_0000: mul @ Celeste.Mod.TASHelper.Gameplay.BetterSpeedrunTimerDisplay::IL_SpeedrunTimerDisplay_Render
   IL_025d: call System.Void Celeste.SpeedrunTimerDisplay::DrawTime(Microsoft.Xna.Framework.Vector2,System.String,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Single)
   IL_0262: ret

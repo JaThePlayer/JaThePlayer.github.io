@@ -1,44 +1,39 @@
 IL Diff: System.Void CustomMoonCreature::DebugRender(Monocle.Camera)
-+ IL_0000: call System.Boolean TAS.EverestInterop.Hitboxes.HitboxSimplified::IsSimplifiedHitboxes() @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
-+ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
-+ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass10_0::<SkipMethod>b__0
-  IL_0000: nop
-  IL_0001: ldarg.0
-  IL_0002: ldarg.1
-  IL_0003: call System.Void Monocle.Entity::DebugRender(Monocle.Camera)
-  IL_0008: nop
-  IL_0009: ldarg.0
-  IL_000a: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
-  IL_000f: ldarg.0
-  IL_0010: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::target
-  IL_0015: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
-  IL_001a: ldc.r4 0.5
-  IL_001f: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
-  IL_0024: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
-  IL_0029: nop
-  IL_002a: ldarg.0
-  IL_002b: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::target
-  IL_0030: ldc.r4 2
-  IL_0035: ldc.r4 2
-  IL_003a: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
-  IL_003f: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
-  IL_0044: ldc.r4 4
-  IL_0049: ldc.r4 4
-  IL_004e: ldarg.0
-  IL_004f: ldfld Microsoft.Xna.Framework.Color CustomMoonCreature::CenterColor
-  IL_0054: ldc.r4 0.5
-  IL_0059: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
-  IL_005e: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
-  IL_0063: nop
-  IL_0064: ldarg.0
-  IL_0065: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::start
-  IL_006a: ldarg.0
-  IL_006b: ldfld System.Single CustomMoonCreature::targetRangeRadius
-  IL_0070: ldarg.0
-  IL_0071: ldfld Microsoft.Xna.Framework.Color CustomMoonCreature::CenterColor
-  IL_0076: ldc.r4 0.5
-  IL_007b: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
-  IL_0080: ldc.i4.s 16
-  IL_0082: call System.Void Monocle.Draw::Circle(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Int32)
-  IL_0087: nop
-  IL_0088: ret
++ IL_0000: call System.Boolean TAS.EverestInterop.Hitboxes.HitboxSimplified::IsSimplifiedHitboxes() @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: brfalse IL_0000 @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
++ IL_0000: ret @ TAS.Utils.HookHelper+<>c__DisplayClass6_0::<IlHook>b__0
+  IL_0000: ldarg.0
+  IL_0001: ldarg.1
+  IL_0002: call System.Void Monocle.Entity::DebugRender(Monocle.Camera)
+  IL_0007: ldarg.0
+  IL_0008: ldfld Microsoft.Xna.Framework.Vector2 Monocle.Entity::Position
+  IL_000d: ldarg.0
+  IL_000e: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::Target
+  IL_0013: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
+  IL_0018: ldc.r4 0.5
+  IL_001d: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_0022: call System.Void Monocle.Draw::Line(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color)
+  IL_0027: ldarg.0
+  IL_0028: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::Target
+  IL_002d: ldc.r4 2
+  IL_0032: ldc.r4 2
+  IL_0037: newobj System.Void Microsoft.Xna.Framework.Vector2::.ctor(System.Single,System.Single)
+  IL_003c: call Microsoft.Xna.Framework.Vector2 Microsoft.Xna.Framework.Vector2::op_Subtraction(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)
+  IL_0041: ldc.r4 4
+  IL_0046: ldc.r4 4
+  IL_004b: ldarg.0
+  IL_004c: ldfld Microsoft.Xna.Framework.Color CustomMoonCreature::centerColor
+  IL_0051: ldc.r4 0.5
+  IL_0056: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_005b: call System.Void Monocle.Draw::Rect(Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Color)
+  IL_0060: ldarg.0
+  IL_0061: ldfld Microsoft.Xna.Framework.Vector2 CustomMoonCreature::Start
+  IL_0066: ldarg.0
+  IL_0067: ldfld System.Single CustomMoonCreature::targetRangeRadius
+  IL_006c: ldarg.0
+  IL_006d: ldfld Microsoft.Xna.Framework.Color CustomMoonCreature::centerColor
+  IL_0072: ldc.r4 0.5
+  IL_0077: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::op_Multiply(Microsoft.Xna.Framework.Color,System.Single)
+  IL_007c: ldc.i4.s 16
+  IL_007e: call System.Void Monocle.Draw::Circle(Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Color,System.Int32)
+  IL_0083: ret

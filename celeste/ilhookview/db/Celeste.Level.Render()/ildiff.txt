@@ -17,8 +17,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_003f: ldarg.0
   IL_0040: callvirt System.Void Monocle.Renderer::Render(Monocle.Scene)
 + IL_0000: ldarg.0 @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
-+ IL_0000: ldc.i4 2698 @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
-+ IL_0000: ldc.i4 28978790 @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
++ IL_0000: ldc.i4 3851 @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
++ IL_0000: ldc.i4 46344683 @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
   |-> retrieves System.Void Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils/<>c::<LevelOnRender>b__6_4(Celeste.Level)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.StrawberryTool.Feature.Detector.DetectorUtils::LevelOnRender
@@ -32,30 +32,32 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_0068: ldarg.0
   IL_0069: ldfld Microsoft.Xna.Framework.Color Celeste.Level::BackgroundColor
   IL_006e: callvirt System.Void Microsoft.Xna.Framework.Graphics.GraphicsDevice::Clear(Microsoft.Xna.Framework.Color)
-  IL_0073: ldarg.0
+  IL_0000: ldarg.0
++ IL_0000: call System.Void Celeste.Mod.Aqua.Rendering.RenderHook::RenderBackground(Celeste.Level) @ Celeste.Mod.Aqua.Rendering.RenderHook::Level_ILRender
++ IL_0073: ldarg.0 @ Celeste.Mod.Aqua.Rendering.RenderHook::Level_ILRender
   IL_0074: ldfld Celeste.BackdropRenderer Celeste.Level::Background
   IL_0079: ldarg.0
   IL_007a: callvirt System.Void Monocle.Renderer::Render(Monocle.Scene)
 + IL_0000: ldarg.0 @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
-+ IL_0000: ldc.i4 3660 @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
-+ IL_0000: ldc.i4 38716421 @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
++ IL_0000: ldc.i4 3969 @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
++ IL_0000: ldc.i4 7319169 @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
   |-> retrieves System.Void ExtendedVariants.Variants.BackgroundBlurLevel::BackgroundBlurLevelBuffer()
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
 + IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 3569 @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
-+ IL_0000: ldc.i4 48877334 @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
++ IL_0000: ldc.i4 3935 @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
++ IL_0000: ldc.i4 8140616 @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BackgroundBrightness::modLevelRender
   |-> retrieves System.Void ExtendedVariants.Variants.BackgroundBlurLevel::BackgroundBlurLevelBuffer()
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 2983 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 10262541 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 3930 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 39691071 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
   |-> retrieves System.Void ExtendedVariants.Variants.BackgroundBlurLevel::BackgroundBlurLevelBuffer()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.BackgroundBlurLevel::modLevelRender
 + IL_0000: ldarg this @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
-+ IL_0000: ldc.i4 2882 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
-+ IL_0000: ldc.i4 10431541 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
++ IL_0000: ldc.i4 3871 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
++ IL_0000: ldc.i4 62931856 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
   |-> retrieves System.Boolean Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule/<>c::<modLevelRender>b__7_0(Celeste.Level)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
@@ -74,20 +76,20 @@ IL Diff: System.Void Celeste.Level::Render()
 + IL_0000: brfalse IL_00a4 @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
 + IL_0000: ldarg.0 @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
 + IL_0000: call System.Void Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::customBloomBehavior(Celeste.Level) @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
-+ IL_0000: br IL_00c1 @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
++ IL_0000: br IL_0000 @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
 + IL_00a4: ldarg.0 @ Celeste.Mod.aonHelper.Entities.FgStylegroundBloomController::mod_LevelRender
   IL_00a5: ldfld Celeste.BloomRenderer Celeste.Level::Bloom
   IL_00aa: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Level
   IL_00af: ldarg.0
   IL_00b0: callvirt System.Void Celeste.BloomRenderer::Apply(Monocle.VirtualRenderTarget,Monocle.Scene)
-+ IL_0000: ldc.i4 3647 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
-+ IL_0000: ldc.i4 63879148 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
++ IL_0000: ldc.i4 3937 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
++ IL_0000: ldc.i4 55410182 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
   |-> retrieves System.Void ExtendedVariants.Variants.ForegroundEffectOpacity::prepareForegroundOpacityEffect()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
   IL_0000: ldarg.0
-+ IL_0000: ldc.i4 3680 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 49022416 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 3972 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 55981808 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
   |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer/<>c::<Level_Render>b__37_5(Celeste.Level)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
@@ -96,23 +98,25 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_00bb: ldarg.0
   IL_00bc: callvirt System.Void Monocle.Renderer::Render(Monocle.Scene)
 + IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 3682 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
-+ IL_0000: ldc.i4 11392772 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
++ IL_0000: ldc.i4 4055 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
++ IL_0000: ldc.i4 38232624 @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
   |-> retrieves System.Void ExtendedVariants.Variants.ForegroundEffectOpacity::finishForegroundOpacityEffect()
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 3648 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
-+ IL_0000: ldc.i4 38041423 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 3964 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
++ IL_0000: ldc.i4 28929591 @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.StylegroundMaskRenderer::Level_Render
   |-> retrieves System.Void ExtendedVariants.Variants.ForegroundEffectOpacity::finishForegroundOpacityEffect()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.ForegroundEffectOpacity::modLevelRender
 + IL_0000: ldarg this @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
-+ IL_0000: ldc.i4 2884 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
-+ IL_0000: ldc.i4 39648463 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
++ IL_0000: ldc.i4 3873 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
++ IL_0000: ldc.i4 64315561 @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
   |-> retrieves System.Boolean Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule/<>c::<modLevelRender>b__7_1(Celeste.Level)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Boolean,Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
 + IL_0000: pop @ Celeste.Mod.WindowpaneHelper.WindowpaneHelperModule::modLevelRender
++ IL_0000: ldarg.0 @ Celeste.Mod.Aqua.Rendering.RenderHook::Level_ILRender
++ IL_0000: call System.Void Celeste.Mod.Aqua.Rendering.RenderHook::RenderForeground(Celeste.Level) @ Celeste.Mod.Aqua.Rendering.RenderHook::Level_ILRender
   IL_00c1: ldsfld Monocle.VirtualRenderTarget Celeste.GameplayBuffers::Level
   IL_00c6: ldarg.0
   IL_00c7: ldfld System.Single Celeste.Level::glitchTimer
@@ -122,7 +126,6 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_00d3: ldfld System.Single Celeste.Level::glitchSeed
   IL_00d8: ldc.r4 6.2831855
   IL_00dd: call System.Void Celeste.Glitch::Apply(Monocle.VirtualRenderTarget,System.Single,System.Single,System.Single)
-+ IL_0000: call System.Void Celeste.Mod.SaladimHelper.FilterModule::ApplyFilters() @ Celeste.Mod.SaladimHelper.FilterModule::Level_Render
   IL_00e2: ldsfld System.Boolean Monocle.Engine::DashAssistFreeze
   IL_00e7: brfalse.s IL_0133
   IL_00e9: ldarg.0
@@ -198,22 +201,22 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_01e7: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
   IL_01ec: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
   IL_01f1: call Monocle.Engine Monocle.Engine::get_Instance()
-+ IL_0000: ldc.i4 3751 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 26874012 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 4134 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 34879203 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   |-> retrieves System.Void Celeste.Mod.Spirialis.TimeController::RenderTimestopEntities()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   IL_01f6: callvirt Microsoft.Xna.Framework.Graphics.GraphicsDevice Microsoft.Xna.Framework.Game::get_GraphicsDevice()
 + IL_0000: ldarg.0 @ Celeste.Mod.TASHelper.Gameplay.HiresLevelRenderer::ILLevelRender
 + IL_0000: call System.Void Celeste.Mod.TASHelper.Gameplay.HiresLevelRenderer::Render(Celeste.Level) @ Celeste.Mod.TASHelper.Gameplay.HiresLevelRenderer::ILLevelRender
-+ IL_0000: ldc.i4 2982 @ ExtendedVariants.Variants.BlurLevel::modLevelRender
-+ IL_0000: ldc.i4 18353796 @ ExtendedVariants.Variants.BlurLevel::modLevelRender
++ IL_0000: ldc.i4 3929 @ ExtendedVariants.Variants.BlurLevel::modLevelRender
++ IL_0000: ldc.i4 11866659 @ ExtendedVariants.Variants.BlurLevel::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ ExtendedVariants.Variants.BlurLevel::modLevelRender
   |-> retrieves System.Void ExtendedVariants.Variants.BlurLevel::blurLevelBuffer()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ ExtendedVariants.Variants.BlurLevel::modLevelRender
 + IL_0000: ldarg.0 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
-+ IL_0000: ldc.i4 3747 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
-+ IL_0000: ldc.i4 50940551 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
++ IL_0000: ldc.i4 4122 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
++ IL_0000: ldc.i4 9834857 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
   |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask/<>c::<Level_Render>b__13_2(Celeste.Level)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal1<Celeste.Level>(T0,MonoMod.Cil.FastDelegateInvokers/VoidVal1`1<T0>) @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
@@ -263,8 +266,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_029d: ldsfld Monocle.Atlas Celeste.GFX::ColorGrades
   IL_02a2: ldarg.0
   IL_02a3: ldfld System.String Celeste.Level::lastColorGrade
-+ IL_0000: ldc.i4 2984 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
-+ IL_0000: ldc.i4 25959498 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
++ IL_0000: ldc.i4 3931 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
++ IL_0000: ldc.i4 21675327 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ColorGrading::modLevelRender
   |-> retrieves System.String ExtendedVariants.Variants.ColorGrading::modColorGrading(System.String)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.ColorGrading::modLevelRender
@@ -277,13 +280,13 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_02c3: ldarg.0
   IL_02c4: ldfld Celeste.Session Celeste.Level::Session
   IL_02c9: ldfld System.String Celeste.Session::ColorGrade
-+ IL_0000: ldc.i4 3839 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
-+ IL_0000: ldc.i4 40539521 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
++ IL_0000: ldc.i4 4135 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
++ IL_0000: ldc.i4 45477374 @ ExtendedVariants.Variants.ColorGrading::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ColorGrading::modLevelRender
   |-> retrieves System.String ExtendedVariants.Variants.ColorGrading::modColorGrading(System.String)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.ColorGrading::modLevelRender
-+ IL_0000: ldc.i4 3086 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 22344612 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 3933 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 10871059 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   |-> retrieves System.String ExtendedVariants.Variants.ColorGrading::modColorGrading(System.String)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.String,System.String>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
@@ -294,8 +297,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_02e2: stloc.s V_7
   IL_02e4: ldarg.0
   IL_02e5: ldfld System.Single Celeste.Level::colorGradeEase
-+ IL_0000: ldc.i4 3841 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 62475746 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 4153 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 59788703 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   |-> retrieves System.Single Celeste.Mod.Spirialis.TimeController::getColorGradeEase(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
@@ -308,8 +311,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_02f9: ldloc.s V_7
   IL_02fb: ldarg.0
   IL_02fc: ldfld System.Single Celeste.Level::colorGradeEase
-+ IL_0000: ldc.i4 3843 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 27370697 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 4170 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 11046813 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   |-> retrieves System.Single Celeste.Mod.Spirialis.TimeController::getColorGradeEase(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
@@ -319,8 +322,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_030a: call System.Void Celeste.ColorGrade::Set(Monocle.MTexture)
   IL_030f: ldarg.0
   IL_0310: ldfld System.Single Celeste.Level::Zoom
-+ IL_0000: ldc.i4 2978 @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
-+ IL_0000: ldc.i4 46918213 @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
++ IL_0000: ldc.i4 3926 @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
++ IL_0000: ldc.i4 42177951 @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
   |-> retrieves System.Single ExtendedVariants.Variants.ZoomLevel::modZoom(System.Single)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<System.Single,System.Single>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ ExtendedVariants.Variants.ZoomLevel::modLevelRender
@@ -370,8 +373,8 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_0398: ldsfld Microsoft.Xna.Framework.Graphics.RasterizerState Microsoft.Xna.Framework.Graphics.RasterizerState::CullNone
   IL_039d: call Microsoft.Xna.Framework.Graphics.Effect Celeste.ColorGrade::get_Effect()
   IL_03a2: ldloc.2
-+ IL_0000: ldc.i4 3651 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
-+ IL_0000: ldc.i4 40097492 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
++ IL_0000: ldc.i4 3967 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
++ IL_0000: ldc.i4 17488954 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
   |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onLevelRender>b__4_3()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
@@ -388,23 +391,23 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_03cf: call Microsoft.Xna.Framework.Color Microsoft.Xna.Framework.Color::get_White()
 + IL_0000: pop @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
 + IL_0000: ldarg.0 @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
-+ IL_0000: ldc.i4 3649 @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
-+ IL_0000: ldc.i4 61456392 @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
++ IL_0000: ldc.i4 3965 @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
++ IL_0000: ldc.i4 59039732 @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
   |-> retrieves Microsoft.Xna.Framework.Color FrostHelper.EntityRainbowifyController/<>c__DisplayClass4_0::<AllowColorChange>b__1(System.Object)
 + IL_0000: call TResult MonoMod.Cil.FastDelegateInvokers::InvokeTypeVal1<Microsoft.Xna.Framework.Color,System.Object>(T0,MonoMod.Cil.FastDelegateInvokers/TypeVal1`2<TResult,T0>) @ FrostHelper.EntityRainbowifyController+<>c__DisplayClass4_0::<AllowColorChange>b__0
   IL_03d4: ldc.r4 0
   IL_03d9: ldloc.s V_5
   IL_03db: ldloc.s V_8
-- IL_03dd: ldsfld Celeste.SaveData Celeste.SaveData::Instance @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03e2: ldflda Celeste.Assists Celeste.SaveData::Assists @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03e7: ldfld System.Boolean Celeste.Assists::MirrorMode @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03ec: brtrue.s IL_03f1 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03ee: ldc.i4.0 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03ef: br.s IL_03f2 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-- IL_03f1: ldc.i4.1 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 2980 @ ExtendedVariants.Variants.UpsideDown::modLevelRender
-+ IL_0000: ldc.i4 44965832 @ ExtendedVariants.Variants.UpsideDown::modLevelRender
+- IL_03dd: ldsfld Celeste.SaveData Celeste.SaveData::Instance @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03e2: ldflda Celeste.Assists Celeste.SaveData::Assists @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03e7: ldfld System.Boolean Celeste.Assists::MirrorMode @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03ec: brtrue.s IL_03f1 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03ee: ldc.i4.0 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03ef: br.s IL_03f2 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
+- IL_03f1: ldc.i4.1 @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
++ IL_0000: ldc.i4 3928 @ ExtendedVariants.Variants.UpsideDown::modLevelRender
++ IL_0000: ldc.i4 60970841 @ ExtendedVariants.Variants.UpsideDown::modLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Func`1<Microsoft.Xna.Framework.Graphics.SpriteEffects>>(System.Int32,System.Int32) @ ExtendedVariants.Variants.UpsideDown::modLevelRender
   |-> retrieves Microsoft.Xna.Framework.Graphics.SpriteEffects ExtendedVariants.Variants.UpsideDown::applyUpsideDownEffectToSprites()
 + IL_0000: callvirt TResult System.Func`1<Microsoft.Xna.Framework.Graphics.SpriteEffects>::Invoke() @ ExtendedVariants.Variants.UpsideDown::modLevelRender
@@ -412,20 +415,20 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_03f7: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::Draw(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,System.Nullable`1<Microsoft.Xna.Framework.Rectangle>,Microsoft.Xna.Framework.Color,System.Single,Microsoft.Xna.Framework.Vector2,System.Single,Microsoft.Xna.Framework.Graphics.SpriteEffects,System.Single)
   IL_03fc: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
   IL_0401: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
-+ IL_0000: ldc.i4 3845 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
-+ IL_0000: ldc.i4 2433947 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
++ IL_0000: ldc.i4 4172 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
++ IL_0000: ldc.i4 22376671 @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
   |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onLevelRender>b__4_5()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.MaxHelpingHand.Effects.HdParallax::onLevelRender
-+ IL_0000: ldc.i4 3659 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
-+ IL_0000: ldc.i4 25333115 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 3968 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
++ IL_0000: ldc.i4 23182862 @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Action>(System.Int32,System.Int32) @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   |-> retrieves System.Void Celeste.Mod.MaxHelpingHand.Effects.HdParallax/<>c::<onLevelRender>b__4_5()
 + IL_0000: callvirt System.Void System.Action::Invoke() @ Celeste.Mod.Spirialis.TimeController::CustomLevelRender
   IL_0000: ldarg.0
 + IL_0000: ldloc.s V_2 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
-+ IL_0000: ldc.i4 3749 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
-+ IL_0000: ldc.i4 32543975 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
++ IL_0000: ldc.i4 4124 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
++ IL_0000: ldc.i4 58425922 @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
 + IL_0000: call T MonoMod.Utils.DynamicReferenceManager::GetValueTUnsafe<System.Delegate>(System.Int32,System.Int32) @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
   |-> retrieves System.Void Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask/<>c::<Level_Render>b__13_10(Celeste.Level,Microsoft.Xna.Framework.Matrix)
 + IL_0000: call System.Void MonoMod.Cil.FastDelegateInvokers::InvokeVoidVal2<Celeste.Level,Microsoft.Xna.Framework.Matrix>(T0,T1,MonoMod.Cil.FastDelegateInvokers/VoidVal2`2<T0,T1>) @ Celeste.Mod.StyleMaskHelper.Entities.ColorGradeMask::Level_Render
@@ -454,7 +457,14 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_0452: callvirt System.Void Celeste.Pathfinder::Render()
   IL_0457: call Microsoft.Xna.Framework.Graphics.SpriteBatch Monocle.Draw::get_SpriteBatch()
   IL_045c: callvirt System.Void Microsoft.Xna.Framework.Graphics.SpriteBatch::End()
-  IL_0461: ldarg.0
++ IL_0000: ldloc V_2 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_0000: ldloc V_9 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_0000: ldloc V_5 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_0000: ldloc V_8 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::updateUpscaleData(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single) @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
+  IL_0000: ldarg.0
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::renderBehind(Celeste.Level) @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_0461: ldarg.0 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
   IL_0462: ldfld Celeste.Mod.UI.SubHudRenderer Celeste.Level::SubHudRenderer
   IL_0467: ldarg.0
   IL_0468: callvirt System.Void Monocle.Renderer::Render(Monocle.Scene)
@@ -480,7 +490,9 @@ IL Diff: System.Void Celeste.Level::Render()
   IL_049f: ldfld Celeste.HudRenderer Celeste.Level::HudRenderer
   IL_04a4: ldarg.0
   IL_04a5: callvirt System.Void Monocle.Renderer::Render(Monocle.Scene)
-  IL_04aa: ldarg.0
+  IL_0000: ldarg.0
++ IL_0000: call System.Void Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::renderAbove(Celeste.Level) @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
++ IL_04aa: ldarg.0 @ Celeste.Mod.SorbetHelper.Backdrops.StylegroundOverHudRenderer::modLevelRender
   IL_04ab: ldfld Celeste.ScreenWipe Celeste.Level::Wipe
 + IL_0000: call Celeste.ScreenWipe TAS.EverestInterop.SimplifiedGraphicsFeature::SimplifiedScreenWipe(Celeste.ScreenWipe) @ TAS.EverestInterop.SimplifiedGraphicsFeature::LevelOnRender
   IL_04b0: brfalse.s IL_04be
